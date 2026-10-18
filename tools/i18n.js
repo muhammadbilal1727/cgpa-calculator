@@ -28,7 +28,6 @@ const CHROME = process.env.CHROME || 'C:/Program Files/Google/Chrome/Application
 const UNI_PAGES = fs.readdirSync(ROOT).filter(f => /-calculator\.html$/.test(f)).sort();
 const PAGES = ['index.html', ...UNI_PAGES, 'about.html', 'privacy-policy.html', 'terms.html', 'contact.html'];
 const UNI_DATA = ['tools/build-university-pages.js', ...fs.readdirSync(path.join(ROOT, 'tools', 'universities')).map(f => 'tools/universities/' + f)];
-const NAV_PAGES = ['index.html', 'about.html', 'privacy-policy.html', 'terms.html', 'contact.html'];
 
 // Flag shown next to each language in the language menu
 const FLAGS = {"en":"🇬🇧","es":"🇪🇸","de":"🇩🇪","hi":"🇮🇳","ur":"🇵🇰","zh":"🇨🇳","fr":"🇫🇷","ar":"🇸🇦","bn":"🇧🇩","pt":"🇧🇷","ru":"🇷🇺","id":"🇮🇩","ja":"🇯🇵","mr":"🇮🇳","te":"🇮🇳"};
@@ -141,6 +140,17 @@ function pageSegments(arg) {
 }
 
 /* ---------- Runs inside the page when building: links, language menu, hreflang, FAQ data ---------- */
+/* ---------- Runs inside the page: header from index.html, with the current page highlighted ----------
+   Done before translating, so the header gets translated along with the rest of the page */
+function swapHeader(o) {
+  const old = document.querySelector('header.site-header');
+  const tmp = document.createElement('div'); tmp.innerHTML = o.header;
+  old.replaceWith(tmp.firstElementChild);
+  document.querySelectorAll('#siteNav a').forEach(a => {
+    if (a.getAttribute('href') === o.page) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+  });
+}
+
 function finishPage(o) {
   const html = document.documentElement;
   html.lang = o.htmlLang;
@@ -154,16 +164,6 @@ function finishPage(o) {
         if (!v || /^(?:[a-z]+:|#|\/|\.\.\/)/i.test(v) || /\.html(?:#|$)/.test(v)) return;
         el.setAttribute(a, '../' + v);
       });
-    });
-  }
-
-  // Header: same as index.html on every page, with the current page highlighted
-  if (o.header) {
-    const old = document.querySelector('header.site-header');
-    const tmp = document.createElement('div'); tmp.innerHTML = o.header;
-    old.replaceWith(tmp.firstElementChild);
-    document.querySelectorAll('#siteNav a').forEach(a => {
-      if (a.getAttribute('href') === o.page) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
     });
   }
 
@@ -302,10 +302,11 @@ async function build() {
     }
     for (const p of PAGES) {
       await chrome.load(p);
+      await chrome.run(swapHeader, { header, page: p });
       if (tr) await chrome.run(pageSegments, { tr });
       const html = await chrome.run(finishPage, {
         page: p, flag: lang.flag, htmlLang: lang.htmlLang, rtl: lang.rtl, short: lang.short, locale: lang.locale,
-        prefix: !!lang.dir, header: NAV_PAGES.includes(p) || PAGES.includes(p) ? header : null,
+        prefix: !!lang.dir,
         canonical: urlOf(lang, p), xDefault: urlOf(LANGS[0], p), home: urlOf(lang, 'index.html'),
         i18nScript: tr ? `../i18n/${lang.code}.js` : null,
         langs: available.map(l => ({
