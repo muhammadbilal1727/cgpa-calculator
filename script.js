@@ -138,12 +138,12 @@
   }
 
   function cheer(ratio) {
-    if (ratio >= 0.9) return t('Outstanding! You’re a star 🌟');
-    if (ratio >= 0.8) return t('Excellent! 🎉');
-    if (ratio >= 0.7) return t('Very good, keep it up 👏');
-    if (ratio >= 0.6) return t('Good! You can push even higher 💪');
-    if (ratio >= 0.5) return t('Keep going, you’re on track 📚');
-    return t('Don’t give up. Every semester is a fresh start 🌱');
+    if (ratio >= 0.9) return t('Excellent standing');
+    if (ratio >= 0.8) return t('Very good standing');
+    if (ratio >= 0.7) return t('Good standing');
+    if (ratio >= 0.6) return t('Satisfactory standing');
+    if (ratio >= 0.5) return t('Fair standing');
+    return t('Needs improvement');
   }
 
   function skippedNote(n) {
@@ -612,7 +612,7 @@
     if (inv ? needed < bestVal - 1e-9 : needed > bestVal + 1e-9) {
       r = {
         text: f2(neededUp), ratio: 1,
-        cheer: t('This target is out of reach for now 😕'),
+        cheer: t('Not reachable with the credits left'),
         sub: inv
           ? t('Even with a perfect {max} in every remaining semester, the best average you can reach is {best}.', { max: fmtG(bestVal, sc), best: f2(best) })
           : t('Even with a perfect {max} in every remaining semester, the highest CGPA you can reach is {best}.', { max: f2(sc.max), best: f2(best) }),
@@ -624,7 +624,7 @@
     } else if (inv ? needed >= worstVal : needed <= worstVal) {
       r = {
         text: f2(worstVal), ratio: 0,
-        cheer: t('You’ve already secured it! 🎉'),
+        cheer: t('Already secured'),
         sub: inv
           ? t('Your average will stay at {target} or better no matter what. Aim high anyway!', { target: f2(v.target) })
           : t('Your CGPA will stay at or above {target} no matter what. Aim high anyway!', { target: f2(v.target) })
@@ -634,10 +634,10 @@
       const ratio = ratioOf(sc, needed);
       r = {
         text: f2(neededUp), ratio,
-        cheer: t(ratio > 0.9 ? 'Tough but possible. Time to go all in! 🔥'
-          : ratio > 0.75 ? 'Challenging, but you can do it 💪'
-          : ratio > 0.5 ? 'Very doable. Stay consistent 👍'
-          : 'Easy target, you’ve got this 😎'),
+        cheer: t(ratio > 0.9 ? 'Very demanding, but possible'
+          : ratio > 0.75 ? 'Challenging but realistic'
+          : ratio > 0.5 ? 'Achievable with steady work'
+          : 'Comfortably within reach'),
         sub: inv
           ? t('You need an average of {needed} or better over your remaining {left} credit hours to reach a {target} average.', { needed: f2(neededUp), left: cleanNum(v.left), target: f2(v.target) })
           : t('You need an average GPA of at least {needed} over your remaining {left} credit hours to reach a {target} CGPA.', { needed: f2(neededUp), left: cleanNum(v.left), target: f2(v.target) })

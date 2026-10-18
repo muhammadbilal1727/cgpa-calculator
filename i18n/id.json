@@ -492,7 +492,9 @@
   "s514": "Kami tidak dapat mengonfirmasi hasil resmi",
   "s515": "Kalkulator CGPA adalah situs independen. Untuk CGPA, persentase, atau transkrip resmi Anda, silakan hubungi bagian ujian atau bagian akademik kampus Anda.",
   "s1401": "Kami menghitung kunjungan dengan Vercel Web Analytics, yang tidak memakai cookie dan tidak mengenali identitas Anda. Kami tidak memakai iklan atau cookie sendiri.",
-  "s1402": "Kami juga memakai <a href=\"https://vercel.com/docs/analytics/privacy-policy\">Vercel Web Analytics</a> untuk menghitung berapa banyak orang yang berkunjung dan halaman apa yang mereka lihat. Layanan ini tidak memakai cookie, tidak mengumpulkan angka yang Anda ketik di kalkulator, dan tidak mengenali pengunjung satu per satu."
+  "s1402": "Kami juga memakai <a href=\"https://vercel.com/docs/analytics/privacy-policy\">Vercel Web Analytics</a> untuk menghitung berapa banyak orang yang berkunjung dan halaman apa yang mereka lihat. Layanan ini tidak memakai cookie, tidak mengumpulkan angka yang Anda ketik di kalkulator, dan tidak mengenali pengunjung satu per satu.",
+  "s1403": "Siapa pembuatnya",
+  "s1404": "CGPA Calculator dibuat dan dikelola oleh <strong>Muhammad Bilal</strong>, pengembang web dari Pakistan. Kode situs ini dan proyek lainnya bisa dilihat di <a href=\"https://github.com/muhammadbilal1727\" rel=\"me noopener\" target=\"_blank\">GitHub</a>."
  },
  "js": {
   "j1": "skala 4.0",
@@ -624,6 +626,18 @@
   "j127": "Pass Class",
   "j128": "Di bawah Pass Class",
   "j129": "Dari peraturan VTU 2021-22 (peraturan CBCS 2015 memakai rumus yang sama). Mahasiswa skema 2022 memakai CGPA × 10.",
-  "j130": "mis. {x}"
+  "j130": "mis. {x}",
+  "j382": "Prestasi sangat baik",
+  "j383": "Prestasi baik sekali",
+  "j384": "Prestasi baik",
+  "j385": "Prestasi memuaskan",
+  "j386": "Prestasi cukup",
+  "j387": "Perlu ditingkatkan",
+  "j388": "Tidak tercapai dengan SKS yang tersisa",
+  "j389": "Sudah aman",
+  "j390": "Sangat berat, tetapi mungkin",
+  "j393": "Menantang tetapi realistis",
+  "j391": "Bisa dicapai dengan usaha konsisten",
+  "j392": "Mudah dicapai"
  }
 }

@@ -492,7 +492,9 @@
   "s514": "我们无法确认官方结果",
   "s515": "CGPA 计算器是独立网站。如需官方 CGPA、百分比或成绩单，请联系你所在大学的考试办公室或教务处。",
   "s1401": "我们使用 Vercel Web Analytics 统计访问量，它不使用 Cookie，也不会识别你的身份。我们不投放广告，也不设置自己的 Cookie。",
-  "s1402": "我们还使用 <a href=\"https://vercel.com/docs/analytics/privacy-policy\">Vercel Web Analytics</a> 统计访问人数和浏览的页面。它不使用 Cookie，不收集你在计算器中输入的数字，也不识别任何访客。"
+  "s1402": "我们还使用 <a href=\"https://vercel.com/docs/analytics/privacy-policy\">Vercel Web Analytics</a> 统计访问人数和浏览的页面。它不使用 Cookie，不收集你在计算器中输入的数字，也不识别任何访客。",
+  "s1403": "关于作者",
+  "s1404": "CGPA Calculator 由来自巴基斯坦的网页开发者 <strong>Muhammad Bilal</strong> 开发和维护。你可以在 <a href=\"https://github.com/muhammadbilal1727\" rel=\"me noopener\" target=\"_blank\">GitHub</a> 上查看本站代码和其他项目。"
  },
  "js": {
   "j1": "4.0 分制",
@@ -624,6 +626,18 @@
   "j127": "Pass Class",
   "j128": "低于 Pass Class",
   "j129": "依据 VTU 2021-22 规章（2015 CBCS 规章使用相同公式）。2022 方案的学生改用 CGPA × 10。",
-  "j130": "如 {x}"
+  "j130": "如 {x}",
+  "j382": "成绩优异",
+  "j383": "成绩很好",
+  "j384": "成绩良好",
+  "j385": "成绩中等",
+  "j386": "成绩及格",
+  "j387": "有待提高",
+  "j388": "剩余学分无法达到",
+  "j389": "已经确保",
+  "j390": "难度很大，但有可能",
+  "j393": "有挑战，但可行",
+  "j391": "坚持努力即可达到",
+  "j392": "轻松可达"
  }
 }

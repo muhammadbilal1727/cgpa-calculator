@@ -492,7 +492,9 @@
   "s514": "Não podemos confirmar resultados oficiais",
   "s515": "A Calculadora de CGPA é um site independente. Para seu CGPA, sua porcentagem ou seu histórico oficial, entre em contato com o setor de provas ou a secretaria acadêmica da sua universidade.",
   "s1401": "Contamos as visitas com o Vercel Web Analytics, que não usa cookies nem identifica você. Não usamos publicidade nem cookies próprios.",
-  "s1402": "Também usamos o <a href=\"https://vercel.com/docs/analytics/privacy-policy\">Vercel Web Analytics</a> para contar quantas pessoas visitam o site e quais páginas veem. Ele não usa cookies, não coleta os números que você digita na calculadora e não identifica nenhum visitante."
+  "s1402": "Também usamos o <a href=\"https://vercel.com/docs/analytics/privacy-policy\">Vercel Web Analytics</a> para contar quantas pessoas visitam o site e quais páginas veem. Ele não usa cookies, não coleta os números que você digita na calculadora e não identifica nenhum visitante.",
+  "s1403": "Quem fez este site",
+  "s1404": "O CGPA Calculator é criado e mantido por <strong>Muhammad Bilal</strong>, desenvolvedor web do Paquistão. Você pode ver o código do site e outros projetos no <a href=\"https://github.com/muhammadbilal1727\" rel=\"me noopener\" target=\"_blank\">GitHub</a>."
  },
  "js": {
   "j1": "escala de 4.0",
@@ -624,6 +626,18 @@
   "j127": "Pass Class",
   "j128": "Abaixo de Pass Class",
   "j129": "Do regulamento da VTU de 2021-22 (o regulamento CBCS de 2015 usa a mesma fórmula). Estudantes do esquema 2022 usam CGPA × 10.",
-  "j130": "ex.: {x}"
+  "j130": "ex.: {x}",
+  "j382": "Desempenho excelente",
+  "j383": "Desempenho muito bom",
+  "j384": "Bom desempenho",
+  "j385": "Desempenho satisfatório",
+  "j386": "Desempenho regular",
+  "j387": "Precisa melhorar",
+  "j388": "Inalcançável com os créditos restantes",
+  "j389": "Já garantido",
+  "j390": "Muito exigente, mas possível",
+  "j393": "Exigente, mas realista",
+  "j391": "Alcançável com esforço constante",
+  "j392": "Facilmente alcançável"
  }
 }

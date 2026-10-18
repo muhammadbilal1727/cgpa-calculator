@@ -1332,7 +1332,9 @@
   "s1399": "Universiti Teknologi Malaysia: Peraturan Akademik Program Sarjana Muda, Edisi ke-16 (2023), Jadual 5, Perkara 18, 29–33",
   "s1400": "Modul hinzufügen",
   "s1401": "Wir zählen Besuche mit Vercel Web Analytics; es nutzt keine Cookies und erkennt dich nicht. Werbung oder eigene Cookies nutzen wir nicht.",
-  "s1402": "Außerdem nutzen wir <a href=\"https://vercel.com/docs/analytics/privacy-policy\">Vercel Web Analytics</a>, um zu zählen, wie viele Menschen die Seite besuchen und welche Seiten sie ansehen. Es nutzt keine Cookies, erfasst nicht die Zahlen, die du in den Rechner eingibst, und erkennt keine einzelnen Besucher."
+  "s1402": "Außerdem nutzen wir <a href=\"https://vercel.com/docs/analytics/privacy-policy\">Vercel Web Analytics</a>, um zu zählen, wie viele Menschen die Seite besuchen und welche Seiten sie ansehen. Es nutzt keine Cookies, erfasst nicht die Zahlen, die du in den Rechner eingibst, und erkennt keine einzelnen Besucher.",
+  "s1403": "Wer steckt dahinter",
+  "s1404": "CGPA Calculator wird von <strong>Muhammad Bilal</strong> entwickelt und gepflegt, einem Webentwickler aus Pakistan. Den Code der Website und weitere Projekte findest du auf <a href=\"https://github.com/muhammadbilal1727\" rel=\"me noopener\" target=\"_blank\">GitHub</a>."
  },
  "js": {
   "j1": "4.0-Skala",
@@ -1709,6 +1711,18 @@
   "j378": "Modulname (optional)",
   "j379": "z. B. Analysis 1",
   "j380": "Modul oder Prüfung (optional)",
-  "j381": "z. B. Algorithmen"
+  "j381": "z. B. Algorithmen",
+  "j382": "Ausgezeichnete Leistung",
+  "j383": "Sehr gute Leistung",
+  "j384": "Gute Leistung",
+  "j385": "Befriedigende Leistung",
+  "j386": "Ausreichende Leistung",
+  "j387": "Verbesserungsbedarf",
+  "j388": "Mit den verbleibenden Credits nicht erreichbar",
+  "j389": "Bereits gesichert",
+  "j390": "Sehr anspruchsvoll, aber möglich",
+  "j393": "Anspruchsvoll, aber realistisch",
+  "j391": "Mit stetiger Arbeit erreichbar",
+  "j392": "Gut erreichbar"
  }
 }
