@@ -1,0 +1,4 @@
+# Not part of the website: build script used only on this computer
+tools
+.env*
+.vercel
