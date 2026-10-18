@@ -24,10 +24,12 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/comsats-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/comsats-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/comsats-cgpa-calculator.html">
+
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="ar_AR">
@@ -151,6 +153,7 @@
   </script>
 </head>
 <body>
+
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -195,11 +198,13 @@
     </div>
   </header>
   <main class="container">
+
     <section class="hero">
       <nav class="breadcrumb" aria-label="مسار التنقل"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">CUI</span></nav>
       <h1>حاسبة CGPA وGPA لجامعة COMSATS</h1>
       <p>احسب معدلك الفصلي والتراكمي وفق معايير HEC التي تطبقها COMSATS University Islamabad على الطلاب المقبولين منذ خريف 2021، وحوّل المعدل إلى نسبة مئوية بطريقة COMSATS الرسمية. <a href="#guide" class="hero-link">كيف يتم التقدير في COMSATS ↓</a></p>
     </section>
+
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <p id="scaleLabel" class="scale-title">نظام التقدير: COMSATS (منذ خريف 2021)</p>
@@ -209,6 +214,7 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">إعادة ضبط الكل</button>
     </section>
     <p class="print-only" id="printDate"></p>
+
     <div class="layout">
       <!-- ================= Calculators ================= -->
       <div class="main-col">
@@ -225,6 +231,7 @@
               <h2>المعدل الفصلي GPA</h2>
               <p class="muted small">أضف كل مادة مع ساعاتها المعتمدة وتقديرها.</p>
             </div>
+
           </div>
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>المادة (اختياري)</span><span>الساعات</span><span id="gradeHead">التقدير</span><span></span>
@@ -354,6 +361,7 @@
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
+
           </div>
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">استخدم معدلي من تبويب CGPA</button>
           <div class="result" aria-live="polite">
@@ -390,6 +398,7 @@
           </div>
           <p class="muted tiny">تختلف نطاقات الدرجات من جامعة لأخرى. راجع دائماً لائحة التقديرات في جامعتك.</p>
         </section>
+
         <section class="card tips">
           <h2 class="side-title">حقائق سريعة عن CUI</h2>
           <ul>
@@ -400,12 +409,15 @@
         </section>
       </aside>
     </div>
+
     <article class="guide" id="guide">
+
       <section id="how-it-works">
         <h2>التقدير في COMSATS باختصار</h2>
         <p>اعتمدت COMSATS University Islamabad ‏(CUI) معايير HEC للتقدير في جميع برامج البكالوريوس والدراسات العليا للطلاب المقبولين منذ خريف 2021. وقد وافق المجلس الأكاديمي في CUI على ذلك في اجتماعه الحادي والثلاثين بتاريخ 8 أكتوبر 2020، وأعلنه المسجّل في إشعار بتاريخ 7 ديسمبر 2020.</p>
         <p>في هذا النظام يغطي كل تقدير بالحرف <em>نطاقاً</em> من النقاط. فالتقدير A- مثلاً قد يكون أي قيمة بين 3.34 و3.66 حسب درجاتك. ولهذا تطلب الحاسبة نقاط كل مقرر بدلاً من الحرف فقط.</p>
       </section>
+
       <section id="grade-points">
         <h2>جدول التقدير في COMSATS (منذ خريف 2021)</h2>
         <div class="table-scroll">
@@ -428,6 +440,7 @@
         </div>
         <p>كل ما هو أقل من 50% يُعد F بنقاط 0.00.</p>
       </section>
+
       <section id="example">
         <h2>كيف تحسب معدلك في COMSATS: مثال محلول</h2>
         <div class="table-scroll">
@@ -445,6 +458,7 @@
         <p class="formula-block">GPA = 44.10 ÷ 13 = 3.392 ≈ 3.39</p>
         <p>إذا كنت تعرف التقدير بالحرف فقط لمقرر ما، فالجدول أعلاه يبيّن نطاق النقاط الممكن له، وستقع نقاطك الدقيقة في مكان ما داخل هذا النطاق.</p>
       </section>
+
       <section id="percentage">
         <h2>تحويل معدل COMSATS إلى نسبة مئوية: القاعدة الرسمية</h2>
         <p>لا تستخدم COMSATS المعادلة (CGPA ÷ 4) × 100. وينص إشعارها على: <q>A student getting any CGPA will be given the minimum of the corresponding percentage… For example, if a student gets a CGPA of 3.00, the percentage associated will be 71%.</q> («يُمنح الطالب الحاصل على أي معدل تراكمي الحدَّ الأدنى من النسبة المقابلة… فإذا حصل الطالب مثلاً على معدل 3.00 فإن النسبة المقابلة ستكون 71%.»)</p>
@@ -468,12 +482,15 @@
         </div>
         <p>فمثلاً يقع المعدل 3.39 في نطاق A- ‏(3.34–3.66)، لذلك يُحتسب <strong>80%</strong>. أما المعادلة البسيطة فتعطي 84.75%، أي أعلى بنحو 5 نقاط، وقد يسبب ذلك مشكلة إذا تحقق صاحب العمل من الجامعة.</p>
       </section>
+
       <section id="before-2021">
         <h2>هل قُبلت قبل خريف 2021؟</h2>
         <p>يشمل الإشعار الطلاب المقبولين منذ خريف 2021. وإذا التحقت بـ COMSATS قبل ذلك فقد يتبع كشف درجاتك نظام التقدير القديم في COMSATS. طريقة حساب المعدل الفصلي والتراكمي (متوسط موزون بالساعات) هي نفسها، لكن نطاقات التقديرات وقاعدة النسبة المئوية قد تختلف، فراجع كشف درجاتك أو اسأل مكتب الامتحانات في حرمك الجامعي.</p>
       </section>
+
       <section id="faq" class="faq">
         <h2>الأسئلة الشائعة عن حاسبة معدل CUI</h2>
+
         <details>
           <summary><h3>لماذا تعطي COMSATS نطاقاً من النقاط لكل تقدير؟</h3></summary>
           <p>منذ خريف 2021 تتبع COMSATS معايير HEC للتقدير، حيث يغطي كل تقدير بالحرف نطاقاً من النقاط. ونقاطك الدقيقة تعتمد على درجاتك، لذلك قد يحصل طالبان بتقدير A- على نقاط مختلفة.</p>
@@ -499,6 +516,7 @@
           <p>طريقة حساب المعدل الفصلي والتراكمي واحدة للجميع، لذا يمكنك إدخال نقاطك. لكن نطاقات التقديرات وقاعدة النسبة المئوية في هذه الصفحة تنطبق على المقبولين منذ خريف 2021، فراجع كشف درجاتك إن التحقت قبل ذلك.</p>
         </details>
       </section>
+
       <section id="sources">
         <h2>المصادر</h2>
         <ul class="source-note">
@@ -507,6 +525,7 @@
         <p class="source-note">آخر مراجعة: 18 أكتوبر 2026. قد تتغير قواعد الجامعات، لذا تحقق دائماً من نتائجك وفق أحدث القواعد الرسمية لجامعتك. راجع <a href="terms.html">شروط الاستخدام</a>.</p>
       </section>
     </article>
+
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">المزيد من حاسبات CGPA وGPA</h2>
       <div class="uni-grid">
@@ -515,20 +534,21 @@
           <span class="uni-name">حاسبة CGPA وGPA لجامعة NUST</span>
           <span class="muted small">تقدير نسبي · A = 4.00، B+ = 3.50</span>
         </a>
-        <a class="card uni-card" href="vtu-cgpa-calculator.html">
-          <span class="uni-badge">VTU</span>
-          <span class="uni-name">حاسبة CGPA وGPA ‏(SGPA) لجامعة VTU</span>
-          <span class="muted small">نظاما 2022 و2021 · تحويل CGPA إلى %</span>
-        </a>
         <a class="card uni-card" href="index.html">
           <span class="uni-badge">الكل</span>
           <span class="uni-name">حاسبة CGPA العامة</span>
           <span class="muted small">مقاييس 4.0 و5.0 و10 نقاط</span>
         </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">18</span>
+          <span class="uni-name">All university calculators</span>
+          <span class="muted small">Pakistan, India, USA, UK, Malaysia, Australia and Germany</span>
+        </a>
       </div>
     </section>
     <p class="back-top"><a href="#calculator">↑ العودة إلى الحاسبة</a></p>
   </main>
+
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -546,6 +566,7 @@
     </div>
   </footer>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-comsats',
     scales: {

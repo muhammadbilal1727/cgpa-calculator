@@ -24,10 +24,12 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/comsats-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/comsats-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/comsats-cgpa-calculator.html">
+
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="id_ID">
@@ -151,6 +153,7 @@
   </script>
 </head>
 <body>
+
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -195,11 +198,13 @@
     </div>
   </header>
   <main class="container">
+
     <section class="hero">
       <nav class="breadcrumb" aria-label="Navigasi jejak"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">CUI</span></nav>
       <h1>Kalkulator CGPA &amp; GPA COMSATS</h1>
       <p>Hitung GPA dan CGPA Anda dengan kriteria penilaian HEC yang diterapkan COMSATS University Islamabad untuk mahasiswa yang diterima sejak Fall 2021, lalu ubah CGPA ke persentase dengan cara resmi COMSATS. <a href="#guide" class="hero-link">Cara penilaian di COMSATS ↓</a></p>
     </section>
+
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <p id="scaleLabel" class="scale-title">Sistem penilaian: COMSATS (sejak Fall 2021)</p>
@@ -209,6 +214,7 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">Atur ulang semua</button>
     </section>
     <p class="print-only" id="printDate"></p>
+
     <div class="layout">
       <!-- ================= Calculators ================= -->
       <div class="main-col">
@@ -225,6 +231,7 @@
               <h2>GPA semester</h2>
               <p class="muted small">Tambahkan setiap mata kuliah beserta SKS dan nilainya.</p>
             </div>
+
           </div>
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>Mata kuliah (opsional)</span><span>SKS</span><span id="gradeHead">Nilai huruf</span><span></span>
@@ -354,6 +361,7 @@
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
+
           </div>
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">Gunakan CGPA saya dari tab CGPA</button>
           <div class="result" aria-live="polite">
@@ -390,6 +398,7 @@
           </div>
           <p class="muted tiny">Rentang nilai berbeda di setiap kampus. Selalu periksa aturan penilaian kampus Anda sendiri.</p>
         </section>
+
         <section class="card tips">
           <h2 class="side-title">Fakta singkat CUI</h2>
           <ul>
@@ -400,12 +409,15 @@
         </section>
       </aside>
     </div>
+
     <article class="guide" id="guide">
+
       <section id="how-it-works">
         <h2>Sekilas tentang penilaian COMSATS</h2>
         <p>COMSATS University Islamabad (CUI) menerapkan kriteria penilaian HEC untuk semua program sarjana dan pascasarjana, bagi mahasiswa yang diterima sejak Fall 2021. Dewan Akademik CUI menyetujuinya pada rapat ke-31 tanggal 8 Oktober 2020, dan Registrar mengumumkannya melalui surat pemberitahuan tertanggal 7 Desember 2020.</p>
         <p>Dalam sistem ini, setiap nilai huruf mencakup <em>rentang</em> poin. Misalnya A- bisa bernilai berapa saja dari 3.34 sampai 3.66, tergantung nilai angka Anda. Itulah sebabnya kalkulator ini meminta poin nilai setiap mata kuliah, bukan hanya hurufnya.</p>
       </section>
+
       <section id="grade-points">
         <h2>Tabel penilaian COMSATS (sejak Fall 2021)</h2>
         <div class="table-scroll">
@@ -428,6 +440,7 @@
         </div>
         <p>Semua nilai di bawah 50% adalah F dengan 0.00 poin.</p>
       </section>
+
       <section id="example">
         <h2>Cara menghitung GPA COMSATS: contoh soal</h2>
         <div class="table-scroll">
@@ -445,6 +458,7 @@
         <p class="formula-block">GPA = 44.10 ÷ 13 = 3.392 ≈ 3.39</p>
         <p>Jika Anda hanya tahu nilai huruf suatu mata kuliah, tabel di atas menunjukkan rentang poin yang mungkin. Poin persis Anda berada di suatu titik dalam rentang itu.</p>
       </section>
+
       <section id="percentage">
         <h2>CGPA COMSATS ke persentase: aturan resmi</h2>
         <p>COMSATS tidak memakai (CGPA ÷ 4) × 100. Surat pemberitahuannya menyatakan: <q>A student getting any CGPA will be given the minimum of the corresponding percentage… For example, if a student gets a CGPA of 3.00, the percentage associated will be 71%.</q> (“Mahasiswa dengan CGPA berapa pun akan diberi persentase minimum dari rentang yang sesuai… Misalnya, jika mahasiswa mendapat CGPA 3.00, persentase yang terkait adalah 71%.”)</p>
@@ -468,12 +482,15 @@
         </div>
         <p>Misalnya, CGPA 3.39 berada di rentang A- (3.34–3.66), jadi dihitung sebagai <strong>80%</strong>. Rumus sederhana akan memberi 84.75%, hampir 5 poin lebih tinggi, yang bisa menimbulkan masalah jika perusahaan mengecek ke kampus.</p>
       </section>
+
       <section id="before-2021">
         <h2>Diterima sebelum Fall 2021?</h2>
         <p>Surat pemberitahuan ini berlaku untuk mahasiswa yang diterima sejak Fall 2021. Jika Anda masuk COMSATS lebih awal, transkrip Anda mungkin mengikuti skema penilaian COMSATS yang lama. Cara menghitung GPA dan CGPA (rata-rata berbobot SKS) tetap sama, tetapi rentang nilai dan aturan persentasenya bisa berbeda, jadi periksa transkrip Anda atau tanyakan ke bagian ujian kampus Anda.</p>
       </section>
+
       <section id="faq" class="faq">
         <h2>FAQ kalkulator CGPA CUI</h2>
+
         <details>
           <summary><h3>Mengapa COMSATS memberi rentang poin untuk setiap nilai?</h3></summary>
           <p>Sejak Fall 2021, COMSATS mengikuti kriteria penilaian HEC, di mana setiap nilai huruf mencakup rentang poin. Poin persis Anda bergantung pada nilai angka Anda, jadi dua mahasiswa yang sama-sama mendapat A- bisa punya poin berbeda.</p>
@@ -499,6 +516,7 @@
           <p>Cara menghitung GPA dan CGPA sama untuk semua orang, jadi Anda tetap bisa memasukkan poin nilai Anda. Namun rentang nilai dan aturan persentase di halaman ini berlaku untuk mahasiswa yang diterima sejak Fall 2021, jadi periksa transkrip Anda jika Anda masuk lebih awal.</p>
         </details>
       </section>
+
       <section id="sources">
         <h2>Sumber</h2>
         <ul class="source-note">
@@ -507,6 +525,7 @@
         <p class="source-note">Terakhir diperiksa: 18 Oktober 2026. Aturan kampus bisa berubah, jadi selalu pastikan hasil Anda dengan aturan resmi terbaru dari kampus Anda. Lihat <a href="terms.html">Ketentuan Penggunaan</a> kami.</p>
       </section>
     </article>
+
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">Kalkulator CGPA &amp; GPA lainnya</h2>
       <div class="uni-grid">
@@ -515,20 +534,21 @@
           <span class="uni-name">Kalkulator CGPA &amp; GPA NUST</span>
           <span class="muted small">Penilaian relatif · A = 4.00, B+ = 3.50</span>
         </a>
-        <a class="card uni-card" href="vtu-cgpa-calculator.html">
-          <span class="uni-badge">VTU</span>
-          <span class="uni-name">Kalkulator CGPA &amp; GPA (SGPA) VTU</span>
-          <span class="muted small">Skema 2022 &amp; 2021 · CGPA ke %</span>
-        </a>
         <a class="card uni-card" href="index.html">
           <span class="uni-badge">SEMUA</span>
           <span class="uni-name">Kalkulator CGPA Umum</span>
           <span class="muted small">Skala 4.0, 5.0, dan 10 poin</span>
         </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">18</span>
+          <span class="uni-name">All university calculators</span>
+          <span class="muted small">Pakistan, India, USA, UK, Malaysia, Australia and Germany</span>
+        </a>
       </div>
     </section>
     <p class="back-top"><a href="#calculator">↑ Kembali ke kalkulator</a></p>
   </main>
+
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -546,6 +566,7 @@
     </div>
   </footer>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-comsats',
     scales: {

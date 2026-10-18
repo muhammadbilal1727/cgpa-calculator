@@ -24,10 +24,12 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/vtu-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/vtu-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/vtu-cgpa-calculator.html">
+
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="ja_JP">
@@ -151,6 +153,7 @@
   </script>
 </head>
 <body>
+
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -195,11 +198,13 @@
     </div>
   </header>
   <main class="container">
+
     <section class="hero">
       <nav class="breadcrumb" aria-label="パンくずリスト"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">VTU</span></nav>
       <h1>VTU CGPA・GPA（SGPA）計算機</h1>
       <p>2022年・2021年スキームのVTU規程に基づく公式ルールで、VTUのSGPAとCGPAを計算し、CGPAをパーセントに換算します。<a href="#guide" class="hero-link">VTUの評価のしくみ ↓</a></p>
     </section>
+
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <label id="scaleLabel" for="scaleSelect" class="scale-title">あなたのVTUスキーム</label>
@@ -209,6 +214,7 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">すべてリセット</button>
     </section>
     <p class="print-only" id="printDate"></p>
+
     <div class="layout">
       <!-- ================= Calculators ================= -->
       <div class="main-col">
@@ -225,6 +231,7 @@
               <h2>学期GPA</h2>
               <p class="muted small">科目ごとに単位数と成績を入力してください。</p>
             </div>
+
             <div class="segmented" id="modeSwitch" role="radiogroup" aria-label="成績の入力方法を選んでください">
               <input type="radio" name="gpaMode" id="modeGrade" value="grade" checked="">
               <label for="modeGrade">評価</label>
@@ -360,6 +367,7 @@
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
+
             <div class="field">
               <span class="field-label always" id="convScaleLabel">スキーム</span>
               <div class="segmented full" role="radiogroup" aria-labelledby="convScaleLabel">
@@ -405,6 +413,7 @@
           </div>
           <p class="muted tiny">点数の範囲は大学によって異なります。必ずご自分の大学の評価規程を確認してください。</p>
         </section>
+
         <section class="card tips">
           <h2 class="side-title">VTUのポイント</h2>
           <ul>
@@ -415,11 +424,14 @@
         </section>
       </aside>
     </div>
+
     <article class="guide" id="guide">
+
       <section id="scheme">
         <h2>あなたはどのVTUスキーム？</h2>
         <p>VTUは規程を随時改定しています。2022年規程は2022-23学年度以降の入学者に適用され、2021年規程は2021-22年度から施行されました。評価の記号とCGPAのパーセント換算式が異なるので、計算機の上部でスキームを選んでください。</p>
       </section>
+
       <section id="grade-points">
         <h2>VTUの評価制度：2022年スキーム</h2>
         <p>VTUは絶対評価です。CIE（継続的な学内評価）とSEE（学期末試験）の点数を合計してパーセントに換算し、そのパーセントで評価が決まります（第22OB 6.1条）。</p>
@@ -454,6 +466,7 @@
           </table>
         </div>
       </section>
+
       <section id="example">
         <h2>VTUのSGPAとCGPAの計算方法</h2>
         <p class="formula-block">SGPA = Σ (Ci × Gi) ÷ Σ Ci &nbsp;&nbsp; CGPA = Σ (Ci × Si) ÷ Σ Ci</p>
@@ -473,6 +486,7 @@
         </div>
         <p class="formula-block">SGPA = 123 ÷ 15 = 8.20</p>
       </section>
+
       <section id="percentage">
         <h2>VTUのCGPAをパーセントに換算</h2>
         <p><strong>2022年スキーム：</strong>パーセント = CGPA × 10 なので、CGPA 8.20は<strong>82%</strong>です（第22OB 6.7条）。規程では、この計算式を就職や進学の際に用いてよいとされています。</p>
@@ -485,6 +499,7 @@
           <li><strong>Pass Class：</strong>40%〜50%、つまりCGPA 4.00〜4.99</li>
         </ul>
       </section>
+
       <section id="passing">
         <h2>VTUの合格基準（2022年スキーム）</h2>
         <ul>
@@ -494,8 +509,10 @@
           <li>プログラム全体を修了するには、登録したすべての科目でP以上が必要です。</li>
         </ul>
       </section>
+
       <section id="faq" class="faq">
         <h2>VTU CGPA計算機のよくある質問</h2>
+
         <details>
           <summary><h3>VTUのCGPAをパーセントに換算するには？</h3></summary>
           <p>2022年スキームではCGPAに10を掛けるので、8.20は82%です。2021年スキームと旧2015年CBCSスキームでは (CGPA − 0.75) × 10 を使うので、8.20は74.5%です。</p>
@@ -521,6 +538,7 @@
           <p>各学期のSGPAにその学期の合計単位数を掛けて合計し、全学期の総単位数で割ります。SGPAとCGPAは小数第2位まで四捨五入されます。</p>
         </details>
       </section>
+
       <section id="sources">
         <h2>出典</h2>
         <ul class="source-note">
@@ -531,28 +549,25 @@
         <p class="source-note">最終確認：2026年10月18日。大学の規程は変わることがあるので、必ずご自分の大学の最新の公式ルールで結果を確認してください。<a href="terms.html">利用規約</a>もご覧ください。</p>
       </section>
     </article>
+
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">その他のCGPA・GPA計算機</h2>
       <div class="uni-grid">
-        <a class="card uni-card" href="nust-cgpa-calculator.html">
-          <span class="uni-badge">NUST</span>
-          <span class="uni-name">NUST CGPA・GPA計算機</span>
-          <span class="muted small">相対評価 · A = 4.00、B+ = 3.50</span>
-        </a>
-        <a class="card uni-card" href="comsats-cgpa-calculator.html">
-          <span class="uni-badge">CUI</span>
-          <span class="uni-name">COMSATS CGPA・GPA計算機</span>
-          <span class="muted small">HEC基準（2021年秋以降）· 公式の%ルール</span>
-        </a>
         <a class="card uni-card" href="index.html">
           <span class="uni-badge">すべて</span>
           <span class="uni-name">一般用CGPA計算機</span>
           <span class="muted small">4.0・5.0・10点スケール</span>
         </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">18</span>
+          <span class="uni-name">All university calculators</span>
+          <span class="muted small">Pakistan, India, USA, UK, Malaysia, Australia and Germany</span>
+        </a>
       </div>
     </section>
     <p class="back-top"><a href="#calculator">↑ 計算機に戻る</a></p>
   </main>
+
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -570,6 +585,7 @@
     </div>
   </footer>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-vtu',
     defaultScale: '2022',

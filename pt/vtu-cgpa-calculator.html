@@ -24,10 +24,12 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/vtu-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/vtu-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/vtu-cgpa-calculator.html">
+
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="pt_BR">
@@ -151,6 +153,7 @@
   </script>
 </head>
 <body>
+
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -195,11 +198,13 @@
     </div>
   </header>
   <main class="container">
+
     <section class="hero">
       <nav class="breadcrumb" aria-label="Trilha de navegação"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">VTU</span></nav>
       <h1>Calculadora de CGPA e GPA (SGPA) da VTU</h1>
       <p>Calcule seu SGPA e CGPA da VTU e converta o CGPA em porcentagem com as regras oficiais dos regulamentos da VTU para os esquemas 2022 e 2021. <a href="#guide" class="hero-link">Como funciona a avaliação na VTU ↓</a></p>
     </section>
+
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <label id="scaleLabel" for="scaleSelect" class="scale-title">Seu esquema da VTU</label>
@@ -209,6 +214,7 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">Redefinir tudo</button>
     </section>
     <p class="print-only" id="printDate"></p>
+
     <div class="layout">
       <!-- ================= Calculators ================= -->
       <div class="main-col">
@@ -225,6 +231,7 @@
               <h2>GPA do semestre</h2>
               <p class="muted small">Adicione cada disciplina com seus créditos e sua nota.</p>
             </div>
+
             <div class="segmented" id="modeSwitch" role="radiogroup" aria-label="Como você quer inserir os resultados?">
               <input type="radio" name="gpaMode" id="modeGrade" value="grade" checked="">
               <label for="modeGrade">Nota</label>
@@ -360,6 +367,7 @@
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
+
             <div class="field">
               <span class="field-label always" id="convScaleLabel">Esquema</span>
               <div class="segmented full" role="radiogroup" aria-labelledby="convScaleLabel">
@@ -405,6 +413,7 @@
           </div>
           <p class="muted tiny">As faixas de pontuação variam entre universidades. Sempre confira as regras de avaliação da sua universidade.</p>
         </section>
+
         <section class="card tips">
           <h2 class="side-title">A VTU em resumo</h2>
           <ul>
@@ -415,11 +424,14 @@
         </section>
       </aside>
     </div>
+
     <article class="guide" id="guide">
+
       <section id="scheme">
         <h2>Em qual esquema da VTU você está?</h2>
         <p>A VTU atualiza seus regulamentos de tempos em tempos. O regulamento de 2022 vale para estudantes admitidos a partir do ano letivo 2022-23, enquanto o de 2021 entrou em vigor em 2021-22. Escolha seu esquema no topo da calculadora, porque as letras das notas e a fórmula de CGPA em porcentagem são diferentes.</p>
       </section>
+
       <section id="grade-points">
         <h2>Sistema de avaliação da VTU: esquema 2022</h2>
         <p>A VTU usa avaliação absoluta. Suas notas no CIE (avaliação interna contínua) e no SEE (exame de fim de semestre) são somadas e convertidas em porcentagem, e essa porcentagem define sua nota (cláusula 22OB 6.1).</p>
@@ -454,6 +466,7 @@
           </table>
         </div>
       </section>
+
       <section id="example">
         <h2>Como a VTU calcula o SGPA e o CGPA</h2>
         <p class="formula-block">SGPA = Σ (Ci × Gi) ÷ Σ Ci &nbsp;&nbsp; CGPA = Σ (Ci × Si) ÷ Σ Ci</p>
@@ -473,6 +486,7 @@
         </div>
         <p class="formula-block">SGPA = 123 ÷ 15 = 8.20</p>
       </section>
+
       <section id="percentage">
         <h2>CGPA da VTU em porcentagem</h2>
         <p><strong>Esquema 2022:</strong> Porcentagem = CGPA × 10, então um CGPA de 8.20 vira <strong>82%</strong> (cláusula 22OB 6.7). O regulamento diz que essa fórmula pode ser usada para emprego e estudos avançados.</p>
@@ -485,6 +499,7 @@
           <li><strong>Pass Class:</strong> de 40% a 50%, ou seja, CGPA de 4.00 a 4.99</li>
         </ul>
       </section>
+
       <section id="passing">
         <h2>Notas mínimas de aprovação na VTU (esquema 2022)</h2>
         <ul>
@@ -494,8 +509,10 @@
           <li>Para ser aprovado no programa inteiro, você precisa de P ou mais em todas as disciplinas matriculadas.</li>
         </ul>
       </section>
+
       <section id="faq" class="faq">
         <h2>Perguntas frequentes sobre a calculadora de CGPA da VTU</h2>
+
         <details>
           <summary><h3>Como converto o CGPA da VTU em porcentagem?</h3></summary>
           <p>No esquema 2022, multiplique seu CGPA por 10, então 8.20 vira 82%. No esquema 2021 e no antigo esquema CBCS de 2015, use (CGPA − 0.75) × 10, então 8.20 vira 74.5%.</p>
@@ -521,6 +538,7 @@
           <p>Multiplique o SGPA de cada semestre pelo total de créditos daquele semestre, some os resultados e divida pelo total de créditos de todos os semestres. O SGPA e o CGPA são arredondados para 2 casas decimais.</p>
         </details>
       </section>
+
       <section id="sources">
         <h2>Fontes</h2>
         <ul class="source-note">
@@ -531,28 +549,25 @@
         <p class="source-note">Última verificação: 18 de outubro de 2026. As regras das universidades podem mudar, então sempre confirme seus resultados com as regras oficiais mais recentes da sua universidade. Veja nossos <a href="terms.html">Termos de uso</a>.</p>
       </section>
     </article>
+
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">Mais calculadoras de CGPA e GPA</h2>
       <div class="uni-grid">
-        <a class="card uni-card" href="nust-cgpa-calculator.html">
-          <span class="uni-badge">NUST</span>
-          <span class="uni-name">Calculadora de CGPA e GPA da NUST</span>
-          <span class="muted small">Avaliação relativa · A = 4.00, B+ = 3.50</span>
-        </a>
-        <a class="card uni-card" href="comsats-cgpa-calculator.html">
-          <span class="uni-badge">CUI</span>
-          <span class="uni-name">Calculadora de CGPA e GPA da COMSATS</span>
-          <span class="muted small">Critérios da HEC (outono 2021+) · regra oficial de %</span>
-        </a>
         <a class="card uni-card" href="index.html">
           <span class="uni-badge">TODAS</span>
           <span class="uni-name">Calculadora de CGPA geral</span>
           <span class="muted small">Escalas de 4.0, 5.0 e 10 pontos</span>
         </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">18</span>
+          <span class="uni-name">All university calculators</span>
+          <span class="muted small">Pakistan, India, USA, UK, Malaysia, Australia and Germany</span>
+        </a>
       </div>
     </section>
     <p class="back-top"><a href="#calculator">↑ Voltar para a calculadora</a></p>
   </main>
+
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -570,6 +585,7 @@
     </div>
   </footer>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-vtu',
     defaultScale: '2022',

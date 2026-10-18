@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Built by tools/build-university-pages.js – edit that file, not this one -->
+  <title>UQ CGPA &amp; GPA Calculator – 7-Point Scale</title>
+  <meta name="description" content="University of Queensland CGPA and GPA calculator on the official UQ 7-point scale (7 = High Distinction), weighted by unit value.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f6fb">
+  <link rel="canonical" href="https://cgpa-calculator-umber-two.vercel.app/ja/uq-cgpa-calculator.html">
+  <link rel="alternate" hreflang="en" href="https://cgpa-calculator-umber-two.vercel.app/uq-cgpa-calculator.html">
+  <link rel="alternate" hreflang="es" href="https://cgpa-calculator-umber-two.vercel.app/es/uq-cgpa-calculator.html">
+  <link rel="alternate" hreflang="de" href="https://cgpa-calculator-umber-two.vercel.app/de/uq-cgpa-calculator.html">
+  <link rel="alternate" hreflang="hi" href="https://cgpa-calculator-umber-two.vercel.app/hi/uq-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ur" href="https://cgpa-calculator-umber-two.vercel.app/ur/uq-cgpa-calculator.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://cgpa-calculator-umber-two.vercel.app/zh/uq-cgpa-calculator.html">
+  <link rel="alternate" hreflang="fr" href="https://cgpa-calculator-umber-two.vercel.app/fr/uq-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ar" href="https://cgpa-calculator-umber-two.vercel.app/ar/uq-cgpa-calculator.html">
+  <link rel="alternate" hreflang="bn" href="https://cgpa-calculator-umber-two.vercel.app/bn/uq-cgpa-calculator.html">
+  <link rel="alternate" hreflang="pt" href="https://cgpa-calculator-umber-two.vercel.app/pt/uq-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ru" href="https://cgpa-calculator-umber-two.vercel.app/ru/uq-cgpa-calculator.html">
+  <link rel="alternate" hreflang="id" href="https://cgpa-calculator-umber-two.vercel.app/id/uq-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ja" href="https://cgpa-calculator-umber-two.vercel.app/ja/uq-cgpa-calculator.html">
+  <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/uq-cgpa-calculator.html">
+  <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/uq-cgpa-calculator.html">
+  <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/uq-cgpa-calculator.html">
+
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CGPA Calculator">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:url" content="https://cgpa-calculator-umber-two.vercel.app/ja/uq-cgpa-calculator.html">
+  <meta property="og:title" content="UQ CGPA &amp; GPA Calculator (7-Point Scale)">
+  <meta property="og:description" content="University of Queensland CGPA and GPA calculator on the official UQ 7-point scale (7 = High Distinction), weighted by unit value.">
+  <meta property="og:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <meta property="og:image:alt" content="CGPA計算機：CGPA 3.37（4.00満点）を表示する結果カード">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="UQ CGPA &amp; GPA Calculator (7-Point Scale)">
+  <meta name="twitter:description" content="University of Queensland CGPA and GPA calculator on the official UQ 7-point scale (7 = High Distinction), weighted by unit value.">
+  <meta name="twitter:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "@id": "https://cgpa-calculator-umber-two.vercel.app/ja/uq-cgpa-calculator.html#app",
+    "name": "UQ CGPA & GPA Calculator (7-Point Scale)",
+    "url": "https://cgpa-calculator-umber-two.vercel.app/ja/uq-cgpa-calculator.html",
+    "image": "https://cgpa-calculator-umber-two.vercel.app/og-image.jpg",
+    "description": "University of Queensland CGPA and GPA calculator on the official UQ 7-point scale (7 = High Distinction), weighted by unit value.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "ja",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is the UQ GPA out of 7?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. UQ uses a 7-point scale: 7 High Distinction, 6 Distinction, 5 Credit, 4 Pass, 3 Marginal Fail, 2 Fail and 1 Low Fail."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is the UQ GPA calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GPA = Σ (G × P) ÷ Σ P, where G is the grade of result in a course and P is its unit value. If you are enrolled but get no result, G is 0."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do pass/fail courses count in my UQ GPA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A course with a non-graded pass (P) is excluded. A non-graded fail (N) is counted as a grade of 2."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What percentage is a 7 at UQ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "UQ has no university-wide percentage cut-offs. Each course profile explains how grades are decided, so check the profile for your course."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good GPA at UQ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A 7 is a High Distinction and a 6 a Distinction, so a GPA of 6 or more means your average result is at Distinction level. Requirements for honours, scholarships or postgraduate study are set by each program."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What unit value should I enter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use the unit value shown for each course. Most UQ courses are 2 units."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "CGPA Calculator",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/ja/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "UQ CGPA & GPA Calculator (7-Point Scale)",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/ja/uq-cgpa-calculator.html"
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    /* Apply the saved (or system) theme before the page paints, so there is no flash */
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem('cgpa-theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="CGPA Calculator home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3z"></path>
+            <path d="M5 13.18v4C5 18.84 8.13 20 12 20s7-1.16 7-2.82v-4L12 17l-7-3.82z"></path>
+          </svg>
+        </span>
+        <span>CGPA Calculator</span>
+      </a>
+      <div class="header-actions">
+        <nav class="site-nav" id="siteNav" aria-label="Main menu">
+          <a href="index.html">Calculator</a>
+          <a href="about.html">About</a>
+          <a href="privacy-policy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <details class="lang-menu" id="langMenu">
+          <summary class="icon-btn lang-btn" aria-label="Choose language" title="Language">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"></path></svg>
+            <span class="lang-code" data-no-translate="">JA</span>
+          </summary>
+          <div class="lang-list" data-no-translate=""><a href="../uq-cgpa-calculator.html" hreflang="en" lang="en">English</a><a href="../es/uq-cgpa-calculator.html" hreflang="es" lang="es">Español</a><a href="../de/uq-cgpa-calculator.html" hreflang="de" lang="de">Deutsch</a><a href="../hi/uq-cgpa-calculator.html" hreflang="hi" lang="hi">हिन्दी</a><a href="../ur/uq-cgpa-calculator.html" hreflang="ur" lang="ur">اردو</a><a href="../zh/uq-cgpa-calculator.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="../fr/uq-cgpa-calculator.html" hreflang="fr" lang="fr">Français</a><a href="../ar/uq-cgpa-calculator.html" hreflang="ar" lang="ar">العربية</a><a href="../bn/uq-cgpa-calculator.html" hreflang="bn" lang="bn">বাংলা</a><a href="../pt/uq-cgpa-calculator.html" hreflang="pt" lang="pt">Português</a><a href="../ru/uq-cgpa-calculator.html" hreflang="ru" lang="ru">Русский</a><a href="../id/uq-cgpa-calculator.html" hreflang="id" lang="id">Bahasa Indonesia</a><a href="uq-cgpa-calculator.html" hreflang="ja" lang="ja" aria-current="true">日本語</a><a href="../mr/uq-cgpa-calculator.html" hreflang="mr" lang="mr">मराठी</a><a href="../te/uq-cgpa-calculator.html" hreflang="te" lang="te">తెలుగు</a></div>
+        </details>
+        <button type="button" id="themeToggle" class="icon-btn" aria-label="Switch to dark mode" title="Light / dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+        </button>
+        <button type="button" id="menuToggle" class="icon-btn menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
+          <svg class="icon-menu" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+
+    <section class="hero">
+      <nav class="breadcrumb" aria-label="パンくずリスト"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">UQ</span></nav>
+      <h1>UQ CGPA &amp; GPA Calculator (7-Point Scale)</h1>
+      <p>Work out your University of Queensland GPA on the official 7-point scale, weighted by each course’s unit value, exactly as the UQ Assessment Procedure defines it.
+        <a href="#guide" class="hero-link">How the UQ GPA works ↓</a></p>
+    </section>
+
+    <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
+      <div class="scale-text">
+        <p id="scaleLabel" class="scale-title">Grading system: UQ 7-point scale</p>
+        <p class="muted small">Choose the grade of result (1 to 7) for each course and enter its unit value. Non-graded passes (P) are left out of the GPA.</p>
+      </div>
+      <select id="scaleSelect" hidden="" aria-hidden="true" tabindex="-1"><option value="uq">UQ</option></select>
+      <button type="button" id="resetAll" class="btn btn-outline danger-hover">すべてリセット</button>
+    </section>
+    <p class="print-only" id="printDate"></p>
+
+    <div class="layout">
+      <!-- ================= Calculators ================= -->
+      <div class="main-col">
+        <div class="tabs" role="tablist" aria-label="計算機">
+          <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">GPA <small>1学期</small></button>
+          <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>全学期</small></button>
+          <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">目標 <small>計画を立てる</small></button>
+          <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">
+            Grade level <small>Checker</small>
+          </button>
+        </div>
+        <!-- ---------- TAB 1: GPA ---------- -->
+        <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
+          <div class="panel-head">
+            <div>
+              <h2>学期GPA</h2>
+              <p class="muted small">Add each course with its units and grade.</p>
+            </div>
+
+          </div>
+          <div class="rows-head subject-cols" aria-hidden="true">
+            <span>Course (optional)</span><span>Units</span><span id="gradeHead">評価</span><span></span>
+          </div>
+          <div id="subjectList" class="row-list mode-grade"></div>
+          <button type="button" id="addSubject" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            科目を追加
+          </button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">あなたの学期GPA</div>
+            <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="gpaMeter"></span></div>
+            <div class="result-cheer" id="gpaCheer"></div>
+            <div class="result-sub" id="gpaSub">科目を追加するとGPAが表示されます。</div>
+            <div class="result-note" id="gpaNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" id="sendToCgpa" class="btn btn-soft">このGPAをCGPAに追加 →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="gpa">結果をコピー</button>
+            <button type="button" class="btn btn-outline js-print" title="印刷画面で「PDFに保存」を選ぶとPDFをダウンロードできます">印刷 / PDF</button>
+            <button type="button" id="resetGpa" class="btn btn-quiet">クリア</button>
+          </div>
+          <details class="howto">
+            <summary>How is the UQ GPA calculated?</summary>
+            <p class="formula-line">GPA = Σ (G × P) ÷ Σ P</p>
+            <p class="muted small">G is the grade of result (1 to 7) and P the unit value of the course. Example: a 2-unit course with a 6 and a 2-unit course with a 5 → (2×6 + 2×5) ÷ 4 = <strong>5.50</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 2: CGPA ---------- -->
+        <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>累積CGPA</h2>
+              <p class="muted small">Add each semester's GPA and its total units.</p>
+            </div>
+          </div>
+          <div class="rows-head semester-cols" aria-hidden="true">
+            <span>学期</span><span>GPA</span><span>Units</span><span></span>
+          </div>
+          <div id="semesterList" class="row-list"></div>
+          <button type="button" id="addSemester" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            学期を追加
+          </button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">あなたのCGPA</div>
+            <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="cgpaMeter"></span></div>
+            <div class="result-cheer" id="cgpaCheer"></div>
+            <div class="result-sub" id="cgpaSub">学期を追加するとCGPAが表示されます。</div>
+            <div class="result-note" id="cgpaNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" id="sendToPct" class="btn btn-soft">Check my grade level →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">結果をコピー</button>
+            <button type="button" class="btn btn-outline js-print" title="印刷画面で「PDFに保存」を選ぶとPDFをダウンロードできます">印刷 / PDF</button>
+            <button type="button" id="resetCgpa" class="btn btn-quiet">クリア</button>
+          </div>
+          <details class="howto">
+            <summary>CGPAはどう計算されるの？</summary>
+            <p class="formula-line">CGPA =（Σ 学期GPA × 学期の単位数）÷（総単位数）</p>
+            <p class="muted small">単位数の多い学期ほど重みが大きくなります。例：18単位で3.50、15単位で3.00 → (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 3: Target CGPA ---------- -->
+        <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>目標CGPA</h2>
+              <p class="muted small">目標を達成するために、これからの学期でどれだけのGPAが必要かを確認できます。</p>
+            </div>
+          </div>
+          <div class="target-grid">
+            <div class="field">
+              <label class="field-label" for="tCurrent">現在のCGPA</label>
+              <input type="text" id="tCurrent" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tCurrentMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tDone">Units completed</label>
+              <input type="text" id="tDone" inputmode="decimal" autocomplete="off" placeholder="e.g. 66">
+              <p class="row-msg" id="tDoneMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tTarget">目標CGPA</label>
+              <input type="text" id="tTarget" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tTargetMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tLeft">Units remaining</label>
+              <input type="text" id="tLeft" inputmode="decimal" autocomplete="off" placeholder="e.g. 70">
+              <p class="row-msg" id="tLeftMsg"></p>
+            </div>
+          </div>
+          <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">CGPAタブから入力</button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">各学期に必要なGPA</div>
+            <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="tgtMeter"></span></div>
+            <div class="result-cheer" id="tgtCheer"></div>
+            <div class="result-sub" id="tgtSub">上の4つの欄を入力すると、必要なGPAが表示されます。</div>
+            <div class="result-note" id="tgtNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="target">結果をコピー</button>
+            <button type="button" class="btn btn-outline js-print" title="印刷画面で「PDFに保存」を選ぶとPDFをダウンロードできます">印刷 / PDF</button>
+            <button type="button" id="resetTarget" class="btn btn-quiet">クリア</button>
+          </div>
+          <details class="howto">
+            <summary>どう計算しているの？</summary>
+            <p class="formula-line">必要なGPA =（目標 × 総単位数 − 現在 × 修得済み単位）÷ 残りの単位</p>
+            <p class="muted small">例：60単位修得で現在3.00、目標3.30、残り60単位 → (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 4: Percentage ---------- -->
+        <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>GPA to grade level</h2>
+              <p class="muted small">Type your GPA to see which grade level it matches.</p>
+            </div>
+          </div>
+          <div class="conv-grid">
+            <div class="field">
+              <label class="field-label always" for="convInput">Your GPA</label>
+              <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
+              <p class="row-msg" id="convMsg"></p>
+            </div>
+
+          </div>
+          <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">Use my GPA from the CGPA tab</button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">Grade level</div>
+            <div class="result-value"><span id="pctValue">—</span></div>
+            <div class="meter" aria-hidden="true"><span id="pctMeter"></span></div>
+            <div class="result-cheer" id="pctCheer"></div>
+            <div class="result-sub" id="pctSub">CGPAを入力するとパーセントが表示されます。</div>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="pct">結果をコピー</button>
+            <button type="button" class="btn btn-outline js-print" title="印刷画面で「PDFに保存」を選ぶとPDFをダウンロードできます">印刷 / PDF</button>
+          </div>
+          <div class="formula">
+            <div class="formula-title">使用した計算式</div>
+            <p class="formula-line" id="formulaMain"></p>
+            <p class="formula-work" id="formulaWork"></p>
+            <p class="muted small" id="formulaNote"></p>
+          </div>
+        </section>
+      </div>
+      <!-- ================= Sidebar: grade table ================= -->
+      <aside class="sidebar">
+        <section class="card" aria-labelledby="tableTitle">
+          <h2 id="tableTitle" class="side-title">GP（グレードポイント）</h2>
+          <p class="muted small" id="tableSubtitle"></p>
+          <div class="table-wrap">
+            <table class="grade-table">
+              <thead>
+                <tr><th scope="col">評価</th><th scope="col" class="num">GP</th><th scope="col" class="num" id="marksCol">点数 %</th></tr>
+              </thead>
+              <tbody id="gradeTableBody"></tbody>
+            </table>
+          </div>
+          <p class="muted tiny">点数の範囲は大学によって異なります。必ずご自分の大学の評価規程を確認してください。</p>
+        </section>
+
+        <section class="card tips">
+          <h2 class="side-title">UQ quick facts</h2>
+          <ul>
+            <li>UQ grades run from <strong>1 to 7</strong>: 7 High Distinction, 6 Distinction, 5 Credit, <strong>4 Pass</strong>.</li>
+            <li>The GPA is weighted by each course’s <strong>unit value</strong> (most courses are 2 units).</li>
+            <li>A non-graded pass (P) is <strong>left out</strong>; a non-graded fail (N) <strong>counts as 2</strong>.</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <article class="guide" id="guide">
+
+      <section id="how-it-works">
+        <h2>How UQ calculates your GPA</h2>
+        <p>The University of Queensland defines the GPA in its Assessment Procedure as the average of your grades of result, weighted by the unit value of each course:</p>
+        <p class="formula-block">GPA = Σ (G × P) ÷ Σ P</p>
+        <p>G is the grade of result in a course and P is the unit value of that course. If you are enrolled in a course but get no result, G is 0. Most UQ courses are worth 2 units, so a 2-unit 7 adds 14 to the top of the fraction and 2 to the bottom.</p>
+      </section>
+
+      <section id="grade-points">
+        <h2>The UQ 7-point grading scale</h2>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col" class="num">評価</th><th scope="col">Name</th><th scope="col">意味</th></tr></thead>
+            <tbody>
+              <tr><td class="num">7</td><td>High Distinction</td><td>Exceptional achievement of the course learning outcomes</td></tr>
+              <tr><td class="num">6</td><td>Distinction</td><td>Advanced achievement</td></tr>
+              <tr><td class="num">5</td><td>Credit</td><td>Proficient achievement</td></tr>
+              <tr><td class="num">4</td><td>合格</td><td>Functional achievement</td></tr>
+              <tr><td class="num">3</td><td>Marginal Fail</td><td>Developing achievement</td></tr>
+              <tr><td class="num">2</td><td>不合格</td><td>Minimal evidence of achievement</td></tr>
+              <tr><td class="num">1</td><td>Low Fail</td><td>Absence of evidence of achievement</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>UQ doesn't set university-wide percentage cut-offs for these grades; each course profile explains how its grades are decided. A course with a non-graded pass (P) is excluded from the GPA, a non-graded fail (N) counts as a 2, and the grades G, M, K and X count as 0.</p>
+      </section>
+
+      <section id="example">
+        <h2>How to calculate your UQ GPA: worked example</h2>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">科目</th><th scope="col" class="num">Units</th><th scope="col" class="num">評価</th><th scope="col" class="num">Units × grade</th></tr></thead>
+            <tbody>
+              <tr><td>Calculus &amp; Linear Algebra</td><td class="num">2</td><td class="num">6</td><td class="num">12</td></tr>
+              <tr><td>Introduction to Software Engineering</td><td class="num">2</td><td class="num">7</td><td class="num">14</td></tr>
+              <tr><td>Introductory Statistics</td><td class="num">2</td><td class="num">5</td><td class="num">10</td></tr>
+              <tr><td>Communication course</td><td class="num">2</td><td class="num">4</td><td class="num">8</td></tr>
+            </tbody>
+            <tfoot><tr><th scope="row">合計</th><td class="num">8</td><td></td><td class="num">44</td></tr></tfoot>
+          </table>
+        </div>
+        <p class="formula-block">GPA = 44 ÷ 8 = 5.50</p>
+      </section>
+
+      <section id="percentage">
+        <h2>UQ GPA and percentages</h2>
+        <p>Because grades are decided course by course, there is no official way to turn a UQ GPA into a percentage. The converter tab tells you which grades of result your GPA sits between, for example 5.50 is between 5 (Credit) and 6 (Distinction). For applications that need a percentage, send your official transcript.</p>
+      </section>
+
+      <section id="faq" class="faq">
+        <h2>UQ CGPA calculator FAQs</h2>
+
+        <details>
+          <summary><h3>Is the UQ GPA out of 7?</h3></summary>
+          <p>Yes. UQ uses a 7-point scale: 7 High Distinction, 6 Distinction, 5 Credit, 4 Pass, 3 Marginal Fail, 2 Fail and 1 Low Fail.</p>
+        </details>
+        <details>
+          <summary><h3>How is the UQ GPA calculated?</h3></summary>
+          <p>GPA = Σ (G × P) ÷ Σ P, where G is the grade of result in a course and P is its unit value. If you are enrolled but get no result, G is 0.</p>
+        </details>
+        <details>
+          <summary><h3>Do pass/fail courses count in my UQ GPA?</h3></summary>
+          <p>A course with a non-graded pass (P) is excluded. A non-graded fail (N) is counted as a grade of 2.</p>
+        </details>
+        <details>
+          <summary><h3>What percentage is a 7 at UQ?</h3></summary>
+          <p>UQ has no university-wide percentage cut-offs. Each course profile explains how grades are decided, so check the profile for your course.</p>
+        </details>
+        <details>
+          <summary><h3>What is a good GPA at UQ?</h3></summary>
+          <p>A 7 is a High Distinction and a 6 a Distinction, so a GPA of 6 or more means your average result is at Distinction level. Requirements for honours, scholarships or postgraduate study are set by each program.</p>
+        </details>
+        <details>
+          <summary><h3>What unit value should I enter?</h3></summary>
+          <p>Use the unit value shown for each course. Most UQ courses are 2 units.</p>
+        </details>
+      </section>
+
+      <section id="sources">
+        <h2>出典</h2>
+        <ul class="source-note">
+          <li><a href="https://policies.uq.edu.au/document/view-current.php?id=184">The University of Queensland: Assessment Procedure (grading scale and Appendix 2, GPA)</a></li>
+          <li><a href="https://policies.uq.edu.au/document/view-current.php?id=187">The University of Queensland: Award of University Medals Procedure (GPA weighting)</a></li>
+        </ul>
+        <p class="source-note">最終確認：2026年10月18日。大学の規程は変わることがあるので、必ずご自分の大学の最新の公式ルールで結果を確認してください。<a href="terms.html">利用規約</a>もご覧ください。</p>
+      </section>
+    </article>
+
+    <section class="uni-section" aria-labelledby="uniTitle">
+      <h2 id="uniTitle">その他のCGPA・GPA計算機</h2>
+      <div class="uni-grid">
+        <a class="card uni-card" href="melbourne-cgpa-calculator.html">
+          <span class="uni-badge">Melbourne</span>
+          <span class="uni-name">University of Melbourne CGPA &amp; GPA (WAM) Calculator</span>
+          <span class="muted small">WAM · H1 = 80 and above</span>
+        </a>
+        <a class="card uni-card" href="monash-cgpa-calculator.html">
+          <span class="uni-badge">Monash</span>
+          <span class="uni-name">Monash CGPA &amp; GPA Calculator (4.0 Scale)</span>
+          <span class="muted small">4.0 scale · fails still give 0.3</span>
+        </a>
+        <a class="card uni-card" href="index.html">
+          <span class="uni-badge">すべて</span>
+          <span class="uni-name">一般用CGPA計算機</span>
+          <span class="muted small">4.0・5.0・10点スケール</span>
+        </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">18</span>
+          <span class="uni-name">All university calculators</span>
+          <span class="muted small">Pakistan, India, USA, UK, Malaysia, Australia and Germany</span>
+        </a>
+      </div>
+    </section>
+    <p class="back-top"><a href="#calculator">↑ 計算機に戻る</a></p>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p><strong>CGPA Calculator</strong> · 学生のために · © <span id="year">2026</span></p>
+        <p class="muted">結果はあくまで目安です。常に大学の公式ルールが優先されます。</p>
+      </div>
+      <nav class="footer-nav" aria-label="フッター">
+        <a href="index.html">計算機</a>
+        <a href="about.html">このサイトについて</a>
+        <a href="privacy-policy.html">プライバシーポリシー</a>
+        <a href="terms.html">利用規約</a>
+        <a href="contact.html">お問い合わせ</a>
+      </nav>
+    </div>
+  </footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>window.CGPA_PAGE = {
+    storageKey: 'cgpa-uq',
+    creditLabel: 'Units',
+    semCreditLabel: 'Units',
+    creditExample: 2,
+    semCreditExample: 8,
+    msgs: Object.assign({"Enter your CGPA to see the percentage.":"Enter your GPA to see which grade level it matches.","Fix the CGPA above to see the percentage.":"Fix the GPA above to see the result.","GPA / SGPA":"GPA","CGPA {cgpa} on the {scale}":"GPA {cgpa} on the {scale}","Total credit hours: {credits}":"Total credit points: {credits}","1 subject · {credits} credit hours · {points} grade points":"1 course · {credits} credit points · {points} grade points","{n} subjects · {credits} credit hours · {points} grade points":"{n} courses · {credits} credit points · {points} grade points","1 semester · {credits} total credit hours":"1 semester · {credits} total credit points","{n} semesters · {credits} total credit hours":"{n} semesters · {credits} total credit points","You need an average GPA of at least {needed} over your remaining {left} credit hours to reach a {target} CGPA.":"You need an average GPA of at least {needed} over your remaining {left} credit points to reach a {target} GPA.","To reach a {target} CGPA (now {current}), I need an average GPA of {needed} over my remaining {left} credit hours.":"To reach a {target} GPA (now {current}), I need an average GPA of {needed} over my remaining {left} credit points.","Please enter the credit hours for this subject.":"Please enter the credit points for this course.","Please enter the total credit hours for this semester.":"Please enter the total credit points for this semester.","That looks too high. Credit hours are usually between 1 and 6.":"That looks too high. Please check the credit points.","That looks too high. A semester usually has 12 to 24 credit hours.":"That looks too high. Please check the credit points."}, {
+      '1 subject · {credits} credit hours · {points} grade points': '1 course · {credits} units · {points} grade points',
+      '{n} subjects · {credits} credit hours · {points} grade points': '{n} courses · {credits} units · {points} grade points',
+      '1 semester · {credits} total credit hours': '1 semester · {credits} total units',
+      '{n} semesters · {credits} total credit hours': '{n} semesters · {credits} total units',
+      'Total credit hours: {credits}': 'Total units: {credits}',
+      'You need an average GPA of at least {needed} over your remaining {left} credit hours to reach a {target} CGPA.': 'You need an average GPA of at least {needed} over your remaining {left} units to reach a {target} GPA.',
+      'To reach a {target} CGPA (now {current}), I need an average GPA of {needed} over my remaining {left} credit hours.': 'To reach a {target} GPA (now {current}), I need an average GPA of {needed} over my remaining {left} units.',
+      'Please enter the credit points for this course.': 'Please enter the units for this course.'
+    }),
+    scales: {
+      uq: {
+        max: 7, min: 0, label: 'UQ 7-point scale', region: 'The University of Queensland', example: '5.50', modes: ['grade'], gradeDigits: 0,
+        subtitle: 'Grades of result from 1 to 7',
+        grades: [['7 High Distinction', 7], ['6 Distinction', 6], ['5 Credit', 5], ['4 Pass', 4], ['3 Marginal Fail', 3], ['2 Fail', 2], ['1 Low Fail', 1], ['N Non-graded fail', 2]]
+      }
+    },
+    conversions: {
+      uq: {
+        formula: 'GPA → nearest UQ grade level',
+        example: 5.6, max: 7, label: 'UQ 7-point scale',
+        note: 'UQ does not publish a GPA-to-percentage formula, and grade cut-offs are set for each course. This shows which grades of result your GPA sits between.',
+        result: function (c) {
+          var t = window.CGPA_T;
+          var names = ['', 'Low Fail', 'Fail', 'Marginal Fail', 'Pass', 'Credit', 'Distinction', 'High Distinction'];
+          var lo = Math.max(1, Math.min(7, Math.floor(c + 1e-9))), hi = Math.min(7, lo + 1);
+          var whole = Math.abs(c - Math.round(c)) < 1e-9 && c >= 1;
+          return { pct: c / 7 * 100, ratio: c / 7,
+            text: whole ? t(names[Math.round(c)]) : t('{a} to {b}', { a: lo, b: hi }),
+            work: whole ? t('GPA {gpa} = grade {g} ({name})', { gpa: c.toFixed(2), g: Math.round(c), name: t(names[Math.round(c)]) })
+              : t('GPA {gpa} is between grade {a} ({an}) and grade {b} ({bn})', { gpa: c.toFixed(2), a: lo, an: t(names[lo]), b: hi, bn: t(names[hi]) }) };
+        }
+      }
+    }
+  };</script>
+  <script src="../i18n/ja.js" data-i18n=""></script>
+  <script src="../site.js"></script>
+  <script src="../script.js"></script>
+</body></html>

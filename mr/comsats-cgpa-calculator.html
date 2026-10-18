@@ -24,10 +24,12 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/comsats-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/comsats-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/comsats-cgpa-calculator.html">
+
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="mr_IN">
@@ -151,6 +153,7 @@
   </script>
 </head>
 <body>
+
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -195,11 +198,13 @@
     </div>
   </header>
   <main class="container">
+
     <section class="hero">
       <nav class="breadcrumb" aria-label="ब्रेडक्रंब"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">CUI</span></nav>
       <h1>COMSATS CGPA आणि GPA कॅल्क्युलेटर</h1>
       <p>COMSATS University Islamabad Fall 2021 पासून प्रवेश घेतलेल्या विद्यार्थ्यांसाठी वापरत असलेल्या HEC ग्रेडिंग निकषांनी तुमचा GPA आणि CGPA काढा, आणि COMSATS च्या अधिकृत पद्धतीने CGPA टक्केवारीत बदला. <a href="#guide" class="hero-link">COMSATS मध्ये ग्रेडिंग कसे होते ↓</a></p>
     </section>
+
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <p id="scaleLabel" class="scale-title">ग्रेडिंग पद्धत: COMSATS (Fall 2021 पासून)</p>
@@ -209,6 +214,7 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">सर्व रीसेट करा</button>
     </section>
     <p class="print-only" id="printDate"></p>
+
     <div class="layout">
       <!-- ================= Calculators ================= -->
       <div class="main-col">
@@ -225,6 +231,7 @@
               <h2>सेमिस्टर GPA</h2>
               <p class="muted small">प्रत्येक विषय त्याच्या क्रेडिट आणि ग्रेडसह जोडा.</p>
             </div>
+
           </div>
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>विषय (ऐच्छिक)</span><span>क्रेडिट</span><span id="gradeHead">ग्रेड</span><span></span>
@@ -354,6 +361,7 @@
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
+
           </div>
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">CGPA टॅबमधील माझा CGPA वापरा</button>
           <div class="result" aria-live="polite">
@@ -390,6 +398,7 @@
           </div>
           <p class="muted tiny">गुणांच्या मर्यादा विद्यापीठानुसार वेगळ्या असतात. नेहमी तुमच्या विद्यापीठाचे ग्रेडिंग धोरण तपासा.</p>
         </section>
+
         <section class="card tips">
           <h2 class="side-title">CUI ची महत्त्वाची माहिती</h2>
           <ul>
@@ -400,12 +409,15 @@
         </section>
       </aside>
     </div>
+
     <article class="guide" id="guide">
+
       <section id="how-it-works">
         <h2>COMSATS ग्रेडिंग एका नजरेत</h2>
         <p>COMSATS University Islamabad (CUI) ने Fall 2021 पासून प्रवेश घेतलेल्या विद्यार्थ्यांसाठी सर्व पदवीपूर्व आणि पदव्युत्तर कार्यक्रमांमध्ये HEC ग्रेडिंग निकष स्वीकारले. CUI शैक्षणिक परिषदेने 8 ऑक्टोबर 2020 रोजीच्या 31 व्या बैठकीत याला मंजुरी दिली, आणि रजिस्ट्रारने 7 डिसेंबर 2020 च्या अधिसूचनेत याची घोषणा केली.</p>
         <p>या पद्धतीत प्रत्येक अक्षरी ग्रेड ग्रेड पॉइंटच्या एका <em>मर्यादेत</em> येतो. उदाहरणार्थ A- तुमच्या गुणांनुसार 3.34 ते 3.66 पर्यंत काहीही असू शकतो. म्हणूनच हा कॅल्क्युलेटर फक्त अक्षराऐवजी प्रत्येक कोर्सचे ग्रेड पॉइंट विचारतो.</p>
       </section>
+
       <section id="grade-points">
         <h2>COMSATS ग्रेडिंग तक्ता (Fall 2021 पासून)</h2>
         <div class="table-scroll">
@@ -428,6 +440,7 @@
         </div>
         <p>50% पेक्षा कमी काहीही म्हणजे 0.00 ग्रेड पॉइंटसह F.</p>
       </section>
+
       <section id="example">
         <h2>तुमचा COMSATS GPA कसा काढावा: सोडवलेले उदाहरण</h2>
         <div class="table-scroll">
@@ -445,6 +458,7 @@
         <p class="formula-block">GPA = 44.10 ÷ 13 = 3.392 ≈ 3.39</p>
         <p>एखाद्या कोर्सचा फक्त अक्षरी ग्रेड माहीत असेल, तर वरचा तक्ता त्याचे पॉइंट कोणत्या मर्यादेत असू शकतात ते दाखवतो. तुमचे नेमके पॉइंट त्याच मर्यादेत कुठेतरी असतील.</p>
       </section>
+
       <section id="percentage">
         <h2>COMSATS CGPA ते टक्केवारी: अधिकृत नियम</h2>
         <p>COMSATS (CGPA ÷ 4) × 100 वापरत नाही. त्यांच्या अधिसूचनेत म्हटले आहे: <q>A student getting any CGPA will be given the minimum of the corresponding percentage… For example, if a student gets a CGPA of 3.00, the percentage associated will be 71%.</q> ("कोणताही CGPA मिळवणाऱ्या विद्यार्थ्याला संबंधित टक्केवारीची किमान किंमत दिली जाईल… उदाहरणार्थ, विद्यार्थ्याचा CGPA 3.00 असेल तर संबंधित टक्केवारी 71% असेल.")</p>
@@ -468,12 +482,15 @@
         </div>
         <p>उदाहरणार्थ, 3.39 CGPA हा A- बँडमध्ये (3.34–3.66) येतो, म्हणून तो <strong>80%</strong> मोजला जातो. सोपे सूत्र 84.75% देईल, म्हणजे जवळजवळ 5 पॉइंट जास्त, आणि कंपनीने विद्यापीठाकडे तपासणी केल्यास ते अडचणीचे ठरू शकते.</p>
       </section>
+
       <section id="before-2021">
         <h2>Fall 2021 आधी प्रवेश घेतला होता?</h2>
         <p>ही अधिसूचना Fall 2021 पासून प्रवेश घेतलेल्या विद्यार्थ्यांना लागू आहे. तुम्ही COMSATS मध्ये आधी प्रवेश घेतला असेल, तर तुमची गुणपत्रिका COMSATS च्या जुन्या ग्रेडिंग पद्धतीनुसार असू शकते. GPA आणि CGPA ची गणना (क्रेडिट-भारित सरासरी) तीच आहे, पण ग्रेड बँड आणि टक्केवारीचा नियम वेगळा असू शकतो, म्हणून तुमची गुणपत्रिका तपासा किंवा तुमच्या कॅम्पसच्या परीक्षा कार्यालयात विचारा.</p>
       </section>
+
       <section id="faq" class="faq">
         <h2>CUI CGPA कॅल्क्युलेटर प्रश्नोत्तरे</h2>
+
         <details>
           <summary><h3>COMSATS प्रत्येक ग्रेडसाठी ग्रेड पॉइंटची मर्यादा का देते?</h3></summary>
           <p>Fall 2021 पासून COMSATS HEC ग्रेडिंग निकष पाळते, ज्यात प्रत्येक अक्षरी ग्रेड ग्रेड पॉइंटच्या एका मर्यादेत येतो. तुमचे नेमके पॉइंट तुमच्या गुणांवर अवलंबून असतात, त्यामुळे A- मिळालेल्या दोन विद्यार्थ्यांचे ग्रेड पॉइंट वेगळे असू शकतात.</p>
@@ -499,6 +516,7 @@
           <p>GPA आणि CGPA ची गणना सर्वांसाठी सारखीच आहे, त्यामुळे तुम्ही तरीही तुमचे ग्रेड पॉइंट भरू शकता. पण या पानावरील ग्रेड बँड आणि टक्केवारीचा नियम Fall 2021 आणि त्यानंतरच्या प्रवेशांना लागू होतात, म्हणून तुम्ही आधी प्रवेश घेतला असेल तर तुमची गुणपत्रिका तपासा.</p>
         </details>
       </section>
+
       <section id="sources">
         <h2>स्रोत</h2>
         <ul class="source-note">
@@ -507,6 +525,7 @@
         <p class="source-note">शेवटची तपासणी: 18 ऑक्टोबर 2026. विद्यापीठाचे नियम बदलू शकतात, म्हणून नेहमी तुमच्या विद्यापीठाच्या नवीनतम अधिकृत नियमांनुसार तुमचे निकाल निश्चित करा. आमच्या <a href="terms.html">वापराच्या अटी</a> पाहा.</p>
       </section>
     </article>
+
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">आणखी CGPA आणि GPA कॅल्क्युलेटर</h2>
       <div class="uni-grid">
@@ -515,20 +534,21 @@
           <span class="uni-name">NUST CGPA आणि GPA कॅल्क्युलेटर</span>
           <span class="muted small">सापेक्ष ग्रेडिंग · A = 4.00, B+ = 3.50</span>
         </a>
-        <a class="card uni-card" href="vtu-cgpa-calculator.html">
-          <span class="uni-badge">VTU</span>
-          <span class="uni-name">VTU CGPA आणि GPA (SGPA) कॅल्क्युलेटर</span>
-          <span class="muted small">2022 आणि 2021 स्कीम · CGPA ते %</span>
-        </a>
         <a class="card uni-card" href="index.html">
           <span class="uni-badge">सर्व</span>
           <span class="uni-name">सामान्य CGPA कॅल्क्युलेटर</span>
           <span class="muted small">4.0, 5.0 आणि 10-पॉइंट स्केल</span>
         </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">18</span>
+          <span class="uni-name">All university calculators</span>
+          <span class="muted small">Pakistan, India, USA, UK, Malaysia, Australia and Germany</span>
+        </a>
       </div>
     </section>
     <p class="back-top"><a href="#calculator">↑ कॅल्क्युलेटरवर परत जा</a></p>
   </main>
+
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -546,6 +566,7 @@
     </div>
   </footer>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-comsats',
     scales: {

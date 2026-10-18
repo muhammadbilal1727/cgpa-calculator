@@ -24,8 +24,10 @@ const os = require('os');
 const ROOT = path.join(__dirname, '..');
 const SITE = 'https://cgpa-calculator-umber-two.vercel.app';
 const CHROME = process.env.CHROME || 'C:/Program Files/Google/Chrome/Application/chrome.exe';
-const PAGES = ['index.html', 'nust-cgpa-calculator.html', 'comsats-cgpa-calculator.html', 'vtu-cgpa-calculator.html',
-  'about.html', 'privacy-policy.html', 'terms.html', 'contact.html'];
+// University pages are whatever tools/build-university-pages.js made (every *-calculator.html in the root)
+const UNI_PAGES = fs.readdirSync(ROOT).filter(f => /-calculator\.html$/.test(f)).sort();
+const PAGES = ['index.html', ...UNI_PAGES, 'about.html', 'privacy-policy.html', 'terms.html', 'contact.html'];
+const UNI_DATA = ['tools/build-university-pages.js', ...fs.readdirSync(path.join(ROOT, 'tools', 'universities')).map(f => 'tools/universities/' + f)];
 const NAV_PAGES = ['index.html', 'about.html', 'privacy-policy.html', 'terms.html', 'contact.html'];
 
 // code, folder, html lang, hreflang, native name, short label, og:locale, right-to-left
@@ -223,19 +225,23 @@ function finishPage(o) {
 /* ---------- Strings used by the calculator scripts ---------- */
 function scriptStrings() {
   const out = new Set();
-  const files = ['script.js', 'site.js', 'tools/build-university-pages.js'];
+  const files = ['script.js', 'site.js', ...UNI_DATA];
   const literal = /'((?:[^'\\\n]|\\.)*)'/g;
   for (const f of files) {
     const src = fs.readFileSync(path.join(ROOT, f), 'utf8');
-    if (f.endsWith('build-university-pages.js')) {
+    if (UNI_DATA.includes(f)) {
       // only the calculator config blocks of that file are used at run time
-      for (const m of src.matchAll(/config: `([\s\S]*?)`,\n/g)) for (const l of m[1].matchAll(literal)) out.add(l[1]);
+      // config: `…`, or config: helper('…', `…`),
+      for (const m of src.matchAll(/config: (?:\w+\([^`\n]*)?`([\s\S]*?)`\)?,\n/g)) for (const l of m[1].matchAll(literal)) out.add(l[1]);
+      // shared message sets (const UK_MSGS = { … };) and shared config parts marked /* i18n */ … /* /i18n */
+      for (const m of src.matchAll(/const \w*MSGS\w* = \{([\s\S]*?)\n\};/g)) for (const l of m[1].matchAll(literal)) out.add(l[1]);
+      for (const m of src.matchAll(/\/\* i18n \*\/([\s\S]*?)\/\* \/i18n \*\//g)) for (const l of m[1].matchAll(literal)) out.add(l[1]);
       continue;
     }
     for (const l of src.matchAll(literal)) out.add(l[1]);
   }
   return [...out].filter(s =>
-    /\p{L}/u.test(s) && /[ ]|^(Grade|Select|Remove|Grade points)$/.test(s) &&
+    /\p{L}/u.test(s) && /[ ]|^(Grade|Select|Remove|Grade points|Credits|Weight|Units|Pass|Fail|ECTS)$/.test(s) &&
     !/^[.#\[<]|=|\$\{|\(\)|^(input|label|select|keydown|click|change|focusout|beforeprint)\b|\bdata-|aria-|role=|\.html|https?:|localStorage|^Requires JavaScript$/.test(s) &&
     !/^use strict$|\{placeholders\}|^ |^row[ -]|^\\/.test(s));
 }

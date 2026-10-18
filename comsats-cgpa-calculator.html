@@ -24,10 +24,12 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/comsats-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/comsats-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/comsats-cgpa-calculator.html">
+
   <link rel="icon" href="favicon.ico" sizes="48x48">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="en_US">
@@ -151,6 +153,7 @@
   </script>
 </head>
 <body>
+
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -195,12 +198,14 @@
     </div>
   </header>
   <main class="container">
+
     <section class="hero">
       <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">CUI</span></nav>
       <h1>COMSATS CGPA &amp; GPA Calculator</h1>
       <p>Calculate your GPA and CGPA with the HEC grading criteria COMSATS University Islamabad uses for students admitted from Fall 2021, and convert CGPA to percentage the official COMSATS way.
         <a href="#guide" class="hero-link">How COMSATS grading works ↓</a></p>
     </section>
+
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <p id="scaleLabel" class="scale-title">Grading system: COMSATS (Fall 2021 onwards)</p>
@@ -210,6 +215,7 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">Reset all</button>
     </section>
     <p class="print-only" id="printDate"></p>
+
     <div class="layout">
       <!-- ================= Calculators ================= -->
       <div class="main-col">
@@ -234,6 +240,7 @@
               <h2>Semester GPA</h2>
               <p class="muted small">Add each subject with its credit hours and grade.</p>
             </div>
+
           </div>
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>Subject (optional)</span><span>Credits</span><span id="gradeHead">Grade</span><span></span>
@@ -366,6 +373,7 @@
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
+
           </div>
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">Use my CGPA from the CGPA tab</button>
           <div class="result" aria-live="polite">
@@ -402,6 +410,7 @@
           </div>
           <p class="muted tiny">Marks ranges differ between universities. Always check your own university's grading policy.</p>
         </section>
+
         <section class="card tips">
           <h2 class="side-title">CUI quick facts</h2>
           <ul>
@@ -412,12 +421,15 @@
         </section>
       </aside>
     </div>
+
     <article class="guide" id="guide">
+
       <section id="how-it-works">
         <h2>COMSATS grading at a glance</h2>
         <p>COMSATS University Islamabad (CUI) adopted the HEC grading criteria for all its undergraduate and graduate programmes, for students admitted from Fall 2021. The CUI Academic Council approved this at its 31st meeting on 8 October 2020, and the Registrar announced it in a notification dated 7 December 2020.</p>
         <p>Under this system each letter grade covers a <em>range</em> of grade points. An A-, for example, can be anywhere from 3.34 to 3.66, depending on your marks. That is why this calculator asks for the grade points shown for each course, instead of just the letter.</p>
       </section>
+
       <section id="grade-points">
         <h2>COMSATS grading table (Fall 2021 onwards)</h2>
         <div class="table-scroll">
@@ -440,6 +452,7 @@
         </div>
         <p>Anything below 50% is an F with 0.00 grade points.</p>
       </section>
+
       <section id="example">
         <h2>How to calculate your COMSATS GPA: worked example</h2>
         <div class="table-scroll">
@@ -457,6 +470,7 @@
         <p class="formula-block">GPA = 44.10 ÷ 13 = 3.392 ≈ 3.39</p>
         <p>If you only know the letter grade for a course, the table above shows the range of points it can have. Your exact points will be somewhere inside that range.</p>
       </section>
+
       <section id="percentage">
         <h2>COMSATS CGPA to percentage: the official rule</h2>
         <p>COMSATS does not use (CGPA ÷ 4) × 100. Its notification says: <q>A student getting any CGPA will be given the minimum of the corresponding percentage… For example, if a student gets a CGPA of 3.00, the percentage associated will be 71%.</q></p>
@@ -480,12 +494,15 @@
         </div>
         <p>For example, a CGPA of 3.39 is in the A- band (3.34–3.66), so it counts as <strong>80%</strong>. The simple formula would give 84.75%, almost 5 points higher, which could cause problems if an employer checks with the university.</p>
       </section>
+
       <section id="before-2021">
         <h2>Admitted before Fall 2021?</h2>
         <p>The notification covers students admitted from Fall 2021. If you joined COMSATS earlier, your transcript may follow the older COMSATS grading scheme. The GPA and CGPA maths (a credit-weighted average) is the same, but the grade bands and the percentage rule may be different, so check your transcript or ask your campus examination office.</p>
       </section>
+
       <section id="faq" class="faq">
         <h2>CUI CGPA calculator FAQs</h2>
+
         <details>
           <summary><h3>Why does COMSATS give a range of grade points for each grade?</h3></summary>
           <p>Since Fall 2021, COMSATS follows the HEC grading criteria, where each letter grade covers a range of grade points. Your exact points depend on your marks, so two students with an A- can have different grade points.</p>
@@ -511,6 +528,7 @@
           <p>The GPA and CGPA maths is the same for everyone, so you can still enter your grade points. But the grade bands and the percentage rule on this page apply to Fall 2021 admissions onward, so check your transcript if you joined earlier.</p>
         </details>
       </section>
+
       <section id="sources">
         <h2>Sources</h2>
         <ul class="source-note">
@@ -519,6 +537,7 @@
         <p class="source-note">Last checked: 18 October 2026. University rules can change, so always confirm your results with your own university's latest official rules. See our <a href="terms.html">Terms of Use</a>.</p>
       </section>
     </article>
+
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">More CGPA &amp; GPA calculators</h2>
       <div class="uni-grid">
@@ -527,20 +546,21 @@
           <span class="uni-name">NUST CGPA &amp; GPA Calculator</span>
           <span class="muted small">Relative grading · A = 4.00, B+ = 3.50</span>
         </a>
-        <a class="card uni-card" href="vtu-cgpa-calculator.html">
-          <span class="uni-badge">VTU</span>
-          <span class="uni-name">VTU CGPA &amp; GPA (SGPA) Calculator</span>
-          <span class="muted small">2022 &amp; 2021 schemes · CGPA to %</span>
-        </a>
         <a class="card uni-card" href="index.html">
           <span class="uni-badge">ALL</span>
           <span class="uni-name">General CGPA Calculator</span>
           <span class="muted small">4.0, 5.0 and 10-point scales</span>
         </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">18</span>
+          <span class="uni-name">All university calculators</span>
+          <span class="muted small">Pakistan, India, USA, UK, Malaysia, Australia and Germany</span>
+        </a>
       </div>
     </section>
     <p class="back-top"><a href="#calculator">↑ Back to the calculator</a></p>
   </main>
+
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -558,6 +578,7 @@
     </div>
   </footer>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-comsats',
     scales: {

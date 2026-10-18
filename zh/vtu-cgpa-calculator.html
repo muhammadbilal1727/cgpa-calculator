@@ -24,10 +24,12 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/vtu-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/vtu-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/vtu-cgpa-calculator.html">
+
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="zh_CN">
@@ -151,6 +153,7 @@
   </script>
 </head>
 <body>
+
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -195,11 +198,13 @@
     </div>
   </header>
   <main class="container">
+
     <section class="hero">
       <nav class="breadcrumb" aria-label="面包屑导航"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">VTU</span></nav>
       <h1>VTU CGPA 与 GPA（SGPA）计算器</h1>
       <p>按照 VTU 2022 与 2021 方案规章中的官方规则，计算 VTU 的 SGPA 和 CGPA，并把 CGPA 换算成百分比。<a href="#guide" class="hero-link">VTU 如何评分 ↓</a></p>
     </section>
+
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <label id="scaleLabel" for="scaleSelect" class="scale-title">你的 VTU 方案</label>
@@ -209,6 +214,7 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">全部重置</button>
     </section>
     <p class="print-only" id="printDate"></p>
+
     <div class="layout">
       <!-- ================= Calculators ================= -->
       <div class="main-col">
@@ -225,6 +231,7 @@
               <h2>学期 GPA</h2>
               <p class="muted small">逐门添加课程的学分和成绩。</p>
             </div>
+
             <div class="segmented" id="modeSwitch" role="radiogroup" aria-label="你想如何输入成绩？">
               <input type="radio" name="gpaMode" id="modeGrade" value="grade" checked="">
               <label for="modeGrade">等级</label>
@@ -360,6 +367,7 @@
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
+
             <div class="field">
               <span class="field-label always" id="convScaleLabel">方案</span>
               <div class="segmented full" role="radiogroup" aria-labelledby="convScaleLabel">
@@ -405,6 +413,7 @@
           </div>
           <p class="muted tiny">各大学的分数区间不同，请务必查看你所在大学的评分规定。</p>
         </section>
+
         <section class="card tips">
           <h2 class="side-title">VTU 要点</h2>
           <ul>
@@ -415,11 +424,14 @@
         </section>
       </aside>
     </div>
+
     <article class="guide" id="guide">
+
       <section id="scheme">
         <h2>你属于哪个 VTU 方案？</h2>
         <p>VTU 会不时更新规章。2022 年规章适用于 2022-23 学年起入学的学生，2021 年规章自 2021-22 学年起生效。请在计算器顶部选择你的方案，因为等级字母和 CGPA 转百分比公式不同。</p>
       </section>
+
       <section id="grade-points">
         <h2>VTU 评分制度：2022 方案</h2>
         <p>VTU 采用绝对评分。你的 CIE（持续内部评估）和 SEE（学期末考试）分数相加后换算成百分比，由该百分比决定等级（条款 22OB 6.1）。</p>
@@ -454,6 +466,7 @@
           </table>
         </div>
       </section>
+
       <section id="example">
         <h2>VTU 如何计算 SGPA 和 CGPA</h2>
         <p class="formula-block">SGPA = Σ (Ci × Gi) ÷ Σ Ci &nbsp;&nbsp; CGPA = Σ (Ci × Si) ÷ Σ Ci</p>
@@ -473,6 +486,7 @@
         </div>
         <p class="formula-block">SGPA = 123 ÷ 15 = 8.20</p>
       </section>
+
       <section id="percentage">
         <h2>VTU CGPA 转百分比</h2>
         <p><strong>2022 方案：</strong>百分比 = CGPA × 10，所以 CGPA 8.20 换算为 <strong>82%</strong>（条款 22OB 6.7）。规章说明该公式可用于就业和深造。</p>
@@ -485,6 +499,7 @@
           <li><strong>Pass Class：</strong>40% 至 50%，即 CGPA 4.00 至 4.99</li>
         </ul>
       </section>
+
       <section id="passing">
         <h2>VTU 及格要求（2022 方案）</h2>
         <ul>
@@ -494,8 +509,10 @@
           <li>要通过整个项目，每门注册课程都需要 P 或以上等级。</li>
         </ul>
       </section>
+
       <section id="faq" class="faq">
         <h2>VTU CGPA 计算器常见问题</h2>
+
         <details>
           <summary><h3>如何把 VTU CGPA 换算成百分比？</h3></summary>
           <p>2022 方案：CGPA 乘以 10，所以 8.20 换算为 82%。2021 方案和旧的 2015 CBCS 方案：使用 (CGPA − 0.75) × 10，所以 8.20 换算为 74.5%。</p>
@@ -521,6 +538,7 @@
           <p>把每个学期的 SGPA 乘以该学期的总学分，结果相加后除以所有学期的总学分。SGPA 和 CGPA 保留 2 位小数。</p>
         </details>
       </section>
+
       <section id="sources">
         <h2>资料来源</h2>
         <ul class="source-note">
@@ -531,28 +549,25 @@
         <p class="source-note">最后核对：2026 年 10 月 18 日。大学规定可能会变化，请务必以你所在大学最新的官方规定核实结果。请参阅我们的<a href="terms.html">使用条款</a>。</p>
       </section>
     </article>
+
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">更多 CGPA 与 GPA 计算器</h2>
       <div class="uni-grid">
-        <a class="card uni-card" href="nust-cgpa-calculator.html">
-          <span class="uni-badge">NUST</span>
-          <span class="uni-name">NUST CGPA 与 GPA 计算器</span>
-          <span class="muted small">相对评分 · A = 4.00，B+ = 3.50</span>
-        </a>
-        <a class="card uni-card" href="comsats-cgpa-calculator.html">
-          <span class="uni-badge">CUI</span>
-          <span class="uni-name">COMSATS CGPA 与 GPA 计算器</span>
-          <span class="muted small">HEC 标准（2021 秋季起）· 官方 % 规则</span>
-        </a>
         <a class="card uni-card" href="index.html">
           <span class="uni-badge">全部</span>
           <span class="uni-name">通用 CGPA 计算器</span>
           <span class="muted small">4.0、5.0 和 10 分制</span>
         </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">18</span>
+          <span class="uni-name">All university calculators</span>
+          <span class="muted small">Pakistan, India, USA, UK, Malaysia, Australia and Germany</span>
+        </a>
       </div>
     </section>
     <p class="back-top"><a href="#calculator">↑ 返回计算器</a></p>
   </main>
+
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -570,6 +585,7 @@
     </div>
   </footer>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-vtu',
     defaultScale: '2022',

@@ -24,10 +24,12 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/nust-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/nust-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/nust-cgpa-calculator.html">
+
   <link rel="icon" href="favicon.ico" sizes="48x48">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="en_US">
@@ -159,6 +161,7 @@
   </script>
 </head>
 <body>
+
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -203,12 +206,14 @@
     </div>
   </header>
   <main class="container">
+
     <section class="hero">
       <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">NUST</span></nav>
       <h1>NUST CGPA &amp; GPA Calculator</h1>
       <p>Work out your semester GPA and overall CGPA with the official NUST undergraduate grade points (A = 4.00, B+ = 3.50, B = 3.00 and so on).
         <a href="#guide" class="hero-link">How NUST grading works ↓</a></p>
     </section>
+
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <p id="scaleLabel" class="scale-title">Grading system: NUST undergraduate</p>
@@ -218,6 +223,7 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">Reset all</button>
     </section>
     <p class="print-only" id="printDate"></p>
+
     <div class="layout">
       <!-- ================= Calculators ================= -->
       <div class="main-col">
@@ -242,6 +248,7 @@
               <h2>Semester GPA</h2>
               <p class="muted small">Add each subject with its credit hours and grade.</p>
             </div>
+
           </div>
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>Subject (optional)</span><span>Credits</span><span id="gradeHead">Grade</span><span></span>
@@ -374,6 +381,7 @@
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
+
           </div>
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">Use my CGPA from the CGPA tab</button>
           <div class="result" aria-live="polite">
@@ -410,6 +418,7 @@
           </div>
           <p class="muted tiny">Marks ranges differ between universities. Always check your own university's grading policy.</p>
         </section>
+
         <section class="card tips">
           <h2 class="side-title">NUST quick facts</h2>
           <ul>
@@ -420,7 +429,9 @@
         </section>
       </aside>
     </div>
+
     <article class="guide" id="guide">
+
       <section id="how-it-works">
         <h2>How grading works at NUST</h2>
         <p>NUST uses relative grading on a 4.00 scale. In the words of the NUST Undergraduate Student Handbook, <q>The University follows a relative grading system on a scale of 1.00 to 4.00 points.</q> Your letter grade depends on how you performed compared with your class, not on a fixed percentage. An 82% could be an A in a tough paper and a B+ in an easier one.</p>
@@ -428,6 +439,7 @@
         <h3>Courses with theory and lab</h3>
         <p>For a course with both theory and lab credits, NUST first combines the two percentages, weighted by credits, and then grades the course as a whole. The handbook's own example is Physics with 3 theory credits at 70% and 1 lab credit at 90%, which gives (70 × 3 + 90 × 1) ÷ 4 = 75%. You get one grade for all 4 credits, so enter it in the calculator as one 4-credit subject.</p>
       </section>
+
       <section id="grade-points">
         <h2>NUST grade points table</h2>
         <div class="table-scroll">
@@ -448,6 +460,7 @@
         </div>
         <p>I (incomplete), W (dropped), Q (qualified) and T (transfer) carry no grade points. Notice that NUST has no A+ and no minus grades: B+ and C+ sit half a point above B and C.</p>
       </section>
+
       <section id="example">
         <h2>How to calculate your NUST GPA: worked example</h2>
         <div class="table-scroll">
@@ -466,6 +479,7 @@
         <p class="formula-block">GPA = 54.00 ÷ 16 = 3.375 ≈ 3.38</p>
         <p>Your CGPA works the same way across all semesters: add up the credits × points for every course you have taken and divide by your total credit hours. The CGPA tab does this from your semester GPAs.</p>
       </section>
+
       <section id="minimum-cgpa">
         <h2>Minimum CGPA and academic deficiency at NUST</h2>
         <ul>
@@ -475,17 +489,21 @@
         </ul>
         <p>If your CGPA has dropped below 2.00, the Target tab shows the GPA you need in your remaining semesters to get back above it.</p>
       </section>
+
       <section id="repeat">
         <h2>Repeating a course to improve your CGPA</h2>
         <p>When you repeat a course, your transcript shows both the old and the new grade, but only the better grade is used to compute your CGPA. Repeating needs permission from your HoD, and grades earned by repeating don't count towards top academic honours and awards, except the Rector's Gold Medal. If you fail a course again after repeating it, it still counts as one F.</p>
         <p><strong>Calculator tip:</strong> for a repeated course, enter only the better grade.</p>
       </section>
+
       <section id="percentage">
         <h2>NUST CGPA to percentage</h2>
         <p>The NUST Undergraduate Student Handbook does not include an official formula for converting CGPA into a percentage. When a percentage is needed, many people use (CGPA ÷ 4) × 100, so 3.40 becomes 85%. Employers and universities sometimes use their own rules, so check what the organisation you're applying to accepts. The Percentage tab uses this simple method.</p>
       </section>
+
       <section id="faq" class="faq">
         <h2>NUST CGPA calculator FAQs</h2>
+
         <details>
           <summary><h3>Does NUST use relative or absolute grading?</h3></summary>
           <p>NUST uses relative grading on a 4.00 scale, so your grade depends on your performance compared with your class rather than on a fixed percentage. That is why there is no fixed marks-to-grade table for NUST.</p>
@@ -515,6 +533,7 @@
           <p>Enter it as one subject with its total credit hours, for example 4 for a 3+1 course. NUST combines the theory and lab marks into one grade for the whole course.</p>
         </details>
       </section>
+
       <section id="sources">
         <h2>Sources</h2>
         <ul class="source-note">
@@ -523,6 +542,7 @@
         <p class="source-note">Last checked: 18 October 2026. University rules can change, so always confirm your results with your own university's latest official rules. See our <a href="terms.html">Terms of Use</a>.</p>
       </section>
     </article>
+
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">More CGPA &amp; GPA calculators</h2>
       <div class="uni-grid">
@@ -531,20 +551,21 @@
           <span class="uni-name">COMSATS CGPA &amp; GPA Calculator</span>
           <span class="muted small">HEC criteria (Fall 2021+) · official % rule</span>
         </a>
-        <a class="card uni-card" href="vtu-cgpa-calculator.html">
-          <span class="uni-badge">VTU</span>
-          <span class="uni-name">VTU CGPA &amp; GPA (SGPA) Calculator</span>
-          <span class="muted small">2022 &amp; 2021 schemes · CGPA to %</span>
-        </a>
         <a class="card uni-card" href="index.html">
           <span class="uni-badge">ALL</span>
           <span class="uni-name">General CGPA Calculator</span>
           <span class="muted small">4.0, 5.0 and 10-point scales</span>
         </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">18</span>
+          <span class="uni-name">All university calculators</span>
+          <span class="muted small">Pakistan, India, USA, UK, Malaysia, Australia and Germany</span>
+        </a>
       </div>
     </section>
     <p class="back-top"><a href="#calculator">↑ Back to the calculator</a></p>
   </main>
+
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -562,6 +583,7 @@
     </div>
   </footer>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-nust',
     scales: {

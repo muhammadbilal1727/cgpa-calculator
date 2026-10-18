@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Built by tools/build-university-pages.js – edit that file, not this one -->
+  <title>Harvard CGPA &amp; GPA Calculator – FAS 4.0 Scale</title>
+  <meta name="description" content="Free Harvard CGPA and GPA calculator using the official Harvard FAS grade points (A = 4.00, A- = 3.67, B+ = 3.33). Plan your target GPA too.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f6fb">
+  <link rel="canonical" href="https://cgpa-calculator-umber-two.vercel.app/fr/harvard-cgpa-calculator.html">
+  <link rel="alternate" hreflang="en" href="https://cgpa-calculator-umber-two.vercel.app/harvard-cgpa-calculator.html">
+  <link rel="alternate" hreflang="es" href="https://cgpa-calculator-umber-two.vercel.app/es/harvard-cgpa-calculator.html">
+  <link rel="alternate" hreflang="de" href="https://cgpa-calculator-umber-two.vercel.app/de/harvard-cgpa-calculator.html">
+  <link rel="alternate" hreflang="hi" href="https://cgpa-calculator-umber-two.vercel.app/hi/harvard-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ur" href="https://cgpa-calculator-umber-two.vercel.app/ur/harvard-cgpa-calculator.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://cgpa-calculator-umber-two.vercel.app/zh/harvard-cgpa-calculator.html">
+  <link rel="alternate" hreflang="fr" href="https://cgpa-calculator-umber-two.vercel.app/fr/harvard-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ar" href="https://cgpa-calculator-umber-two.vercel.app/ar/harvard-cgpa-calculator.html">
+  <link rel="alternate" hreflang="bn" href="https://cgpa-calculator-umber-two.vercel.app/bn/harvard-cgpa-calculator.html">
+  <link rel="alternate" hreflang="pt" href="https://cgpa-calculator-umber-two.vercel.app/pt/harvard-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ru" href="https://cgpa-calculator-umber-two.vercel.app/ru/harvard-cgpa-calculator.html">
+  <link rel="alternate" hreflang="id" href="https://cgpa-calculator-umber-two.vercel.app/id/harvard-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ja" href="https://cgpa-calculator-umber-two.vercel.app/ja/harvard-cgpa-calculator.html">
+  <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/harvard-cgpa-calculator.html">
+  <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/harvard-cgpa-calculator.html">
+  <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/harvard-cgpa-calculator.html">
+
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CGPA Calculator">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://cgpa-calculator-umber-two.vercel.app/fr/harvard-cgpa-calculator.html">
+  <meta property="og:title" content="Harvard CGPA &amp; GPA Calculator">
+  <meta property="og:description" content="Free Harvard CGPA and GPA calculator using the official Harvard FAS grade points (A = 4.00, A- = 3.67, B+ = 3.33). Plan your target GPA too.">
+  <meta property="og:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <meta property="og:image:alt" content="Calculateur de CGPA : une carte de résultat affichant un CGPA de 3.37 sur 4.00">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Harvard CGPA &amp; GPA Calculator">
+  <meta name="twitter:description" content="Free Harvard CGPA and GPA calculator using the official Harvard FAS grade points (A = 4.00, A- = 3.67, B+ = 3.33). Plan your target GPA too.">
+  <meta name="twitter:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "@id": "https://cgpa-calculator-umber-two.vercel.app/fr/harvard-cgpa-calculator.html#app",
+    "name": "Harvard CGPA & GPA Calculator",
+    "url": "https://cgpa-calculator-umber-two.vercel.app/fr/harvard-cgpa-calculator.html",
+    "image": "https://cgpa-calculator-umber-two.vercel.app/og-image.jpg",
+    "description": "Free Harvard CGPA and GPA calculator using the official Harvard FAS grade points (A = 4.00, A- = 3.67, B+ = 3.33). Plan your target GPA too.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "fr",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is an A- worth at Harvard?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An A- is worth 3.67 grade points. An A is 4.00, a B+ is 3.33, a B is 3.00 and a B- is 2.67."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Harvard give A+ grades?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. In the Harvard FAS grade point average, A (4.00) is the highest grade. The failing grade is E, which is worth 0."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do pass/fail (SAT/UNS) courses count in my Harvard GPA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Satisfactory (SAT) courses do not add any points. An Unsatisfactory (UNS) counts as 0, like an E, so it lowers your GPA."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do cross-registered courses at MIT count in my Harvard GPA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Grades from other Harvard Faculties or from MIT are not used in your FAS grade point average, unless the grade is a failing grade."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I convert my Harvard GPA to a percentage?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Harvard does not publish a formula. If a form needs one, the usual estimate is (GPA ÷ 4) × 100, so 3.50 is about 87.5%. Mark it as an estimate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What credits should I enter for each Harvard course?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most Harvard College courses are 4 credits. When every course has the same credits, the GPA is simply the average of your grade points, so you can enter 4 for each course."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "CGPA Calculator",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/fr/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Harvard CGPA & GPA Calculator",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/fr/harvard-cgpa-calculator.html"
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    /* Apply the saved (or system) theme before the page paints, so there is no flash */
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem('cgpa-theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="CGPA Calculator home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3z"></path>
+            <path d="M5 13.18v4C5 18.84 8.13 20 12 20s7-1.16 7-2.82v-4L12 17l-7-3.82z"></path>
+          </svg>
+        </span>
+        <span>CGPA Calculator</span>
+      </a>
+      <div class="header-actions">
+        <nav class="site-nav" id="siteNav" aria-label="Main menu">
+          <a href="index.html">Calculator</a>
+          <a href="about.html">About</a>
+          <a href="privacy-policy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <details class="lang-menu" id="langMenu">
+          <summary class="icon-btn lang-btn" aria-label="Choose language" title="Language">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"></path></svg>
+            <span class="lang-code" data-no-translate="">FR</span>
+          </summary>
+          <div class="lang-list" data-no-translate=""><a href="../harvard-cgpa-calculator.html" hreflang="en" lang="en">English</a><a href="../es/harvard-cgpa-calculator.html" hreflang="es" lang="es">Español</a><a href="../de/harvard-cgpa-calculator.html" hreflang="de" lang="de">Deutsch</a><a href="../hi/harvard-cgpa-calculator.html" hreflang="hi" lang="hi">हिन्दी</a><a href="../ur/harvard-cgpa-calculator.html" hreflang="ur" lang="ur">اردو</a><a href="../zh/harvard-cgpa-calculator.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="harvard-cgpa-calculator.html" hreflang="fr" lang="fr" aria-current="true">Français</a><a href="../ar/harvard-cgpa-calculator.html" hreflang="ar" lang="ar">العربية</a><a href="../bn/harvard-cgpa-calculator.html" hreflang="bn" lang="bn">বাংলা</a><a href="../pt/harvard-cgpa-calculator.html" hreflang="pt" lang="pt">Português</a><a href="../ru/harvard-cgpa-calculator.html" hreflang="ru" lang="ru">Русский</a><a href="../id/harvard-cgpa-calculator.html" hreflang="id" lang="id">Bahasa Indonesia</a><a href="../ja/harvard-cgpa-calculator.html" hreflang="ja" lang="ja">日本語</a><a href="../mr/harvard-cgpa-calculator.html" hreflang="mr" lang="mr">मराठी</a><a href="../te/harvard-cgpa-calculator.html" hreflang="te" lang="te">తెలుగు</a></div>
+        </details>
+        <button type="button" id="themeToggle" class="icon-btn" aria-label="Switch to dark mode" title="Light / dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+        </button>
+        <button type="button" id="menuToggle" class="icon-btn menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
+          <svg class="icon-menu" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+
+    <section class="hero">
+      <nav class="breadcrumb" aria-label="Fil d’Ariane"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">Harvard</span></nav>
+      <h1>Harvard CGPA &amp; GPA Calculator</h1>
+      <p>Work out your Harvard College GPA with the grade points the Faculty of Arts and Sciences (FAS) uses: A = 4.00, A- = 3.67, B+ = 3.33 and so on down to E = 0.
+        <a href="#guide" class="hero-link">How Harvard GPA works ↓</a></p>
+    </section>
+
+    <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
+      <div class="scale-text">
+        <p id="scaleLabel" class="scale-title">Grading system: Harvard FAS (Harvard College)</p>
+        <p class="muted small">Choose the letter grade on your record for each course. Grade points come from the Harvard FAS grade point average rules.</p>
+      </div>
+      <select id="scaleSelect" hidden="" aria-hidden="true" tabindex="-1"><option value="harvard">Harvard</option></select>
+      <button type="button" id="resetAll" class="btn btn-outline danger-hover">Tout réinitialiser</button>
+    </section>
+    <p class="print-only" id="printDate"></p>
+
+    <div class="layout">
+      <!-- ================= Calculators ================= -->
+      <div class="main-col">
+        <div class="tabs" role="tablist" aria-label="Calculateurs">
+          <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">GPA <small>Un semestre</small></button>
+          <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>Tous les semestres</small></button>
+          <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">Objectif <small>Anticiper</small></button>
+          <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">Pourcentage <small>Convertisseur</small></button>
+        </div>
+        <!-- ---------- TAB 1: GPA ---------- -->
+        <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
+          <div class="panel-head">
+            <div>
+              <h2>GPA du semestre</h2>
+              <p class="muted small">Ajoutez chaque matière avec ses crédits et sa note.</p>
+            </div>
+
+          </div>
+          <div class="rows-head subject-cols" aria-hidden="true">
+            <span>Matière (facultatif)</span><span>Crédits</span><span id="gradeHead">Note</span><span></span>
+          </div>
+          <div id="subjectList" class="row-list mode-grade"></div>
+          <button type="button" id="addSubject" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            Ajouter une matière
+          </button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">Votre GPA du semestre</div>
+            <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="gpaMeter"></span></div>
+            <div class="result-cheer" id="gpaCheer"></div>
+            <div class="result-sub" id="gpaSub">Ajoutez vos matières pour voir votre GPA.</div>
+            <div class="result-note" id="gpaNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" id="sendToCgpa" class="btn btn-soft">Ajouter ce GPA à mon CGPA →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="gpa">Copier le résultat</button>
+            <button type="button" class="btn btn-outline js-print" title="Dans la fenêtre d’impression, choisissez « Enregistrer au format PDF » pour télécharger un PDF">Imprimer / PDF</button>
+            <button type="button" id="resetGpa" class="btn btn-quiet">Effacer</button>
+          </div>
+          <details class="howto">
+            <summary>Comment le GPA est-il calculé ?</summary>
+            <p class="formula-line">GPA = (Σ crédits × points de note) ÷ (Σ crédits)</p>
+            <p class="muted small">Exemple : Maths 3 crédits avec 4.00 points, et Anglais 2 crédits avec 3.00 → (3×4 + 2×3) ÷ (3+2) = 18 ÷ 5 = <strong>3.60</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 2: CGPA ---------- -->
+        <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>CGPA global</h2>
+              <p class="muted small">Ajoutez le GPA de chaque semestre (SGPA) et son total de crédits.</p>
+            </div>
+          </div>
+          <div class="rows-head semester-cols" aria-hidden="true">
+            <span>Semestre</span><span>GPA / SGPA</span><span>Crédits</span><span></span>
+          </div>
+          <div id="semesterList" class="row-list"></div>
+          <button type="button" id="addSemester" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            Ajouter un semestre
+          </button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">Votre CGPA</div>
+            <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="cgpaMeter"></span></div>
+            <div class="result-cheer" id="cgpaCheer"></div>
+            <div class="result-sub" id="cgpaSub">Ajoutez vos semestres pour voir votre CGPA.</div>
+            <div class="result-note" id="cgpaNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" id="sendToPct" class="btn btn-soft">Convertir ce CGPA en % →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">Copier le résultat</button>
+            <button type="button" class="btn btn-outline js-print" title="Dans la fenêtre d’impression, choisissez « Enregistrer au format PDF » pour télécharger un PDF">Imprimer / PDF</button>
+            <button type="button" id="resetCgpa" class="btn btn-quiet">Effacer</button>
+          </div>
+          <details class="howto">
+            <summary>Comment le CGPA est-il calculé ?</summary>
+            <p class="formula-line">CGPA = (Σ GPA du semestre × crédits du semestre) ÷ (total des crédits)</p>
+            <p class="muted small">Les semestres avec plus de crédits comptent davantage. Exemple : 3.50 avec 18 crédits et 3.00 avec 15 crédits → (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 3: Target CGPA ---------- -->
+        <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>CGPA cible</h2>
+              <p class="muted small">Découvrez quel GPA il vous faut lors des prochains semestres pour atteindre votre objectif.</p>
+            </div>
+          </div>
+          <div class="target-grid">
+            <div class="field">
+              <label class="field-label" for="tCurrent">CGPA actuel</label>
+              <input type="text" id="tCurrent" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tCurrentMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tDone">Crédits validés</label>
+              <input type="text" id="tDone" inputmode="decimal" autocomplete="off" placeholder="e.g. 66">
+              <p class="row-msg" id="tDoneMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tTarget">CGPA cible</label>
+              <input type="text" id="tTarget" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tTargetMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tLeft">Crédits restants</label>
+              <input type="text" id="tLeft" inputmode="decimal" autocomplete="off" placeholder="e.g. 70">
+              <p class="row-msg" id="tLeftMsg"></p>
+            </div>
+          </div>
+          <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">Remplir depuis mon onglet CGPA</button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">GPA nécessaire par semestre</div>
+            <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="tgtMeter"></span></div>
+            <div class="result-cheer" id="tgtCheer"></div>
+            <div class="result-sub" id="tgtSub">Remplissez les quatre champs ci-dessus pour voir le GPA nécessaire.</div>
+            <div class="result-note" id="tgtNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="target">Copier le résultat</button>
+            <button type="button" class="btn btn-outline js-print" title="Dans la fenêtre d’impression, choisissez « Enregistrer au format PDF » pour télécharger un PDF">Imprimer / PDF</button>
+            <button type="button" id="resetTarget" class="btn btn-quiet">Effacer</button>
+          </div>
+          <details class="howto">
+            <summary>Comment est-ce calculé ?</summary>
+            <p class="formula-line">GPA nécessaire = (Objectif × total des crédits − Actuel × crédits validés) ÷ crédits restants</p>
+            <p class="muted small">Exemple : 3.00 actuel après 60 crédits, objectif 3.30, 60 crédits restants → (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 4: Percentage ---------- -->
+        <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>CGPA en pourcentage</h2>
+              <p class="muted small">Saisissez votre CGPA et choisissez son échelle.</p>
+            </div>
+          </div>
+          <div class="conv-grid">
+            <div class="field">
+              <label class="field-label always" for="convInput">Votre CGPA</label>
+              <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
+              <p class="row-msg" id="convMsg"></p>
+            </div>
+
+          </div>
+          <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">Utiliser mon CGPA de l’onglet CGPA</button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">Pourcentage</div>
+            <div class="result-value"><span id="pctValue">—</span></div>
+            <div class="meter" aria-hidden="true"><span id="pctMeter"></span></div>
+            <div class="result-cheer" id="pctCheer"></div>
+            <div class="result-sub" id="pctSub">Saisissez votre CGPA pour voir le pourcentage.</div>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="pct">Copier le résultat</button>
+            <button type="button" class="btn btn-outline js-print" title="Dans la fenêtre d’impression, choisissez « Enregistrer au format PDF » pour télécharger un PDF">Imprimer / PDF</button>
+          </div>
+          <div class="formula">
+            <div class="formula-title">Formule utilisée</div>
+            <p class="formula-line" id="formulaMain"></p>
+            <p class="formula-work" id="formulaWork"></p>
+            <p class="muted small" id="formulaNote"></p>
+          </div>
+        </section>
+      </div>
+      <!-- ================= Sidebar: grade table ================= -->
+      <aside class="sidebar">
+        <section class="card" aria-labelledby="tableTitle">
+          <h2 id="tableTitle" class="side-title">Points de note</h2>
+          <p class="muted small" id="tableSubtitle"></p>
+          <div class="table-wrap">
+            <table class="grade-table">
+              <thead>
+                <tr><th scope="col">Note</th><th scope="col" class="num">Points</th><th scope="col" class="num" id="marksCol">% de points</th></tr>
+              </thead>
+              <tbody id="gradeTableBody"></tbody>
+            </table>
+          </div>
+          <p class="muted tiny">Les plages de points varient selon les universités. Vérifiez toujours le règlement de notation de votre université.</p>
+        </section>
+
+        <section class="card tips">
+          <h2 class="side-title">Harvard quick facts</h2>
+          <ul>
+            <li>Harvard FAS uses a <strong>4.0 scale with plus and minus grades</strong>: A = 4.00, A- = 3.67, B+ = 3.33.</li>
+            <li>There is <strong>no A+</strong>. The failing grade is <strong>E</strong>, worth 0, and UNS, ABS and EXLD also count as 0.</li>
+            <li>Grades from other Harvard schools or MIT only enter your GPA if they are <strong>failing grades</strong>.</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <article class="guide" id="guide">
+
+      <section id="how-it-works">
+        <h2>How the Harvard GPA works</h2>
+        <p>The Faculty of Arts and Sciences (FAS), which runs Harvard College, turns every letter grade into points on a 4-point scale. Your grade point average is the average of the grades you received in letter-graded FAS courses taken for degree credit. Courses graded Satisfactory (SAT) don't add points, but an Unsatisfactory (UNS) counts as 0.</p>
+        <p>Harvard instructors set grades for their own courses, so there is no university-wide table that turns a percentage into a letter. That's why this calculator asks for the letter grade on your record.</p>
+      </section>
+
+      <section id="grade-points">
+        <h2>Harvard grade points table</h2>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">Note</th><th scope="col" class="num">Points de note</th></tr></thead>
+            <tbody>
+              <tr><td>A</td><td class="num">4.00</td></tr>
+              <tr><td>A-</td><td class="num">3.67</td></tr>
+              <tr><td>B+</td><td class="num">3.33</td></tr>
+              <tr><td>B</td><td class="num">3.00</td></tr>
+              <tr><td>B-</td><td class="num">2.67</td></tr>
+              <tr><td>C+</td><td class="num">2.33</td></tr>
+              <tr><td>C</td><td class="num">2.00</td></tr>
+              <tr><td>C-</td><td class="num">1.67</td></tr>
+              <tr><td>D+</td><td class="num">1.33</td></tr>
+              <tr><td>D</td><td class="num">1.00</td></tr>
+              <tr><td>D-</td><td class="num">0.67</td></tr>
+              <tr><td>E, ABS, UNS, EXLD</td><td class="num">0.00</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Grades from courses at other Harvard Faculties or at MIT are not used in your FAS grade point average unless they are failing grades. FAS has also announced that, from the 2027-28 academic year, an A may be given to at most 20 percent of the undergraduates in a course, plus four.</p>
+      </section>
+
+      <section id="example">
+        <h2>How to calculate your Harvard GPA: worked example</h2>
+        <p>Most Harvard College courses carry the same weight (4 credits), so the GPA is a straight average of your grade points. If every course has the same credits, you can type 4 for each one.</p>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">Cours</th><th scope="col" class="num">Crédits</th><th scope="col">Note</th><th scope="col" class="num">Crédits × points</th></tr></thead>
+            <tbody>
+              <tr><td>Expository Writing</td><td class="num">4</td><td>A-</td><td class="num">14.68</td></tr>
+              <tr><td>Algèbre linéaire</td><td class="num">4</td><td>B+</td><td class="num">13.32</td></tr>
+              <tr><td>Introduction to Computer Science</td><td class="num">4</td><td>A</td><td class="num">16.00</td></tr>
+              <tr><td>Economics</td><td class="num">4</td><td>B</td><td class="num">12.00</td></tr>
+            </tbody>
+            <tfoot><tr><th scope="row">Total</th><td class="num">16</td><td></td><td class="num">56.00</td></tr></tfoot>
+          </table>
+        </div>
+        <p class="formula-block">GPA = 56.00 ÷ 16 = 3.50</p>
+      </section>
+
+      <section id="percentage">
+        <h2>Harvard GPA to percentage</h2>
+        <p>Harvard does not convert GPAs into percentages, and American transcripts don't show one. If an application form outside the US insists on a percentage, the usual estimate is (GPA ÷ 4) × 100, so a 3.50 becomes 87.5%. Write "approximately" next to it and attach your transcript, because the university doesn't confirm this number.</p>
+      </section>
+
+      <section id="faq" class="faq">
+        <h2>Harvard CGPA calculator FAQs</h2>
+
+        <details>
+          <summary><h3>What is an A- worth at Harvard?</h3></summary>
+          <p>An A- is worth 3.67 grade points. An A is 4.00, a B+ is 3.33, a B is 3.00 and a B- is 2.67.</p>
+        </details>
+        <details>
+          <summary><h3>Does Harvard give A+ grades?</h3></summary>
+          <p>No. In the Harvard FAS grade point average, A (4.00) is the highest grade. The failing grade is E, which is worth 0.</p>
+        </details>
+        <details>
+          <summary><h3>Do pass/fail (SAT/UNS) courses count in my Harvard GPA?</h3></summary>
+          <p>Satisfactory (SAT) courses do not add any points. An Unsatisfactory (UNS) counts as 0, like an E, so it lowers your GPA.</p>
+        </details>
+        <details>
+          <summary><h3>Do cross-registered courses at MIT count in my Harvard GPA?</h3></summary>
+          <p>Grades from other Harvard Faculties or from MIT are not used in your FAS grade point average, unless the grade is a failing grade.</p>
+        </details>
+        <details>
+          <summary><h3>How do I convert my Harvard GPA to a percentage?</h3></summary>
+          <p>Harvard does not publish a formula. If a form needs one, the usual estimate is (GPA ÷ 4) × 100, so 3.50 is about 87.5%. Mark it as an estimate.</p>
+        </details>
+        <details>
+          <summary><h3>What credits should I enter for each Harvard course?</h3></summary>
+          <p>Most Harvard College courses are 4 credits. When every course has the same credits, the GPA is simply the average of your grade points, so you can enter 4 for each course.</p>
+        </details>
+      </section>
+
+      <section id="sources">
+        <h2>Sources</h2>
+        <ul class="source-note">
+          <li><a href="https://infoforfaculty.fas.harvard.edu/grade-point-averages">Harvard FAS: Grade Point Averages (information for faculty)</a></li>
+        </ul>
+        <p class="source-note">Dernière vérification : 18 octobre 2026. Les règles universitaires peuvent changer : confirmez toujours vos résultats avec les règles officielles les plus récentes de votre université. Voir nos <a href="terms.html">Conditions d’utilisation</a>.</p>
+      </section>
+    </article>
+
+    <section class="uni-section" aria-labelledby="uniTitle">
+      <h2 id="uniTitle">Autres calculateurs de CGPA et de GPA</h2>
+      <div class="uni-grid">
+        <a class="card uni-card" href="mit-cgpa-calculator.html">
+          <span class="uni-badge">MIT</span>
+          <span class="uni-name">MIT CGPA &amp; GPA Calculator</span>
+          <span class="muted small">5.0 scale · weighted by units</span>
+        </a>
+        <a class="card uni-card" href="stanford-cgpa-calculator.html">
+          <span class="uni-badge">Stanford</span>
+          <span class="uni-name">Stanford CGPA &amp; GPA Calculator</span>
+          <span class="muted small">4.3 scale · A+ = 4.3</span>
+        </a>
+        <a class="card uni-card" href="index.html">
+          <span class="uni-badge">TOUS</span>
+          <span class="uni-name">Calculateur de CGPA général</span>
+          <span class="muted small">Échelles 4.0, 5.0 et 10 points</span>
+        </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">18</span>
+          <span class="uni-name">All university calculators</span>
+          <span class="muted small">Pakistan, India, USA, UK, Malaysia, Australia and Germany</span>
+        </a>
+      </div>
+    </section>
+    <p class="back-top"><a href="#calculator">↑ Retour au calculateur</a></p>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p><strong>CGPA Calculator</strong> · Conçu pour les étudiants · © <span id="year">2026</span></p>
+        <p class="muted">Les résultats sont des estimations. Les règles officielles de votre université priment toujours.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Pied de page">
+        <a href="index.html">Calculateur</a>
+        <a href="about.html">À propos</a>
+        <a href="privacy-policy.html">Politique de confidentialité</a>
+        <a href="terms.html">Conditions d’utilisation</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>window.CGPA_PAGE = {
+    storageKey: 'cgpa-harvard',
+    creditExample: 4,
+    msgs: { 'CGPA {cgpa} on the {scale}': 'GPA {cgpa} on the {scale}' },
+    scales: {
+      harvard: {
+        max: 4, label: 'Harvard 4.0 scale', region: 'Harvard FAS · letter-graded courses', example: '3.70', modes: ['grade'],
+        grades: [['A', 4], ['A-', 3.67], ['B+', 3.33], ['B', 3], ['B-', 2.67], ['C+', 2.33], ['C', 2], ['C-', 1.67],
+          ['D+', 1.33], ['D', 1], ['D-', 0.67], ['E', 0], ['UNS', 0]]
+      }
+    },
+    conversions: {
+      harvard: {
+        formula: 'Percentage ≈ (GPA ÷ 4) × 100',
+        expr: c => '(' + c + ' ÷ 4) × 100',
+        calc: c => (c / 4) * 100,
+        example: 3.7,
+        note: 'Harvard does not publish a GPA-to-percentage formula. Use this simple proportion only when a form asks for a percentage, and say that it is an estimate.'
+      }
+    }
+  };</script>
+  <script src="../i18n/fr.js" data-i18n=""></script>
+  <script src="../site.js"></script>
+  <script src="../script.js"></script>
+</body></html>

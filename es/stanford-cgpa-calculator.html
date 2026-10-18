@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Built by tools/build-university-pages.js – edit that file, not this one -->
+  <title>Calculadora de CGPA y GPA de Stanford – escala 4.3 (A+ = 4.3)</title>
+  <meta name="description" content="Calculadora de CGPA y GPA de Stanford con la escala oficial 4.3 (A+ = 4.3, A = 4.0, A- = 3.7). Ponderada por unidades, con NP incluido y GPA objetivo.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f6fb">
+  <link rel="canonical" href="https://cgpa-calculator-umber-two.vercel.app/es/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="en" href="https://cgpa-calculator-umber-two.vercel.app/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="es" href="https://cgpa-calculator-umber-two.vercel.app/es/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="de" href="https://cgpa-calculator-umber-two.vercel.app/de/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="hi" href="https://cgpa-calculator-umber-two.vercel.app/hi/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ur" href="https://cgpa-calculator-umber-two.vercel.app/ur/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://cgpa-calculator-umber-two.vercel.app/zh/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="fr" href="https://cgpa-calculator-umber-two.vercel.app/fr/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ar" href="https://cgpa-calculator-umber-two.vercel.app/ar/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="bn" href="https://cgpa-calculator-umber-two.vercel.app/bn/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="pt" href="https://cgpa-calculator-umber-two.vercel.app/pt/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ru" href="https://cgpa-calculator-umber-two.vercel.app/ru/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="id" href="https://cgpa-calculator-umber-two.vercel.app/id/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ja" href="https://cgpa-calculator-umber-two.vercel.app/ja/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/stanford-cgpa-calculator.html">
+
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CGPA Calculator">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:url" content="https://cgpa-calculator-umber-two.vercel.app/es/stanford-cgpa-calculator.html">
+  <meta property="og:title" content="Calculadora de CGPA y GPA de Stanford">
+  <meta property="og:description" content="Calculadora de CGPA y GPA de Stanford con la escala oficial 4.3 (A+ = 4.3, A = 4.0, A- = 3.7). Ponderada por unidades, con NP incluido y GPA objetivo.">
+  <meta property="og:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <meta property="og:image:alt" content="Calculadora de CGPA: una tarjeta de resultado con un CGPA de 3.37 sobre 4.00">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calculadora de CGPA y GPA de Stanford">
+  <meta name="twitter:description" content="Calculadora de CGPA y GPA de Stanford con la escala oficial 4.3 (A+ = 4.3, A = 4.0, A- = 3.7). Ponderada por unidades, con NP incluido y GPA objetivo.">
+  <meta name="twitter:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "@id": "https://cgpa-calculator-umber-two.vercel.app/es/stanford-cgpa-calculator.html#app",
+    "name": "Calculadora de CGPA y GPA de Stanford",
+    "url": "https://cgpa-calculator-umber-two.vercel.app/es/stanford-cgpa-calculator.html",
+    "image": "https://cgpa-calculator-umber-two.vercel.app/og-image.jpg",
+    "description": "Calculadora de CGPA y GPA de Stanford con la escala oficial 4.3 (A+ = 4.3, A = 4.0, A- = 3.7). Ponderada por unidades, con NP incluido y GPA objetivo.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "es",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Vale 4.3 una A+ en Stanford?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Stanford usa una escala 4.3: A+ = 4.3, A = 4.0, A- = 3.7, B+ = 3.3 y así hasta D- = 0.7 y NP = 0.0."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuenta un NP en mi GPA de Stanford?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Un NP vale 0.0 puntos y sus unidades siguen en el total, así que baja tu GPA. Una A en 4 unidades más un NP en 4 unidades dan 2.0."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuentan las asignaturas CR/NC en el GPA de Stanford?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. CR, NC, S, W, I y los demás símbolos no se usan para calcular el GPA."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es una nota L en Stanford?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Una L es una nota temporal. Cuenta como 2.0 puntos hasta que se envía la nota final."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Puede mi GPA de Stanford ser mayor que 4.0?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, porque una A+ vale 4.3. Cuando un formulario pide un GPA sobre 4.0, da el GPA de tu expediente e indica que Stanford usa una escala 4.3."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo convierto mi GPA de Stanford en porcentaje?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Stanford no tiene una fórmula oficial. Una estimación sencilla es (GPA ÷ 4.3) × 100, así que 3.80 es aproximadamente 88.37%. Indica que es una estimación."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "CGPA Calculator",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/es/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculadora de CGPA y GPA de Stanford",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/es/stanford-cgpa-calculator.html"
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    /* Apply the saved (or system) theme before the page paints, so there is no flash */
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem('cgpa-theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="CGPA Calculator home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3z"></path>
+            <path d="M5 13.18v4C5 18.84 8.13 20 12 20s7-1.16 7-2.82v-4L12 17l-7-3.82z"></path>
+          </svg>
+        </span>
+        <span>CGPA Calculator</span>
+      </a>
+      <div class="header-actions">
+        <nav class="site-nav" id="siteNav" aria-label="Main menu">
+          <a href="index.html">Calculator</a>
+          <a href="about.html">About</a>
+          <a href="privacy-policy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <details class="lang-menu" id="langMenu">
+          <summary class="icon-btn lang-btn" aria-label="Choose language" title="Language">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"></path></svg>
+            <span class="lang-code" data-no-translate="">ES</span>
+          </summary>
+          <div class="lang-list" data-no-translate=""><a href="../stanford-cgpa-calculator.html" hreflang="en" lang="en">English</a><a href="stanford-cgpa-calculator.html" hreflang="es" lang="es" aria-current="true">Español</a><a href="../de/stanford-cgpa-calculator.html" hreflang="de" lang="de">Deutsch</a><a href="../hi/stanford-cgpa-calculator.html" hreflang="hi" lang="hi">हिन्दी</a><a href="../ur/stanford-cgpa-calculator.html" hreflang="ur" lang="ur">اردو</a><a href="../zh/stanford-cgpa-calculator.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="../fr/stanford-cgpa-calculator.html" hreflang="fr" lang="fr">Français</a><a href="../ar/stanford-cgpa-calculator.html" hreflang="ar" lang="ar">العربية</a><a href="../bn/stanford-cgpa-calculator.html" hreflang="bn" lang="bn">বাংলা</a><a href="../pt/stanford-cgpa-calculator.html" hreflang="pt" lang="pt">Português</a><a href="../ru/stanford-cgpa-calculator.html" hreflang="ru" lang="ru">Русский</a><a href="../id/stanford-cgpa-calculator.html" hreflang="id" lang="id">Bahasa Indonesia</a><a href="../ja/stanford-cgpa-calculator.html" hreflang="ja" lang="ja">日本語</a><a href="../mr/stanford-cgpa-calculator.html" hreflang="mr" lang="mr">मराठी</a><a href="../te/stanford-cgpa-calculator.html" hreflang="te" lang="te">తెలుగు</a></div>
+        </details>
+        <button type="button" id="themeToggle" class="icon-btn" aria-label="Switch to dark mode" title="Light / dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+        </button>
+        <button type="button" id="menuToggle" class="icon-btn menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
+          <svg class="icon-menu" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+
+    <section class="hero">
+      <nav class="breadcrumb" aria-label="Ruta de navegación"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">Stanford</span></nav>
+      <h1>Calculadora de CGPA y GPA de Stanford</h1>
+      <p>Calcula tu GPA de Stanford con la escala oficial 4.3, en la que una A+ vale 4.3. Las notas se ponderan por unidades, igual que en tu expediente de Stanford. <a href="#guide" class="hero-link">Cómo funciona el GPA de Stanford ↓</a></p>
+    </section>
+
+    <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
+      <div class="scale-text">
+        <p id="scaleLabel" class="scale-title">Sistema de calificación: Stanford (escala 4.3)</p>
+        <p class="muted small">Elige la letra de cada asignatura e introduce sus unidades. CR, S, W y otros símbolos no forman parte del GPA.</p>
+      </div>
+      <select id="scaleSelect" hidden="" aria-hidden="true" tabindex="-1"><option value="stanford">Stanford</option></select>
+      <button type="button" id="resetAll" class="btn btn-outline danger-hover">Restablecer todo</button>
+    </section>
+    <p class="print-only" id="printDate"></p>
+
+    <div class="layout">
+      <!-- ================= Calculators ================= -->
+      <div class="main-col">
+        <div class="tabs" role="tablist" aria-label="Calculadoras">
+          <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">GPA <small>Un semestre</small></button>
+          <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>Todos los semestres</small></button>
+          <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">Objetivo <small>Planifica</small></button>
+          <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">Porcentaje <small>Conversor</small></button>
+        </div>
+        <!-- ---------- TAB 1: GPA ---------- -->
+        <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
+          <div class="panel-head">
+            <div>
+              <h2>GPA del semestre</h2>
+              <p class="muted small">Añade cada asignatura con sus unidades y su letra.</p>
+            </div>
+
+          </div>
+          <div class="rows-head subject-cols" aria-hidden="true">
+            <span>Asignatura (opcional)</span><span>Unidades</span><span id="gradeHead">Nota</span><span></span>
+          </div>
+          <div id="subjectList" class="row-list mode-grade"></div>
+          <button type="button" id="addSubject" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            Añadir asignatura
+          </button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">Tu GPA del semestre</div>
+            <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="gpaMeter"></span></div>
+            <div class="result-cheer" id="gpaCheer"></div>
+            <div class="result-sub" id="gpaSub">Añade tus asignaturas para ver tu GPA.</div>
+            <div class="result-note" id="gpaNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" id="sendToCgpa" class="btn btn-soft">Añadir este GPA a mi CGPA →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="gpa">Copiar resultado</button>
+            <button type="button" class="btn btn-outline js-print" title="En la ventana de impresión, elige «Guardar como PDF» para descargar un PDF">Imprimir / PDF</button>
+            <button type="button" id="resetGpa" class="btn btn-quiet">Borrar</button>
+          </div>
+          <details class="howto">
+            <summary>¿Cómo se calcula el GPA?</summary>
+            <p class="formula-line">GPA = (Σ créditos × puntos de nota) ÷ (Σ créditos)</p>
+            <p class="muted small">Ejemplo: Matemáticas, 3 créditos con 4.00 puntos, e Inglés, 2 créditos con 3.00 → (3×4 + 2×3) ÷ (3+2) = 18 ÷ 5 = <strong>3.60</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 2: CGPA ---------- -->
+        <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>CGPA total</h2>
+              <p class="muted small">Añade el GPA de cada periodo y sus unidades con nota.</p>
+            </div>
+          </div>
+          <div class="rows-head semester-cols" aria-hidden="true">
+            <span>Término</span><span>GPA</span><span>Unidades</span><span></span>
+          </div>
+          <div id="semesterList" class="row-list"></div>
+          <button type="button" id="addSemester" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            Añadir semestre
+          </button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">Tu CGPA</div>
+            <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="cgpaMeter"></span></div>
+            <div class="result-cheer" id="cgpaCheer"></div>
+            <div class="result-sub" id="cgpaSub">Añade tus semestres para ver tu CGPA.</div>
+            <div class="result-note" id="cgpaNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" id="sendToPct" class="btn btn-soft">Convertir este CGPA a % →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">Copiar resultado</button>
+            <button type="button" class="btn btn-outline js-print" title="En la ventana de impresión, elige «Guardar como PDF» para descargar un PDF">Imprimir / PDF</button>
+            <button type="button" id="resetCgpa" class="btn btn-quiet">Borrar</button>
+          </div>
+          <details class="howto">
+            <summary>¿Cómo se calcula el CGPA?</summary>
+            <p class="formula-line">CGPA = (Σ GPA del semestre × créditos del semestre) ÷ (créditos totales)</p>
+            <p class="muted small">Los semestres con más créditos cuentan más. Ejemplo: 3.50 con 18 créditos y 3.00 con 15 créditos → (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 3: Target CGPA ---------- -->
+        <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>CGPA objetivo</h2>
+              <p class="muted small">Descubre qué GPA necesitas en los próximos semestres para alcanzar tu meta.</p>
+            </div>
+          </div>
+          <div class="target-grid">
+            <div class="field">
+              <label class="field-label" for="tCurrent">CGPA actual</label>
+              <input type="text" id="tCurrent" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tCurrentMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tDone">Unidades completadas</label>
+              <input type="text" id="tDone" inputmode="decimal" autocomplete="off" placeholder="e.g. 66">
+              <p class="row-msg" id="tDoneMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tTarget">CGPA objetivo</label>
+              <input type="text" id="tTarget" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tTargetMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tLeft">Unidades restantes</label>
+              <input type="text" id="tLeft" inputmode="decimal" autocomplete="off" placeholder="e.g. 70">
+              <p class="row-msg" id="tLeftMsg"></p>
+            </div>
+          </div>
+          <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">Rellenar desde mi pestaña CGPA</button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">GPA que necesitas cada semestre</div>
+            <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="tgtMeter"></span></div>
+            <div class="result-cheer" id="tgtCheer"></div>
+            <div class="result-sub" id="tgtSub">Rellena las cuatro casillas de arriba para ver el GPA que necesitas.</div>
+            <div class="result-note" id="tgtNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="target">Copiar resultado</button>
+            <button type="button" class="btn btn-outline js-print" title="En la ventana de impresión, elige «Guardar como PDF» para descargar un PDF">Imprimir / PDF</button>
+            <button type="button" id="resetTarget" class="btn btn-quiet">Borrar</button>
+          </div>
+          <details class="howto">
+            <summary>¿Cómo se calcula?</summary>
+            <p class="formula-line">GPA necesario = (Objetivo × créditos totales − Actual × créditos completados) ÷ créditos restantes</p>
+            <p class="muted small">Ejemplo: actual 3.00 con 60 créditos hechos, objetivo 3.30, quedan 60 créditos → (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 4: Percentage ---------- -->
+        <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>CGPA a porcentaje</h2>
+              <p class="muted small">Escribe tu CGPA y elige su escala.</p>
+            </div>
+          </div>
+          <div class="conv-grid">
+            <div class="field">
+              <label class="field-label always" for="convInput">Tu CGPA</label>
+              <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
+              <p class="row-msg" id="convMsg"></p>
+            </div>
+
+          </div>
+          <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">Usar mi CGPA de la pestaña CGPA</button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">Porcentaje</div>
+            <div class="result-value"><span id="pctValue">—</span></div>
+            <div class="meter" aria-hidden="true"><span id="pctMeter"></span></div>
+            <div class="result-cheer" id="pctCheer"></div>
+            <div class="result-sub" id="pctSub">Introduce tu CGPA para ver el porcentaje.</div>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="pct">Copiar resultado</button>
+            <button type="button" class="btn btn-outline js-print" title="En la ventana de impresión, elige «Guardar como PDF» para descargar un PDF">Imprimir / PDF</button>
+          </div>
+          <div class="formula">
+            <div class="formula-title">Fórmula utilizada</div>
+            <p class="formula-line" id="formulaMain"></p>
+            <p class="formula-work" id="formulaWork"></p>
+            <p class="muted small" id="formulaNote"></p>
+          </div>
+        </section>
+      </div>
+      <!-- ================= Sidebar: grade table ================= -->
+      <aside class="sidebar">
+        <section class="card" aria-labelledby="tableTitle">
+          <h2 id="tableTitle" class="side-title">Puntos de nota</h2>
+          <p class="muted small" id="tableSubtitle"></p>
+          <div class="table-wrap">
+            <table class="grade-table">
+              <thead>
+                <tr><th scope="col">Nota</th><th scope="col" class="num">Puntos</th><th scope="col" class="num" id="marksCol">% de puntuación</th></tr>
+              </thead>
+              <tbody id="gradeTableBody"></tbody>
+            </table>
+          </div>
+          <p class="muted tiny">Los rangos de puntuación varían entre universidades. Consulta siempre la normativa de calificación de tu universidad.</p>
+        </section>
+
+        <section class="card tips">
+          <h2 class="side-title">Datos clave de Stanford</h2>
+          <ul>
+            <li>Stanford usa una <strong>escala 4.3</strong>: una <strong>A+ vale 4.3</strong>, una A 4.0 y una A- 3.7.</li>
+            <li>Un <strong>NP cuenta como 0.0</strong> y sus unidades siguen en el total, así que baja tu GPA.</li>
+            <li>Una nota temporal <strong>L cuenta como 2.0</strong> hasta que llega la nota final.</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <article class="guide" id="guide">
+
+      <section id="how-it-works">
+        <h2>Cómo calcula Stanford tu GPA</h2>
+        <p>Stanford da puntos solo a las notas con letra y usa una escala 4.3. Los puntos de cada asignatura se multiplican por sus unidades, así que una A en 5 unidades vale 20 puntos. Tu GPA es el total de esos puntos dividido entre las unidades de todas las asignaturas calificadas de A+ a NP.</p>
+        <p>Ninguna otra nota o símbolo se usa en el GPA: +, CR, *, GNR, RP, N, N-, W, NC, S e I quedan todos fuera. Un NP, en cambio, vale 0.0 y sus unidades siguen contando, así que una A (4 unidades) y un NP (4 unidades) dan un GPA de 2.0, no de 4.0.</p>
+      </section>
+
+      <section id="grade-points">
+        <h2>Tabla de puntos de Stanford</h2>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">Nota</th><th scope="col" class="num">Puntos de nota</th></tr></thead>
+            <tbody>
+              <tr><td>A+</td><td class="num">4.3</td></tr>
+              <tr><td>A</td><td class="num">4.0</td></tr>
+              <tr><td>A-</td><td class="num">3.7</td></tr>
+              <tr><td>B+</td><td class="num">3.3</td></tr>
+              <tr><td>B</td><td class="num">3.0</td></tr>
+              <tr><td>B-</td><td class="num">2.7</td></tr>
+              <tr><td>C+</td><td class="num">2.3</td></tr>
+              <tr><td>C</td><td class="num">2.0</td></tr>
+              <tr><td>C-</td><td class="num">1.7</td></tr>
+              <tr><td>D+</td><td class="num">1.3</td></tr>
+              <tr><td>D</td><td class="num">1.0</td></tr>
+              <tr><td>D-</td><td class="num">0.7</td></tr>
+              <tr><td>NP</td><td class="num">0.0</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Una nota temporal L cuenta como 2.0 hasta que se envía la nota final. Las asignaturas con calificación de la GSB usan sus propios valores (por ejemplo H = 4.14).</p>
+      </section>
+
+      <section id="example">
+        <h2>Cómo calcular tu GPA de Stanford: ejemplo resuelto</h2>
+        <p>Este es el ejemplo de la propia guía de Stanford:</p>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">Nota</th><th scope="col" class="num">Unidades</th><th scope="col" class="num">Puntos de nota</th><th scope="col" class="num">Unidades × puntos</th></tr></thead>
+            <tbody>
+              <tr><td>B-</td><td class="num">3</td><td class="num">2.7</td><td class="num">8.1</td></tr>
+              <tr><td>A-</td><td class="num">4</td><td class="num">3.7</td><td class="num">14.8</td></tr>
+              <tr><td>B+</td><td class="num">3</td><td class="num">3.3</td><td class="num">9.9</td></tr>
+            </tbody>
+            <tfoot><tr><th scope="row">Total</th><td class="num">10</td><td></td><td class="num">32.8</td></tr></tfoot>
+          </table>
+        </div>
+        <p class="formula-block">GPA = 32.8 ÷ 10 = 3.28</p>
+      </section>
+
+      <section id="percentage">
+        <h2>¿Puede un GPA de Stanford superar el 4.0?</h2>
+        <p>Sí. Como una A+ vale 4.3, un estudiante con muchas A+ puede tener un GPA por encima de 4.0. Si un formulario pide un GPA «sobre 4.0», da tu GPA tal como aparece en tu expediente e indica que Stanford usa una escala 4.3. Stanford no publica una fórmula de porcentaje; la pestaña del conversor da una estimación sencilla, (GPA ÷ 4.3) × 100.</p>
+      </section>
+
+      <section id="faq" class="faq">
+        <h2>Preguntas frecuentes: calculadora de CGPA de Stanford</h2>
+
+        <details>
+          <summary><h3>¿Vale 4.3 una A+ en Stanford?</h3></summary>
+          <p>Sí. Stanford usa una escala 4.3: A+ = 4.3, A = 4.0, A- = 3.7, B+ = 3.3 y así hasta D- = 0.7 y NP = 0.0.</p>
+        </details>
+        <details>
+          <summary><h3>¿Cuenta un NP en mi GPA de Stanford?</h3></summary>
+          <p>Sí. Un NP vale 0.0 puntos y sus unidades siguen en el total, así que baja tu GPA. Una A en 4 unidades más un NP en 4 unidades dan 2.0.</p>
+        </details>
+        <details>
+          <summary><h3>¿Cuentan las asignaturas CR/NC en el GPA de Stanford?</h3></summary>
+          <p>No. CR, NC, S, W, I y los demás símbolos no se usan para calcular el GPA.</p>
+        </details>
+        <details>
+          <summary><h3>¿Qué es una nota L en Stanford?</h3></summary>
+          <p>Una L es una nota temporal. Cuenta como 2.0 puntos hasta que se envía la nota final.</p>
+        </details>
+        <details>
+          <summary><h3>¿Puede mi GPA de Stanford ser mayor que 4.0?</h3></summary>
+          <p>Sí, porque una A+ vale 4.3. Cuando un formulario pide un GPA sobre 4.0, da el GPA de tu expediente e indica que Stanford usa una escala 4.3.</p>
+        </details>
+        <details>
+          <summary><h3>¿Cómo convierto mi GPA de Stanford en porcentaje?</h3></summary>
+          <p>Stanford no tiene una fórmula oficial. Una estimación sencilla es (GPA ÷ 4.3) × 100, así que 3.80 es aproximadamente 88.37%. Indica que es una estimación.</p>
+        </details>
+      </section>
+
+      <section id="sources">
+        <h2>Fuentes</h2>
+        <ul class="source-note">
+          <li><a href="https://studentservices.stanford.edu/my-academics/evaluations-exams-grades/grades/how-do-i-calculate-my-grade-point-average-gpa">Stanford Student Services: How do I calculate my grade point average (GPA)?</a></li>
+        </ul>
+        <p class="source-note">Última revisión: 18 de octubre de 2026. Las normas universitarias pueden cambiar, así que confirma siempre tus resultados con las normas oficiales más recientes de tu universidad. Consulta nuestros <a href="terms.html">Términos de uso</a>.</p>
+      </section>
+    </article>
+
+    <section class="uni-section" aria-labelledby="uniTitle">
+      <h2 id="uniTitle">Más calculadoras de CGPA y GPA</h2>
+      <div class="uni-grid">
+        <a class="card uni-card" href="harvard-cgpa-calculator.html">
+          <span class="uni-badge">Harvard</span>
+          <span class="uni-name">Calculadora de CGPA y GPA de Harvard</span>
+          <span class="muted small">Escala FAS 4.0 · A = 4.00, A- = 3.67</span>
+        </a>
+        <a class="card uni-card" href="mit-cgpa-calculator.html">
+          <span class="uni-badge">MIT</span>
+          <span class="uni-name">Calculadora de CGPA y GPA del MIT</span>
+          <span class="muted small">Escala 5.0 · ponderada por unidades</span>
+        </a>
+        <a class="card uni-card" href="index.html">
+          <span class="uni-badge">TODAS</span>
+          <span class="uni-name">Calculadora de CGPA general</span>
+          <span class="muted small">Escalas de 4.0, 5.0 y 10 puntos</span>
+        </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">18</span>
+          <span class="uni-name">Todas las calculadoras por universidad</span>
+          <span class="muted small">Pakistán, India, EE. UU., Reino Unido, Malasia, Australia y Alemania</span>
+        </a>
+      </div>
+    </section>
+    <p class="back-top"><a href="#calculator">↑ Volver a la calculadora</a></p>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p><strong>CGPA Calculator</strong> · Hecha para estudiantes · © <span id="year">2026</span></p>
+        <p class="muted">Los resultados son estimaciones. Las normas oficiales de tu universidad siempre tienen prioridad.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Pie de página">
+        <a href="index.html">Calculadora</a>
+        <a href="about.html">Acerca de</a>
+        <a href="privacy-policy.html">Política de privacidad</a>
+        <a href="terms.html">Términos de uso</a>
+        <a href="contact.html">Contacto</a>
+      </nav>
+    </div>
+  </footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>window.CGPA_PAGE = {
+    storageKey: 'cgpa-stanford',
+    creditLabel: 'Units',
+    semCreditLabel: 'Units',
+    creditExample: 4,
+    semCreditExample: 15,
+    msgs: {"GPA / SGPA":"GPA","CGPA {cgpa} on the {scale}":"GPA {cgpa} on the {scale}","1 subject · {credits} credit hours · {points} grade points":"1 course · {credits} units · {points} grade points","{n} subjects · {credits} credit hours · {points} grade points":"{n} courses · {credits} units · {points} grade points","1 semester · {credits} total credit hours":"1 term · {credits} total units","{n} semesters · {credits} total credit hours":"{n} terms · {credits} total units","Total credit hours: {credits}":"Total units: {credits}","You need an average GPA of at least {needed} over your remaining {left} credit hours to reach a {target} CGPA.":"You need an average GPA of at least {needed} over your remaining {left} units to reach a {target} GPA.","To reach a {target} CGPA (now {current}), I need an average GPA of {needed} over my remaining {left} credit hours.":"To reach a {target} GPA (now {current}), I need an average GPA of {needed} over my remaining {left} units.","Even with a perfect {max} in every remaining semester, the highest CGPA you can reach is {best}.":"Even with a perfect {max} in every remaining term, the highest GPA you can reach is {best}.","Please enter the total credit hours for this semester.":"Please enter the total units for this term.","Please enter the credit hours for this subject.":"Please enter the units for this course.","That looks too high. A semester usually has 12 to 24 credit hours.":"That looks too high. Please check the units.","That looks too high. Credit hours are usually between 1 and 6.":"That looks too high. Please check the units."},
+    scales: {
+      stanford: {
+        max: 4.3, label: 'Stanford 4.3 scale', region: 'Stanford · weighted by units', example: '3.80', modes: ['grade'],
+        grades: [['A+', 4.3], ['A', 4], ['A-', 3.7], ['B+', 3.3], ['B', 3], ['B-', 2.7], ['C+', 2.3], ['C', 2], ['C-', 1.7],
+          ['D+', 1.3], ['D', 1], ['D-', 0.7], ['NP', 0]]
+      }
+    },
+    conversions: {
+      stanford: {
+        formula: 'Percentage ≈ (GPA ÷ 4.3) × 100',
+        expr: c => '(' + c + ' ÷ 4.3) × 100',
+        calc: c => (c / 4.3) * 100,
+        example: 3.8,
+        note: 'Stanford does not publish a GPA-to-percentage formula. This simple proportion uses the 4.3 maximum; mark it as an estimate on any form.'
+      }
+    }
+  };</script>
+  <script src="../i18n/es.js" data-i18n=""></script>
+  <script src="../site.js"></script>
+  <script src="../script.js"></script>
+</body></html>

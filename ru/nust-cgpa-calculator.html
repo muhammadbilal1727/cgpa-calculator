@@ -24,10 +24,12 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/nust-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/nust-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/nust-cgpa-calculator.html">
+
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="ru_RU">
@@ -159,6 +161,7 @@
   </script>
 </head>
 <body>
+
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -203,11 +206,13 @@
     </div>
   </header>
   <main class="container">
+
     <section class="hero">
       <nav class="breadcrumb" aria-label="Навигационная цепочка"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">NUST</span></nav>
       <h1>Калькулятор CGPA и GPA для NUST</h1>
       <p>Рассчитайте семестровый GPA и общий CGPA по официальным баллам бакалавриата NUST (A = 4.00, B+ = 3.50, B = 3.00 и т. д.). <a href="#guide" class="hero-link">Как оценивают в NUST ↓</a></p>
     </section>
+
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <p id="scaleLabel" class="scale-title">Система оценивания: бакалавриат NUST</p>
@@ -217,6 +222,7 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">Сбросить всё</button>
     </section>
     <p class="print-only" id="printDate"></p>
+
     <div class="layout">
       <!-- ================= Calculators ================= -->
       <div class="main-col">
@@ -233,6 +239,7 @@
               <h2>GPA за семестр</h2>
               <p class="muted small">Добавьте каждый предмет с его кредитами и оценкой.</p>
             </div>
+
           </div>
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>Предмет (необязательно)</span><span>Кредиты</span><span id="gradeHead">Оценка</span><span></span>
@@ -362,6 +369,7 @@
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
+
           </div>
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">Взять мой CGPA из вкладки CGPA</button>
           <div class="result" aria-live="polite">
@@ -398,6 +406,7 @@
           </div>
           <p class="muted tiny">Диапазоны баллов в разных университетах отличаются. Всегда сверяйтесь с правилами оценивания своего университета.</p>
         </section>
+
         <section class="card tips">
           <h2 class="side-title">Коротко о NUST</h2>
           <ul>
@@ -408,7 +417,9 @@
         </section>
       </aside>
     </div>
+
     <article class="guide" id="guide">
+
       <section id="how-it-works">
         <h2>Как оценивают в NUST</h2>
         <p>В NUST используется относительное оценивание по шкале 4.00. Как сказано в NUST Undergraduate Student Handbook: <q>The University follows a relative grading system on a scale of 1.00 to 4.00 points.</q> («Университет использует систему относительного оценивания по шкале от 1.00 до 4.00 баллов».) Ваша буквенная оценка зависит от того, как вы выступили по сравнению с потоком, а не от фиксированного процента. 82 % на трудном экзамене могут дать A, а на лёгком — B+.</p>
@@ -416,6 +427,7 @@
         <h3>Курсы с теорией и лабораторной частью</h3>
         <p>Для курса с теоретическими и лабораторными кредитами NUST сначала объединяет два процента, взвешивая их по кредитам, а затем ставит одну оценку за весь курс. Пример из самого справочника: физика, 3 кредита теории на 70 % и 1 кредит лабораторной на 90 %, то есть (70 × 3 + 90 × 1) ÷ 4 = 75 %. Вы получаете одну оценку за все 4 кредита, поэтому вводите курс как один предмет на 4 кредита.</p>
       </section>
+
       <section id="grade-points">
         <h2>Таблица баллов NUST</h2>
         <div class="table-scroll">
@@ -436,6 +448,7 @@
         </div>
         <p>I (не завершён), W (отказ от курса), Q (зачтено) и T (перезачёт) баллов не дают. Обратите внимание: в NUST нет A+ и оценок с минусом — B+ и C+ на полбалла выше B и C.</p>
       </section>
+
       <section id="example">
         <h2>Как рассчитать GPA в NUST: разобранный пример</h2>
         <div class="table-scroll">
@@ -454,6 +467,7 @@
         <p class="formula-block">GPA = 54.00 ÷ 16 = 3.375 ≈ 3.38</p>
         <p>CGPA по всем семестрам считается так же: сложите кредиты × баллы по каждому пройденному курсу и разделите на общее число кредитов. Вкладка CGPA делает это по вашим семестровым GPA.</p>
       </section>
+
       <section id="minimum-cgpa">
         <h2>Минимальный CGPA и академическая задолженность в NUST</h2>
         <ul>
@@ -463,17 +477,21 @@
         </ul>
         <p>Если ваш CGPA опустился ниже 2.00, вкладка «Цель» покажет, какой GPA нужен в оставшихся семестрах, чтобы снова подняться выше.</p>
       </section>
+
       <section id="repeat">
         <h2>Повторное прохождение курса для повышения CGPA</h2>
         <p>При повторном прохождении курса в выписке видны и старая, и новая оценка, но в CGPA учитывается только лучшая. Повторное прохождение требует разрешения заведующего кафедрой (HoD), а оценки, полученные при повторе, не учитываются для высших академических наград, кроме Rector's Gold Medal. Если после повтора вы снова не сдадите курс, это всё равно считается одной F.</p>
         <p><strong>Совет:</strong> для повторно пройденного курса вводите только лучшую оценку.</p>
       </section>
+
       <section id="percentage">
         <h2>Перевод CGPA NUST в проценты</h2>
         <p>В NUST Undergraduate Student Handbook нет официальной формулы перевода CGPA в проценты. Когда нужен процент, многие используют (CGPA ÷ 4) × 100, и тогда 3.40 — это 85 %. У работодателей и университетов бывают свои правила, поэтому уточните, что принимает организация, куда вы подаёте документы. Вкладка «Проценты» использует этот простой способ.</p>
       </section>
+
       <section id="faq" class="faq">
         <h2>Вопросы о калькуляторе CGPA для NUST</h2>
+
         <details>
           <summary><h3>В NUST относительное или абсолютное оценивание?</h3></summary>
           <p>В NUST относительное оценивание по шкале 4.00, поэтому оценка зависит от ваших результатов по сравнению с потоком, а не от фиксированного процента. Именно поэтому для NUST нет фиксированной таблицы перевода баллов в оценки.</p>
@@ -503,6 +521,7 @@
           <p>Введите его как один предмет с общим числом кредитов, например 4 для курса 3+1. NUST объединяет баллы за теорию и лабораторную в одну оценку за весь курс.</p>
         </details>
       </section>
+
       <section id="sources">
         <h2>Источники</h2>
         <ul class="source-note">
@@ -511,6 +530,7 @@
         <p class="source-note">Последняя проверка: 18 октября 2026 г. Правила университетов могут меняться, поэтому всегда сверяйте результаты с актуальными официальными правилами своего университета. См. наши <a href="terms.html">Условия использования</a>.</p>
       </section>
     </article>
+
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">Другие калькуляторы CGPA и GPA</h2>
       <div class="uni-grid">
@@ -519,20 +539,21 @@
           <span class="uni-name">Калькулятор CGPA и GPA для COMSATS</span>
           <span class="muted small">Критерии HEC (с осени 2021) · официальное правило %</span>
         </a>
-        <a class="card uni-card" href="vtu-cgpa-calculator.html">
-          <span class="uni-badge">VTU</span>
-          <span class="uni-name">Калькулятор CGPA и GPA (SGPA) для VTU</span>
-          <span class="muted small">Схемы 2022 и 2021 · CGPA в %</span>
-        </a>
         <a class="card uni-card" href="index.html">
           <span class="uni-badge">ВСЕ</span>
           <span class="uni-name">Общий калькулятор CGPA</span>
           <span class="muted small">Шкалы 4.0, 5.0 и 10 баллов</span>
         </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">18</span>
+          <span class="uni-name">All university calculators</span>
+          <span class="muted small">Pakistan, India, USA, UK, Malaysia, Australia and Germany</span>
+        </a>
       </div>
     </section>
     <p class="back-top"><a href="#calculator">↑ Вернуться к калькулятору</a></p>
   </main>
+
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -550,6 +571,7 @@
     </div>
   </footer>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-nust',
     scales: {

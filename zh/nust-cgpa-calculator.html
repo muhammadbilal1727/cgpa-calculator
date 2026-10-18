@@ -24,10 +24,12 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/nust-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/nust-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/nust-cgpa-calculator.html">
+
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="zh_CN">
@@ -159,6 +161,7 @@
   </script>
 </head>
 <body>
+
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -203,11 +206,13 @@
     </div>
   </header>
   <main class="container">
+
     <section class="hero">
       <nav class="breadcrumb" aria-label="面包屑导航"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">NUST</span></nav>
       <h1>NUST CGPA 与 GPA 计算器</h1>
       <p>用 NUST 本科官方绩点（A = 4.00、B+ = 3.50、B = 3.00 等）计算你的学期 GPA 和累计 CGPA。<a href="#guide" class="hero-link">NUST 如何评分 ↓</a></p>
     </section>
+
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <p id="scaleLabel" class="scale-title">评分制度：NUST 本科</p>
@@ -217,6 +222,7 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">全部重置</button>
     </section>
     <p class="print-only" id="printDate"></p>
+
     <div class="layout">
       <!-- ================= Calculators ================= -->
       <div class="main-col">
@@ -233,6 +239,7 @@
               <h2>学期 GPA</h2>
               <p class="muted small">逐门添加课程的学分和成绩。</p>
             </div>
+
           </div>
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>课程（可选）</span><span>学分</span><span id="gradeHead">等级</span><span></span>
@@ -362,6 +369,7 @@
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
+
           </div>
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">使用 CGPA 标签页中的 CGPA</button>
           <div class="result" aria-live="polite">
@@ -398,6 +406,7 @@
           </div>
           <p class="muted tiny">各大学的分数区间不同，请务必查看你所在大学的评分规定。</p>
         </section>
+
         <section class="card tips">
           <h2 class="side-title">NUST 要点</h2>
           <ul>
@@ -408,7 +417,9 @@
         </section>
       </aside>
     </div>
+
     <article class="guide" id="guide">
+
       <section id="how-it-works">
         <h2>NUST 如何评分</h2>
         <p>NUST 在 4.00 分制上采用相对评分。《NUST 本科生手册》写道：<q>The University follows a relative grading system on a scale of 1.00 to 4.00 points.</q>（“本校采用 1.00 至 4.00 分的相对评分制度。”）你的字母等级取决于你与班级同学相比的表现，而不是固定的百分比。82% 在难度大的考试中可能是 A，在简单的考试中可能是 B+。</p>
@@ -416,6 +427,7 @@
         <h3>含理论和实验的课程</h3>
         <p>对于同时有理论和实验学分的课程，NUST 先按学分把两部分的百分比加权合并，再对整门课评定等级。手册中的例子是：物理理论 3 学分得 70%，实验 1 学分得 90%，即 (70 × 3 + 90 × 1) ÷ 4 = 75%。你会得到一个覆盖全部 4 学分的等级，所以在计算器中把它作为一门 4 学分的课程输入。</p>
       </section>
+
       <section id="grade-points">
         <h2>NUST 绩点表</h2>
         <div class="table-scroll">
@@ -436,6 +448,7 @@
         </div>
         <p>I（未完成）、W（退课）、Q（合格）和 T（转学分）不计绩点。注意 NUST 没有 A+ 和减号等级：B+ 和 C+ 分别比 B 和 C 高半分。</p>
       </section>
+
       <section id="example">
         <h2>如何计算 NUST GPA：计算示例</h2>
         <div class="table-scroll">
@@ -454,6 +467,7 @@
         <p class="formula-block">GPA = 54.00 ÷ 16 = 3.375 ≈ 3.38</p>
         <p>CGPA 在所有学期中的算法相同：把你修过的每门课的“学分 × 绩点”相加，再除以总学分。CGPA 标签页会根据你的学期 GPA 完成计算。</p>
       </section>
+
       <section id="minimum-cgpa">
         <h2>NUST 的最低 CGPA 与学业预警</h2>
         <ul>
@@ -463,17 +477,21 @@
         </ul>
         <p>如果你的 CGPA 低于 2.00，目标标签页会显示剩余学期需要多少 GPA 才能重新超过它。</p>
       </section>
+
       <section id="repeat">
         <h2>重修课程以提高 CGPA</h2>
         <p>重修课程后，成绩单会同时显示旧成绩和新成绩，但计算 CGPA 时只采用较好的成绩。重修需要系主任（HoD）批准，而且重修获得的成绩不计入最高学术荣誉和奖项，Rector's Gold Medal 除外。如果重修后再次不及格，仍只算一个 F。</p>
         <p><strong>计算器提示：</strong>重修过的课程只输入较好的成绩。</p>
       </section>
+
       <section id="percentage">
         <h2>NUST CGPA 转百分比</h2>
         <p>《NUST 本科生手册》没有给出把 CGPA 换算成百分比的官方公式。需要百分比时，很多人使用 (CGPA ÷ 4) × 100，因此 3.40 换算为 85%。用人单位和大学有时有自己的规则，请确认你申请的机构接受哪种方法。百分比标签页使用这种简单方法。</p>
       </section>
+
       <section id="faq" class="faq">
         <h2>NUST CGPA 计算器常见问题</h2>
+
         <details>
           <summary><h3>NUST 采用相对评分还是绝对评分？</h3></summary>
           <p>NUST 在 4.00 分制上采用相对评分，因此你的等级取决于你与班级同学相比的表现，而不是固定的百分比。这就是 NUST 没有固定分数-等级对照表的原因。</p>
@@ -503,6 +521,7 @@
           <p>把它作为一门课程，按总学分输入，例如 3+1 的课程输入 4。NUST 会把理论和实验分数合并为整门课的一个等级。</p>
         </details>
       </section>
+
       <section id="sources">
         <h2>资料来源</h2>
         <ul class="source-note">
@@ -511,6 +530,7 @@
         <p class="source-note">最后核对：2026 年 10 月 18 日。大学规定可能会变化，请务必以你所在大学最新的官方规定核实结果。请参阅我们的<a href="terms.html">使用条款</a>。</p>
       </section>
     </article>
+
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">更多 CGPA 与 GPA 计算器</h2>
       <div class="uni-grid">
@@ -519,20 +539,21 @@
           <span class="uni-name">COMSATS CGPA 与 GPA 计算器</span>
           <span class="muted small">HEC 标准（2021 秋季起）· 官方 % 规则</span>
         </a>
-        <a class="card uni-card" href="vtu-cgpa-calculator.html">
-          <span class="uni-badge">VTU</span>
-          <span class="uni-name">VTU CGPA 与 GPA（SGPA）计算器</span>
-          <span class="muted small">2022 与 2021 方案 · CGPA 转 %</span>
-        </a>
         <a class="card uni-card" href="index.html">
           <span class="uni-badge">全部</span>
           <span class="uni-name">通用 CGPA 计算器</span>
           <span class="muted small">4.0、5.0 和 10 分制</span>
         </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">18</span>
+          <span class="uni-name">All university calculators</span>
+          <span class="muted small">Pakistan, India, USA, UK, Malaysia, Australia and Germany</span>
+        </a>
       </div>
     </section>
     <p class="back-top"><a href="#calculator">↑ 返回计算器</a></p>
   </main>
+
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -550,6 +571,7 @@
     </div>
   </footer>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-nust',
     scales: {

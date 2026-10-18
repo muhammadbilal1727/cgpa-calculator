@@ -24,10 +24,12 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/vtu-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/vtu-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/vtu-cgpa-calculator.html">
+
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="id_ID">
@@ -151,6 +153,7 @@
   </script>
 </head>
 <body>
+
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -195,11 +198,13 @@
     </div>
   </header>
   <main class="container">
+
     <section class="hero">
       <nav class="breadcrumb" aria-label="Navigasi jejak"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">VTU</span></nav>
       <h1>Kalkulator CGPA &amp; GPA (SGPA) VTU</h1>
       <p>Hitung SGPA dan CGPA VTU Anda, lalu ubah CGPA ke persentase, dengan aturan resmi dari peraturan VTU untuk skema 2022 dan 2021. <a href="#guide" class="hero-link">Cara penilaian di VTU ↓</a></p>
     </section>
+
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <label id="scaleLabel" for="scaleSelect" class="scale-title">Skema VTU Anda</label>
@@ -209,6 +214,7 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">Atur ulang semua</button>
     </section>
     <p class="print-only" id="printDate"></p>
+
     <div class="layout">
       <!-- ================= Calculators ================= -->
       <div class="main-col">
@@ -225,6 +231,7 @@
               <h2>GPA semester</h2>
               <p class="muted small">Tambahkan setiap mata kuliah beserta SKS dan nilainya.</p>
             </div>
+
             <div class="segmented" id="modeSwitch" role="radiogroup" aria-label="Bagaimana Anda ingin memasukkan hasil?">
               <input type="radio" name="gpaMode" id="modeGrade" value="grade" checked="">
               <label for="modeGrade">Nilai huruf</label>
@@ -360,6 +367,7 @@
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
+
             <div class="field">
               <span class="field-label always" id="convScaleLabel">Skema</span>
               <div class="segmented full" role="radiogroup" aria-labelledby="convScaleLabel">
@@ -405,6 +413,7 @@
           </div>
           <p class="muted tiny">Rentang nilai berbeda di setiap kampus. Selalu periksa aturan penilaian kampus Anda sendiri.</p>
         </section>
+
         <section class="card tips">
           <h2 class="side-title">Fakta singkat VTU</h2>
           <ul>
@@ -415,11 +424,14 @@
         </section>
       </aside>
     </div>
+
     <article class="guide" id="guide">
+
       <section id="scheme">
         <h2>Anda di skema VTU yang mana?</h2>
         <p>VTU memperbarui peraturannya dari waktu ke waktu. Peraturan 2022 berlaku untuk mahasiswa yang diterima mulai tahun akademik 2022-23, sedangkan peraturan 2021 berlaku sejak 2021-22. Pilih skema Anda di bagian atas kalkulator, karena huruf nilai dan rumus CGPA ke persentasenya berbeda.</p>
       </section>
+
       <section id="grade-points">
         <h2>Sistem penilaian VTU: skema 2022</h2>
         <p>VTU memakai penilaian absolut. Nilai CIE (evaluasi internal berkelanjutan) dan SEE (ujian akhir semester) Anda dijumlahkan dan diubah menjadi persentase, dan persentase itulah yang menentukan nilai Anda (klausul 22OB 6.1).</p>
@@ -454,6 +466,7 @@
           </table>
         </div>
       </section>
+
       <section id="example">
         <h2>Cara VTU menghitung SGPA dan CGPA</h2>
         <p class="formula-block">SGPA = Σ (Ci × Gi) ÷ Σ Ci &nbsp;&nbsp; CGPA = Σ (Ci × Si) ÷ Σ Ci</p>
@@ -473,6 +486,7 @@
         </div>
         <p class="formula-block">SGPA = 123 ÷ 15 = 8.20</p>
       </section>
+
       <section id="percentage">
         <h2>CGPA VTU ke persentase</h2>
         <p><strong>Skema 2022:</strong> Persentase = CGPA × 10, jadi CGPA 8.20 menjadi <strong>82%</strong> (klausul 22OB 6.7). Peraturan menyebutkan rumus ini boleh dipakai untuk keperluan kerja dan studi lanjut.</p>
@@ -485,6 +499,7 @@
           <li><strong>Pass Class:</strong> 40% hingga 50%, yaitu CGPA 4.00 sampai 4.99</li>
         </ul>
       </section>
+
       <section id="passing">
         <h2>Nilai kelulusan VTU (skema 2022)</h2>
         <ul>
@@ -494,8 +509,10 @@
           <li>Untuk lulus seluruh program, Anda perlu nilai P atau lebih baik di setiap mata kuliah yang diambil.</li>
         </ul>
       </section>
+
       <section id="faq" class="faq">
         <h2>FAQ kalkulator CGPA VTU</h2>
+
         <details>
           <summary><h3>Bagaimana cara mengubah CGPA VTU ke persentase?</h3></summary>
           <p>Untuk skema 2022, kalikan CGPA Anda dengan 10, jadi 8.20 menjadi 82%. Untuk skema 2021 dan skema CBCS 2015 yang lebih lama, gunakan (CGPA − 0.75) × 10, jadi 8.20 menjadi 74.5%.</p>
@@ -521,6 +538,7 @@
           <p>Kalikan SGPA setiap semester dengan total SKS semester itu, jumlahkan hasilnya, lalu bagi dengan total SKS semua semester. SGPA dan CGPA dibulatkan ke 2 angka di belakang koma.</p>
         </details>
       </section>
+
       <section id="sources">
         <h2>Sumber</h2>
         <ul class="source-note">
@@ -531,28 +549,25 @@
         <p class="source-note">Terakhir diperiksa: 18 Oktober 2026. Aturan kampus bisa berubah, jadi selalu pastikan hasil Anda dengan aturan resmi terbaru dari kampus Anda. Lihat <a href="terms.html">Ketentuan Penggunaan</a> kami.</p>
       </section>
     </article>
+
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">Kalkulator CGPA &amp; GPA lainnya</h2>
       <div class="uni-grid">
-        <a class="card uni-card" href="nust-cgpa-calculator.html">
-          <span class="uni-badge">NUST</span>
-          <span class="uni-name">Kalkulator CGPA &amp; GPA NUST</span>
-          <span class="muted small">Penilaian relatif · A = 4.00, B+ = 3.50</span>
-        </a>
-        <a class="card uni-card" href="comsats-cgpa-calculator.html">
-          <span class="uni-badge">CUI</span>
-          <span class="uni-name">Kalkulator CGPA &amp; GPA COMSATS</span>
-          <span class="muted small">Kriteria HEC (Fall 2021+) · aturan % resmi</span>
-        </a>
         <a class="card uni-card" href="index.html">
           <span class="uni-badge">SEMUA</span>
           <span class="uni-name">Kalkulator CGPA Umum</span>
           <span class="muted small">Skala 4.0, 5.0, dan 10 poin</span>
         </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">18</span>
+          <span class="uni-name">All university calculators</span>
+          <span class="muted small">Pakistan, India, USA, UK, Malaysia, Australia and Germany</span>
+        </a>
       </div>
     </section>
     <p class="back-top"><a href="#calculator">↑ Kembali ke kalkulator</a></p>
   </main>
+
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -570,6 +585,7 @@
     </div>
   </footer>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-vtu',
     defaultScale: '2022',

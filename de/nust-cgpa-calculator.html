@@ -24,10 +24,12 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/nust-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/nust-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/nust-cgpa-calculator.html">
+
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="de_DE">
@@ -159,6 +161,7 @@
   </script>
 </head>
 <body>
+
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -203,11 +206,13 @@
     </div>
   </header>
   <main class="container">
+
     <section class="hero">
       <nav class="breadcrumb" aria-label="Brotkrümelnavigation"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">NUST</span></nav>
       <h1>NUST CGPA- &amp; GPA-Rechner</h1>
       <p>Berechne deinen Semester-GPA und Gesamt-CGPA mit den offiziellen NUST-Notenpunkten für das Bachelorstudium (A = 4.00, B+ = 3.50, B = 3.00 usw.). <a href="#guide" class="hero-link">So funktioniert die Benotung an der NUST ↓</a></p>
     </section>
+
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <p id="scaleLabel" class="scale-title">Notensystem: NUST Bachelor</p>
@@ -217,6 +222,7 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">Alles zurücksetzen</button>
     </section>
     <p class="print-only" id="printDate"></p>
+
     <div class="layout">
       <!-- ================= Calculators ================= -->
       <div class="main-col">
@@ -233,6 +239,7 @@
               <h2>Semester-GPA</h2>
               <p class="muted small">Füge jedes Fach mit seinen Credits und seiner Note hinzu.</p>
             </div>
+
           </div>
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>Fach (optional)</span><span>Credits</span><span id="gradeHead">Note</span><span></span>
@@ -362,6 +369,7 @@
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
+
           </div>
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">Meinen CGPA aus dem CGPA-Tab verwenden</button>
           <div class="result" aria-live="polite">
@@ -398,6 +406,7 @@
           </div>
           <p class="muted tiny">Die Punktebereiche unterscheiden sich zwischen Hochschulen. Prüfe immer die Notenordnung deiner eigenen Hochschule.</p>
         </section>
+
         <section class="card tips">
           <h2 class="side-title">NUST in Kürze</h2>
           <ul>
@@ -408,7 +417,9 @@
         </section>
       </aside>
     </div>
+
     <article class="guide" id="guide">
+
       <section id="how-it-works">
         <h2>So funktioniert die Benotung an der NUST</h2>
         <p>Die NUST benotet relativ auf einer 4.00-Skala. Im NUST Undergraduate Student Handbook heißt es: <q>The University follows a relative grading system on a scale of 1.00 to 4.00 points.</q> („Die Universität folgt einem relativen Notensystem auf einer Skala von 1.00 bis 4.00 Punkten.“) Deine Buchstabennote hängt davon ab, wie du im Vergleich zu deinem Kurs abgeschnitten hast, nicht von einem festen Prozentwert. 82 % können in einer schweren Prüfung ein A und in einer leichteren ein B+ sein.</p>
@@ -416,6 +427,7 @@
         <h3>Kurse mit Theorie und Labor</h3>
         <p>Bei einem Kurs mit Theorie- und Labor-Credits kombiniert die NUST zuerst die beiden Prozentwerte, gewichtet nach Credits, und benotet dann den Kurs als Ganzes. Das Beispiel aus dem Handbuch ist Physik mit 3 Theorie-Credits bei 70 % und 1 Labor-Credit bei 90 %, also (70 × 3 + 90 × 1) ÷ 4 = 75 %. Du bekommst eine Note für alle 4 Credits, gib den Kurs also als ein Fach mit 4 Credits ein.</p>
       </section>
+
       <section id="grade-points">
         <h2>NUST-Notenpunkte-Tabelle</h2>
         <div class="table-scroll">
@@ -436,6 +448,7 @@
         </div>
         <p>I (unvollständig), W (abgebrochen), Q (qualifiziert) und T (Anrechnung) haben keine Notenpunkte. Beachte, dass die NUST kein A+ und keine Minus-Noten hat: B+ und C+ liegen einen halben Punkt über B und C.</p>
       </section>
+
       <section id="example">
         <h2>NUST-GPA berechnen: Rechenbeispiel</h2>
         <div class="table-scroll">
@@ -454,6 +467,7 @@
         <p class="formula-block">GPA = 54.00 ÷ 16 = 3.375 ≈ 3.38</p>
         <p>Dein CGPA funktioniert über alle Semester genauso: Addiere Credits × Punkte für jeden belegten Kurs und teile durch deine Credits gesamt. Der CGPA-Tab macht das aus deinen Semester-GPAs.</p>
       </section>
+
       <section id="minimum-cgpa">
         <h2>Mindest-CGPA und akademische Defizite an der NUST</h2>
         <ul>
@@ -463,17 +477,21 @@
         </ul>
         <p>Wenn dein CGPA unter 2.00 gefallen ist, zeigt dir der Ziel-Tab, welchen GPA du in den restlichen Semestern brauchst, um wieder darüber zu kommen.</p>
       </section>
+
       <section id="repeat">
         <h2>Einen Kurs wiederholen, um den CGPA zu verbessern</h2>
         <p>Wenn du einen Kurs wiederholst, zeigt dein Zeugnis die alte und die neue Note, aber nur die bessere zählt für deinen CGPA. Eine Wiederholung braucht die Genehmigung deiner Fachbereichsleitung (HoD), und durch Wiederholung erreichte Noten zählen nicht für die höchsten akademischen Ehrungen und Preise, außer der Rector's Gold Medal. Fällst du nach einer Wiederholung erneut durch, zählt das trotzdem als ein F.</p>
         <p><strong>Tipp für den Rechner:</strong> Gib bei einem wiederholten Kurs nur die bessere Note ein.</p>
       </section>
+
       <section id="percentage">
         <h2>NUST-CGPA in Prozent</h2>
         <p>Das NUST Undergraduate Student Handbook enthält keine offizielle Formel für die Umrechnung von CGPA in Prozent. Wird ein Prozentwert gebraucht, nutzen viele (CGPA ÷ 4) × 100, sodass aus 3.40 dann 85 % werden. Arbeitgeber und Hochschulen haben manchmal eigene Regeln, prüfe also, was die Organisation akzeptiert, bei der du dich bewirbst. Der Prozent-Tab nutzt diese einfache Methode.</p>
       </section>
+
       <section id="faq" class="faq">
         <h2>FAQ zum NUST CGPA-Rechner</h2>
+
         <details>
           <summary><h3>Benotet die NUST relativ oder absolut?</h3></summary>
           <p>Die NUST benotet relativ auf einer 4.00-Skala, deine Note hängt also von deiner Leistung im Vergleich zu deinem Kurs ab und nicht von einem festen Prozentwert. Deshalb gibt es für die NUST keine feste Tabelle von Punktzahlen zu Noten.</p>
@@ -503,6 +521,7 @@
           <p>Gib ihn als ein Fach mit seinen gesamten Credits ein, zum Beispiel 4 bei einem 3+1-Kurs. Die NUST fasst Theorie- und Laborpunkte zu einer Note für den ganzen Kurs zusammen.</p>
         </details>
       </section>
+
       <section id="sources">
         <h2>Quellen</h2>
         <ul class="source-note">
@@ -511,6 +530,7 @@
         <p class="source-note">Zuletzt geprüft: 18. Oktober 2026. Hochschulregeln können sich ändern, bestätige deine Ergebnisse also immer mit den aktuellen offiziellen Regeln deiner Hochschule. Siehe unsere <a href="terms.html">Nutzungsbedingungen</a>.</p>
       </section>
     </article>
+
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">Weitere CGPA- &amp; GPA-Rechner</h2>
       <div class="uni-grid">
@@ -519,20 +539,21 @@
           <span class="uni-name">COMSATS CGPA- &amp; GPA-Rechner</span>
           <span class="muted small">HEC-Kriterien (ab Herbst 2021) · offizielle %-Regel</span>
         </a>
-        <a class="card uni-card" href="vtu-cgpa-calculator.html">
-          <span class="uni-badge">VTU</span>
-          <span class="uni-name">VTU CGPA- &amp; GPA-(SGPA-)Rechner</span>
-          <span class="muted small">Schemata 2022 &amp; 2021 · CGPA in %</span>
-        </a>
         <a class="card uni-card" href="index.html">
           <span class="uni-badge">ALLE</span>
           <span class="uni-name">Allgemeiner CGPA-Rechner</span>
           <span class="muted small">4.0-, 5.0- und 10-Punkte-Skalen</span>
         </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">18</span>
+          <span class="uni-name">All university calculators</span>
+          <span class="muted small">Pakistan, India, USA, UK, Malaysia, Australia and Germany</span>
+        </a>
       </div>
     </section>
     <p class="back-top"><a href="#calculator">↑ Zurück zum Rechner</a></p>
   </main>
+
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -550,6 +571,7 @@
     </div>
   </footer>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-nust',
     scales: {

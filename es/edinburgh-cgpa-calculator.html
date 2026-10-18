@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Built by tools/build-university-pages.js – edit that file, not this one -->
+  <title>Calculadora de CGPA y GPA de Edimburgo – clasificación Honours</title>
+  <meta name="description" content="Calculadora de CGPA y GPA de la Universidad de Edimburgo: media de Honours ponderada por créditos, notas A1 a H del Common Marking Scheme y tu clase de título.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f6fb">
+  <link rel="canonical" href="https://cgpa-calculator-umber-two.vercel.app/es/edinburgh-cgpa-calculator.html">
+  <link rel="alternate" hreflang="en" href="https://cgpa-calculator-umber-two.vercel.app/edinburgh-cgpa-calculator.html">
+  <link rel="alternate" hreflang="es" href="https://cgpa-calculator-umber-two.vercel.app/es/edinburgh-cgpa-calculator.html">
+  <link rel="alternate" hreflang="de" href="https://cgpa-calculator-umber-two.vercel.app/de/edinburgh-cgpa-calculator.html">
+  <link rel="alternate" hreflang="hi" href="https://cgpa-calculator-umber-two.vercel.app/hi/edinburgh-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ur" href="https://cgpa-calculator-umber-two.vercel.app/ur/edinburgh-cgpa-calculator.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://cgpa-calculator-umber-two.vercel.app/zh/edinburgh-cgpa-calculator.html">
+  <link rel="alternate" hreflang="fr" href="https://cgpa-calculator-umber-two.vercel.app/fr/edinburgh-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ar" href="https://cgpa-calculator-umber-two.vercel.app/ar/edinburgh-cgpa-calculator.html">
+  <link rel="alternate" hreflang="bn" href="https://cgpa-calculator-umber-two.vercel.app/bn/edinburgh-cgpa-calculator.html">
+  <link rel="alternate" hreflang="pt" href="https://cgpa-calculator-umber-two.vercel.app/pt/edinburgh-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ru" href="https://cgpa-calculator-umber-two.vercel.app/ru/edinburgh-cgpa-calculator.html">
+  <link rel="alternate" hreflang="id" href="https://cgpa-calculator-umber-two.vercel.app/id/edinburgh-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ja" href="https://cgpa-calculator-umber-two.vercel.app/ja/edinburgh-cgpa-calculator.html">
+  <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/edinburgh-cgpa-calculator.html">
+  <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/edinburgh-cgpa-calculator.html">
+  <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/edinburgh-cgpa-calculator.html">
+
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CGPA Calculator">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:url" content="https://cgpa-calculator-umber-two.vercel.app/es/edinburgh-cgpa-calculator.html">
+  <meta property="og:title" content="Calculadora de CGPA y GPA de Edimburgo">
+  <meta property="og:description" content="Calculadora de CGPA y GPA de la Universidad de Edimburgo: media de Honours ponderada por créditos, notas A1 a H del Common Marking Scheme y tu clase de título.">
+  <meta property="og:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <meta property="og:image:alt" content="Calculadora de CGPA: una tarjeta de resultado con un CGPA de 3.37 sobre 4.00">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calculadora de CGPA y GPA de Edimburgo">
+  <meta name="twitter:description" content="Calculadora de CGPA y GPA de la Universidad de Edimburgo: media de Honours ponderada por créditos, notas A1 a H del Common Marking Scheme y tu clase de título.">
+  <meta name="twitter:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "@id": "https://cgpa-calculator-umber-two.vercel.app/es/edinburgh-cgpa-calculator.html#app",
+    "name": "Calculadora de CGPA y GPA de Edimburgo",
+    "url": "https://cgpa-calculator-umber-two.vercel.app/es/edinburgh-cgpa-calculator.html",
+    "image": "https://cgpa-calculator-umber-two.vercel.app/og-image.jpg",
+    "description": "Calculadora de CGPA y GPA de la Universidad de Edimburgo: media de Honours ponderada por créditos, notas A1 a H del Common Marking Scheme y tu clase de título.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "es",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué años cuentan para un título Honours de Edimburgo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "En la mayoría de los títulos, el tercer y cuarto año (los años de Honours). Las asignaturas se ponderan por créditos. Algunos programas son distintos; por ejemplo, los Integrated Masters ponderan sus tres años de Honours con 20, 40 y 40."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué nota es un First en Edimburgo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Una media global de 70 o más. Las notas A1 (90–100), A2 (80–89) y A3 (70–79) están todas en la banda de First Class."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Redondea Edimburgo la media final?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Las notas de las asignaturas se redondean a números enteros antes de publicarse, pero la media global que se usa para tu clase no se redondea."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es una nota limítrofe en Edimburgo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Una nota desde dos puntos porcentuales por debajo de un límite de clase hasta el límite, como del 68.00% al 69.99% para un First. El Board of Examiners debe estudiar estos casos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué significa una B en Edimburgo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Una B es una nota de 60–69, descrita como muy buena, y está en la banda Upper Second (2:1)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Tiene Edimburgo GPA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Edimburgo usa notas sobre 100 y clases de Honours. Una universidad o un empleador del extranjero convertirá tu expediente con sus propias reglas."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "CGPA Calculator",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/es/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculadora de CGPA y GPA de Edimburgo",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/es/edinburgh-cgpa-calculator.html"
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    /* Apply the saved (or system) theme before the page paints, so there is no flash */
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem('cgpa-theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="CGPA Calculator home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3z"></path>
+            <path d="M5 13.18v4C5 18.84 8.13 20 12 20s7-1.16 7-2.82v-4L12 17l-7-3.82z"></path>
+          </svg>
+        </span>
+        <span>CGPA Calculator</span>
+      </a>
+      <div class="header-actions">
+        <nav class="site-nav" id="siteNav" aria-label="Main menu">
+          <a href="index.html">Calculator</a>
+          <a href="about.html">About</a>
+          <a href="privacy-policy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <details class="lang-menu" id="langMenu">
+          <summary class="icon-btn lang-btn" aria-label="Choose language" title="Language">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"></path></svg>
+            <span class="lang-code" data-no-translate="">ES</span>
+          </summary>
+          <div class="lang-list" data-no-translate=""><a href="../edinburgh-cgpa-calculator.html" hreflang="en" lang="en">English</a><a href="edinburgh-cgpa-calculator.html" hreflang="es" lang="es" aria-current="true">Español</a><a href="../de/edinburgh-cgpa-calculator.html" hreflang="de" lang="de">Deutsch</a><a href="../hi/edinburgh-cgpa-calculator.html" hreflang="hi" lang="hi">हिन्दी</a><a href="../ur/edinburgh-cgpa-calculator.html" hreflang="ur" lang="ur">اردو</a><a href="../zh/edinburgh-cgpa-calculator.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="../fr/edinburgh-cgpa-calculator.html" hreflang="fr" lang="fr">Français</a><a href="../ar/edinburgh-cgpa-calculator.html" hreflang="ar" lang="ar">العربية</a><a href="../bn/edinburgh-cgpa-calculator.html" hreflang="bn" lang="bn">বাংলা</a><a href="../pt/edinburgh-cgpa-calculator.html" hreflang="pt" lang="pt">Português</a><a href="../ru/edinburgh-cgpa-calculator.html" hreflang="ru" lang="ru">Русский</a><a href="../id/edinburgh-cgpa-calculator.html" hreflang="id" lang="id">Bahasa Indonesia</a><a href="../ja/edinburgh-cgpa-calculator.html" hreflang="ja" lang="ja">日本語</a><a href="../mr/edinburgh-cgpa-calculator.html" hreflang="mr" lang="mr">मराठी</a><a href="../te/edinburgh-cgpa-calculator.html" hreflang="te" lang="te">తెలుగు</a></div>
+        </details>
+        <button type="button" id="themeToggle" class="icon-btn" aria-label="Switch to dark mode" title="Light / dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+        </button>
+        <button type="button" id="menuToggle" class="icon-btn menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
+          <svg class="icon-menu" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+
+    <section class="hero">
+      <nav class="breadcrumb" aria-label="Ruta de navegación"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">Edinburgh</span></nav>
+      <h1>Calculadora de CGPA y GPA de Edimburgo</h1>
+      <p>Calcula tu media de Honours ponderada por créditos con el Common Marking Scheme de la Universidad de Edimburgo y descubre en qué clase de título y banda de nota cae. <a href="#guide" class="hero-link">Cómo funciona la clasificación en Edimburgo ↓</a></p>
+    </section>
+
+    <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
+      <div class="scale-text">
+        <p id="scaleLabel" class="scale-title">Sistema de calificación: Common Marking Scheme de Edimburgo</p>
+        <p class="muted small">Introduce la nota final (sobre 100) y los créditos de cada asignatura de Honours. La clase de título sale de la media de estas notas ponderada por créditos.</p>
+      </div>
+      <select id="scaleSelect" hidden="" aria-hidden="true" tabindex="-1"><option value="edinburgh">Edinburgh</option></select>
+      <button type="button" id="resetAll" class="btn btn-outline danger-hover">Restablecer todo</button>
+    </section>
+    <p class="print-only" id="printDate"></p>
+
+    <div class="layout">
+      <!-- ================= Calculators ================= -->
+      <div class="main-col">
+        <div class="tabs" role="tablist" aria-label="Calculadoras">
+          <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">Media <small>Módulos</small></button>
+          <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">Título <small>Todos los años</small></button>
+          <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">Objetivo <small>Planifica</small></button>
+          <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">Clase <small>Comprobar</small></button>
+        </div>
+        <!-- ---------- TAB 1: GPA ---------- -->
+        <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
+          <div class="panel-head">
+            <div>
+              <h2>Nota media</h2>
+              <p class="muted small">Añade cada módulo con sus créditos y su nota sobre 100.</p>
+            </div>
+
+          </div>
+          <div class="rows-head subject-cols" aria-hidden="true">
+            <span>Módulo (opcional)</span><span>Créditos</span><span id="gradeHead">Nota</span><span></span>
+          </div>
+          <div id="subjectList" class="row-list mode-grade"></div>
+          <button type="button" id="addSubject" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            Añadir módulo
+          </button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">Tu nota media</div>
+            <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="gpaMeter"></span></div>
+            <div class="result-cheer" id="gpaCheer"></div>
+            <div class="result-sub" id="gpaSub">Añade tus asignaturas para ver tu GPA.</div>
+            <div class="result-note" id="gpaNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" id="sendToCgpa" class="btn btn-soft">Añadir esta media a mi nota de título →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="gpa">Copiar resultado</button>
+            <button type="button" class="btn btn-outline js-print" title="En la ventana de impresión, elige «Guardar como PDF» para descargar un PDF">Imprimir / PDF</button>
+            <button type="button" id="resetGpa" class="btn btn-quiet">Borrar</button>
+          </div>
+          <details class="howto">
+            <summary>¿Cómo se calcula la nota media?</summary>
+            <p class="formula-line">Media = (Σ créditos × nota) ÷ (Σ créditos)</p>
+            <p class="muted small">Ejemplo: una asignatura de 20 créditos con 68 y un trabajo final (dissertation) de 40 créditos con 72 → (20×68 + 40×72) ÷ 60 = 4240 ÷ 60 = <strong>70.67</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 2: CGPA ---------- -->
+        <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>Nota de título</h2>
+              <p class="muted small">Añade la nota media de cada año de Honours y sus créditos (normalmente 120).</p>
+            </div>
+          </div>
+          <div class="rows-head semester-cols" aria-hidden="true">
+            <span>Año</span><span>Nota media</span><span>Créditos</span><span></span>
+          </div>
+          <div id="semesterList" class="row-list"></div>
+          <button type="button" id="addSemester" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            Añadir año
+          </button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">Tu nota de título</div>
+            <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="cgpaMeter"></span></div>
+            <div class="result-cheer" id="cgpaCheer"></div>
+            <div class="result-sub" id="cgpaSub">Añade tus semestres para ver tu CGPA.</div>
+            <div class="result-note" id="cgpaNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" id="sendToPct" class="btn btn-soft">Comprobar mi clase de título →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">Copiar resultado</button>
+            <button type="button" class="btn btn-outline js-print" title="En la ventana de impresión, elige «Guardar como PDF» para descargar un PDF">Imprimir / PDF</button>
+            <button type="button" id="resetCgpa" class="btn btn-quiet">Borrar</button>
+          </div>
+          <details class="howto">
+            <summary>¿Cómo se calcula la nota de título?</summary>
+            <p class="formula-line">Nota de título = (Σ media del año × créditos del año) ÷ (Σ créditos)</p>
+            <p class="muted small">Ejemplo: Junior Honours 65 con 120 créditos y Senior Honours 71 con 120 créditos → (65×120 + 71×120) ÷ 240 = <strong>68.00</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 3: Target CGPA ---------- -->
+        <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>Nota de título objetivo</h2>
+              <p class="muted small">Descubre qué nota media necesitas en tus módulos restantes para conseguir la clase que quieres.</p>
+            </div>
+          </div>
+          <div class="target-grid">
+            <div class="field">
+              <label class="field-label" for="tCurrent">Nota media actual</label>
+              <input type="text" id="tCurrent" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tCurrentMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tDone">Créditos completados</label>
+              <input type="text" id="tDone" inputmode="decimal" autocomplete="off" placeholder="e.g. 66">
+              <p class="row-msg" id="tDoneMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tTarget">Nota objetivo (70 = First)</label>
+              <input type="text" id="tTarget" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tTargetMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tLeft">Créditos restantes</label>
+              <input type="text" id="tLeft" inputmode="decimal" autocomplete="off" placeholder="e.g. 70">
+              <p class="row-msg" id="tLeftMsg"></p>
+            </div>
+          </div>
+          <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">Rellenar desde mi pestaña CGPA</button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">Nota media que necesitas a partir de ahora</div>
+            <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="tgtMeter"></span></div>
+            <div class="result-cheer" id="tgtCheer"></div>
+            <div class="result-sub" id="tgtSub">Rellena las cuatro casillas de arriba para ver el GPA que necesitas.</div>
+            <div class="result-note" id="tgtNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="target">Copiar resultado</button>
+            <button type="button" class="btn btn-outline js-print" title="En la ventana de impresión, elige «Guardar como PDF» para descargar un PDF">Imprimir / PDF</button>
+            <button type="button" id="resetTarget" class="btn btn-quiet">Borrar</button>
+          </div>
+          <details class="howto">
+            <summary>¿Cómo se calcula?</summary>
+            <p class="formula-line">Nota necesaria = (Objetivo × créditos totales − Actual × créditos completados) ÷ créditos restantes</p>
+            <p class="muted small">Ejemplo: una media de 64 en 120 créditos hasta ahora, un objetivo de 70 y 120 créditos por delante → (70 × 240 − 64 × 120) ÷ 120 = <strong>76</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 4: Percentage ---------- -->
+        <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>Clase de título según tu nota</h2>
+              <p class="muted small">Escribe tu nota media final sobre 100.</p>
+            </div>
+          </div>
+          <div class="conv-grid">
+            <div class="field">
+              <label class="field-label always" for="convInput">Tu nota media</label>
+              <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
+              <p class="row-msg" id="convMsg"></p>
+            </div>
+
+          </div>
+          <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">Usar mi nota de la pestaña Título</button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">Clase de título</div>
+            <div class="result-value"><span id="pctValue">—</span></div>
+            <div class="meter" aria-hidden="true"><span id="pctMeter"></span></div>
+            <div class="result-cheer" id="pctCheer"></div>
+            <div class="result-sub" id="pctSub">Introduce tu CGPA para ver el porcentaje.</div>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="pct">Copiar resultado</button>
+            <button type="button" class="btn btn-outline js-print" title="En la ventana de impresión, elige «Guardar como PDF» para descargar un PDF">Imprimir / PDF</button>
+          </div>
+          <div class="formula">
+            <div class="formula-title">Fórmula utilizada</div>
+            <p class="formula-line" id="formulaMain"></p>
+            <p class="formula-work" id="formulaWork"></p>
+            <p class="muted small" id="formulaNote"></p>
+          </div>
+        </section>
+      </div>
+      <!-- ================= Sidebar: grade table ================= -->
+      <aside class="sidebar">
+        <section class="card" aria-labelledby="tableTitle">
+          <h2 id="tableTitle" class="side-title">Puntos de nota</h2>
+          <p class="muted small" id="tableSubtitle"></p>
+          <div class="table-wrap">
+            <table class="grade-table">
+              <thead>
+                <tr><th scope="col">Nota</th><th scope="col" class="num">Puntuación</th><th scope="col" class="num" id="marksCol">% de puntuación</th></tr>
+              </thead>
+              <tbody id="gradeTableBody"></tbody>
+            </table>
+          </div>
+          <p class="muted tiny">Los rangos de puntuación varían entre universidades. Consulta siempre la normativa de calificación de tu universidad.</p>
+        </section>
+
+        <section class="card tips">
+          <h2 class="side-title">Datos clave de Edimburgo</h2>
+          <ul>
+            <li>La mayoría de los títulos se clasifican con los <strong>años 3.º y 4.º (Honours)</strong>; los años 1 y 2 no cuentan.</li>
+            <li>Las asignaturas se ponderan por <strong>créditos</strong> y la media global <strong>no se redondea</strong>.</li>
+            <li>Una nota a menos de <strong>2 puntos por debajo de un límite</strong> (p. ej. 68.00–69.99) es <strong>limítrofe (borderline)</strong> y debe estudiarse.</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <article class="guide" id="guide">
+
+      <section id="how-it-works">
+        <h2>Cómo clasifica Edimburgo los títulos Honours</h2>
+        <p>La Universidad de Edimburgo clasifica la mayoría de los títulos Honours de grado con la nota media de todas las asignaturas cursadas en el tercer y cuarto año, los años de Honours, ponderada por los créditos de cada asignatura. Cada 10 créditos cuentan lo mismo, así que un trabajo final de 40 créditos pesa cuatro veces más que una asignatura de 10 créditos. Los dos primeros años no cuentan para tu clase, así que puedes cursar asignaturas muy variadas sin que afecte a tu resultado final.</p>
+        <p>Hay excepciones. Los títulos BSc Honours de la School of Biological Sciences, la Deanery of Biomedical Sciences y Química ponderan Senior frente a Junior Honours 2:1. Los Integrated Masters usan sus tres años de Honours con pesos 20, 40 y 40. En los títulos con estancia opcional en el extranjero en tercer año, solo cuenta el último año.</p>
+      </section>
+
+      <section id="grade-points">
+        <h2>Common Marking Scheme de Edimburgo (grado)</h2>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">Nota %</th><th scope="col">Nota</th><th scope="col">Clase Honours</th><th scope="col">Descripción</th></tr></thead>
+            <tbody>
+              <tr><td>90–100</td><td>A1</td><td>1.ª</td><td>Excelente</td></tr>
+              <tr><td>80–89</td><td>A2</td><td>1.ª</td><td>Excelente</td></tr>
+              <tr><td>70–79</td><td>A3</td><td>1.ª</td><td>Excelente</td></tr>
+              <tr><td>60–69</td><td>B</td><td>2.1</td><td>Muy bien</td></tr>
+              <tr><td>50–59</td><td>C</td><td>2.2</td><td>Bien</td></tr>
+              <tr><td>40–49</td><td>D</td><td>3.ª</td><td>Aprobado</td></tr>
+              <tr><td>30–39</td><td>E</td><td>Suspenso</td><td>Suspenso por poco</td></tr>
+              <tr><td>20–29</td><td>F</td><td>Suspenso</td><td>Suspenso claro</td></tr>
+              <tr><td>10–19</td><td>G</td><td>Suspenso</td><td>Suspenso grave</td></tr>
+              <tr><td>0–9</td><td>H</td><td>Suspenso</td><td>Suspenso grave</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="example">
+        <h2>Redondeo y casos limítrofes</h2>
+        <p>Cada nota final de asignatura se redondea a un número entero antes de publicarse: 59.50 pasa a 60 y 59.49 a 59. Esas notas redondeadas se usan para calcular tu media global, y la media global en sí <strong>no</strong> se redondea. Así que una media de 69.90 no es por sí sola un First.</p>
+        <p>Sin embargo, el reglamento define como limítrofes las notas desde dos puntos porcentuales por debajo de un límite de clase hasta el límite, por ejemplo del 68.00% al 69.99% para un First o del 58.00% al 59.99% para un 2:1. El tribunal de evaluación (Board of Examiners) debe estudiar a cada estudiante limítrofe con criterios publicados de antemano, como un mejor rendimiento en asignaturas de nivel superior.</p>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">Asignatura de Honours</th><th scope="col" class="num">Créditos</th><th scope="col" class="num">Nota</th><th scope="col" class="num">Créditos × nota</th></tr></thead>
+            <tbody>
+              <tr><td>Asignaturas de Junior Honours</td><td class="num">120</td><td class="num">66</td><td class="num">7920</td></tr>
+              <tr><td>Asignaturas de Senior Honours</td><td class="num">80</td><td class="num">70</td><td class="num">5600</td></tr>
+              <tr><td>Trabajo final (dissertation)</td><td class="num">40</td><td class="num">73</td><td class="num">2920</td></tr>
+            </tbody>
+            <tfoot><tr><th scope="row">Total</th><td class="num">240</td><td></td><td class="num">16440</td></tr></tfoot>
+          </table>
+        </div>
+        <p class="formula-block">Media = 16440 ÷ 240 = 68.50 → 2:1, limítrofe para un First</p>
+      </section>
+
+      <section id="gpa">
+        <h2>Notas de Edimburgo y GPA</h2>
+        <p>Edimburgo no usa GPA. Si solicitas plaza en el extranjero, envía tu expediente con tus notas y tu clase; la universidad o el empleador que lo reciba lo convertirá con sus propias reglas.</p>
+      </section>
+
+      <section id="faq" class="faq">
+        <h2>Preguntas frecuentes: calculadora de CGPA de Edimburgo</h2>
+
+        <details>
+          <summary><h3>¿Qué años cuentan para un título Honours de Edimburgo?</h3></summary>
+          <p>En la mayoría de los títulos, el tercer y cuarto año (los años de Honours). Las asignaturas se ponderan por créditos. Algunos programas son distintos; por ejemplo, los Integrated Masters ponderan sus tres años de Honours con 20, 40 y 40.</p>
+        </details>
+        <details>
+          <summary><h3>¿Qué nota es un First en Edimburgo?</h3></summary>
+          <p>Una media global de 70 o más. Las notas A1 (90–100), A2 (80–89) y A3 (70–79) están todas en la banda de First Class.</p>
+        </details>
+        <details>
+          <summary><h3>¿Redondea Edimburgo la media final?</h3></summary>
+          <p>No. Las notas de las asignaturas se redondean a números enteros antes de publicarse, pero la media global que se usa para tu clase no se redondea.</p>
+        </details>
+        <details>
+          <summary><h3>¿Qué es una nota limítrofe en Edimburgo?</h3></summary>
+          <p>Una nota desde dos puntos porcentuales por debajo de un límite de clase hasta el límite, como del 68.00% al 69.99% para un First. El Board of Examiners debe estudiar estos casos.</p>
+        </details>
+        <details>
+          <summary><h3>¿Qué significa una B en Edimburgo?</h3></summary>
+          <p>Una B es una nota de 60–69, descrita como muy buena, y está en la banda Upper Second (2:1).</p>
+        </details>
+        <details>
+          <summary><h3>¿Tiene Edimburgo GPA?</h3></summary>
+          <p>No. Edimburgo usa notas sobre 100 y clases de Honours. Una universidad o un empleador del extranjero convertirá tu expediente con sus propias reglas.</p>
+        </details>
+      </section>
+
+      <section id="sources">
+        <h2>Fuentes</h2>
+        <ul class="source-note">
+          <li><a href="https://registryservices.ed.ac.uk/sites/default/files/2025-09/2024/25%20Taught%20Assessment%20Regulations.pdf">Universidad de Edimburgo: Taught Assessment Regulations 2024/25 (reglas 44, 55 y 63)</a></li>
+          <li><a href="https://www.ed.ac.uk/timetabling-examinations/exams/regulations/common-marking-scheme">Universidad de Edimburgo: Common Marking Schemes</a></li>
+          <li><a href="https://registryservices.ed.ac.uk/academic-services/staff/assessment/degree-classification">Universidad de Edimburgo, Academic Services: Degree classification</a></li>
+        </ul>
+        <p class="source-note">Última revisión: 18 de octubre de 2026. Las normas universitarias pueden cambiar, así que confirma siempre tus resultados con las normas oficiales más recientes de tu universidad. Consulta nuestros <a href="terms.html">Términos de uso</a>.</p>
+      </section>
+    </article>
+
+    <section class="uni-section" aria-labelledby="uniTitle">
+      <h2 id="uniTitle">Más calculadoras de CGPA y GPA</h2>
+      <div class="uni-grid">
+        <a class="card uni-card" href="oxford-cgpa-calculator.html">
+          <span class="uni-badge">Oxford</span>
+          <span class="uni-name">Calculadora de CGPA y GPA de Oxford</span>
+          <span class="muted small">USM sobre 100 · First = 70+</span>
+        </a>
+        <a class="card uni-card" href="kcl-cgpa-calculator.html">
+          <span class="uni-badge">KCL</span>
+          <span class="uni-name">Calculadora de CGPA y GPA del King's College London</span>
+          <span class="muted small">Ponderación anual 0:2:3 · nota redondeada</span>
+        </a>
+        <a class="card uni-card" href="index.html">
+          <span class="uni-badge">TODAS</span>
+          <span class="uni-name">Calculadora de CGPA general</span>
+          <span class="muted small">Escalas de 4.0, 5.0 y 10 puntos</span>
+        </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">18</span>
+          <span class="uni-name">Todas las calculadoras por universidad</span>
+          <span class="muted small">Pakistán, India, EE. UU., Reino Unido, Malasia, Australia y Alemania</span>
+        </a>
+      </div>
+    </section>
+    <p class="back-top"><a href="#calculator">↑ Volver a la calculadora</a></p>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p><strong>CGPA Calculator</strong> · Hecha para estudiantes · © <span id="year">2026</span></p>
+        <p class="muted">Los resultados son estimaciones. Las normas oficiales de tu universidad siempre tienen prioridad.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Pie de página">
+        <a href="index.html">Calculadora</a>
+        <a href="about.html">Acerca de</a>
+        <a href="privacy-policy.html">Política de privacidad</a>
+        <a href="terms.html">Términos de uso</a>
+        <a href="contact.html">Contacto</a>
+      </nav>
+    </div>
+  </footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>window.CGPA_PAGE = {
+    storageKey: 'cgpa-edinburgh',
+    creditLabel: 'Credits',
+    creditExample: 15,
+    maxCredit: 120,
+    maxSemCredit: 240,
+    maxTotalCredit: 720,
+    periodLabel: 'Year {n}',
+    msgs: {"Add your subjects to see your GPA.":"Add your modules to see your average mark.","Add your semesters to see your CGPA.":"Add your years to see your degree mark.","Fill in the four boxes above to see the GPA you need.":"Fill in the four boxes above to see the mark you need.","Fill in all four boxes to see the GPA you need.":"Fill in all four boxes to see the mark you need.","Enter your CGPA to see the percentage.":"Enter your average mark to see your degree class.","Fix the CGPA above to see the percentage.":"Fix the mark above to see your degree class.","Please enter the GPA for this semester.":"Please enter the average mark for this year.","Please enter the total credit hours for this semester.":"Please enter the weight for this year.","GPA / SGPA":"Average mark","Subject name (optional)":"Module or paper (optional)","e.g. Calculus":"e.g. Algorithms","GPA should be a number, like {x}.":"The mark should be a number, like {x}.","GPA can’t be negative.":"A mark can’t be negative.","GPA can’t be more than {max} on the {scale}.":"A mark can’t be more than 100.","CGPA can’t be negative.":"A mark can’t be negative.","On the {scale}, CGPA can’t be more than {max}. Try a different scale.":"A mark can’t be more than 100.","Please type your CGPA as a number, like {x}.":"Please type your mark as a number, like {x}.","Calculate your CGPA in the CGPA tab first 🙂":"Work out your degree mark in the Degree tab first 🙂","Add at least one complete subject first 🙂":"Add at least one complete module first 🙂","Add at least one complete semester first 🙂":"Add at least one complete year first 🙂","Semester {n}: GPA {gpa}, {credits} credits":"Year {n}: average mark {gpa}, weight {credits}","My semester GPA: {gpa} ({scale})":"My average mark: {gpa} ({scale})","My CGPA: {cgpa} ({scale})":"My degree mark: {cgpa} ({scale})","Total credit hours: {credits}":"Total credits: {credits}","1 subject · {credits} credits":"1 module · {credits} credits","{n} subjects · {credits} credits":"{n} modules · {credits} credits","1 semester · {credits} total credit hours":"1 year · total weight {credits}","{n} semesters · {credits} total credit hours":"{n} years · total weight {credits}","You need an average GPA of at least {needed} over your remaining {left} credit hours to reach a {target} CGPA.":"You need an average mark of at least {needed} over your remaining {left} credits to reach {target}.","Even with a perfect {max} in every remaining semester, the highest CGPA you can reach is {best}.":"Even with 100 in every remaining module, the highest average you can reach is {best}.","To reach a {target} CGPA (now {current}), I need an average GPA of {needed} over my remaining {left} credit hours.":"To reach {target} (now {current}), I need an average mark of {needed} over my remaining {left} credits.","To reach a {target} CGPA I would need {needed}, which is above the {max} maximum. The best I can reach is {best}.":"To reach {target} I would need {needed}, which is above 100. The best I can reach is {best}.","I have already secured a {target} CGPA.":"I have already secured an average of {target}.","Your CGPA will stay at or above {target} no matter what. Aim high anyway!":"Your average will stay at or above {target} no matter what. Aim high anyway!"},
+    
+    semCreditLabel: 'Credits',
+    semCreditExample: 120,
+    creditExample: 20,
+    periodStart: 3,
+    scales: {
+      edinburgh: {
+        max: 100, label: 'Edinburgh Common Marking Scheme', region: 'Undergraduate Honours (CMS1)', example: '64', modes: ['points'],
+        pointsLabel: 'Mark (out of 100)', maxText: '/ 100', gradeDigits: 0, noQualityPoints: true, ratioPoints: [[0, 0], [40, 0.55], [50, 0.65], [60, 0.78], [70, 0.9], [100, 1]],
+        subtitle: 'Undergraduate Common Marking Scheme (CMS1)',
+        grades: [['A1', 100, null, 90], ['A2', 89, null, 80], ['A3', 79, null, 70], ['B', 69, null, 60], ['C', 59, null, 50],
+          ['D', 49, null, 40], ['E', 39, null, 30], ['F', 29, null, 20], ['G', 19, null, 10], ['H', 9, null, 0]]
+      }
+    },
+    conversions: {
+      edinburgh: {
+        formula: 'Credit-weighted mean of Honours course marks (not rounded) → Honours class',
+        example: 68.4, max: 100, label: 'Edinburgh Common Marking Scheme',
+        note: 'Under the Taught Assessment Regulations the overall mean is not rounded. Marks from 2 percentage points below a class boundary up to the boundary (for example 68.00–69.99) are borderline, and the Board of Examiners must consider them.',
+        result: function (c) {
+          var t = window.CGPA_T;
+          var cls = c >= 70 ? 'First Class' : c >= 60 ? 'Upper Second (2:1)' : c >= 50 ? 'Lower Second (2:2)' : c >= 40 ? 'Third Class' : 'Fail';
+          var next = c >= 70 ? null : c >= 60 ? 70 : c >= 50 ? 60 : c >= 40 ? 50 : 40;
+          var border = next !== null && c >= next - 2;
+          return { pct: c, ratio: Math.min(1, c / 78), text: t(cls),
+            work: border ? t('{mark} is borderline: within 2 points of {next}, so the Board of Examiners must consider it', { mark: c.toFixed(2), next: next })
+              : t('Mean {mark} → {cls}', { mark: c.toFixed(2), cls: t(cls) }),
+            sub: t('Average mark {mark} out of 100', { mark: c.toFixed(2) }) };
+        }
+      }
+    }
+  };</script>
+  <script src="../i18n/es.js" data-i18n=""></script>
+  <script src="../site.js"></script>
+  <script src="../script.js"></script>
+</body></html>

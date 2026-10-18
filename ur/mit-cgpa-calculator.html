@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Built by tools/build-university-pages.js – edit that file, not this one -->
+  <title>MIT CGPA &amp; GPA Calculator – 5.0 Scale to 4.0 Scale</title>
+  <meta name="description" content="MIT CGPA and GPA calculator on the official MIT 5.0 scale (A = 5, B = 4, C = 3, D = 2). Weighted by units, rounded the MIT way, with a 4.0 converter.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f6fb">
+  <link rel="canonical" href="https://cgpa-calculator-umber-two.vercel.app/ur/mit-cgpa-calculator.html">
+  <link rel="alternate" hreflang="en" href="https://cgpa-calculator-umber-two.vercel.app/mit-cgpa-calculator.html">
+  <link rel="alternate" hreflang="es" href="https://cgpa-calculator-umber-two.vercel.app/es/mit-cgpa-calculator.html">
+  <link rel="alternate" hreflang="de" href="https://cgpa-calculator-umber-two.vercel.app/de/mit-cgpa-calculator.html">
+  <link rel="alternate" hreflang="hi" href="https://cgpa-calculator-umber-two.vercel.app/hi/mit-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ur" href="https://cgpa-calculator-umber-two.vercel.app/ur/mit-cgpa-calculator.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://cgpa-calculator-umber-two.vercel.app/zh/mit-cgpa-calculator.html">
+  <link rel="alternate" hreflang="fr" href="https://cgpa-calculator-umber-two.vercel.app/fr/mit-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ar" href="https://cgpa-calculator-umber-two.vercel.app/ar/mit-cgpa-calculator.html">
+  <link rel="alternate" hreflang="bn" href="https://cgpa-calculator-umber-two.vercel.app/bn/mit-cgpa-calculator.html">
+  <link rel="alternate" hreflang="pt" href="https://cgpa-calculator-umber-two.vercel.app/pt/mit-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ru" href="https://cgpa-calculator-umber-two.vercel.app/ru/mit-cgpa-calculator.html">
+  <link rel="alternate" hreflang="id" href="https://cgpa-calculator-umber-two.vercel.app/id/mit-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ja" href="https://cgpa-calculator-umber-two.vercel.app/ja/mit-cgpa-calculator.html">
+  <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/mit-cgpa-calculator.html">
+  <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/mit-cgpa-calculator.html">
+  <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/mit-cgpa-calculator.html">
+
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CGPA Calculator">
+  <meta property="og:locale" content="ur_PK">
+  <meta property="og:url" content="https://cgpa-calculator-umber-two.vercel.app/ur/mit-cgpa-calculator.html">
+  <meta property="og:title" content="MIT CGPA &amp; GPA Calculator">
+  <meta property="og:description" content="MIT CGPA and GPA calculator on the official MIT 5.0 scale (A = 5, B = 4, C = 3, D = 2). Weighted by units, rounded the MIT way, with a 4.0 converter.">
+  <meta property="og:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <meta property="og:image:alt" content="CGPA کیلکولیٹر: 4.00 میں سے 3.37 CGPA دکھانے والا نتیجہ کارڈ">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MIT CGPA &amp; GPA Calculator">
+  <meta name="twitter:description" content="MIT CGPA and GPA calculator on the official MIT 5.0 scale (A = 5, B = 4, C = 3, D = 2). Weighted by units, rounded the MIT way, with a 4.0 converter.">
+  <meta name="twitter:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "@id": "https://cgpa-calculator-umber-two.vercel.app/ur/mit-cgpa-calculator.html#app",
+    "name": "MIT CGPA & GPA Calculator",
+    "url": "https://cgpa-calculator-umber-two.vercel.app/ur/mit-cgpa-calculator.html",
+    "image": "https://cgpa-calculator-umber-two.vercel.app/og-image.jpg",
+    "description": "MIT CGPA and GPA calculator on the official MIT 5.0 scale (A = 5, B = 4, C = 3, D = 2). Weighted by units, rounded the MIT way, with a 4.0 converter.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "ur",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is MIT GPA out of 5 or 4?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Out of 5. MIT weights grades as A = 5, B = 4, C = 3, D = 2, F = 0 and O = 0, so a perfect MIT GPA is 5.0."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I convert my MIT GPA to a 4.0 scale?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "MIT has no official conversion. If you have no F or O grades, subtract 1, because each MIT letter is worth exactly one point more than on a 4.0 scale. So 4.6 at MIT is 3.6 out of 4.0."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does MIT round the GPA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To one decimal place. If the hundredths digit is 5 or more, the tenths digit rounds up, so 4.75 becomes 4.8."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do P/NR first-year grades count in the MIT GPA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. P grades are not used in the GPA, so first-year students do not have a GPA until the spring term ends."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does a repeated subject count twice at MIT?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. A repeated subject counts in your GPA each time you take it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What units should I enter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Enter the units listed for each subject, for example 12 for a standard subject or 6 for a half-term subject. Three MIT units equal one semester hour."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "CGPA Calculator",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/ur/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "MIT CGPA & GPA Calculator",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/ur/mit-cgpa-calculator.html"
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    /* Apply the saved (or system) theme before the page paints, so there is no flash */
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem('cgpa-theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="CGPA Calculator home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3z"></path>
+            <path d="M5 13.18v4C5 18.84 8.13 20 12 20s7-1.16 7-2.82v-4L12 17l-7-3.82z"></path>
+          </svg>
+        </span>
+        <span>CGPA Calculator</span>
+      </a>
+      <div class="header-actions">
+        <nav class="site-nav" id="siteNav" aria-label="Main menu">
+          <a href="index.html">Calculator</a>
+          <a href="about.html">About</a>
+          <a href="privacy-policy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <details class="lang-menu" id="langMenu">
+          <summary class="icon-btn lang-btn" aria-label="Choose language" title="Language">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"></path></svg>
+            <span class="lang-code" data-no-translate="">UR</span>
+          </summary>
+          <div class="lang-list" data-no-translate=""><a href="../mit-cgpa-calculator.html" hreflang="en" lang="en">English</a><a href="../es/mit-cgpa-calculator.html" hreflang="es" lang="es">Español</a><a href="../de/mit-cgpa-calculator.html" hreflang="de" lang="de">Deutsch</a><a href="../hi/mit-cgpa-calculator.html" hreflang="hi" lang="hi">हिन्दी</a><a href="mit-cgpa-calculator.html" hreflang="ur" lang="ur" aria-current="true">اردو</a><a href="../zh/mit-cgpa-calculator.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="../fr/mit-cgpa-calculator.html" hreflang="fr" lang="fr">Français</a><a href="../ar/mit-cgpa-calculator.html" hreflang="ar" lang="ar">العربية</a><a href="../bn/mit-cgpa-calculator.html" hreflang="bn" lang="bn">বাংলা</a><a href="../pt/mit-cgpa-calculator.html" hreflang="pt" lang="pt">Português</a><a href="../ru/mit-cgpa-calculator.html" hreflang="ru" lang="ru">Русский</a><a href="../id/mit-cgpa-calculator.html" hreflang="id" lang="id">Bahasa Indonesia</a><a href="../ja/mit-cgpa-calculator.html" hreflang="ja" lang="ja">日本語</a><a href="../mr/mit-cgpa-calculator.html" hreflang="mr" lang="mr">मराठी</a><a href="../te/mit-cgpa-calculator.html" hreflang="te" lang="te">తెలుగు</a></div>
+        </details>
+        <button type="button" id="themeToggle" class="icon-btn" aria-label="Switch to dark mode" title="Light / dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+        </button>
+        <button type="button" id="menuToggle" class="icon-btn menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
+          <svg class="icon-menu" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+
+    <section class="hero">
+      <nav class="breadcrumb" aria-label="بریڈ کرمب"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">MIT</span></nav>
+      <h1>MIT CGPA &amp; GPA Calculator</h1>
+      <p>Calculate your MIT GPA on the official 5.0 scale (A = 5, B = 4, C = 3, D = 2, F = 0), weighted by units and rounded to one decimal place like the MIT Registrar does.
+        <a href="#guide" class="hero-link">How MIT GPA works ↓</a></p>
+    </section>
+
+    <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
+      <div class="scale-text">
+        <p id="scaleLabel" class="scale-title">Grading system: MIT (5.0 scale)</p>
+        <p class="muted small">Choose the letter grade for each subject and enter its units. Only graded subjects count; P, S, I and other symbols are left out.</p>
+      </div>
+      <select id="scaleSelect" hidden="" aria-hidden="true" tabindex="-1"><option value="mit">MIT</option></select>
+      <button type="button" id="resetAll" class="btn btn-outline danger-hover">سب ری سیٹ کریں</button>
+    </section>
+    <p class="print-only" id="printDate"></p>
+
+    <div class="layout">
+      <!-- ================= Calculators ================= -->
+      <div class="main-col">
+        <div class="tabs" role="tablist" aria-label="کیلکولیٹرز">
+          <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">GPA <small>ایک سمسٹر</small></button>
+          <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>تمام سمسٹر</small></button>
+          <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">ہدف <small>آگے کی منصوبہ بندی</small></button>
+          <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">
+            4.0 scale <small>Converter</small>
+          </button>
+        </div>
+        <!-- ---------- TAB 1: GPA ---------- -->
+        <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
+          <div class="panel-head">
+            <div>
+              <h2>سمسٹر GPA</h2>
+              <p class="muted small">Add each course with its units and letter grade.</p>
+            </div>
+
+          </div>
+          <div class="rows-head subject-cols" aria-hidden="true">
+            <span>Course (optional)</span><span>Units</span><span id="gradeHead">گریڈ</span><span></span>
+          </div>
+          <div id="subjectList" class="row-list mode-grade"></div>
+          <button type="button" id="addSubject" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            مضمون شامل کریں
+          </button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">آپ کا سمسٹر GPA</div>
+            <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="gpaMeter"></span></div>
+            <div class="result-cheer" id="gpaCheer"></div>
+            <div class="result-sub" id="gpaSub">اپنا GPA دیکھنے کے لیے مضامین شامل کریں۔</div>
+            <div class="result-note" id="gpaNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" id="sendToCgpa" class="btn btn-soft">یہ GPA میرے CGPA میں شامل کریں ←</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="gpa">نتیجہ کاپی کریں</button>
+            <button type="button" class="btn btn-outline js-print" title="پرنٹ ونڈو میں PDF ڈاؤن لوڈ کرنے کے لیے “Save as PDF” منتخب کریں">پرنٹ / PDF</button>
+            <button type="button" id="resetGpa" class="btn btn-quiet">صاف کریں</button>
+          </div>
+          <details class="howto">
+            <summary>How is the MIT GPA calculated?</summary>
+            <p class="formula-line">GPA = (Σ units × grade weight) ÷ (Σ units)</p>
+            <p class="muted small">Example: a 12-unit subject with an A (5) and a 12-unit subject with a B (4) →
+              (12×5 + 12×4) ÷ 24 = 108 ÷ 24 = <strong>4.5</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 2: CGPA ---------- -->
+        <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>مجموعی CGPA</h2>
+              <p class="muted small">Add each term's GPA and its total graded units.</p>
+            </div>
+          </div>
+          <div class="rows-head semester-cols" aria-hidden="true">
+            <span>اصطلاح</span><span>GPA</span><span>Units</span><span></span>
+          </div>
+          <div id="semesterList" class="row-list"></div>
+          <button type="button" id="addSemester" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            سمسٹر شامل کریں
+          </button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">آپ کا CGPA</div>
+            <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="cgpaMeter"></span></div>
+            <div class="result-cheer" id="cgpaCheer"></div>
+            <div class="result-sub" id="cgpaSub">اپنا CGPA دیکھنے کے لیے سمسٹر شامل کریں۔</div>
+            <div class="result-note" id="cgpaNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" id="sendToPct" class="btn btn-soft">Show it on the 4.0 scale →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">نتیجہ کاپی کریں</button>
+            <button type="button" class="btn btn-outline js-print" title="پرنٹ ونڈو میں PDF ڈاؤن لوڈ کرنے کے لیے “Save as PDF” منتخب کریں">پرنٹ / PDF</button>
+            <button type="button" id="resetCgpa" class="btn btn-quiet">صاف کریں</button>
+          </div>
+          <details class="howto">
+            <summary>CGPA کا حساب کیسے ہوتا ہے؟</summary>
+            <p class="formula-line">CGPA = (Σ سمسٹر GPA × سمسٹر کریڈٹ) ÷ (کل کریڈٹ)</p>
+            <p class="muted small">زیادہ کریڈٹ آورز والے سمسٹر زیادہ اہمیت رکھتے ہیں۔ مثال: 18 کریڈٹ کے ساتھ 3.50 اور 15 کریڈٹ کے ساتھ 3.00 ← (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 3: Target CGPA ---------- -->
+        <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>ہدف CGPA</h2>
+              <p class="muted small">جانیں کہ اپنے ہدف تک پہنچنے کے لیے آنے والے سمسٹرز میں آپ کو کتنا GPA چاہیے۔</p>
+            </div>
+          </div>
+          <div class="target-grid">
+            <div class="field">
+              <label class="field-label" for="tCurrent">موجودہ CGPA</label>
+              <input type="text" id="tCurrent" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tCurrentMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tDone">Units completed</label>
+              <input type="text" id="tDone" inputmode="decimal" autocomplete="off" placeholder="e.g. 66">
+              <p class="row-msg" id="tDoneMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tTarget">ہدف CGPA</label>
+              <input type="text" id="tTarget" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tTargetMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tLeft">Units remaining</label>
+              <input type="text" id="tLeft" inputmode="decimal" autocomplete="off" placeholder="e.g. 70">
+              <p class="row-msg" id="tLeftMsg"></p>
+            </div>
+          </div>
+          <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">میرے CGPA ٹیب سے بھریں</button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">ہر سمسٹر میں درکار GPA</div>
+            <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="tgtMeter"></span></div>
+            <div class="result-cheer" id="tgtCheer"></div>
+            <div class="result-sub" id="tgtSub">درکار GPA دیکھنے کے لیے اوپر کے چاروں خانے بھریں۔</div>
+            <div class="result-note" id="tgtNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="target">نتیجہ کاپی کریں</button>
+            <button type="button" class="btn btn-outline js-print" title="پرنٹ ونڈو میں PDF ڈاؤن لوڈ کرنے کے لیے “Save as PDF” منتخب کریں">پرنٹ / PDF</button>
+            <button type="button" id="resetTarget" class="btn btn-quiet">صاف کریں</button>
+          </div>
+          <details class="howto">
+            <summary>اس کا حساب کیسے ہوتا ہے؟</summary>
+            <p class="formula-line">درکار GPA = (ہدف × کل کریڈٹ − موجودہ × مکمل کریڈٹ) ÷ باقی کریڈٹ</p>
+            <p class="muted small">مثال: 60 کریڈٹ کے بعد موجودہ 3.00، ہدف 3.30، 60 کریڈٹ باقی ← (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 4: Percentage ---------- -->
+        <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>MIT GPA on the 4.0 scale</h2>
+              <p class="muted small">Type your MIT GPA (out of 5.0).</p>
+            </div>
+          </div>
+          <div class="conv-grid">
+            <div class="field">
+              <label class="field-label always" for="convInput">Your MIT GPA</label>
+              <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
+              <p class="row-msg" id="convMsg"></p>
+            </div>
+
+          </div>
+          <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">Use my GPA from the CGPA tab</button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">On the 4.0 scale</div>
+            <div class="result-value"><span id="pctValue">—</span></div>
+            <div class="meter" aria-hidden="true"><span id="pctMeter"></span></div>
+            <div class="result-cheer" id="pctCheer"></div>
+            <div class="result-sub" id="pctSub">فیصد دیکھنے کے لیے اپنا CGPA درج کریں۔</div>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="pct">نتیجہ کاپی کریں</button>
+            <button type="button" class="btn btn-outline js-print" title="پرنٹ ونڈو میں PDF ڈاؤن لوڈ کرنے کے لیے “Save as PDF” منتخب کریں">پرنٹ / PDF</button>
+          </div>
+          <div class="formula">
+            <div class="formula-title">استعمال شدہ فارمولا</div>
+            <p class="formula-line" id="formulaMain"></p>
+            <p class="formula-work" id="formulaWork"></p>
+            <p class="muted small" id="formulaNote"></p>
+          </div>
+        </section>
+      </div>
+      <!-- ================= Sidebar: grade table ================= -->
+      <aside class="sidebar">
+        <section class="card" aria-labelledby="tableTitle">
+          <h2 id="tableTitle" class="side-title">گریڈ پوائنٹس</h2>
+          <p class="muted small" id="tableSubtitle"></p>
+          <div class="table-wrap">
+            <table class="grade-table">
+              <thead>
+                <tr><th scope="col">گریڈ</th><th scope="col" class="num">پوائنٹس</th><th scope="col" class="num" id="marksCol">نمبر %</th></tr>
+              </thead>
+              <tbody id="gradeTableBody"></tbody>
+            </table>
+          </div>
+          <p class="muted tiny">نمبروں کی حدیں ہر یونیورسٹی میں مختلف ہوتی ہیں۔ ہمیشہ اپنی یونیورسٹی کی گریڈنگ پالیسی دیکھیں۔</p>
+        </section>
+
+        <section class="card tips">
+          <h2 class="side-title">MIT quick facts</h2>
+          <ul>
+            <li>MIT uses a <strong>5.0 scale</strong>: A = 5, B = 4, C = 3, D = 2, F = 0 and O = 0.</li>
+            <li>The GPA is weighted by <strong>units</strong> and rounded to <strong>one decimal place</strong> (4.75 becomes 4.8).</li>
+            <li>A repeated subject <strong>counts each time</strong> you take it.</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <article class="guide" id="guide">
+
+      <section id="how-it-works">
+        <h2>How MIT calculates your GPA</h2>
+        <p>MIT's grade point average is on a 5.0 scale, not the usual 4.0. The Registrar weights grades as A = 5, B = 4, C = 3, D = 2, F = 0 and O = 0. To find your GPA, multiply the units of each graded subject by its weight, add everything up and divide by your total graded units. MIT rounds the result to one decimal place: if the hundredths digit is 5 or more, the tenths digit goes up, so 4.75 becomes 4.8. This calculator shows your result the same way.</p>
+        <p>Three MIT units are equal to one semester hour, so a typical 12-unit subject is like a 4-credit course elsewhere. Type the units shown for each subject.</p>
+      </section>
+
+      <section id="grade-points">
+        <h2>What counts in your MIT GPA</h2>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">گریڈ</th><th scope="col" class="num">Weight</th></tr></thead>
+            <tbody>
+              <tr><td>A</td><td class="num">5</td></tr>
+              <tr><td>B</td><td class="num">4</td></tr>
+              <tr><td>C</td><td class="num">3</td></tr>
+              <tr><td>D</td><td class="num">2</td></tr>
+              <tr><td>F</td><td class="num">0</td></tr>
+              <tr><td>O</td><td class="num">0</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>These are left out of the calculation: subjects graded P, S, URN, SA or T; incomplete or unfinished subjects (I, OX, J, U); grades from Advanced Standing Exams; and ROTC subjects. Because P grades don't count, first-year students don't have a GPA until the spring term ends.</p>
+        <p>If you repeat a subject, it counts in your GPA each time you take it. Your cumulative GPA appears on your transcript, while the term GPA is shown on your grade report.</p>
+      </section>
+
+      <section id="example">
+        <h2>How to calculate your MIT GPA: worked example</h2>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">Subject</th><th scope="col" class="num">Units</th><th scope="col">گریڈ</th><th scope="col" class="num">Units × weight</th></tr></thead>
+            <tbody>
+              <tr><td>Calculus II</td><td class="num">12</td><td>A</td><td class="num">60</td></tr>
+              <tr><td>Physics II</td><td class="num">12</td><td>B</td><td class="num">48</td></tr>
+              <tr><td>Introduction to Programming</td><td class="num">12</td><td>A</td><td class="num">60</td></tr>
+              <tr><td>Writing seminar</td><td class="num">12</td><td>B</td><td class="num">48</td></tr>
+              <tr><td>Lab elective</td><td class="num">6</td><td>C</td><td class="num">18</td></tr>
+            </tbody>
+            <tfoot><tr><th scope="row">کل</th><td class="num">54</td><td></td><td class="num">234</td></tr></tfoot>
+          </table>
+        </div>
+        <p class="formula-block">GPA = 234 ÷ 54 = 4.333… → 4.3</p>
+      </section>
+
+      <section id="percentage">
+        <h2>MIT GPA on a 4.0 scale</h2>
+        <p>Applications outside MIT often ask for a GPA "out of 4.0". MIT doesn't publish an official conversion, but the letters line up neatly: an A is 5 at MIT and 4 on the usual scale, a B is 4 instead of 3, and so on. As long as you have no F or O grades, your GPA on the 4.0 scale is simply your MIT GPA minus 1, so 4.6 becomes 3.6. If you do have F or O grades, add (failed units ÷ total graded units) to that number. The converter tab does the simple version for you.</p>
+        <p>Multiplying by 0.8, a rule of thumb you may see online, gives a different answer (4.6 × 0.8 = 3.68), because it stretches the scale instead of shifting each letter.</p>
+      </section>
+
+      <section id="faq" class="faq">
+        <h2>MIT CGPA calculator FAQs</h2>
+
+        <details>
+          <summary><h3>Is MIT GPA out of 5 or 4?</h3></summary>
+          <p>Out of 5. MIT weights grades as A = 5, B = 4, C = 3, D = 2, F = 0 and O = 0, so a perfect MIT GPA is 5.0.</p>
+        </details>
+        <details>
+          <summary><h3>How do I convert my MIT GPA to a 4.0 scale?</h3></summary>
+          <p>MIT has no official conversion. If you have no F or O grades, subtract 1, because each MIT letter is worth exactly one point more than on a 4.0 scale. So 4.6 at MIT is 3.6 out of 4.0.</p>
+        </details>
+        <details>
+          <summary><h3>How does MIT round the GPA?</h3></summary>
+          <p>To one decimal place. If the hundredths digit is 5 or more, the tenths digit rounds up, so 4.75 becomes 4.8.</p>
+        </details>
+        <details>
+          <summary><h3>Do P/NR first-year grades count in the MIT GPA?</h3></summary>
+          <p>No. P grades are not used in the GPA, so first-year students do not have a GPA until the spring term ends.</p>
+        </details>
+        <details>
+          <summary><h3>Does a repeated subject count twice at MIT?</h3></summary>
+          <p>Yes. A repeated subject counts in your GPA each time you take it.</p>
+        </details>
+        <details>
+          <summary><h3>What units should I enter?</h3></summary>
+          <p>Enter the units listed for each subject, for example 12 for a standard subject or 6 for a half-term subject. Three MIT units equal one semester hour.</p>
+        </details>
+      </section>
+
+      <section id="sources">
+        <h2>ذرائع</h2>
+        <ul class="source-note">
+          <li><a href="https://registrar.mit.edu/classes-grades-evaluations/grades/calculating-gpa">MIT Registrar: Calculating your GPA</a></li>
+        </ul>
+        <p class="source-note">آخری جانچ: 18 اکتوبر 2026۔ یونیورسٹی کے اصول بدل سکتے ہیں، اس لیے ہمیشہ اپنے نتائج کی تصدیق اپنی یونیورسٹی کے تازہ ترین سرکاری اصولوں سے کریں۔ ہماری <a href="terms.html">استعمال کی شرائط</a> دیکھیں۔</p>
+      </section>
+    </article>
+
+    <section class="uni-section" aria-labelledby="uniTitle">
+      <h2 id="uniTitle">مزید CGPA اور GPA کیلکولیٹرز</h2>
+      <div class="uni-grid">
+        <a class="card uni-card" href="harvard-cgpa-calculator.html">
+          <span class="uni-badge">Harvard</span>
+          <span class="uni-name">Harvard CGPA &amp; GPA Calculator</span>
+          <span class="muted small">FAS 4.0 scale · A = 4.00, A- = 3.67</span>
+        </a>
+        <a class="card uni-card" href="stanford-cgpa-calculator.html">
+          <span class="uni-badge">Stanford</span>
+          <span class="uni-name">Stanford CGPA &amp; GPA Calculator</span>
+          <span class="muted small">4.3 scale · A+ = 4.3</span>
+        </a>
+        <a class="card uni-card" href="index.html">
+          <span class="uni-badge">سب</span>
+          <span class="uni-name">عمومی CGPA کیلکولیٹر</span>
+          <span class="muted small">4.0، 5.0 اور 10 پوائنٹ اسکیل</span>
+        </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">18</span>
+          <span class="uni-name">All university calculators</span>
+          <span class="muted small">Pakistan, India, USA, UK, Malaysia, Australia and Germany</span>
+        </a>
+      </div>
+    </section>
+    <p class="back-top"><a href="#calculator">↑ کیلکولیٹر پر واپس جائیں</a></p>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p><strong>CGPA Calculator</strong> · طلبہ کے لیے بنایا گیا · © <span id="year">2026</span></p>
+        <p class="muted">نتائج اندازے ہیں۔ آپ کی یونیورسٹی کے سرکاری اصول ہمیشہ مقدم ہیں۔</p>
+      </div>
+      <nav class="footer-nav" aria-label="فوٹر">
+        <a href="index.html">کیلکولیٹر</a>
+        <a href="about.html">ہمارے بارے میں</a>
+        <a href="privacy-policy.html">رازداری کی پالیسی</a>
+        <a href="terms.html">استعمال کی شرائط</a>
+        <a href="contact.html">رابطہ</a>
+      </nav>
+    </div>
+  </footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>window.CGPA_PAGE = {
+    storageKey: 'cgpa-mit',
+    creditLabel: 'Units',
+    semCreditLabel: 'Units',
+    creditExample: 12,
+    semCreditExample: 48,
+    maxCredit: 60,
+    maxSemCredit: 120,
+    maxTotalCredit: 1000,
+    msgs: Object.assign({"GPA / SGPA":"GPA","CGPA {cgpa} on the {scale}":"GPA {cgpa} on the {scale}","1 subject · {credits} credit hours · {points} grade points":"1 course · {credits} units · {points} grade points","{n} subjects · {credits} credit hours · {points} grade points":"{n} courses · {credits} units · {points} grade points","1 semester · {credits} total credit hours":"1 term · {credits} total units","{n} semesters · {credits} total credit hours":"{n} terms · {credits} total units","Total credit hours: {credits}":"Total units: {credits}","You need an average GPA of at least {needed} over your remaining {left} credit hours to reach a {target} CGPA.":"You need an average GPA of at least {needed} over your remaining {left} units to reach a {target} GPA.","To reach a {target} CGPA (now {current}), I need an average GPA of {needed} over my remaining {left} credit hours.":"To reach a {target} GPA (now {current}), I need an average GPA of {needed} over my remaining {left} units.","Even with a perfect {max} in every remaining semester, the highest CGPA you can reach is {best}.":"Even with a perfect {max} in every remaining term, the highest GPA you can reach is {best}.","Please enter the total credit hours for this semester.":"Please enter the total units for this term.","Please enter the credit hours for this subject.":"Please enter the units for this course.","That looks too high. A semester usually has 12 to 24 credit hours.":"That looks too high. Please check the units.","That looks too high. Credit hours are usually between 1 and 6.":"That looks too high. Please check the units."}, {
+      'Enter your CGPA to see the percentage.': 'Enter your MIT GPA to see it on the 4.0 scale.',
+      'Fix the CGPA above to see the percentage.': 'Fix the GPA above to see the result.'
+    }),
+    scales: {
+      mit: {
+        max: 5, label: 'MIT 5.0 scale', region: 'MIT · weighted by units', example: '4.6', modes: ['grade'], digits: 1,
+        grades: [['A', 5], ['B', 4], ['C', 3], ['D', 2], ['F', 0], ['O', 0]]
+      }
+    },
+    conversions: {
+      mit: {
+        formula: 'GPA on the 4.0 scale = MIT GPA − 1 (when you have no F or O grades)',
+        example: 4.6,
+        note: 'Each MIT letter is worth one point more than on the usual 4.0 scale (A = 5 instead of 4), so subtracting 1 gives the same grades on a 4.0 scale. MIT does not publish an official conversion. With F or O grades, add (failed units ÷ total units).',
+        result: function (c) {
+          var g = Math.max(0, c - 1);
+          return { pct: g / 4 * 100, ratio: g / 4, text: g.toFixed(2) + ' / 4.00',
+            work: c.toFixed(2) + ' − 1 = ' + g.toFixed(2) };
+        }
+      }
+    }
+  };</script>
+  <script src="../i18n/ur.js" data-i18n=""></script>
+  <script src="../site.js"></script>
+  <script src="../script.js"></script>
+</body></html>

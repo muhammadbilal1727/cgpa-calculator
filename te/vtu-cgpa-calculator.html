@@ -24,10 +24,12 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/vtu-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/vtu-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/vtu-cgpa-calculator.html">
+
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="te_IN">
@@ -151,6 +153,7 @@
   </script>
 </head>
 <body>
+
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -195,11 +198,13 @@
     </div>
   </header>
   <main class="container">
+
     <section class="hero">
       <nav class="breadcrumb" aria-label="బ్రెడ్‌క్రంబ్"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">VTU</span></nav>
       <h1>VTU CGPA &amp; GPA (SGPA) కాలిక్యులేటర్</h1>
       <p>2022, 2021 స్కీమ్‌ల VTU నిబంధనలలోని అధికారిక నియమాలతో మీ VTU SGPA, CGPA లెక్కించండి, CGPA‌ని శాతంలోకి మార్చండి. <a href="#guide" class="hero-link">VTUలో గ్రేడింగ్ ఎలా జరుగుతుంది ↓</a></p>
     </section>
+
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <label id="scaleLabel" for="scaleSelect" class="scale-title">మీ VTU స్కీమ్</label>
@@ -209,6 +214,7 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">అన్నీ రీసెట్ చేయండి</button>
     </section>
     <p class="print-only" id="printDate"></p>
+
     <div class="layout">
       <!-- ================= Calculators ================= -->
       <div class="main-col">
@@ -225,6 +231,7 @@
               <h2>సెమిస్టర్ GPA</h2>
               <p class="muted small">ప్రతి సబ్జెక్టును దాని క్రెడిట్లు, గ్రేడ్‌తో జోడించండి.</p>
             </div>
+
             <div class="segmented" id="modeSwitch" role="radiogroup" aria-label="ఫలితాలను ఎలా నమోదు చేయాలనుకుంటున్నారు?">
               <input type="radio" name="gpaMode" id="modeGrade" value="grade" checked="">
               <label for="modeGrade">గ్రేడ్</label>
@@ -360,6 +367,7 @@
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
+
             <div class="field">
               <span class="field-label always" id="convScaleLabel">స్కీమ్</span>
               <div class="segmented full" role="radiogroup" aria-labelledby="convScaleLabel">
@@ -405,6 +413,7 @@
           </div>
           <p class="muted tiny">మార్కుల పరిధులు విశ్వవిద్యాలయాన్ని బట్టి మారుతాయి. ఎప్పుడూ మీ విశ్వవిద్యాలయ గ్రేడింగ్ విధానాన్ని తనిఖీ చేయండి.</p>
         </section>
+
         <section class="card tips">
           <h2 class="side-title">VTU ముఖ్య విషయాలు</h2>
           <ul>
@@ -415,11 +424,14 @@
         </section>
       </aside>
     </div>
+
     <article class="guide" id="guide">
+
       <section id="scheme">
         <h2>మీరు ఏ VTU స్కీమ్‌లో ఉన్నారు?</h2>
         <p>VTU ఎప్పటికప్పుడు తన నిబంధనలను అప్‌డేట్ చేస్తుంది. Regulations 2022 అనేవి 2022-23 విద్యా సంవత్సరం నుంచి ప్రవేశించిన విద్యార్థులకు వర్తిస్తాయి, 2021 నిబంధనలు 2021-22 నుంచి అమలులోకి వచ్చాయి. గ్రేడ్ అక్షరాలు, CGPA నుంచి శాతం సూత్రం వేరు కాబట్టి, కాలిక్యులేటర్ పైభాగంలో మీ స్కీమ్‌ను ఎంచుకోండి.</p>
       </section>
+
       <section id="grade-points">
         <h2>VTU గ్రేడింగ్ విధానం: 2022 స్కీమ్</h2>
         <p>VTU నిరపేక్ష గ్రేడింగ్ వాడుతుంది. CIE (నిరంతర అంతర్గత మూల్యాంకనం), SEE (సెమిస్టర్ చివరి పరీక్ష)లో మీ మార్కులను కూడి శాతంలోకి మారుస్తారు, ఆ శాతమే మీ గ్రేడ్‌ను నిర్ణయిస్తుంది (క్లాజ్ 22OB 6.1).</p>
@@ -454,6 +466,7 @@
           </table>
         </div>
       </section>
+
       <section id="example">
         <h2>VTU SGPA, CGPA ఎలా లెక్కిస్తుంది</h2>
         <p class="formula-block">SGPA = Σ (Ci × Gi) ÷ Σ Ci &nbsp;&nbsp; CGPA = Σ (Ci × Si) ÷ Σ Ci</p>
@@ -473,6 +486,7 @@
         </div>
         <p class="formula-block">SGPA = 123 ÷ 15 = 8.20</p>
       </section>
+
       <section id="percentage">
         <h2>VTU CGPA నుంచి శాతం</h2>
         <p><strong>2022 స్కీమ్:</strong> శాతం = CGPA × 10, కాబట్టి 8.20 CGPA అంటే <strong>82%</strong> (క్లాజ్ 22OB 6.7). ఉద్యోగాలు, ఉన్నత చదువుల కోసం ఈ సూత్రాన్ని వాడవచ్చని నిబంధనలు చెబుతున్నాయి.</p>
@@ -485,6 +499,7 @@
           <li><strong>Pass Class:</strong> 40% నుంచి 50%, అంటే 4.00 నుంచి 4.99 CGPA</li>
         </ul>
       </section>
+
       <section id="passing">
         <h2>VTU పాస్ మార్కులు (2022 స్కీమ్)</h2>
         <ul>
@@ -494,8 +509,10 @@
           <li>మొత్తం ప్రోగ్రామ్ పాస్ కావడానికి, నమోదు చేసుకున్న ప్రతి కోర్సులో P లేదా అంతకంటే మెరుగైన గ్రేడ్ కావాలి.</li>
         </ul>
       </section>
+
       <section id="faq" class="faq">
         <h2>VTU CGPA కాలిక్యులేటర్ ప్రశ్నలు &amp; జవాబులు</h2>
+
         <details>
           <summary><h3>VTU CGPA‌ని శాతంలోకి ఎలా మార్చాలి?</h3></summary>
           <p>2022 స్కీమ్‌లో మీ CGPA‌ని 10తో గుణించండి, కాబట్టి 8.20 అంటే 82%. 2021 స్కీమ్, పాత 2015 CBCS స్కీమ్‌లో (CGPA − 0.75) × 10 వాడండి, కాబట్టి 8.20 అంటే 74.5%.</p>
@@ -521,6 +538,7 @@
           <p>ప్రతి సెమిస్టర్ SGPA‌ని ఆ సెమిస్టర్ మొత్తం క్రెడిట్లతో గుణించి, ఫలితాలను కూడి, అన్ని సెమిస్టర్‌ల మొత్తం క్రెడిట్లతో భాగించండి. SGPA, CGPA 2 దశాంశ అంకెల వరకు రౌండ్ చేస్తారు.</p>
         </details>
       </section>
+
       <section id="sources">
         <h2>ఆధారాలు</h2>
         <ul class="source-note">
@@ -531,28 +549,25 @@
         <p class="source-note">చివరిసారి తనిఖీ: 18 అక్టోబర్ 2026. విశ్వవిద్యాలయ నియమాలు మారవచ్చు, కాబట్టి ఎప్పుడూ మీ విశ్వవిద్యాలయపు తాజా అధికారిక నియమాలతో మీ ఫలితాలను నిర్ధారించుకోండి. మా <a href="terms.html">వినియోగ నిబంధనలు</a> చూడండి.</p>
       </section>
     </article>
+
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">మరిన్ని CGPA &amp; GPA కాలిక్యులేటర్లు</h2>
       <div class="uni-grid">
-        <a class="card uni-card" href="nust-cgpa-calculator.html">
-          <span class="uni-badge">NUST</span>
-          <span class="uni-name">NUST CGPA &amp; GPA కాలిక్యులేటర్</span>
-          <span class="muted small">సాపేక్ష గ్రేడింగ్ · A = 4.00, B+ = 3.50</span>
-        </a>
-        <a class="card uni-card" href="comsats-cgpa-calculator.html">
-          <span class="uni-badge">CUI</span>
-          <span class="uni-name">COMSATS CGPA &amp; GPA కాలిక్యులేటర్</span>
-          <span class="muted small">HEC ప్రమాణాలు (Fall 2021+) · అధికారిక % నియమం</span>
-        </a>
         <a class="card uni-card" href="index.html">
           <span class="uni-badge">అన్నీ</span>
           <span class="uni-name">సాధారణ CGPA కాలిక్యులేటర్</span>
           <span class="muted small">4.0, 5.0, 10-పాయింట్ స్కేల్‌లు</span>
         </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">18</span>
+          <span class="uni-name">All university calculators</span>
+          <span class="muted small">Pakistan, India, USA, UK, Malaysia, Australia and Germany</span>
+        </a>
       </div>
     </section>
     <p class="back-top"><a href="#calculator">↑ కాలిక్యులేటర్‌కి తిరిగి వెళ్లండి</a></p>
   </main>
+
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -570,6 +585,7 @@
     </div>
   </footer>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-vtu',
     defaultScale: '2022',

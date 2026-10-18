@@ -24,10 +24,12 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/comsats-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/comsats-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/comsats-cgpa-calculator.html">
+
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="zh_CN">
@@ -151,6 +153,7 @@
   </script>
 </head>
 <body>
+
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -195,11 +198,13 @@
     </div>
   </header>
   <main class="container">
+
     <section class="hero">
       <nav class="breadcrumb" aria-label="面包屑导航"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">CUI</span></nav>
       <h1>COMSATS CGPA 与 GPA 计算器</h1>
       <p>按照 COMSATS University Islamabad 对 2021 年秋季起入学学生采用的 HEC 评分标准计算 GPA 和 CGPA，并按 COMSATS 官方方法把 CGPA 换算成百分比。<a href="#guide" class="hero-link">COMSATS 如何评分 ↓</a></p>
     </section>
+
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <p id="scaleLabel" class="scale-title">评分制度：COMSATS（2021 年秋季起）</p>
@@ -209,6 +214,7 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">全部重置</button>
     </section>
     <p class="print-only" id="printDate"></p>
+
     <div class="layout">
       <!-- ================= Calculators ================= -->
       <div class="main-col">
@@ -225,6 +231,7 @@
               <h2>学期 GPA</h2>
               <p class="muted small">逐门添加课程的学分和成绩。</p>
             </div>
+
           </div>
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>课程（可选）</span><span>学分</span><span id="gradeHead">等级</span><span></span>
@@ -354,6 +361,7 @@
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
+
           </div>
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">使用 CGPA 标签页中的 CGPA</button>
           <div class="result" aria-live="polite">
@@ -390,6 +398,7 @@
           </div>
           <p class="muted tiny">各大学的分数区间不同，请务必查看你所在大学的评分规定。</p>
         </section>
+
         <section class="card tips">
           <h2 class="side-title">CUI 要点</h2>
           <ul>
@@ -400,12 +409,15 @@
         </section>
       </aside>
     </div>
+
     <article class="guide" id="guide">
+
       <section id="how-it-works">
         <h2>COMSATS 评分一览</h2>
         <p>COMSATS University Islamabad（CUI）对 2021 年秋季起入学的学生，在所有本科和研究生项目中采用 HEC 评分标准。CUI 学术委员会于 2020 年 10 月 8 日第 31 次会议上批准，教务处在 2020 年 12 月 7 日的通知中予以公布。</p>
         <p>在这一制度下，每个字母等级对应一个绩点<em>区间</em>。例如 A- 可以是 3.34 到 3.66 之间的任何值，取决于你的分数。这就是本计算器要求输入每门课绩点、而不只是字母的原因。</p>
       </section>
+
       <section id="grade-points">
         <h2>COMSATS 评分表（2021 年秋季起）</h2>
         <div class="table-scroll">
@@ -428,6 +440,7 @@
         </div>
         <p>低于 50% 均为 F，绩点 0.00。</p>
       </section>
+
       <section id="example">
         <h2>如何计算 COMSATS GPA：计算示例</h2>
         <div class="table-scroll">
@@ -445,6 +458,7 @@
         <p class="formula-block">GPA = 44.10 ÷ 13 = 3.392 ≈ 3.39</p>
         <p>如果你只知道某门课的字母等级，上表显示了它可能的绩点区间，你的确切绩点就在这个区间内。</p>
       </section>
+
       <section id="percentage">
         <h2>COMSATS CGPA 转百分比：官方规则</h2>
         <p>COMSATS 不使用 (CGPA ÷ 4) × 100。其通知写道：<q>A student getting any CGPA will be given the minimum of the corresponding percentage… For example, if a student gets a CGPA of 3.00, the percentage associated will be 71%.</q>（“任何 CGPA 都按对应百分比区间的最低值计……例如，CGPA 为 3.00 的学生，对应百分比为 71%。”）</p>
@@ -468,12 +482,15 @@
         </div>
         <p>例如，CGPA 3.39 在 A- 区间（3.34–3.66），因此计为 <strong>80%</strong>。用简单公式会得到 84.75%，高出将近 5 个百分点，如果用人单位向学校核实，可能会出问题。</p>
       </section>
+
       <section id="before-2021">
         <h2>2021 年秋季之前入学？</h2>
         <p>该通知适用于 2021 年秋季起入学的学生。如果你更早进入 COMSATS，你的成绩单可能沿用旧的 COMSATS 评分方案。GPA 和 CGPA 的算法（按学分加权平均）相同，但等级区间和百分比规则可能不同，请查看成绩单或咨询校区考试办公室。</p>
       </section>
+
       <section id="faq" class="faq">
         <h2>CUI CGPA 计算器常见问题</h2>
+
         <details>
           <summary><h3>为什么 COMSATS 每个等级给的是绩点区间？</h3></summary>
           <p>自 2021 年秋季起，COMSATS 采用 HEC 评分标准，每个字母等级对应一个绩点区间。你的确切绩点取决于分数，所以两个都是 A- 的学生绩点可能不同。</p>
@@ -499,6 +516,7 @@
           <p>GPA 和 CGPA 的算法对所有人都一样，所以你仍然可以输入绩点。但本页的等级区间和百分比规则适用于 2021 年秋季起的入学学生，如果你更早入学，请查看你的成绩单。</p>
         </details>
       </section>
+
       <section id="sources">
         <h2>资料来源</h2>
         <ul class="source-note">
@@ -507,6 +525,7 @@
         <p class="source-note">最后核对：2026 年 10 月 18 日。大学规定可能会变化，请务必以你所在大学最新的官方规定核实结果。请参阅我们的<a href="terms.html">使用条款</a>。</p>
       </section>
     </article>
+
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">更多 CGPA 与 GPA 计算器</h2>
       <div class="uni-grid">
@@ -515,20 +534,21 @@
           <span class="uni-name">NUST CGPA 与 GPA 计算器</span>
           <span class="muted small">相对评分 · A = 4.00，B+ = 3.50</span>
         </a>
-        <a class="card uni-card" href="vtu-cgpa-calculator.html">
-          <span class="uni-badge">VTU</span>
-          <span class="uni-name">VTU CGPA 与 GPA（SGPA）计算器</span>
-          <span class="muted small">2022 与 2021 方案 · CGPA 转 %</span>
-        </a>
         <a class="card uni-card" href="index.html">
           <span class="uni-badge">全部</span>
           <span class="uni-name">通用 CGPA 计算器</span>
           <span class="muted small">4.0、5.0 和 10 分制</span>
         </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">18</span>
+          <span class="uni-name">All university calculators</span>
+          <span class="muted small">Pakistan, India, USA, UK, Malaysia, Australia and Germany</span>
+        </a>
       </div>
     </section>
     <p class="back-top"><a href="#calculator">↑ 返回计算器</a></p>
   </main>
+
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -546,6 +566,7 @@
     </div>
   </footer>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-comsats',
     scales: {

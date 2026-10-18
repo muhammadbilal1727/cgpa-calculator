@@ -569,6 +569,9 @@ button:focus-visible, .tab:focus-visible, summary:focus-visible, .logo:focus-vis
 .big-input { font-size: 1.25rem !important; font-weight: 700; }
 .conv-grid .row-msg { margin-top: 6px; }
 .conv-grid .segmented label { padding: 11px 8px; }
+/* Four scale choices (Bavarian formula): two per row on phones */
+.segmented.conv-wrap { flex-wrap: wrap; }
+.segmented.conv-wrap label { flex: 1 1 40%; white-space: nowrap; }
 
 /* ---------- Sidebar ---------- */
 .side-title { font-size: 1.05rem; }
@@ -607,6 +610,7 @@ button:focus-visible, .tab:focus-visible, summary:focus-visible, .logo:focus-vis
 .uni-section h2 { font-size: clamp(1.25rem, 3.6vw, 1.5rem); }
 .uni-section > p { margin-top: 4px; }
 .uni-grid { display: grid; gap: 14px; margin-top: 16px; }
+.uni-country { margin: 26px 0 0; font-size: 1.05rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
 @media (min-width: 640px) { .uni-grid { grid-template-columns: repeat(3, 1fr); } }
 .uni-card {
   display: flex;

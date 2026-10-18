@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="id"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Built by tools/build-university-pages.js – edit that file, not this one -->
+  <title>Stanford CGPA &amp; GPA Calculator – 4.3 Scale (A+ = 4.3)</title>
+  <meta name="description" content="Stanford CGPA and GPA calculator with the official 4.3 scale (A+ = 4.3, A = 4.0, A- = 3.7). Weighted by units, NP counted, plus target GPA.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f6fb">
+  <link rel="canonical" href="https://cgpa-calculator-umber-two.vercel.app/id/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="en" href="https://cgpa-calculator-umber-two.vercel.app/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="es" href="https://cgpa-calculator-umber-two.vercel.app/es/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="de" href="https://cgpa-calculator-umber-two.vercel.app/de/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="hi" href="https://cgpa-calculator-umber-two.vercel.app/hi/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ur" href="https://cgpa-calculator-umber-two.vercel.app/ur/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://cgpa-calculator-umber-two.vercel.app/zh/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="fr" href="https://cgpa-calculator-umber-two.vercel.app/fr/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ar" href="https://cgpa-calculator-umber-two.vercel.app/ar/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="bn" href="https://cgpa-calculator-umber-two.vercel.app/bn/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="pt" href="https://cgpa-calculator-umber-two.vercel.app/pt/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ru" href="https://cgpa-calculator-umber-two.vercel.app/ru/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="id" href="https://cgpa-calculator-umber-two.vercel.app/id/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ja" href="https://cgpa-calculator-umber-two.vercel.app/ja/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/stanford-cgpa-calculator.html">
+  <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/stanford-cgpa-calculator.html">
+
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CGPA Calculator">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:url" content="https://cgpa-calculator-umber-two.vercel.app/id/stanford-cgpa-calculator.html">
+  <meta property="og:title" content="Stanford CGPA &amp; GPA Calculator">
+  <meta property="og:description" content="Stanford CGPA and GPA calculator with the official 4.3 scale (A+ = 4.3, A = 4.0, A- = 3.7). Weighted by units, NP counted, plus target GPA.">
+  <meta property="og:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <meta property="og:image:alt" content="Kalkulator CGPA: kartu hasil yang menampilkan CGPA 3.37 dari 4.00">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Stanford CGPA &amp; GPA Calculator">
+  <meta name="twitter:description" content="Stanford CGPA and GPA calculator with the official 4.3 scale (A+ = 4.3, A = 4.0, A- = 3.7). Weighted by units, NP counted, plus target GPA.">
+  <meta name="twitter:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "@id": "https://cgpa-calculator-umber-two.vercel.app/id/stanford-cgpa-calculator.html#app",
+    "name": "Stanford CGPA & GPA Calculator",
+    "url": "https://cgpa-calculator-umber-two.vercel.app/id/stanford-cgpa-calculator.html",
+    "image": "https://cgpa-calculator-umber-two.vercel.app/og-image.jpg",
+    "description": "Stanford CGPA and GPA calculator with the official 4.3 scale (A+ = 4.3, A = 4.0, A- = 3.7). Weighted by units, NP counted, plus target GPA.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "id",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is an A+ worth 4.3 at Stanford?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Stanford uses a 4.3 scale: A+ = 4.3, A = 4.0, A- = 3.7, B+ = 3.3 and so on down to D- = 0.7 and NP = 0.0."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does an NP count in my Stanford GPA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. NP is worth 0.0 grade points and its units stay in the total, so it lowers your GPA. An A in 4 units plus an NP in 4 units gives 2.0."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do CR/NC courses count in the Stanford GPA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. CR, NC, S, W, I and the other symbols are not used in calculating the GPA."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is an L grade at Stanford?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An L is a temporary grade. It counts as 2.0 grade points until the final grade is submitted."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can my Stanford GPA be higher than 4.0?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, because an A+ is worth 4.3. When a form asks for a GPA out of 4.0, give your transcript GPA and note that Stanford uses a 4.3 scale."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I convert my Stanford GPA to a percentage?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Stanford has no official formula. A simple estimate is (GPA ÷ 4.3) × 100, so 3.80 is about 88.37%. Mark it as an estimate."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "CGPA Calculator",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/id/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Stanford CGPA & GPA Calculator",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/id/stanford-cgpa-calculator.html"
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    /* Apply the saved (or system) theme before the page paints, so there is no flash */
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem('cgpa-theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="CGPA Calculator home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3z"></path>
+            <path d="M5 13.18v4C5 18.84 8.13 20 12 20s7-1.16 7-2.82v-4L12 17l-7-3.82z"></path>
+          </svg>
+        </span>
+        <span>CGPA Calculator</span>
+      </a>
+      <div class="header-actions">
+        <nav class="site-nav" id="siteNav" aria-label="Main menu">
+          <a href="index.html">Calculator</a>
+          <a href="about.html">About</a>
+          <a href="privacy-policy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <details class="lang-menu" id="langMenu">
+          <summary class="icon-btn lang-btn" aria-label="Choose language" title="Language">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"></path></svg>
+            <span class="lang-code" data-no-translate="">ID</span>
+          </summary>
+          <div class="lang-list" data-no-translate=""><a href="../stanford-cgpa-calculator.html" hreflang="en" lang="en">English</a><a href="../es/stanford-cgpa-calculator.html" hreflang="es" lang="es">Español</a><a href="../de/stanford-cgpa-calculator.html" hreflang="de" lang="de">Deutsch</a><a href="../hi/stanford-cgpa-calculator.html" hreflang="hi" lang="hi">हिन्दी</a><a href="../ur/stanford-cgpa-calculator.html" hreflang="ur" lang="ur">اردو</a><a href="../zh/stanford-cgpa-calculator.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="../fr/stanford-cgpa-calculator.html" hreflang="fr" lang="fr">Français</a><a href="../ar/stanford-cgpa-calculator.html" hreflang="ar" lang="ar">العربية</a><a href="../bn/stanford-cgpa-calculator.html" hreflang="bn" lang="bn">বাংলা</a><a href="../pt/stanford-cgpa-calculator.html" hreflang="pt" lang="pt">Português</a><a href="../ru/stanford-cgpa-calculator.html" hreflang="ru" lang="ru">Русский</a><a href="stanford-cgpa-calculator.html" hreflang="id" lang="id" aria-current="true">Bahasa Indonesia</a><a href="../ja/stanford-cgpa-calculator.html" hreflang="ja" lang="ja">日本語</a><a href="../mr/stanford-cgpa-calculator.html" hreflang="mr" lang="mr">मराठी</a><a href="../te/stanford-cgpa-calculator.html" hreflang="te" lang="te">తెలుగు</a></div>
+        </details>
+        <button type="button" id="themeToggle" class="icon-btn" aria-label="Switch to dark mode" title="Light / dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+        </button>
+        <button type="button" id="menuToggle" class="icon-btn menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
+          <svg class="icon-menu" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+
+    <section class="hero">
+      <nav class="breadcrumb" aria-label="Navigasi jejak"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">Stanford</span></nav>
+      <h1>Stanford CGPA &amp; GPA Calculator</h1>
+      <p>Calculate your Stanford GPA with the official 4.3 scale, where an A+ is worth 4.3. Grades are weighted by units, just like on your Stanford transcript.
+        <a href="#guide" class="hero-link">How Stanford GPA works ↓</a></p>
+    </section>
+
+    <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
+      <div class="scale-text">
+        <p id="scaleLabel" class="scale-title">Grading system: Stanford (4.3 scale)</p>
+        <p class="muted small">Choose the letter grade for each course and enter its units. CR, S, W and other symbols are not part of the GPA.</p>
+      </div>
+      <select id="scaleSelect" hidden="" aria-hidden="true" tabindex="-1"><option value="stanford">Stanford</option></select>
+      <button type="button" id="resetAll" class="btn btn-outline danger-hover">Atur ulang semua</button>
+    </section>
+    <p class="print-only" id="printDate"></p>
+
+    <div class="layout">
+      <!-- ================= Calculators ================= -->
+      <div class="main-col">
+        <div class="tabs" role="tablist" aria-label="Kalkulator">
+          <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">GPA <small>Satu semester</small></button>
+          <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>Semua semester</small></button>
+          <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">Target <small>Rencanakan</small></button>
+          <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">Persentase <small>Konversi</small></button>
+        </div>
+        <!-- ---------- TAB 1: GPA ---------- -->
+        <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
+          <div class="panel-head">
+            <div>
+              <h2>GPA semester</h2>
+              <p class="muted small">Add each course with its units and letter grade.</p>
+            </div>
+
+          </div>
+          <div class="rows-head subject-cols" aria-hidden="true">
+            <span>Course (optional)</span><span>Units</span><span id="gradeHead">Nilai huruf</span><span></span>
+          </div>
+          <div id="subjectList" class="row-list mode-grade"></div>
+          <button type="button" id="addSubject" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            Tambah mata kuliah
+          </button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">GPA semester Anda</div>
+            <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="gpaMeter"></span></div>
+            <div class="result-cheer" id="gpaCheer"></div>
+            <div class="result-sub" id="gpaSub">Tambahkan mata kuliah untuk melihat GPA Anda.</div>
+            <div class="result-note" id="gpaNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" id="sendToCgpa" class="btn btn-soft">Tambahkan GPA ini ke CGPA saya →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="gpa">Salin hasil</button>
+            <button type="button" class="btn btn-outline js-print" title="Di jendela cetak, pilih “Simpan sebagai PDF” untuk mengunduh PDF">Cetak / PDF</button>
+            <button type="button" id="resetGpa" class="btn btn-quiet">Hapus</button>
+          </div>
+          <details class="howto">
+            <summary>Bagaimana GPA dihitung?</summary>
+            <p class="formula-line">GPA = (Σ SKS × poin nilai) ÷ (Σ SKS)</p>
+            <p class="muted small">Contoh: Matematika 3 SKS dengan poin 4.00, dan Bahasa Inggris 2 SKS dengan 3.00 → (3×4 + 2×3) ÷ (3+2) = 18 ÷ 5 = <strong>3.60</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 2: CGPA ---------- -->
+        <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>CGPA keseluruhan</h2>
+              <p class="muted small">Add each term's GPA and its total graded units.</p>
+            </div>
+          </div>
+          <div class="rows-head semester-cols" aria-hidden="true">
+            <span>Istilah</span><span>GPA</span><span>Units</span><span></span>
+          </div>
+          <div id="semesterList" class="row-list"></div>
+          <button type="button" id="addSemester" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            Tambah semester
+          </button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">CGPA Anda</div>
+            <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="cgpaMeter"></span></div>
+            <div class="result-cheer" id="cgpaCheer"></div>
+            <div class="result-sub" id="cgpaSub">Tambahkan semester untuk melihat CGPA Anda.</div>
+            <div class="result-note" id="cgpaNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" id="sendToPct" class="btn btn-soft">Ubah CGPA ini ke % →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">Salin hasil</button>
+            <button type="button" class="btn btn-outline js-print" title="Di jendela cetak, pilih “Simpan sebagai PDF” untuk mengunduh PDF">Cetak / PDF</button>
+            <button type="button" id="resetCgpa" class="btn btn-quiet">Hapus</button>
+          </div>
+          <details class="howto">
+            <summary>Bagaimana CGPA dihitung?</summary>
+            <p class="formula-line">CGPA = (Σ GPA semester × SKS semester) ÷ (total SKS)</p>
+            <p class="muted small">Semester dengan SKS lebih banyak berbobot lebih besar. Contoh: 3.50 dengan 18 SKS dan 3.00 dengan 15 SKS → (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 3: Target CGPA ---------- -->
+        <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>Target CGPA</h2>
+              <p class="muted small">Cari tahu GPA yang Anda perlukan di semester mendatang untuk mencapai target.</p>
+            </div>
+          </div>
+          <div class="target-grid">
+            <div class="field">
+              <label class="field-label" for="tCurrent">CGPA saat ini</label>
+              <input type="text" id="tCurrent" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tCurrentMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tDone">Units completed</label>
+              <input type="text" id="tDone" inputmode="decimal" autocomplete="off" placeholder="e.g. 66">
+              <p class="row-msg" id="tDoneMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tTarget">Target CGPA</label>
+              <input type="text" id="tTarget" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tTargetMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tLeft">Units remaining</label>
+              <input type="text" id="tLeft" inputmode="decimal" autocomplete="off" placeholder="e.g. 70">
+              <p class="row-msg" id="tLeftMsg"></p>
+            </div>
+          </div>
+          <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">Isi dari tab CGPA saya</button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">GPA yang diperlukan tiap semester</div>
+            <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="tgtMeter"></span></div>
+            <div class="result-cheer" id="tgtCheer"></div>
+            <div class="result-sub" id="tgtSub">Isi keempat kolom di atas untuk melihat GPA yang Anda perlukan.</div>
+            <div class="result-note" id="tgtNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="target">Salin hasil</button>
+            <button type="button" class="btn btn-outline js-print" title="Di jendela cetak, pilih “Simpan sebagai PDF” untuk mengunduh PDF">Cetak / PDF</button>
+            <button type="button" id="resetTarget" class="btn btn-quiet">Hapus</button>
+          </div>
+          <details class="howto">
+            <summary>Bagaimana ini dihitung?</summary>
+            <p class="formula-line">GPA yang diperlukan = (Target × total SKS − Saat ini × SKS ditempuh) ÷ SKS tersisa</p>
+            <p class="muted small">Contoh: saat ini 3.00 setelah 60 SKS, target 3.30, sisa 60 SKS → (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 4: Percentage ---------- -->
+        <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>CGPA ke persentase</h2>
+              <p class="muted small">Ketik CGPA Anda dan pilih skalanya.</p>
+            </div>
+          </div>
+          <div class="conv-grid">
+            <div class="field">
+              <label class="field-label always" for="convInput">CGPA Anda</label>
+              <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
+              <p class="row-msg" id="convMsg"></p>
+            </div>
+
+          </div>
+          <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">Gunakan CGPA saya dari tab CGPA</button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">Persentase</div>
+            <div class="result-value"><span id="pctValue">—</span></div>
+            <div class="meter" aria-hidden="true"><span id="pctMeter"></span></div>
+            <div class="result-cheer" id="pctCheer"></div>
+            <div class="result-sub" id="pctSub">Masukkan CGPA Anda untuk melihat persentasenya.</div>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="pct">Salin hasil</button>
+            <button type="button" class="btn btn-outline js-print" title="Di jendela cetak, pilih “Simpan sebagai PDF” untuk mengunduh PDF">Cetak / PDF</button>
+          </div>
+          <div class="formula">
+            <div class="formula-title">Rumus yang digunakan</div>
+            <p class="formula-line" id="formulaMain"></p>
+            <p class="formula-work" id="formulaWork"></p>
+            <p class="muted small" id="formulaNote"></p>
+          </div>
+        </section>
+      </div>
+      <!-- ================= Sidebar: grade table ================= -->
+      <aside class="sidebar">
+        <section class="card" aria-labelledby="tableTitle">
+          <h2 id="tableTitle" class="side-title">Poin nilai</h2>
+          <p class="muted small" id="tableSubtitle"></p>
+          <div class="table-wrap">
+            <table class="grade-table">
+              <thead>
+                <tr><th scope="col">Nilai huruf</th><th scope="col" class="num">Poin</th><th scope="col" class="num" id="marksCol">Nilai %</th></tr>
+              </thead>
+              <tbody id="gradeTableBody"></tbody>
+            </table>
+          </div>
+          <p class="muted tiny">Rentang nilai berbeda di setiap kampus. Selalu periksa aturan penilaian kampus Anda sendiri.</p>
+        </section>
+
+        <section class="card tips">
+          <h2 class="side-title">Stanford quick facts</h2>
+          <ul>
+            <li>Stanford uses a <strong>4.3 scale</strong>: an <strong>A+ is worth 4.3</strong>, an A is 4.0 and an A- is 3.7.</li>
+            <li>An <strong>NP counts as 0.0</strong> and its units stay in the total, so it pulls your GPA down.</li>
+            <li>A temporary <strong>L grade counts as 2.0</strong> until the final grade is in.</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <article class="guide" id="guide">
+
+      <section id="how-it-works">
+        <h2>How Stanford calculates your GPA</h2>
+        <p>Stanford gives grade points only to letter grades, and it uses a 4.3 scale. Each course's grade points are multiplied by its units, so a 5-unit A is worth 20 grade points. Your GPA is the total of those grade points divided by the total units of all courses graded A+ through NP.</p>
+        <p>No other grades or symbols are used in the GPA: +, CR, *, GNR, RP, N, N-, W, NC, S and I are all left out. An NP, on the other hand, is worth 0.0 and its units still count, so an A (4 units) and an NP (4 units) give a GPA of 2.0, not 4.0.</p>
+      </section>
+
+      <section id="grade-points">
+        <h2>Stanford grade points table</h2>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">Nilai huruf</th><th scope="col" class="num">Poin nilai</th></tr></thead>
+            <tbody>
+              <tr><td>A+</td><td class="num">4.3</td></tr>
+              <tr><td>A</td><td class="num">4.0</td></tr>
+              <tr><td>A-</td><td class="num">3.7</td></tr>
+              <tr><td>B+</td><td class="num">3.3</td></tr>
+              <tr><td>B</td><td class="num">3.0</td></tr>
+              <tr><td>B-</td><td class="num">2.7</td></tr>
+              <tr><td>C+</td><td class="num">2.3</td></tr>
+              <tr><td>C</td><td class="num">2.0</td></tr>
+              <tr><td>C-</td><td class="num">1.7</td></tr>
+              <tr><td>D+</td><td class="num">1.3</td></tr>
+              <tr><td>D</td><td class="num">1.0</td></tr>
+              <tr><td>D-</td><td class="num">0.7</td></tr>
+              <tr><td>NP</td><td class="num">0.0</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>A temporary L grade counts as 2.0 until the final grade is submitted. Courses with a GSB grading basis use their own values (for example H = 4.14).</p>
+      </section>
+
+      <section id="example">
+        <h2>How to calculate your Stanford GPA: worked example</h2>
+        <p>This is the example from Stanford's own guide:</p>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">Nilai huruf</th><th scope="col" class="num">Units</th><th scope="col" class="num">Poin nilai</th><th scope="col" class="num">Units × points</th></tr></thead>
+            <tbody>
+              <tr><td>B-</td><td class="num">3</td><td class="num">2.7</td><td class="num">8.1</td></tr>
+              <tr><td>A-</td><td class="num">4</td><td class="num">3.7</td><td class="num">14.8</td></tr>
+              <tr><td>B+</td><td class="num">3</td><td class="num">3.3</td><td class="num">9.9</td></tr>
+            </tbody>
+            <tfoot><tr><th scope="row">Total</th><td class="num">10</td><td></td><td class="num">32.8</td></tr></tfoot>
+          </table>
+        </div>
+        <p class="formula-block">GPA = 32.8 ÷ 10 = 3.28</p>
+      </section>
+
+      <section id="percentage">
+        <h2>Can a Stanford GPA be above 4.0?</h2>
+        <p>Yes. Because an A+ is worth 4.3, a student with many A+ grades can have a GPA above 4.0. If a form asks for a GPA "out of 4.0", give your GPA as it appears on your transcript and mention that Stanford uses a 4.3 scale. Stanford does not publish a percentage formula; the converter tab gives a simple estimate, (GPA ÷ 4.3) × 100.</p>
+      </section>
+
+      <section id="faq" class="faq">
+        <h2>Stanford CGPA calculator FAQs</h2>
+
+        <details>
+          <summary><h3>Is an A+ worth 4.3 at Stanford?</h3></summary>
+          <p>Yes. Stanford uses a 4.3 scale: A+ = 4.3, A = 4.0, A- = 3.7, B+ = 3.3 and so on down to D- = 0.7 and NP = 0.0.</p>
+        </details>
+        <details>
+          <summary><h3>Does an NP count in my Stanford GPA?</h3></summary>
+          <p>Yes. NP is worth 0.0 grade points and its units stay in the total, so it lowers your GPA. An A in 4 units plus an NP in 4 units gives 2.0.</p>
+        </details>
+        <details>
+          <summary><h3>Do CR/NC courses count in the Stanford GPA?</h3></summary>
+          <p>No. CR, NC, S, W, I and the other symbols are not used in calculating the GPA.</p>
+        </details>
+        <details>
+          <summary><h3>What is an L grade at Stanford?</h3></summary>
+          <p>An L is a temporary grade. It counts as 2.0 grade points until the final grade is submitted.</p>
+        </details>
+        <details>
+          <summary><h3>Can my Stanford GPA be higher than 4.0?</h3></summary>
+          <p>Yes, because an A+ is worth 4.3. When a form asks for a GPA out of 4.0, give your transcript GPA and note that Stanford uses a 4.3 scale.</p>
+        </details>
+        <details>
+          <summary><h3>How do I convert my Stanford GPA to a percentage?</h3></summary>
+          <p>Stanford has no official formula. A simple estimate is (GPA ÷ 4.3) × 100, so 3.80 is about 88.37%. Mark it as an estimate.</p>
+        </details>
+      </section>
+
+      <section id="sources">
+        <h2>Sumber</h2>
+        <ul class="source-note">
+          <li><a href="https://studentservices.stanford.edu/my-academics/evaluations-exams-grades/grades/how-do-i-calculate-my-grade-point-average-gpa">Stanford Student Services: How do I calculate my grade point average (GPA)?</a></li>
+        </ul>
+        <p class="source-note">Terakhir diperiksa: 18 Oktober 2026. Aturan kampus bisa berubah, jadi selalu pastikan hasil Anda dengan aturan resmi terbaru dari kampus Anda. Lihat <a href="terms.html">Ketentuan Penggunaan</a> kami.</p>
+      </section>
+    </article>
+
+    <section class="uni-section" aria-labelledby="uniTitle">
+      <h2 id="uniTitle">Kalkulator CGPA &amp; GPA lainnya</h2>
+      <div class="uni-grid">
+        <a class="card uni-card" href="harvard-cgpa-calculator.html">
+          <span class="uni-badge">Harvard</span>
+          <span class="uni-name">Harvard CGPA &amp; GPA Calculator</span>
+          <span class="muted small">FAS 4.0 scale · A = 4.00, A- = 3.67</span>
+        </a>
+        <a class="card uni-card" href="mit-cgpa-calculator.html">
+          <span class="uni-badge">MIT</span>
+          <span class="uni-name">MIT CGPA &amp; GPA Calculator</span>
+          <span class="muted small">5.0 scale · weighted by units</span>
+        </a>
+        <a class="card uni-card" href="index.html">
+          <span class="uni-badge">SEMUA</span>
+          <span class="uni-name">Kalkulator CGPA Umum</span>
+          <span class="muted small">Skala 4.0, 5.0, dan 10 poin</span>
+        </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">18</span>
+          <span class="uni-name">All university calculators</span>
+          <span class="muted small">Pakistan, India, USA, UK, Malaysia, Australia and Germany</span>
+        </a>
+      </div>
+    </section>
+    <p class="back-top"><a href="#calculator">↑ Kembali ke kalkulator</a></p>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p><strong>CGPA Calculator</strong> · Dibuat untuk mahasiswa · © <span id="year">2026</span></p>
+        <p class="muted">Hasil hanyalah perkiraan. Aturan resmi kampus Anda selalu menjadi acuan utama.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index.html">Kalkulator</a>
+        <a href="about.html">Tentang</a>
+        <a href="privacy-policy.html">Kebijakan Privasi</a>
+        <a href="terms.html">Ketentuan Penggunaan</a>
+        <a href="contact.html">Kontak</a>
+      </nav>
+    </div>
+  </footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>window.CGPA_PAGE = {
+    storageKey: 'cgpa-stanford',
+    creditLabel: 'Units',
+    semCreditLabel: 'Units',
+    creditExample: 4,
+    semCreditExample: 15,
+    msgs: {"GPA / SGPA":"GPA","CGPA {cgpa} on the {scale}":"GPA {cgpa} on the {scale}","1 subject · {credits} credit hours · {points} grade points":"1 course · {credits} units · {points} grade points","{n} subjects · {credits} credit hours · {points} grade points":"{n} courses · {credits} units · {points} grade points","1 semester · {credits} total credit hours":"1 term · {credits} total units","{n} semesters · {credits} total credit hours":"{n} terms · {credits} total units","Total credit hours: {credits}":"Total units: {credits}","You need an average GPA of at least {needed} over your remaining {left} credit hours to reach a {target} CGPA.":"You need an average GPA of at least {needed} over your remaining {left} units to reach a {target} GPA.","To reach a {target} CGPA (now {current}), I need an average GPA of {needed} over my remaining {left} credit hours.":"To reach a {target} GPA (now {current}), I need an average GPA of {needed} over my remaining {left} units.","Even with a perfect {max} in every remaining semester, the highest CGPA you can reach is {best}.":"Even with a perfect {max} in every remaining term, the highest GPA you can reach is {best}.","Please enter the total credit hours for this semester.":"Please enter the total units for this term.","Please enter the credit hours for this subject.":"Please enter the units for this course.","That looks too high. A semester usually has 12 to 24 credit hours.":"That looks too high. Please check the units.","That looks too high. Credit hours are usually between 1 and 6.":"That looks too high. Please check the units."},
+    scales: {
+      stanford: {
+        max: 4.3, label: 'Stanford 4.3 scale', region: 'Stanford · weighted by units', example: '3.80', modes: ['grade'],
+        grades: [['A+', 4.3], ['A', 4], ['A-', 3.7], ['B+', 3.3], ['B', 3], ['B-', 2.7], ['C+', 2.3], ['C', 2], ['C-', 1.7],
+          ['D+', 1.3], ['D', 1], ['D-', 0.7], ['NP', 0]]
+      }
+    },
+    conversions: {
+      stanford: {
+        formula: 'Percentage ≈ (GPA ÷ 4.3) × 100',
+        expr: c => '(' + c + ' ÷ 4.3) × 100',
+        calc: c => (c / 4.3) * 100,
+        example: 3.8,
+        note: 'Stanford does not publish a GPA-to-percentage formula. This simple proportion uses the 4.3 maximum; mark it as an estimate on any form.'
+      }
+    }
+  };</script>
+  <script src="../i18n/id.js" data-i18n=""></script>
+  <script src="../site.js"></script>
+  <script src="../script.js"></script>
+</body></html>

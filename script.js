@@ -4,7 +4,13 @@
 (function () {
   'use strict';
 
-  /* University pages set window.CGPA_PAGE (scales, conversions, storageKey) before this file loads */
+  /* University pages set window.CGPA_PAGE (scales, conversions, storageKey) before this file loads.
+     Optional page settings: maxCredit / maxSemCredit (error limits), creditLabel (row label),
+     periodLabel (e.g. 'Year {n}' instead of 'Semester {n}'), defaultScale.
+     Optional scale settings: min (lowest valid value, default 0), lowerIsBetter (German grades),
+     digits + truncate (how results are shown), gradeDigits (grade lists), maxText (instead of "/ 4.00"),
+     subtitle (grade table), pointsLabel (label in "points" mode), ratioPoints ([[value, 0–1], …] for the
+     meter and messages), noQualityPoints (summary shows credits only). */
   const PAGE = window.CGPA_PAGE || {};
 
   /* ---------- Grading scales: [grade, points, minimum marks %, lowest points if a range] ---------- */
@@ -77,10 +83,36 @@
   };
   const f2 = n => round2(n).toFixed(2);
   const cleanNum = n => String(round2(n));
+  // Shows a value the way the scale asks for (some German rules cut extra decimals instead of rounding)
+  function fmt(n, sc, digits) {
+    const d = digits != null ? digits : sc && sc.digits != null ? sc.digits : 2;
+    const clean = Number(n.toPrecision(12));
+    if (sc && sc.truncate) { const p = Math.pow(10, d); return (Math.floor(clean * p + 1e-9) / p).toFixed(d); }
+    return (Math.round(Number(clean + 'e' + d)) / Math.pow(10, d)).toFixed(d);
+  }
+  const fmtG = (n, sc) => fmt(n, null, sc.gradeDigits != null ? sc.gradeDigits : 2);
+  const sMin = sc => sc.min || 0;
+  const maxLabel = sc => sc.maxText ? t(sc.maxText) : '/ ' + fmtG(sc.max, sc);
+  // How good a value is from 0 (worst) to 1 (best), for the meter and the friendly message
+  function ratioOf(sc, x) {
+    if (sc.ratioPoints) {
+      const pts = sc.ratioPoints.slice().sort((a, b) => a[0] - b[0]);
+      if (x <= pts[0][0]) return pts[0][1];
+      for (let i = 1; i < pts.length; i++) {
+        const [x0, y0] = pts[i - 1], [x1, y1] = pts[i];
+        if (x <= x1) return y0 + (y1 - y0) * (x - x0) / (x1 - x0);
+      }
+      return pts[pts.length - 1][1];
+    }
+    return sc.lowerIsBetter ? (sc.max - x) / (sc.max - sMin(sc)) : x / sc.max;
+  }
+  const outOfRange = sc => t('Please type a number between {min} and {max}.', { min: fmtG(sMin(sc), sc), max: fmtG(sc.max, sc) });
   /* Translations: translated pages load i18n/<lang>.js first, which sets
      window.CGPA_I18N = { 'English text with {placeholders}': 'translation' } */
   const I18N = window.CGPA_I18N || {};
-  const t = (text, vars) => String(I18N[text] || text)
+  // A page can reword a message for its own system: PAGE.msgs maps the original English text to the page's wording
+  const MSGS = PAGE.msgs || {};
+  const t = (text, vars) => String(I18N[MSGS[text] || text] || MSGS[text] || text)
     .replace(/\{(\w+)\}/g, (m, k) => (vars && k in vars ? vars[k] : m));
   window.CGPA_T = t; // used by university configs at run time
   let uid = 0;
@@ -125,7 +157,7 @@
   function setResult(prefix, r) {
     $('#' + prefix + 'Value').textContent = r.text || '—';
     const maxEl = $('#' + prefix + 'Max');
-    if (maxEl && r.max !== undefined) maxEl.textContent = '/ ' + f2(r.max);
+    if (maxEl && r.max !== undefined) maxEl.textContent = r.max; // already formatted, e.g. "/ 4.00"
     const ratio = r.ratio == null ? 0 : Math.max(0, Math.min(1, r.ratio));
     $('#' + prefix + 'Meter').style.width = ratio * 100 + '%';
     $('#' + prefix + 'Cheer').textContent = r.cheer || '';
@@ -190,14 +222,15 @@
   function renderGradeTable() {
     const sc = SCALES[state.scale];
     $('#tableTitle').textContent = t('Grade points ({scale})', { scale: t(sc.label) });
-    $('#tableSubtitle').textContent = t('{region} · highest grade point is {max}', { region: t(sc.region), max: f2(sc.max) });
+    $('#tableSubtitle').textContent = sc.subtitle ? t(sc.subtitle)
+      : t('{region} · highest grade point is {max}', { region: t(sc.region), max: f2(sc.max) });
     const showMarks = sc.grades.some(g => g.min != null); // relative grading has no fixed marks
     const marksCol = $('#marksCol');
     if (marksCol) marksCol.hidden = !showMarks;
     $('#gradeTableBody').innerHTML = sc.grades.map(function (g, i) {
       const top = i === 0 ? 100 : sc.grades[i - 1].min - 1;
-      const pts = g.pmin != null ? `${f2(g.pmin)}–${f2(g.points)}` : f2(g.points);
-      return `<tr><td><span class="grade-pill">${g.grade}</span></td><td class="num">${pts}</td>` +
+      const pts = g.pmin != null ? `${fmtG(g.pmin, sc)}–${fmtG(g.points, sc)}` : fmtG(g.points, sc);
+      return `<tr><td><span class="grade-pill">${t(g.grade)}</span></td><td class="num">${pts}</td>` +
         (showMarks ? `<td class="num">${g.min}–${top}</td>` : '') + '</tr>';
     }).join('');
   }
@@ -215,7 +248,12 @@
     const sc = SCALES[state.scale];
     const previous = select.value;
     select.innerHTML = '<option value="">' + t('Select') + '</option>' +
-      sc.grades.map(g => `<option value="${g.grade}">${g.grade} (${f2(g.points)})</option>`).join('');
+      sc.grades.map(function (g) {
+        const pts = fmtG(g.points, sc), name = t(g.grade);
+        // "7 High Distinction" or "1.3 sehr gut" already start with the value, so don't repeat it
+        const label = String(g.grade) === pts || String(g.grade).startsWith(pts + ' ') ? name : `${name} (${pts})`;
+        return `<option value="${g.grade}">${label}</option>`;
+      }).join('');
     select.value = previous; // falls back to "Select" if this grade doesn't exist on the new scale
   }
 
@@ -253,13 +291,13 @@
         <input type="text" id="${id}-n" class="in-name" maxlength="60" autocomplete="off" placeholder="${t('e.g. Calculus')}">
       </div>
       <div class="field f-credit">
-        <label class="field-label" for="${id}-c">${t('Credit hours')}</label>
-        <input type="text" id="${id}-c" class="in-credit" inputmode="decimal" autocomplete="off" placeholder="${t('e.g. {x}', { x: 3 })}">
+        <label class="field-label" for="${id}-c">${t(PAGE.creditLabel || 'Credit hours')}</label>
+        <input type="text" id="${id}-c" class="in-credit" inputmode="decimal" autocomplete="off" placeholder="${t('e.g. {x}', { x: PAGE.creditExample || 3 })}">
       </div>
       <div class="field f-grade">
         <label class="field-label lbl-grade" for="${id}-g">${t('Grade')}</label>
         <label class="field-label lbl-marks" for="${id}-m">${t('Marks (out of 100)')}</label>
-        <label class="field-label lbl-points" for="${id}-p">${t('Grade points')}</label>
+        <label class="field-label lbl-points" for="${id}-p">${t(SCALES[state.scale].pointsLabel || 'Grade points')}</label>
         <select id="${id}-g" class="in-grade"></select>
         <input type="text" id="${id}-m" class="in-marks" inputmode="decimal" autocomplete="off" placeholder="0 – 100">
         <input type="text" id="${id}-p" class="in-points" inputmode="decimal" autocomplete="off" placeholder="${t('e.g. {x}', { x: SCALES[state.scale].example })}">
@@ -310,21 +348,27 @@
         error = t('Credit hours should be a number, like 3 or 1.5.'); badField = creditIn;
       } else if (credit <= 0) {
         error = t('Credit hours must be more than 0.'); badField = creditIn;
-      } else if (credit > 30) {
+      } else if (credit > (PAGE.maxCredit || 30)) {
         error = t('That looks too high. Credit hours are usually between 1 and 6.'); badField = creditIn;
       }
 
       if (!error) {
         if (mode === 'points') {
+          const custom = !!sc.pointsLabel; // e.g. marks out of 100 instead of grade points
           if (pts === null) {
-            if (touched) { error = t('Please enter the grade points for this subject.'); badField = pointsIn; }
+            if (touched) { error = t(custom ? 'Please fill in this box.' : 'Please enter the grade points for this subject.'); badField = pointsIn; }
           } else if (Number.isNaN(pts)) {
-            error = t('Grade points should be a number, like {x}.', { x: sc.example }); badField = pointsIn;
-          } else if (pts < 0 || pts > sc.max) {
-            error = t('Grade points should be between 0 and {max}.', { max: f2(sc.max) }); badField = pointsIn;
+            error = custom ? t('Please type a number, like {x}.', { x: sc.example }) : t('Grade points should be a number, like {x}.', { x: sc.example });
+            badField = pointsIn;
+          } else if (pts < sMin(sc) || pts > sc.max) {
+            error = custom || sMin(sc) ? outOfRange(sc) : t('Grade points should be between 0 and {max}.', { max: f2(sc.max) });
+            badField = pointsIn;
           } else {
-            grade = { grade: gradeFromPoints(pts, sc).grade, points: pts };
-            info = t('{points} points = grade {grade}', { points: f2(pts), grade: grade.grade });
+            // sc.words: [[upper limit, word], …] names a value on scales without letter bands (German grades)
+            const word = sc.words && (sc.words.find(w => pts <= w[0] + 1e-9) || sc.words[sc.words.length - 1]);
+            grade = { grade: word ? word[1] : gradeFromPoints(pts, sc).grade, points: pts };
+            info = custom ? t('{points} = {grade}', { points: cleanNum(pts), grade: t(grade.grade) })
+              : t('{points} points = grade {grade}', { points: f2(pts), grade: grade.grade });
           }
         } else if (mode === 'marks') {
           if (marks === null) {
@@ -356,18 +400,21 @@
       credits += credit;
       points += credit * grade.points;
       counted++;
-      lines.push(t('{name}: {credits} credits, grade {grade} ({points})', { name: nameIn.value.trim() || t('Subject {n}', { n: i + 1 }), credits: cleanNum(credit), grade: grade.grade, points: f2(grade.points) }));
+      lines.push(t('{name}: {credits} credits, grade {grade} ({points})', { name: nameIn.value.trim() || t('Subject {n}', { n: i + 1 }), credits: cleanNum(credit), grade: t(grade.grade), points: fmtG(grade.points, sc) }));
     });
 
     if (counted === 0) {
       state.results.gpa = null;
-      setResult('gpa', { max: sc.max, sub: t('Add your subjects to see your GPA.'), note: skippedNote(skipped) });
+      setResult('gpa', { max: maxLabel(sc), sub: t('Add your subjects to see your GPA.'), note: skippedNote(skipped) });
     } else {
       const gpa = points / credits;
+      const ratio = ratioOf(sc, gpa);
       state.results.gpa = { value: gpa, credits, lines };
       setResult('gpa', {
-        text: f2(gpa), max: sc.max, ratio: gpa / sc.max, cheer: cheer(gpa / sc.max),
-        sub: t(counted === 1 ? '1 subject · {credits} credit hours · {points} grade points' : '{n} subjects · {credits} credit hours · {points} grade points', { n: counted, credits: cleanNum(credits), points: f2(points) }),
+        text: fmt(gpa, sc), max: maxLabel(sc), ratio, cheer: cheer(ratio),
+        sub: sc.noQualityPoints
+          ? t(counted === 1 ? '1 subject · {credits} credits' : '{n} subjects · {credits} credits', { n: counted, credits: cleanNum(credits) })
+          : t(counted === 1 ? '1 subject · {credits} credit hours · {points} grade points' : '{n} subjects · {credits} credit hours · {points} grade points', { n: counted, credits: cleanNum(credits), points: f2(points) }),
         note: skippedNote(skipped)
       });
     }
@@ -377,7 +424,8 @@
   function setMode(mode) {
     state.mode = mode;
     subjectList.className = 'row-list mode-' + mode;
-    $('#gradeHead').textContent = t(MODE_HEADINGS[mode]);
+    const pointsLabel = SCALES[state.scale].pointsLabel;
+    $('#gradeHead').textContent = t(mode === 'points' && pointsLabel ? pointsLabel : MODE_HEADINGS[mode]);
     const radio = $(`input[name="gpaMode"][value="${mode}"]`);
     if (radio) radio.checked = true;
   }
@@ -411,8 +459,8 @@
         <input type="text" id="${id}-g" class="in-gpa" inputmode="decimal" autocomplete="off">
       </div>
       <div class="field f-credit">
-        <label class="field-label" for="${id}-c">${t('Credit hours')}</label>
-        <input type="text" id="${id}-c" class="in-credit" inputmode="decimal" autocomplete="off" placeholder="${t('e.g. {x}', { x: 18 })}">
+        <label class="field-label" for="${id}-c">${t(PAGE.semCreditLabel || 'Credit hours')}</label>
+        <input type="text" id="${id}-c" class="in-credit" inputmode="decimal" autocomplete="off" placeholder="${t('e.g. {x}', { x: PAGE.semCreditExample || 18 })}">
       </div>
       <button type="button" class="remove-btn" title="${t('Remove')}">${ICON_TRASH}</button>
       <p class="row-msg"></p>`;
@@ -432,8 +480,8 @@
 
   function renumberSemesters() {
     $$('.semester-row', semesterList).forEach(function (row, i) {
-      $('.sem-badge', row).textContent = i + 1;
-      $('.sem-title', row).textContent = t('Semester {n}', { n: i + 1 });
+      $('.sem-badge', row).textContent = i + (PAGE.periodStart || 1);
+      $('.sem-title', row).textContent = t(PAGE.periodLabel || 'Semester {n}', { n: i + (PAGE.periodStart || 1) });
       $('.remove-btn', row).setAttribute('aria-label', t('Remove semester {n}', { n: i + 1 }));
     });
   }
@@ -459,6 +507,8 @@
         if (touched) { error = t('Please enter the GPA for this semester.'); badField = gpaIn; }
       } else if (Number.isNaN(gpa)) {
         error = t('GPA should be a number, like {x}.', { x: sc.example }); badField = gpaIn;
+      } else if (sMin(sc) && (gpa < sMin(sc) || gpa > sc.max)) {
+        error = outOfRange(sc); badField = gpaIn;
       } else if (gpa < 0) {
         error = t('GPA can’t be negative.'); badField = gpaIn;
       } else if (gpa > sc.max) {
@@ -473,7 +523,7 @@
           error = t('Credit hours should be a number, like 18.'); badField = creditIn;
         } else if (credit <= 0) {
           error = t('Credit hours must be more than 0.'); badField = creditIn;
-        } else if (credit > 60) {
+        } else if (credit > (PAGE.maxSemCredit || 60)) {
           error = t('That looks too high. A semester usually has 12 to 24 credit hours.'); badField = creditIn;
         }
       }
@@ -490,17 +540,18 @@
       credits += credit;
       points += gpa * credit;
       counted++;
-      lines.push(t('Semester {n}: GPA {gpa}, {credits} credits', { n: i + 1, gpa: f2(gpa), credits: cleanNum(credit) }));
+      lines.push(t('Semester {n}: GPA {gpa}, {credits} credits', { n: i + (PAGE.periodStart || 1), gpa: f2(gpa), credits: cleanNum(credit) }));
     });
 
     if (counted === 0) {
       state.results.cgpa = null;
-      setResult('cgpa', { max: sc.max, sub: t('Add your semesters to see your CGPA.'), note: skippedNote(skipped) });
+      setResult('cgpa', { max: maxLabel(sc), sub: t('Add your semesters to see your CGPA.'), note: skippedNote(skipped) });
     } else {
       const cgpa = points / credits;
+      const ratio = ratioOf(sc, cgpa);
       state.results.cgpa = { value: cgpa, credits, lines };
       setResult('cgpa', {
-        text: f2(cgpa), max: sc.max, ratio: cgpa / sc.max, cheer: cheer(cgpa / sc.max),
+        text: fmt(cgpa, sc), max: maxLabel(sc), ratio, cheer: cheer(ratio),
         sub: t(counted === 1 ? '1 semester · {credits} total credit hours' : '{n} semesters · {credits} total credit hours', { n: counted, credits: cleanNum(credits) }),
         note: skippedNote(skipped)
       });
@@ -527,9 +578,10 @@
       } else {
         anyFilled = true;
         if (Number.isNaN(n)) error = t('Please type a number, like {x}.', { x: f.kind === 'gpa' ? sc.example : 60 });
+        else if (f.kind === 'gpa' && sMin(sc) && (n < sMin(sc) || n > sc.max)) error = outOfRange(sc);
         else if (n < 0) error = t('This can’t be negative.');
         else if (f.kind === 'gpa' && n > sc.max) error = t('On the {scale} this can’t be more than {max}.', { scale: t(sc.label), max: f2(sc.max) });
-        else if (f.kind === 'credits' && n > 500) error = t('That looks too high. Please check the credit hours.');
+        else if (f.kind === 'credits' && n > (PAGE.maxTotalCredit || 500)) error = t('That looks too high. Please check the credit hours.');
         else if (f.key === 'left' && n === 0) error = t('Remaining credits must be more than 0.');
       }
       if (error) { input.setAttribute('aria-invalid', 'true'); complete = false; } else input.removeAttribute('aria-invalid');
@@ -540,47 +592,61 @@
     if (!complete) {
       state.results.target = null;
       setResult('tgt', {
-        max: sc.max,
+        max: maxLabel(sc),
         sub: anyFilled ? t('Fill in all four boxes to see the GPA you need.') : t('Fill in the four boxes above to see the GPA you need.')
       });
       persist();
       return;
     }
 
+    // On German scales a smaller number is better, so "best" and "worst" swap ends
+    const inv = !!sc.lowerIsBetter;
+    const bestVal = inv ? sMin(sc) : sc.max, worstVal = inv ? sc.max : sMin(sc);
     const total = v.done + v.left;
     const needed = (v.target * total - v.current * v.done) / v.left;
-    const neededUp = Math.ceil(needed * 100 - 1e-9) / 100; // round up so you never fall just short
-    const best = (v.current * v.done + sc.max * v.left) / total;
+    // round towards "better" so you never fall just short
+    const neededUp = inv ? Math.floor(needed * 100 + 1e-9) / 100 : Math.ceil(needed * 100 - 1e-9) / 100;
+    const best = (v.current * v.done + bestVal * v.left) / total;
     let r;
 
-    if (needed > sc.max + 1e-9) {
+    if (inv ? needed < bestVal - 1e-9 : needed > bestVal + 1e-9) {
       r = {
         text: f2(neededUp), ratio: 1,
         cheer: t('This target is out of reach for now 😕'),
-        sub: t('Even with a perfect {max} in every remaining semester, the highest CGPA you can reach is {best}.', { max: f2(sc.max), best: f2(best) }),
+        sub: inv
+          ? t('Even with a perfect {max} in every remaining semester, the best average you can reach is {best}.', { max: fmtG(bestVal, sc), best: f2(best) })
+          : t('Even with a perfect {max} in every remaining semester, the highest CGPA you can reach is {best}.', { max: f2(sc.max), best: f2(best) }),
         note: t('Try a slightly lower target, or check if you have more credits left.')
       };
-      state.results.target = t('To reach a {target} CGPA I would need {needed}, which is above the {max} maximum. The best I can reach is {best}.', { target: f2(v.target), needed: f2(neededUp), max: f2(sc.max), best: f2(best) });
-    } else if (needed <= 0) {
+      state.results.target = inv
+        ? t('To reach a {target} average I would need {needed}, which is better than the best possible grade, {max}. The best I can reach is {best}.', { target: f2(v.target), needed: f2(neededUp), max: fmtG(bestVal, sc), best: f2(best) })
+        : t('To reach a {target} CGPA I would need {needed}, which is above the {max} maximum. The best I can reach is {best}.', { target: f2(v.target), needed: f2(neededUp), max: f2(sc.max), best: f2(best) });
+    } else if (inv ? needed >= worstVal : needed <= worstVal) {
       r = {
-        text: f2(0), ratio: 0,
+        text: f2(worstVal), ratio: 0,
         cheer: t('You’ve already secured it! 🎉'),
-        sub: t('Your CGPA will stay at or above {target} no matter what. Aim high anyway!', { target: f2(v.target) })
+        sub: inv
+          ? t('Your average will stay at {target} or better no matter what. Aim high anyway!', { target: f2(v.target) })
+          : t('Your CGPA will stay at or above {target} no matter what. Aim high anyway!', { target: f2(v.target) })
       };
       state.results.target = t('I have already secured a {target} CGPA.', { target: f2(v.target) });
     } else {
-      const ratio = needed / sc.max;
+      const ratio = ratioOf(sc, needed);
       r = {
         text: f2(neededUp), ratio,
         cheer: t(ratio > 0.9 ? 'Tough but possible. Time to go all in! 🔥'
           : ratio > 0.75 ? 'Challenging, but you can do it 💪'
           : ratio > 0.5 ? 'Very doable. Stay consistent 👍'
           : 'Easy target, you’ve got this 😎'),
-        sub: t('You need an average GPA of at least {needed} over your remaining {left} credit hours to reach a {target} CGPA.', { needed: f2(neededUp), left: cleanNum(v.left), target: f2(v.target) })
+        sub: inv
+          ? t('You need an average of {needed} or better over your remaining {left} credit hours to reach a {target} average.', { needed: f2(neededUp), left: cleanNum(v.left), target: f2(v.target) })
+          : t('You need an average GPA of at least {needed} over your remaining {left} credit hours to reach a {target} CGPA.', { needed: f2(neededUp), left: cleanNum(v.left), target: f2(v.target) })
       };
-      state.results.target = t('To reach a {target} CGPA (now {current}), I need an average GPA of {needed} over my remaining {left} credit hours.', { target: f2(v.target), current: f2(v.current), needed: f2(neededUp), left: cleanNum(v.left) });
+      state.results.target = inv
+        ? t('To reach a {target} average (now {current}), I need an average of {needed} or better over my remaining {left} credit hours.', { target: f2(v.target), current: f2(v.current), needed: f2(neededUp), left: cleanNum(v.left) })
+        : t('To reach a {target} CGPA (now {current}), I need an average GPA of {needed} over my remaining {left} credit hours.', { target: f2(v.target), current: f2(v.current), needed: f2(neededUp), left: cleanNum(v.left) });
     }
-    r.max = sc.max;
+    r.max = maxLabel(sc);
     setResult('tgt', r);
     persist();
   }
@@ -588,9 +654,11 @@
   /* =========================================================
      TAB 4 – CGPA to percentage
      ========================================================= */
+  // Conversions are usually keyed like the scales, but a page can offer its own (e.g. foreign grade → German grade)
+  const convKey = s => (CONVERSIONS[s] ? s : Object.keys(CONVERSIONS)[0]);
   function setConvScale(scale) {
-    state.convScale = scale;
-    const radio = $('#conv' + scale);
+    state.convScale = convKey(scale);
+    const radio = $('#conv' + state.convScale);
     if (radio) radio.checked = true;
   }
 
@@ -602,9 +670,12 @@
   }
 
   function calcPercent() {
-    const s = state.convScale;
+    const s = convKey(state.convScale);
     const conv = CONVERSIONS[s];
-    const max = SCALES[s].max;
+    // a conversion can set its own input range and name; otherwise it uses the scale with the same key
+    const max = conv.max != null ? conv.max : SCALES[s].max;
+    const min = conv.min || 0;
+    const label = conv.label || SCALES[s].label;
     convInput.placeholder = t('e.g. {x}', { x: f2(conv.example) });
     $('#formulaMain').textContent = t(conv.formula);
     $('#formulaNote').textContent = t(conv.note);
@@ -613,8 +684,9 @@
     let error = '';
     if (c !== null) {
       if (Number.isNaN(c)) error = t('Please type your CGPA as a number, like {x}.', { x: f2(conv.example) });
+      else if (min && (c < min || c > max)) error = t('Please type a number between {min} and {max}.', { min: f2(min), max: f2(max) });
       else if (c < 0) error = t('CGPA can’t be negative.');
-      else if (c > max) error = t('On the {scale}, CGPA can’t be more than {max}. Try a different scale.', { scale: t(SCALES[s].label), max: f2(max) });
+      else if (c > max) error = t('On the {scale}, CGPA can’t be more than {max}. Try a different scale.', { scale: t(label), max: f2(max) });
     }
     setMsg($('#convMsg'), error, 'error');
     if (error) convInput.setAttribute('aria-invalid', 'true'); else convInput.removeAttribute('aria-invalid');
@@ -628,9 +700,10 @@
       $('#formulaWork').textContent = res.work;
       state.results.pct = { cgpa: c, text: res.text, scale: s };
       const extra = conv.classify ? ' · ' + t(conv.classify(res.pct)) : '';
+      const ratio = res.ratio != null ? res.ratio : res.pct / 100;
       setResult('pct', {
-        text: res.text, ratio: res.pct / 100, cheer: cheer(res.pct / 100),
-        sub: t('CGPA {cgpa} on the {scale}', { cgpa: f2(c), scale: t(SCALES[s].label) }) + extra
+        text: res.text, ratio, cheer: cheer(ratio),
+        sub: (res.sub || t('CGPA {cgpa} on the {scale}', { cgpa: f2(c), scale: t(label) })) + extra
       });
     }
     persist();
@@ -650,6 +723,7 @@
     $$('.in-grade', subjectList).forEach(fillGradeSelect);
     $$('.in-gpa', semesterList).forEach(el => { el.placeholder = t('e.g. {x}', { x: sc.example }); });
     $$('.in-points', subjectList).forEach(el => { el.placeholder = t('e.g. {x}', { x: sc.example }); });
+    $$('.lbl-points', subjectList).forEach(el => { el.textContent = t(sc.pointsLabel || 'Grade points'); });
     applyModes();
     setConvScale(state.scale);
     calcAll();
@@ -684,18 +758,21 @@
     const r = state.results;
     const sc = SCALES[state.scale];
     const footer = '\n— ' + t('calculated with CGPA Calculator');
+    // scales with their own "max" wording (e.g. German grades) leave out the "/ max" part
+    const head = (withMax, plain, vars) => sc.maxText ? t(plain, vars) : t(withMax, Object.assign({ max: f2(sc.max) }, vars));
     if (which === 'gpa' && r.gpa) {
-      return [t('My semester GPA: {gpa} / {max} ({scale})', { gpa: f2(r.gpa.value), max: f2(sc.max), scale: t(sc.label) }),
+      return [head('My semester GPA: {gpa} / {max} ({scale})', 'My semester GPA: {gpa} ({scale})', { gpa: fmt(r.gpa.value, sc), scale: t(sc.label) }),
         t('Total credit hours: {credits}', { credits: cleanNum(r.gpa.credits) }), '', ...r.gpa.lines].join('\n') + footer;
     }
     if (which === 'cgpa' && r.cgpa) {
-      return [t('My CGPA: {cgpa} / {max} ({scale})', { cgpa: f2(r.cgpa.value), max: f2(sc.max), scale: t(sc.label) }),
+      return [head('My CGPA: {cgpa} / {max} ({scale})', 'My CGPA: {cgpa} ({scale})', { cgpa: fmt(r.cgpa.value, sc), scale: t(sc.label) }),
         t('Total credit hours: {credits}', { credits: cleanNum(r.cgpa.credits) }), '', ...r.cgpa.lines].join('\n') + footer;
     }
     if (which === 'target' && r.target) return r.target + footer;
     if (which === 'pct' && r.pct) {
-      return `CGPA ${f2(r.pct.cgpa)} (${t(SCALES[r.pct.scale].label)}) = ${r.pct.text}\n` +
-        t('Formula: {formula}', { formula: t(CONVERSIONS[r.pct.scale].formula) }) + footer;
+      const conv = CONVERSIONS[r.pct.scale];
+      return `CGPA ${f2(r.pct.cgpa)} (${t(conv.label || SCALES[r.pct.scale].label)}) = ${r.pct.text}\n` +
+        t('Formula: {formula}', { formula: t(conv.formula) }) + footer;
     }
     return null;
   }

@@ -24,10 +24,12 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/nust-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/nust-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/nust-cgpa-calculator.html">
+
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="ar_AR">
@@ -159,6 +161,7 @@
   </script>
 </head>
 <body>
+
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -203,11 +206,13 @@
     </div>
   </header>
   <main class="container">
+
     <section class="hero">
       <nav class="breadcrumb" aria-label="مسار التنقل"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">NUST</span></nav>
       <h1>حاسبة CGPA وGPA لجامعة NUST</h1>
       <p>احسب معدلك الفصلي والتراكمي بنقاط التقدير الرسمية لمرحلة البكالوريوس في NUST ‏(A = 4.00، B+ = 3.50، B = 3.00 وهكذا). <a href="#guide" class="hero-link">كيف يتم التقدير في NUST ↓</a></p>
     </section>
+
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <p id="scaleLabel" class="scale-title">نظام التقدير: بكالوريوس NUST</p>
@@ -217,6 +222,7 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">إعادة ضبط الكل</button>
     </section>
     <p class="print-only" id="printDate"></p>
+
     <div class="layout">
       <!-- ================= Calculators ================= -->
       <div class="main-col">
@@ -233,6 +239,7 @@
               <h2>المعدل الفصلي GPA</h2>
               <p class="muted small">أضف كل مادة مع ساعاتها المعتمدة وتقديرها.</p>
             </div>
+
           </div>
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>المادة (اختياري)</span><span>الساعات</span><span id="gradeHead">التقدير</span><span></span>
@@ -362,6 +369,7 @@
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
+
           </div>
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">استخدم معدلي من تبويب CGPA</button>
           <div class="result" aria-live="polite">
@@ -398,6 +406,7 @@
           </div>
           <p class="muted tiny">تختلف نطاقات الدرجات من جامعة لأخرى. راجع دائماً لائحة التقديرات في جامعتك.</p>
         </section>
+
         <section class="card tips">
           <h2 class="side-title">حقائق سريعة عن NUST</h2>
           <ul>
@@ -408,7 +417,9 @@
         </section>
       </aside>
     </div>
+
     <article class="guide" id="guide">
+
       <section id="how-it-works">
         <h2>كيف يتم التقدير في NUST</h2>
         <p>تستخدم NUST التقدير النسبي على مقياس 4.00. وبحسب NUST Undergraduate Student Handbook: <q>The University follows a relative grading system on a scale of 1.00 to 4.00 points.</q> («تتبع الجامعة نظام تقدير نسبي على مقياس من 1.00 إلى 4.00 نقطة.») أي أن تقديرك بالحرف يعتمد على أدائك مقارنة بدفعتك، لا على نسبة مئوية ثابتة. فقد تكون 82% تقدير A في امتحان صعب وB+ في امتحان أسهل.</p>
@@ -416,6 +427,7 @@
         <h3>المقررات النظرية والعملية</h3>
         <p>في المقرر الذي يضم ساعات نظرية وعملية، تجمع NUST أولاً النسبتين موزونتين بالساعات، ثم تمنح المقرر كله تقديراً واحداً. ومثال الدليل نفسه هو الفيزياء بـ 3 ساعات نظرية بنسبة 70% وساعة عملية بنسبة 90%، فيكون الناتج (70 × 3 + 90 × 1) ÷ 4 = 75%. تحصل على تقدير واحد للساعات الأربع، فأدخله في الحاسبة كمادة واحدة من 4 ساعات.</p>
       </section>
+
       <section id="grade-points">
         <h2>جدول نقاط التقدير في NUST</h2>
         <div class="table-scroll">
@@ -436,6 +448,7 @@
         </div>
         <p>التقديرات I (غير مكتمل) وW (منسحب) وQ (مؤهَّل) وT (معادلة) لا تحمل نقاطاً. ولاحظ أن NUST لا تستخدم A+ ولا التقديرات بعلامة الناقص: فـ B+ وC+ أعلى بنصف نقطة من B وC.</p>
       </section>
+
       <section id="example">
         <h2>كيف تحسب معدلك في NUST: مثال محلول</h2>
         <div class="table-scroll">
@@ -454,6 +467,7 @@
         <p class="formula-block">GPA = 54.00 ÷ 16 = 3.375 ≈ 3.38</p>
         <p>يُحسب معدلك التراكمي بالطريقة نفسها عبر كل الفصول: اجمع الساعات × النقاط لكل مقرر درسته، واقسم على إجمالي ساعاتك. تبويب CGPA يفعل ذلك من معدلاتك الفصلية.</p>
       </section>
+
       <section id="minimum-cgpa">
         <h2>الحد الأدنى للمعدل والقصور الأكاديمي في NUST</h2>
         <ul>
@@ -463,17 +477,21 @@
         </ul>
         <p>إذا انخفض معدلك التراكمي عن 2.00، يعرض لك تبويب الهدف المعدل الذي تحتاجه في الفصول المتبقية لتعود فوقه.</p>
       </section>
+
       <section id="repeat">
         <h2>إعادة مقرر لتحسين معدلك التراكمي</h2>
         <p>عند إعادة مقرر يُظهر كشف درجاتك التقدير القديم والجديد، لكن لا يُستخدم في حساب معدلك إلا الأفضل. وتحتاج الإعادة إلى إذن رئيس القسم (HoD)، والتقديرات الناتجة عن الإعادة لا تُحتسب لأعلى الأوسمة والجوائز الأكاديمية باستثناء Rector's Gold Medal. وإذا رسبت مجدداً في مقرر بعد إعادته فلا يُحتسب إلا F واحد.</p>
         <p><strong>نصيحة للحاسبة:</strong> في المقرر المعاد أدخل التقدير الأفضل فقط.</p>
       </section>
+
       <section id="percentage">
         <h2>تحويل معدل NUST إلى نسبة مئوية</h2>
         <p>لا يتضمن NUST Undergraduate Student Handbook معادلة رسمية لتحويل المعدل التراكمي إلى نسبة مئوية. وعند الحاجة إلى نسبة يستخدم كثيرون (CGPA ÷ 4) × 100، فيصبح 3.40 مساوياً 85%. وقد يكون لأصحاب العمل والجامعات قواعدهم الخاصة، فتحقق مما تقبله الجهة التي تتقدم إليها. يستخدم تبويب النسبة المئوية هذه الطريقة البسيطة.</p>
       </section>
+
       <section id="faq" class="faq">
         <h2>الأسئلة الشائعة عن حاسبة معدل NUST</h2>
+
         <details>
           <summary><h3>هل تستخدم NUST التقدير النسبي أم المطلق؟</h3></summary>
           <p>تستخدم NUST التقدير النسبي على مقياس 4.00، أي أن تقديرك يعتمد على أدائك مقارنة بدفعتك وليس على نسبة مئوية ثابتة. ولهذا لا يوجد جدول ثابت لتحويل الدرجات إلى تقديرات في NUST.</p>
@@ -503,6 +521,7 @@
           <p>أدخله كمادة واحدة بإجمالي ساعاتها، مثلاً 4 لمقرر 3+1. فـ NUST تجمع درجات الجزأين النظري والعملي في تقدير واحد للمقرر كله.</p>
         </details>
       </section>
+
       <section id="sources">
         <h2>المصادر</h2>
         <ul class="source-note">
@@ -511,6 +530,7 @@
         <p class="source-note">آخر مراجعة: 18 أكتوبر 2026. قد تتغير قواعد الجامعات، لذا تحقق دائماً من نتائجك وفق أحدث القواعد الرسمية لجامعتك. راجع <a href="terms.html">شروط الاستخدام</a>.</p>
       </section>
     </article>
+
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">المزيد من حاسبات CGPA وGPA</h2>
       <div class="uni-grid">
@@ -519,20 +539,21 @@
           <span class="uni-name">حاسبة CGPA وGPA لجامعة COMSATS</span>
           <span class="muted small">معايير HEC (خريف 2021 فما بعد) · قاعدة % الرسمية</span>
         </a>
-        <a class="card uni-card" href="vtu-cgpa-calculator.html">
-          <span class="uni-badge">VTU</span>
-          <span class="uni-name">حاسبة CGPA وGPA ‏(SGPA) لجامعة VTU</span>
-          <span class="muted small">نظاما 2022 و2021 · تحويل CGPA إلى %</span>
-        </a>
         <a class="card uni-card" href="index.html">
           <span class="uni-badge">الكل</span>
           <span class="uni-name">حاسبة CGPA العامة</span>
           <span class="muted small">مقاييس 4.0 و5.0 و10 نقاط</span>
         </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">18</span>
+          <span class="uni-name">All university calculators</span>
+          <span class="muted small">Pakistan, India, USA, UK, Malaysia, Australia and Germany</span>
+        </a>
       </div>
     </section>
     <p class="back-top"><a href="#calculator">↑ العودة إلى الحاسبة</a></p>
   </main>
+
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -550,6 +571,7 @@
     </div>
   </footer>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-nust',
     scales: {

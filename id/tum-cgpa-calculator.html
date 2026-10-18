@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="id"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Built by tools/build-university-pages.js – edit that file, not this one -->
+  <title>TUM CGPA &amp; GPA Calculator + Bavarian Formula</title>
+  <meta name="description" content="TUM CGPA and GPA calculator: ECTS-weighted grade average (Notendurchschnitt) with the TUM rounding rule, plus the Bavarian formula for grades from abroad.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f6fb">
+  <link rel="canonical" href="https://cgpa-calculator-umber-two.vercel.app/id/tum-cgpa-calculator.html">
+  <link rel="alternate" hreflang="en" href="https://cgpa-calculator-umber-two.vercel.app/tum-cgpa-calculator.html">
+  <link rel="alternate" hreflang="es" href="https://cgpa-calculator-umber-two.vercel.app/es/tum-cgpa-calculator.html">
+  <link rel="alternate" hreflang="de" href="https://cgpa-calculator-umber-two.vercel.app/de/tum-cgpa-calculator.html">
+  <link rel="alternate" hreflang="hi" href="https://cgpa-calculator-umber-two.vercel.app/hi/tum-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ur" href="https://cgpa-calculator-umber-two.vercel.app/ur/tum-cgpa-calculator.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://cgpa-calculator-umber-two.vercel.app/zh/tum-cgpa-calculator.html">
+  <link rel="alternate" hreflang="fr" href="https://cgpa-calculator-umber-two.vercel.app/fr/tum-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ar" href="https://cgpa-calculator-umber-two.vercel.app/ar/tum-cgpa-calculator.html">
+  <link rel="alternate" hreflang="bn" href="https://cgpa-calculator-umber-two.vercel.app/bn/tum-cgpa-calculator.html">
+  <link rel="alternate" hreflang="pt" href="https://cgpa-calculator-umber-two.vercel.app/pt/tum-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ru" href="https://cgpa-calculator-umber-two.vercel.app/ru/tum-cgpa-calculator.html">
+  <link rel="alternate" hreflang="id" href="https://cgpa-calculator-umber-two.vercel.app/id/tum-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ja" href="https://cgpa-calculator-umber-two.vercel.app/ja/tum-cgpa-calculator.html">
+  <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/tum-cgpa-calculator.html">
+  <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/tum-cgpa-calculator.html">
+  <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/tum-cgpa-calculator.html">
+
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CGPA Calculator">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:url" content="https://cgpa-calculator-umber-two.vercel.app/id/tum-cgpa-calculator.html">
+  <meta property="og:title" content="TUM CGPA &amp; GPA (Notendurchschnitt) Calculator">
+  <meta property="og:description" content="TUM CGPA and GPA calculator: ECTS-weighted grade average (Notendurchschnitt) with the TUM rounding rule, plus the Bavarian formula for grades from abroad.">
+  <meta property="og:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <meta property="og:image:alt" content="Kalkulator CGPA: kartu hasil yang menampilkan CGPA 3.37 dari 4.00">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TUM CGPA &amp; GPA (Notendurchschnitt) Calculator">
+  <meta name="twitter:description" content="TUM CGPA and GPA calculator: ECTS-weighted grade average (Notendurchschnitt) with the TUM rounding rule, plus the Bavarian formula for grades from abroad.">
+  <meta name="twitter:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "@id": "https://cgpa-calculator-umber-two.vercel.app/id/tum-cgpa-calculator.html#app",
+    "name": "TUM CGPA & GPA (Notendurchschnitt) Calculator",
+    "url": "https://cgpa-calculator-umber-two.vercel.app/id/tum-cgpa-calculator.html",
+    "image": "https://cgpa-calculator-umber-two.vercel.app/og-image.jpg",
+    "description": "TUM CGPA and GPA calculator: ECTS-weighted grade average (Notendurchschnitt) with the TUM rounding rule, plus the Bavarian formula for grades from abroad.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "id",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is 1.0 the best grade at TUM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. German grades run from 1.0 (best) to 4.0 (lowest pass). 4.3, 4.7 and 5.0 are fail grades."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is the TUM overall grade (Gesamtnote) calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "As the weighted average of all modules, including the thesis, with each module weighted by its credits. Your FPSO can set different weights."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does TUM round the grade average?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When grades are averaged, the APSO keeps one decimal place and drops the rest without rounding, so 2.19 becomes 2.1."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What grade do I need for “mit Auszeichnung” at TUM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An overall grade of 1.2 or better. 1.3 to 1.5 is “sehr gut”, 1.6 to 2.5 “gut”, 2.6 to 3.5 “befriedigend” and 3.6 to 4.0 “bestanden”."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does TUM convert my CGPA from Pakistan or India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "With the modified Bavarian formula: 1 + 3 × (best grade − your grade) ÷ (best grade − lowest passing grade). TUM keeps one decimal and does not round to the usual grade steps."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I improve a passed module grade at TUM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Only if your programme’s FPSO allows it. Where it does, you can repeat a passed module exam once and the better result counts."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "CGPA Calculator",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/id/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "TUM CGPA & GPA (Notendurchschnitt) Calculator",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/id/tum-cgpa-calculator.html"
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    /* Apply the saved (or system) theme before the page paints, so there is no flash */
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem('cgpa-theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="CGPA Calculator home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3z"></path>
+            <path d="M5 13.18v4C5 18.84 8.13 20 12 20s7-1.16 7-2.82v-4L12 17l-7-3.82z"></path>
+          </svg>
+        </span>
+        <span>CGPA Calculator</span>
+      </a>
+      <div class="header-actions">
+        <nav class="site-nav" id="siteNav" aria-label="Main menu">
+          <a href="index.html">Calculator</a>
+          <a href="about.html">About</a>
+          <a href="privacy-policy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <details class="lang-menu" id="langMenu">
+          <summary class="icon-btn lang-btn" aria-label="Choose language" title="Language">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"></path></svg>
+            <span class="lang-code" data-no-translate="">ID</span>
+          </summary>
+          <div class="lang-list" data-no-translate=""><a href="../tum-cgpa-calculator.html" hreflang="en" lang="en">English</a><a href="../es/tum-cgpa-calculator.html" hreflang="es" lang="es">Español</a><a href="../de/tum-cgpa-calculator.html" hreflang="de" lang="de">Deutsch</a><a href="../hi/tum-cgpa-calculator.html" hreflang="hi" lang="hi">हिन्दी</a><a href="../ur/tum-cgpa-calculator.html" hreflang="ur" lang="ur">اردو</a><a href="../zh/tum-cgpa-calculator.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="../fr/tum-cgpa-calculator.html" hreflang="fr" lang="fr">Français</a><a href="../ar/tum-cgpa-calculator.html" hreflang="ar" lang="ar">العربية</a><a href="../bn/tum-cgpa-calculator.html" hreflang="bn" lang="bn">বাংলা</a><a href="../pt/tum-cgpa-calculator.html" hreflang="pt" lang="pt">Português</a><a href="../ru/tum-cgpa-calculator.html" hreflang="ru" lang="ru">Русский</a><a href="tum-cgpa-calculator.html" hreflang="id" lang="id" aria-current="true">Bahasa Indonesia</a><a href="../ja/tum-cgpa-calculator.html" hreflang="ja" lang="ja">日本語</a><a href="../mr/tum-cgpa-calculator.html" hreflang="mr" lang="mr">मराठी</a><a href="../te/tum-cgpa-calculator.html" hreflang="te" lang="te">తెలుగు</a></div>
+        </details>
+        <button type="button" id="themeToggle" class="icon-btn" aria-label="Switch to dark mode" title="Light / dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+        </button>
+        <button type="button" id="menuToggle" class="icon-btn menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
+          <svg class="icon-menu" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+
+    <section class="hero">
+      <nav class="breadcrumb" aria-label="Navigasi jejak"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">TUM</span></nav>
+      <h1>TUM CGPA &amp; GPA (Notendurchschnitt) Calculator</h1>
+      <p>Work out your Technical University of Munich grade average, weighted by ECTS credits as the TUM APSO sets out, and convert a CGPA from abroad into a German grade with the Bavarian formula.
+        <a href="#guide" class="hero-link">How TUM grading works ↓</a></p>
+    </section>
+
+    <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
+      <div class="scale-text">
+        <p id="scaleLabel" class="scale-title">Grading system: TUM (German grades 1.0 to 4.0)</p>
+        <p class="muted small">Choose the grade for each module, or switch to “Exact grade” to type module grades such as 1.5. Lower numbers are better.</p>
+      </div>
+      <select id="scaleSelect" hidden="" aria-hidden="true" tabindex="-1"><option value="de">TUM</option></select>
+      <button type="button" id="resetAll" class="btn btn-outline danger-hover">Atur ulang semua</button>
+    </section>
+    <p class="print-only" id="printDate"></p>
+
+    <div class="layout">
+      <!-- ================= Calculators ================= -->
+      <div class="main-col">
+        <div class="tabs" role="tablist" aria-label="Kalkulator">
+          <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">
+            Average <small>Modules</small>
+          </button>
+          <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">
+            Overall <small>All semesters</small>
+          </button>
+          <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">Target <small>Rencanakan</small></button>
+          <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">
+            Bavarian formula <small>Converter</small>
+          </button>
+        </div>
+        <!-- ---------- TAB 1: GPA ---------- -->
+        <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
+          <div class="panel-head">
+            <div>
+              <h2>Grade average</h2>
+              <p class="muted small">Add each graded module with its ECTS credits and grade.</p>
+            </div>
+
+            <div class="segmented" id="modeSwitch" role="radiogroup" aria-label="Bagaimana Anda ingin memasukkan hasil?">
+              <input type="radio" name="gpaMode" id="modeGrade" value="grade" checked="">
+              <label for="modeGrade">Nilai huruf</label>
+              <input type="radio" name="gpaMode" id="modePoints" value="points">
+              <label for="modePoints">Exact grade</label>
+            </div>
+          </div>
+          <div class="rows-head subject-cols" aria-hidden="true">
+            <span>Module (optional)</span><span>ECTS</span><span id="gradeHead">Nilai huruf</span><span></span>
+          </div>
+          <div id="subjectList" class="row-list mode-grade"></div>
+          <button type="button" id="addSubject" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            Add module
+          </button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">Your grade average</div>
+            <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="gpaMeter"></span></div>
+            <div class="result-cheer" id="gpaCheer"></div>
+            <div class="result-sub" id="gpaSub">Tambahkan mata kuliah untuk melihat GPA Anda.</div>
+            <div class="result-note" id="gpaNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" id="sendToCgpa" class="btn btn-soft">Add this average to my overall grade →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="gpa">Salin hasil</button>
+            <button type="button" class="btn btn-outline js-print" title="Di jendela cetak, pilih “Simpan sebagai PDF” untuk mengunduh PDF">Cetak / PDF</button>
+            <button type="button" id="resetGpa" class="btn btn-quiet">Hapus</button>
+          </div>
+          <details class="howto">
+            <summary>How is the grade average calculated?</summary>
+            <p class="formula-line">Average = (Σ ECTS × grade) ÷ (Σ ECTS)</p>
+            <p class="muted small">Example: a 6-ECTS module with 1.3 and a 9-ECTS module with 2.7 →
+              (6×1.3 + 9×2.7) ÷ 15 = 32.1 ÷ 15 = 2.14. TUM keeps one decimal without rounding: <strong>2.1</strong>.</p>
+          </details>
+        </section>
+        <!-- ---------- TAB 2: CGPA ---------- -->
+        <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>Overall grade</h2>
+              <p class="muted small">Add each semester's grade average and its ECTS credits.</p>
+            </div>
+          </div>
+          <div class="rows-head semester-cols" aria-hidden="true">
+            <span>Semester</span><span>Rata-rata</span><span>ECTS</span><span></span>
+          </div>
+          <div id="semesterList" class="row-list"></div>
+          <button type="button" id="addSemester" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            Tambah semester
+          </button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">Your overall grade</div>
+            <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="cgpaMeter"></span></div>
+            <div class="result-cheer" id="cgpaCheer"></div>
+            <div class="result-sub" id="cgpaSub">Tambahkan semester untuk melihat CGPA Anda.</div>
+            <div class="result-note" id="cgpaNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" id="sendToPct" class="btn btn-soft" hidden="">Ubah CGPA ini ke % →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">Salin hasil</button>
+            <button type="button" class="btn btn-outline js-print" title="Di jendela cetak, pilih “Simpan sebagai PDF” untuk mengunduh PDF">Cetak / PDF</button>
+            <button type="button" id="resetCgpa" class="btn btn-quiet">Hapus</button>
+          </div>
+          <details class="howto">
+            <summary>Bagaimana CGPA dihitung?</summary>
+            <p class="formula-line">CGPA = (Σ GPA semester × SKS semester) ÷ (total SKS)</p>
+            <p class="muted small">Semester dengan SKS lebih banyak berbobot lebih besar. Contoh: 3.50 dengan 18 SKS dan 3.00 dengan 15 SKS → (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 3: Target CGPA ---------- -->
+        <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>Target grade</h2>
+              <p class="muted small">Find out which average you need in your remaining modules to reach your target grade.</p>
+            </div>
+          </div>
+          <div class="target-grid">
+            <div class="field">
+              <label class="field-label" for="tCurrent">Current average</label>
+              <input type="text" id="tCurrent" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tCurrentMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tDone">ECTS completed</label>
+              <input type="text" id="tDone" inputmode="decimal" autocomplete="off" placeholder="e.g. 66">
+              <p class="row-msg" id="tDoneMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tTarget">Target average</label>
+              <input type="text" id="tTarget" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tTargetMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tLeft">ECTS remaining</label>
+              <input type="text" id="tLeft" inputmode="decimal" autocomplete="off" placeholder="e.g. 70">
+              <p class="row-msg" id="tLeftMsg"></p>
+            </div>
+          </div>
+          <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">Isi dari tab CGPA saya</button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">Average you need from now on</div>
+            <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="tgtMeter"></span></div>
+            <div class="result-cheer" id="tgtCheer"></div>
+            <div class="result-sub" id="tgtSub">Isi keempat kolom di atas untuk melihat GPA yang Anda perlukan.</div>
+            <div class="result-note" id="tgtNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="target">Salin hasil</button>
+            <button type="button" class="btn btn-outline js-print" title="Di jendela cetak, pilih “Simpan sebagai PDF” untuk mengunduh PDF">Cetak / PDF</button>
+            <button type="button" id="resetTarget" class="btn btn-quiet">Hapus</button>
+          </div>
+          <details class="howto">
+            <summary>Bagaimana ini dihitung?</summary>
+            <p class="formula-line">Average needed = (Target × total ECTS − Current × completed ECTS) ÷ remaining ECTS</p>
+            <p class="muted small">Example: an average of 2.4 after 90 ECTS, a target of 2.0 and 90 ECTS left →
+              (2.0 × 180 − 2.4 × 90) ÷ 90 = <strong>1.60</strong> or better</p>
+          </details>
+        </section>
+        <!-- ---------- TAB 4: Percentage ---------- -->
+        <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>Foreign grade to German grade</h2>
+              <p class="muted small">Type your grade from abroad (for example your CGPA) and choose its grading scale.</p>
+            </div>
+          </div>
+          <div class="conv-grid">
+            <div class="field">
+              <label class="field-label always" for="convInput">Your grade abroad</label>
+              <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
+              <p class="row-msg" id="convMsg"></p>
+            </div>
+
+            <div class="field">
+              <span class="field-label always" id="convScaleLabel">Your grading scale abroad</span>
+              <div class="segmented full conv-wrap" role="radiogroup" aria-labelledby="convScaleLabel">
+                <input type="radio" name="convScale" id="convb41" value="b41" checked="">
+                <label for="convb41">4.0 · pass 1.0</label>
+                <input type="radio" name="convScale" id="convb42" value="b42">
+                <label for="convb42">4.0 · pass 2.0</label>
+                <input type="radio" name="convScale" id="convb104" value="b104">
+                <label for="convb104">10 · pass 4.0</label>
+                <input type="radio" name="convScale" id="convb10040" value="b10040">
+                <label for="convb10040">% · pass 40</label>
+              </div>
+            </div>
+          </div>
+          <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline" hidden="">Gunakan CGPA saya dari tab CGPA</button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">German grade</div>
+            <div class="result-value"><span id="pctValue">—</span></div>
+            <div class="meter" aria-hidden="true"><span id="pctMeter"></span></div>
+            <div class="result-cheer" id="pctCheer"></div>
+            <div class="result-sub" id="pctSub">Masukkan CGPA Anda untuk melihat persentasenya.</div>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="pct">Salin hasil</button>
+            <button type="button" class="btn btn-outline js-print" title="Di jendela cetak, pilih “Simpan sebagai PDF” untuk mengunduh PDF">Cetak / PDF</button>
+          </div>
+          <div class="formula">
+            <div class="formula-title">Rumus yang digunakan</div>
+            <p class="formula-line" id="formulaMain"></p>
+            <p class="formula-work" id="formulaWork"></p>
+            <p class="muted small" id="formulaNote"></p>
+          </div>
+        </section>
+      </div>
+      <!-- ================= Sidebar: grade table ================= -->
+      <aside class="sidebar">
+        <section class="card" aria-labelledby="tableTitle">
+          <h2 id="tableTitle" class="side-title">Poin nilai</h2>
+          <p class="muted small" id="tableSubtitle"></p>
+          <div class="table-wrap">
+            <table class="grade-table">
+              <thead>
+                <tr><th scope="col">Nilai huruf</th><th scope="col" class="num">Value</th><th scope="col" class="num" id="marksCol">Nilai %</th></tr>
+              </thead>
+              <tbody id="gradeTableBody"></tbody>
+            </table>
+          </div>
+          <p class="muted tiny">Rentang nilai berbeda di setiap kampus. Selalu periksa aturan penilaian kampus Anda sendiri.</p>
+        </section>
+
+        <section class="card tips">
+          <h2 class="side-title">TUM quick facts</h2>
+          <ul>
+            <li>German grades: <strong>1.0 is the best</strong>, <strong>4.0 the lowest pass</strong>; 4.3, 4.7 and 5.0 are fails.</li>
+            <li>Your overall grade (Gesamtnote) is weighted by <strong>ECTS credits</strong>, including the thesis module.</li>
+            <li>An overall grade <strong>up to 1.2</strong> means <strong>“mit Auszeichnung bestanden”</strong> (passed with distinction).</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <article class="guide" id="guide">
+
+      <section id="how-it-works">
+        <h2>How grading works at TUM</h2>
+        <p>The General Academic and Examination Regulations of the Technical University of Munich (APSO) use the German scale from 1 to 5. Examiners can raise or lower a grade by 0.3, but 0.7 and 5.3 are not allowed, so the possible grades are 1.0, 1.3, 1.7, 2.0, 2.3, 2.7, 3.0, 3.3, 3.7, 4.0, 4.3, 4.7 and 5.0. Anything worse than 4.0 is a fail.</p>
+        <p>When several grades are averaged, for example module part exams, TUM keeps <strong>one decimal place and drops the rest without rounding</strong>: 2.14 and 2.19 both become 2.1. This calculator shows TUM averages the same way.</p>
+      </section>
+
+      <section id="grade-points">
+        <h2>TUM overall grade (Gesamtnote)</h2>
+        <p>Your overall grade is the weighted average of all your modules, including the thesis (Abschlussarbeit). Each module counts according to its credits. Your programme's own regulations (FPSO) can set different weights or leave out the first study phase, so check your FPSO too. Modules where you only completed coursework without a grade don't count.</p>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">Overall grade</th><th scope="col">Result</th></tr></thead>
+            <tbody>
+              <tr><td>up to 1.2</td><td>mit Auszeichnung bestanden (passed with distinction)</td></tr>
+              <tr><td>1.3 – 1.5</td><td>sehr gut bestanden (very good)</td></tr>
+              <tr><td>1.6 – 2.5</td><td>gut bestanden (good)</td></tr>
+              <tr><td>2.6 – 3.5</td><td>befriedigend bestanden (satisfactory)</td></tr>
+              <tr><td>3.6 – 4.0</td><td>bestanden (passed)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>If you passed more elective modules than you need, you tell the examination board which ones count; otherwise the best results are used. An FPSO can also let you repeat a passed module exam once to improve the grade, with the better result counting.</p>
+      </section>
+
+      <section id="example">
+        <h2>How to calculate your TUM grade average: worked example</h2>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">Module</th><th scope="col" class="num">ECTS</th><th scope="col" class="num">Nilai huruf</th><th scope="col" class="num">ECTS × grade</th></tr></thead>
+            <tbody>
+              <tr><td>Analysis 1</td><td class="num">9</td><td class="num">2.3</td><td class="num">20.7</td></tr>
+              <tr><td>Introduction to Informatics</td><td class="num">6</td><td class="num">1.3</td><td class="num">7.8</td></tr>
+              <tr><td>Discrete Structures</td><td class="num">8</td><td class="num">1.7</td><td class="num">13.6</td></tr>
+              <tr><td>Computer Organization</td><td class="num">8</td><td class="num">2.7</td><td class="num">21.6</td></tr>
+            </tbody>
+            <tfoot><tr><th scope="row">Total</th><td class="num">31</td><td></td><td class="num">63.7</td></tr></tfoot>
+          </table>
+        </div>
+        <p class="formula-block">63.7 ÷ 31 = 2.054… → 2.0 (one decimal, no rounding)</p>
+      </section>
+
+      <section id="bavarian">
+        <h2>Converting your CGPA from abroad: the Bavarian formula</h2>
+        <p>If you studied outside Germany, for example in Pakistan or India, TUM and most German universities convert your grade with the modified Bavarian formula recommended by the Kultusministerkonferenz (KMK):</p>
+        <p class="formula-block">German grade = 1 + 3 × (Nmax − Nd) ÷ (Nmax − Nmin)</p>
+        <p>Nmax is the best grade in your system, Nmin the lowest passing grade and Nd your own grade. For a CGPA of 3.20 on a 4.0 scale where the lowest pass is 2.0: 1 + 3 × (4 − 3.2) ÷ (4 − 2) = 2.2. If the lowest pass in your system is 1.0, the same CGPA gives 1 + 3 × 0.8 ÷ 3 = 1.8. That is why it matters which lowest passing grade you use: check your transcript or degree regulations. The Bavarian formula tab does this for four common scales.</p>
+      </section>
+
+      <section id="faq" class="faq">
+        <h2>TUM CGPA calculator FAQs</h2>
+
+        <details>
+          <summary><h3>Is 1.0 the best grade at TUM?</h3></summary>
+          <p>Yes. German grades run from 1.0 (best) to 4.0 (lowest pass). 4.3, 4.7 and 5.0 are fail grades.</p>
+        </details>
+        <details>
+          <summary><h3>How is the TUM overall grade (Gesamtnote) calculated?</h3></summary>
+          <p>As the weighted average of all modules, including the thesis, with each module weighted by its credits. Your FPSO can set different weights.</p>
+        </details>
+        <details>
+          <summary><h3>Does TUM round the grade average?</h3></summary>
+          <p>When grades are averaged, the APSO keeps one decimal place and drops the rest without rounding, so 2.19 becomes 2.1.</p>
+        </details>
+        <details>
+          <summary><h3>What grade do I need for “mit Auszeichnung” at TUM?</h3></summary>
+          <p>An overall grade of 1.2 or better. 1.3 to 1.5 is “sehr gut”, 1.6 to 2.5 “gut”, 2.6 to 3.5 “befriedigend” and 3.6 to 4.0 “bestanden”.</p>
+        </details>
+        <details>
+          <summary><h3>How does TUM convert my CGPA from Pakistan or India?</h3></summary>
+          <p>With the modified Bavarian formula: 1 + 3 × (best grade − your grade) ÷ (best grade − lowest passing grade). TUM keeps one decimal and does not round to the usual grade steps.</p>
+        </details>
+        <details>
+          <summary><h3>Can I improve a passed module grade at TUM?</h3></summary>
+          <p>Only if your programme’s FPSO allows it. Where it does, you can repeat a passed module exam once and the better result counts.</p>
+        </details>
+      </section>
+
+      <section id="sources">
+        <h2>Sumber</h2>
+        <ul class="source-note">
+          <li><a href="https://portal.mytum.de/archiv/kompendium_rechtsangelegenheiten/apso/Lesb-F-APSO-vom-18-03-2011-mit-4-AeS-vom-03-06-20.pdf">TUM: Allgemeine Prüfungs- und Studienordnung (APSO) of 18 March 2011, readable version with the 4th amendment of 3 June 2020, §§ 16 and 17</a></li>
+          <li><a href="https://www.tum.de/studium/bewerbung/infoportal-bewerbung/bayerische-formel">TUM: Notenumrechnung mit der Bayerischen Formel (grade conversion)</a></li>
+        </ul>
+        <p class="source-note">Terakhir diperiksa: 18 Oktober 2026. Aturan kampus bisa berubah, jadi selalu pastikan hasil Anda dengan aturan resmi terbaru dari kampus Anda. Lihat <a href="terms.html">Ketentuan Penggunaan</a> kami.</p>
+      </section>
+    </article>
+
+    <section class="uni-section" aria-labelledby="uniTitle">
+      <h2 id="uniTitle">Kalkulator CGPA &amp; GPA lainnya</h2>
+      <div class="uni-grid">
+        <a class="card uni-card" href="lmu-cgpa-calculator.html">
+          <span class="uni-badge">LMU</span>
+          <span class="uni-name">LMU Munich CGPA &amp; GPA (Endnote) Calculator</span>
+          <span class="muted small">ECTS weighted · 2 decimals, no rounding</span>
+        </a>
+        <a class="card uni-card" href="heidelberg-cgpa-calculator.html">
+          <span class="uni-badge">Heidelberg</span>
+          <span class="uni-name">Heidelberg University CGPA &amp; GPA Calculator</span>
+          <span class="muted small">70% modules + 30% thesis · 1 decimal</span>
+        </a>
+        <a class="card uni-card" href="index.html">
+          <span class="uni-badge">SEMUA</span>
+          <span class="uni-name">Kalkulator CGPA Umum</span>
+          <span class="muted small">Skala 4.0, 5.0, dan 10 poin</span>
+        </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">18</span>
+          <span class="uni-name">All university calculators</span>
+          <span class="muted small">Pakistan, India, USA, UK, Malaysia, Australia and Germany</span>
+        </a>
+      </div>
+    </section>
+    <p class="back-top"><a href="#calculator">↑ Kembali ke kalkulator</a></p>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p><strong>CGPA Calculator</strong> · Dibuat untuk mahasiswa · © <span id="year">2026</span></p>
+        <p class="muted">Hasil hanyalah perkiraan. Aturan resmi kampus Anda selalu menjadi acuan utama.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index.html">Kalkulator</a>
+        <a href="about.html">Tentang</a>
+        <a href="privacy-policy.html">Kebijakan Privasi</a>
+        <a href="terms.html">Ketentuan Penggunaan</a>
+        <a href="contact.html">Kontak</a>
+      </nav>
+    </div>
+  </footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>window.CGPA_PAGE = {
+    storageKey: 'cgpa-tum',
+    creditLabel: 'ECTS',
+    semCreditLabel: 'ECTS',
+    creditExample: 6,
+    semCreditExample: 30,
+    maxSemCredit: 90,
+    maxTotalCredit: 400,
+    msgs: {"Add your subjects to see your GPA.":"Add your modules to see your grade average.","Add your semesters to see your CGPA.":"Add your semesters to see your overall grade.","Fill in the four boxes above to see the GPA you need.":"Fill in the four boxes above to see the average you need.","Fill in all four boxes to see the GPA you need.":"Fill in all four boxes to see the average you need.","Enter your CGPA to see the percentage.":"Enter your grade from abroad to see the German equivalent.","Fix the CGPA above to see the percentage.":"Fix the grade above to see the result.","Please enter the GPA for this semester.":"Please enter the average grade for this semester.","Please enter the credit hours for this subject.":"Please enter the ECTS credits for this module.","Please enter the total credit hours for this semester.":"Please enter the ECTS credits for this semester.","That looks too high. Credit hours are usually between 1 and 6.":"That looks too high. Please check the ECTS credits.","That looks too high. A semester usually has 12 to 24 credit hours.":"That looks too high. A semester usually has about 30 ECTS credits.","GPA / SGPA":"Average","Subject name (optional)":"Module name (optional)","e.g. Calculus":"e.g. Analysis 1","Grade points ({scale})":"Grades ({scale})","Please type your CGPA as a number, like {x}.":"Please type your grade as a number, like {x}.","CGPA can’t be negative.":"A grade can’t be negative.","On the {scale}, CGPA can’t be more than {max}. Try a different scale.":"On the {scale}, a grade can’t be more than {max}. Try a different scale.","Calculate your CGPA in the CGPA tab first 🙂":"Work out your overall grade in the Overall tab first 🙂","Add at least one complete subject first 🙂":"Add at least one complete module first 🙂","Semester {n}: GPA {gpa}, {credits} credits":"Semester {n}: average {gpa}, {credits} ECTS","{name}: {credits} credits, grade {grade} ({points})":"{name}: {credits} ECTS, grade {grade}","My semester GPA: {gpa} ({scale})":"My grade average: {gpa} ({scale})","My CGPA: {cgpa} ({scale})":"My overall grade: {cgpa} ({scale})","Total credit hours: {credits}":"Total ECTS credits: {credits}","1 subject · {credits} credits":"1 module · {credits} ECTS","{n} subjects · {credits} credits":"{n} modules · {credits} ECTS","1 semester · {credits} total credit hours":"1 semester · {credits} ECTS","{n} semesters · {credits} total credit hours":"{n} semesters · {credits} ECTS","You need an average of {needed} or better over your remaining {left} credit hours to reach a {target} average.":"You need an average of {needed} or better over your remaining {left} ECTS credits to reach a {target} average.","To reach a {target} average (now {current}), I need an average of {needed} or better over my remaining {left} credit hours.":"To reach a {target} average (now {current}), I need an average of {needed} or better over my remaining {left} ECTS credits.","I have already secured a {target} CGPA.":"I have already secured an average of {target}."},
+    
+    scales: {
+      de: {
+        max: 4, min: 1, lowerIsBetter: true, label: 'TUM grading scale', region: 'German grades · 1.0 is the best', example: '1.7',
+        modes: ['grade', 'points'], pointsLabel: 'Exact grade (1.0–4.0)', digits: 1, truncate: true, gradeDigits: 1,
+        maxText: '(1.0 = best)', noQualityPoints: true, subtitle: 'German grades: 1.0 is the best, 4.0 the lowest pass',
+        ratioPoints: [[1, 1], [1.5, 0.9], [2.5, 0.76], [3.5, 0.6], [4, 0.5]],
+        words: [[1.2, 'mit Auszeichnung'], [1.5, 'sehr gut'], [2.5, 'gut'], [3.5, 'befriedigend'], [4, 'ausreichend']],
+        grades: [['1.0 sehr gut', 1], ['1.3 sehr gut', 1.3], ['1.7 gut', 1.7], ['2.0 gut', 2], ['2.3 gut', 2.3], ['2.7 befriedigend', 2.7], ['3.0 befriedigend', 3], ['3.3 befriedigend', 3.3], ['3.7 ausreichend', 3.7], ['4.0 ausreichend', 4]]
+      }
+    },
+    conversions: (function () {
+      // Modified Bavarian formula: x = 1 + 3 × (Nmax − Nd) ÷ (Nmax − Nmin)
+      function bavarian(nmax, nmin, label, example) {
+        return {
+          max: nmax, label: label, example: example,
+          formula: 'German grade = 1 + 3 × (best grade − your grade) ÷ (best grade − lowest passing grade)',
+          note: 'The modified Bavarian formula (KMK). TUM keeps one decimal and drops the rest without rounding. It gives a first idea only; the university you apply to makes the official conversion.',
+          result: function (c) {
+            var t = window.CGPA_T;
+            if (c < nmin) return { pct: 0, ratio: 0, text: t('Not passed'),
+              work: t('{grade} is below the lowest passing grade, {min}', { grade: c.toFixed(2), min: nmin.toFixed(2) }) };
+            var x = 1 + 3 * (nmax - c) / (nmax - nmin);
+            var g = Math.floor(Math.max(1, x) * 10 + 1e-9) / 10;
+            return { pct: (4 - g) / 3 * 100, ratio: 1 - (g - 1) / 6, text: g.toFixed(1),
+              work: '1 + 3 × (' + nmax + ' − ' + c.toFixed(2) + ') ÷ (' + nmax + ' − ' + nmin + ') = ' + x.toFixed(3) + ' → ' + g.toFixed(1),
+              sub: t('German grade (1.0 = best, 4.0 = lowest pass)') };
+          }
+        };
+      }
+      return {
+        b41: bavarian(4, 1, '4.0 scale, lowest pass 1.0', 3.2),
+        b42: bavarian(4, 2, '4.0 scale, lowest pass 2.0', 3.2),
+        b104: bavarian(10, 4, '10-point scale, lowest pass 4.0', 8),
+        b10040: bavarian(100, 40, 'percentage, lowest pass 40%', 75)
+      };
+    })()
+  };</script>
+  <script src="../i18n/id.js" data-i18n=""></script>
+  <script src="../site.js"></script>
+  <script src="../script.js"></script>
+</body></html>

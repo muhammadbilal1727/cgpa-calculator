@@ -24,10 +24,12 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/nust-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/nust-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/nust-cgpa-calculator.html">
+
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="id_ID">
@@ -159,6 +161,7 @@
   </script>
 </head>
 <body>
+
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -203,11 +206,13 @@
     </div>
   </header>
   <main class="container">
+
     <section class="hero">
       <nav class="breadcrumb" aria-label="Navigasi jejak"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">NUST</span></nav>
       <h1>Kalkulator CGPA &amp; GPA NUST</h1>
       <p>Hitung GPA semester dan CGPA keseluruhan dengan poin nilai resmi sarjana NUST (A = 4.00, B+ = 3.50, B = 3.00, dan seterusnya). <a href="#guide" class="hero-link">Cara penilaian di NUST ↓</a></p>
     </section>
+
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <p id="scaleLabel" class="scale-title">Sistem penilaian: sarjana NUST</p>
@@ -217,6 +222,7 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">Atur ulang semua</button>
     </section>
     <p class="print-only" id="printDate"></p>
+
     <div class="layout">
       <!-- ================= Calculators ================= -->
       <div class="main-col">
@@ -233,6 +239,7 @@
               <h2>GPA semester</h2>
               <p class="muted small">Tambahkan setiap mata kuliah beserta SKS dan nilainya.</p>
             </div>
+
           </div>
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>Mata kuliah (opsional)</span><span>SKS</span><span id="gradeHead">Nilai huruf</span><span></span>
@@ -362,6 +369,7 @@
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
+
           </div>
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">Gunakan CGPA saya dari tab CGPA</button>
           <div class="result" aria-live="polite">
@@ -398,6 +406,7 @@
           </div>
           <p class="muted tiny">Rentang nilai berbeda di setiap kampus. Selalu periksa aturan penilaian kampus Anda sendiri.</p>
         </section>
+
         <section class="card tips">
           <h2 class="side-title">Fakta singkat NUST</h2>
           <ul>
@@ -408,7 +417,9 @@
         </section>
       </aside>
     </div>
+
     <article class="guide" id="guide">
+
       <section id="how-it-works">
         <h2>Cara penilaian di NUST</h2>
         <p>NUST memakai penilaian relatif dengan skala 4.00. Menurut NUST Undergraduate Student Handbook: <q>The University follows a relative grading system on a scale of 1.00 to 4.00 points.</q> (“Universitas menerapkan sistem penilaian relatif dengan skala 1.00 hingga 4.00 poin.”) Nilai huruf Anda bergantung pada prestasi Anda dibandingkan teman sekelas, bukan pada persentase tetap. Nilai 82% bisa menjadi A di ujian yang sulit dan B+ di ujian yang lebih mudah.</p>
@@ -416,6 +427,7 @@
         <h3>Mata kuliah dengan teori dan praktikum</h3>
         <p>Untuk mata kuliah yang memiliki SKS teori dan praktikum, NUST lebih dulu menggabungkan kedua persentase, dibobot berdasarkan SKS, lalu memberi satu nilai untuk mata kuliah itu secara keseluruhan. Contoh dari buku panduannya adalah Fisika dengan 3 SKS teori bernilai 70% dan 1 SKS praktikum bernilai 90%, sehingga (70 × 3 + 90 × 1) ÷ 4 = 75%. Anda mendapat satu nilai untuk keempat SKS itu, jadi masukkan sebagai satu mata kuliah 4 SKS.</p>
       </section>
+
       <section id="grade-points">
         <h2>Tabel poin nilai NUST</h2>
         <div class="table-scroll">
@@ -436,6 +448,7 @@
         </div>
         <p>I (belum lengkap), W (mundur), Q (memenuhi syarat), dan T (transfer) tidak memiliki poin. Perhatikan bahwa NUST tidak punya A+ maupun nilai minus: B+ dan C+ berada setengah poin di atas B dan C.</p>
       </section>
+
       <section id="example">
         <h2>Cara menghitung GPA NUST: contoh soal</h2>
         <div class="table-scroll">
@@ -454,6 +467,7 @@
         <p class="formula-block">GPA = 54.00 ÷ 16 = 3.375 ≈ 3.38</p>
         <p>CGPA Anda dihitung dengan cara yang sama di semua semester: jumlahkan SKS × poin untuk setiap mata kuliah yang sudah diambil, lalu bagi dengan total SKS Anda. Tab CGPA melakukannya dari GPA semester Anda.</p>
       </section>
+
       <section id="minimum-cgpa">
         <h2>CGPA minimum dan kekurangan akademik di NUST</h2>
         <ul>
@@ -463,17 +477,21 @@
         </ul>
         <p>Jika CGPA Anda turun di bawah 2.00, tab Target menunjukkan GPA yang Anda perlukan di semester tersisa untuk kembali di atasnya.</p>
       </section>
+
       <section id="repeat">
         <h2>Mengulang mata kuliah untuk memperbaiki CGPA</h2>
         <p>Saat Anda mengulang mata kuliah, transkrip menampilkan nilai lama dan baru, tetapi hanya nilai yang lebih baik yang dipakai untuk menghitung CGPA. Mengulang memerlukan izin kepala departemen (HoD), dan nilai dari hasil mengulang tidak dihitung untuk penghargaan akademik tertinggi, kecuali Rector's Gold Medal. Jika Anda gagal lagi setelah mengulang, tetap dihitung sebagai satu F.</p>
         <p><strong>Tips kalkulator:</strong> untuk mata kuliah yang diulang, masukkan hanya nilai yang lebih baik.</p>
       </section>
+
       <section id="percentage">
         <h2>CGPA NUST ke persentase</h2>
         <p>NUST Undergraduate Student Handbook tidak memuat rumus resmi untuk mengubah CGPA menjadi persentase. Jika persentase diperlukan, banyak orang memakai (CGPA ÷ 4) × 100, sehingga 3.40 menjadi 85%. Perusahaan dan kampus kadang punya aturan sendiri, jadi periksa apa yang diterima lembaga tujuan Anda. Tab Persentase memakai cara sederhana ini.</p>
       </section>
+
       <section id="faq" class="faq">
         <h2>FAQ kalkulator CGPA NUST</h2>
+
         <details>
           <summary><h3>Apakah NUST memakai penilaian relatif atau absolut?</h3></summary>
           <p>NUST memakai penilaian relatif dengan skala 4.00, sehingga nilai Anda bergantung pada prestasi Anda dibandingkan teman sekelas, bukan pada persentase tetap. Itulah sebabnya tidak ada tabel tetap dari nilai angka ke nilai huruf untuk NUST.</p>
@@ -503,6 +521,7 @@
           <p>Masukkan sebagai satu mata kuliah dengan total SKS-nya, misalnya 4 untuk mata kuliah 3+1. NUST menggabungkan nilai teori dan praktikum menjadi satu nilai untuk seluruh mata kuliah.</p>
         </details>
       </section>
+
       <section id="sources">
         <h2>Sumber</h2>
         <ul class="source-note">
@@ -511,6 +530,7 @@
         <p class="source-note">Terakhir diperiksa: 18 Oktober 2026. Aturan kampus bisa berubah, jadi selalu pastikan hasil Anda dengan aturan resmi terbaru dari kampus Anda. Lihat <a href="terms.html">Ketentuan Penggunaan</a> kami.</p>
       </section>
     </article>
+
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">Kalkulator CGPA &amp; GPA lainnya</h2>
       <div class="uni-grid">
@@ -519,20 +539,21 @@
           <span class="uni-name">Kalkulator CGPA &amp; GPA COMSATS</span>
           <span class="muted small">Kriteria HEC (Fall 2021+) · aturan % resmi</span>
         </a>
-        <a class="card uni-card" href="vtu-cgpa-calculator.html">
-          <span class="uni-badge">VTU</span>
-          <span class="uni-name">Kalkulator CGPA &amp; GPA (SGPA) VTU</span>
-          <span class="muted small">Skema 2022 &amp; 2021 · CGPA ke %</span>
-        </a>
         <a class="card uni-card" href="index.html">
           <span class="uni-badge">SEMUA</span>
           <span class="uni-name">Kalkulator CGPA Umum</span>
           <span class="muted small">Skala 4.0, 5.0, dan 10 poin</span>
         </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">18</span>
+          <span class="uni-name">All university calculators</span>
+          <span class="muted small">Pakistan, India, USA, UK, Malaysia, Australia and Germany</span>
+        </a>
       </div>
     </section>
     <p class="back-top"><a href="#calculator">↑ Kembali ke kalkulator</a></p>
   </main>
+
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -550,6 +571,7 @@
     </div>
   </footer>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-nust',
     scales: {

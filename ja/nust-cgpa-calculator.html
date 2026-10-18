@@ -24,10 +24,12 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/nust-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/nust-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/nust-cgpa-calculator.html">
+
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="ja_JP">
@@ -159,6 +161,7 @@
   </script>
 </head>
 <body>
+
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -203,11 +206,13 @@
     </div>
   </header>
   <main class="container">
+
     <section class="hero">
       <nav class="breadcrumb" aria-label="パンくずリスト"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">NUST</span></nav>
       <h1>NUST CGPA・GPA計算機</h1>
       <p>NUSTの学部公式GP（A = 4.00、B+ = 3.50、B = 3.00 など）で学期GPAと累積CGPAを計算します。<a href="#guide" class="hero-link">NUSTの評価のしくみ ↓</a></p>
     </section>
+
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <p id="scaleLabel" class="scale-title">評価制度：NUST学部</p>
@@ -217,6 +222,7 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">すべてリセット</button>
     </section>
     <p class="print-only" id="printDate"></p>
+
     <div class="layout">
       <!-- ================= Calculators ================= -->
       <div class="main-col">
@@ -233,6 +239,7 @@
               <h2>学期GPA</h2>
               <p class="muted small">科目ごとに単位数と成績を入力してください。</p>
             </div>
+
           </div>
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>科目（任意）</span><span>単位</span><span id="gradeHead">評価</span><span></span>
@@ -362,6 +369,7 @@
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
+
           </div>
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">CGPAタブの値を使う</button>
           <div class="result" aria-live="polite">
@@ -398,6 +406,7 @@
           </div>
           <p class="muted tiny">点数の範囲は大学によって異なります。必ずご自分の大学の評価規程を確認してください。</p>
         </section>
+
         <section class="card tips">
           <h2 class="side-title">NUSTのポイント</h2>
           <ul>
@@ -408,7 +417,9 @@
         </section>
       </aside>
     </div>
+
     <article class="guide" id="guide">
+
       <section id="how-it-works">
         <h2>NUSTの評価のしくみ</h2>
         <p>NUSTは4.00スケールで相対評価を行います。NUST Undergraduate Student Handbookには <q>The University follows a relative grading system on a scale of 1.00 to 4.00 points.</q>（「本学は1.00〜4.00ポイントのスケールで相対評価を採用する」）とあります。アルファベット評価は固定のパーセントではなく、クラス内での成績で決まります。82%でも、難しい試験ならA、易しい試験ならB+になることがあります。</p>
@@ -416,6 +427,7 @@
         <h3>講義と実験がある科目</h3>
         <p>講義と実験の両方の単位がある科目では、NUSTはまず2つのパーセントを単位数で重み付けして合算し、科目全体に1つの評価をつけます。便覧の例では、物理の講義3単位が70%、実験1単位が90%で、(70 × 3 + 90 × 1) ÷ 4 = 75% になります。4単位全体で1つの評価になるので、計算機には4単位の1科目として入力してください。</p>
       </section>
+
       <section id="grade-points">
         <h2>NUST GP対応表</h2>
         <div class="table-scroll">
@@ -436,6 +448,7 @@
         </div>
         <p>I（未完了）、W（履修取消）、Q（認定）、T（単位互換）にはGPがありません。NUSTにはA+やマイナス評価がない点にも注意してください。B+とC+は、BとCより0.5ポイント上です。</p>
       </section>
+
       <section id="example">
         <h2>NUSTのGPA計算：計算例</h2>
         <div class="table-scroll">
@@ -454,6 +467,7 @@
         <p class="formula-block">GPA = 54.00 ÷ 16 = 3.375 ≈ 3.38</p>
         <p>CGPAもすべての学期を通して同じように計算します。履修した各科目の「単位数 × GP」を合計し、総単位数で割ります。CGPAタブでは学期GPAから計算します。</p>
       </section>
+
       <section id="minimum-cgpa">
         <h2>NUSTの最低CGPAと学業不振</h2>
         <ul>
@@ -463,17 +477,21 @@
         </ul>
         <p>CGPAが2.00を下回った場合、目標タブで、残りの学期にどれだけのGPAがあれば2.00を超えられるかを確認できます。</p>
       </section>
+
       <section id="repeat">
         <h2>CGPAを上げるための再履修</h2>
         <p>再履修すると成績証明書には新旧両方の成績が載りますが、CGPAの計算には良いほうだけが使われます。再履修には学科長（HoD）の許可が必要で、再履修で得た成績は最高の学術表彰や賞の対象になりません（Rector's Gold Medalを除く）。再履修後に再び不合格になっても、Fは1つとして数えられます。</p>
         <p><strong>計算機のヒント：</strong>再履修した科目は、良いほうの成績だけを入力してください。</p>
       </section>
+
       <section id="percentage">
         <h2>NUSTのCGPAをパーセントに換算</h2>
         <p>NUST Undergraduate Student HandbookにはCGPAをパーセントに換算する公式な計算式はありません。パーセントが必要な場合は (CGPA ÷ 4) × 100 を使う人が多く、3.40なら85%になります。企業や大学が独自のルールを持っていることもあるので、応募先がどの方法を認めるか確認してください。パーセントタブではこの簡単な方法を使っています。</p>
       </section>
+
       <section id="faq" class="faq">
         <h2>NUST CGPA計算機のよくある質問</h2>
+
         <details>
           <summary><h3>NUSTは相対評価？絶対評価？</h3></summary>
           <p>NUSTは4.00スケールの相対評価です。評価は固定のパーセントではなく、クラス内での成績で決まります。そのため、NUSTには点数から評価への固定の対応表がありません。</p>
@@ -503,6 +521,7 @@
           <p>合計単位数を持つ1つの科目として入力します。たとえば3+1の科目なら4です。NUSTは講義と実験の点数を合算し、科目全体に1つの評価をつけます。</p>
         </details>
       </section>
+
       <section id="sources">
         <h2>出典</h2>
         <ul class="source-note">
@@ -511,6 +530,7 @@
         <p class="source-note">最終確認：2026年10月18日。大学の規程は変わることがあるので、必ずご自分の大学の最新の公式ルールで結果を確認してください。<a href="terms.html">利用規約</a>もご覧ください。</p>
       </section>
     </article>
+
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">その他のCGPA・GPA計算機</h2>
       <div class="uni-grid">
@@ -519,20 +539,21 @@
           <span class="uni-name">COMSATS CGPA・GPA計算機</span>
           <span class="muted small">HEC基準（2021年秋以降）· 公式の%ルール</span>
         </a>
-        <a class="card uni-card" href="vtu-cgpa-calculator.html">
-          <span class="uni-badge">VTU</span>
-          <span class="uni-name">VTU CGPA・GPA（SGPA）計算機</span>
-          <span class="muted small">2022年・2021年スキーム · CGPAを%に</span>
-        </a>
         <a class="card uni-card" href="index.html">
           <span class="uni-badge">すべて</span>
           <span class="uni-name">一般用CGPA計算機</span>
           <span class="muted small">4.0・5.0・10点スケール</span>
         </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">18</span>
+          <span class="uni-name">All university calculators</span>
+          <span class="muted small">Pakistan, India, USA, UK, Malaysia, Australia and Germany</span>
+        </a>
       </div>
     </section>
     <p class="back-top"><a href="#calculator">↑ 計算機に戻る</a></p>
   </main>
+
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -550,6 +571,7 @@
     </div>
   </footer>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-nust',
     scales: {

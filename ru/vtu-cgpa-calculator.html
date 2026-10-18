@@ -24,10 +24,12 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/vtu-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/vtu-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/vtu-cgpa-calculator.html">
+
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="ru_RU">
@@ -151,6 +153,7 @@
   </script>
 </head>
 <body>
+
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -195,11 +198,13 @@
     </div>
   </header>
   <main class="container">
+
     <section class="hero">
       <nav class="breadcrumb" aria-label="Навигационная цепочка"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">VTU</span></nav>
       <h1>Калькулятор CGPA и GPA (SGPA) для VTU</h1>
       <p>Рассчитайте SGPA и CGPA в VTU и переведите CGPA в проценты по официальным правилам положений VTU для схем 2022 и 2021. <a href="#guide" class="hero-link">Как оценивают в VTU ↓</a></p>
     </section>
+
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <label id="scaleLabel" for="scaleSelect" class="scale-title">Ваша схема VTU</label>
@@ -209,6 +214,7 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">Сбросить всё</button>
     </section>
     <p class="print-only" id="printDate"></p>
+
     <div class="layout">
       <!-- ================= Calculators ================= -->
       <div class="main-col">
@@ -225,6 +231,7 @@
               <h2>GPA за семестр</h2>
               <p class="muted small">Добавьте каждый предмет с его кредитами и оценкой.</p>
             </div>
+
             <div class="segmented" id="modeSwitch" role="radiogroup" aria-label="Как вы хотите вводить результаты?">
               <input type="radio" name="gpaMode" id="modeGrade" value="grade" checked="">
               <label for="modeGrade">Оценка</label>
@@ -360,6 +367,7 @@
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
+
             <div class="field">
               <span class="field-label always" id="convScaleLabel">Схема</span>
               <div class="segmented full" role="radiogroup" aria-labelledby="convScaleLabel">
@@ -405,6 +413,7 @@
           </div>
           <p class="muted tiny">Диапазоны баллов в разных университетах отличаются. Всегда сверяйтесь с правилами оценивания своего университета.</p>
         </section>
+
         <section class="card tips">
           <h2 class="side-title">Коротко о VTU</h2>
           <ul>
@@ -415,11 +424,14 @@
         </section>
       </aside>
     </div>
+
     <article class="guide" id="guide">
+
       <section id="scheme">
         <h2>По какой схеме VTU вы учитесь?</h2>
         <p>VTU время от времени обновляет свои положения. Положение 2022 года действует для студентов, принятых начиная с 2022-23 учебного года, а положение 2021 года вступило в силу в 2021-22. Выберите свою схему вверху калькулятора, потому что буквы оценок и формула перевода CGPA в проценты различаются.</p>
       </section>
+
       <section id="grade-points">
         <h2>Система оценивания VTU: схема 2022</h2>
         <p>В VTU абсолютное оценивание. Ваши баллы за CIE (текущий внутренний контроль) и SEE (экзамен в конце семестра) складываются и переводятся в процент, и этот процент определяет оценку (пункт 22OB 6.1).</p>
@@ -454,6 +466,7 @@
           </table>
         </div>
       </section>
+
       <section id="example">
         <h2>Как VTU рассчитывает SGPA и CGPA</h2>
         <p class="formula-block">SGPA = Σ (Ci × Gi) ÷ Σ Ci &nbsp;&nbsp; CGPA = Σ (Ci × Si) ÷ Σ Ci</p>
@@ -473,6 +486,7 @@
         </div>
         <p class="formula-block">SGPA = 123 ÷ 15 = 8.20</p>
       </section>
+
       <section id="percentage">
         <h2>Перевод CGPA VTU в проценты</h2>
         <p><strong>Схема 2022:</strong> Процент = CGPA × 10, то есть CGPA 8.20 — это <strong>82 %</strong> (пункт 22OB 6.7). Согласно положению, эту формулу можно использовать при трудоустройстве и продолжении обучения.</p>
@@ -485,6 +499,7 @@
           <li><strong>Pass Class:</strong> от 40 % до 50 %, то есть CGPA от 4.00 до 4.99</li>
         </ul>
       </section>
+
       <section id="passing">
         <h2>Проходные баллы в VTU (схема 2022)</h2>
         <ul>
@@ -494,8 +509,10 @@
           <li>Чтобы успешно окончить программу, нужна оценка P или выше по каждому зарегистрированному курсу.</li>
         </ul>
       </section>
+
       <section id="faq" class="faq">
         <h2>Вопросы о калькуляторе CGPA для VTU</h2>
+
         <details>
           <summary><h3>Как перевести CGPA VTU в проценты?</h3></summary>
           <p>По схеме 2022 умножьте CGPA на 10: 8.20 — это 82 %. По схеме 2021 и старой схеме CBCS 2015 года используйте (CGPA − 0.75) × 10: 8.20 — это 74.5 %.</p>
@@ -521,6 +538,7 @@
           <p>Умножьте SGPA каждого семестра на общее число кредитов этого семестра, сложите результаты и разделите на общее число кредитов за все семестры. SGPA и CGPA округляются до 2 знаков после запятой.</p>
         </details>
       </section>
+
       <section id="sources">
         <h2>Источники</h2>
         <ul class="source-note">
@@ -531,28 +549,25 @@
         <p class="source-note">Последняя проверка: 18 октября 2026 г. Правила университетов могут меняться, поэтому всегда сверяйте результаты с актуальными официальными правилами своего университета. См. наши <a href="terms.html">Условия использования</a>.</p>
       </section>
     </article>
+
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">Другие калькуляторы CGPA и GPA</h2>
       <div class="uni-grid">
-        <a class="card uni-card" href="nust-cgpa-calculator.html">
-          <span class="uni-badge">NUST</span>
-          <span class="uni-name">Калькулятор CGPA и GPA для NUST</span>
-          <span class="muted small">Относительное оценивание · A = 4.00, B+ = 3.50</span>
-        </a>
-        <a class="card uni-card" href="comsats-cgpa-calculator.html">
-          <span class="uni-badge">CUI</span>
-          <span class="uni-name">Калькулятор CGPA и GPA для COMSATS</span>
-          <span class="muted small">Критерии HEC (с осени 2021) · официальное правило %</span>
-        </a>
         <a class="card uni-card" href="index.html">
           <span class="uni-badge">ВСЕ</span>
           <span class="uni-name">Общий калькулятор CGPA</span>
           <span class="muted small">Шкалы 4.0, 5.0 и 10 баллов</span>
         </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">18</span>
+          <span class="uni-name">All university calculators</span>
+          <span class="muted small">Pakistan, India, USA, UK, Malaysia, Australia and Germany</span>
+        </a>
       </div>
     </section>
     <p class="back-top"><a href="#calculator">↑ Вернуться к калькулятору</a></p>
   </main>
+
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -570,6 +585,7 @@
     </div>
   </footer>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-vtu',
     defaultScale: '2022',

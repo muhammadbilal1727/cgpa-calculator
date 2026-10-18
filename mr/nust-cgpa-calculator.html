@@ -24,10 +24,12 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/nust-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/nust-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/nust-cgpa-calculator.html">
+
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="mr_IN">
@@ -159,6 +161,7 @@
   </script>
 </head>
 <body>
+
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -203,11 +206,13 @@
     </div>
   </header>
   <main class="container">
+
     <section class="hero">
       <nav class="breadcrumb" aria-label="ब्रेडक्रंब"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">NUST</span></nav>
       <h1>NUST CGPA आणि GPA कॅल्क्युलेटर</h1>
       <p>NUST च्या अधिकृत पदवीपूर्व ग्रेड पॉइंटनी (A = 4.00, B+ = 3.50, B = 3.00 इत्यादी) तुमचा सेमिस्टर GPA आणि एकूण CGPA काढा. <a href="#guide" class="hero-link">NUST मध्ये ग्रेडिंग कसे होते ↓</a></p>
     </section>
+
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <p id="scaleLabel" class="scale-title">ग्रेडिंग पद्धत: NUST पदवीपूर्व</p>
@@ -217,6 +222,7 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">सर्व रीसेट करा</button>
     </section>
     <p class="print-only" id="printDate"></p>
+
     <div class="layout">
       <!-- ================= Calculators ================= -->
       <div class="main-col">
@@ -233,6 +239,7 @@
               <h2>सेमिस्टर GPA</h2>
               <p class="muted small">प्रत्येक विषय त्याच्या क्रेडिट आणि ग्रेडसह जोडा.</p>
             </div>
+
           </div>
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>विषय (ऐच्छिक)</span><span>क्रेडिट</span><span id="gradeHead">ग्रेड</span><span></span>
@@ -362,6 +369,7 @@
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
+
           </div>
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">CGPA टॅबमधील माझा CGPA वापरा</button>
           <div class="result" aria-live="polite">
@@ -398,6 +406,7 @@
           </div>
           <p class="muted tiny">गुणांच्या मर्यादा विद्यापीठानुसार वेगळ्या असतात. नेहमी तुमच्या विद्यापीठाचे ग्रेडिंग धोरण तपासा.</p>
         </section>
+
         <section class="card tips">
           <h2 class="side-title">NUST ची महत्त्वाची माहिती</h2>
           <ul>
@@ -408,7 +417,9 @@
         </section>
       </aside>
     </div>
+
     <article class="guide" id="guide">
+
       <section id="how-it-works">
         <h2>NUST मध्ये ग्रेडिंग कसे होते</h2>
         <p>NUST 4.00 स्केलवर सापेक्ष ग्रेडिंग वापरते. NUST Undergraduate Student Handbook च्या शब्दांत, <q>The University follows a relative grading system on a scale of 1.00 to 4.00 points.</q> ("विद्यापीठ 1.00 ते 4.00 पॉइंटच्या स्केलवर सापेक्ष ग्रेडिंग पद्धत वापरते.") तुमचा अक्षरी ग्रेड तुमच्या वर्गाच्या तुलनेत तुमची कामगिरी कशी होती यावर अवलंबून असतो, ठरावीक टक्केवारीवर नाही. कठीण पेपरमध्ये 82% म्हणजे A आणि सोप्या पेपरमध्ये B+ असू शकतो.</p>
@@ -416,6 +427,7 @@
         <h3>थिअरी आणि लॅब असलेले कोर्स</h3>
         <p>ज्या कोर्समध्ये थिअरी आणि लॅब दोन्हींचे क्रेडिट असतात, तिथे NUST आधी दोन्ही टक्केवारी क्रेडिटनुसार एकत्र करते आणि मग संपूर्ण कोर्सला एक ग्रेड देते. हँडबुकचे स्वतःचे उदाहरण म्हणजे भौतिकशास्त्र, ज्यात 3 थिअरी क्रेडिटमध्ये 70% आणि 1 लॅब क्रेडिटमध्ये 90%, म्हणजे (70 × 3 + 90 × 1) ÷ 4 = 75%. तुम्हाला सर्व 4 क्रेडिटसाठी एक ग्रेड मिळतो, म्हणून तो कॅल्क्युलेटरमध्ये 4 क्रेडिटचा एक विषय म्हणून भरा.</p>
       </section>
+
       <section id="grade-points">
         <h2>NUST ग्रेड पॉइंट तक्ता</h2>
         <div class="table-scroll">
@@ -436,6 +448,7 @@
         </div>
         <p>I (अपूर्ण), W (सोडलेला), Q (पात्र) आणि T (हस्तांतरण) यांना ग्रेड पॉइंट नसतात. लक्षात घ्या की NUST मध्ये A+ आणि उणे ग्रेड नाहीत: B+ आणि C+ हे B आणि C पेक्षा अर्धा पॉइंट जास्त आहेत.</p>
       </section>
+
       <section id="example">
         <h2>तुमचा NUST GPA कसा काढावा: सोडवलेले उदाहरण</h2>
         <div class="table-scroll">
@@ -454,6 +467,7 @@
         <p class="formula-block">GPA = 54.00 ÷ 16 = 3.375 ≈ 3.38</p>
         <p>तुमचा CGPA सर्व सेमिस्टरमध्ये असाच काढला जातो: घेतलेल्या प्रत्येक कोर्सचे क्रेडिट × पॉइंट बेरीज करा आणि एकूण क्रेडिटने भागा. CGPA टॅब हे तुमच्या सेमिस्टर GPA वरून करतो.</p>
       </section>
+
       <section id="minimum-cgpa">
         <h2>NUST मधील किमान CGPA आणि शैक्षणिक कमतरता</h2>
         <ul>
@@ -463,17 +477,21 @@
         </ul>
         <p>तुमचा CGPA 2.00 च्या खाली गेला असेल, तर त्याच्या वर परत येण्यासाठी उरलेल्या सेमिस्टरमध्ये किती GPA लागेल ते लक्ष्य टॅब दाखवतो.</p>
       </section>
+
       <section id="repeat">
         <h2>CGPA सुधारण्यासाठी कोर्स पुन्हा घेणे</h2>
         <p>तुम्ही कोर्स पुन्हा घेतल्यावर गुणपत्रिकेत जुना आणि नवीन दोन्ही ग्रेड दिसतात, पण CGPA काढताना फक्त चांगला ग्रेड वापरला जातो. पुन्हा घेण्यासाठी तुमच्या HoD ची परवानगी लागते, आणि पुन्हा घेऊन मिळालेले ग्रेड सर्वोच्च शैक्षणिक सन्मान आणि पुरस्कारांसाठी मोजले जात नाहीत, Rector's Gold Medal वगळता. पुन्हा घेतल्यानंतरही नापास झालात तर तो एकच F मोजला जातो.</p>
         <p><strong>कॅल्क्युलेटर टीप:</strong> पुन्हा घेतलेल्या कोर्ससाठी फक्त चांगला ग्रेड भरा.</p>
       </section>
+
       <section id="percentage">
         <h2>NUST CGPA ते टक्केवारी</h2>
         <p>NUST Undergraduate Student Handbook मध्ये CGPA टक्केवारीत बदलण्याचे कोणतेही अधिकृत सूत्र नाही. टक्केवारी लागल्यास अनेक जण (CGPA ÷ 4) × 100 वापरतात, त्यामुळे 3.40 चे 85% होतात. नोकरी देणारे आणि विद्यापीठे कधी कधी स्वतःचे नियम वापरतात, म्हणून तुम्ही ज्या संस्थेत अर्ज करत आहात ती काय मान्य करते ते तपासा. टक्केवारी टॅब हीच सोपी पद्धत वापरतो.</p>
       </section>
+
       <section id="faq" class="faq">
         <h2>NUST CGPA कॅल्क्युलेटर प्रश्नोत्तरे</h2>
+
         <details>
           <summary><h3>NUST सापेक्ष ग्रेडिंग वापरते की निरपेक्ष?</h3></summary>
           <p>NUST 4.00 स्केलवर सापेक्ष ग्रेडिंग वापरते, त्यामुळे तुमचा ग्रेड ठरावीक टक्केवारीऐवजी तुमच्या वर्गाच्या तुलनेत तुमच्या कामगिरीवर अवलंबून असतो. म्हणूनच NUST साठी गुणांवरून ग्रेडचा कोणताही ठरावीक तक्ता नाही.</p>
@@ -503,6 +521,7 @@
           <p>तो त्याच्या एकूण क्रेडिटसह एक विषय म्हणून भरा, उदाहरणार्थ 3+1 कोर्ससाठी 4. NUST थिअरी आणि लॅबचे गुण एकत्र करून संपूर्ण कोर्सचा एक ग्रेड देते.</p>
         </details>
       </section>
+
       <section id="sources">
         <h2>स्रोत</h2>
         <ul class="source-note">
@@ -511,6 +530,7 @@
         <p class="source-note">शेवटची तपासणी: 18 ऑक्टोबर 2026. विद्यापीठाचे नियम बदलू शकतात, म्हणून नेहमी तुमच्या विद्यापीठाच्या नवीनतम अधिकृत नियमांनुसार तुमचे निकाल निश्चित करा. आमच्या <a href="terms.html">वापराच्या अटी</a> पाहा.</p>
       </section>
     </article>
+
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">आणखी CGPA आणि GPA कॅल्क्युलेटर</h2>
       <div class="uni-grid">
@@ -519,20 +539,21 @@
           <span class="uni-name">COMSATS CGPA आणि GPA कॅल्क्युलेटर</span>
           <span class="muted small">HEC निकष (Fall 2021+) · अधिकृत % नियम</span>
         </a>
-        <a class="card uni-card" href="vtu-cgpa-calculator.html">
-          <span class="uni-badge">VTU</span>
-          <span class="uni-name">VTU CGPA आणि GPA (SGPA) कॅल्क्युलेटर</span>
-          <span class="muted small">2022 आणि 2021 स्कीम · CGPA ते %</span>
-        </a>
         <a class="card uni-card" href="index.html">
           <span class="uni-badge">सर्व</span>
           <span class="uni-name">सामान्य CGPA कॅल्क्युलेटर</span>
           <span class="muted small">4.0, 5.0 आणि 10-पॉइंट स्केल</span>
         </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">18</span>
+          <span class="uni-name">All university calculators</span>
+          <span class="muted small">Pakistan, India, USA, UK, Malaysia, Australia and Germany</span>
+        </a>
       </div>
     </section>
     <p class="back-top"><a href="#calculator">↑ कॅल्क्युलेटरवर परत जा</a></p>
   </main>
+
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -550,6 +571,7 @@
     </div>
   </footer>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-nust',
     scales: {

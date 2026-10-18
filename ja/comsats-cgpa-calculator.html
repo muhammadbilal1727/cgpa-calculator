@@ -24,10 +24,12 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/comsats-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/comsats-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/comsats-cgpa-calculator.html">
+
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="ja_JP">
@@ -151,6 +153,7 @@
   </script>
 </head>
 <body>
+
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -195,11 +198,13 @@
     </div>
   </header>
   <main class="container">
+
     <section class="hero">
       <nav class="breadcrumb" aria-label="パンくずリスト"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">CUI</span></nav>
       <h1>COMSATS CGPA・GPA計算機</h1>
       <p>COMSATS University Islamabadが2021年秋以降の入学者に適用しているHEC評価基準でGPAとCGPAを計算し、COMSATS公式の方法でCGPAをパーセントに換算します。<a href="#guide" class="hero-link">COMSATSの評価のしくみ ↓</a></p>
     </section>
+
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <p id="scaleLabel" class="scale-title">評価制度：COMSATS（2021年秋以降）</p>
@@ -209,6 +214,7 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">すべてリセット</button>
     </section>
     <p class="print-only" id="printDate"></p>
+
     <div class="layout">
       <!-- ================= Calculators ================= -->
       <div class="main-col">
@@ -225,6 +231,7 @@
               <h2>学期GPA</h2>
               <p class="muted small">科目ごとに単位数と成績を入力してください。</p>
             </div>
+
           </div>
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>科目（任意）</span><span>単位</span><span id="gradeHead">評価</span><span></span>
@@ -354,6 +361,7 @@
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
+
           </div>
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">CGPAタブの値を使う</button>
           <div class="result" aria-live="polite">
@@ -390,6 +398,7 @@
           </div>
           <p class="muted tiny">点数の範囲は大学によって異なります。必ずご自分の大学の評価規程を確認してください。</p>
         </section>
+
         <section class="card tips">
           <h2 class="side-title">CUIのポイント</h2>
           <ul>
@@ -400,12 +409,15 @@
         </section>
       </aside>
     </div>
+
     <article class="guide" id="guide">
+
       <section id="how-it-works">
         <h2>COMSATSの評価のあらまし</h2>
         <p>COMSATS University Islamabad（CUI）は、2021年秋以降の入学者を対象に、学部・大学院のすべてのプログラムでHECの評価基準を採用しました。2020年10月8日の第31回学術評議会で承認され、2020年12月7日付の通知でRegistrarが発表しました。</p>
         <p>この制度では、各アルファベット評価がGPの<em>範囲</em>を表します。たとえばA-は点数に応じて3.34〜3.66のいずれかになります。そのため、この計算機ではアルファベットだけでなく各科目のGPを入力してもらいます。</p>
       </section>
+
       <section id="grade-points">
         <h2>COMSATS評価表（2021年秋以降）</h2>
         <div class="table-scroll">
@@ -428,6 +440,7 @@
         </div>
         <p>50%未満はすべてFで、GPは0.00です。</p>
       </section>
+
       <section id="example">
         <h2>COMSATSのGPA計算：計算例</h2>
         <div class="table-scroll">
@@ -445,6 +458,7 @@
         <p class="formula-block">GPA = 44.10 ÷ 13 = 3.392 ≈ 3.39</p>
         <p>科目のアルファベット評価しか分からない場合、上の表でそのGPの範囲を確認できます。正確なGPはその範囲内のどこかになります。</p>
       </section>
+
       <section id="percentage">
         <h2>COMSATSのCGPAをパーセントに：公式ルール</h2>
         <p>COMSATSは (CGPA ÷ 4) × 100 を使いません。通知には <q>A student getting any CGPA will be given the minimum of the corresponding percentage… For example, if a student gets a CGPA of 3.00, the percentage associated will be 71%.</q>（「どのCGPAにも、対応するパーセントの最低値が与えられる…たとえばCGPAが3.00の学生の場合、対応するパーセントは71%となる」）とあります。</p>
@@ -468,12 +482,15 @@
         </div>
         <p>たとえばCGPA 3.39はA-の区分（3.34–3.66）に入るので<strong>80%</strong>になります。簡単な計算式だと84.75%となり、5ポイント近く高くなってしまうため、企業が大学に確認した場合に問題になるおそれがあります。</p>
       </section>
+
       <section id="before-2021">
         <h2>2021年秋より前に入学した方へ</h2>
         <p>この通知は2021年秋以降の入学者が対象です。それ以前にCOMSATSに入学した場合、成績証明書は旧来のCOMSATSの評価制度に従っている可能性があります。GPAとCGPAの計算（単位数による加重平均）は同じですが、評価区分やパーセントのルールは異なることがあるので、成績証明書を確認するか、キャンパスの試験担当窓口に問い合わせてください。</p>
       </section>
+
       <section id="faq" class="faq">
         <h2>CUI CGPA計算機のよくある質問</h2>
+
         <details>
           <summary><h3>COMSATSでは各評価にGPの範囲があるのはなぜ？</h3></summary>
           <p>COMSATSは2021年秋からHECの評価基準を採用しており、各アルファベット評価がGPの範囲を表します。正確なGPは点数によって決まるため、同じA-でもGPが異なることがあります。</p>
@@ -499,6 +516,7 @@
           <p>GPAとCGPAの計算方法は誰でも同じなので、GPを入力して使えます。ただし、このページの評価区分とパーセントのルールは2021年秋以降の入学者向けなので、それ以前に入学した方は成績証明書を確認してください。</p>
         </details>
       </section>
+
       <section id="sources">
         <h2>出典</h2>
         <ul class="source-note">
@@ -507,6 +525,7 @@
         <p class="source-note">最終確認：2026年10月18日。大学の規程は変わることがあるので、必ずご自分の大学の最新の公式ルールで結果を確認してください。<a href="terms.html">利用規約</a>もご覧ください。</p>
       </section>
     </article>
+
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">その他のCGPA・GPA計算機</h2>
       <div class="uni-grid">
@@ -515,20 +534,21 @@
           <span class="uni-name">NUST CGPA・GPA計算機</span>
           <span class="muted small">相対評価 · A = 4.00、B+ = 3.50</span>
         </a>
-        <a class="card uni-card" href="vtu-cgpa-calculator.html">
-          <span class="uni-badge">VTU</span>
-          <span class="uni-name">VTU CGPA・GPA（SGPA）計算機</span>
-          <span class="muted small">2022年・2021年スキーム · CGPAを%に</span>
-        </a>
         <a class="card uni-card" href="index.html">
           <span class="uni-badge">すべて</span>
           <span class="uni-name">一般用CGPA計算機</span>
           <span class="muted small">4.0・5.0・10点スケール</span>
         </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">18</span>
+          <span class="uni-name">All university calculators</span>
+          <span class="muted small">Pakistan, India, USA, UK, Malaysia, Australia and Germany</span>
+        </a>
       </div>
     </section>
     <p class="back-top"><a href="#calculator">↑ 計算機に戻る</a></p>
   </main>
+
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -546,6 +566,7 @@
     </div>
   </footer>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-comsats',
     scales: {

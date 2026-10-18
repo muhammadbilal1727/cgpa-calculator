@@ -34,6 +34,7 @@ const f2 = n => n.toFixed(2);
 const UNIVERSITIES = [
   {
     slug: 'nust-cgpa-calculator',
+    country: 'Pakistan',
     short: 'NUST',
     name: 'NUST CGPA & GPA Calculator',
     title: 'NUST CGPA & GPA Calculator – Official Grade Points',
@@ -155,6 +156,7 @@ const UNIVERSITIES = [
 
   {
     slug: 'comsats-cgpa-calculator',
+    country: 'Pakistan',
     short: 'CUI',
     name: 'COMSATS CGPA & GPA Calculator',
     title: 'COMSATS CGPA & GPA Calculator + CGPA to Percentage',
@@ -285,6 +287,7 @@ ${cfg.scales.cui.grades.map((g, i, all) => `              <tr><td>${g[0]}</td><t
 
   {
     slug: 'vtu-cgpa-calculator',
+    country: 'India',
     short: 'VTU',
     name: 'VTU CGPA & GPA (SGPA) Calculator',
     title: 'VTU CGPA & GPA (SGPA) Calculator – 2022 & 2021 Scheme',
@@ -438,8 +441,15 @@ ${table(cfg.scales['2021'].grades, meaning21)}
       ['Is VTU grading relative or absolute?', 'Absolute. Your CIE and SEE marks are added and turned into a percentage, and fixed ranges decide your grade, for example 90 to 100 for an O in the 2022 scheme.'],
       ['How is CGPA calculated from SGPA in VTU?', 'Multiply each semester’s SGPA by that semester’s total credits, add the results and divide by the total credits of all semesters. SGPA and CGPA are rounded to 2 decimal places.']
     ]
-  }
+  },
+
+  // More universities live in tools/universities/<country>.js
+  ...['usa', 'uk', 'malaysia', 'australia', 'germany'].flatMap(c => require('./universities/' + c + '.js'))
 ];
+
+// Order of the country groups on the home page
+const COUNTRIES = ['Pakistan', 'India', 'USA', 'UK', 'Malaysia', 'Australia', 'Germany'];
+const COUNTRY_NAMES = { Pakistan: 'Pakistan', India: 'India', USA: 'United States', UK: 'United Kingdom', Malaysia: 'Malaysia', Australia: 'Australia', Germany: 'Germany' };
 
 /* ---------- Build ---------- */
 const index = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8').replace(/\r\n/g, '\n');
@@ -448,18 +458,44 @@ const footer = between(index, '  <!-- ================= Footer', '  <div id="toa
 const layoutTemplate = between(index, '    <div class="layout">', '    <!-- ================= University calculators');
 const themeScript = between(index, '  <script>\n    /* Apply the saved', '</head>');
 
+const card = (u, indent) => `
+${indent}<a class="card uni-card" href="${u.slug}.html">
+${indent}  <span class="uni-badge">${u.short}</span>
+${indent}  <span class="uni-name">${esc(u.name)}</span>
+${indent}  <span class="muted small">${u.card}</span>
+${indent}</a>`;
+
+// Same-country calculators first, then the general calculator and the full list on the home page
 function otherCalculators(current) {
-  return UNIVERSITIES.filter(u => u.slug !== current.slug).map(u => `
-        <a class="card uni-card" href="${u.slug}.html">
-          <span class="uni-badge">${u.short}</span>
-          <span class="uni-name">${esc(u.name)}</span>
-          <span class="muted small">${u.card}</span>
-        </a>`).join('') + `
+  return UNIVERSITIES.filter(u => u.slug !== current.slug && u.country === current.country).map(u => card(u, '        ')).join('') + `
         <a class="card uni-card" href="index.html">
           <span class="uni-badge">ALL</span>
           <span class="uni-name">General CGPA Calculator</span>
           <span class="muted small">4.0, 5.0 and 10-point scales</span>
+        </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">${UNIVERSITIES.length}</span>
+          <span class="uni-name">All university calculators</span>
+          <span class="muted small">Pakistan, India, USA, UK, Malaysia, Australia and Germany</span>
         </a>`;
+}
+
+// The home page lists every university calculator, grouped by country
+function writeHomeCards() {
+  const file = path.join(ROOT, 'index.html');
+  const groups = COUNTRIES.map(c => {
+    const list = UNIVERSITIES.filter(u => u.country === c);
+    if (!list.length) return '';
+    return `
+      <h3 class="uni-country">${COUNTRY_NAMES[c]}</h3>
+      <div class="uni-grid">${list.map(u => card(u, '        ')).join('')}
+      </div>`;
+  }).join('');
+  const html = fs.readFileSync(file, 'utf8').replace(/\r\n/g, '\n');
+  const out = replaceBlock(html, 'uni-cards', `<!-- uni-cards -->${groups}
+      <!-- /uni-cards -->`);
+  fs.writeFileSync(file, out);
+  console.log('updated index.html university cards:', UNIVERSITIES.length);
 }
 
 function build(u) {
@@ -481,6 +517,15 @@ function build(u) {
 ${u.facts.map(f => `            <li>${f}</li>`).join('\n')}
           </ul>
         </section>`);
+  // Page-specific wording for systems that aren't GPA based (marks, German grades, degree classes …)
+  (u.layoutReplace || []).forEach(([from, to]) => {
+    if (!layout.includes(from)) throw new Error(`${u.slug}: text to replace not found: ${from}`);
+    layout = layout.split(from).join(to);
+  });
+  if (u.howto) { // [GPA tab, CGPA tab, Target tab] "How is it calculated?" boxes; null keeps the default
+    let i = 0;
+    layout = layout.replace(/<details class="howto">[\s\S]*?<\/details>/g, m => { const h = u.howto[i++]; return h ? h.trim() : m; });
+  }
 
   const ld = [
     {
@@ -597,3 +642,4 @@ ${footer}  <div id="toast" class="toast" role="status" aria-live="polite"></div>
 }
 
 UNIVERSITIES.forEach(build);
+writeHomeCards();

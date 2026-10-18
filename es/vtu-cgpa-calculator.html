@@ -24,10 +24,12 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/vtu-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/vtu-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/vtu-cgpa-calculator.html">
+
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="es_ES">
@@ -151,6 +153,7 @@
   </script>
 </head>
 <body>
+
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -195,11 +198,13 @@
     </div>
   </header>
   <main class="container">
+
     <section class="hero">
       <nav class="breadcrumb" aria-label="Ruta de navegación"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">VTU</span></nav>
       <h1>Calculadora de CGPA y GPA (SGPA) de VTU</h1>
       <p>Calcula tu SGPA y CGPA de VTU y convierte el CGPA a porcentaje con las reglas oficiales del reglamento de VTU para los esquemas 2022 y 2021. <a href="#guide" class="hero-link">Cómo funciona la calificación en VTU ↓</a></p>
     </section>
+
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <label id="scaleLabel" for="scaleSelect" class="scale-title">Tu esquema de VTU</label>
@@ -209,6 +214,7 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">Restablecer todo</button>
     </section>
     <p class="print-only" id="printDate"></p>
+
     <div class="layout">
       <!-- ================= Calculators ================= -->
       <div class="main-col">
@@ -225,6 +231,7 @@
               <h2>GPA del semestre</h2>
               <p class="muted small">Añade cada asignatura con sus créditos y su nota.</p>
             </div>
+
             <div class="segmented" id="modeSwitch" role="radiogroup" aria-label="¿Cómo quieres introducir los resultados?">
               <input type="radio" name="gpaMode" id="modeGrade" value="grade" checked="">
               <label for="modeGrade">Nota</label>
@@ -360,6 +367,7 @@
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
+
             <div class="field">
               <span class="field-label always" id="convScaleLabel">Esquema</span>
               <div class="segmented full" role="radiogroup" aria-labelledby="convScaleLabel">
@@ -405,6 +413,7 @@
           </div>
           <p class="muted tiny">Los rangos de puntuación varían entre universidades. Consulta siempre la normativa de calificación de tu universidad.</p>
         </section>
+
         <section class="card tips">
           <h2 class="side-title">Datos rápidos de VTU</h2>
           <ul>
@@ -415,11 +424,14 @@
         </section>
       </aside>
     </div>
+
     <article class="guide" id="guide">
+
       <section id="scheme">
         <h2>¿En qué esquema de VTU estás?</h2>
         <p>VTU actualiza su reglamento de vez en cuando. El reglamento de 2022 se aplica a los estudiantes admitidos desde el curso 2022-23, mientras que el de 2021 entró en vigor en 2021-22. Elige tu esquema en la parte superior de la calculadora, porque las letras de las notas y la fórmula de CGPA a porcentaje son distintas.</p>
       </section>
+
       <section id="grade-points">
         <h2>Sistema de calificación de VTU: esquema 2022</h2>
         <p>VTU usa calificación absoluta. Tus puntuaciones de CIE (evaluación interna continua) y SEE (examen de fin de semestre) se suman y se convierten en un porcentaje, y ese porcentaje decide tu nota (cláusula 22OB 6.1).</p>
@@ -454,6 +466,7 @@
           </table>
         </div>
       </section>
+
       <section id="example">
         <h2>Cómo calcula VTU el SGPA y el CGPA</h2>
         <p class="formula-block">SGPA = Σ (Ci × Gi) ÷ Σ Ci &nbsp;&nbsp; CGPA = Σ (Ci × Si) ÷ Σ Ci</p>
@@ -473,6 +486,7 @@
         </div>
         <p class="formula-block">SGPA = 123 ÷ 15 = 8.20</p>
       </section>
+
       <section id="percentage">
         <h2>CGPA de VTU a porcentaje</h2>
         <p><strong>Esquema 2022:</strong> Porcentaje = CGPA × 10, así que un CGPA de 8.20 se convierte en <strong>82 %</strong> (cláusula 22OB 6.7). El reglamento dice que esta fórmula puede usarse para el empleo y los estudios superiores.</p>
@@ -485,6 +499,7 @@
           <li><strong>Pass Class:</strong> del 40 % al 50 %, un CGPA de 4.00 a 4.99</li>
         </ul>
       </section>
+
       <section id="passing">
         <h2>Notas mínimas para aprobar en VTU (esquema 2022)</h2>
         <ul>
@@ -494,8 +509,10 @@
           <li>Para aprobar el programa completo necesitas una P o más en todas las asignaturas matriculadas.</li>
         </ul>
       </section>
+
       <section id="faq" class="faq">
         <h2>Preguntas frecuentes sobre la calculadora de CGPA de VTU</h2>
+
         <details>
           <summary><h3>¿Cómo convierto el CGPA de VTU a porcentaje?</h3></summary>
           <p>En el esquema 2022, multiplica tu CGPA por 10, así que 8.20 se convierte en 82 %. En el esquema 2021 y en el antiguo esquema CBCS de 2015, usa (CGPA − 0.75) × 10, así que 8.20 se convierte en 74.5 %.</p>
@@ -521,6 +538,7 @@
           <p>Multiplica el SGPA de cada semestre por el total de créditos de ese semestre, suma los resultados y divide entre el total de créditos de todos los semestres. El SGPA y el CGPA se redondean a 2 decimales.</p>
         </details>
       </section>
+
       <section id="sources">
         <h2>Fuentes</h2>
         <ul class="source-note">
@@ -531,28 +549,25 @@
         <p class="source-note">Última revisión: 18 de octubre de 2026. Las normas universitarias pueden cambiar, así que confirma siempre tus resultados con las normas oficiales más recientes de tu universidad. Consulta nuestros <a href="terms.html">Términos de uso</a>.</p>
       </section>
     </article>
+
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">Más calculadoras de CGPA y GPA</h2>
       <div class="uni-grid">
-        <a class="card uni-card" href="nust-cgpa-calculator.html">
-          <span class="uni-badge">NUST</span>
-          <span class="uni-name">Calculadora de CGPA y GPA de NUST</span>
-          <span class="muted small">Calificación relativa · A = 4.00, B+ = 3.50</span>
-        </a>
-        <a class="card uni-card" href="comsats-cgpa-calculator.html">
-          <span class="uni-badge">CUI</span>
-          <span class="uni-name">Calculadora de CGPA y GPA de COMSATS</span>
-          <span class="muted small">Criterios de la HEC (otoño 2021+) · regla oficial de %</span>
-        </a>
         <a class="card uni-card" href="index.html">
           <span class="uni-badge">TODAS</span>
           <span class="uni-name">Calculadora de CGPA general</span>
           <span class="muted small">Escalas de 4.0, 5.0 y 10 puntos</span>
         </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">18</span>
+          <span class="uni-name">Todas las calculadoras por universidad</span>
+          <span class="muted small">Pakistán, India, EE. UU., Reino Unido, Malasia, Australia y Alemania</span>
+        </a>
       </div>
     </section>
     <p class="back-top"><a href="#calculator">↑ Volver a la calculadora</a></p>
   </main>
+
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -570,6 +585,7 @@
     </div>
   </footer>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-vtu',
     defaultScale: '2022',
