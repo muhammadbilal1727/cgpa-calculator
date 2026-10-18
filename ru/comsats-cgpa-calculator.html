@@ -24,12 +24,10 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/comsats-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/comsats-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/comsats-cgpa-calculator.html">
-  
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
-
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="ru_RU">
@@ -153,7 +151,6 @@
   </script>
 </head>
 <body>
-
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -197,15 +194,12 @@
       </div>
     </div>
   </header>
-
   <main class="container">
-
     <section class="hero">
       <nav class="breadcrumb" aria-label="Навигационная цепочка"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">CUI</span></nav>
       <h1>Калькулятор CGPA и GPA для COMSATS</h1>
       <p>Рассчитайте GPA и CGPA по критериям оценивания HEC, которые COMSATS University Islamabad применяет к студентам, принятым с осени 2021 года, и переведите CGPA в проценты по официальному правилу COMSATS. <a href="#guide" class="hero-link">Как оценивают в COMSATS ↓</a></p>
     </section>
-
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <p id="scaleLabel" class="scale-title">Система оценивания: COMSATS (с осени 2021 года)</p>
@@ -215,19 +209,15 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">Сбросить всё</button>
     </section>
     <p class="print-only" id="printDate"></p>
-
     <div class="layout">
-
       <!-- ================= Calculators ================= -->
       <div class="main-col">
-
         <div class="tabs" role="tablist" aria-label="Калькуляторы">
           <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">GPA <small>Один семестр</small></button>
           <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>Все семестры</small></button>
           <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">Цель <small>Планирование</small></button>
           <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">Проценты <small>Конвертер</small></button>
         </div>
-
         <!-- ---------- TAB 1: GPA ---------- -->
         <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
           <div class="panel-head">
@@ -235,19 +225,15 @@
               <h2>GPA за семестр</h2>
               <p class="muted small">Добавьте каждый предмет с его кредитами и оценкой.</p>
             </div>
-
           </div>
-
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>Предмет (необязательно)</span><span>Кредиты</span><span id="gradeHead">Оценка</span><span></span>
           </div>
           <div id="subjectList" class="row-list mode-grade"></div>
-
           <button type="button" id="addSubject" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             Добавить предмет
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">Ваш GPA за семестр</div>
             <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
@@ -256,21 +242,18 @@
             <div class="result-sub" id="gpaSub">Добавьте предметы, чтобы увидеть свой GPA.</div>
             <div class="result-note" id="gpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToCgpa" class="btn btn-soft">Добавить этот GPA в мой CGPA →</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="gpa">Копировать результат</button>
             <button type="button" class="btn btn-outline js-print" title="В окне печати выберите «Сохранить как PDF», чтобы скачать PDF">Печать / PDF</button>
             <button type="button" id="resetGpa" class="btn btn-quiet">Очистить</button>
           </div>
-
           <details class="howto">
             <summary>Как рассчитывается GPA?</summary>
             <p class="formula-line">GPA = (Σ кредиты × баллы оценки) ÷ (Σ кредиты)</p>
             <p class="muted small">Пример: математика — 3 кредита и 4.00 балла, английский — 2 кредита и 3.00 → (3×4 + 2×3) ÷ (3+2) = 18 ÷ 5 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 2: CGPA ---------- -->
         <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
           <div class="panel-head">
@@ -279,17 +262,14 @@
               <p class="muted small">Добавьте GPA каждого семестра (SGPA) и общее число его кредитов.</p>
             </div>
           </div>
-
           <div class="rows-head semester-cols" aria-hidden="true">
             <span>Семестр</span><span>GPA / SGPA</span><span>Кредиты</span><span></span>
           </div>
           <div id="semesterList" class="row-list"></div>
-
           <button type="button" id="addSemester" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             Добавить семестр
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">Ваш CGPA</div>
             <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
@@ -298,21 +278,18 @@
             <div class="result-sub" id="cgpaSub">Добавьте семестры, чтобы увидеть свой CGPA.</div>
             <div class="result-note" id="cgpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToPct" class="btn btn-soft">Перевести этот CGPA в % →</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">Копировать результат</button>
             <button type="button" class="btn btn-outline js-print" title="В окне печати выберите «Сохранить как PDF», чтобы скачать PDF">Печать / PDF</button>
             <button type="button" id="resetCgpa" class="btn btn-quiet">Очистить</button>
           </div>
-
           <details class="howto">
             <summary>Как рассчитывается CGPA?</summary>
             <p class="formula-line">CGPA = (Σ GPA семестра × кредиты семестра) ÷ (всего кредитов)</p>
             <p class="muted small">Семестры с большим числом кредитов весят больше. Пример: 3.50 при 18 кредитах и 3.00 при 15 кредитах → (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 3: Target CGPA ---------- -->
         <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
           <div class="panel-head">
@@ -321,7 +298,6 @@
               <p class="muted small">Узнайте, какой GPA нужен в следующих семестрах, чтобы достичь цели.</p>
             </div>
           </div>
-
           <div class="target-grid">
             <div class="field">
               <label class="field-label" for="tCurrent">Текущий CGPA</label>
@@ -344,9 +320,7 @@
               <p class="row-msg" id="tLeftMsg"></p>
             </div>
           </div>
-
           <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">Заполнить из вкладки CGPA</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">Нужный GPA в каждом семестре</div>
             <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
@@ -355,20 +329,17 @@
             <div class="result-sub" id="tgtSub">Заполните четыре поля выше, чтобы увидеть нужный GPA.</div>
             <div class="result-note" id="tgtNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="target">Копировать результат</button>
             <button type="button" class="btn btn-outline js-print" title="В окне печати выберите «Сохранить как PDF», чтобы скачать PDF">Печать / PDF</button>
             <button type="button" id="resetTarget" class="btn btn-quiet">Очистить</button>
           </div>
-
           <details class="howto">
             <summary>Как это рассчитывается?</summary>
             <p class="formula-line">Нужный GPA = (Цель × всего кредитов − Текущий × пройденные кредиты) ÷ оставшиеся кредиты</p>
             <p class="muted small">Пример: сейчас 3.00 после 60 кредитов, цель 3.30, осталось 60 кредитов → (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 4: Percentage ---------- -->
         <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
           <div class="panel-head">
@@ -377,18 +348,14 @@
               <p class="muted small">Введите CGPA и выберите его шкалу.</p>
             </div>
           </div>
-
           <div class="conv-grid">
             <div class="field">
               <label class="field-label always" for="convInput">Ваш CGPA</label>
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
-
           </div>
-
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">Взять мой CGPA из вкладки CGPA</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">Проценты</div>
             <div class="result-value"><span id="pctValue">—</span></div>
@@ -396,12 +363,10 @@
             <div class="result-cheer" id="pctCheer"></div>
             <div class="result-sub" id="pctSub">Введите CGPA, чтобы увидеть процент.</div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="pct">Копировать результат</button>
             <button type="button" class="btn btn-outline js-print" title="В окне печати выберите «Сохранить как PDF», чтобы скачать PDF">Печать / PDF</button>
           </div>
-
           <div class="formula">
             <div class="formula-title">Используемая формула</div>
             <p class="formula-line" id="formulaMain"></p>
@@ -410,7 +375,6 @@
           </div>
         </section>
       </div>
-
       <!-- ================= Sidebar: grade table ================= -->
       <aside class="sidebar">
         <section class="card" aria-labelledby="tableTitle">
@@ -426,7 +390,6 @@
           </div>
           <p class="muted tiny">Диапазоны баллов в разных университетах отличаются. Всегда сверяйтесь с правилами оценивания своего университета.</p>
         </section>
-
         <section class="card tips">
           <h2 class="side-title">Коротко о CUI</h2>
           <ul>
@@ -437,15 +400,12 @@
         </section>
       </aside>
     </div>
-
     <article class="guide" id="guide">
-
       <section id="how-it-works">
         <h2>Оценивание в COMSATS вкратце</h2>
         <p>COMSATS University Islamabad (CUI) перешёл на критерии оценивания HEC во всех программах бакалавриата и магистратуры для студентов, принятых с осени 2021 года. Академический совет CUI утвердил это на 31-м заседании 8 октября 2020 года, а Registrar объявил об этом в уведомлении от 7 декабря 2020 года.</p>
         <p>В этой системе каждая буквенная оценка охватывает <em>диапазон</em> баллов. Например, A- может означать любое значение от 3.34 до 3.66 в зависимости от ваших баллов. Поэтому калькулятор просит баллы по каждому курсу, а не только букву.</p>
       </section>
-
       <section id="grade-points">
         <h2>Таблица оценивания COMSATS (с осени 2021 года)</h2>
         <div class="table-scroll">
@@ -468,7 +428,6 @@
         </div>
         <p>Всё, что ниже 50 %, — это F с 0.00 баллов.</p>
       </section>
-
       <section id="example">
         <h2>Как рассчитать GPA в COMSATS: разобранный пример</h2>
         <div class="table-scroll">
@@ -486,7 +445,6 @@
         <p class="formula-block">GPA = 44.10 ÷ 13 = 3.392 ≈ 3.39</p>
         <p>Если вы знаете только буквенную оценку по курсу, таблица выше показывает возможный диапазон баллов. Ваши точные баллы находятся где-то внутри этого диапазона.</p>
       </section>
-
       <section id="percentage">
         <h2>Перевод CGPA COMSATS в проценты: официальное правило</h2>
         <p>COMSATS не использует формулу (CGPA ÷ 4) × 100. В уведомлении сказано: <q>A student getting any CGPA will be given the minimum of the corresponding percentage… For example, if a student gets a CGPA of 3.00, the percentage associated will be 71%.</q> («Студенту с любым CGPA присваивается минимальный процент соответствующего диапазона… Например, если у студента CGPA 3.00, соответствующий процент составит 71 %».)</p>
@@ -510,15 +468,12 @@
         </div>
         <p>Например, CGPA 3.39 попадает в диапазон A- (3.34–3.66), поэтому засчитывается как <strong>80 %</strong>. Простая формула дала бы 84.75 % — почти на 5 пунктов больше, а это может создать проблемы, если работодатель проверит данные в университете.</p>
       </section>
-
       <section id="before-2021">
         <h2>Поступили до осени 2021 года?</h2>
         <p>Уведомление касается студентов, принятых с осени 2021 года. Если вы поступили в COMSATS раньше, ваша выписка может следовать старой системе оценивания COMSATS. Расчёт GPA и CGPA (среднее, взвешенное по кредитам) тот же, но диапазоны оценок и правило перевода в проценты могут отличаться, поэтому проверьте выписку или спросите в экзаменационном отделе своего кампуса.</p>
       </section>
-
       <section id="faq" class="faq">
         <h2>Вопросы о калькуляторе CGPA для CUI</h2>
-
         <details>
           <summary><h3>Почему в COMSATS у каждой оценки диапазон баллов?</h3></summary>
           <p>С осени 2021 года COMSATS использует критерии оценивания HEC, где каждая буквенная оценка охватывает диапазон баллов. Ваши точные баллы зависят от результатов, поэтому у двух студентов с A- баллы могут отличаться.</p>
@@ -544,7 +499,6 @@
           <p>Расчёт GPA и CGPA одинаков для всех, поэтому баллы ввести можно. Но диапазоны оценок и правило перевода в проценты на этой странице относятся к поступившим с осени 2021 года, поэтому, если вы поступили раньше, сверьтесь со своей выпиской.</p>
         </details>
       </section>
-
       <section id="sources">
         <h2>Источники</h2>
         <ul class="source-note">
@@ -553,7 +507,6 @@
         <p class="source-note">Последняя проверка: 18 октября 2026 г. Правила университетов могут меняться, поэтому всегда сверяйте результаты с актуальными официальными правилами своего университета. См. наши <a href="terms.html">Условия использования</a>.</p>
       </section>
     </article>
-
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">Другие калькуляторы CGPA и GPA</h2>
       <div class="uni-grid">
@@ -576,7 +529,6 @@
     </section>
     <p class="back-top"><a href="#calculator">↑ Вернуться к калькулятору</a></p>
   </main>
-
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -593,9 +545,7 @@
       </nav>
     </div>
   </footer>
-
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-comsats',
     scales: {

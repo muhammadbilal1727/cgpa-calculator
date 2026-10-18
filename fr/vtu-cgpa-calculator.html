@@ -24,12 +24,10 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/vtu-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/vtu-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/vtu-cgpa-calculator.html">
-  
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
-
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="fr_FR">
@@ -153,7 +151,6 @@
   </script>
 </head>
 <body>
-
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -197,15 +194,12 @@
       </div>
     </div>
   </header>
-
   <main class="container">
-
     <section class="hero">
       <nav class="breadcrumb" aria-label="Fil d’Ariane"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">VTU</span></nav>
       <h1>Calculateur de CGPA et GPA (SGPA) de la VTU</h1>
       <p>Calculez votre SGPA et votre CGPA VTU et convertissez le CGPA en pourcentage avec les règles officielles des règlements VTU pour les schémas 2022 et 2021. <a href="#guide" class="hero-link">Comment fonctionne la notation à la VTU ↓</a></p>
     </section>
-
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <label id="scaleLabel" for="scaleSelect" class="scale-title">Votre schéma VTU</label>
@@ -215,19 +209,15 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">Tout réinitialiser</button>
     </section>
     <p class="print-only" id="printDate"></p>
-
     <div class="layout">
-
       <!-- ================= Calculators ================= -->
       <div class="main-col">
-
         <div class="tabs" role="tablist" aria-label="Calculateurs">
           <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">GPA <small>Un semestre</small></button>
           <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>Tous les semestres</small></button>
           <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">Objectif <small>Anticiper</small></button>
           <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">Pourcentage <small>Convertisseur</small></button>
         </div>
-
         <!-- ---------- TAB 1: GPA ---------- -->
         <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
           <div class="panel-head">
@@ -235,7 +225,6 @@
               <h2>GPA du semestre</h2>
               <p class="muted small">Ajoutez chaque matière avec ses crédits et sa note.</p>
             </div>
-
             <div class="segmented" id="modeSwitch" role="radiogroup" aria-label="Comment voulez-vous saisir vos résultats ?">
               <input type="radio" name="gpaMode" id="modeGrade" value="grade" checked="">
               <label for="modeGrade">Note</label>
@@ -243,17 +232,14 @@
               <label for="modeMarks">Points</label>
             </div>
           </div>
-
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>Matière (facultatif)</span><span>Crédits</span><span id="gradeHead">Note</span><span></span>
           </div>
           <div id="subjectList" class="row-list mode-grade"></div>
-
           <button type="button" id="addSubject" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             Ajouter une matière
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">Votre GPA du semestre</div>
             <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
@@ -262,21 +248,18 @@
             <div class="result-sub" id="gpaSub">Ajoutez vos matières pour voir votre GPA.</div>
             <div class="result-note" id="gpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToCgpa" class="btn btn-soft">Ajouter ce GPA à mon CGPA →</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="gpa">Copier le résultat</button>
             <button type="button" class="btn btn-outline js-print" title="Dans la fenêtre d’impression, choisissez « Enregistrer au format PDF » pour télécharger un PDF">Imprimer / PDF</button>
             <button type="button" id="resetGpa" class="btn btn-quiet">Effacer</button>
           </div>
-
           <details class="howto">
             <summary>Comment le GPA est-il calculé ?</summary>
             <p class="formula-line">GPA = (Σ crédits × points de note) ÷ (Σ crédits)</p>
             <p class="muted small">Exemple : Maths 3 crédits avec 4.00 points, et Anglais 2 crédits avec 3.00 → (3×4 + 2×3) ÷ (3+2) = 18 ÷ 5 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 2: CGPA ---------- -->
         <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
           <div class="panel-head">
@@ -285,17 +268,14 @@
               <p class="muted small">Ajoutez le GPA de chaque semestre (SGPA) et son total de crédits.</p>
             </div>
           </div>
-
           <div class="rows-head semester-cols" aria-hidden="true">
             <span>Semestre</span><span>GPA / SGPA</span><span>Crédits</span><span></span>
           </div>
           <div id="semesterList" class="row-list"></div>
-
           <button type="button" id="addSemester" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             Ajouter un semestre
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">Votre CGPA</div>
             <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
@@ -304,21 +284,18 @@
             <div class="result-sub" id="cgpaSub">Ajoutez vos semestres pour voir votre CGPA.</div>
             <div class="result-note" id="cgpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToPct" class="btn btn-soft">Convertir ce CGPA en % →</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">Copier le résultat</button>
             <button type="button" class="btn btn-outline js-print" title="Dans la fenêtre d’impression, choisissez « Enregistrer au format PDF » pour télécharger un PDF">Imprimer / PDF</button>
             <button type="button" id="resetCgpa" class="btn btn-quiet">Effacer</button>
           </div>
-
           <details class="howto">
             <summary>Comment le CGPA est-il calculé ?</summary>
             <p class="formula-line">CGPA = (Σ GPA du semestre × crédits du semestre) ÷ (total des crédits)</p>
             <p class="muted small">Les semestres avec plus de crédits comptent davantage. Exemple : 3.50 avec 18 crédits et 3.00 avec 15 crédits → (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 3: Target CGPA ---------- -->
         <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
           <div class="panel-head">
@@ -327,7 +304,6 @@
               <p class="muted small">Découvrez quel GPA il vous faut lors des prochains semestres pour atteindre votre objectif.</p>
             </div>
           </div>
-
           <div class="target-grid">
             <div class="field">
               <label class="field-label" for="tCurrent">CGPA actuel</label>
@@ -350,9 +326,7 @@
               <p class="row-msg" id="tLeftMsg"></p>
             </div>
           </div>
-
           <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">Remplir depuis mon onglet CGPA</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">GPA nécessaire par semestre</div>
             <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
@@ -361,20 +335,17 @@
             <div class="result-sub" id="tgtSub">Remplissez les quatre champs ci-dessus pour voir le GPA nécessaire.</div>
             <div class="result-note" id="tgtNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="target">Copier le résultat</button>
             <button type="button" class="btn btn-outline js-print" title="Dans la fenêtre d’impression, choisissez « Enregistrer au format PDF » pour télécharger un PDF">Imprimer / PDF</button>
             <button type="button" id="resetTarget" class="btn btn-quiet">Effacer</button>
           </div>
-
           <details class="howto">
             <summary>Comment est-ce calculé ?</summary>
             <p class="formula-line">GPA nécessaire = (Objectif × total des crédits − Actuel × crédits validés) ÷ crédits restants</p>
             <p class="muted small">Exemple : 3.00 actuel après 60 crédits, objectif 3.30, 60 crédits restants → (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 4: Percentage ---------- -->
         <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
           <div class="panel-head">
@@ -383,14 +354,12 @@
               <p class="muted small">Saisissez votre CGPA et choisissez son échelle.</p>
             </div>
           </div>
-
           <div class="conv-grid">
             <div class="field">
               <label class="field-label always" for="convInput">Votre CGPA</label>
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
-
             <div class="field">
               <span class="field-label always" id="convScaleLabel">Schéma</span>
               <div class="segmented full" role="radiogroup" aria-labelledby="convScaleLabel">
@@ -401,9 +370,7 @@
               </div>
             </div>
           </div>
-
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">Utiliser mon CGPA de l’onglet CGPA</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">Pourcentage</div>
             <div class="result-value"><span id="pctValue">—</span></div>
@@ -411,12 +378,10 @@
             <div class="result-cheer" id="pctCheer"></div>
             <div class="result-sub" id="pctSub">Saisissez votre CGPA pour voir le pourcentage.</div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="pct">Copier le résultat</button>
             <button type="button" class="btn btn-outline js-print" title="Dans la fenêtre d’impression, choisissez « Enregistrer au format PDF » pour télécharger un PDF">Imprimer / PDF</button>
           </div>
-
           <div class="formula">
             <div class="formula-title">Formule utilisée</div>
             <p class="formula-line" id="formulaMain"></p>
@@ -425,7 +390,6 @@
           </div>
         </section>
       </div>
-
       <!-- ================= Sidebar: grade table ================= -->
       <aside class="sidebar">
         <section class="card" aria-labelledby="tableTitle">
@@ -441,7 +405,6 @@
           </div>
           <p class="muted tiny">Les plages de points varient selon les universités. Vérifiez toujours le règlement de notation de votre université.</p>
         </section>
-
         <section class="card tips">
           <h2 class="side-title">La VTU en bref</h2>
           <ul>
@@ -452,14 +415,11 @@
         </section>
       </aside>
     </div>
-
     <article class="guide" id="guide">
-
       <section id="scheme">
         <h2>Dans quel schéma VTU êtes-vous ?</h2>
         <p>La VTU met à jour ses règlements de temps en temps. Le règlement 2022 s’applique aux étudiants admis à partir de l’année universitaire 2022-23, tandis que celui de 2021 est entré en vigueur en 2021-22. Choisissez votre schéma en haut du calculateur, car les lettres des notes et la formule du CGPA en pourcentage diffèrent.</p>
       </section>
-
       <section id="grade-points">
         <h2>Système de notation VTU : schéma 2022</h2>
         <p>La VTU utilise une notation absolue. Vos points de CIE (évaluation interne continue) et de SEE (examen de fin de semestre) sont additionnés et convertis en pourcentage, et ce pourcentage détermine votre note (clause 22OB 6.1).</p>
@@ -494,7 +454,6 @@
           </table>
         </div>
       </section>
-
       <section id="example">
         <h2>Comment la VTU calcule le SGPA et le CGPA</h2>
         <p class="formula-block">SGPA = Σ (Ci × Gi) ÷ Σ Ci &nbsp;&nbsp; CGPA = Σ (Ci × Si) ÷ Σ Ci</p>
@@ -514,7 +473,6 @@
         </div>
         <p class="formula-block">SGPA = 123 ÷ 15 = 8.20</p>
       </section>
-
       <section id="percentage">
         <h2>CGPA VTU en pourcentage</h2>
         <p><strong>Schéma 2022 :</strong> Pourcentage = CGPA × 10, donc un CGPA de 8.20 donne <strong>82 %</strong> (clause 22OB 6.7). Le règlement précise que cette formule peut servir pour l’emploi et la poursuite d’études.</p>
@@ -527,7 +485,6 @@
           <li><strong>Pass Class :</strong> de 40 % à 50 %, soit un CGPA de 4.00 à 4.99</li>
         </ul>
       </section>
-
       <section id="passing">
         <h2>Notes de passage à la VTU (schéma 2022)</h2>
         <ul>
@@ -537,10 +494,8 @@
           <li>Pour réussir l’ensemble du programme, il faut un P ou mieux dans chaque cours inscrit.</li>
         </ul>
       </section>
-
       <section id="faq" class="faq">
         <h2>FAQ du calculateur de CGPA de la VTU</h2>
-
         <details>
           <summary><h3>Comment convertir le CGPA de la VTU en pourcentage ?</h3></summary>
           <p>Pour le schéma 2022, multipliez votre CGPA par 10 : 8.20 donne 82 %. Pour le schéma 2021 et l’ancien schéma CBCS 2015, utilisez (CGPA − 0.75) × 10 : 8.20 donne 74.5 %.</p>
@@ -566,7 +521,6 @@
           <p>Multipliez le SGPA de chaque semestre par son total de crédits, additionnez les résultats et divisez par le total des crédits de tous les semestres. Le SGPA et le CGPA sont arrondis à 2 décimales.</p>
         </details>
       </section>
-
       <section id="sources">
         <h2>Sources</h2>
         <ul class="source-note">
@@ -577,7 +531,6 @@
         <p class="source-note">Dernière vérification : 18 octobre 2026. Les règles universitaires peuvent changer : confirmez toujours vos résultats avec les règles officielles les plus récentes de votre université. Voir nos <a href="terms.html">Conditions d’utilisation</a>.</p>
       </section>
     </article>
-
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">Autres calculateurs de CGPA et de GPA</h2>
       <div class="uni-grid">
@@ -600,7 +553,6 @@
     </section>
     <p class="back-top"><a href="#calculator">↑ Retour au calculateur</a></p>
   </main>
-
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -617,9 +569,7 @@
       </nav>
     </div>
   </footer>
-
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-vtu',
     defaultScale: '2022',

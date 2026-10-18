@@ -23,13 +23,11 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/">
-  
   <!-- Icons -->
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
-
   <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
@@ -42,14 +40,12 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="CGPA కాలిక్యులేటర్: 4.00కి 3.37 CGPA చూపించే ఫలిత కార్డ్, 4.0, 5.0, 10-పాయింట్ స్కేల్ ఎంపికలతో">
-
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="CGPA కాలిక్యులేటర్ – GPA, CGPA &amp; శాతం">
   <meta name="twitter:description" content="కొన్ని సెకన్లలో మీ సెమిస్టర్ GPA, మొత్తం CGPA, లక్ష్య CGPA, శాతం లెక్కించండి. ఉచితం, ప్రైవేట్, మొబైల్‌కి అనుకూలం.">
   <meta name="twitter:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
   <meta name="twitter:image:alt" content="CGPA కాలిక్యులేటర్: 4.00కి 3.37 CGPA చూపించే ఫలిత కార్డ్, 4.0, 5.0, 10-పాయింట్ స్కేల్ ఎంపికలతో">
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -180,7 +176,6 @@
   </script>
 </head>
 <body>
-
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -224,14 +219,11 @@
       </div>
     </div>
   </header>
-
   <main class="container">
-
     <section class="hero">
       <h1>CGPA కాలిక్యులేటర్: మీ GPA, CGPA &amp; శాతం లెక్కించండి</h1>
       <p>వేగంగా, ఉచితంగా, ప్రైవేట్‌గా. లెక్కలన్నీ ఇక్కడే మీ పరికరంలో జరుగుతాయి. <a href="#guide" class="hero-link">CGPA గురించి కొత్తా? గైడ్ చదవండి ↓</a></p>
     </section>
-
     <!-- ================= Grading scale selector ================= -->
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
@@ -246,19 +238,15 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">అన్నీ రీసెట్ చేయండి</button>
     </section>
     <p class="print-only" id="printDate"></p>
-
     <div class="layout">
-
       <!-- ================= Calculators ================= -->
       <div class="main-col">
-
         <div class="tabs" role="tablist" aria-label="కాలిక్యులేటర్లు">
           <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">GPA <small>ఒక సెమిస్టర్</small></button>
           <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>అన్ని సెమిస్టర్లు</small></button>
           <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">లక్ష్యం <small>ముందుగా ప్లాన్</small></button>
           <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">శాతం <small>కన్వర్టర్</small></button>
         </div>
-
         <!-- ---------- TAB 1: GPA ---------- -->
         <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
           <div class="panel-head">
@@ -275,17 +263,14 @@
             </div>
 <!-- /mode-switch -->
           </div>
-
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>సబ్జెక్టు (ఐచ్ఛికం)</span><span>క్రెడిట్లు</span><span id="gradeHead">గ్రేడ్</span><span></span>
           </div>
           <div id="subjectList" class="row-list mode-grade"></div>
-
           <button type="button" id="addSubject" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             సబ్జెక్టు జోడించండి
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">మీ సెమిస్టర్ GPA</div>
             <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
@@ -294,21 +279,18 @@
             <div class="result-sub" id="gpaSub">మీ GPA చూడటానికి సబ్జెక్టులను జోడించండి.</div>
             <div class="result-note" id="gpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToCgpa" class="btn btn-soft">ఈ GPA‌ని నా CGPAకి జోడించండి →</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="gpa">ఫలితాన్ని కాపీ చేయండి</button>
             <button type="button" class="btn btn-outline js-print" title="PDF డౌన్‌లోడ్ చేయడానికి ప్రింట్ విండోలో “Save as PDF” ఎంచుకోండి">ప్రింట్ / PDF</button>
             <button type="button" id="resetGpa" class="btn btn-quiet">క్లియర్</button>
           </div>
-
           <details class="howto">
             <summary>GPA ఎలా లెక్కిస్తారు?</summary>
             <p class="formula-line">GPA = (Σ క్రెడిట్లు × గ్రేడ్ పాయింట్లు) ÷ (Σ క్రెడిట్లు)</p>
             <p class="muted small">ఉదాహరణ: గణితం 3 క్రెడిట్లు, 4.00 గ్రేడ్ పాయింట్లు; ఇంగ్లీష్ 2 క్రెడిట్లు, 3.00 → (3×4 + 2×3) ÷ (3+2) = 18 ÷ 5 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 2: CGPA ---------- -->
         <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
           <div class="panel-head">
@@ -317,17 +299,14 @@
               <p class="muted small">ప్రతి సెమిస్టర్ GPA (SGPA), దాని మొత్తం క్రెడిట్లు జోడించండి.</p>
             </div>
           </div>
-
           <div class="rows-head semester-cols" aria-hidden="true">
             <span>సెమిస్టర్</span><span>GPA / SGPA</span><span>క్రెడిట్లు</span><span></span>
           </div>
           <div id="semesterList" class="row-list"></div>
-
           <button type="button" id="addSemester" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             సెమిస్టర్ జోడించండి
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">మీ CGPA</div>
             <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
@@ -336,21 +315,18 @@
             <div class="result-sub" id="cgpaSub">మీ CGPA చూడటానికి సెమిస్టర్లను జోడించండి.</div>
             <div class="result-note" id="cgpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToPct" class="btn btn-soft">ఈ CGPA‌ని %కి మార్చండి →</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">ఫలితాన్ని కాపీ చేయండి</button>
             <button type="button" class="btn btn-outline js-print" title="PDF డౌన్‌లోడ్ చేయడానికి ప్రింట్ విండోలో “Save as PDF” ఎంచుకోండి">ప్రింట్ / PDF</button>
             <button type="button" id="resetCgpa" class="btn btn-quiet">క్లియర్</button>
           </div>
-
           <details class="howto">
             <summary>CGPA ఎలా లెక్కిస్తారు?</summary>
             <p class="formula-line">CGPA = (Σ సెమిస్టర్ GPA × సెమిస్టర్ క్రెడిట్లు) ÷ (మొత్తం క్రెడిట్లు)</p>
             <p class="muted small">ఎక్కువ క్రెడిట్లు ఉన్న సెమిస్టర్‌లకు ఎక్కువ బరువు ఉంటుంది. ఉదాహరణ: 18 క్రెడిట్లతో 3.50, 15 క్రెడిట్లతో 3.00 → (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 3: Target CGPA ---------- -->
         <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
           <div class="panel-head">
@@ -359,7 +335,6 @@
               <p class="muted small">మీ లక్ష్యం చేరుకోవడానికి రాబోయే సెమిస్టర్‌లలో ఎంత GPA కావాలో తెలుసుకోండి.</p>
             </div>
           </div>
-
           <div class="target-grid">
             <div class="field">
               <label class="field-label" for="tCurrent">ప్రస్తుత CGPA</label>
@@ -382,9 +357,7 @@
               <p class="row-msg" id="tLeftMsg"></p>
             </div>
           </div>
-
           <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">నా CGPA ట్యాబ్ నుంచి నింపండి</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">ప్రతి సెమిస్టర్‌లో కావలసిన GPA</div>
             <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
@@ -393,20 +366,17 @@
             <div class="result-sub" id="tgtSub">కావలసిన GPA చూడటానికి పై నాలుగు బాక్సులను నింపండి.</div>
             <div class="result-note" id="tgtNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="target">ఫలితాన్ని కాపీ చేయండి</button>
             <button type="button" class="btn btn-outline js-print" title="PDF డౌన్‌లోడ్ చేయడానికి ప్రింట్ విండోలో “Save as PDF” ఎంచుకోండి">ప్రింట్ / PDF</button>
             <button type="button" id="resetTarget" class="btn btn-quiet">క్లియర్</button>
           </div>
-
           <details class="howto">
             <summary>ఇది ఎలా లెక్కిస్తారు?</summary>
             <p class="formula-line">కావలసిన GPA = (లక్ష్యం × మొత్తం క్రెడిట్లు − ప్రస్తుతం × పూర్తయిన క్రెడిట్లు) ÷ మిగిలిన క్రెడిట్లు</p>
             <p class="muted small">ఉదాహరణ: 60 క్రెడిట్ల తర్వాత ప్రస్తుతం 3.00, లక్ష్యం 3.30, మిగిలినవి 60 క్రెడిట్లు → (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 4: Percentage ---------- -->
         <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
           <div class="panel-head">
@@ -415,7 +385,6 @@
               <p class="muted small">మీ CGPA టైప్ చేసి దాని స్కేల్‌ను ఎంచుకోండి.</p>
             </div>
           </div>
-
           <div class="conv-grid">
             <div class="field">
               <label class="field-label always" for="convInput">మీ CGPA</label>
@@ -436,9 +405,7 @@
             </div>
 <!-- /conv-scale -->
           </div>
-
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">CGPA ట్యాబ్ నుంచి నా CGPA వాడండి</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">శాతం</div>
             <div class="result-value"><span id="pctValue">—</span></div>
@@ -446,12 +413,10 @@
             <div class="result-cheer" id="pctCheer"></div>
             <div class="result-sub" id="pctSub">శాతం చూడటానికి మీ CGPA నమోదు చేయండి.</div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="pct">ఫలితాన్ని కాపీ చేయండి</button>
             <button type="button" class="btn btn-outline js-print" title="PDF డౌన్‌లోడ్ చేయడానికి ప్రింట్ విండోలో “Save as PDF” ఎంచుకోండి">ప్రింట్ / PDF</button>
           </div>
-
           <div class="formula">
             <div class="formula-title">ఉపయోగించిన సూత్రం</div>
             <p class="formula-line" id="formulaMain"></p>
@@ -460,7 +425,6 @@
           </div>
         </section>
       </div>
-
       <!-- ================= Sidebar: grade table ================= -->
       <aside class="sidebar">
         <section class="card" aria-labelledby="tableTitle">
@@ -476,7 +440,6 @@
           </div>
           <p class="muted tiny">మార్కుల పరిధులు విశ్వవిద్యాలయాన్ని బట్టి మారుతాయి. ఎప్పుడూ మీ విశ్వవిద్యాలయ గ్రేడింగ్ విధానాన్ని తనిఖీ చేయండి.</p>
         </section>
-
 <!-- side-tips -->
         <section class="card tips">
           <h2 class="side-title">తెలుసుకోవలసినవి</h2>
@@ -490,7 +453,6 @@
 <!-- /side-tips -->
       </aside>
     </div>
-
     <!-- ================= University calculators ================= -->
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">విశ్వవిద్యాలయాల వారీ CGPA &amp; GPA కాలిక్యులేటర్లు</h2>
@@ -513,10 +475,8 @@
         </a>
       </div>
     </section>
-
     <!-- ================= Guide (helpful content) ================= -->
     <article class="guide" id="guide">
-
       <nav class="card toc" aria-label="ఈ పేజీలో">
         <p class="toc-title">ఈ పేజీలో</p>
         <ol>
@@ -529,7 +489,6 @@
           <li><a href="#faq">ప్రశ్నలు &amp; జవాబులు</a></li>
         </ol>
       </nav>
-
       <!-- What is CGPA -->
       <section id="what-is-cgpa">
         <h2>CGPA అంటే ఏమిటి, ఇది GPA, SGPAల నుంచి ఎలా భిన్నం?</h2>
@@ -548,7 +507,6 @@
         <p>సంక్షిప్తంగా, SGPA, సెమిస్టర్ GPA ఒక సెమిస్టర్ గురించి చెబుతాయి, CGPA మీ మొత్తం ప్రయాణం గురించి చెబుతుంది. అమెరికాలో కేవలం "GPA" అంటే చాలాసార్లు సంచిత సంఖ్య అని అర్థం, అందుకే ఈ పదాలు కలగాపులగం అవుతాయి. ఏదైనా ఫారం మొత్తం డిగ్రీ గురించి అడిగితే, దాదాపు ఎప్పుడూ సంచిత సంఖ్యే కావాలి.</p>
         <p>మూడింటికీ <strong>క్రెడిట్ల</strong> ఆధారంగా బరువు ఇస్తారు. 4 క్రెడిట్ల కోర్సు 1 క్రెడిట్ ల్యాబ్ కంటే మీ సగటుపై ఎక్కువ ప్రభావం చూపుతుంది, ఎందుకంటే అందులో ఎక్కువ బోధన, ఎక్కువ శ్రమ ఉంటుంది.</p>
       </section>
-
       <!-- How to calculate -->
       <section id="how-to-calculate">
         <h2>దశల వారీగా CGPA ఎలా లెక్కించాలి</h2>
@@ -560,7 +518,6 @@
           <li><strong>సెమిస్టర్‌లను కలపండి.</strong> ప్రతి సెమిస్టర్ GPA‌ని ఆ సెమిస్టర్ క్రెడిట్లతో గుణించి, ఫలితాలను కూడి, అన్ని సెమిస్టర్‌ల మొత్తం క్రెడిట్లతో భాగించండి. జవాబే మీ CGPA.</li>
         </ol>
         <p class="formula-block">CGPA = Σ (సెమిస్టర్ GPA × సెమిస్టర్ క్రెడిట్లు) ÷ Σ (సెమిస్టర్ క్రెడిట్లు)</p>
-
         <h3>సాధించిన ఉదాహరణ</h3>
         <p>ఆయేషా మొదటి సంవత్సరం విద్యార్థిని, ఆమె విశ్వవిద్యాలయం 4.0 స్కేల్ వాడుతుంది. ఆమె మొదటి సెమిస్టర్ ఇలా ఉంది:</p>
         <div class="table-scroll">
@@ -581,7 +538,6 @@
         <p class="formula-block">CGPA = (53.33 + 54.40) ÷ (15 + 17) = 107.73 ÷ 32 = 3.37</p>
         <p>కాబట్టి ఆయేషా CGPA <strong>3.37</strong>. ఆమె రెండు సెమిస్టర్‌ల సాధారణ సగటు, (3.56 + 3.20) ÷ 2 = 3.38, కొద్దిగా భిన్నమైన జవాబు ఇస్తుంది. ఇక్కడ తేడా చిన్నదే, కానీ సెమిస్టర్‌ల క్రెడిట్లు బాగా భిన్నంగా ఉంటే అది పెరుగుతుంది, కాబట్టి ఎప్పుడూ క్రెడిట్ల ఆధారంగా బరువు ఇవ్వండి.</p>
       </section>
-
       <!-- How to use -->
       <section id="how-to-use">
         <h2>ఈ కాలిక్యులేటర్ ఎలా వాడాలి</h2>
@@ -595,12 +551,10 @@
         </ol>
         <p>మీ వివరాలు మీ సొంత బ్రౌజర్‌లో సేవ్ అవుతాయి, కాబట్టి రిఫ్రెష్ తర్వాత కూడా ఉంటాయి, ఏదీ సర్వర్‌కు పంపబడదు. మీ సంఖ్యలను షేర్ చేయడానికి <em>ఫలితాన్ని కాపీ చేయండి</em>, రికార్డు కోసం <em>ప్రింట్ / PDF</em> వాడండి.</p>
       </section>
-
       <!-- CGPA to percentage -->
       <section id="cgpa-to-percentage">
         <h2>CGPA నుంచి శాతానికి మార్పిడి</h2>
         <p>చాలా ఉద్యోగ దరఖాస్తులు, ప్రవేశ ఫారాలు, వీసా దరఖాస్తులు CGPA బదులు శాతం అడుగుతాయి. ప్రపంచమంతటికీ ఒకే సూత్రం లేదు, కాబట్టి సరైన పద్ధతి మీ స్కేల్, విశ్వవిద్యాలయంపై ఆధారపడి ఉంటుంది. ఎక్కువగా వాడే పద్ధతులు ఇవి.</p>
-
         <h3>4.0 స్కేల్</h3>
         <p class="formula-block">శాతం = (CGPA ÷ 4) × 100</p>
         <p>గరిష్ఠంలో మీరు ఎంత భాగం సాధించారో ఇది చూపిస్తుంది. ఉదాహరణకు:</p>
@@ -610,7 +564,6 @@
           <li>CGPA 2.80 → (2.80 ÷ 4) × 100 = <strong>70%</strong></li>
         </ul>
         <p>పాకిస్తాన్‌లోని, ఇతర చోట్ల ఉన్న కొన్ని విశ్వవిద్యాలయాలు తమ సొంత మార్పిడి నియమాన్ని ట్రాన్స్‌క్రిప్ట్‌పై లేదా ప్రాస్పెక్టస్‌లో ముద్రిస్తాయి. మీ విశ్వవిద్యాలయానికి అలాంటిది ఉంటే అదే వాడండి, ఎందుకంటే యజమానులు, ప్రవేశ కార్యాలయాలు ఆ నియమాన్నే తనిఖీ చేస్తారు.</p>
-
         <h3>10-పాయింట్ స్కేల్</h3>
         <p class="formula-block">శాతం = CGPA × 9.5</p>
         <p>ఈ సూత్రాన్ని CBSE ప్రవేశపెట్టింది, చాలా భారతీయ విశ్వవిద్యాలయాలు దీన్ని అనుసరిస్తాయి. గత పరీక్షల్లో విద్యార్థులు నిజంగా సాధించిన మార్కులను గ్రేడ్ పాయింట్లతో పోల్చి CBSE 9.5 గుణకాన్ని నిర్ణయించింది. ఉదాహరణకు:</p>
@@ -620,7 +573,6 @@
           <li>CGPA 7.5 → 7.5 × 9.5 = <strong>71.25%</strong></li>
         </ul>
         <p>అన్ని విశ్వవిద్యాలయాలూ 9.5 వాడవు. ఉదాహరణకు VTU (CGPA − 0.75) × 10 వాడుతుంది, దీంతో 8.2 అంటే 74.5% అవుతుంది, కొన్ని విశ్వవిద్యాలయాలు నేరుగా 10తో గుణిస్తాయి. మీ విశ్వవిద్యాలయం అధికారిక సూత్రాన్ని ప్రకటించి ఉంటే అదే వాడండి.</p>
-
         <h3>త్వరిత మార్పిడి పట్టిక</h3>
         <div class="table-scroll">
           <table class="data-table">
@@ -638,12 +590,10 @@
         </div>
         <p>5.0 స్కేల్‌లో సులభమైన పద్ధతి (CGPA ÷ 5) × 100. ఆ స్కేల్ వాడే చాలా విశ్వవిద్యాలయాలు First Class లేదా Second Class Upper లాంటి డిగ్రీ క్లాసులను కూడా ప్రకటిస్తాయి, కాబట్టి మీ యజమానికి ఏది కావాలో తనిఖీ చేయండి.</p>
       </section>
-
       <!-- Grade tables -->
       <section id="grade-tables">
         <h2>4.0, 5.0, 10-పాయింట్ స్కేల్‌ల గ్రేడ్ పాయింట్ పట్టికలు</h2>
         <p>ఈ కాలిక్యులేటర్ ఈ పట్టికలనే వాడుతుంది. ఇవి ఎక్కువగా వాడే రూపాలు, కానీ మార్కుల పరిధులు విశ్వవిద్యాలయాన్ని బట్టి మారతాయి, కాబట్టి చివరి నిర్ణయం ఎప్పుడూ మీ విశ్వవిద్యాలయ హ్యాండ్‌బుక్‌దే.</p>
-
         <h3>4.0 స్కేల్ (పాకిస్తాన్ / అమెరికా)</h3>
         <div class="table-scroll">
           <table class="data-table">
@@ -664,7 +614,6 @@
           </table>
         </div>
         <p>అమెరికాలో టీచర్లు తరచుగా స్థిరమైన మార్కుల పరిధులకు బదులు నేరుగా అక్షర గ్రేడ్‌లు ఇస్తారు, కానీ ప్రతి అక్షరానికి గ్రేడ్ పాయింట్లు అవే.</p>
-
         <h3>5.0 స్కేల్</h3>
         <div class="table-scroll">
           <table class="data-table">
@@ -680,7 +629,6 @@
           </table>
         </div>
         <p>ఈ స్కేల్‌ను నైజీరియా విశ్వవిద్యాలయాల్లో, మరికొన్ని దేశాల్లో విస్తృతంగా వాడతారు.</p>
-
         <h3>10-పాయింట్ స్కేల్ (భారతదేశం)</h3>
         <div class="table-scroll">
           <table class="data-table">
@@ -699,7 +647,6 @@
         </div>
         <p>ఈ అక్షర గ్రేడ్‌లు UGC ఛాయిస్ బేస్డ్ క్రెడిట్ సిస్టమ్‌ను అనుసరిస్తాయి. కొన్ని విశ్వవిద్యాలయాలు ప్రతి గ్రేడ్‌కు కొద్దిగా భిన్నమైన మార్కుల పరిధులు వాడతాయి.</p>
       </section>
-
       <!-- Tips -->
       <section id="tips">
         <h2>CGPA పెంచుకునే చిట్కాలు</h2>
@@ -716,11 +663,9 @@
         </ul>
         <p>మీ మొత్తం క్రెడిట్లు పెరిగే కొద్దీ, ప్రతి కొత్త సెమిస్టర్ CGPAపై చూపే ప్రభావం తగ్గుతుంది. అంటే చివరి సంవత్సరంలో కంటే మొదట్లోనే మెరుగుపడటం చాలా సులభం, కాబట్టి మొదలుపెట్టడానికి ఉత్తమ సమయం ఈ సెమిస్టరే.</p>
       </section>
-
       <!-- FAQ (keep in sync with the FAQPage data in the <head>) -->
       <section id="faq" class="faq">
         <h2>తరచుగా అడిగే ప్రశ్నలు</h2>
-
         <details>
           <summary><h3>CGPA, GPA ఒకటేనా?</h3></summary>
           <p>పూర్తిగా కాదు. GPA సాధారణంగా ఒక సెమిస్టర్ సగటు, CGPA మీరు పూర్తి చేసిన అన్ని సెమిస్టర్‌ల సగటు. అయితే అమెరికాలో ట్రాన్స్‌క్రిప్ట్‌పై "GPA" అంటే తరచుగా సంచిత సంఖ్య. ఏదైనా ఫారం మొత్తం డిగ్రీ GPA అడిగితే మీ CGPA రాయండి.</p>
@@ -762,11 +707,9 @@
           <p>మీ వివరాలు మీ సొంత బ్రౌజర్‌లో మాత్రమే సేవ్ అవుతాయి, కాబట్టి పేజీ రిఫ్రెష్ చేసినప్పుడు పోవు. ఏదీ అప్‌లోడ్ లేదా షేర్ కాదు. "అన్నీ రీసెట్ చేయండి" బటన్‌తో మీరు ఎప్పుడైనా అన్నీ తుడిచేయవచ్చు.</p>
         </details>
       </section>
-
       <p class="back-top"><a href="#calculator">↑ కాలిక్యులేటర్‌కి తిరిగి వెళ్లండి</a></p>
     </article>
   </main>
-
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -783,9 +726,7 @@
       </nav>
     </div>
   </footer>
-
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
   <script src="../i18n/te.js" data-i18n=""></script>
   <script src="../site.js"></script>
   <script src="../script.js"></script>

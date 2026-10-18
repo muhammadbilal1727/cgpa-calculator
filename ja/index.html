@@ -23,13 +23,11 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/">
-  
   <!-- Icons -->
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
-
   <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
@@ -42,14 +40,12 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="CGPA計算機：CGPA 3.37（4.00満点）を表示する結果カードと、4.0・5.0・10点スケールの選択肢">
-
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="CGPA計算機 – GPA・CGPA・パーセント">
   <meta name="twitter:description" content="学期GPA、累積CGPA、目標CGPA、パーセントを数秒で計算。無料・プライベートでスマホにも最適です。">
   <meta name="twitter:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
   <meta name="twitter:image:alt" content="CGPA計算機：CGPA 3.37（4.00満点）を表示する結果カードと、4.0・5.0・10点スケールの選択肢">
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -180,7 +176,6 @@
   </script>
 </head>
 <body>
-
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -224,14 +219,11 @@
       </div>
     </div>
   </header>
-
   <main class="container">
-
     <section class="hero">
       <h1>CGPA計算機：GPA・CGPA・パーセントを計算しよう</h1>
       <p>速くて無料、しかもプライベート。計算はすべてお使いの端末の中で行われます。<a href="#guide" class="hero-link">CGPAが初めての方はガイドへ ↓</a></p>
     </section>
-
     <!-- ================= Grading scale selector ================= -->
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
@@ -246,19 +238,15 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">すべてリセット</button>
     </section>
     <p class="print-only" id="printDate"></p>
-
     <div class="layout">
-
       <!-- ================= Calculators ================= -->
       <div class="main-col">
-
         <div class="tabs" role="tablist" aria-label="計算機">
           <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">GPA <small>1学期</small></button>
           <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>全学期</small></button>
           <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">目標 <small>計画を立てる</small></button>
           <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">パーセント <small>換算</small></button>
         </div>
-
         <!-- ---------- TAB 1: GPA ---------- -->
         <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
           <div class="panel-head">
@@ -275,17 +263,14 @@
             </div>
 <!-- /mode-switch -->
           </div>
-
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>科目（任意）</span><span>単位</span><span id="gradeHead">評価</span><span></span>
           </div>
           <div id="subjectList" class="row-list mode-grade"></div>
-
           <button type="button" id="addSubject" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             科目を追加
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">あなたの学期GPA</div>
             <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
@@ -294,21 +279,18 @@
             <div class="result-sub" id="gpaSub">科目を追加するとGPAが表示されます。</div>
             <div class="result-note" id="gpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToCgpa" class="btn btn-soft">このGPAをCGPAに追加 →</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="gpa">結果をコピー</button>
             <button type="button" class="btn btn-outline js-print" title="印刷画面で「PDFに保存」を選ぶとPDFをダウンロードできます">印刷 / PDF</button>
             <button type="button" id="resetGpa" class="btn btn-quiet">クリア</button>
           </div>
-
           <details class="howto">
             <summary>GPAはどう計算されるの？</summary>
             <p class="formula-line">GPA =（Σ 単位数 × GP）÷（Σ 単位数）</p>
             <p class="muted small">例：数学3単位でGP 4.00、英語2単位でGP 3.00 → (3×4 + 2×3) ÷ (3+2) = 18 ÷ 5 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 2: CGPA ---------- -->
         <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
           <div class="panel-head">
@@ -317,17 +299,14 @@
               <p class="muted small">各学期のGPA（SGPA）とその学期の合計単位数を入力してください。</p>
             </div>
           </div>
-
           <div class="rows-head semester-cols" aria-hidden="true">
             <span>学期</span><span>GPA / SGPA</span><span>単位数</span><span></span>
           </div>
           <div id="semesterList" class="row-list"></div>
-
           <button type="button" id="addSemester" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             学期を追加
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">あなたのCGPA</div>
             <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
@@ -336,21 +315,18 @@
             <div class="result-sub" id="cgpaSub">学期を追加するとCGPAが表示されます。</div>
             <div class="result-note" id="cgpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToPct" class="btn btn-soft">このCGPAを%に換算 →</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">結果をコピー</button>
             <button type="button" class="btn btn-outline js-print" title="印刷画面で「PDFに保存」を選ぶとPDFをダウンロードできます">印刷 / PDF</button>
             <button type="button" id="resetCgpa" class="btn btn-quiet">クリア</button>
           </div>
-
           <details class="howto">
             <summary>CGPAはどう計算されるの？</summary>
             <p class="formula-line">CGPA =（Σ 学期GPA × 学期の単位数）÷（総単位数）</p>
             <p class="muted small">単位数の多い学期ほど重みが大きくなります。例：18単位で3.50、15単位で3.00 → (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 3: Target CGPA ---------- -->
         <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
           <div class="panel-head">
@@ -359,7 +335,6 @@
               <p class="muted small">目標を達成するために、これからの学期でどれだけのGPAが必要かを確認できます。</p>
             </div>
           </div>
-
           <div class="target-grid">
             <div class="field">
               <label class="field-label" for="tCurrent">現在のCGPA</label>
@@ -382,9 +357,7 @@
               <p class="row-msg" id="tLeftMsg"></p>
             </div>
           </div>
-
           <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">CGPAタブから入力</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">各学期に必要なGPA</div>
             <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
@@ -393,20 +366,17 @@
             <div class="result-sub" id="tgtSub">上の4つの欄を入力すると、必要なGPAが表示されます。</div>
             <div class="result-note" id="tgtNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="target">結果をコピー</button>
             <button type="button" class="btn btn-outline js-print" title="印刷画面で「PDFに保存」を選ぶとPDFをダウンロードできます">印刷 / PDF</button>
             <button type="button" id="resetTarget" class="btn btn-quiet">クリア</button>
           </div>
-
           <details class="howto">
             <summary>どう計算しているの？</summary>
             <p class="formula-line">必要なGPA =（目標 × 総単位数 − 現在 × 修得済み単位）÷ 残りの単位</p>
             <p class="muted small">例：60単位修得で現在3.00、目標3.30、残り60単位 → (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 4: Percentage ---------- -->
         <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
           <div class="panel-head">
@@ -415,7 +385,6 @@
               <p class="muted small">CGPAを入力し、スケールを選んでください。</p>
             </div>
           </div>
-
           <div class="conv-grid">
             <div class="field">
               <label class="field-label always" for="convInput">あなたのCGPA</label>
@@ -436,9 +405,7 @@
             </div>
 <!-- /conv-scale -->
           </div>
-
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">CGPAタブの値を使う</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">パーセント</div>
             <div class="result-value"><span id="pctValue">—</span></div>
@@ -446,12 +413,10 @@
             <div class="result-cheer" id="pctCheer"></div>
             <div class="result-sub" id="pctSub">CGPAを入力するとパーセントが表示されます。</div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="pct">結果をコピー</button>
             <button type="button" class="btn btn-outline js-print" title="印刷画面で「PDFに保存」を選ぶとPDFをダウンロードできます">印刷 / PDF</button>
           </div>
-
           <div class="formula">
             <div class="formula-title">使用した計算式</div>
             <p class="formula-line" id="formulaMain"></p>
@@ -460,7 +425,6 @@
           </div>
         </section>
       </div>
-
       <!-- ================= Sidebar: grade table ================= -->
       <aside class="sidebar">
         <section class="card" aria-labelledby="tableTitle">
@@ -476,7 +440,6 @@
           </div>
           <p class="muted tiny">点数の範囲は大学によって異なります。必ずご自分の大学の評価規程を確認してください。</p>
         </section>
-
 <!-- side-tips -->
         <section class="card tips">
           <h2 class="side-title">知っておくと便利</h2>
@@ -490,7 +453,6 @@
 <!-- /side-tips -->
       </aside>
     </div>
-
     <!-- ================= University calculators ================= -->
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">大学別CGPA・GPA計算機</h2>
@@ -513,10 +475,8 @@
         </a>
       </div>
     </section>
-
     <!-- ================= Guide (helpful content) ================= -->
     <article class="guide" id="guide">
-
       <nav class="card toc" aria-label="このページの内容">
         <p class="toc-title">このページの内容</p>
         <ol>
@@ -529,7 +489,6 @@
           <li><a href="#faq">よくある質問</a></li>
         </ol>
       </nav>
-
       <!-- What is CGPA -->
       <section id="what-is-cgpa">
         <h2>CGPAとは？GPAやSGPAとの違いは？</h2>
@@ -548,7 +507,6 @@
         <p>まとめると、SGPAと学期GPAは1学期分、CGPAは在学期間全体を表します。米国では「GPA」だけで累積値を指すことが多いため、言葉が混同されがちです。在学期間全体について聞かれた場合は、ほぼ必ず累積値が求められています。</p>
         <p>どれも<strong>単位数</strong>で重み付けされます。4単位の科目は1単位の実験よりも平均への影響が大きくなります。それだけ授業時間も学習量も多いからです。</p>
       </section>
-
       <!-- How to calculate -->
       <section id="how-to-calculate">
         <h2>CGPAをステップごとに計算する</h2>
@@ -560,7 +518,6 @@
           <li><strong>学期をまとめます。</strong>各学期のGPAにその学期の単位数を掛けて合計し、全学期の総単位数で割ります。その答えがCGPAです。</li>
         </ol>
         <p class="formula-block">CGPA = Σ（学期GPA × 学期の単位数）÷ Σ（学期の単位数）</p>
-
         <h3>計算例</h3>
         <p>Ayeshaさんは4.0スケールを採用する大学の1年生です。最初の学期の成績は次のとおりです：</p>
         <div class="table-scroll">
@@ -581,7 +538,6 @@
         <p class="formula-block">CGPA = (53.33 + 54.40) ÷ (15 + 17) = 107.73 ÷ 32 = 3.37</p>
         <p>AyeshaさんのCGPAは<strong>3.37</strong>です。2学期の単純平均 (3.56 + 3.20) ÷ 2 = 3.38 とは少し異なります。ここでは差はわずかですが、学期ごとの単位数が大きく違うと差は広がるので、必ず単位数で重み付けしましょう。</p>
       </section>
-
       <!-- How to use -->
       <section id="how-to-use">
         <h2>この計算機の使い方</h2>
@@ -595,12 +551,10 @@
         </ol>
         <p>入力内容はご自身のブラウザに保存されるので再読み込みしても残り、サーバーには一切送信されません。<em>結果をコピー</em>で数字を共有したり、<em>印刷 / PDF</em>で記録として保存したりできます。</p>
       </section>
-
       <!-- CGPA to percentage -->
       <section id="cgpa-to-percentage">
         <h2>CGPAからパーセントへの換算</h2>
         <p>就職の応募書類や入学願書、ビザ申請などでは、CGPAではなくパーセントを求められることがよくあります。世界共通の公式はないので、正しい方法はスケールと大学によって決まります。よく使われる方法は次のとおりです。</p>
-
         <h3>4.0スケール</h3>
         <p class="formula-block">パーセント =（CGPA ÷ 4）× 100</p>
         <p>満点に対してどれだけの割合を取ったかを表します。たとえば：</p>
@@ -610,7 +564,6 @@
           <li>CGPA 2.80 → (2.80 ÷ 4) × 100 = <strong>70%</strong></li>
         </ul>
         <p>パキスタンなどの一部の大学は、独自の換算ルールを成績証明書や要覧に記載しています。ご自分の大学にあればそれを使いましょう。企業や入試担当者が確認するのはそのルールだからです。</p>
-
         <h3>10点スケール</h3>
         <p class="formula-block">パーセント = CGPA × 9.5</p>
         <p>これはCBSEが導入した公式で、インドの多くの大学が採用しています。CBSEは、過去の試験で生徒が実際に取った点数とGPを比較して9.5という係数を決めました。たとえば：</p>
@@ -620,7 +573,6 @@
           <li>CGPA 7.5 → 7.5 × 9.5 = <strong>71.25%</strong></li>
         </ul>
         <p>すべての大学が9.5を使うわけではありません。たとえばVTUは (CGPA − 0.75) × 10 を使い、8.2は74.5%になります。単に10を掛ける大学もあります。大学が公式の計算式を公表している場合は、そちらを使ってください。</p>
-
         <h3>かんたん換算表</h3>
         <div class="table-scroll">
           <table class="data-table">
@@ -638,12 +590,10 @@
         </div>
         <p>5.0スケールの簡単な方法は (CGPA ÷ 5) × 100 です。このスケールの大学の多くは First Class や Second Class Upper などの学位区分も公表しているので、応募先が求めるものを確認しましょう。</p>
       </section>
-
       <!-- Grade tables -->
       <section id="grade-tables">
         <h2>4.0・5.0・10点スケールのGP対応表</h2>
         <p>この計算機で使っている対応表です。最も一般的なものですが、点数の範囲は大学によって異なるため、最終的にはご自分の大学の便覧に従ってください。</p>
-
         <h3>4.0スケール（パキスタン / 米国）</h3>
         <div class="table-scroll">
           <table class="data-table">
@@ -664,7 +614,6 @@
           </table>
         </div>
         <p>米国では、先生が固定の点数範囲を使わずに直接アルファベット評価をつけることも多いですが、各評価のGPは同じです。</p>
-
         <h3>5.0スケール</h3>
         <div class="table-scroll">
           <table class="data-table">
@@ -680,7 +629,6 @@
           </table>
         </div>
         <p>このスケールはナイジェリアの大学や一部の国で広く使われています。</p>
-
         <h3>10点スケール（インド）</h3>
         <div class="table-scroll">
           <table class="data-table">
@@ -699,7 +647,6 @@
         </div>
         <p>これらの評価はUGCの選択型単位制度（CBCS）に基づいています。評価ごとの点数範囲が少し異なる大学もあります。</p>
       </section>
-
       <!-- Tips -->
       <section id="tips">
         <h2>CGPAを上げるコツ</h2>
@@ -716,11 +663,9 @@
         </ul>
         <p>総単位数が増えるほど、新しい学期がCGPAに与える影響は小さくなります。つまり早いうちに改善するほうが最終学年で改善するよりずっと簡単です。始めるなら今学期がベストです。</p>
       </section>
-
       <!-- FAQ (keep in sync with the FAQPage data in the <head>) -->
       <section id="faq" class="faq">
         <h2>よくある質問</h2>
-
         <details>
           <summary><h3>CGPAとGPAは同じもの？</h3></summary>
           <p>厳密には違います。GPAは通常1学期の平均で、CGPAは修了したすべての学期の平均です。ただし米国では、成績証明書の「GPA」が累積値を指すことがよくあります。在学期間全体のGPAを求められたらCGPAを記入しましょう。</p>
@@ -762,11 +707,9 @@
           <p>入力内容はご自身のブラウザにだけ保存されるので、ページを再読み込みしても消えません。アップロードや共有は一切ありません。「すべてリセット」ボタンでいつでもすべて消去できます。</p>
         </details>
       </section>
-
       <p class="back-top"><a href="#calculator">↑ 計算機に戻る</a></p>
     </article>
   </main>
-
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -783,9 +726,7 @@
       </nav>
     </div>
   </footer>
-
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
   <script src="../i18n/ja.js" data-i18n=""></script>
   <script src="../site.js"></script>
   <script src="../script.js"></script>

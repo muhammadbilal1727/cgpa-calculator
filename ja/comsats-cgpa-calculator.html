@@ -24,12 +24,10 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/comsats-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/comsats-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/comsats-cgpa-calculator.html">
-  
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
-
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="ja_JP">
@@ -153,7 +151,6 @@
   </script>
 </head>
 <body>
-
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -197,15 +194,12 @@
       </div>
     </div>
   </header>
-
   <main class="container">
-
     <section class="hero">
       <nav class="breadcrumb" aria-label="パンくずリスト"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">CUI</span></nav>
       <h1>COMSATS CGPA・GPA計算機</h1>
       <p>COMSATS University Islamabadが2021年秋以降の入学者に適用しているHEC評価基準でGPAとCGPAを計算し、COMSATS公式の方法でCGPAをパーセントに換算します。<a href="#guide" class="hero-link">COMSATSの評価のしくみ ↓</a></p>
     </section>
-
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <p id="scaleLabel" class="scale-title">評価制度：COMSATS（2021年秋以降）</p>
@@ -215,19 +209,15 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">すべてリセット</button>
     </section>
     <p class="print-only" id="printDate"></p>
-
     <div class="layout">
-
       <!-- ================= Calculators ================= -->
       <div class="main-col">
-
         <div class="tabs" role="tablist" aria-label="計算機">
           <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">GPA <small>1学期</small></button>
           <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>全学期</small></button>
           <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">目標 <small>計画を立てる</small></button>
           <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">パーセント <small>換算</small></button>
         </div>
-
         <!-- ---------- TAB 1: GPA ---------- -->
         <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
           <div class="panel-head">
@@ -235,19 +225,15 @@
               <h2>学期GPA</h2>
               <p class="muted small">科目ごとに単位数と成績を入力してください。</p>
             </div>
-
           </div>
-
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>科目（任意）</span><span>単位</span><span id="gradeHead">評価</span><span></span>
           </div>
           <div id="subjectList" class="row-list mode-grade"></div>
-
           <button type="button" id="addSubject" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             科目を追加
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">あなたの学期GPA</div>
             <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
@@ -256,21 +242,18 @@
             <div class="result-sub" id="gpaSub">科目を追加するとGPAが表示されます。</div>
             <div class="result-note" id="gpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToCgpa" class="btn btn-soft">このGPAをCGPAに追加 →</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="gpa">結果をコピー</button>
             <button type="button" class="btn btn-outline js-print" title="印刷画面で「PDFに保存」を選ぶとPDFをダウンロードできます">印刷 / PDF</button>
             <button type="button" id="resetGpa" class="btn btn-quiet">クリア</button>
           </div>
-
           <details class="howto">
             <summary>GPAはどう計算されるの？</summary>
             <p class="formula-line">GPA =（Σ 単位数 × GP）÷（Σ 単位数）</p>
             <p class="muted small">例：数学3単位でGP 4.00、英語2単位でGP 3.00 → (3×4 + 2×3) ÷ (3+2) = 18 ÷ 5 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 2: CGPA ---------- -->
         <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
           <div class="panel-head">
@@ -279,17 +262,14 @@
               <p class="muted small">各学期のGPA（SGPA）とその学期の合計単位数を入力してください。</p>
             </div>
           </div>
-
           <div class="rows-head semester-cols" aria-hidden="true">
             <span>学期</span><span>GPA / SGPA</span><span>単位数</span><span></span>
           </div>
           <div id="semesterList" class="row-list"></div>
-
           <button type="button" id="addSemester" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             学期を追加
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">あなたのCGPA</div>
             <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
@@ -298,21 +278,18 @@
             <div class="result-sub" id="cgpaSub">学期を追加するとCGPAが表示されます。</div>
             <div class="result-note" id="cgpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToPct" class="btn btn-soft">このCGPAを%に換算 →</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">結果をコピー</button>
             <button type="button" class="btn btn-outline js-print" title="印刷画面で「PDFに保存」を選ぶとPDFをダウンロードできます">印刷 / PDF</button>
             <button type="button" id="resetCgpa" class="btn btn-quiet">クリア</button>
           </div>
-
           <details class="howto">
             <summary>CGPAはどう計算されるの？</summary>
             <p class="formula-line">CGPA =（Σ 学期GPA × 学期の単位数）÷（総単位数）</p>
             <p class="muted small">単位数の多い学期ほど重みが大きくなります。例：18単位で3.50、15単位で3.00 → (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 3: Target CGPA ---------- -->
         <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
           <div class="panel-head">
@@ -321,7 +298,6 @@
               <p class="muted small">目標を達成するために、これからの学期でどれだけのGPAが必要かを確認できます。</p>
             </div>
           </div>
-
           <div class="target-grid">
             <div class="field">
               <label class="field-label" for="tCurrent">現在のCGPA</label>
@@ -344,9 +320,7 @@
               <p class="row-msg" id="tLeftMsg"></p>
             </div>
           </div>
-
           <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">CGPAタブから入力</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">各学期に必要なGPA</div>
             <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
@@ -355,20 +329,17 @@
             <div class="result-sub" id="tgtSub">上の4つの欄を入力すると、必要なGPAが表示されます。</div>
             <div class="result-note" id="tgtNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="target">結果をコピー</button>
             <button type="button" class="btn btn-outline js-print" title="印刷画面で「PDFに保存」を選ぶとPDFをダウンロードできます">印刷 / PDF</button>
             <button type="button" id="resetTarget" class="btn btn-quiet">クリア</button>
           </div>
-
           <details class="howto">
             <summary>どう計算しているの？</summary>
             <p class="formula-line">必要なGPA =（目標 × 総単位数 − 現在 × 修得済み単位）÷ 残りの単位</p>
             <p class="muted small">例：60単位修得で現在3.00、目標3.30、残り60単位 → (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 4: Percentage ---------- -->
         <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
           <div class="panel-head">
@@ -377,18 +348,14 @@
               <p class="muted small">CGPAを入力し、スケールを選んでください。</p>
             </div>
           </div>
-
           <div class="conv-grid">
             <div class="field">
               <label class="field-label always" for="convInput">あなたのCGPA</label>
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
-
           </div>
-
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">CGPAタブの値を使う</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">パーセント</div>
             <div class="result-value"><span id="pctValue">—</span></div>
@@ -396,12 +363,10 @@
             <div class="result-cheer" id="pctCheer"></div>
             <div class="result-sub" id="pctSub">CGPAを入力するとパーセントが表示されます。</div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="pct">結果をコピー</button>
             <button type="button" class="btn btn-outline js-print" title="印刷画面で「PDFに保存」を選ぶとPDFをダウンロードできます">印刷 / PDF</button>
           </div>
-
           <div class="formula">
             <div class="formula-title">使用した計算式</div>
             <p class="formula-line" id="formulaMain"></p>
@@ -410,7 +375,6 @@
           </div>
         </section>
       </div>
-
       <!-- ================= Sidebar: grade table ================= -->
       <aside class="sidebar">
         <section class="card" aria-labelledby="tableTitle">
@@ -426,7 +390,6 @@
           </div>
           <p class="muted tiny">点数の範囲は大学によって異なります。必ずご自分の大学の評価規程を確認してください。</p>
         </section>
-
         <section class="card tips">
           <h2 class="side-title">CUIのポイント</h2>
           <ul>
@@ -437,15 +400,12 @@
         </section>
       </aside>
     </div>
-
     <article class="guide" id="guide">
-
       <section id="how-it-works">
         <h2>COMSATSの評価のあらまし</h2>
         <p>COMSATS University Islamabad（CUI）は、2021年秋以降の入学者を対象に、学部・大学院のすべてのプログラムでHECの評価基準を採用しました。2020年10月8日の第31回学術評議会で承認され、2020年12月7日付の通知でRegistrarが発表しました。</p>
         <p>この制度では、各アルファベット評価がGPの<em>範囲</em>を表します。たとえばA-は点数に応じて3.34〜3.66のいずれかになります。そのため、この計算機ではアルファベットだけでなく各科目のGPを入力してもらいます。</p>
       </section>
-
       <section id="grade-points">
         <h2>COMSATS評価表（2021年秋以降）</h2>
         <div class="table-scroll">
@@ -468,7 +428,6 @@
         </div>
         <p>50%未満はすべてFで、GPは0.00です。</p>
       </section>
-
       <section id="example">
         <h2>COMSATSのGPA計算：計算例</h2>
         <div class="table-scroll">
@@ -486,7 +445,6 @@
         <p class="formula-block">GPA = 44.10 ÷ 13 = 3.392 ≈ 3.39</p>
         <p>科目のアルファベット評価しか分からない場合、上の表でそのGPの範囲を確認できます。正確なGPはその範囲内のどこかになります。</p>
       </section>
-
       <section id="percentage">
         <h2>COMSATSのCGPAをパーセントに：公式ルール</h2>
         <p>COMSATSは (CGPA ÷ 4) × 100 を使いません。通知には <q>A student getting any CGPA will be given the minimum of the corresponding percentage… For example, if a student gets a CGPA of 3.00, the percentage associated will be 71%.</q>（「どのCGPAにも、対応するパーセントの最低値が与えられる…たとえばCGPAが3.00の学生の場合、対応するパーセントは71%となる」）とあります。</p>
@@ -510,15 +468,12 @@
         </div>
         <p>たとえばCGPA 3.39はA-の区分（3.34–3.66）に入るので<strong>80%</strong>になります。簡単な計算式だと84.75%となり、5ポイント近く高くなってしまうため、企業が大学に確認した場合に問題になるおそれがあります。</p>
       </section>
-
       <section id="before-2021">
         <h2>2021年秋より前に入学した方へ</h2>
         <p>この通知は2021年秋以降の入学者が対象です。それ以前にCOMSATSに入学した場合、成績証明書は旧来のCOMSATSの評価制度に従っている可能性があります。GPAとCGPAの計算（単位数による加重平均）は同じですが、評価区分やパーセントのルールは異なることがあるので、成績証明書を確認するか、キャンパスの試験担当窓口に問い合わせてください。</p>
       </section>
-
       <section id="faq" class="faq">
         <h2>CUI CGPA計算機のよくある質問</h2>
-
         <details>
           <summary><h3>COMSATSでは各評価にGPの範囲があるのはなぜ？</h3></summary>
           <p>COMSATSは2021年秋からHECの評価基準を採用しており、各アルファベット評価がGPの範囲を表します。正確なGPは点数によって決まるため、同じA-でもGPが異なることがあります。</p>
@@ -544,7 +499,6 @@
           <p>GPAとCGPAの計算方法は誰でも同じなので、GPを入力して使えます。ただし、このページの評価区分とパーセントのルールは2021年秋以降の入学者向けなので、それ以前に入学した方は成績証明書を確認してください。</p>
         </details>
       </section>
-
       <section id="sources">
         <h2>出典</h2>
         <ul class="source-note">
@@ -553,7 +507,6 @@
         <p class="source-note">最終確認：2026年10月18日。大学の規程は変わることがあるので、必ずご自分の大学の最新の公式ルールで結果を確認してください。<a href="terms.html">利用規約</a>もご覧ください。</p>
       </section>
     </article>
-
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">その他のCGPA・GPA計算機</h2>
       <div class="uni-grid">
@@ -576,7 +529,6 @@
     </section>
     <p class="back-top"><a href="#calculator">↑ 計算機に戻る</a></p>
   </main>
-
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -593,9 +545,7 @@
       </nav>
     </div>
   </footer>
-
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-comsats',
     scales: {

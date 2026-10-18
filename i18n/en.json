@@ -503,7 +503,6 @@
   "s501": "Contact us",
   "s502": "Questions, ideas or found a bug? We'd love to hear from you.",
   "s503": "Email us at",
-  "s504": "bilal8011727@gmail.com",
   "s505": "We read every message and try to reply within a few working days.",
   "s506": "What you can write to us about",
   "s507": "<strong>A result that looks wrong.</strong> Tell us which grading scale you chose, the numbers you entered and the result you expected.",
@@ -514,7 +513,8 @@
   "s512": "Before you write",
   "s513": "Your question may already be answered in our <a href=\"index.html#faq\">frequently asked questions</a>. Please don't send transcripts, ID documents, passwords or other sensitive information by email. We never need them to help you.",
   "s514": "We can't confirm official results",
-  "s515": "CGPA Calculator is an independent website. For your official CGPA, percentage or transcript, please contact your university's examination or registrar office."
+  "s515": "CGPA Calculator is an independent website. For your official CGPA, percentage or transcript, please contact your university's examination or registrar office.",
+  "s517": "bilal2043731727 [at] gmail.com"
  },
  "js": {
   "j1": "4.0 scale",

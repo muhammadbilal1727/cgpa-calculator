@@ -24,12 +24,10 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/comsats-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/comsats-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/comsats-cgpa-calculator.html">
-  
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
-
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="hi_IN">
@@ -153,7 +151,6 @@
   </script>
 </head>
 <body>
-
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -197,15 +194,12 @@
       </div>
     </div>
   </header>
-
   <main class="container">
-
     <section class="hero">
       <nav class="breadcrumb" aria-label="ब्रेडक्रंब"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">CUI</span></nav>
       <h1>COMSATS CGPA और GPA कैलकुलेटर</h1>
       <p>COMSATS University Islamabad द्वारा Fall 2021 से दाखिल छात्रों के लिए इस्तेमाल किए जाने वाले HEC ग्रेडिंग मानदंड से अपना GPA और CGPA निकालें, और CGPA को COMSATS के आधिकारिक तरीके से प्रतिशत में बदलें। <a href="#guide" class="hero-link">COMSATS में ग्रेडिंग कैसे होती है ↓</a></p>
     </section>
-
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <p id="scaleLabel" class="scale-title">ग्रेडिंग सिस्टम: COMSATS (Fall 2021 से)</p>
@@ -215,19 +209,15 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">सब रीसेट करें</button>
     </section>
     <p class="print-only" id="printDate"></p>
-
     <div class="layout">
-
       <!-- ================= Calculators ================= -->
       <div class="main-col">
-
         <div class="tabs" role="tablist" aria-label="कैलकुलेटर">
           <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">GPA <small>एक सेमेस्टर</small></button>
           <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>सभी सेमेस्टर</small></button>
           <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">लक्ष्य <small>आगे की योजना</small></button>
           <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">प्रतिशत <small>कन्वर्टर</small></button>
         </div>
-
         <!-- ---------- TAB 1: GPA ---------- -->
         <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
           <div class="panel-head">
@@ -235,19 +225,15 @@
               <h2>सेमेस्टर GPA</h2>
               <p class="muted small">हर विषय को उसके क्रेडिट और ग्रेड के साथ जोड़ें।</p>
             </div>
-
           </div>
-
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>विषय (वैकल्पिक)</span><span>क्रेडिट</span><span id="gradeHead">ग्रेड</span><span></span>
           </div>
           <div id="subjectList" class="row-list mode-grade"></div>
-
           <button type="button" id="addSubject" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             विषय जोड़ें
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">आपका सेमेस्टर GPA</div>
             <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
@@ -256,21 +242,18 @@
             <div class="result-sub" id="gpaSub">अपना GPA देखने के लिए विषय जोड़ें।</div>
             <div class="result-note" id="gpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToCgpa" class="btn btn-soft">यह GPA मेरे CGPA में जोड़ें →</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="gpa">परिणाम कॉपी करें</button>
             <button type="button" class="btn btn-outline js-print" title="प्रिंट विंडो में PDF डाउनलोड करने के लिए “Save as PDF” चुनें">प्रिंट / PDF</button>
             <button type="button" id="resetGpa" class="btn btn-quiet">साफ़ करें</button>
           </div>
-
           <details class="howto">
             <summary>GPA की गणना कैसे होती है?</summary>
             <p class="formula-line">GPA = (Σ क्रेडिट × ग्रेड पॉइंट) ÷ (Σ क्रेडिट)</p>
             <p class="muted small">उदाहरण: गणित 3 क्रेडिट और 4.00 ग्रेड पॉइंट, अंग्रेज़ी 2 क्रेडिट और 3.00 → (3×4 + 2×3) ÷ (3+2) = 18 ÷ 5 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 2: CGPA ---------- -->
         <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
           <div class="panel-head">
@@ -279,17 +262,14 @@
               <p class="muted small">हर सेमेस्टर का GPA (SGPA) और उसके कुल क्रेडिट जोड़ें।</p>
             </div>
           </div>
-
           <div class="rows-head semester-cols" aria-hidden="true">
             <span>सेमेस्टर</span><span>GPA / SGPA</span><span>क्रेडिट</span><span></span>
           </div>
           <div id="semesterList" class="row-list"></div>
-
           <button type="button" id="addSemester" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             सेमेस्टर जोड़ें
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">आपका CGPA</div>
             <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
@@ -298,21 +278,18 @@
             <div class="result-sub" id="cgpaSub">अपना CGPA देखने के लिए सेमेस्टर जोड़ें।</div>
             <div class="result-note" id="cgpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToPct" class="btn btn-soft">इस CGPA को % में बदलें →</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">परिणाम कॉपी करें</button>
             <button type="button" class="btn btn-outline js-print" title="प्रिंट विंडो में PDF डाउनलोड करने के लिए “Save as PDF” चुनें">प्रिंट / PDF</button>
             <button type="button" id="resetCgpa" class="btn btn-quiet">साफ़ करें</button>
           </div>
-
           <details class="howto">
             <summary>CGPA की गणना कैसे होती है?</summary>
             <p class="formula-line">CGPA = (Σ सेमेस्टर GPA × सेमेस्टर क्रेडिट) ÷ (कुल क्रेडिट)</p>
             <p class="muted small">ज़्यादा क्रेडिट वाले सेमेस्टर ज़्यादा गिने जाते हैं। उदाहरण: 18 क्रेडिट के साथ 3.50 और 15 क्रेडिट के साथ 3.00 → (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 3: Target CGPA ---------- -->
         <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
           <div class="panel-head">
@@ -321,7 +298,6 @@
               <p class="muted small">जानें कि अपने लक्ष्य तक पहुँचने के लिए आने वाले सेमेस्टर में आपको कितना GPA चाहिए।</p>
             </div>
           </div>
-
           <div class="target-grid">
             <div class="field">
               <label class="field-label" for="tCurrent">वर्तमान CGPA</label>
@@ -344,9 +320,7 @@
               <p class="row-msg" id="tLeftMsg"></p>
             </div>
           </div>
-
           <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">मेरे CGPA टैब से भरें</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">हर सेमेस्टर में ज़रूरी GPA</div>
             <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
@@ -355,20 +329,17 @@
             <div class="result-sub" id="tgtSub">ज़रूरी GPA देखने के लिए ऊपर के चारों बॉक्स भरें।</div>
             <div class="result-note" id="tgtNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="target">परिणाम कॉपी करें</button>
             <button type="button" class="btn btn-outline js-print" title="प्रिंट विंडो में PDF डाउनलोड करने के लिए “Save as PDF” चुनें">प्रिंट / PDF</button>
             <button type="button" id="resetTarget" class="btn btn-quiet">साफ़ करें</button>
           </div>
-
           <details class="howto">
             <summary>इसकी गणना कैसे होती है?</summary>
             <p class="formula-line">ज़रूरी GPA = (लक्ष्य × कुल क्रेडिट − वर्तमान × पूरे क्रेडिट) ÷ बचे हुए क्रेडिट</p>
             <p class="muted small">उदाहरण: 60 क्रेडिट के बाद वर्तमान 3.00, लक्ष्य 3.30, 60 क्रेडिट बाकी → (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 4: Percentage ---------- -->
         <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
           <div class="panel-head">
@@ -377,18 +348,14 @@
               <p class="muted small">अपना CGPA लिखें और उसका स्केल चुनें।</p>
             </div>
           </div>
-
           <div class="conv-grid">
             <div class="field">
               <label class="field-label always" for="convInput">आपका CGPA</label>
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
-
           </div>
-
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">CGPA टैब से मेरा CGPA इस्तेमाल करें</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">प्रतिशत</div>
             <div class="result-value"><span id="pctValue">—</span></div>
@@ -396,12 +363,10 @@
             <div class="result-cheer" id="pctCheer"></div>
             <div class="result-sub" id="pctSub">प्रतिशत देखने के लिए अपना CGPA डालें।</div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="pct">परिणाम कॉपी करें</button>
             <button type="button" class="btn btn-outline js-print" title="प्रिंट विंडो में PDF डाउनलोड करने के लिए “Save as PDF” चुनें">प्रिंट / PDF</button>
           </div>
-
           <div class="formula">
             <div class="formula-title">इस्तेमाल किया गया फ़ॉर्मूला</div>
             <p class="formula-line" id="formulaMain"></p>
@@ -410,7 +375,6 @@
           </div>
         </section>
       </div>
-
       <!-- ================= Sidebar: grade table ================= -->
       <aside class="sidebar">
         <section class="card" aria-labelledby="tableTitle">
@@ -426,7 +390,6 @@
           </div>
           <p class="muted tiny">अंकों की सीमाएं हर यूनिवर्सिटी में अलग होती हैं। हमेशा अपनी यूनिवर्सिटी की ग्रेडिंग नीति देखें।</p>
         </section>
-
         <section class="card tips">
           <h2 class="side-title">CUI के मुख्य तथ्य</h2>
           <ul>
@@ -437,15 +400,12 @@
         </section>
       </aside>
     </div>
-
     <article class="guide" id="guide">
-
       <section id="how-it-works">
         <h2>COMSATS ग्रेडिंग एक नज़र में</h2>
         <p>COMSATS University Islamabad (CUI) ने Fall 2021 से दाखिल छात्रों के लिए अपने सभी अंडरग्रेजुएट और ग्रेजुएट प्रोग्राम में HEC ग्रेडिंग मानदंड अपनाए। CUI अकादमिक काउंसिल ने इसे 8 अक्टूबर 2020 की अपनी 31वीं बैठक में मंज़ूरी दी, और रजिस्ट्रार ने 7 दिसंबर 2020 की अधिसूचना में इसकी घोषणा की।</p>
         <p>इस प्रणाली में हर लेटर ग्रेड ग्रेड पॉइंट की एक <em>सीमा</em> को कवर करता है। उदाहरण के लिए A- आपके अंकों के अनुसार 3.34 से 3.66 तक कुछ भी हो सकता है। इसीलिए यह कैलकुलेटर सिर्फ़ अक्षर की बजाय हर कोर्स के ग्रेड पॉइंट माँगता है।</p>
       </section>
-
       <section id="grade-points">
         <h2>COMSATS ग्रेडिंग तालिका (Fall 2021 से)</h2>
         <div class="table-scroll">
@@ -468,7 +428,6 @@
         </div>
         <p>50% से कम कुछ भी 0.00 ग्रेड पॉइंट वाला F है।</p>
       </section>
-
       <section id="example">
         <h2>अपना COMSATS GPA कैसे निकालें: हल किया गया उदाहरण</h2>
         <div class="table-scroll">
@@ -486,7 +445,6 @@
         <p class="formula-block">GPA = 44.10 ÷ 13 = 3.392 ≈ 3.39</p>
         <p>अगर आपको किसी कोर्स का सिर्फ़ लेटर ग्रेड पता है, तो ऊपर की तालिका बताती है कि उसके पॉइंट किस सीमा में हो सकते हैं। आपके सटीक पॉइंट उसी सीमा के भीतर कहीं होंगे।</p>
       </section>
-
       <section id="percentage">
         <h2>COMSATS CGPA से प्रतिशत: आधिकारिक नियम</h2>
         <p>COMSATS (CGPA ÷ 4) × 100 इस्तेमाल नहीं करता। उसकी अधिसूचना कहती है: <q>A student getting any CGPA will be given the minimum of the corresponding percentage… For example, if a student gets a CGPA of 3.00, the percentage associated will be 71%.</q> ("किसी भी CGPA वाले छात्र को संबंधित प्रतिशत का न्यूनतम दिया जाएगा… उदाहरण के लिए, अगर किसी छात्र का CGPA 3.00 है, तो संबंधित प्रतिशत 71% होगा।")</p>
@@ -510,15 +468,12 @@
         </div>
         <p>उदाहरण के लिए, 3.39 CGPA A- बैंड (3.34–3.66) में है, इसलिए यह <strong>80%</strong> गिना जाता है। आसान फ़ॉर्मूला 84.75% देगा, लगभग 5 पॉइंट ज़्यादा, जिससे दिक्कत हो सकती है अगर कोई कंपनी यूनिवर्सिटी से जाँच करे।</p>
       </section>
-
       <section id="before-2021">
         <h2>Fall 2021 से पहले दाखिला हुआ था?</h2>
         <p>यह अधिसूचना Fall 2021 से दाखिल छात्रों पर लागू है। अगर आप COMSATS में पहले आए थे, तो आपकी मार्कशीट पुरानी COMSATS ग्रेडिंग योजना के अनुसार हो सकती है। GPA और CGPA की गणना (क्रेडिट-भारित औसत) वही है, लेकिन ग्रेड बैंड और प्रतिशत नियम अलग हो सकते हैं, इसलिए अपनी मार्कशीट देखें या अपने कैंपस के परीक्षा कार्यालय से पूछें।</p>
       </section>
-
       <section id="faq" class="faq">
         <h2>CUI CGPA कैलकुलेटर के सामान्य प्रश्न</h2>
-
         <details>
           <summary><h3>COMSATS हर ग्रेड के लिए ग्रेड पॉइंट की सीमा क्यों देता है?</h3></summary>
           <p>Fall 2021 से COMSATS HEC ग्रेडिंग मानदंड अपनाता है, जिसमें हर लेटर ग्रेड ग्रेड पॉइंट की एक सीमा को कवर करता है। आपके सटीक पॉइंट आपके अंकों पर निर्भर करते हैं, इसलिए A- वाले दो छात्रों के ग्रेड पॉइंट अलग हो सकते हैं।</p>
@@ -544,7 +499,6 @@
           <p>GPA और CGPA की गणना सबके लिए एक जैसी है, इसलिए आप फिर भी अपने ग्रेड पॉइंट डाल सकते हैं। लेकिन इस पेज के ग्रेड बैंड और प्रतिशत नियम Fall 2021 और उसके बाद के दाखिलों पर लागू होते हैं, इसलिए अगर आप पहले आए थे तो अपनी मार्कशीट देखें।</p>
         </details>
       </section>
-
       <section id="sources">
         <h2>स्रोत</h2>
         <ul class="source-note">
@@ -553,7 +507,6 @@
         <p class="source-note">अंतिम जाँच: 18 अक्टूबर 2026। यूनिवर्सिटी के नियम बदल सकते हैं, इसलिए हमेशा अपने परिणाम अपनी यूनिवर्सिटी के नवीनतम आधिकारिक नियमों से पुष्टि करें। हमारी <a href="terms.html">उपयोग की शर्तें</a> देखें।</p>
       </section>
     </article>
-
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">और CGPA और GPA कैलकुलेटर</h2>
       <div class="uni-grid">
@@ -576,7 +529,6 @@
     </section>
     <p class="back-top"><a href="#calculator">↑ कैलकुलेटर पर वापस जाएं</a></p>
   </main>
-
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -593,9 +545,7 @@
       </nav>
     </div>
   </footer>
-
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-comsats',
     scales: {

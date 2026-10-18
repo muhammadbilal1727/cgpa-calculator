@@ -23,13 +23,11 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/">
-  
   <!-- Icons -->
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
-
   <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
@@ -42,14 +40,12 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Calculadora de CGPA: una tarjeta de resultado con un CGPA de 3.37 sobre 4.00 y opciones de escala de 4.0, 5.0 y 10 puntos">
-
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Calculadora de CGPA – GPA, CGPA y porcentaje">
   <meta name="twitter:description" content="Calcula tu GPA semestral, tu CGPA total, tu CGPA objetivo y tu porcentaje en segundos. Gratis, privada y pensada para el móvil.">
   <meta name="twitter:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
   <meta name="twitter:image:alt" content="Calculadora de CGPA: una tarjeta de resultado con un CGPA de 3.37 sobre 4.00 y opciones de escala de 4.0, 5.0 y 10 puntos">
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -180,7 +176,6 @@
   </script>
 </head>
 <body>
-
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -224,14 +219,11 @@
       </div>
     </div>
   </header>
-
   <main class="container">
-
     <section class="hero">
       <h1>Calculadora de CGPA: calcula tu GPA, CGPA y porcentaje</h1>
       <p>Rápida, gratis y privada. Todo se calcula aquí mismo, en tu dispositivo. <a href="#guide" class="hero-link">¿Nuevo con el CGPA? Lee la guía ↓</a></p>
     </section>
-
     <!-- ================= Grading scale selector ================= -->
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
@@ -246,19 +238,15 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">Restablecer todo</button>
     </section>
     <p class="print-only" id="printDate"></p>
-
     <div class="layout">
-
       <!-- ================= Calculators ================= -->
       <div class="main-col">
-
         <div class="tabs" role="tablist" aria-label="Calculadoras">
           <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">GPA <small>Un semestre</small></button>
           <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>Todos los semestres</small></button>
           <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">Objetivo <small>Planifica</small></button>
           <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">Porcentaje <small>Conversor</small></button>
         </div>
-
         <!-- ---------- TAB 1: GPA ---------- -->
         <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
           <div class="panel-head">
@@ -275,17 +263,14 @@
             </div>
 <!-- /mode-switch -->
           </div>
-
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>Asignatura (opcional)</span><span>Créditos</span><span id="gradeHead">Nota</span><span></span>
           </div>
           <div id="subjectList" class="row-list mode-grade"></div>
-
           <button type="button" id="addSubject" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             Añadir asignatura
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">Tu GPA del semestre</div>
             <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
@@ -294,21 +279,18 @@
             <div class="result-sub" id="gpaSub">Añade tus asignaturas para ver tu GPA.</div>
             <div class="result-note" id="gpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToCgpa" class="btn btn-soft">Añadir este GPA a mi CGPA →</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="gpa">Copiar resultado</button>
             <button type="button" class="btn btn-outline js-print" title="En la ventana de impresión, elige «Guardar como PDF» para descargar un PDF">Imprimir / PDF</button>
             <button type="button" id="resetGpa" class="btn btn-quiet">Borrar</button>
           </div>
-
           <details class="howto">
             <summary>¿Cómo se calcula el GPA?</summary>
             <p class="formula-line">GPA = (Σ créditos × puntos de nota) ÷ (Σ créditos)</p>
             <p class="muted small">Ejemplo: Matemáticas, 3 créditos con 4.00 puntos, e Inglés, 2 créditos con 3.00 → (3×4 + 2×3) ÷ (3+2) = 18 ÷ 5 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 2: CGPA ---------- -->
         <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
           <div class="panel-head">
@@ -317,17 +299,14 @@
               <p class="muted small">Añade el GPA de cada semestre (SGPA) y su total de créditos.</p>
             </div>
           </div>
-
           <div class="rows-head semester-cols" aria-hidden="true">
             <span>Semestre</span><span>GPA / SGPA</span><span>Créditos</span><span></span>
           </div>
           <div id="semesterList" class="row-list"></div>
-
           <button type="button" id="addSemester" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             Añadir semestre
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">Tu CGPA</div>
             <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
@@ -336,21 +315,18 @@
             <div class="result-sub" id="cgpaSub">Añade tus semestres para ver tu CGPA.</div>
             <div class="result-note" id="cgpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToPct" class="btn btn-soft">Convertir este CGPA a % →</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">Copiar resultado</button>
             <button type="button" class="btn btn-outline js-print" title="En la ventana de impresión, elige «Guardar como PDF» para descargar un PDF">Imprimir / PDF</button>
             <button type="button" id="resetCgpa" class="btn btn-quiet">Borrar</button>
           </div>
-
           <details class="howto">
             <summary>¿Cómo se calcula el CGPA?</summary>
             <p class="formula-line">CGPA = (Σ GPA del semestre × créditos del semestre) ÷ (créditos totales)</p>
             <p class="muted small">Los semestres con más créditos cuentan más. Ejemplo: 3.50 con 18 créditos y 3.00 con 15 créditos → (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 3: Target CGPA ---------- -->
         <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
           <div class="panel-head">
@@ -359,7 +335,6 @@
               <p class="muted small">Descubre qué GPA necesitas en los próximos semestres para alcanzar tu meta.</p>
             </div>
           </div>
-
           <div class="target-grid">
             <div class="field">
               <label class="field-label" for="tCurrent">CGPA actual</label>
@@ -382,9 +357,7 @@
               <p class="row-msg" id="tLeftMsg"></p>
             </div>
           </div>
-
           <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">Rellenar desde mi pestaña CGPA</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">GPA que necesitas cada semestre</div>
             <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
@@ -393,20 +366,17 @@
             <div class="result-sub" id="tgtSub">Rellena las cuatro casillas de arriba para ver el GPA que necesitas.</div>
             <div class="result-note" id="tgtNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="target">Copiar resultado</button>
             <button type="button" class="btn btn-outline js-print" title="En la ventana de impresión, elige «Guardar como PDF» para descargar un PDF">Imprimir / PDF</button>
             <button type="button" id="resetTarget" class="btn btn-quiet">Borrar</button>
           </div>
-
           <details class="howto">
             <summary>¿Cómo se calcula?</summary>
             <p class="formula-line">GPA necesario = (Objetivo × créditos totales − Actual × créditos completados) ÷ créditos restantes</p>
             <p class="muted small">Ejemplo: actual 3.00 con 60 créditos hechos, objetivo 3.30, quedan 60 créditos → (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 4: Percentage ---------- -->
         <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
           <div class="panel-head">
@@ -415,7 +385,6 @@
               <p class="muted small">Escribe tu CGPA y elige su escala.</p>
             </div>
           </div>
-
           <div class="conv-grid">
             <div class="field">
               <label class="field-label always" for="convInput">Tu CGPA</label>
@@ -436,9 +405,7 @@
             </div>
 <!-- /conv-scale -->
           </div>
-
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">Usar mi CGPA de la pestaña CGPA</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">Porcentaje</div>
             <div class="result-value"><span id="pctValue">—</span></div>
@@ -446,12 +413,10 @@
             <div class="result-cheer" id="pctCheer"></div>
             <div class="result-sub" id="pctSub">Introduce tu CGPA para ver el porcentaje.</div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="pct">Copiar resultado</button>
             <button type="button" class="btn btn-outline js-print" title="En la ventana de impresión, elige «Guardar como PDF» para descargar un PDF">Imprimir / PDF</button>
           </div>
-
           <div class="formula">
             <div class="formula-title">Fórmula utilizada</div>
             <p class="formula-line" id="formulaMain"></p>
@@ -460,7 +425,6 @@
           </div>
         </section>
       </div>
-
       <!-- ================= Sidebar: grade table ================= -->
       <aside class="sidebar">
         <section class="card" aria-labelledby="tableTitle">
@@ -476,7 +440,6 @@
           </div>
           <p class="muted tiny">Los rangos de puntuación varían entre universidades. Consulta siempre la normativa de calificación de tu universidad.</p>
         </section>
-
 <!-- side-tips -->
         <section class="card tips">
           <h2 class="side-title">Bueno saberlo</h2>
@@ -490,7 +453,6 @@
 <!-- /side-tips -->
       </aside>
     </div>
-
     <!-- ================= University calculators ================= -->
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">Calculadoras de CGPA y GPA por universidad</h2>
@@ -513,10 +475,8 @@
         </a>
       </div>
     </section>
-
     <!-- ================= Guide (helpful content) ================= -->
     <article class="guide" id="guide">
-
       <nav class="card toc" aria-label="En esta página">
         <p class="toc-title">En esta página</p>
         <ol>
@@ -529,7 +489,6 @@
           <li><a href="#faq">Preguntas frecuentes</a></li>
         </ol>
       </nav>
-
       <!-- What is CGPA -->
       <section id="what-is-cgpa">
         <h2>¿Qué es el CGPA y en qué se diferencia del GPA y del SGPA?</h2>
@@ -548,7 +507,6 @@
         <p>En resumen, el SGPA y el GPA del semestre describen un semestre, mientras que el CGPA describe todo tu recorrido. En EE. UU., «GPA» a secas suele referirse a la cifra acumulada, por eso se confunden las palabras. Si un formulario pregunta por tu carrera en conjunto, casi siempre quiere la cifra acumulada.</p>
         <p>Los tres se ponderan por <strong>créditos</strong>. Una asignatura de 4 créditos influye más en tu promedio que un laboratorio de 1 crédito, porque supone más horas de clase y más trabajo.</p>
       </section>
-
       <!-- How to calculate -->
       <section id="how-to-calculate">
         <h2>Cómo calcular el CGPA paso a paso</h2>
@@ -560,7 +518,6 @@
           <li><strong>Combina tus semestres.</strong> Multiplica el GPA de cada semestre por sus créditos, suma los resultados y divide entre el total de créditos de todos los semestres. El resultado es tu CGPA.</li>
         </ol>
         <p class="formula-block">CGPA = Σ (GPA del semestre × créditos del semestre) ÷ Σ (créditos del semestre)</p>
-
         <h3>Ejemplo resuelto</h3>
         <p>Ayesha es una estudiante de primer año cuya universidad usa la escala de 4.0. Su primer semestre es así:</p>
         <div class="table-scroll">
@@ -581,7 +538,6 @@
         <p class="formula-block">CGPA = (53.33 + 54.40) ÷ (15 + 17) = 107.73 ÷ 32 = 3.37</p>
         <p>Así que el CGPA de Ayesha es <strong>3.37</strong>. La media simple de sus dos semestres, (3.56 + 3.20) ÷ 2 = 3.38, da un resultado un poco distinto. Aquí la diferencia es pequeña, pero crece cuando los semestres tienen cargas de créditos muy distintas, así que pondera siempre por créditos.</p>
       </section>
-
       <!-- How to use -->
       <section id="how-to-use">
         <h2>Cómo usar esta calculadora</h2>
@@ -595,12 +551,10 @@
         </ol>
         <p>Tus datos se guardan en tu propio navegador, así que siguen ahí al recargar, y nada se envía a ningún servidor. Usa <em>Copiar resultado</em> para compartir tus números o <em>Imprimir / PDF</em> para guardar una copia.</p>
       </section>
-
       <!-- CGPA to percentage -->
       <section id="cgpa-to-percentage">
         <h2>Conversión de CGPA a porcentaje</h2>
         <p>Muchas solicitudes de empleo, formularios de admisión y solicitudes de visado piden un porcentaje en lugar del CGPA. No existe una fórmula única en todo el mundo, así que el método correcto depende de tu escala y de tu universidad. Estos son los más utilizados.</p>
-
         <h3>Escala de 4.0</h3>
         <p class="formula-block">Porcentaje = (CGPA ÷ 4) × 100</p>
         <p>Esto muestra qué parte del máximo has obtenido. Por ejemplo:</p>
@@ -610,7 +564,6 @@
           <li>CGPA 2.80 → (2.80 ÷ 4) × 100 = <strong>70%</strong></li>
         </ul>
         <p>Algunas universidades de Pakistán y de otros países imprimen su propia regla de conversión en el expediente o en el folleto informativo. Si la tuya la tiene, úsala, porque es la regla que comprobarán las empresas y las oficinas de admisión.</p>
-
         <h3>Escala de 10 puntos</h3>
         <p class="formula-block">Porcentaje = CGPA × 9.5</p>
         <p>Esta es la fórmula introducida por el CBSE, y muchas universidades de la India la siguen. El CBSE obtuvo el factor 9.5 comparando los puntos de nota con las puntuaciones reales de los estudiantes en exámenes anteriores. Por ejemplo:</p>
@@ -620,7 +573,6 @@
           <li>CGPA 7.5 → 7.5 × 9.5 = <strong>71.25%</strong></li>
         </ul>
         <p>No todas las universidades usan 9.5. VTU, por ejemplo, usa (CGPA − 0.75) × 10, lo que convierte 8.2 en 74.5 %, y algunas universidades simplemente multiplican por 10. Si tu universidad ha publicado una fórmula oficial, usa esa.</p>
-
         <h3>Tabla de conversión rápida</h3>
         <div class="table-scroll">
           <table class="data-table">
@@ -638,12 +590,10 @@
         </div>
         <p>En la escala de 5.0, el método sencillo es (CGPA ÷ 5) × 100. La mayoría de las universidades con esa escala también publican clases de título, como First Class o Second Class Upper, así que comprueba cuál quiere tu empleador.</p>
       </section>
-
       <!-- Grade tables -->
       <section id="grade-tables">
         <h2>Tablas de puntos de nota para escalas de 4.0, 5.0 y 10 puntos</h2>
         <p>Estas son las tablas que usa esta calculadora. Son las versiones más habituales, pero los rangos de puntuación varían entre universidades, así que el reglamento de tu universidad siempre tiene la última palabra.</p>
-
         <h3>Escala de 4.0 (Pakistán / EE. UU.)</h3>
         <div class="table-scroll">
           <table class="data-table">
@@ -664,7 +614,6 @@
           </table>
         </div>
         <p>En EE. UU., los profesores suelen poner directamente notas con letras en lugar de usar rangos fijos de puntuación, pero los puntos de cada letra son los mismos.</p>
-
         <h3>Escala de 5.0</h3>
         <div class="table-scroll">
           <table class="data-table">
@@ -680,7 +629,6 @@
           </table>
         </div>
         <p>Esta escala se usa mucho en las universidades de Nigeria y en algunos otros países.</p>
-
         <h3>Escala de 10 puntos (India)</h3>
         <div class="table-scroll">
           <table class="data-table">
@@ -699,7 +647,6 @@
         </div>
         <p>Estas notas con letras siguen el sistema de créditos por elección (CBCS) de la UGC. Algunas universidades usan rangos de puntuación ligeramente distintos para cada nota.</p>
       </section>
-
       <!-- Tips -->
       <section id="tips">
         <h2>Consejos para mejorar tu CGPA</h2>
@@ -716,11 +663,9 @@
         </ul>
         <p>A medida que aumentan tus créditos totales, cada nuevo semestre influye menos en tu CGPA. Eso significa que mejorar pronto es mucho más fácil que mejorar en el último año, así que el mejor momento para empezar es este semestre.</p>
       </section>
-
       <!-- FAQ (keep in sync with the FAQPage data in the <head>) -->
       <section id="faq" class="faq">
         <h2>Preguntas frecuentes</h2>
-
         <details>
           <summary><h3>¿El CGPA es lo mismo que el GPA?</h3></summary>
           <p>No exactamente. El GPA suele ser tu promedio de un semestre, mientras que el CGPA es tu promedio de todos los semestres que has completado. Sin embargo, en EE. UU. el «GPA» de un expediente suele ser la cifra acumulada. Si un formulario pide tu GPA de toda la carrera, indica tu CGPA.</p>
@@ -762,11 +707,9 @@
           <p>Tus datos solo se guardan en tu propio navegador, así que no se pierden al recargar la página. Nada se sube ni se comparte. Puedes borrarlo todo en cualquier momento con el botón Restablecer todo.</p>
         </details>
       </section>
-
       <p class="back-top"><a href="#calculator">↑ Volver a la calculadora</a></p>
     </article>
   </main>
-
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -783,9 +726,7 @@
       </nav>
     </div>
   </footer>
-
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
   <script src="../i18n/es.js" data-i18n=""></script>
   <script src="../site.js"></script>
   <script src="../script.js"></script>

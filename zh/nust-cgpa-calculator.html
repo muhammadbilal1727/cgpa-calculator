@@ -24,12 +24,10 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/nust-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/nust-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/nust-cgpa-calculator.html">
-  
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
-
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="zh_CN">
@@ -161,7 +159,6 @@
   </script>
 </head>
 <body>
-
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -205,15 +202,12 @@
       </div>
     </div>
   </header>
-
   <main class="container">
-
     <section class="hero">
       <nav class="breadcrumb" aria-label="面包屑导航"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">NUST</span></nav>
       <h1>NUST CGPA 与 GPA 计算器</h1>
       <p>用 NUST 本科官方绩点（A = 4.00、B+ = 3.50、B = 3.00 等）计算你的学期 GPA 和累计 CGPA。<a href="#guide" class="hero-link">NUST 如何评分 ↓</a></p>
     </section>
-
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <p id="scaleLabel" class="scale-title">评分制度：NUST 本科</p>
@@ -223,19 +217,15 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">全部重置</button>
     </section>
     <p class="print-only" id="printDate"></p>
-
     <div class="layout">
-
       <!-- ================= Calculators ================= -->
       <div class="main-col">
-
         <div class="tabs" role="tablist" aria-label="计算器">
           <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">GPA <small>单个学期</small></button>
           <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>所有学期</small></button>
           <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">目标 <small>提前规划</small></button>
           <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">百分比 <small>换算</small></button>
         </div>
-
         <!-- ---------- TAB 1: GPA ---------- -->
         <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
           <div class="panel-head">
@@ -243,19 +233,15 @@
               <h2>学期 GPA</h2>
               <p class="muted small">逐门添加课程的学分和成绩。</p>
             </div>
-
           </div>
-
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>课程（可选）</span><span>学分</span><span id="gradeHead">等级</span><span></span>
           </div>
           <div id="subjectList" class="row-list mode-grade"></div>
-
           <button type="button" id="addSubject" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             添加课程
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">你的学期 GPA</div>
             <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
@@ -264,21 +250,18 @@
             <div class="result-sub" id="gpaSub">添加课程后即可看到你的 GPA。</div>
             <div class="result-note" id="gpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToCgpa" class="btn btn-soft">把这个 GPA 加入我的 CGPA →</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="gpa">复制结果</button>
             <button type="button" class="btn btn-outline js-print" title="在打印窗口中选择“另存为 PDF”即可下载 PDF">打印 / PDF</button>
             <button type="button" id="resetGpa" class="btn btn-quiet">清空</button>
           </div>
-
           <details class="howto">
             <summary>GPA 是怎么计算的？</summary>
             <p class="formula-line">GPA = (Σ 学分 × 绩点) ÷ (Σ 学分)</p>
             <p class="muted small">例：数学 3 学分、绩点 4.00，英语 2 学分、绩点 3.00 → (3×4 + 2×3) ÷ (3+2) = 18 ÷ 5 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 2: CGPA ---------- -->
         <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
           <div class="panel-head">
@@ -287,17 +270,14 @@
               <p class="muted small">添加每个学期的 GPA（SGPA）及该学期总学分。</p>
             </div>
           </div>
-
           <div class="rows-head semester-cols" aria-hidden="true">
             <span>学期</span><span>GPA / SGPA</span><span>学分</span><span></span>
           </div>
           <div id="semesterList" class="row-list"></div>
-
           <button type="button" id="addSemester" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             添加学期
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">你的 CGPA</div>
             <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
@@ -306,21 +286,18 @@
             <div class="result-sub" id="cgpaSub">添加学期后即可看到你的 CGPA。</div>
             <div class="result-note" id="cgpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToPct" class="btn btn-soft">把这个 CGPA 换算成 % →</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">复制结果</button>
             <button type="button" class="btn btn-outline js-print" title="在打印窗口中选择“另存为 PDF”即可下载 PDF">打印 / PDF</button>
             <button type="button" id="resetCgpa" class="btn btn-quiet">清空</button>
           </div>
-
           <details class="howto">
             <summary>CGPA 是怎么计算的？</summary>
             <p class="formula-line">CGPA = (Σ 学期 GPA × 学期学分) ÷ (总学分)</p>
             <p class="muted small">学分越多的学期占比越大。例：3.50（18 学分）和 3.00（15 学分）→ (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 3: Target CGPA ---------- -->
         <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
           <div class="panel-head">
@@ -329,7 +306,6 @@
               <p class="muted small">看看接下来的学期需要多少 GPA 才能达到你的目标。</p>
             </div>
           </div>
-
           <div class="target-grid">
             <div class="field">
               <label class="field-label" for="tCurrent">当前 CGPA</label>
@@ -352,9 +328,7 @@
               <p class="row-msg" id="tLeftMsg"></p>
             </div>
           </div>
-
           <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">从我的 CGPA 标签页填入</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">每学期需要的 GPA</div>
             <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
@@ -363,20 +337,17 @@
             <div class="result-sub" id="tgtSub">填写上方四个框，即可看到你需要的 GPA。</div>
             <div class="result-note" id="tgtNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="target">复制结果</button>
             <button type="button" class="btn btn-outline js-print" title="在打印窗口中选择“另存为 PDF”即可下载 PDF">打印 / PDF</button>
             <button type="button" id="resetTarget" class="btn btn-quiet">清空</button>
           </div>
-
           <details class="howto">
             <summary>这是怎么计算的？</summary>
             <p class="formula-line">所需 GPA = (目标 × 总学分 − 当前 × 已修学分) ÷ 剩余学分</p>
             <p class="muted small">例：已修 60 学分、当前 3.00，目标 3.30，剩余 60 学分 → (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 4: Percentage ---------- -->
         <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
           <div class="panel-head">
@@ -385,18 +356,14 @@
               <p class="muted small">输入你的 CGPA 并选择对应分制。</p>
             </div>
           </div>
-
           <div class="conv-grid">
             <div class="field">
               <label class="field-label always" for="convInput">你的 CGPA</label>
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
-
           </div>
-
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">使用 CGPA 标签页中的 CGPA</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">百分比</div>
             <div class="result-value"><span id="pctValue">—</span></div>
@@ -404,12 +371,10 @@
             <div class="result-cheer" id="pctCheer"></div>
             <div class="result-sub" id="pctSub">输入你的 CGPA 即可看到百分比。</div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="pct">复制结果</button>
             <button type="button" class="btn btn-outline js-print" title="在打印窗口中选择“另存为 PDF”即可下载 PDF">打印 / PDF</button>
           </div>
-
           <div class="formula">
             <div class="formula-title">使用的公式</div>
             <p class="formula-line" id="formulaMain"></p>
@@ -418,7 +383,6 @@
           </div>
         </section>
       </div>
-
       <!-- ================= Sidebar: grade table ================= -->
       <aside class="sidebar">
         <section class="card" aria-labelledby="tableTitle">
@@ -434,7 +398,6 @@
           </div>
           <p class="muted tiny">各大学的分数区间不同，请务必查看你所在大学的评分规定。</p>
         </section>
-
         <section class="card tips">
           <h2 class="side-title">NUST 要点</h2>
           <ul>
@@ -445,9 +408,7 @@
         </section>
       </aside>
     </div>
-
     <article class="guide" id="guide">
-
       <section id="how-it-works">
         <h2>NUST 如何评分</h2>
         <p>NUST 在 4.00 分制上采用相对评分。《NUST 本科生手册》写道：<q>The University follows a relative grading system on a scale of 1.00 to 4.00 points.</q>（“本校采用 1.00 至 4.00 分的相对评分制度。”）你的字母等级取决于你与班级同学相比的表现，而不是固定的百分比。82% 在难度大的考试中可能是 A，在简单的考试中可能是 B+。</p>
@@ -455,7 +416,6 @@
         <h3>含理论和实验的课程</h3>
         <p>对于同时有理论和实验学分的课程，NUST 先按学分把两部分的百分比加权合并，再对整门课评定等级。手册中的例子是：物理理论 3 学分得 70%，实验 1 学分得 90%，即 (70 × 3 + 90 × 1) ÷ 4 = 75%。你会得到一个覆盖全部 4 学分的等级，所以在计算器中把它作为一门 4 学分的课程输入。</p>
       </section>
-
       <section id="grade-points">
         <h2>NUST 绩点表</h2>
         <div class="table-scroll">
@@ -476,7 +436,6 @@
         </div>
         <p>I（未完成）、W（退课）、Q（合格）和 T（转学分）不计绩点。注意 NUST 没有 A+ 和减号等级：B+ 和 C+ 分别比 B 和 C 高半分。</p>
       </section>
-
       <section id="example">
         <h2>如何计算 NUST GPA：计算示例</h2>
         <div class="table-scroll">
@@ -495,7 +454,6 @@
         <p class="formula-block">GPA = 54.00 ÷ 16 = 3.375 ≈ 3.38</p>
         <p>CGPA 在所有学期中的算法相同：把你修过的每门课的“学分 × 绩点”相加，再除以总学分。CGPA 标签页会根据你的学期 GPA 完成计算。</p>
       </section>
-
       <section id="minimum-cgpa">
         <h2>NUST 的最低 CGPA 与学业预警</h2>
         <ul>
@@ -505,21 +463,17 @@
         </ul>
         <p>如果你的 CGPA 低于 2.00，目标标签页会显示剩余学期需要多少 GPA 才能重新超过它。</p>
       </section>
-
       <section id="repeat">
         <h2>重修课程以提高 CGPA</h2>
         <p>重修课程后，成绩单会同时显示旧成绩和新成绩，但计算 CGPA 时只采用较好的成绩。重修需要系主任（HoD）批准，而且重修获得的成绩不计入最高学术荣誉和奖项，Rector's Gold Medal 除外。如果重修后再次不及格，仍只算一个 F。</p>
         <p><strong>计算器提示：</strong>重修过的课程只输入较好的成绩。</p>
       </section>
-
       <section id="percentage">
         <h2>NUST CGPA 转百分比</h2>
         <p>《NUST 本科生手册》没有给出把 CGPA 换算成百分比的官方公式。需要百分比时，很多人使用 (CGPA ÷ 4) × 100，因此 3.40 换算为 85%。用人单位和大学有时有自己的规则，请确认你申请的机构接受哪种方法。百分比标签页使用这种简单方法。</p>
       </section>
-
       <section id="faq" class="faq">
         <h2>NUST CGPA 计算器常见问题</h2>
-
         <details>
           <summary><h3>NUST 采用相对评分还是绝对评分？</h3></summary>
           <p>NUST 在 4.00 分制上采用相对评分，因此你的等级取决于你与班级同学相比的表现，而不是固定的百分比。这就是 NUST 没有固定分数-等级对照表的原因。</p>
@@ -549,7 +503,6 @@
           <p>把它作为一门课程，按总学分输入，例如 3+1 的课程输入 4。NUST 会把理论和实验分数合并为整门课的一个等级。</p>
         </details>
       </section>
-
       <section id="sources">
         <h2>资料来源</h2>
         <ul class="source-note">
@@ -558,7 +511,6 @@
         <p class="source-note">最后核对：2026 年 10 月 18 日。大学规定可能会变化，请务必以你所在大学最新的官方规定核实结果。请参阅我们的<a href="terms.html">使用条款</a>。</p>
       </section>
     </article>
-
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">更多 CGPA 与 GPA 计算器</h2>
       <div class="uni-grid">
@@ -581,7 +533,6 @@
     </section>
     <p class="back-top"><a href="#calculator">↑ 返回计算器</a></p>
   </main>
-
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -598,9 +549,7 @@
       </nav>
     </div>
   </footer>
-
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-nust',
     scales: {

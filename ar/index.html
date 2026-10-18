@@ -23,13 +23,11 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/">
-  
   <!-- Icons -->
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
-
   <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
@@ -42,14 +40,12 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="حاسبة CGPA: بطاقة نتيجة تعرض معدلاً تراكمياً 3.37 من 4.00 مع خيارات مقاييس 4.0 و5.0 و10 نقاط">
-
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="حاسبة CGPA – المعدل الفصلي والتراكمي والنسبة المئوية">
   <meta name="twitter:description" content="احسب معدلك الفصلي GPA ومعدلك التراكمي CGPA والمعدل المستهدف والنسبة المئوية في ثوانٍ. مجانية وخاصة ومناسبة للجوال.">
   <meta name="twitter:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
   <meta name="twitter:image:alt" content="حاسبة CGPA: بطاقة نتيجة تعرض معدلاً تراكمياً 3.37 من 4.00 مع خيارات مقاييس 4.0 و5.0 و10 نقاط">
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -180,7 +176,6 @@
   </script>
 </head>
 <body>
-
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -224,14 +219,11 @@
       </div>
     </div>
   </header>
-
   <main class="container">
-
     <section class="hero">
       <h1>حاسبة CGPA: احسب معدلك GPA وCGPA ونسبتك المئوية</h1>
       <p>سريعة ومجانية وخاصة. كل الحسابات تتم هنا على جهازك. <a href="#guide" class="hero-link">جديد على CGPA؟ اقرأ الدليل ↓</a></p>
     </section>
-
     <!-- ================= Grading scale selector ================= -->
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
@@ -246,19 +238,15 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">إعادة ضبط الكل</button>
     </section>
     <p class="print-only" id="printDate"></p>
-
     <div class="layout">
-
       <!-- ================= Calculators ================= -->
       <div class="main-col">
-
         <div class="tabs" role="tablist" aria-label="الحاسبات">
           <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">GPA <small>فصل واحد</small></button>
           <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>كل الفصول</small></button>
           <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">الهدف <small>خطّط مسبقاً</small></button>
           <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">النسبة المئوية <small>محوّل</small></button>
         </div>
-
         <!-- ---------- TAB 1: GPA ---------- -->
         <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
           <div class="panel-head">
@@ -275,17 +263,14 @@
             </div>
 <!-- /mode-switch -->
           </div>
-
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>المادة (اختياري)</span><span>الساعات</span><span id="gradeHead">التقدير</span><span></span>
           </div>
           <div id="subjectList" class="row-list mode-grade"></div>
-
           <button type="button" id="addSubject" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             إضافة مادة
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">معدلك الفصلي GPA</div>
             <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
@@ -294,21 +279,18 @@
             <div class="result-sub" id="gpaSub">أضف موادك لترى معدلك GPA.</div>
             <div class="result-note" id="gpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToCgpa" class="btn btn-soft">أضف هذا المعدل إلى معدلي التراكمي ←</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="gpa">نسخ النتيجة</button>
             <button type="button" class="btn btn-outline js-print" title="في نافذة الطباعة اختر «حفظ بتنسيق PDF» لتنزيل ملف PDF">طباعة / PDF</button>
             <button type="button" id="resetGpa" class="btn btn-quiet">مسح</button>
           </div>
-
           <details class="howto">
             <summary>كيف يُحسب GPA؟</summary>
             <p class="formula-line">GPA = (مجموع الساعات المعتمدة × نقاط التقدير) ÷ (مجموع الساعات المعتمدة)</p>
             <p class="muted small">مثال: الرياضيات 3 ساعات بنقاط 4.00، والإنجليزية ساعتان بنقاط 3.00 ← (3×4 + 2×3) ÷ (3+2) = 18 ÷ 5 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 2: CGPA ---------- -->
         <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
           <div class="panel-head">
@@ -317,17 +299,14 @@
               <p class="muted small">أضف معدل كل فصل (SGPA) وإجمالي ساعاته المعتمدة.</p>
             </div>
           </div>
-
           <div class="rows-head semester-cols" aria-hidden="true">
             <span>الفصل</span><span>GPA / SGPA</span><span>الساعات المعتمدة</span><span></span>
           </div>
           <div id="semesterList" class="row-list"></div>
-
           <button type="button" id="addSemester" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             إضافة فصل
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">معدلك التراكمي CGPA</div>
             <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
@@ -336,21 +315,18 @@
             <div class="result-sub" id="cgpaSub">أضف فصولك لترى معدلك التراكمي.</div>
             <div class="result-note" id="cgpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToPct" class="btn btn-soft">حوّل هذا المعدل إلى % ←</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">نسخ النتيجة</button>
             <button type="button" class="btn btn-outline js-print" title="في نافذة الطباعة اختر «حفظ بتنسيق PDF» لتنزيل ملف PDF">طباعة / PDF</button>
             <button type="button" id="resetCgpa" class="btn btn-quiet">مسح</button>
           </div>
-
           <details class="howto">
             <summary>كيف يُحسب CGPA؟</summary>
             <p class="formula-line">CGPA = (مجموع معدل الفصل × ساعات الفصل) ÷ (إجمالي الساعات)</p>
             <p class="muted small">الفصول ذات الساعات الأكثر لها وزن أكبر. مثال: 3.50 مع 18 ساعة و3.00 مع 15 ساعة ← (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 3: Target CGPA ---------- -->
         <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
           <div class="panel-head">
@@ -359,7 +335,6 @@
               <p class="muted small">اعرف المعدل الذي تحتاجه في الفصول القادمة لتصل إلى هدفك.</p>
             </div>
           </div>
-
           <div class="target-grid">
             <div class="field">
               <label class="field-label" for="tCurrent">المعدل التراكمي الحالي</label>
@@ -382,9 +357,7 @@
               <p class="row-msg" id="tLeftMsg"></p>
             </div>
           </div>
-
           <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">املأ من تبويب CGPA</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">المعدل المطلوب في كل فصل</div>
             <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
@@ -393,20 +366,17 @@
             <div class="result-sub" id="tgtSub">املأ الحقول الأربعة أعلاه لترى المعدل الذي تحتاجه.</div>
             <div class="result-note" id="tgtNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="target">نسخ النتيجة</button>
             <button type="button" class="btn btn-outline js-print" title="في نافذة الطباعة اختر «حفظ بتنسيق PDF» لتنزيل ملف PDF">طباعة / PDF</button>
             <button type="button" id="resetTarget" class="btn btn-quiet">مسح</button>
           </div>
-
           <details class="howto">
             <summary>كيف يُحسب ذلك؟</summary>
             <p class="formula-line">المعدل المطلوب = (الهدف × إجمالي الساعات − الحالي × الساعات المنجزة) ÷ الساعات المتبقية</p>
             <p class="muted small">مثال: معدل حالي 3.00 بعد 60 ساعة، والهدف 3.30، والمتبقي 60 ساعة ← (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 4: Percentage ---------- -->
         <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
           <div class="panel-head">
@@ -415,7 +385,6 @@
               <p class="muted small">اكتب معدلك التراكمي واختر مقياسه.</p>
             </div>
           </div>
-
           <div class="conv-grid">
             <div class="field">
               <label class="field-label always" for="convInput">معدلك التراكمي CGPA</label>
@@ -436,9 +405,7 @@
             </div>
 <!-- /conv-scale -->
           </div>
-
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">استخدم معدلي من تبويب CGPA</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">النسبة المئوية</div>
             <div class="result-value"><span id="pctValue">—</span></div>
@@ -446,12 +413,10 @@
             <div class="result-cheer" id="pctCheer"></div>
             <div class="result-sub" id="pctSub">أدخل معدلك التراكمي لترى النسبة المئوية.</div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="pct">نسخ النتيجة</button>
             <button type="button" class="btn btn-outline js-print" title="في نافذة الطباعة اختر «حفظ بتنسيق PDF» لتنزيل ملف PDF">طباعة / PDF</button>
           </div>
-
           <div class="formula">
             <div class="formula-title">المعادلة المستخدمة</div>
             <p class="formula-line" id="formulaMain"></p>
@@ -460,7 +425,6 @@
           </div>
         </section>
       </div>
-
       <!-- ================= Sidebar: grade table ================= -->
       <aside class="sidebar">
         <section class="card" aria-labelledby="tableTitle">
@@ -476,7 +440,6 @@
           </div>
           <p class="muted tiny">تختلف نطاقات الدرجات من جامعة لأخرى. راجع دائماً لائحة التقديرات في جامعتك.</p>
         </section>
-
 <!-- side-tips -->
         <section class="card tips">
           <h2 class="side-title">معلومات مفيدة</h2>
@@ -490,7 +453,6 @@
 <!-- /side-tips -->
       </aside>
     </div>
-
     <!-- ================= University calculators ================= -->
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">حاسبات CGPA وGPA للجامعات</h2>
@@ -513,10 +475,8 @@
         </a>
       </div>
     </section>
-
     <!-- ================= Guide (helpful content) ================= -->
     <article class="guide" id="guide">
-
       <nav class="card toc" aria-label="في هذه الصفحة">
         <p class="toc-title">في هذه الصفحة</p>
         <ol>
@@ -529,7 +489,6 @@
           <li><a href="#faq">الأسئلة الشائعة</a></li>
         </ol>
       </nav>
-
       <!-- What is CGPA -->
       <section id="what-is-cgpa">
         <h2>ما هو CGPA، وما الفرق بينه وبين GPA وSGPA؟</h2>
@@ -548,7 +507,6 @@
         <p>باختصار، يصف SGPA والمعدل الفصلي فصلاً واحداً، بينما يصف CGPA مسيرتك الدراسية كلها. في الولايات المتحدة تعني كلمة «GPA» وحدها غالباً الرقم التراكمي، ولهذا تختلط المصطلحات. وإذا سألك نموذج عن دراستك ككل فهو يريد الرقم التراكمي في أغلب الأحيان.</p>
         <p>الثلاثة كلها موزونة بـ <strong>الساعات المعتمدة</strong>. فالمقرر ذو 4 ساعات يؤثر في معدلك أكثر من معمل بساعة واحدة، لأنه يمثل وقت تدريس وجهداً أكبر.</p>
       </section>
-
       <!-- How to calculate -->
       <section id="how-to-calculate">
         <h2>كيف تحسب CGPA خطوة بخطوة</h2>
@@ -560,7 +518,6 @@
           <li><strong>اجمع فصولك.</strong> اضرب معدل كل فصل في ساعاته، واجمع النتائج، ثم اقسم على إجمالي ساعات كل الفصول. الناتج هو معدلك التراكمي.</li>
         </ol>
         <p class="formula-block">CGPA = مجموع (معدل الفصل × ساعات الفصل) ÷ مجموع (ساعات الفصل)</p>
-
         <h3>مثال محلول</h3>
         <p>عائشة طالبة في سنتها الأولى، وجامعتها تستخدم مقياس 4.0. هذا هو فصلها الأول:</p>
         <div class="table-scroll">
@@ -581,7 +538,6 @@
         <p class="formula-block">CGPA = (53.33 + 54.40) ÷ (15 + 17) = 107.73 ÷ 32 = 3.37</p>
         <p>إذن معدل عائشة التراكمي هو <strong>3.37</strong>. أما المتوسط البسيط لفصليها، (3.56 + 3.20) ÷ 2 = 3.38، فيعطي نتيجة مختلفة قليلاً. الفرق صغير هنا، لكنه يكبر عندما تختلف ساعات الفصول كثيراً، لذا استخدم الوزن بالساعات دائماً.</p>
       </section>
-
       <!-- How to use -->
       <section id="how-to-use">
         <h2>كيف تستخدم هذه الحاسبة</h2>
@@ -595,12 +551,10 @@
         </ol>
         <p>تُحفظ بياناتك في متصفحك أنت، فتبقى بعد التحديث، ولا يُرسل أي شيء إلى أي خادم. استخدم <em>نسخ النتيجة</em> لمشاركة أرقامك، أو <em>طباعة / PDF</em> للاحتفاظ بنسخة.</p>
       </section>
-
       <!-- CGPA to percentage -->
       <section id="cgpa-to-percentage">
         <h2>تحويل CGPA إلى نسبة مئوية</h2>
         <p>تطلب كثير من طلبات التوظيف ونماذج القبول وطلبات التأشيرة نسبة مئوية بدلاً من المعدل التراكمي. لا توجد معادلة موحدة في العالم، فالطريقة الصحيحة تعتمد على مقياسك وجامعتك. هذه هي الطرق الأكثر استخداماً.</p>
-
         <h3>مقياس 4.0</h3>
         <p class="formula-block">النسبة المئوية = (CGPA ÷ 4) × 100</p>
         <p>تبيّن هذه الطريقة النسبة التي حصلت عليها من الحد الأقصى. مثلاً:</p>
@@ -610,7 +564,6 @@
           <li>CGPA 2.80 → (2.80 ÷ 4) × 100 = <strong>70%</strong></li>
         </ul>
         <p>تطبع بعض الجامعات في باكستان وغيرها قاعدة التحويل الخاصة بها على كشف الدرجات أو في دليل الجامعة. إن كانت لجامعتك قاعدة كهذه فاستخدمها، لأنها القاعدة التي سيتحقق منها أصحاب العمل ومكاتب القبول.</p>
-
         <h3>مقياس 10 نقاط</h3>
         <p class="formula-block">النسبة المئوية = CGPA × 9.5</p>
         <p>هذه المعادلة اعتمدها مجلس CBSE، وتتبعها كثير من الجامعات الهندية. وقد توصّل CBSE إلى المعامل 9.5 بمقارنة نقاط التقدير بالدرجات الفعلية للطلاب في امتحانات سابقة. مثلاً:</p>
@@ -620,7 +573,6 @@
           <li>CGPA 7.5 → 7.5 × 9.5 = <strong>71.25%</strong></li>
         </ul>
         <p>ليست كل الجامعات تستخدم 9.5. فجامعة VTU مثلاً تستخدم (CGPA − 0.75) × 10، فيصبح 8.2 مساوياً 74.5%، وبعض الجامعات تضرب في 10 مباشرة. إذا نشرت جامعتك معادلة رسمية فاستخدمها.</p>
-
         <h3>جدول تحويل سريع</h3>
         <div class="table-scroll">
           <table class="data-table">
@@ -638,12 +590,10 @@
         </div>
         <p>في مقياس 5.0 الطريقة البسيطة هي (CGPA ÷ 5) × 100. ومعظم الجامعات التي تستخدم هذا المقياس تنشر أيضاً تصنيفات للدرجة مثل First Class أو Second Class Upper، فتحقق مما يطلبه صاحب العمل.</p>
       </section>
-
       <!-- Grade tables -->
       <section id="grade-tables">
         <h2>جداول نقاط التقدير لمقاييس 4.0 و5.0 و10 نقاط</h2>
         <p>هذه هي الجداول التي تستخدمها الحاسبة. إنها الصيغ الأكثر شيوعاً، لكن نطاقات الدرجات تختلف بين الجامعات، والكلمة الأخيرة دائماً للائحة جامعتك.</p>
-
         <h3>مقياس 4.0 (باكستان / الولايات المتحدة)</h3>
         <div class="table-scroll">
           <table class="data-table">
@@ -664,7 +614,6 @@
           </table>
         </div>
         <p>في الولايات المتحدة يمنح المعلمون غالباً تقديرات بالحروف مباشرة بدلاً من نطاقات درجات ثابتة، لكن نقاط كل حرف تبقى كما هي.</p>
-
         <h3>مقياس 5.0</h3>
         <div class="table-scroll">
           <table class="data-table">
@@ -680,7 +629,6 @@
           </table>
         </div>
         <p>يُستخدم هذا المقياس على نطاق واسع في الجامعات النيجيرية وفي عدد قليل من الدول الأخرى.</p>
-
         <h3>مقياس 10 نقاط (الهند)</h3>
         <div class="table-scroll">
           <table class="data-table">
@@ -699,7 +647,6 @@
         </div>
         <p>تتبع هذه التقديرات نظام الساعات المعتمدة الاختياري (CBCS) التابع لـ UGC. وبعض الجامعات تستخدم نطاقات درجات مختلفة قليلاً لكل تقدير.</p>
       </section>
-
       <!-- Tips -->
       <section id="tips">
         <h2>نصائح لرفع معدلك التراكمي</h2>
@@ -716,11 +663,9 @@
         </ul>
         <p>كلما زاد مجموع ساعاتك قلّ تأثير كل فصل جديد في معدلك التراكمي. أي أن التحسن المبكر أسهل بكثير من التحسن في السنة الأخيرة، لذا فأفضل وقت للبدء هو هذا الفصل.</p>
       </section>
-
       <!-- FAQ (keep in sync with the FAQPage data in the <head>) -->
       <section id="faq" class="faq">
         <h2>الأسئلة الشائعة</h2>
-
         <details>
           <summary><h3>هل CGPA هو نفسه GPA؟</h3></summary>
           <p>ليس تماماً. يعني GPA عادةً معدلك في فصل واحد، بينما CGPA هو معدلك في كل الفصول التي أنهيتها. لكن في الولايات المتحدة يعني «GPA» على كشف الدرجات غالباً الرقم التراكمي. إذا طلب منك نموذج معدلك للدراسة كلها فاكتب معدلك التراكمي.</p>
@@ -762,11 +707,9 @@
           <p>تُحفظ بياناتك في متصفحك أنت فقط، فلا تضيع عند تحديث الصفحة. لا يُرفع أو يُشارك أي شيء. ويمكنك مسح كل شيء في أي وقت بزر «إعادة ضبط الكل».</p>
         </details>
       </section>
-
       <p class="back-top"><a href="#calculator">↑ العودة إلى الحاسبة</a></p>
     </article>
   </main>
-
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -783,9 +726,7 @@
       </nav>
     </div>
   </footer>
-
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
   <script src="../i18n/ar.js" data-i18n=""></script>
   <script src="../site.js"></script>
   <script src="../script.js"></script>

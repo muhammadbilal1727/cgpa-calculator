@@ -23,13 +23,11 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/">
-  
   <!-- Icons -->
   <link rel="icon" href="favicon.ico" sizes="48x48">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-
   <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
@@ -42,14 +40,12 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="CGPA Calculator: a result card showing a CGPA of 3.37 out of 4.00, with 4.0, 5.0 and 10-point scale options">
-
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="CGPA Calculator – GPA, CGPA &amp; Percentage">
   <meta name="twitter:description" content="Work out your semester GPA, overall CGPA, target CGPA and percentage in seconds. Free, private and mobile friendly.">
   <meta name="twitter:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
   <meta name="twitter:image:alt" content="CGPA Calculator: a result card showing a CGPA of 3.37 out of 4.00, with 4.0, 5.0 and 10-point scale options">
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -180,7 +176,6 @@
   </script>
 </head>
 <body>
-
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -224,15 +219,12 @@
       </div>
     </div>
   </header>
-
   <main class="container">
-
     <section class="hero">
       <h1>CGPA Calculator: work out your GPA, CGPA &amp; percentage</h1>
       <p>Quick, free and private. Everything is worked out right here on your device.
         <a href="#guide" class="hero-link">New to CGPA? Read the guide ↓</a></p>
     </section>
-
     <!-- ================= Grading scale selector ================= -->
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
@@ -247,12 +239,9 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">Reset all</button>
     </section>
     <p class="print-only" id="printDate"></p>
-
     <div class="layout">
-
       <!-- ================= Calculators ================= -->
       <div class="main-col">
-
         <div class="tabs" role="tablist" aria-label="Calculators">
           <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">
             GPA <small>One semester</small>
@@ -267,7 +256,6 @@
             Percentage <small>Converter</small>
           </button>
         </div>
-
         <!-- ---------- TAB 1: GPA ---------- -->
         <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
           <div class="panel-head">
@@ -284,17 +272,14 @@
             </div>
 <!-- /mode-switch -->
           </div>
-
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>Subject (optional)</span><span>Credits</span><span id="gradeHead">Grade</span><span></span>
           </div>
           <div id="subjectList" class="row-list mode-grade"></div>
-
           <button type="button" id="addSubject" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             Add subject
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">Your semester GPA</div>
             <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
@@ -303,14 +288,12 @@
             <div class="result-sub" id="gpaSub">Add your subjects to see your GPA.</div>
             <div class="result-note" id="gpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToCgpa" class="btn btn-soft">Add this GPA to my CGPA →</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="gpa">Copy result</button>
             <button type="button" class="btn btn-outline js-print" title="In the print window, choose “Save as PDF” to download a PDF">Print / PDF</button>
             <button type="button" id="resetGpa" class="btn btn-quiet">Clear</button>
           </div>
-
           <details class="howto">
             <summary>How is GPA calculated?</summary>
             <p class="formula-line">GPA = (Σ credit hours × grade points) ÷ (Σ credit hours)</p>
@@ -318,7 +301,6 @@
               (3×4 + 2×3) ÷ (3+2) = 18 ÷ 5 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 2: CGPA ---------- -->
         <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
           <div class="panel-head">
@@ -327,17 +309,14 @@
               <p class="muted small">Add each semester's GPA (SGPA) and its total credit hours.</p>
             </div>
           </div>
-
           <div class="rows-head semester-cols" aria-hidden="true">
             <span>Semester</span><span>GPA / SGPA</span><span>Credit hours</span><span></span>
           </div>
           <div id="semesterList" class="row-list"></div>
-
           <button type="button" id="addSemester" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             Add semester
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">Your CGPA</div>
             <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
@@ -346,14 +325,12 @@
             <div class="result-sub" id="cgpaSub">Add your semesters to see your CGPA.</div>
             <div class="result-note" id="cgpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToPct" class="btn btn-soft">Convert this CGPA to % →</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">Copy result</button>
             <button type="button" class="btn btn-outline js-print" title="In the print window, choose “Save as PDF” to download a PDF">Print / PDF</button>
             <button type="button" id="resetCgpa" class="btn btn-quiet">Clear</button>
           </div>
-
           <details class="howto">
             <summary>How is CGPA calculated?</summary>
             <p class="formula-line">CGPA = (Σ semester GPA × semester credits) ÷ (total credits)</p>
@@ -361,7 +338,6 @@
               (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 3: Target CGPA ---------- -->
         <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
           <div class="panel-head">
@@ -370,7 +346,6 @@
               <p class="muted small">Find out what GPA you need in your coming semesters to reach your goal.</p>
             </div>
           </div>
-
           <div class="target-grid">
             <div class="field">
               <label class="field-label" for="tCurrent">Current CGPA</label>
@@ -393,9 +368,7 @@
               <p class="row-msg" id="tLeftMsg"></p>
             </div>
           </div>
-
           <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">Fill in from my CGPA tab</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">GPA you need each semester</div>
             <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
@@ -404,13 +377,11 @@
             <div class="result-sub" id="tgtSub">Fill in the four boxes above to see the GPA you need.</div>
             <div class="result-note" id="tgtNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="target">Copy result</button>
             <button type="button" class="btn btn-outline js-print" title="In the print window, choose “Save as PDF” to download a PDF">Print / PDF</button>
             <button type="button" id="resetTarget" class="btn btn-quiet">Clear</button>
           </div>
-
           <details class="howto">
             <summary>How is this calculated?</summary>
             <p class="formula-line">Needed GPA = (Target × total credits − Current × completed credits) ÷ remaining credits</p>
@@ -418,7 +389,6 @@
               (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 4: Percentage ---------- -->
         <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
           <div class="panel-head">
@@ -427,7 +397,6 @@
               <p class="muted small">Type your CGPA and choose its scale.</p>
             </div>
           </div>
-
           <div class="conv-grid">
             <div class="field">
               <label class="field-label always" for="convInput">Your CGPA</label>
@@ -448,9 +417,7 @@
             </div>
 <!-- /conv-scale -->
           </div>
-
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">Use my CGPA from the CGPA tab</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">Percentage</div>
             <div class="result-value"><span id="pctValue">—</span></div>
@@ -458,12 +425,10 @@
             <div class="result-cheer" id="pctCheer"></div>
             <div class="result-sub" id="pctSub">Enter your CGPA to see the percentage.</div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="pct">Copy result</button>
             <button type="button" class="btn btn-outline js-print" title="In the print window, choose “Save as PDF” to download a PDF">Print / PDF</button>
           </div>
-
           <div class="formula">
             <div class="formula-title">Formula used</div>
             <p class="formula-line" id="formulaMain"></p>
@@ -472,7 +437,6 @@
           </div>
         </section>
       </div>
-
       <!-- ================= Sidebar: grade table ================= -->
       <aside class="sidebar">
         <section class="card" aria-labelledby="tableTitle">
@@ -488,7 +452,6 @@
           </div>
           <p class="muted tiny">Marks ranges differ between universities. Always check your own university's grading policy.</p>
         </section>
-
 <!-- side-tips -->
         <section class="card tips">
           <h2 class="side-title">Good to know</h2>
@@ -502,7 +465,6 @@
 <!-- /side-tips -->
       </aside>
     </div>
-
     <!-- ================= University calculators ================= -->
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">University CGPA &amp; GPA calculators</h2>
@@ -525,10 +487,8 @@
         </a>
       </div>
     </section>
-
     <!-- ================= Guide (helpful content) ================= -->
     <article class="guide" id="guide">
-
       <nav class="card toc" aria-label="On this page">
         <p class="toc-title">On this page</p>
         <ol>
@@ -541,7 +501,6 @@
           <li><a href="#faq">FAQs</a></li>
         </ol>
       </nav>
-
       <!-- What is CGPA -->
       <section id="what-is-cgpa">
         <h2>What is CGPA, and how is it different from GPA and SGPA?</h2>
@@ -560,7 +519,6 @@
         <p>In short, SGPA and semester GPA describe one semester, while CGPA describes your whole journey. In the USA, "GPA" on its own often means the cumulative figure, which is why the words get mixed up. If a form asks about your degree as a whole, it almost always wants the cumulative number.</p>
         <p>All three are weighted by <strong>credit hours</strong>. A 4-credit course affects your average more than a 1-credit lab, because it stands for more teaching time and more work.</p>
       </section>
-
       <!-- How to calculate -->
       <section id="how-to-calculate">
         <h2>How to calculate CGPA step by step</h2>
@@ -572,7 +530,6 @@
           <li><strong>Combine your semesters.</strong> Multiply each semester's GPA by that semester's credit hours, add the results, and divide by the total credit hours of all semesters. The answer is your CGPA.</li>
         </ol>
         <p class="formula-block">CGPA = Σ (semester GPA × semester credits) ÷ Σ (semester credits)</p>
-
         <h3>Worked example</h3>
         <p>Ayesha is a first-year student whose university uses the 4.0 scale. Her first semester looks like this:</p>
         <div class="table-scroll">
@@ -593,7 +550,6 @@
         <p class="formula-block">CGPA = (53.33 + 54.40) ÷ (15 + 17) = 107.73 ÷ 32 = 3.37</p>
         <p>So Ayesha's CGPA is <strong>3.37</strong>. A simple average of her two semesters, (3.56 + 3.20) ÷ 2 = 3.38, gives a slightly different answer. The gap is small here, but it gets bigger when semesters have very different credit loads, so always weight by credits.</p>
       </section>
-
       <!-- How to use -->
       <section id="how-to-use">
         <h2>How to use this calculator</h2>
@@ -607,12 +563,10 @@
         </ol>
         <p>Your entries are saved in your own browser, so they're still there after a refresh, and nothing is sent to a server. Use <em>Copy result</em> to share your numbers, or <em>Print / PDF</em> to keep a copy for your records.</p>
       </section>
-
       <!-- CGPA to percentage -->
       <section id="cgpa-to-percentage">
         <h2>CGPA to percentage conversion</h2>
         <p>Many job applications, admission forms and visa applications ask for a percentage instead of a CGPA. There is no single worldwide formula, so the right method depends on your scale and your university. These are the most widely used ones.</p>
-
         <h3>4.0 scale</h3>
         <p class="formula-block">Percentage = (CGPA ÷ 4) × 100</p>
         <p>This shows what share of the maximum you earned. For example:</p>
@@ -622,7 +576,6 @@
           <li>CGPA 2.80 → (2.80 ÷ 4) × 100 = <strong>70%</strong></li>
         </ul>
         <p>Some universities in Pakistan and elsewhere print their own conversion rule on the transcript or in the prospectus. If yours has one, use it, because that is the rule employers and admissions offices will check.</p>
-
         <h3>10-point scale</h3>
         <p class="formula-block">Percentage = CGPA × 9.5</p>
         <p>This is the formula introduced by CBSE, and many Indian universities follow it. CBSE arrived at the 9.5 factor by comparing grade points with the marks students actually scored in past exams. For example:</p>
@@ -632,7 +585,6 @@
           <li>CGPA 7.5 → 7.5 × 9.5 = <strong>71.25%</strong></li>
         </ul>
         <p>Not every university uses 9.5. VTU, for example, uses (CGPA − 0.75) × 10, which turns 8.2 into 74.5%, and some universities simply multiply by 10. If your university has published an official formula, use that one.</p>
-
         <h3>Quick conversion table</h3>
         <div class="table-scroll">
           <table class="data-table">
@@ -650,12 +602,10 @@
         </div>
         <p>On the 5.0 scale, the simple method is (CGPA ÷ 5) × 100. Most universities on that scale also publish degree classes, such as First Class or Second Class Upper, so check which one your employer wants.</p>
       </section>
-
       <!-- Grade tables -->
       <section id="grade-tables">
         <h2>Grade point tables for 4.0, 5.0 and 10-point scales</h2>
         <p>These are the tables this calculator uses. They are the most common versions, but marks ranges vary between universities, so your own university's handbook always has the final say.</p>
-
         <h3>4.0 scale (Pakistan / USA)</h3>
         <div class="table-scroll">
           <table class="data-table">
@@ -676,7 +626,6 @@
           </table>
         </div>
         <p>In the USA, teachers often give letter grades directly instead of using fixed marks ranges, but the grade points for each letter are the same.</p>
-
         <h3>5.0 scale</h3>
         <div class="table-scroll">
           <table class="data-table">
@@ -692,7 +641,6 @@
           </table>
         </div>
         <p>This scale is widely used in Nigerian universities and in a few other countries.</p>
-
         <h3>10-point scale (India)</h3>
         <div class="table-scroll">
           <table class="data-table">
@@ -711,7 +659,6 @@
         </div>
         <p>These letter grades follow the UGC's choice-based credit system. Some universities use slightly different marks ranges for each grade.</p>
       </section>
-
       <!-- Tips -->
       <section id="tips">
         <h2>Tips to improve your CGPA</h2>
@@ -728,11 +675,9 @@
         </ul>
         <p>As your total credits grow, each new semester has a smaller effect on your CGPA. That means improving early is much easier than improving in your final year, so the best time to start is this semester.</p>
       </section>
-
       <!-- FAQ (keep in sync with the FAQPage data in the <head>) -->
       <section id="faq" class="faq">
         <h2>Frequently asked questions</h2>
-
         <details>
           <summary><h3>Is CGPA the same as GPA?</h3></summary>
           <p>Not exactly. GPA usually means your average for one semester, while CGPA is your average across all the semesters you have completed. In the USA, though, "GPA" on a transcript often means the cumulative figure. If a form asks for your GPA for the whole degree, give your CGPA.</p>
@@ -774,11 +719,9 @@
           <p>Your entries are saved only in your own browser, so they are not lost when you refresh the page. Nothing is uploaded or shared. You can clear everything at any time with the Reset all button.</p>
         </details>
       </section>
-
       <p class="back-top"><a href="#calculator">↑ Back to the calculator</a></p>
     </article>
   </main>
-
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -795,9 +738,7 @@
       </nav>
     </div>
   </footer>
-
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
   <script src="site.js"></script>
   <script src="script.js"></script>
 </body></html>

@@ -24,12 +24,10 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/vtu-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/vtu-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/vtu-cgpa-calculator.html">
-  
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
-
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="id_ID">
@@ -153,7 +151,6 @@
   </script>
 </head>
 <body>
-
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -197,15 +194,12 @@
       </div>
     </div>
   </header>
-
   <main class="container">
-
     <section class="hero">
       <nav class="breadcrumb" aria-label="Navigasi jejak"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">VTU</span></nav>
       <h1>Kalkulator CGPA &amp; GPA (SGPA) VTU</h1>
       <p>Hitung SGPA dan CGPA VTU Anda, lalu ubah CGPA ke persentase, dengan aturan resmi dari peraturan VTU untuk skema 2022 dan 2021. <a href="#guide" class="hero-link">Cara penilaian di VTU ↓</a></p>
     </section>
-
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <label id="scaleLabel" for="scaleSelect" class="scale-title">Skema VTU Anda</label>
@@ -215,19 +209,15 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">Atur ulang semua</button>
     </section>
     <p class="print-only" id="printDate"></p>
-
     <div class="layout">
-
       <!-- ================= Calculators ================= -->
       <div class="main-col">
-
         <div class="tabs" role="tablist" aria-label="Kalkulator">
           <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">GPA <small>Satu semester</small></button>
           <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>Semua semester</small></button>
           <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">Target <small>Rencanakan</small></button>
           <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">Persentase <small>Konversi</small></button>
         </div>
-
         <!-- ---------- TAB 1: GPA ---------- -->
         <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
           <div class="panel-head">
@@ -235,7 +225,6 @@
               <h2>GPA semester</h2>
               <p class="muted small">Tambahkan setiap mata kuliah beserta SKS dan nilainya.</p>
             </div>
-
             <div class="segmented" id="modeSwitch" role="radiogroup" aria-label="Bagaimana Anda ingin memasukkan hasil?">
               <input type="radio" name="gpaMode" id="modeGrade" value="grade" checked="">
               <label for="modeGrade">Nilai huruf</label>
@@ -243,17 +232,14 @@
               <label for="modeMarks">Nilai angka</label>
             </div>
           </div>
-
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>Mata kuliah (opsional)</span><span>SKS</span><span id="gradeHead">Nilai huruf</span><span></span>
           </div>
           <div id="subjectList" class="row-list mode-grade"></div>
-
           <button type="button" id="addSubject" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             Tambah mata kuliah
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">GPA semester Anda</div>
             <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
@@ -262,21 +248,18 @@
             <div class="result-sub" id="gpaSub">Tambahkan mata kuliah untuk melihat GPA Anda.</div>
             <div class="result-note" id="gpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToCgpa" class="btn btn-soft">Tambahkan GPA ini ke CGPA saya →</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="gpa">Salin hasil</button>
             <button type="button" class="btn btn-outline js-print" title="Di jendela cetak, pilih “Simpan sebagai PDF” untuk mengunduh PDF">Cetak / PDF</button>
             <button type="button" id="resetGpa" class="btn btn-quiet">Hapus</button>
           </div>
-
           <details class="howto">
             <summary>Bagaimana GPA dihitung?</summary>
             <p class="formula-line">GPA = (Σ SKS × poin nilai) ÷ (Σ SKS)</p>
             <p class="muted small">Contoh: Matematika 3 SKS dengan poin 4.00, dan Bahasa Inggris 2 SKS dengan 3.00 → (3×4 + 2×3) ÷ (3+2) = 18 ÷ 5 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 2: CGPA ---------- -->
         <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
           <div class="panel-head">
@@ -285,17 +268,14 @@
               <p class="muted small">Tambahkan GPA (SGPA) setiap semester dan total SKS-nya.</p>
             </div>
           </div>
-
           <div class="rows-head semester-cols" aria-hidden="true">
             <span>Semester</span><span>GPA / SGPA</span><span>SKS</span><span></span>
           </div>
           <div id="semesterList" class="row-list"></div>
-
           <button type="button" id="addSemester" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             Tambah semester
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">CGPA Anda</div>
             <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
@@ -304,21 +284,18 @@
             <div class="result-sub" id="cgpaSub">Tambahkan semester untuk melihat CGPA Anda.</div>
             <div class="result-note" id="cgpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToPct" class="btn btn-soft">Ubah CGPA ini ke % →</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">Salin hasil</button>
             <button type="button" class="btn btn-outline js-print" title="Di jendela cetak, pilih “Simpan sebagai PDF” untuk mengunduh PDF">Cetak / PDF</button>
             <button type="button" id="resetCgpa" class="btn btn-quiet">Hapus</button>
           </div>
-
           <details class="howto">
             <summary>Bagaimana CGPA dihitung?</summary>
             <p class="formula-line">CGPA = (Σ GPA semester × SKS semester) ÷ (total SKS)</p>
             <p class="muted small">Semester dengan SKS lebih banyak berbobot lebih besar. Contoh: 3.50 dengan 18 SKS dan 3.00 dengan 15 SKS → (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 3: Target CGPA ---------- -->
         <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
           <div class="panel-head">
@@ -327,7 +304,6 @@
               <p class="muted small">Cari tahu GPA yang Anda perlukan di semester mendatang untuk mencapai target.</p>
             </div>
           </div>
-
           <div class="target-grid">
             <div class="field">
               <label class="field-label" for="tCurrent">CGPA saat ini</label>
@@ -350,9 +326,7 @@
               <p class="row-msg" id="tLeftMsg"></p>
             </div>
           </div>
-
           <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">Isi dari tab CGPA saya</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">GPA yang diperlukan tiap semester</div>
             <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
@@ -361,20 +335,17 @@
             <div class="result-sub" id="tgtSub">Isi keempat kolom di atas untuk melihat GPA yang Anda perlukan.</div>
             <div class="result-note" id="tgtNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="target">Salin hasil</button>
             <button type="button" class="btn btn-outline js-print" title="Di jendela cetak, pilih “Simpan sebagai PDF” untuk mengunduh PDF">Cetak / PDF</button>
             <button type="button" id="resetTarget" class="btn btn-quiet">Hapus</button>
           </div>
-
           <details class="howto">
             <summary>Bagaimana ini dihitung?</summary>
             <p class="formula-line">GPA yang diperlukan = (Target × total SKS − Saat ini × SKS ditempuh) ÷ SKS tersisa</p>
             <p class="muted small">Contoh: saat ini 3.00 setelah 60 SKS, target 3.30, sisa 60 SKS → (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 4: Percentage ---------- -->
         <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
           <div class="panel-head">
@@ -383,14 +354,12 @@
               <p class="muted small">Ketik CGPA Anda dan pilih skalanya.</p>
             </div>
           </div>
-
           <div class="conv-grid">
             <div class="field">
               <label class="field-label always" for="convInput">CGPA Anda</label>
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
-
             <div class="field">
               <span class="field-label always" id="convScaleLabel">Skema</span>
               <div class="segmented full" role="radiogroup" aria-labelledby="convScaleLabel">
@@ -401,9 +370,7 @@
               </div>
             </div>
           </div>
-
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">Gunakan CGPA saya dari tab CGPA</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">Persentase</div>
             <div class="result-value"><span id="pctValue">—</span></div>
@@ -411,12 +378,10 @@
             <div class="result-cheer" id="pctCheer"></div>
             <div class="result-sub" id="pctSub">Masukkan CGPA Anda untuk melihat persentasenya.</div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="pct">Salin hasil</button>
             <button type="button" class="btn btn-outline js-print" title="Di jendela cetak, pilih “Simpan sebagai PDF” untuk mengunduh PDF">Cetak / PDF</button>
           </div>
-
           <div class="formula">
             <div class="formula-title">Rumus yang digunakan</div>
             <p class="formula-line" id="formulaMain"></p>
@@ -425,7 +390,6 @@
           </div>
         </section>
       </div>
-
       <!-- ================= Sidebar: grade table ================= -->
       <aside class="sidebar">
         <section class="card" aria-labelledby="tableTitle">
@@ -441,7 +405,6 @@
           </div>
           <p class="muted tiny">Rentang nilai berbeda di setiap kampus. Selalu periksa aturan penilaian kampus Anda sendiri.</p>
         </section>
-
         <section class="card tips">
           <h2 class="side-title">Fakta singkat VTU</h2>
           <ul>
@@ -452,14 +415,11 @@
         </section>
       </aside>
     </div>
-
     <article class="guide" id="guide">
-
       <section id="scheme">
         <h2>Anda di skema VTU yang mana?</h2>
         <p>VTU memperbarui peraturannya dari waktu ke waktu. Peraturan 2022 berlaku untuk mahasiswa yang diterima mulai tahun akademik 2022-23, sedangkan peraturan 2021 berlaku sejak 2021-22. Pilih skema Anda di bagian atas kalkulator, karena huruf nilai dan rumus CGPA ke persentasenya berbeda.</p>
       </section>
-
       <section id="grade-points">
         <h2>Sistem penilaian VTU: skema 2022</h2>
         <p>VTU memakai penilaian absolut. Nilai CIE (evaluasi internal berkelanjutan) dan SEE (ujian akhir semester) Anda dijumlahkan dan diubah menjadi persentase, dan persentase itulah yang menentukan nilai Anda (klausul 22OB 6.1).</p>
@@ -494,7 +454,6 @@
           </table>
         </div>
       </section>
-
       <section id="example">
         <h2>Cara VTU menghitung SGPA dan CGPA</h2>
         <p class="formula-block">SGPA = Σ (Ci × Gi) ÷ Σ Ci &nbsp;&nbsp; CGPA = Σ (Ci × Si) ÷ Σ Ci</p>
@@ -514,7 +473,6 @@
         </div>
         <p class="formula-block">SGPA = 123 ÷ 15 = 8.20</p>
       </section>
-
       <section id="percentage">
         <h2>CGPA VTU ke persentase</h2>
         <p><strong>Skema 2022:</strong> Persentase = CGPA × 10, jadi CGPA 8.20 menjadi <strong>82%</strong> (klausul 22OB 6.7). Peraturan menyebutkan rumus ini boleh dipakai untuk keperluan kerja dan studi lanjut.</p>
@@ -527,7 +485,6 @@
           <li><strong>Pass Class:</strong> 40% hingga 50%, yaitu CGPA 4.00 sampai 4.99</li>
         </ul>
       </section>
-
       <section id="passing">
         <h2>Nilai kelulusan VTU (skema 2022)</h2>
         <ul>
@@ -537,10 +494,8 @@
           <li>Untuk lulus seluruh program, Anda perlu nilai P atau lebih baik di setiap mata kuliah yang diambil.</li>
         </ul>
       </section>
-
       <section id="faq" class="faq">
         <h2>FAQ kalkulator CGPA VTU</h2>
-
         <details>
           <summary><h3>Bagaimana cara mengubah CGPA VTU ke persentase?</h3></summary>
           <p>Untuk skema 2022, kalikan CGPA Anda dengan 10, jadi 8.20 menjadi 82%. Untuk skema 2021 dan skema CBCS 2015 yang lebih lama, gunakan (CGPA − 0.75) × 10, jadi 8.20 menjadi 74.5%.</p>
@@ -566,7 +521,6 @@
           <p>Kalikan SGPA setiap semester dengan total SKS semester itu, jumlahkan hasilnya, lalu bagi dengan total SKS semua semester. SGPA dan CGPA dibulatkan ke 2 angka di belakang koma.</p>
         </details>
       </section>
-
       <section id="sources">
         <h2>Sumber</h2>
         <ul class="source-note">
@@ -577,7 +531,6 @@
         <p class="source-note">Terakhir diperiksa: 18 Oktober 2026. Aturan kampus bisa berubah, jadi selalu pastikan hasil Anda dengan aturan resmi terbaru dari kampus Anda. Lihat <a href="terms.html">Ketentuan Penggunaan</a> kami.</p>
       </section>
     </article>
-
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">Kalkulator CGPA &amp; GPA lainnya</h2>
       <div class="uni-grid">
@@ -600,7 +553,6 @@
     </section>
     <p class="back-top"><a href="#calculator">↑ Kembali ke kalkulator</a></p>
   </main>
-
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -617,9 +569,7 @@
       </nav>
     </div>
   </footer>
-
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-vtu',
     defaultScale: '2022',

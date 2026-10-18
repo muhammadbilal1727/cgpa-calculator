@@ -24,12 +24,10 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/nust-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/nust-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/nust-cgpa-calculator.html">
-  
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
-
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="ru_RU">
@@ -161,7 +159,6 @@
   </script>
 </head>
 <body>
-
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -205,15 +202,12 @@
       </div>
     </div>
   </header>
-
   <main class="container">
-
     <section class="hero">
       <nav class="breadcrumb" aria-label="Навигационная цепочка"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">NUST</span></nav>
       <h1>Калькулятор CGPA и GPA для NUST</h1>
       <p>Рассчитайте семестровый GPA и общий CGPA по официальным баллам бакалавриата NUST (A = 4.00, B+ = 3.50, B = 3.00 и т. д.). <a href="#guide" class="hero-link">Как оценивают в NUST ↓</a></p>
     </section>
-
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <p id="scaleLabel" class="scale-title">Система оценивания: бакалавриат NUST</p>
@@ -223,19 +217,15 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">Сбросить всё</button>
     </section>
     <p class="print-only" id="printDate"></p>
-
     <div class="layout">
-
       <!-- ================= Calculators ================= -->
       <div class="main-col">
-
         <div class="tabs" role="tablist" aria-label="Калькуляторы">
           <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">GPA <small>Один семестр</small></button>
           <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>Все семестры</small></button>
           <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">Цель <small>Планирование</small></button>
           <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">Проценты <small>Конвертер</small></button>
         </div>
-
         <!-- ---------- TAB 1: GPA ---------- -->
         <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
           <div class="panel-head">
@@ -243,19 +233,15 @@
               <h2>GPA за семестр</h2>
               <p class="muted small">Добавьте каждый предмет с его кредитами и оценкой.</p>
             </div>
-
           </div>
-
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>Предмет (необязательно)</span><span>Кредиты</span><span id="gradeHead">Оценка</span><span></span>
           </div>
           <div id="subjectList" class="row-list mode-grade"></div>
-
           <button type="button" id="addSubject" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             Добавить предмет
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">Ваш GPA за семестр</div>
             <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
@@ -264,21 +250,18 @@
             <div class="result-sub" id="gpaSub">Добавьте предметы, чтобы увидеть свой GPA.</div>
             <div class="result-note" id="gpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToCgpa" class="btn btn-soft">Добавить этот GPA в мой CGPA →</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="gpa">Копировать результат</button>
             <button type="button" class="btn btn-outline js-print" title="В окне печати выберите «Сохранить как PDF», чтобы скачать PDF">Печать / PDF</button>
             <button type="button" id="resetGpa" class="btn btn-quiet">Очистить</button>
           </div>
-
           <details class="howto">
             <summary>Как рассчитывается GPA?</summary>
             <p class="formula-line">GPA = (Σ кредиты × баллы оценки) ÷ (Σ кредиты)</p>
             <p class="muted small">Пример: математика — 3 кредита и 4.00 балла, английский — 2 кредита и 3.00 → (3×4 + 2×3) ÷ (3+2) = 18 ÷ 5 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 2: CGPA ---------- -->
         <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
           <div class="panel-head">
@@ -287,17 +270,14 @@
               <p class="muted small">Добавьте GPA каждого семестра (SGPA) и общее число его кредитов.</p>
             </div>
           </div>
-
           <div class="rows-head semester-cols" aria-hidden="true">
             <span>Семестр</span><span>GPA / SGPA</span><span>Кредиты</span><span></span>
           </div>
           <div id="semesterList" class="row-list"></div>
-
           <button type="button" id="addSemester" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             Добавить семестр
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">Ваш CGPA</div>
             <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
@@ -306,21 +286,18 @@
             <div class="result-sub" id="cgpaSub">Добавьте семестры, чтобы увидеть свой CGPA.</div>
             <div class="result-note" id="cgpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToPct" class="btn btn-soft">Перевести этот CGPA в % →</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">Копировать результат</button>
             <button type="button" class="btn btn-outline js-print" title="В окне печати выберите «Сохранить как PDF», чтобы скачать PDF">Печать / PDF</button>
             <button type="button" id="resetCgpa" class="btn btn-quiet">Очистить</button>
           </div>
-
           <details class="howto">
             <summary>Как рассчитывается CGPA?</summary>
             <p class="formula-line">CGPA = (Σ GPA семестра × кредиты семестра) ÷ (всего кредитов)</p>
             <p class="muted small">Семестры с большим числом кредитов весят больше. Пример: 3.50 при 18 кредитах и 3.00 при 15 кредитах → (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 3: Target CGPA ---------- -->
         <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
           <div class="panel-head">
@@ -329,7 +306,6 @@
               <p class="muted small">Узнайте, какой GPA нужен в следующих семестрах, чтобы достичь цели.</p>
             </div>
           </div>
-
           <div class="target-grid">
             <div class="field">
               <label class="field-label" for="tCurrent">Текущий CGPA</label>
@@ -352,9 +328,7 @@
               <p class="row-msg" id="tLeftMsg"></p>
             </div>
           </div>
-
           <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">Заполнить из вкладки CGPA</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">Нужный GPA в каждом семестре</div>
             <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
@@ -363,20 +337,17 @@
             <div class="result-sub" id="tgtSub">Заполните четыре поля выше, чтобы увидеть нужный GPA.</div>
             <div class="result-note" id="tgtNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="target">Копировать результат</button>
             <button type="button" class="btn btn-outline js-print" title="В окне печати выберите «Сохранить как PDF», чтобы скачать PDF">Печать / PDF</button>
             <button type="button" id="resetTarget" class="btn btn-quiet">Очистить</button>
           </div>
-
           <details class="howto">
             <summary>Как это рассчитывается?</summary>
             <p class="formula-line">Нужный GPA = (Цель × всего кредитов − Текущий × пройденные кредиты) ÷ оставшиеся кредиты</p>
             <p class="muted small">Пример: сейчас 3.00 после 60 кредитов, цель 3.30, осталось 60 кредитов → (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 4: Percentage ---------- -->
         <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
           <div class="panel-head">
@@ -385,18 +356,14 @@
               <p class="muted small">Введите CGPA и выберите его шкалу.</p>
             </div>
           </div>
-
           <div class="conv-grid">
             <div class="field">
               <label class="field-label always" for="convInput">Ваш CGPA</label>
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
-
           </div>
-
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">Взять мой CGPA из вкладки CGPA</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">Проценты</div>
             <div class="result-value"><span id="pctValue">—</span></div>
@@ -404,12 +371,10 @@
             <div class="result-cheer" id="pctCheer"></div>
             <div class="result-sub" id="pctSub">Введите CGPA, чтобы увидеть процент.</div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="pct">Копировать результат</button>
             <button type="button" class="btn btn-outline js-print" title="В окне печати выберите «Сохранить как PDF», чтобы скачать PDF">Печать / PDF</button>
           </div>
-
           <div class="formula">
             <div class="formula-title">Используемая формула</div>
             <p class="formula-line" id="formulaMain"></p>
@@ -418,7 +383,6 @@
           </div>
         </section>
       </div>
-
       <!-- ================= Sidebar: grade table ================= -->
       <aside class="sidebar">
         <section class="card" aria-labelledby="tableTitle">
@@ -434,7 +398,6 @@
           </div>
           <p class="muted tiny">Диапазоны баллов в разных университетах отличаются. Всегда сверяйтесь с правилами оценивания своего университета.</p>
         </section>
-
         <section class="card tips">
           <h2 class="side-title">Коротко о NUST</h2>
           <ul>
@@ -445,9 +408,7 @@
         </section>
       </aside>
     </div>
-
     <article class="guide" id="guide">
-
       <section id="how-it-works">
         <h2>Как оценивают в NUST</h2>
         <p>В NUST используется относительное оценивание по шкале 4.00. Как сказано в NUST Undergraduate Student Handbook: <q>The University follows a relative grading system on a scale of 1.00 to 4.00 points.</q> («Университет использует систему относительного оценивания по шкале от 1.00 до 4.00 баллов».) Ваша буквенная оценка зависит от того, как вы выступили по сравнению с потоком, а не от фиксированного процента. 82 % на трудном экзамене могут дать A, а на лёгком — B+.</p>
@@ -455,7 +416,6 @@
         <h3>Курсы с теорией и лабораторной частью</h3>
         <p>Для курса с теоретическими и лабораторными кредитами NUST сначала объединяет два процента, взвешивая их по кредитам, а затем ставит одну оценку за весь курс. Пример из самого справочника: физика, 3 кредита теории на 70 % и 1 кредит лабораторной на 90 %, то есть (70 × 3 + 90 × 1) ÷ 4 = 75 %. Вы получаете одну оценку за все 4 кредита, поэтому вводите курс как один предмет на 4 кредита.</p>
       </section>
-
       <section id="grade-points">
         <h2>Таблица баллов NUST</h2>
         <div class="table-scroll">
@@ -476,7 +436,6 @@
         </div>
         <p>I (не завершён), W (отказ от курса), Q (зачтено) и T (перезачёт) баллов не дают. Обратите внимание: в NUST нет A+ и оценок с минусом — B+ и C+ на полбалла выше B и C.</p>
       </section>
-
       <section id="example">
         <h2>Как рассчитать GPA в NUST: разобранный пример</h2>
         <div class="table-scroll">
@@ -495,7 +454,6 @@
         <p class="formula-block">GPA = 54.00 ÷ 16 = 3.375 ≈ 3.38</p>
         <p>CGPA по всем семестрам считается так же: сложите кредиты × баллы по каждому пройденному курсу и разделите на общее число кредитов. Вкладка CGPA делает это по вашим семестровым GPA.</p>
       </section>
-
       <section id="minimum-cgpa">
         <h2>Минимальный CGPA и академическая задолженность в NUST</h2>
         <ul>
@@ -505,21 +463,17 @@
         </ul>
         <p>Если ваш CGPA опустился ниже 2.00, вкладка «Цель» покажет, какой GPA нужен в оставшихся семестрах, чтобы снова подняться выше.</p>
       </section>
-
       <section id="repeat">
         <h2>Повторное прохождение курса для повышения CGPA</h2>
         <p>При повторном прохождении курса в выписке видны и старая, и новая оценка, но в CGPA учитывается только лучшая. Повторное прохождение требует разрешения заведующего кафедрой (HoD), а оценки, полученные при повторе, не учитываются для высших академических наград, кроме Rector's Gold Medal. Если после повтора вы снова не сдадите курс, это всё равно считается одной F.</p>
         <p><strong>Совет:</strong> для повторно пройденного курса вводите только лучшую оценку.</p>
       </section>
-
       <section id="percentage">
         <h2>Перевод CGPA NUST в проценты</h2>
         <p>В NUST Undergraduate Student Handbook нет официальной формулы перевода CGPA в проценты. Когда нужен процент, многие используют (CGPA ÷ 4) × 100, и тогда 3.40 — это 85 %. У работодателей и университетов бывают свои правила, поэтому уточните, что принимает организация, куда вы подаёте документы. Вкладка «Проценты» использует этот простой способ.</p>
       </section>
-
       <section id="faq" class="faq">
         <h2>Вопросы о калькуляторе CGPA для NUST</h2>
-
         <details>
           <summary><h3>В NUST относительное или абсолютное оценивание?</h3></summary>
           <p>В NUST относительное оценивание по шкале 4.00, поэтому оценка зависит от ваших результатов по сравнению с потоком, а не от фиксированного процента. Именно поэтому для NUST нет фиксированной таблицы перевода баллов в оценки.</p>
@@ -549,7 +503,6 @@
           <p>Введите его как один предмет с общим числом кредитов, например 4 для курса 3+1. NUST объединяет баллы за теорию и лабораторную в одну оценку за весь курс.</p>
         </details>
       </section>
-
       <section id="sources">
         <h2>Источники</h2>
         <ul class="source-note">
@@ -558,7 +511,6 @@
         <p class="source-note">Последняя проверка: 18 октября 2026 г. Правила университетов могут меняться, поэтому всегда сверяйте результаты с актуальными официальными правилами своего университета. См. наши <a href="terms.html">Условия использования</a>.</p>
       </section>
     </article>
-
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">Другие калькуляторы CGPA и GPA</h2>
       <div class="uni-grid">
@@ -581,7 +533,6 @@
     </section>
     <p class="back-top"><a href="#calculator">↑ Вернуться к калькулятору</a></p>
   </main>
-
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -598,9 +549,7 @@
       </nav>
     </div>
   </footer>
-
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-nust',
     scales: {

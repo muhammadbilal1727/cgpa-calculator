@@ -24,12 +24,10 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/nust-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/nust-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/nust-cgpa-calculator.html">
-  
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
-
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="te_IN">
@@ -161,7 +159,6 @@
   </script>
 </head>
 <body>
-
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -205,15 +202,12 @@
       </div>
     </div>
   </header>
-
   <main class="container">
-
     <section class="hero">
       <nav class="breadcrumb" aria-label="బ్రెడ్‌క్రంబ్"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">NUST</span></nav>
       <h1>NUST CGPA &amp; GPA కాలిక్యులేటర్</h1>
       <p>NUST అధికారిక అండర్‌గ్రాడ్యుయేట్ గ్రేడ్ పాయింట్లతో (A = 4.00, B+ = 3.50, B = 3.00 మొదలైనవి) మీ సెమిస్టర్ GPA, మొత్తం CGPA లెక్కించండి. <a href="#guide" class="hero-link">NUSTలో గ్రేడింగ్ ఎలా జరుగుతుంది ↓</a></p>
     </section>
-
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <p id="scaleLabel" class="scale-title">గ్రేడింగ్ విధానం: NUST అండర్‌గ్రాడ్యుయేట్</p>
@@ -223,19 +217,15 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">అన్నీ రీసెట్ చేయండి</button>
     </section>
     <p class="print-only" id="printDate"></p>
-
     <div class="layout">
-
       <!-- ================= Calculators ================= -->
       <div class="main-col">
-
         <div class="tabs" role="tablist" aria-label="కాలిక్యులేటర్లు">
           <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">GPA <small>ఒక సెమిస్టర్</small></button>
           <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>అన్ని సెమిస్టర్లు</small></button>
           <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">లక్ష్యం <small>ముందుగా ప్లాన్</small></button>
           <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">శాతం <small>కన్వర్టర్</small></button>
         </div>
-
         <!-- ---------- TAB 1: GPA ---------- -->
         <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
           <div class="panel-head">
@@ -243,19 +233,15 @@
               <h2>సెమిస్టర్ GPA</h2>
               <p class="muted small">ప్రతి సబ్జెక్టును దాని క్రెడిట్లు, గ్రేడ్‌తో జోడించండి.</p>
             </div>
-
           </div>
-
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>సబ్జెక్టు (ఐచ్ఛికం)</span><span>క్రెడిట్లు</span><span id="gradeHead">గ్రేడ్</span><span></span>
           </div>
           <div id="subjectList" class="row-list mode-grade"></div>
-
           <button type="button" id="addSubject" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             సబ్జెక్టు జోడించండి
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">మీ సెమిస్టర్ GPA</div>
             <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
@@ -264,21 +250,18 @@
             <div class="result-sub" id="gpaSub">మీ GPA చూడటానికి సబ్జెక్టులను జోడించండి.</div>
             <div class="result-note" id="gpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToCgpa" class="btn btn-soft">ఈ GPA‌ని నా CGPAకి జోడించండి →</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="gpa">ఫలితాన్ని కాపీ చేయండి</button>
             <button type="button" class="btn btn-outline js-print" title="PDF డౌన్‌లోడ్ చేయడానికి ప్రింట్ విండోలో “Save as PDF” ఎంచుకోండి">ప్రింట్ / PDF</button>
             <button type="button" id="resetGpa" class="btn btn-quiet">క్లియర్</button>
           </div>
-
           <details class="howto">
             <summary>GPA ఎలా లెక్కిస్తారు?</summary>
             <p class="formula-line">GPA = (Σ క్రెడిట్లు × గ్రేడ్ పాయింట్లు) ÷ (Σ క్రెడిట్లు)</p>
             <p class="muted small">ఉదాహరణ: గణితం 3 క్రెడిట్లు, 4.00 గ్రేడ్ పాయింట్లు; ఇంగ్లీష్ 2 క్రెడిట్లు, 3.00 → (3×4 + 2×3) ÷ (3+2) = 18 ÷ 5 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 2: CGPA ---------- -->
         <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
           <div class="panel-head">
@@ -287,17 +270,14 @@
               <p class="muted small">ప్రతి సెమిస్టర్ GPA (SGPA), దాని మొత్తం క్రెడిట్లు జోడించండి.</p>
             </div>
           </div>
-
           <div class="rows-head semester-cols" aria-hidden="true">
             <span>సెమిస్టర్</span><span>GPA / SGPA</span><span>క్రెడిట్లు</span><span></span>
           </div>
           <div id="semesterList" class="row-list"></div>
-
           <button type="button" id="addSemester" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             సెమిస్టర్ జోడించండి
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">మీ CGPA</div>
             <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
@@ -306,21 +286,18 @@
             <div class="result-sub" id="cgpaSub">మీ CGPA చూడటానికి సెమిస్టర్లను జోడించండి.</div>
             <div class="result-note" id="cgpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToPct" class="btn btn-soft">ఈ CGPA‌ని %కి మార్చండి →</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">ఫలితాన్ని కాపీ చేయండి</button>
             <button type="button" class="btn btn-outline js-print" title="PDF డౌన్‌లోడ్ చేయడానికి ప్రింట్ విండోలో “Save as PDF” ఎంచుకోండి">ప్రింట్ / PDF</button>
             <button type="button" id="resetCgpa" class="btn btn-quiet">క్లియర్</button>
           </div>
-
           <details class="howto">
             <summary>CGPA ఎలా లెక్కిస్తారు?</summary>
             <p class="formula-line">CGPA = (Σ సెమిస్టర్ GPA × సెమిస్టర్ క్రెడిట్లు) ÷ (మొత్తం క్రెడిట్లు)</p>
             <p class="muted small">ఎక్కువ క్రెడిట్లు ఉన్న సెమిస్టర్‌లకు ఎక్కువ బరువు ఉంటుంది. ఉదాహరణ: 18 క్రెడిట్లతో 3.50, 15 క్రెడిట్లతో 3.00 → (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 3: Target CGPA ---------- -->
         <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
           <div class="panel-head">
@@ -329,7 +306,6 @@
               <p class="muted small">మీ లక్ష్యం చేరుకోవడానికి రాబోయే సెమిస్టర్‌లలో ఎంత GPA కావాలో తెలుసుకోండి.</p>
             </div>
           </div>
-
           <div class="target-grid">
             <div class="field">
               <label class="field-label" for="tCurrent">ప్రస్తుత CGPA</label>
@@ -352,9 +328,7 @@
               <p class="row-msg" id="tLeftMsg"></p>
             </div>
           </div>
-
           <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">నా CGPA ట్యాబ్ నుంచి నింపండి</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">ప్రతి సెమిస్టర్‌లో కావలసిన GPA</div>
             <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
@@ -363,20 +337,17 @@
             <div class="result-sub" id="tgtSub">కావలసిన GPA చూడటానికి పై నాలుగు బాక్సులను నింపండి.</div>
             <div class="result-note" id="tgtNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="target">ఫలితాన్ని కాపీ చేయండి</button>
             <button type="button" class="btn btn-outline js-print" title="PDF డౌన్‌లోడ్ చేయడానికి ప్రింట్ విండోలో “Save as PDF” ఎంచుకోండి">ప్రింట్ / PDF</button>
             <button type="button" id="resetTarget" class="btn btn-quiet">క్లియర్</button>
           </div>
-
           <details class="howto">
             <summary>ఇది ఎలా లెక్కిస్తారు?</summary>
             <p class="formula-line">కావలసిన GPA = (లక్ష్యం × మొత్తం క్రెడిట్లు − ప్రస్తుతం × పూర్తయిన క్రెడిట్లు) ÷ మిగిలిన క్రెడిట్లు</p>
             <p class="muted small">ఉదాహరణ: 60 క్రెడిట్ల తర్వాత ప్రస్తుతం 3.00, లక్ష్యం 3.30, మిగిలినవి 60 క్రెడిట్లు → (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 4: Percentage ---------- -->
         <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
           <div class="panel-head">
@@ -385,18 +356,14 @@
               <p class="muted small">మీ CGPA టైప్ చేసి దాని స్కేల్‌ను ఎంచుకోండి.</p>
             </div>
           </div>
-
           <div class="conv-grid">
             <div class="field">
               <label class="field-label always" for="convInput">మీ CGPA</label>
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
-
           </div>
-
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">CGPA ట్యాబ్ నుంచి నా CGPA వాడండి</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">శాతం</div>
             <div class="result-value"><span id="pctValue">—</span></div>
@@ -404,12 +371,10 @@
             <div class="result-cheer" id="pctCheer"></div>
             <div class="result-sub" id="pctSub">శాతం చూడటానికి మీ CGPA నమోదు చేయండి.</div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="pct">ఫలితాన్ని కాపీ చేయండి</button>
             <button type="button" class="btn btn-outline js-print" title="PDF డౌన్‌లోడ్ చేయడానికి ప్రింట్ విండోలో “Save as PDF” ఎంచుకోండి">ప్రింట్ / PDF</button>
           </div>
-
           <div class="formula">
             <div class="formula-title">ఉపయోగించిన సూత్రం</div>
             <p class="formula-line" id="formulaMain"></p>
@@ -418,7 +383,6 @@
           </div>
         </section>
       </div>
-
       <!-- ================= Sidebar: grade table ================= -->
       <aside class="sidebar">
         <section class="card" aria-labelledby="tableTitle">
@@ -434,7 +398,6 @@
           </div>
           <p class="muted tiny">మార్కుల పరిధులు విశ్వవిద్యాలయాన్ని బట్టి మారుతాయి. ఎప్పుడూ మీ విశ్వవిద్యాలయ గ్రేడింగ్ విధానాన్ని తనిఖీ చేయండి.</p>
         </section>
-
         <section class="card tips">
           <h2 class="side-title">NUST ముఖ్య విషయాలు</h2>
           <ul>
@@ -445,9 +408,7 @@
         </section>
       </aside>
     </div>
-
     <article class="guide" id="guide">
-
       <section id="how-it-works">
         <h2>NUSTలో గ్రేడింగ్ ఎలా జరుగుతుంది</h2>
         <p>NUST 4.00 స్కేల్‌పై సాపేక్ష గ్రేడింగ్ వాడుతుంది. NUST Undergraduate Student Handbook మాటల్లో: <q>The University follows a relative grading system on a scale of 1.00 to 4.00 points.</q> ("విశ్వవిద్యాలయం 1.00 నుంచి 4.00 పాయింట్ల స్కేల్‌పై సాపేక్ష గ్రేడింగ్ విధానాన్ని అనుసరిస్తుంది.") మీ అక్షర గ్రేడ్ మీ క్లాస్‌తో పోలిస్తే మీరు ఎలా చేశారనే దానిపై ఆధారపడుతుంది, స్థిరమైన శాతంపై కాదు. కష్టమైన పేపర్‌లో 82% A కావచ్చు, సులభమైన పేపర్‌లో B+ కావచ్చు.</p>
@@ -455,7 +416,6 @@
         <h3>థియరీ, ల్యాబ్ ఉన్న కోర్సులు</h3>
         <p>థియరీ, ల్యాబ్ రెండింటికీ క్రెడిట్లు ఉన్న కోర్సులో, NUST మొదట రెండు శాతాలను క్రెడిట్ల ఆధారంగా కలిపి, తర్వాత మొత్తం కోర్సుకు ఒక గ్రేడ్ ఇస్తుంది. హ్యాండ్‌బుక్‌లోని ఉదాహరణ: 3 థియరీ క్రెడిట్లలో 70%, 1 ల్యాబ్ క్రెడిట్‌లో 90% ఉన్న భౌతిక శాస్త్రం, అంటే (70 × 3 + 90 × 1) ÷ 4 = 75%. మొత్తం 4 క్రెడిట్లకు ఒకే గ్రేడ్ వస్తుంది, కాబట్టి కాలిక్యులేటర్‌లో దాన్ని 4 క్రెడిట్ల ఒక సబ్జెక్టుగా నమోదు చేయండి.</p>
       </section>
-
       <section id="grade-points">
         <h2>NUST గ్రేడ్ పాయింట్ పట్టిక</h2>
         <div class="table-scroll">
@@ -476,7 +436,6 @@
         </div>
         <p>I (అసంపూర్ణం), W (విరమించిన), Q (అర్హత), T (బదిలీ)లకు గ్రేడ్ పాయింట్లు ఉండవు. NUSTలో A+, మైనస్ గ్రేడ్‌లు లేవని గమనించండి: B+, C+ వరుసగా B, C కంటే అర పాయింట్ ఎక్కువ.</p>
       </section>
-
       <section id="example">
         <h2>మీ NUST GPA ఎలా లెక్కించాలి: సాధించిన ఉదాహరణ</h2>
         <div class="table-scroll">
@@ -495,7 +454,6 @@
         <p class="formula-block">GPA = 54.00 ÷ 16 = 3.375 ≈ 3.38</p>
         <p>మీ CGPA అన్ని సెమిస్టర్‌లలోనూ ఇలాగే పనిచేస్తుంది: మీరు తీసుకున్న ప్రతి కోర్సు క్రెడిట్లు × పాయింట్లను కూడి, మొత్తం క్రెడిట్లతో భాగించండి. CGPA ట్యాబ్ దీన్ని మీ సెమిస్టర్ GPAల నుంచి చేస్తుంది.</p>
       </section>
-
       <section id="minimum-cgpa">
         <h2>NUSTలో కనీస CGPA, అకడమిక్ లోపం</h2>
         <ul>
@@ -505,21 +463,17 @@
         </ul>
         <p>మీ CGPA 2.00 కంటే కిందికి పడిపోయి ఉంటే, దాని పైకి తిరిగి రావడానికి మిగిలిన సెమిస్టర్‌లలో ఎంత GPA కావాలో లక్ష్యం ట్యాబ్ చూపిస్తుంది.</p>
       </section>
-
       <section id="repeat">
         <h2>CGPA మెరుగుపరచుకోవడానికి కోర్సు మళ్లీ చేయడం</h2>
         <p>మీరు కోర్సు మళ్లీ చేసినప్పుడు, మీ ట్రాన్స్‌క్రిప్ట్‌లో పాత, కొత్త రెండు గ్రేడ్‌లూ కనిపిస్తాయి, కానీ CGPA లెక్కింపులో మెరుగైన గ్రేడ్ మాత్రమే వాడతారు. మళ్లీ చేయడానికి మీ HoD అనుమతి కావాలి, మళ్లీ చేసి వచ్చిన గ్రేడ్‌లు అత్యున్నత అకడమిక్ గౌరవాలు, అవార్డులకు లెక్కకు రావు, Rector's Gold Medal తప్ప. మళ్లీ చేసిన తర్వాత కూడా ఫెయిల్ అయితే, అది ఒకే F గానే లెక్కకు వస్తుంది.</p>
         <p><strong>కాలిక్యులేటర్ చిట్కా:</strong> మళ్లీ చేసిన కోర్సుకు మెరుగైన గ్రేడ్ మాత్రమే నమోదు చేయండి.</p>
       </section>
-
       <section id="percentage">
         <h2>NUST CGPA నుంచి శాతం</h2>
         <p>NUST Undergraduate Student Handbook లో CGPA‌ని శాతంలోకి మార్చే అధికారిక సూత్రం లేదు. శాతం అవసరమైనప్పుడు చాలామంది (CGPA ÷ 4) × 100 వాడతారు, దీంతో 3.40 అంటే 85%. యజమానులు, విశ్వవిద్యాలయాలు కొన్నిసార్లు సొంత నియమాలు వాడతాయి, కాబట్టి మీరు దరఖాస్తు చేస్తున్న సంస్థ ఏది అంగీకరిస్తుందో తనిఖీ చేయండి. శాతం ట్యాబ్ ఈ సులభమైన పద్ధతినే వాడుతుంది.</p>
       </section>
-
       <section id="faq" class="faq">
         <h2>NUST CGPA కాలిక్యులేటర్ ప్రశ్నలు &amp; జవాబులు</h2>
-
         <details>
           <summary><h3>NUST సాపేక్ష గ్రేడింగ్ వాడుతుందా, నిరపేక్ష గ్రేడింగ్ వాడుతుందా?</h3></summary>
           <p>NUST 4.00 స్కేల్‌పై సాపేక్ష గ్రేడింగ్ వాడుతుంది, కాబట్టి మీ గ్రేడ్ స్థిరమైన శాతంపై కాకుండా మీ క్లాస్‌తో పోలిస్తే మీ పనితీరుపై ఆధారపడుతుంది. అందుకే NUSTకి మార్కుల నుంచి గ్రేడ్‌కు స్థిరమైన పట్టిక లేదు.</p>
@@ -549,7 +503,6 @@
           <p>దాన్ని దాని మొత్తం క్రెడిట్లతో ఒకే సబ్జెక్టుగా నమోదు చేయండి, ఉదాహరణకు 3+1 కోర్సుకు 4. NUST థియరీ, ల్యాబ్ మార్కులను కలిపి మొత్తం కోర్సుకు ఒకే గ్రేడ్ ఇస్తుంది.</p>
         </details>
       </section>
-
       <section id="sources">
         <h2>ఆధారాలు</h2>
         <ul class="source-note">
@@ -558,7 +511,6 @@
         <p class="source-note">చివరిసారి తనిఖీ: 18 అక్టోబర్ 2026. విశ్వవిద్యాలయ నియమాలు మారవచ్చు, కాబట్టి ఎప్పుడూ మీ విశ్వవిద్యాలయపు తాజా అధికారిక నియమాలతో మీ ఫలితాలను నిర్ధారించుకోండి. మా <a href="terms.html">వినియోగ నిబంధనలు</a> చూడండి.</p>
       </section>
     </article>
-
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">మరిన్ని CGPA &amp; GPA కాలిక్యులేటర్లు</h2>
       <div class="uni-grid">
@@ -581,7 +533,6 @@
     </section>
     <p class="back-top"><a href="#calculator">↑ కాలిక్యులేటర్‌కి తిరిగి వెళ్లండి</a></p>
   </main>
-
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -598,9 +549,7 @@
       </nav>
     </div>
   </footer>
-
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-nust',
     scales: {

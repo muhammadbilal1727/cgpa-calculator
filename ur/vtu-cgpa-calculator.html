@@ -24,12 +24,10 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/vtu-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/vtu-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/vtu-cgpa-calculator.html">
-  
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
-
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="ur_PK">
@@ -153,7 +151,6 @@
   </script>
 </head>
 <body>
-
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -197,15 +194,12 @@
       </div>
     </div>
   </header>
-
   <main class="container">
-
     <section class="hero">
       <nav class="breadcrumb" aria-label="بریڈ کرمب"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">VTU</span></nav>
       <h1>VTU CGPA اور GPA (SGPA) کیلکولیٹر</h1>
       <p>2022 اور 2021 اسکیموں کے VTU قواعد کے سرکاری اصولوں سے اپنا VTU SGPA اور CGPA نکالیں اور CGPA کو فیصد میں بدلیں۔ <a href="#guide" class="hero-link">VTU میں گریڈنگ کیسے ہوتی ہے ↓</a></p>
     </section>
-
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <label id="scaleLabel" for="scaleSelect" class="scale-title">آپ کی VTU اسکیم</label>
@@ -215,19 +209,15 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">سب ری سیٹ کریں</button>
     </section>
     <p class="print-only" id="printDate"></p>
-
     <div class="layout">
-
       <!-- ================= Calculators ================= -->
       <div class="main-col">
-
         <div class="tabs" role="tablist" aria-label="کیلکولیٹرز">
           <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">GPA <small>ایک سمسٹر</small></button>
           <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>تمام سمسٹر</small></button>
           <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">ہدف <small>آگے کی منصوبہ بندی</small></button>
           <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">فیصد <small>کنورٹر</small></button>
         </div>
-
         <!-- ---------- TAB 1: GPA ---------- -->
         <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
           <div class="panel-head">
@@ -235,7 +225,6 @@
               <h2>سمسٹر GPA</h2>
               <p class="muted small">ہر مضمون کو اس کے کریڈٹ آورز اور گریڈ کے ساتھ شامل کریں۔</p>
             </div>
-
             <div class="segmented" id="modeSwitch" role="radiogroup" aria-label="آپ نتائج کیسے درج کرنا چاہتے ہیں؟">
               <input type="radio" name="gpaMode" id="modeGrade" value="grade" checked="">
               <label for="modeGrade">گریڈ</label>
@@ -243,17 +232,14 @@
               <label for="modeMarks">نمبر</label>
             </div>
           </div>
-
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>مضمون (اختیاری)</span><span>کریڈٹ</span><span id="gradeHead">گریڈ</span><span></span>
           </div>
           <div id="subjectList" class="row-list mode-grade"></div>
-
           <button type="button" id="addSubject" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             مضمون شامل کریں
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">آپ کا سمسٹر GPA</div>
             <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
@@ -262,21 +248,18 @@
             <div class="result-sub" id="gpaSub">اپنا GPA دیکھنے کے لیے مضامین شامل کریں۔</div>
             <div class="result-note" id="gpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToCgpa" class="btn btn-soft">یہ GPA میرے CGPA میں شامل کریں ←</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="gpa">نتیجہ کاپی کریں</button>
             <button type="button" class="btn btn-outline js-print" title="پرنٹ ونڈو میں PDF ڈاؤن لوڈ کرنے کے لیے “Save as PDF” منتخب کریں">پرنٹ / PDF</button>
             <button type="button" id="resetGpa" class="btn btn-quiet">صاف کریں</button>
           </div>
-
           <details class="howto">
             <summary>GPA کا حساب کیسے ہوتا ہے؟</summary>
             <p class="formula-line">GPA = (Σ کریڈٹ آورز × گریڈ پوائنٹس) ÷ (Σ کریڈٹ آورز)</p>
             <p class="muted small">مثال: ریاضی 3 کریڈٹ اور 4.00 گریڈ پوائنٹس، انگریزی 2 کریڈٹ اور 3.00 ← (3×4 + 2×3) ÷ (3+2) = 18 ÷ 5 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 2: CGPA ---------- -->
         <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
           <div class="panel-head">
@@ -285,17 +268,14 @@
               <p class="muted small">ہر سمسٹر کا GPA (SGPA) اور اس کے کل کریڈٹ آورز شامل کریں۔</p>
             </div>
           </div>
-
           <div class="rows-head semester-cols" aria-hidden="true">
             <span>سمسٹر</span><span>GPA / SGPA</span><span>کریڈٹ آورز</span><span></span>
           </div>
           <div id="semesterList" class="row-list"></div>
-
           <button type="button" id="addSemester" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             سمسٹر شامل کریں
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">آپ کا CGPA</div>
             <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
@@ -304,21 +284,18 @@
             <div class="result-sub" id="cgpaSub">اپنا CGPA دیکھنے کے لیے سمسٹر شامل کریں۔</div>
             <div class="result-note" id="cgpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToPct" class="btn btn-soft">اس CGPA کو % میں بدلیں ←</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">نتیجہ کاپی کریں</button>
             <button type="button" class="btn btn-outline js-print" title="پرنٹ ونڈو میں PDF ڈاؤن لوڈ کرنے کے لیے “Save as PDF” منتخب کریں">پرنٹ / PDF</button>
             <button type="button" id="resetCgpa" class="btn btn-quiet">صاف کریں</button>
           </div>
-
           <details class="howto">
             <summary>CGPA کا حساب کیسے ہوتا ہے؟</summary>
             <p class="formula-line">CGPA = (Σ سمسٹر GPA × سمسٹر کریڈٹ) ÷ (کل کریڈٹ)</p>
             <p class="muted small">زیادہ کریڈٹ آورز والے سمسٹر زیادہ اہمیت رکھتے ہیں۔ مثال: 18 کریڈٹ کے ساتھ 3.50 اور 15 کریڈٹ کے ساتھ 3.00 ← (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 3: Target CGPA ---------- -->
         <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
           <div class="panel-head">
@@ -327,7 +304,6 @@
               <p class="muted small">جانیں کہ اپنے ہدف تک پہنچنے کے لیے آنے والے سمسٹرز میں آپ کو کتنا GPA چاہیے۔</p>
             </div>
           </div>
-
           <div class="target-grid">
             <div class="field">
               <label class="field-label" for="tCurrent">موجودہ CGPA</label>
@@ -350,9 +326,7 @@
               <p class="row-msg" id="tLeftMsg"></p>
             </div>
           </div>
-
           <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">میرے CGPA ٹیب سے بھریں</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">ہر سمسٹر میں درکار GPA</div>
             <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
@@ -361,20 +335,17 @@
             <div class="result-sub" id="tgtSub">درکار GPA دیکھنے کے لیے اوپر کے چاروں خانے بھریں۔</div>
             <div class="result-note" id="tgtNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="target">نتیجہ کاپی کریں</button>
             <button type="button" class="btn btn-outline js-print" title="پرنٹ ونڈو میں PDF ڈاؤن لوڈ کرنے کے لیے “Save as PDF” منتخب کریں">پرنٹ / PDF</button>
             <button type="button" id="resetTarget" class="btn btn-quiet">صاف کریں</button>
           </div>
-
           <details class="howto">
             <summary>اس کا حساب کیسے ہوتا ہے؟</summary>
             <p class="formula-line">درکار GPA = (ہدف × کل کریڈٹ − موجودہ × مکمل کریڈٹ) ÷ باقی کریڈٹ</p>
             <p class="muted small">مثال: 60 کریڈٹ کے بعد موجودہ 3.00، ہدف 3.30، 60 کریڈٹ باقی ← (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 4: Percentage ---------- -->
         <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
           <div class="panel-head">
@@ -383,14 +354,12 @@
               <p class="muted small">اپنا CGPA لکھیں اور اس کا اسکیل منتخب کریں۔</p>
             </div>
           </div>
-
           <div class="conv-grid">
             <div class="field">
               <label class="field-label always" for="convInput">آپ کا CGPA</label>
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
-
             <div class="field">
               <span class="field-label always" id="convScaleLabel">اسکیم</span>
               <div class="segmented full" role="radiogroup" aria-labelledby="convScaleLabel">
@@ -401,9 +370,7 @@
               </div>
             </div>
           </div>
-
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">CGPA ٹیب سے میرا CGPA استعمال کریں</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">فیصد</div>
             <div class="result-value"><span id="pctValue">—</span></div>
@@ -411,12 +378,10 @@
             <div class="result-cheer" id="pctCheer"></div>
             <div class="result-sub" id="pctSub">فیصد دیکھنے کے لیے اپنا CGPA درج کریں۔</div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="pct">نتیجہ کاپی کریں</button>
             <button type="button" class="btn btn-outline js-print" title="پرنٹ ونڈو میں PDF ڈاؤن لوڈ کرنے کے لیے “Save as PDF” منتخب کریں">پرنٹ / PDF</button>
           </div>
-
           <div class="formula">
             <div class="formula-title">استعمال شدہ فارمولا</div>
             <p class="formula-line" id="formulaMain"></p>
@@ -425,7 +390,6 @@
           </div>
         </section>
       </div>
-
       <!-- ================= Sidebar: grade table ================= -->
       <aside class="sidebar">
         <section class="card" aria-labelledby="tableTitle">
@@ -441,7 +405,6 @@
           </div>
           <p class="muted tiny">نمبروں کی حدیں ہر یونیورسٹی میں مختلف ہوتی ہیں۔ ہمیشہ اپنی یونیورسٹی کی گریڈنگ پالیسی دیکھیں۔</p>
         </section>
-
         <section class="card tips">
           <h2 class="side-title">VTU کے اہم حقائق</h2>
           <ul>
@@ -452,14 +415,11 @@
         </section>
       </aside>
     </div>
-
     <article class="guide" id="guide">
-
       <section id="scheme">
         <h2>آپ کس VTU اسکیم میں ہیں؟</h2>
         <p>VTU وقتاً فوقتاً اپنے قواعد اپ ڈیٹ کرتا ہے۔ Regulations 2022 تعلیمی سال 2022-23 سے داخل طلبہ پر لاگو ہیں، جبکہ 2021 کے قواعد 2021-22 سے نافذ ہوئے۔ کیلکولیٹر کے اوپر اپنی اسکیم منتخب کریں، کیونکہ گریڈ کے حروف اور CGPA سے فیصد کا فارمولا مختلف ہیں۔</p>
       </section>
-
       <section id="grade-points">
         <h2>VTU گریڈنگ سسٹم: 2022 اسکیم</h2>
         <p>VTU ایبسولیوٹ گریڈنگ استعمال کرتا ہے۔ CIE (مسلسل اندرونی جائزہ) اور SEE (سمسٹر کے آخر کا امتحان) میں آپ کے نمبر جمع کر کے فیصد میں بدلے جاتے ہیں، اور وہی فیصد آپ کا گریڈ طے کرتا ہے (شق 22OB 6.1)۔</p>
@@ -494,7 +454,6 @@
           </table>
         </div>
       </section>
-
       <section id="example">
         <h2>VTU، SGPA اور CGPA کیسے نکالتا ہے</h2>
         <p class="formula-block">SGPA = Σ (Ci × Gi) ÷ Σ Ci &nbsp;&nbsp; CGPA = Σ (Ci × Si) ÷ Σ Ci</p>
@@ -514,7 +473,6 @@
         </div>
         <p class="formula-block">SGPA = 123 ÷ 15 = 8.20</p>
       </section>
-
       <section id="percentage">
         <h2>VTU CGPA سے فیصد</h2>
         <p><strong>2022 اسکیم:</strong> فیصد = CGPA × 10، یعنی 8.20 CGPA بن جاتا ہے <strong>82%</strong> (شق 22OB 6.7)۔ قواعد کے مطابق یہ فارمولا ملازمت اور اعلیٰ تعلیم کے لیے استعمال کیا جا سکتا ہے۔</p>
@@ -527,7 +485,6 @@
           <li><strong>Pass Class:</strong> 40% سے 50%، یعنی 4.00 سے 4.99 تک CGPA</li>
         </ul>
       </section>
-
       <section id="passing">
         <h2>VTU پاسنگ نمبر (2022 اسکیم)</h2>
         <ul>
@@ -537,10 +494,8 @@
           <li>پورا پروگرام پاس کرنے کے لیے ہر رجسٹرڈ کورس میں P یا اس سے بہتر گریڈ درکار ہے۔</li>
         </ul>
       </section>
-
       <section id="faq" class="faq">
         <h2>VTU CGPA کیلکولیٹر کے عام سوالات</h2>
-
         <details>
           <summary><h3>VTU CGPA کو فیصد میں کیسے بدلیں؟</h3></summary>
           <p>2022 اسکیم میں اپنے CGPA کو 10 سے ضرب دیں، یعنی 8.20 بن جاتا ہے 82%۔ 2021 اسکیم اور پرانی 2015 CBCS اسکیم میں (CGPA − 0.75) × 10 استعمال کریں، یعنی 8.20 بن جاتا ہے 74.5%۔</p>
@@ -566,7 +521,6 @@
           <p>ہر سمسٹر کے SGPA کو اس سمسٹر کے کل کریڈٹ سے ضرب دیں، نتائج جمع کریں اور تمام سمسٹرز کے کل کریڈٹ سے تقسیم کریں۔ SGPA اور CGPA 2 اعشاری ہندسوں تک راؤنڈ کیے جاتے ہیں۔</p>
         </details>
       </section>
-
       <section id="sources">
         <h2>ذرائع</h2>
         <ul class="source-note">
@@ -577,7 +531,6 @@
         <p class="source-note">آخری جانچ: 18 اکتوبر 2026۔ یونیورسٹی کے اصول بدل سکتے ہیں، اس لیے ہمیشہ اپنے نتائج کی تصدیق اپنی یونیورسٹی کے تازہ ترین سرکاری اصولوں سے کریں۔ ہماری <a href="terms.html">استعمال کی شرائط</a> دیکھیں۔</p>
       </section>
     </article>
-
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">مزید CGPA اور GPA کیلکولیٹرز</h2>
       <div class="uni-grid">
@@ -600,7 +553,6 @@
     </section>
     <p class="back-top"><a href="#calculator">↑ کیلکولیٹر پر واپس جائیں</a></p>
   </main>
-
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -617,9 +569,7 @@
       </nav>
     </div>
   </footer>
-
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-vtu',
     defaultScale: '2022',

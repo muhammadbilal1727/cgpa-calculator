@@ -24,12 +24,10 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/vtu-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/vtu-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/vtu-cgpa-calculator.html">
-  
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
-
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="ar_AR">
@@ -153,7 +151,6 @@
   </script>
 </head>
 <body>
-
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -197,15 +194,12 @@
       </div>
     </div>
   </header>
-
   <main class="container">
-
     <section class="hero">
       <nav class="breadcrumb" aria-label="مسار التنقل"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">VTU</span></nav>
       <h1>حاسبة CGPA وGPA ‏(SGPA) لجامعة VTU</h1>
       <p>احسب معدلك الفصلي SGPA والتراكمي CGPA في VTU وحوّله إلى نسبة مئوية وفق القواعد الرسمية في لوائح VTU لنظامَي 2022 و2021. <a href="#guide" class="hero-link">كيف يتم التقدير في VTU ↓</a></p>
     </section>
-
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <label id="scaleLabel" for="scaleSelect" class="scale-title">نظامك في VTU</label>
@@ -215,19 +209,15 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">إعادة ضبط الكل</button>
     </section>
     <p class="print-only" id="printDate"></p>
-
     <div class="layout">
-
       <!-- ================= Calculators ================= -->
       <div class="main-col">
-
         <div class="tabs" role="tablist" aria-label="الحاسبات">
           <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">GPA <small>فصل واحد</small></button>
           <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>كل الفصول</small></button>
           <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">الهدف <small>خطّط مسبقاً</small></button>
           <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">النسبة المئوية <small>محوّل</small></button>
         </div>
-
         <!-- ---------- TAB 1: GPA ---------- -->
         <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
           <div class="panel-head">
@@ -235,7 +225,6 @@
               <h2>المعدل الفصلي GPA</h2>
               <p class="muted small">أضف كل مادة مع ساعاتها المعتمدة وتقديرها.</p>
             </div>
-
             <div class="segmented" id="modeSwitch" role="radiogroup" aria-label="كيف تريد إدخال النتائج؟">
               <input type="radio" name="gpaMode" id="modeGrade" value="grade" checked="">
               <label for="modeGrade">التقدير</label>
@@ -243,17 +232,14 @@
               <label for="modeMarks">الدرجات</label>
             </div>
           </div>
-
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>المادة (اختياري)</span><span>الساعات</span><span id="gradeHead">التقدير</span><span></span>
           </div>
           <div id="subjectList" class="row-list mode-grade"></div>
-
           <button type="button" id="addSubject" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             إضافة مادة
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">معدلك الفصلي GPA</div>
             <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
@@ -262,21 +248,18 @@
             <div class="result-sub" id="gpaSub">أضف موادك لترى معدلك GPA.</div>
             <div class="result-note" id="gpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToCgpa" class="btn btn-soft">أضف هذا المعدل إلى معدلي التراكمي ←</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="gpa">نسخ النتيجة</button>
             <button type="button" class="btn btn-outline js-print" title="في نافذة الطباعة اختر «حفظ بتنسيق PDF» لتنزيل ملف PDF">طباعة / PDF</button>
             <button type="button" id="resetGpa" class="btn btn-quiet">مسح</button>
           </div>
-
           <details class="howto">
             <summary>كيف يُحسب GPA؟</summary>
             <p class="formula-line">GPA = (مجموع الساعات المعتمدة × نقاط التقدير) ÷ (مجموع الساعات المعتمدة)</p>
             <p class="muted small">مثال: الرياضيات 3 ساعات بنقاط 4.00، والإنجليزية ساعتان بنقاط 3.00 ← (3×4 + 2×3) ÷ (3+2) = 18 ÷ 5 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 2: CGPA ---------- -->
         <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
           <div class="panel-head">
@@ -285,17 +268,14 @@
               <p class="muted small">أضف معدل كل فصل (SGPA) وإجمالي ساعاته المعتمدة.</p>
             </div>
           </div>
-
           <div class="rows-head semester-cols" aria-hidden="true">
             <span>الفصل</span><span>GPA / SGPA</span><span>الساعات المعتمدة</span><span></span>
           </div>
           <div id="semesterList" class="row-list"></div>
-
           <button type="button" id="addSemester" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             إضافة فصل
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">معدلك التراكمي CGPA</div>
             <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
@@ -304,21 +284,18 @@
             <div class="result-sub" id="cgpaSub">أضف فصولك لترى معدلك التراكمي.</div>
             <div class="result-note" id="cgpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToPct" class="btn btn-soft">حوّل هذا المعدل إلى % ←</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">نسخ النتيجة</button>
             <button type="button" class="btn btn-outline js-print" title="في نافذة الطباعة اختر «حفظ بتنسيق PDF» لتنزيل ملف PDF">طباعة / PDF</button>
             <button type="button" id="resetCgpa" class="btn btn-quiet">مسح</button>
           </div>
-
           <details class="howto">
             <summary>كيف يُحسب CGPA؟</summary>
             <p class="formula-line">CGPA = (مجموع معدل الفصل × ساعات الفصل) ÷ (إجمالي الساعات)</p>
             <p class="muted small">الفصول ذات الساعات الأكثر لها وزن أكبر. مثال: 3.50 مع 18 ساعة و3.00 مع 15 ساعة ← (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 3: Target CGPA ---------- -->
         <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
           <div class="panel-head">
@@ -327,7 +304,6 @@
               <p class="muted small">اعرف المعدل الذي تحتاجه في الفصول القادمة لتصل إلى هدفك.</p>
             </div>
           </div>
-
           <div class="target-grid">
             <div class="field">
               <label class="field-label" for="tCurrent">المعدل التراكمي الحالي</label>
@@ -350,9 +326,7 @@
               <p class="row-msg" id="tLeftMsg"></p>
             </div>
           </div>
-
           <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">املأ من تبويب CGPA</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">المعدل المطلوب في كل فصل</div>
             <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
@@ -361,20 +335,17 @@
             <div class="result-sub" id="tgtSub">املأ الحقول الأربعة أعلاه لترى المعدل الذي تحتاجه.</div>
             <div class="result-note" id="tgtNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="target">نسخ النتيجة</button>
             <button type="button" class="btn btn-outline js-print" title="في نافذة الطباعة اختر «حفظ بتنسيق PDF» لتنزيل ملف PDF">طباعة / PDF</button>
             <button type="button" id="resetTarget" class="btn btn-quiet">مسح</button>
           </div>
-
           <details class="howto">
             <summary>كيف يُحسب ذلك؟</summary>
             <p class="formula-line">المعدل المطلوب = (الهدف × إجمالي الساعات − الحالي × الساعات المنجزة) ÷ الساعات المتبقية</p>
             <p class="muted small">مثال: معدل حالي 3.00 بعد 60 ساعة، والهدف 3.30، والمتبقي 60 ساعة ← (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 4: Percentage ---------- -->
         <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
           <div class="panel-head">
@@ -383,14 +354,12 @@
               <p class="muted small">اكتب معدلك التراكمي واختر مقياسه.</p>
             </div>
           </div>
-
           <div class="conv-grid">
             <div class="field">
               <label class="field-label always" for="convInput">معدلك التراكمي CGPA</label>
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
-
             <div class="field">
               <span class="field-label always" id="convScaleLabel">النظام</span>
               <div class="segmented full" role="radiogroup" aria-labelledby="convScaleLabel">
@@ -401,9 +370,7 @@
               </div>
             </div>
           </div>
-
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">استخدم معدلي من تبويب CGPA</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">النسبة المئوية</div>
             <div class="result-value"><span id="pctValue">—</span></div>
@@ -411,12 +378,10 @@
             <div class="result-cheer" id="pctCheer"></div>
             <div class="result-sub" id="pctSub">أدخل معدلك التراكمي لترى النسبة المئوية.</div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="pct">نسخ النتيجة</button>
             <button type="button" class="btn btn-outline js-print" title="في نافذة الطباعة اختر «حفظ بتنسيق PDF» لتنزيل ملف PDF">طباعة / PDF</button>
           </div>
-
           <div class="formula">
             <div class="formula-title">المعادلة المستخدمة</div>
             <p class="formula-line" id="formulaMain"></p>
@@ -425,7 +390,6 @@
           </div>
         </section>
       </div>
-
       <!-- ================= Sidebar: grade table ================= -->
       <aside class="sidebar">
         <section class="card" aria-labelledby="tableTitle">
@@ -441,7 +405,6 @@
           </div>
           <p class="muted tiny">تختلف نطاقات الدرجات من جامعة لأخرى. راجع دائماً لائحة التقديرات في جامعتك.</p>
         </section>
-
         <section class="card tips">
           <h2 class="side-title">حقائق سريعة عن VTU</h2>
           <ul>
@@ -452,14 +415,11 @@
         </section>
       </aside>
     </div>
-
     <article class="guide" id="guide">
-
       <section id="scheme">
         <h2>ما نظامك في VTU؟</h2>
         <p>تحدّث VTU لوائحها من حين لآخر. تنطبق لوائح 2022 على الطلاب المقبولين منذ العام الدراسي 2022-23، بينما بدأ العمل بلوائح 2021 في 2021-22. اختر نظامك في أعلى الحاسبة، لأن حروف التقديرات ومعادلة التحويل إلى نسبة مئوية مختلفة.</p>
       </section>
-
       <section id="grade-points">
         <h2>نظام التقدير في VTU: نظام 2022</h2>
         <p>تستخدم VTU التقدير المطلق. تُجمع درجاتك في CIE (التقييم الداخلي المستمر) وSEE (امتحان نهاية الفصل) وتُحوَّل إلى نسبة مئوية، وهذه النسبة تحدد تقديرك (البند 22OB 6.1).</p>
@@ -494,7 +454,6 @@
           </table>
         </div>
       </section>
-
       <section id="example">
         <h2>كيف تحسب VTU المعدلين SGPA وCGPA</h2>
         <p class="formula-block">SGPA = Σ (Ci × Gi) ÷ Σ Ci &nbsp;&nbsp; CGPA = Σ (Ci × Si) ÷ Σ Ci</p>
@@ -514,7 +473,6 @@
         </div>
         <p class="formula-block">SGPA = 123 ÷ 15 = 8.20</p>
       </section>
-
       <section id="percentage">
         <h2>تحويل معدل VTU إلى نسبة مئوية</h2>
         <p><strong>نظام 2022:</strong> النسبة المئوية = CGPA × 10، فيصبح المعدل 8.20 مساوياً <strong>82%</strong> (البند 22OB 6.7). وتنص اللائحة على إمكانية استخدام هذه المعادلة للتوظيف والدراسات العليا.</p>
@@ -527,7 +485,6 @@
           <li><strong>Pass Class:</strong> من 40% إلى 50%، أي معدل من 4.00 إلى 4.99</li>
         </ul>
       </section>
-
       <section id="passing">
         <h2>درجات النجاح في VTU (نظام 2022)</h2>
         <ul>
@@ -537,10 +494,8 @@
           <li>ولاجتياز البرنامج كله تحتاج إلى تقدير P أو أعلى في كل مقرر مسجّل.</li>
         </ul>
       </section>
-
       <section id="faq" class="faq">
         <h2>الأسئلة الشائعة عن حاسبة معدل VTU</h2>
-
         <details>
           <summary><h3>كيف أحوّل معدل VTU إلى نسبة مئوية؟</h3></summary>
           <p>في نظام 2022 اضرب معدلك في 10، فيصبح 8.20 مساوياً 82%. وفي نظام 2021 ونظام CBCS القديم لعام 2015 استخدم (CGPA − 0.75) × 10، فيصبح 8.20 مساوياً 74.5%.</p>
@@ -566,7 +521,6 @@
           <p>اضرب SGPA لكل فصل في إجمالي ساعات ذلك الفصل، واجمع النتائج، ثم اقسم على إجمالي ساعات كل الفصول. ويُقرَّب SGPA وCGPA إلى منزلتين عشريتين.</p>
         </details>
       </section>
-
       <section id="sources">
         <h2>المصادر</h2>
         <ul class="source-note">
@@ -577,7 +531,6 @@
         <p class="source-note">آخر مراجعة: 18 أكتوبر 2026. قد تتغير قواعد الجامعات، لذا تحقق دائماً من نتائجك وفق أحدث القواعد الرسمية لجامعتك. راجع <a href="terms.html">شروط الاستخدام</a>.</p>
       </section>
     </article>
-
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">المزيد من حاسبات CGPA وGPA</h2>
       <div class="uni-grid">
@@ -600,7 +553,6 @@
     </section>
     <p class="back-top"><a href="#calculator">↑ العودة إلى الحاسبة</a></p>
   </main>
-
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -617,9 +569,7 @@
       </nav>
     </div>
   </footer>
-
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-vtu',
     defaultScale: '2022',

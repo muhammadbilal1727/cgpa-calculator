@@ -24,12 +24,10 @@
   <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/nust-cgpa-calculator.html">
   <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/nust-cgpa-calculator.html">
   <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/nust-cgpa-calculator.html">
-  
   <link rel="icon" href="../favicon.ico" sizes="48x48">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
-
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CGPA Calculator">
   <meta property="og:locale" content="fr_FR">
@@ -161,7 +159,6 @@
   </script>
 </head>
 <body>
-
   <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container header-inner">
@@ -205,15 +202,12 @@
       </div>
     </div>
   </header>
-
   <main class="container">
-
     <section class="hero">
       <nav class="breadcrumb" aria-label="Fil d’Ariane"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">NUST</span></nav>
       <h1>Calculateur de CGPA et GPA de la NUST</h1>
       <p>Calculez votre GPA semestriel et votre CGPA global avec les points officiels de licence de la NUST (A = 4.00, B+ = 3.50, B = 3.00, etc.). <a href="#guide" class="hero-link">Comment fonctionne la notation à la NUST ↓</a></p>
     </section>
-
     <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
       <div class="scale-text">
         <p id="scaleLabel" class="scale-title">Système de notation : licence NUST</p>
@@ -223,19 +217,15 @@
       <button type="button" id="resetAll" class="btn btn-outline danger-hover">Tout réinitialiser</button>
     </section>
     <p class="print-only" id="printDate"></p>
-
     <div class="layout">
-
       <!-- ================= Calculators ================= -->
       <div class="main-col">
-
         <div class="tabs" role="tablist" aria-label="Calculateurs">
           <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">GPA <small>Un semestre</small></button>
           <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>Tous les semestres</small></button>
           <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">Objectif <small>Anticiper</small></button>
           <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">Pourcentage <small>Convertisseur</small></button>
         </div>
-
         <!-- ---------- TAB 1: GPA ---------- -->
         <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
           <div class="panel-head">
@@ -243,19 +233,15 @@
               <h2>GPA du semestre</h2>
               <p class="muted small">Ajoutez chaque matière avec ses crédits et sa note.</p>
             </div>
-
           </div>
-
           <div class="rows-head subject-cols" aria-hidden="true">
             <span>Matière (facultatif)</span><span>Crédits</span><span id="gradeHead">Note</span><span></span>
           </div>
           <div id="subjectList" class="row-list mode-grade"></div>
-
           <button type="button" id="addSubject" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             Ajouter une matière
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">Votre GPA du semestre</div>
             <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
@@ -264,21 +250,18 @@
             <div class="result-sub" id="gpaSub">Ajoutez vos matières pour voir votre GPA.</div>
             <div class="result-note" id="gpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToCgpa" class="btn btn-soft">Ajouter ce GPA à mon CGPA →</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="gpa">Copier le résultat</button>
             <button type="button" class="btn btn-outline js-print" title="Dans la fenêtre d’impression, choisissez « Enregistrer au format PDF » pour télécharger un PDF">Imprimer / PDF</button>
             <button type="button" id="resetGpa" class="btn btn-quiet">Effacer</button>
           </div>
-
           <details class="howto">
             <summary>Comment le GPA est-il calculé ?</summary>
             <p class="formula-line">GPA = (Σ crédits × points de note) ÷ (Σ crédits)</p>
             <p class="muted small">Exemple : Maths 3 crédits avec 4.00 points, et Anglais 2 crédits avec 3.00 → (3×4 + 2×3) ÷ (3+2) = 18 ÷ 5 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 2: CGPA ---------- -->
         <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
           <div class="panel-head">
@@ -287,17 +270,14 @@
               <p class="muted small">Ajoutez le GPA de chaque semestre (SGPA) et son total de crédits.</p>
             </div>
           </div>
-
           <div class="rows-head semester-cols" aria-hidden="true">
             <span>Semestre</span><span>GPA / SGPA</span><span>Crédits</span><span></span>
           </div>
           <div id="semesterList" class="row-list"></div>
-
           <button type="button" id="addSemester" class="btn btn-add">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
             Ajouter un semestre
           </button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">Votre CGPA</div>
             <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
@@ -306,21 +286,18 @@
             <div class="result-sub" id="cgpaSub">Ajoutez vos semestres pour voir votre CGPA.</div>
             <div class="result-note" id="cgpaNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" id="sendToPct" class="btn btn-soft">Convertir ce CGPA en % →</button>
             <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">Copier le résultat</button>
             <button type="button" class="btn btn-outline js-print" title="Dans la fenêtre d’impression, choisissez « Enregistrer au format PDF » pour télécharger un PDF">Imprimer / PDF</button>
             <button type="button" id="resetCgpa" class="btn btn-quiet">Effacer</button>
           </div>
-
           <details class="howto">
             <summary>Comment le CGPA est-il calculé ?</summary>
             <p class="formula-line">CGPA = (Σ GPA du semestre × crédits du semestre) ÷ (total des crédits)</p>
             <p class="muted small">Les semestres avec plus de crédits comptent davantage. Exemple : 3.50 avec 18 crédits et 3.00 avec 15 crédits → (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 3: Target CGPA ---------- -->
         <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
           <div class="panel-head">
@@ -329,7 +306,6 @@
               <p class="muted small">Découvrez quel GPA il vous faut lors des prochains semestres pour atteindre votre objectif.</p>
             </div>
           </div>
-
           <div class="target-grid">
             <div class="field">
               <label class="field-label" for="tCurrent">CGPA actuel</label>
@@ -352,9 +328,7 @@
               <p class="row-msg" id="tLeftMsg"></p>
             </div>
           </div>
-
           <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">Remplir depuis mon onglet CGPA</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">GPA nécessaire par semestre</div>
             <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
@@ -363,20 +337,17 @@
             <div class="result-sub" id="tgtSub">Remplissez les quatre champs ci-dessus pour voir le GPA nécessaire.</div>
             <div class="result-note" id="tgtNote" hidden=""></div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="target">Copier le résultat</button>
             <button type="button" class="btn btn-outline js-print" title="Dans la fenêtre d’impression, choisissez « Enregistrer au format PDF » pour télécharger un PDF">Imprimer / PDF</button>
             <button type="button" id="resetTarget" class="btn btn-quiet">Effacer</button>
           </div>
-
           <details class="howto">
             <summary>Comment est-ce calculé ?</summary>
             <p class="formula-line">GPA nécessaire = (Objectif × total des crédits − Actuel × crédits validés) ÷ crédits restants</p>
             <p class="muted small">Exemple : 3.00 actuel après 60 crédits, objectif 3.30, 60 crédits restants → (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
           </details>
         </section>
-
         <!-- ---------- TAB 4: Percentage ---------- -->
         <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
           <div class="panel-head">
@@ -385,18 +356,14 @@
               <p class="muted small">Saisissez votre CGPA et choisissez son échelle.</p>
             </div>
           </div>
-
           <div class="conv-grid">
             <div class="field">
               <label class="field-label always" for="convInput">Votre CGPA</label>
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
-
           </div>
-
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">Utiliser mon CGPA de l’onglet CGPA</button>
-
           <div class="result" aria-live="polite">
             <div class="result-label">Pourcentage</div>
             <div class="result-value"><span id="pctValue">—</span></div>
@@ -404,12 +371,10 @@
             <div class="result-cheer" id="pctCheer"></div>
             <div class="result-sub" id="pctSub">Saisissez votre CGPA pour voir le pourcentage.</div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn-outline js-copy" data-copy="pct">Copier le résultat</button>
             <button type="button" class="btn btn-outline js-print" title="Dans la fenêtre d’impression, choisissez « Enregistrer au format PDF » pour télécharger un PDF">Imprimer / PDF</button>
           </div>
-
           <div class="formula">
             <div class="formula-title">Formule utilisée</div>
             <p class="formula-line" id="formulaMain"></p>
@@ -418,7 +383,6 @@
           </div>
         </section>
       </div>
-
       <!-- ================= Sidebar: grade table ================= -->
       <aside class="sidebar">
         <section class="card" aria-labelledby="tableTitle">
@@ -434,7 +398,6 @@
           </div>
           <p class="muted tiny">Les plages de points varient selon les universités. Vérifiez toujours le règlement de notation de votre université.</p>
         </section>
-
         <section class="card tips">
           <h2 class="side-title">La NUST en bref</h2>
           <ul>
@@ -445,9 +408,7 @@
         </section>
       </aside>
     </div>
-
     <article class="guide" id="guide">
-
       <section id="how-it-works">
         <h2>Comment fonctionne la notation à la NUST</h2>
         <p>La NUST utilise une notation relative sur une échelle de 4.00. Selon le NUST Undergraduate Student Handbook : <q>The University follows a relative grading system on a scale of 1.00 to 4.00 points.</q> (« L’université applique un système de notation relative sur une échelle de 1.00 à 4.00 points. ») Votre note en lettre dépend de vos résultats par rapport à votre promotion, et non d’un pourcentage fixe. 82 % peut valoir un A dans une épreuve difficile et un B+ dans une épreuve plus facile.</p>
@@ -455,7 +416,6 @@
         <h3>Cours avec théorie et TP</h3>
         <p>Pour un cours qui comporte des crédits de théorie et de TP, la NUST combine d’abord les deux pourcentages, pondérés par les crédits, puis note le cours dans son ensemble. L’exemple du manuel est la physique avec 3 crédits de théorie à 70 % et 1 crédit de TP à 90 %, soit (70 × 3 + 90 × 1) ÷ 4 = 75 %. Vous obtenez une seule note pour les 4 crédits : saisissez-le donc comme une matière de 4 crédits.</p>
       </section>
-
       <section id="grade-points">
         <h2>Tableau des points de note de la NUST</h2>
         <div class="table-scroll">
@@ -476,7 +436,6 @@
         </div>
         <p>I (incomplet), W (abandon), Q (qualifié) et T (transfert) ne rapportent aucun point. Notez que la NUST n’a ni A+ ni notes en « moins » : B+ et C+ se situent un demi-point au-dessus de B et C.</p>
       </section>
-
       <section id="example">
         <h2>Calculer votre GPA NUST : exemple détaillé</h2>
         <div class="table-scroll">
@@ -495,7 +454,6 @@
         <p class="formula-block">GPA = 54.00 ÷ 16 = 3.375 ≈ 3.38</p>
         <p>Votre CGPA fonctionne de la même façon sur tous les semestres : additionnez crédits × points pour chaque cours suivi et divisez par votre total de crédits. L’onglet CGPA le fait à partir de vos GPA semestriels.</p>
       </section>
-
       <section id="minimum-cgpa">
         <h2>CGPA minimum et insuffisance académique à la NUST</h2>
         <ul>
@@ -505,21 +463,17 @@
         </ul>
         <p>Si votre CGPA est passé sous 2.00, l’onglet Objectif vous montre le GPA nécessaire sur les semestres restants pour repasser au-dessus.</p>
       </section>
-
       <section id="repeat">
         <h2>Repasser un cours pour améliorer votre CGPA</h2>
         <p>Quand vous repassez un cours, votre relevé affiche l’ancienne et la nouvelle note, mais seule la meilleure sert au calcul du CGPA. Repasser un cours nécessite l’accord de votre chef de département (HoD), et les notes obtenues en repassant ne comptent pas pour les plus hautes distinctions et récompenses académiques, sauf la Rector's Gold Medal. Si vous échouez de nouveau après avoir repassé un cours, cela compte toujours comme un seul F.</p>
         <p><strong>Astuce :</strong> pour un cours repassé, saisissez uniquement la meilleure note.</p>
       </section>
-
       <section id="percentage">
         <h2>CGPA de la NUST en pourcentage</h2>
         <p>Le NUST Undergraduate Student Handbook ne contient pas de formule officielle pour convertir le CGPA en pourcentage. Quand un pourcentage est demandé, beaucoup utilisent (CGPA ÷ 4) × 100, ce qui donne 85 % pour 3.40. Les employeurs et les universités ont parfois leurs propres règles : vérifiez ce qu’accepte l’organisme auprès duquel vous postulez. L’onglet Pourcentage utilise cette méthode simple.</p>
       </section>
-
       <section id="faq" class="faq">
         <h2>FAQ du calculateur de CGPA de la NUST</h2>
-
         <details>
           <summary><h3>La NUST utilise-t-elle une notation relative ou absolue ?</h3></summary>
           <p>La NUST utilise une notation relative sur une échelle de 4.00 : votre note dépend de vos résultats par rapport à votre promotion, et non d’un pourcentage fixe. C’est pourquoi il n’existe pas de tableau fixe points-notes pour la NUST.</p>
@@ -549,7 +503,6 @@
           <p>Saisissez-le comme une seule matière avec son total de crédits, par exemple 4 pour un cours 3+1. La NUST combine les points de théorie et de TP en une seule note pour tout le cours.</p>
         </details>
       </section>
-
       <section id="sources">
         <h2>Sources</h2>
         <ul class="source-note">
@@ -558,7 +511,6 @@
         <p class="source-note">Dernière vérification : 18 octobre 2026. Les règles universitaires peuvent changer : confirmez toujours vos résultats avec les règles officielles les plus récentes de votre université. Voir nos <a href="terms.html">Conditions d’utilisation</a>.</p>
       </section>
     </article>
-
     <section class="uni-section" aria-labelledby="uniTitle">
       <h2 id="uniTitle">Autres calculateurs de CGPA et de GPA</h2>
       <div class="uni-grid">
@@ -581,7 +533,6 @@
     </section>
     <p class="back-top"><a href="#calculator">↑ Retour au calculateur</a></p>
   </main>
-
   <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -598,9 +549,7 @@
       </nav>
     </div>
   </footer>
-
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
   <script>window.CGPA_PAGE = {
     storageKey: 'cgpa-nust',
     scales: {

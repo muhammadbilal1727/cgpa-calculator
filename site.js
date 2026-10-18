@@ -50,6 +50,14 @@
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && langMenu.open) langMenu.open = false; });
   }
 
+  /* ---------- Contact email: put together here so spam bots can't read it from the page source ---------- */
+  const mail = document.querySelector('.contact-email[data-user]');
+  if (mail) {
+    const addr = mail.dataset.user + '@' + mail.dataset.domain;
+    mail.href = 'mailto:' + addr;
+    mail.textContent = addr;
+  }
+
   /* ---------- Footer year ---------- */
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
