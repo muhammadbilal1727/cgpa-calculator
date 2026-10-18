@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us – CGPA Calculator</title>
+  <meta name="description" content="Learn why CGPA Calculator was made and how it keeps your GPA, CGPA and percentage calculations simple, clear, private and free.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#f4f6fb">
+  <link rel="canonical" href="https://www.example.com/about.html">
+
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CGPA Calculator">
+  <meta property="og:url" content="https://www.example.com/about.html">
+  <meta property="og:title" content="About CGPA Calculator">
+  <meta property="og:description" content="Learn why CGPA Calculator was made and how it keeps your GPA, CGPA and percentage calculations simple, clear, private and free.">
+  <meta property="og:image" content="https://www.example.com/og-image.jpg">
+  <meta property="og:image:alt" content="CGPA Calculator: a result card showing a CGPA of 3.37 out of 4.00">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="style.css">
+  <script>
+    /* Apply the saved (or system) theme before the page paints, so there is no flash */
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem('cgpa-theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="CGPA Calculator home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3z"/>
+            <path d="M5 13.18v4C5 18.84 8.13 20 12 20s7-1.16 7-2.82v-4L12 17l-7-3.82z"/>
+          </svg>
+        </span>
+        <span>CGPA Calculator</span>
+      </a>
+      <div class="header-actions">
+        <nav class="site-nav" id="siteNav" aria-label="Main menu">
+          <a href="index.html">Calculator</a>
+          <a href="about.html" aria-current="page">About</a>
+          <a href="privacy-policy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <button type="button" id="themeToggle" class="icon-btn" aria-label="Switch to dark mode" title="Light / dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+        </button>
+        <button type="button" id="menuToggle" class="icon-btn menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
+          <svg class="icon-menu" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="guide page">
+      <header class="page-hero">
+        <p class="eyebrow">About us</p>
+        <h1>About CGPA Calculator</h1>
+        <p class="lead">A free, simple tool that helps students understand their grades, with no sign-ups and no confusing maths.</p>
+      </header>
+
+      <section>
+        <h2>Why we built this</h2>
+        <p>Almost every student has sat with a transcript and a phone calculator, trying to work out their GPA before results come out or wondering what they need next semester to reach a goal. The maths isn't hard, but it's easy to slip up: forgetting to weight by credit hours, using the wrong grade points, or applying the wrong percentage formula.</p>
+        <p>CGPA Calculator takes that stress away. You type in your subjects or semesters and the answer appears straight away. We also show the formula, so you can see exactly how each number was worked out.</p>
+      </section>
+
+      <section>
+        <h2>What you can do here</h2>
+        <ul>
+          <li><strong>Semester GPA:</strong> from letter grades or from your marks.</li>
+          <li><strong>Overall CGPA:</strong> correctly weighted by credit hours, for as many semesters as you need.</li>
+          <li><strong>Target CGPA:</strong> find the GPA you need in your remaining semesters to reach your goal.</li>
+          <li><strong>CGPA to percentage:</strong> for the 4.0, 10-point and 5.0 scales, with the formula shown.</li>
+          <li><strong>Grade point tables:</strong> for each scale, so you can check how grades turn into points.</li>
+        </ul>
+        <p>The calculator supports the 4.0 scale used in Pakistan and the USA, the 10-point scale used in India, and the 5.0 scale used in Nigeria and some other countries.</p>
+      </section>
+
+      <section>
+        <h2>What we care about</h2>
+        <ul>
+          <li><strong>Free for everyone.</strong> No accounts, no paywalls and no limits on how often you use it.</li>
+          <li><strong>Private by design.</strong> The numbers you enter stay in your own browser. Read our <a href="privacy-policy.html">Privacy Policy</a> to learn more.</li>
+          <li><strong>Clear and honest.</strong> We show the formulas we use and point out where universities do things differently.</li>
+          <li><strong>Made for phones.</strong> Most students use their phones, so the site is designed to be fast and easy on a small screen.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>A note on accuracy</h2>
+        <p>We use the most common grading tables and formulas, and we test our calculations carefully. Still, every university sets its own rules for grade points, rounding, repeated courses and percentage conversion. Please treat our results as a helpful estimate, and confirm them with your own university's official rules before using them in an application. Our <a href="terms.html">Terms of Use</a> explain this in more detail.</p>
+      </section>
+
+      <section>
+        <h2>Get in touch</h2>
+        <p>Found a mistake, have an idea, or want your university's grading scale added? We'd love to hear from you on our <a href="contact.html">Contact page</a>.</p>
+        <p><a href="index.html" class="btn btn-soft">Open the calculator →</a></p>
+      </section>
+    </article>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p><strong>CGPA Calculator</strong> · Made for students · © <span id="year">2026</span></p>
+        <p class="muted">Results are estimates. Your university's official rules always come first.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index.html">Calculator</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>
