@@ -490,7 +490,9 @@
   "s512": "Avant d’écrire",
   "s513": "La réponse à votre question figure peut-être déjà dans nos <a href=\"index.html#faq\">questions fréquentes</a>. Merci de ne pas envoyer par e-mail de relevés de notes, de pièces d’identité, de mots de passe ou d’autres informations sensibles. Nous n’en avons jamais besoin pour vous aider.",
   "s514": "Nous ne pouvons pas confirmer de résultats officiels",
-  "s515": "Le calculateur de CGPA est un site indépendant. Pour votre CGPA, votre pourcentage ou votre relevé officiel, contactez le service des examens ou la scolarité de votre université."
+  "s515": "Le calculateur de CGPA est un site indépendant. Pour votre CGPA, votre pourcentage ou votre relevé officiel, contactez le service des examens ou la scolarité de votre université.",
+  "s1401": "Nous comptons les visites avec Vercel Web Analytics, qui n’utilise pas de cookies et ne vous identifie pas. Nous n’utilisons ni publicité ni cookies propres.",
+  "s1402": "Nous utilisons aussi <a href=\"https://vercel.com/docs/analytics/privacy-policy\">Vercel Web Analytics</a> pour compter le nombre de visiteurs et les pages consultées. Il n’utilise pas de cookies, ne recueille pas les chiffres que vous saisissez dans le calculateur et n’identifie aucun visiteur."
  },
  "js": {
   "j1": "échelle 4.0",

@@ -490,7 +490,9 @@
   "s512": "Sebelum Anda menulis",
   "s513": "Pertanyaan Anda mungkin sudah terjawab di <a href=\"index.html#faq\">pertanyaan yang sering diajukan</a>. Mohon jangan mengirim transkrip, dokumen identitas, kata sandi, atau informasi sensitif lainnya lewat email. Kami tidak pernah memerlukannya untuk membantu Anda.",
   "s514": "Kami tidak dapat mengonfirmasi hasil resmi",
-  "s515": "Kalkulator CGPA adalah situs independen. Untuk CGPA, persentase, atau transkrip resmi Anda, silakan hubungi bagian ujian atau bagian akademik kampus Anda."
+  "s515": "Kalkulator CGPA adalah situs independen. Untuk CGPA, persentase, atau transkrip resmi Anda, silakan hubungi bagian ujian atau bagian akademik kampus Anda.",
+  "s1401": "Kami menghitung kunjungan dengan Vercel Web Analytics, yang tidak memakai cookie dan tidak mengenali identitas Anda. Kami tidak memakai iklan atau cookie sendiri.",
+  "s1402": "Kami juga memakai <a href=\"https://vercel.com/docs/analytics/privacy-policy\">Vercel Web Analytics</a> untuk menghitung berapa banyak orang yang berkunjung dan halaman apa yang mereka lihat. Layanan ini tidak memakai cookie, tidak mengumpulkan angka yang Anda ketik di kalkulator, dan tidak mengenali pengunjung satu per satu."
  },
  "js": {
   "j1": "skala 4.0",

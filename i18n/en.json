@@ -432,7 +432,6 @@
   "s431": "Last updated: 18 October 2026",
   "s432": "At a glance",
   "s433": "Your grades, marks and GPAs are worked out in your browser and never sent to us.",
-  "s434": "We don't currently use analytics, advertising or cookies of our own.",
   "s435": "We may add Google Analytics and ads (such as Google AdSense) in future. This page explains what that would mean, and we will update it before either goes live.",
   "s436": "1. Information you enter in the calculator",
   "s437": "Everything you type into the calculator, such as subject names, credit hours, grades, marks and GPAs, is processed entirely in your web browser. It is saved in your browser's local storage so your entries are still there when you come back, and it is never sent to us or to anyone else.",
@@ -1396,7 +1395,9 @@
   "s1397": "What happens if my PNGK falls below 2.00?",
   "s1398": "From 1.70 to below 2.00 you are in Conditional Standing (KS). Below 1.70 you are in Failed Standing (KG) and dismissed.",
   "s1399": "Universiti Teknologi Malaysia: Peraturan Akademik Program Sarjana Muda, Edisi ke-16 (2023), Jadual 5, Perkara 18, 29–33",
-  "s1400": "Add module"
+  "s1400": "Add module",
+  "s1401": "We count visits with Vercel Web Analytics, which uses no cookies and does not identify you. We don’t use advertising or cookies of our own.",
+  "s1402": "We also use <a href=\"https://vercel.com/docs/analytics/privacy-policy\">Vercel Web Analytics</a> to count how many people visit and which pages they view. It does not use cookies, does not collect the numbers you type into the calculator, and does not identify individual visitors."
  },
  "js": {
   "j1": "4.0 scale",

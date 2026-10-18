@@ -58,6 +58,15 @@
     mail.textContent = addr;
   }
 
+  /* ---------- Vercel Web Analytics (cookie-free visitor counts, only on the live site) ---------- */
+  if (/^https?:$/.test(location.protocol) && !/^(localhost|127\.)/.test(location.hostname)) {
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    const insights = document.createElement('script');
+    insights.defer = true;
+    insights.src = '/_vercel/insights/script.js';
+    document.head.appendChild(insights);
+  }
+
   /* ---------- Footer year ---------- */
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();

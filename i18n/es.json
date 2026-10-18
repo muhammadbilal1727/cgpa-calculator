@@ -1330,7 +1330,9 @@
   "s1397": "¿Qué pasa si mi PNGK baja de 2.00?",
   "s1398": "De 1.70 a menos de 2.00 estás en Situación condicional (KS). Por debajo de 1.70 estás en Situación de suspenso (KG) y eres expulsado.",
   "s1399": "Universiti Teknologi Malaysia: Peraturan Akademik Program Sarjana Muda, Edisi ke-16 (2023), Jadual 5, Perkara 18, 29–33",
-  "s1400": "Añadir módulo"
+  "s1400": "Añadir módulo",
+  "s1401": "Contamos las visitas con Vercel Web Analytics, que no usa cookies ni te identifica. No usamos publicidad ni cookies propias.",
+  "s1402": "También usamos <a href=\"https://vercel.com/docs/analytics/privacy-policy\">Vercel Web Analytics</a> para contar cuántas personas nos visitan y qué páginas ven. No usa cookies, no recoge los números que escribes en la calculadora y no identifica a ningún visitante."
  },
  "js": {
   "j1": "escala de 4.0",

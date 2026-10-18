@@ -1330,7 +1330,9 @@
   "s1397": "Was passiert, wenn mein PNGK unter 2.00 fällt?",
   "s1398": "Von 1.70 bis unter 2.00 bist du im bedingten Status (KS). Unter 1.70 bist du im Status nicht bestanden (KG) und wirst exmatrikuliert.",
   "s1399": "Universiti Teknologi Malaysia: Peraturan Akademik Program Sarjana Muda, Edisi ke-16 (2023), Jadual 5, Perkara 18, 29–33",
-  "s1400": "Modul hinzufügen"
+  "s1400": "Modul hinzufügen",
+  "s1401": "Wir zählen Besuche mit Vercel Web Analytics; es nutzt keine Cookies und erkennt dich nicht. Werbung oder eigene Cookies nutzen wir nicht.",
+  "s1402": "Außerdem nutzen wir <a href=\"https://vercel.com/docs/analytics/privacy-policy\">Vercel Web Analytics</a>, um zu zählen, wie viele Menschen die Seite besuchen und welche Seiten sie ansehen. Es nutzt keine Cookies, erfasst nicht die Zahlen, die du in den Rechner eingibst, und erkennt keine einzelnen Besucher."
  },
  "js": {
   "j1": "4.0-Skala",

@@ -490,7 +490,9 @@
   "s512": "Antes de escrever",
   "s513": "Talvez sua dúvida já esteja respondida nas nossas <a href=\"index.html#faq\">perguntas frequentes</a>. Por favor, não envie por e-mail históricos, documentos de identidade, senhas nem outras informações sensíveis. Nunca precisamos disso para ajudar você.",
   "s514": "Não podemos confirmar resultados oficiais",
-  "s515": "A Calculadora de CGPA é um site independente. Para seu CGPA, sua porcentagem ou seu histórico oficial, entre em contato com o setor de provas ou a secretaria acadêmica da sua universidade."
+  "s515": "A Calculadora de CGPA é um site independente. Para seu CGPA, sua porcentagem ou seu histórico oficial, entre em contato com o setor de provas ou a secretaria acadêmica da sua universidade.",
+  "s1401": "Contamos as visitas com o Vercel Web Analytics, que não usa cookies nem identifica você. Não usamos publicidade nem cookies próprios.",
+  "s1402": "Também usamos o <a href=\"https://vercel.com/docs/analytics/privacy-policy\">Vercel Web Analytics</a> para contar quantas pessoas visitam o site e quais páginas veem. Ele não usa cookies, não coleta os números que você digita na calculadora e não identifica nenhum visitante."
  },
  "js": {
   "j1": "escala de 4.0",
