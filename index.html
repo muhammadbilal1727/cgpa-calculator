@@ -189,12 +189,14 @@
               <h2>Semester GPA</h2>
               <p class="muted small">Add each subject with its credit hours and grade.</p>
             </div>
-            <div class="segmented" role="radiogroup" aria-label="How do you want to enter results?">
+<!-- mode-switch -->
+            <div class="segmented" id="modeSwitch" role="radiogroup" aria-label="How do you want to enter results?">
               <input type="radio" name="gpaMode" id="modeGrade" value="grade" checked>
               <label for="modeGrade">Grade</label>
               <input type="radio" name="gpaMode" id="modeMarks" value="marks">
               <label for="modeMarks">Marks</label>
             </div>
+<!-- /mode-switch -->
           </div>
 
           <div class="rows-head subject-cols" aria-hidden="true">
@@ -346,6 +348,7 @@
               <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
               <p class="row-msg" id="convMsg"></p>
             </div>
+<!-- conv-scale -->
             <div class="field">
               <span class="field-label always" id="convScaleLabel">Scale</span>
               <div class="segmented full" role="radiogroup" aria-labelledby="convScaleLabel">
@@ -357,6 +360,7 @@
                 <label for="conv5">5.0</label>
               </div>
             </div>
+<!-- /conv-scale -->
           </div>
 
           <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">Use my CGPA from the CGPA tab</button>
@@ -391,7 +395,7 @@
           <div class="table-wrap">
             <table class="grade-table">
               <thead>
-                <tr><th scope="col">Grade</th><th scope="col" class="num">Points</th><th scope="col" class="num">Marks %</th></tr>
+                <tr><th scope="col">Grade</th><th scope="col" class="num">Points</th><th scope="col" class="num" id="marksCol">Marks %</th></tr>
               </thead>
               <tbody id="gradeTableBody"></tbody>
             </table>
@@ -399,6 +403,7 @@
           <p class="muted tiny">Marks ranges differ between universities. Always check your own university's grading policy.</p>
         </section>
 
+<!-- side-tips -->
         <section class="card tips">
           <h2 class="side-title">Good to know</h2>
           <ul>
@@ -408,8 +413,32 @@
             <li>Use <strong>Marks</strong> mode if you know your marks but not your grade.</li>
           </ul>
         </section>
+<!-- /side-tips -->
       </aside>
     </div>
+
+    <!-- ================= University calculators ================= -->
+    <section class="uni-section" aria-labelledby="uniTitle">
+      <h2 id="uniTitle">University CGPA &amp; GPA calculators</h2>
+      <p class="muted">Calculators set up with each university's own official grading rules and percentage conversion.</p>
+      <div class="uni-grid">
+        <a class="card uni-card" href="nust-cgpa-calculator.html">
+          <span class="uni-badge">NUST</span>
+          <span class="uni-name">NUST CGPA &amp; GPA Calculator</span>
+          <span class="muted small">Relative grading · A = 4.00, B+ = 3.50</span>
+        </a>
+        <a class="card uni-card" href="comsats-cgpa-calculator.html">
+          <span class="uni-badge">CUI</span>
+          <span class="uni-name">COMSATS CGPA &amp; GPA Calculator</span>
+          <span class="muted small">HEC criteria (Fall 2021+) · official % rule</span>
+        </a>
+        <a class="card uni-card" href="vtu-cgpa-calculator.html">
+          <span class="uni-badge">VTU</span>
+          <span class="uni-name">VTU CGPA &amp; SGPA Calculator</span>
+          <span class="muted small">2022 &amp; 2021 schemes · CGPA to %</span>
+        </a>
+      </div>
+    </section>
 
     <!-- ================= Guide (helpful content) ================= -->
     <article class="guide" id="guide">

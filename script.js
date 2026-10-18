@@ -4,8 +4,11 @@
 (function () {
   'use strict';
 
-  /* ---------- Grading scales: [grade, points, minimum marks %] ---------- */
-  const SCALES = {
+  /* University pages set window.CGPA_PAGE (scales, conversions, storageKey) before this file loads */
+  const PAGE = window.CGPA_PAGE || {};
+
+  /* ---------- Grading scales: [grade, points, minimum marks %, lowest points if a range] ---------- */
+  const SCALES = PAGE.scales || {
     '4': {
       max: 4, label: '4.0 scale', region: 'Pakistan / USA', example: '3.45',
       grades: [['A', 4, 85], ['A-', 3.67, 80], ['B+', 3.33, 75], ['B', 3, 71], ['B-', 2.67, 68],
@@ -22,11 +25,12 @@
     }
   };
   Object.values(SCALES).forEach(function (s) {
-    s.grades = s.grades.map(([grade, points, min]) => ({ grade, points, min }));
+    s.grades = s.grades.map(([grade, points, min, pmin]) => ({ grade, points, min, pmin }));
+    s.modes = s.modes || ['grade', 'marks']; // grade = pick a letter, marks = type marks, points = type grade points
   });
 
   /* ---------- CGPA → percentage formulas ---------- */
-  const CONVERSIONS = {
+  const CONVERSIONS = PAGE.conversions || {
     '4': {
       formula: 'Percentage = (CGPA ÷ 4) × 100',
       expr: c => `(${c} ÷ 4) × 100`,
@@ -57,7 +61,8 @@
     { id: 'tLeft', key: 'left', kind: 'credits' }
   ];
 
-  const STORAGE_KEY = 'cgpa-calculator-data';
+  const STORAGE_KEY = PAGE.storageKey || 'cgpa-calculator-data';
+  const MODE_HEADINGS = { grade: 'Grade', marks: 'Marks (%)', points: 'Grade points' };
 
   const ICON_TRASH = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/></svg>';
 
@@ -134,10 +139,12 @@
   }
 
   /* ---------- App state ---------- */
+  // Note: number-like keys ('2021', '2022') are always listed smallest first, so pages can name their default
+  const FIRST_SCALE = SCALES[PAGE.defaultScale] ? PAGE.defaultScale : Object.keys(SCALES)[0];
   const state = {
-    scale: '4',
+    scale: FIRST_SCALE,
     mode: 'grade',
-    convScale: '4',
+    convScale: FIRST_SCALE,
     tab: 'tab-gpa',
     results: { gpa: null, cgpa: null, target: null, pct: null }
   };
@@ -179,15 +186,24 @@
     const sc = SCALES[state.scale];
     $('#tableTitle').textContent = `Grade points (${sc.label})`;
     $('#tableSubtitle').textContent = `${sc.region} · highest grade point is ${f2(sc.max)}`;
+    const showMarks = sc.grades.some(g => g.min != null); // relative grading has no fixed marks
+    const marksCol = $('#marksCol');
+    if (marksCol) marksCol.hidden = !showMarks;
     $('#gradeTableBody').innerHTML = sc.grades.map(function (g, i) {
       const top = i === 0 ? 100 : sc.grades[i - 1].min - 1;
-      return `<tr><td><span class="grade-pill">${g.grade}</span></td>` +
-        `<td class="num">${f2(g.points)}</td><td class="num">${g.min}–${top}</td></tr>`;
+      const pts = g.pmin != null ? `${f2(g.pmin)}–${f2(g.points)}` : f2(g.points);
+      return `<tr><td><span class="grade-pill">${g.grade}</span></td><td class="num">${pts}</td>` +
+        (showMarks ? `<td class="num">${g.min}–${top}</td>` : '') + '</tr>';
     }).join('');
   }
 
   function gradeFromMarks(marks, sc) {
     return sc.grades.find(g => marks >= g.min);
+  }
+
+  // Which letter a grade-point value belongs to (for scales where a letter covers a range)
+  function gradeFromPoints(pts, sc) {
+    return sc.grades.find(g => pts >= (g.pmin != null ? g.pmin : g.points) - 1e-9) || sc.grades[sc.grades.length - 1];
   }
 
   function fillGradeSelect(select) {
@@ -238,8 +254,10 @@
       <div class="field f-grade">
         <label class="field-label lbl-grade" for="${id}-g">Grade</label>
         <label class="field-label lbl-marks" for="${id}-m">Marks (out of 100)</label>
+        <label class="field-label lbl-points" for="${id}-p">Grade points</label>
         <select id="${id}-g" class="in-grade"></select>
         <input type="text" id="${id}-m" class="in-marks" inputmode="decimal" autocomplete="off" placeholder="0 – 100">
+        <input type="text" id="${id}-p" class="in-points" inputmode="decimal" autocomplete="off" placeholder="e.g. ${SCALES[state.scale].example}">
       </div>
       <button type="button" class="remove-btn" aria-label="Remove subject" title="Remove">${ICON_TRASH}</button>
       <p class="row-msg"></p>`;
@@ -250,6 +268,7 @@
       $('.in-name', row).value = String(data.name || '');
       $('.in-credit', row).value = String(data.credit || '');
       $('.in-marks', row).value = String(data.marks || '');
+      $('.in-points', row).value = String(data.points || '');
       gradeIn.value = String(data.grade || '');
       if (hasContent(data)) row.dataset.touched = '1';
     }
@@ -261,20 +280,21 @@
 
   function calcGPA() {
     const sc = SCALES[state.scale];
-    const marksMode = state.mode === 'marks';
+    const mode = state.mode;
     let credits = 0, points = 0, counted = 0, skipped = 0;
     const lines = [];
 
     $$('.subject-row', subjectList).forEach(function (row, i) {
       const nameIn = $('.in-name', row), creditIn = $('.in-credit', row);
-      const gradeIn = $('.in-grade', row), marksIn = $('.in-marks', row);
+      const gradeIn = $('.in-grade', row), marksIn = $('.in-marks', row), pointsIn = $('.in-points', row);
       const msg = $('.row-msg', row);
       const touched = row.dataset.touched === '1';
-      [creditIn, gradeIn, marksIn].forEach(el => el.removeAttribute('aria-invalid'));
+      [creditIn, gradeIn, marksIn, pointsIn].forEach(el => el.removeAttribute('aria-invalid'));
 
       const credit = parseNumber(creditIn.value);
       const marks = parseNumber(marksIn.value);
-      const gradeEmpty = marksMode ? marks === null : gradeIn.value === '';
+      const pts = parseNumber(pointsIn.value);
+      const gradeEmpty = mode === 'marks' ? marks === null : mode === 'points' ? pts === null : gradeIn.value === '';
       if (credit === null && gradeEmpty) { setMsg(msg, ''); return; } // empty row: ignore
 
       let error = null, badField = null, grade = null, info = '';
@@ -290,7 +310,18 @@
       }
 
       if (!error) {
-        if (marksMode) {
+        if (mode === 'points') {
+          if (pts === null) {
+            if (touched) { error = 'Please enter the grade points for this subject.'; badField = pointsIn; }
+          } else if (Number.isNaN(pts)) {
+            error = `Grade points should be a number, like ${sc.example}.`; badField = pointsIn;
+          } else if (pts < 0 || pts > sc.max) {
+            error = `Grade points should be between 0 and ${f2(sc.max)}.`; badField = pointsIn;
+          } else {
+            grade = { grade: gradeFromPoints(pts, sc).grade, points: pts };
+            info = `${f2(pts)} points = grade ${grade.grade}`;
+          }
+        } else if (mode === 'marks') {
           if (marks === null) {
             if (touched) { error = 'Please enter the marks you got (0 to 100).'; badField = marksIn; }
           } else if (Number.isNaN(marks)) {
@@ -341,8 +372,24 @@
   function setMode(mode) {
     state.mode = mode;
     subjectList.className = 'row-list mode-' + mode;
-    $('#gradeHead').textContent = mode === 'marks' ? 'Marks (%)' : 'Grade';
-    $(mode === 'marks' ? '#modeMarks' : '#modeGrade').checked = true;
+    $('#gradeHead').textContent = MODE_HEADINGS[mode];
+    const radio = $(`input[name="gpaMode"][value="${mode}"]`);
+    if (radio) radio.checked = true;
+  }
+
+  // Show only the entry modes the current scale allows (e.g. no marks for relative grading)
+  function applyModes() {
+    const modes = SCALES[state.scale].modes;
+    const radios = $$('input[name="gpaMode"]');
+    radios.forEach(function (r) {
+      const allowed = modes.includes(r.value);
+      r.disabled = !allowed;
+      const label = $(`label[for="${r.id}"]`);
+      if (label) label.hidden = !allowed;
+    });
+    const switcher = $('#modeSwitch');
+    if (switcher) switcher.hidden = radios.filter(r => !r.disabled).length < 2;
+    if (!modes.includes(state.mode)) setMode(modes[0]);
   }
 
   /* =========================================================
@@ -410,7 +457,8 @@
       } else if (gpa < 0) {
         error = 'GPA can’t be negative.'; badField = gpaIn;
       } else if (gpa > sc.max) {
-        error = `GPA can’t be more than ${f2(sc.max)} on the ${sc.label}. Did you pick the right grading scale at the top?`;
+        error = `GPA can’t be more than ${f2(sc.max)} on the ${sc.label}.` +
+          (Object.keys(SCALES).length > 1 ? ' Did you pick the right option at the top?' : '');
         badField = gpaIn;
       }
       if (!error) {
@@ -537,7 +585,15 @@
      ========================================================= */
   function setConvScale(scale) {
     state.convScale = scale;
-    $('#conv' + scale).checked = true;
+    const radio = $('#conv' + scale);
+    if (radio) radio.checked = true;
+  }
+
+  // A conversion is either a formula (calc + expr) or a custom rule (result)
+  function convert(conv, c) {
+    if (conv.result) return conv.result(c);
+    const pct = conv.calc(c);
+    return { pct, text: f2(pct) + '%', work: `${conv.expr(f2(c))} = ${f2(pct)}%` };
   }
 
   function calcPercent() {
@@ -560,15 +616,16 @@
 
     if (c === null || error) {
       state.results.pct = null;
-      $('#formulaWork').textContent = `Example: ${conv.expr(f2(conv.example))} = ${f2(conv.calc(conv.example))}%`;
+      $('#formulaWork').textContent = 'Example: ' + convert(conv, conv.example).work;
       setResult('pct', { sub: error ? 'Fix the CGPA above to see the percentage.' : 'Enter your CGPA to see the percentage.' });
     } else {
-      const pct = conv.calc(c);
-      $('#formulaWork').textContent = `${conv.expr(f2(c))} = ${f2(pct)}%`;
-      state.results.pct = { cgpa: c, pct, scale: s };
+      const res = convert(conv, c);
+      $('#formulaWork').textContent = res.work;
+      state.results.pct = { cgpa: c, text: res.text, scale: s };
+      const extra = conv.classify ? ' · ' + conv.classify(res.pct) : '';
       setResult('pct', {
-        text: f2(pct) + '%', ratio: pct / 100, cheer: cheer(pct / 100),
-        sub: `CGPA ${f2(c)} on the ${SCALES[s].label}`
+        text: res.text, ratio: res.pct / 100, cheer: cheer(res.pct / 100),
+        sub: `CGPA ${f2(c)} on the ${SCALES[s].label}${extra}`
       });
     }
     persist();
@@ -587,6 +644,8 @@
     renderGradeTable();
     $$('.in-grade', subjectList).forEach(fillGradeSelect);
     $$('.in-gpa', semesterList).forEach(el => { el.placeholder = 'e.g. ' + sc.example; });
+    $$('.in-points', subjectList).forEach(el => { el.placeholder = 'e.g. ' + sc.example; });
+    applyModes();
     setConvScale(state.scale);
     calcAll();
   }
@@ -603,7 +662,8 @@
         name: $('.in-name', r).value,
         credit: $('.in-credit', r).value,
         grade: $('.in-grade', r).value,
-        marks: $('.in-marks', r).value
+        marks: $('.in-marks', r).value,
+        points: $('.in-points', r).value
       })),
       semesters: $$('.semester-row', semesterList).map(r => ({
         gpa: $('.in-gpa', r).value,
@@ -629,7 +689,7 @@
     }
     if (which === 'target' && r.target) return r.target + footer;
     if (which === 'pct' && r.pct) {
-      return `CGPA ${f2(r.pct.cgpa)} (${SCALES[r.pct.scale].label}) = ${f2(r.pct.pct)}%\n` +
+      return `CGPA ${f2(r.pct.cgpa)} (${SCALES[r.pct.scale].label}) = ${r.pct.text}\n` +
         `Formula: ${CONVERSIONS[r.pct.scale].formula}` + footer;
     }
     return null;
@@ -757,7 +817,8 @@
   const saved = readStorage(STORAGE_KEY) || {};
   if (SCALES[saved.scale]) state.scale = saved.scale;
   scaleSelect.value = state.scale;
-  setMode(saved.mode === 'marks' ? 'marks' : 'grade');
+  setMode(SCALES[state.scale].modes.includes(saved.mode) ? saved.mode : SCALES[state.scale].modes[0]);
+  applyModes();
   renderGradeTable();
 
   const savedSubjects = Array.isArray(saved.subjects) && saved.subjects.length ? saved.subjects : [{}, {}, {}, {}];

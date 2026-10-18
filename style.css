@@ -353,8 +353,9 @@ input[type="text"]:focus, select:focus {
 .sem-label { grid-area: label; }
 .remove-btn { grid-area: remove; }
 
-.mode-grade .lbl-marks, .mode-grade .in-marks,
-.mode-marks .lbl-grade, .mode-marks .in-grade { display: none; }
+.mode-grade .lbl-marks, .mode-grade .in-marks, .mode-grade .lbl-points, .mode-grade .in-points,
+.mode-marks .lbl-grade, .mode-marks .in-grade, .mode-marks .lbl-points, .mode-marks .in-points,
+.mode-points .lbl-grade, .mode-points .in-grade, .mode-points .lbl-marks, .mode-points .in-marks { display: none; }
 
 .sem-label { display: flex; align-items: center; gap: 10px; font-weight: 700; }
 .sem-badge {
@@ -562,6 +563,39 @@ button:focus-visible, .tab:focus-visible, summary:focus-visible, .logo:focus-vis
 .tips ul { margin: 10px 0 0; padding-left: 18px; color: var(--muted); font-size: 0.9rem; }
 .tips li + li { margin-top: 6px; }
 
+/* ---------- University calculator links ---------- */
+.uni-section { max-width: 1120px; margin: 0 auto 8px; }
+.uni-section h2 { font-size: clamp(1.25rem, 3.6vw, 1.5rem); }
+.uni-section > p { margin-top: 4px; }
+.uni-grid { display: grid; gap: 14px; margin-top: 16px; }
+@media (min-width: 640px) { .uni-grid { grid-template-columns: repeat(3, 1fr); } }
+.uni-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color 0.15s, transform 0.15s;
+}
+.uni-card:hover { border-color: var(--primary); transform: translateY(-2px); }
+.uni-card:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.uni-badge {
+  align-self: flex-start;
+  margin-bottom: 6px;
+  padding: 3px 10px;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--primary);
+  background: var(--primary-soft);
+}
+.uni-name { font-weight: 700; font-size: 1.02rem; }
+.source-note { font-size: 0.9rem; color: var(--muted); }
+.breadcrumb { margin-bottom: 10px; font-size: 0.88rem; color: var(--muted); }
+.breadcrumb a { color: var(--primary); font-weight: 600; text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+
 /* ---------- Guide content below the tool ---------- */
 .hero-link { color: var(--primary); font-weight: 600; text-decoration: none; white-space: nowrap; }
 .hero-link:hover { text-decoration: underline; }
@@ -718,7 +752,7 @@ button:focus-visible, .tab:focus-visible, summary:focus-visible, .logo:focus-vis
   }
   body { display: block; }
   .site-header { position: static; backdrop-filter: none; }
-  .icon-btn, .tabs, .btn, .remove-btn, .tips, .howto, .toast, .hero p, .scale-card p, .rows-head, .guide, .site-nav, .footer-nav { display: none !important; }
+  .icon-btn, .tabs, .btn, .remove-btn, .tips, .howto, .toast, .hero p, .scale-card p, .rows-head, .guide, .site-nav, .footer-nav, .uni-section { display: none !important; }
   .print-only { display: block; margin: 8px 0 0; color: var(--muted); font-size: 0.85rem; }
   .card { box-shadow: none; break-inside: avoid; }
   .layout { display: block; }
