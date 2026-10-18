@@ -130,7 +130,7 @@ p { margin: 0; }
 .icon-btn:active { transform: scale(0.95); }
 /* ---------- Menu ---------- */
 .header-actions { display: flex; align-items: center; gap: 8px; }
-.site-nav { display: flex; gap: 2px; margin-right: 6px; }
+.site-nav { display: flex; gap: 2px; margin-inline-end: 6px; }
 .site-nav a {
   padding: 8px 12px;
   border-radius: 10px;
@@ -143,6 +143,45 @@ p { margin: 0; }
 .site-nav a:hover { color: var(--text); background: var(--surface-2); }
 .site-nav a[aria-current="page"] { color: var(--primary); background: var(--primary-soft); }
 .site-nav a:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+/* Right-to-left languages (Urdu, Arabic): mirror the dropdown arrow */
+[dir="rtl"] select { background-position: left 13px center; }
+[dir="rtl"] .formula-line, [dir="rtl"] .formula-work, [dir="rtl"] .formula-block { unicode-bidi: plaintext; }
+
+/* Language menu */
+.lang-menu { position: relative; }
+.lang-menu summary { list-style: none; cursor: pointer; }
+.lang-menu summary::-webkit-details-marker { display: none; }
+.lang-btn { width: auto; min-width: 42px; padding: 0 10px; gap: 6px; display: flex; align-items: center; }
+.lang-code { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.03em; }
+.lang-list {
+  position: absolute;
+  top: calc(100% + 8px);
+  inset-inline-end: 0;
+  z-index: 30;
+  width: 240px;
+  max-height: min(70vh, 520px);
+  overflow-y: auto;
+  padding: 6px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+.lang-list a {
+  padding: 8px 10px;
+  border-radius: 9px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+}
+.lang-list a:hover { background: var(--surface-2); color: var(--primary); }
+.lang-list a[aria-current="true"] { color: var(--primary); background: var(--primary-soft); }
+@media (max-width: 380px) { .lang-btn .lang-code { display: none; } .lang-btn { padding: 0; min-width: 42px; justify-content: center; } }
+
 .menu-btn { display: none; }
 .icon-close { display: none; }
 .menu-btn[aria-expanded="true"] .icon-menu { display: none; }
@@ -268,7 +307,7 @@ input[type="text"]::placeholder { color: var(--muted); opacity: 0.75; }
 select {
   appearance: none;
   -webkit-appearance: none;
-  padding-right: 36px;
+  padding-inline-end: 36px;
   cursor: pointer;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%238a93ad' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
@@ -457,7 +496,7 @@ input[type="text"]:focus, select:focus {
 .btn-outline.danger-hover:hover { border-color: var(--danger); color: var(--danger); background: var(--danger-soft); }
 .btn-quiet { color: var(--muted); background: transparent; }
 .btn-quiet:hover { color: var(--text); background: var(--surface-2); }
-.btn-inline { margin-top: 6px; padding-left: 0; padding-right: 0; color: var(--primary); text-decoration: underline; text-underline-offset: 3px; }
+.btn-inline { margin-top: 6px; padding-inline: 0; color: var(--primary); text-decoration: underline; text-underline-offset: 3px; }
 .btn-inline:hover { background: transparent; color: var(--primary-hover); }
 
 button:focus-visible, .tab:focus-visible, summary:focus-visible, .logo:focus-visible {
@@ -538,7 +577,7 @@ button:focus-visible, .tab:focus-visible, summary:focus-visible, .logo:focus-vis
 .grade-table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
 .grade-table th {
   padding: 6px 8px;
-  text-align: left;
+  text-align: start;
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -548,7 +587,7 @@ button:focus-visible, .tab:focus-visible, summary:focus-visible, .logo:focus-vis
 }
 .grade-table td { padding: 7px 8px; border-bottom: 1px solid var(--border); }
 .grade-table tr:last-child td { border-bottom: 0; }
-.grade-table .num { text-align: right; }
+.grade-table .num { text-align: end; }
 .grade-pill {
   display: inline-block;
   min-width: 36px;
@@ -560,7 +599,7 @@ button:focus-visible, .tab:focus-visible, summary:focus-visible, .logo:focus-vis
   color: var(--primary);
 }
 
-.tips ul { margin: 10px 0 0; padding-left: 18px; color: var(--muted); font-size: 0.9rem; }
+.tips ul { margin: 10px 0 0; padding-inline-start: 18px; color: var(--muted); font-size: 0.9rem; }
 .tips li + li { margin-top: 6px; }
 
 /* ---------- University calculator links ---------- */
@@ -597,7 +636,9 @@ button:focus-visible, .tab:focus-visible, summary:focus-visible, .logo:focus-vis
 .breadcrumb a:hover { text-decoration: underline; }
 
 /* ---------- Guide content below the tool ---------- */
-.hero-link { color: var(--primary); font-weight: 600; text-decoration: none; white-space: nowrap; }
+.hero-link { color: var(--primary); font-weight: 600; text-decoration: none; }
+/* Long words (German compounds, etc.) break neatly instead of overflowing on phones */
+h1, h2, h3, p, li, .scale-title, .uni-name, .tab, .btn { overflow-wrap: break-word; hyphens: auto; }
 .hero-link:hover { text-decoration: underline; }
 
 .guide { max-width: 780px; margin: 0 auto 48px; font-size: 1.02rem; line-height: 1.7; }
@@ -605,13 +646,13 @@ button:focus-visible, .tab:focus-visible, summary:focus-visible, .logo:focus-vis
 .guide h2 { font-size: clamp(1.3rem, 3.8vw, 1.6rem); margin: 48px 0 14px; }
 .guide h3 { font-size: 1.12rem; margin: 28px 0 10px; }
 .guide p { margin: 0 0 14px; }
-.guide ul, .guide ol { margin: 0 0 16px; padding-left: 22px; }
+.guide ul, .guide ol { margin: 0 0 16px; padding-inline-start: 22px; }
 .guide li + li { margin-top: 8px; }
 .guide a { color: var(--primary); }
 
 .toc { padding: 18px 20px; }
 .toc-title { margin: 0 0 8px !important; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
-.toc ol { margin: 0; padding-left: 20px; }
+.toc ol { margin: 0; padding-inline-start: 20px; }
 .toc li + li { margin-top: 4px; }
 .toc a { text-decoration: none; font-weight: 600; }
 .toc a:hover { text-decoration: underline; }
@@ -619,7 +660,7 @@ button:focus-visible, .tab:focus-visible, summary:focus-visible, .logo:focus-vis
 
 .formula-block {
   padding: 12px 16px;
-  border-left: 4px solid var(--primary);
+  border-inline-start: 4px solid var(--primary);
   border-radius: 10px;
   background: var(--surface-2);
   font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
@@ -636,11 +677,11 @@ button:focus-visible, .tab:focus-visible, summary:focus-visible, .logo:focus-vis
   background: var(--surface);
 }
 .data-table { width: 100%; border-collapse: collapse; font-size: 0.94rem; line-height: 1.45; font-variant-numeric: tabular-nums; }
-.data-table th, .data-table td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+.data-table th, .data-table td { padding: 10px 14px; text-align: start; border-bottom: 1px solid var(--border); vertical-align: top; }
 .data-table thead th { background: var(--surface-2); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); white-space: nowrap; }
 .data-table tbody tr:last-child td { border-bottom: 0; }
 .data-table tfoot th, .data-table tfoot td { font-weight: 700; border-top: 2px solid var(--border); border-bottom: 0; }
-.data-table .num { text-align: right; white-space: nowrap; }
+.data-table .num { text-align: end; white-space: nowrap; }
 
 .faq details { border-bottom: 1px solid var(--border); }
 .faq details:first-of-type { border-top: 1px solid var(--border); }
@@ -752,7 +793,7 @@ button:focus-visible, .tab:focus-visible, summary:focus-visible, .logo:focus-vis
   }
   body { display: block; }
   .site-header { position: static; backdrop-filter: none; }
-  .icon-btn, .tabs, .btn, .remove-btn, .tips, .howto, .toast, .hero p, .scale-card p, .rows-head, .guide, .site-nav, .footer-nav, .uni-section { display: none !important; }
+  .icon-btn, .tabs, .btn, .remove-btn, .tips, .howto, .toast, .hero p, .scale-card p, .rows-head, .guide, .site-nav, .footer-nav, .uni-section, .lang-menu { display: none !important; }
   .print-only { display: block; margin: 8px 0 0; color: var(--muted); font-size: 0.85rem; }
   .card { box-shadow: none; break-inside: avoid; }
   .layout { display: block; }

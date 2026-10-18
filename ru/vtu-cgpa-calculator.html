@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Built by tools/build-university-pages.js – edit that file, not this one -->
+  <title>Калькулятор CGPA и GPA (SGPA) для VTU – схемы 2022 и 2021</title>
+  <meta name="description" content="Калькулятор CGPA и SGPA для VTU по схемам 2022 и 2021. Использует официальные баллы VTU и переводит CGPA в проценты по правильной формуле.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f6fb">
+  <link rel="canonical" href="https://cgpa-calculator-umber-two.vercel.app/ru/vtu-cgpa-calculator.html">
+  <link rel="alternate" hreflang="en" href="https://cgpa-calculator-umber-two.vercel.app/vtu-cgpa-calculator.html">
+  <link rel="alternate" hreflang="es" href="https://cgpa-calculator-umber-two.vercel.app/es/vtu-cgpa-calculator.html">
+  <link rel="alternate" hreflang="de" href="https://cgpa-calculator-umber-two.vercel.app/de/vtu-cgpa-calculator.html">
+  <link rel="alternate" hreflang="hi" href="https://cgpa-calculator-umber-two.vercel.app/hi/vtu-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ur" href="https://cgpa-calculator-umber-two.vercel.app/ur/vtu-cgpa-calculator.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://cgpa-calculator-umber-two.vercel.app/zh/vtu-cgpa-calculator.html">
+  <link rel="alternate" hreflang="fr" href="https://cgpa-calculator-umber-two.vercel.app/fr/vtu-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ar" href="https://cgpa-calculator-umber-two.vercel.app/ar/vtu-cgpa-calculator.html">
+  <link rel="alternate" hreflang="bn" href="https://cgpa-calculator-umber-two.vercel.app/bn/vtu-cgpa-calculator.html">
+  <link rel="alternate" hreflang="pt" href="https://cgpa-calculator-umber-two.vercel.app/pt/vtu-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ru" href="https://cgpa-calculator-umber-two.vercel.app/ru/vtu-cgpa-calculator.html">
+  <link rel="alternate" hreflang="id" href="https://cgpa-calculator-umber-two.vercel.app/id/vtu-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ja" href="https://cgpa-calculator-umber-two.vercel.app/ja/vtu-cgpa-calculator.html">
+  <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/vtu-cgpa-calculator.html">
+  <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/vtu-cgpa-calculator.html">
+  <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/vtu-cgpa-calculator.html">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CGPA Calculator">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:url" content="https://cgpa-calculator-umber-two.vercel.app/ru/vtu-cgpa-calculator.html">
+  <meta property="og:title" content="Калькулятор CGPA и GPA (SGPA) для VTU">
+  <meta property="og:description" content="Калькулятор CGPA и SGPA для VTU по схемам 2022 и 2021. Использует официальные баллы VTU и переводит CGPA в проценты по правильной формуле.">
+  <meta property="og:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <meta property="og:image:alt" content="Калькулятор CGPA: карточка результата с CGPA 3.37 из 4.00">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Калькулятор CGPA и GPA (SGPA) для VTU">
+  <meta name="twitter:description" content="Калькулятор CGPA и SGPA для VTU по схемам 2022 и 2021. Использует официальные баллы VTU и переводит CGPA в проценты по правильной формуле.">
+  <meta name="twitter:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "@id": "https://cgpa-calculator-umber-two.vercel.app/ru/vtu-cgpa-calculator.html#app",
+    "name": "Калькулятор CGPA и GPA (SGPA) для VTU",
+    "url": "https://cgpa-calculator-umber-two.vercel.app/ru/vtu-cgpa-calculator.html",
+    "image": "https://cgpa-calculator-umber-two.vercel.app/og-image.jpg",
+    "description": "Калькулятор CGPA и SGPA для VTU по схемам 2022 и 2021. Использует официальные баллы VTU и переводит CGPA в проценты по правильной формуле.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "ru",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Как перевести CGPA VTU в проценты?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "По схеме 2022 умножьте CGPA на 10: 8.20 — это 82 %. По схеме 2021 и старой схеме CBCS 2015 года используйте (CGPA − 0.75) × 10: 8.20 — это 74.5 %."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Почему некоторые сайты советуют вычитать 0.75 из CGPA VTU?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Старые положения VTU, включая CBCS 2015 года и положение 2021-22, использовали (CGPA − 0.75) × 10. Положение 2022 года заменило это на CGPA × 10. Каждая формула верна для своей схемы."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Какой CGPA нужен для First Class with Distinction в VTU?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "По схеме 2022 для First Class with Distinction нужно 70 % и выше, то есть CGPA не ниже 7.00. First Class — от 60 % до менее 70 %, то есть CGPA от 6.00 до 6.99."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Какие проходные баллы по схеме VTU 2022?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Нужно не менее 40 % баллов CIE для допуска к SEE, не менее 35 % баллов SEE и не менее 40 % в сумме по курсу, это оценка P."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Оценивание в VTU относительное или абсолютное?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Абсолютное. Баллы за CIE и SEE складываются и переводятся в процент, а оценку определяют фиксированные диапазоны, например от 90 до 100 для O по схеме 2022."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Как в VTU рассчитывается CGPA по SGPA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Умножьте SGPA каждого семестра на общее число кредитов этого семестра, сложите результаты и разделите на общее число кредитов за все семестры. SGPA и CGPA округляются до 2 знаков после запятой."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "CGPA Calculator",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/ru/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Калькулятор CGPA и GPA (SGPA) для VTU",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/ru/vtu-cgpa-calculator.html"
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    /* Apply the saved (or system) theme before the page paints, so there is no flash */
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem('cgpa-theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="CGPA Calculator home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3z"></path>
+            <path d="M5 13.18v4C5 18.84 8.13 20 12 20s7-1.16 7-2.82v-4L12 17l-7-3.82z"></path>
+          </svg>
+        </span>
+        <span>CGPA Calculator</span>
+      </a>
+      <div class="header-actions">
+        <nav class="site-nav" id="siteNav" aria-label="Main menu">
+          <a href="index.html">Calculator</a>
+          <a href="about.html">About</a>
+          <a href="privacy-policy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <details class="lang-menu" id="langMenu">
+          <summary class="icon-btn lang-btn" aria-label="Choose language" title="Language">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"></path></svg>
+            <span class="lang-code" data-no-translate="">RU</span>
+          </summary>
+          <div class="lang-list" data-no-translate=""><a href="../vtu-cgpa-calculator.html" hreflang="en" lang="en">English</a><a href="../es/vtu-cgpa-calculator.html" hreflang="es" lang="es">Español</a><a href="../de/vtu-cgpa-calculator.html" hreflang="de" lang="de">Deutsch</a><a href="../hi/vtu-cgpa-calculator.html" hreflang="hi" lang="hi">हिन्दी</a><a href="../ur/vtu-cgpa-calculator.html" hreflang="ur" lang="ur">اردو</a><a href="../zh/vtu-cgpa-calculator.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="../fr/vtu-cgpa-calculator.html" hreflang="fr" lang="fr">Français</a><a href="../ar/vtu-cgpa-calculator.html" hreflang="ar" lang="ar">العربية</a><a href="../bn/vtu-cgpa-calculator.html" hreflang="bn" lang="bn">বাংলা</a><a href="../pt/vtu-cgpa-calculator.html" hreflang="pt" lang="pt">Português</a><a href="vtu-cgpa-calculator.html" hreflang="ru" lang="ru" aria-current="true">Русский</a><a href="../id/vtu-cgpa-calculator.html" hreflang="id" lang="id">Bahasa Indonesia</a><a href="../ja/vtu-cgpa-calculator.html" hreflang="ja" lang="ja">日本語</a><a href="../mr/vtu-cgpa-calculator.html" hreflang="mr" lang="mr">मराठी</a><a href="../te/vtu-cgpa-calculator.html" hreflang="te" lang="te">తెలుగు</a></div>
+        </details>
+        <button type="button" id="themeToggle" class="icon-btn" aria-label="Switch to dark mode" title="Light / dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+        </button>
+        <button type="button" id="menuToggle" class="icon-btn menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
+          <svg class="icon-menu" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <nav class="breadcrumb" aria-label="Навигационная цепочка"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">VTU</span></nav>
+      <h1>Калькулятор CGPA и GPA (SGPA) для VTU</h1>
+      <p>Рассчитайте SGPA и CGPA в VTU и переведите CGPA в проценты по официальным правилам положений VTU для схем 2022 и 2021. <a href="#guide" class="hero-link">Как оценивают в VTU ↓</a></p>
+    </section>
+
+    <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
+      <div class="scale-text">
+        <label id="scaleLabel" for="scaleSelect" class="scale-title">Ваша схема VTU</label>
+        <p class="muted small">Студенты, поступившие в 2022-23 году или позже, учатся по схеме 2022. От схемы зависят буквы оценок и формула перевода в проценты.</p>
+      </div>
+      <select id="scaleSelect" class="scale-select"><option value="2022">Схема 2022 (поступившие с 2022-23)</option><option value="2021">Схема 2021 (поступившие в 2021-22)</option></select>
+      <button type="button" id="resetAll" class="btn btn-outline danger-hover">Сбросить всё</button>
+    </section>
+    <p class="print-only" id="printDate"></p>
+
+    <div class="layout">
+
+      <!-- ================= Calculators ================= -->
+      <div class="main-col">
+
+        <div class="tabs" role="tablist" aria-label="Калькуляторы">
+          <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">GPA <small>Один семестр</small></button>
+          <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>Все семестры</small></button>
+          <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">Цель <small>Планирование</small></button>
+          <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">Проценты <small>Конвертер</small></button>
+        </div>
+
+        <!-- ---------- TAB 1: GPA ---------- -->
+        <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
+          <div class="panel-head">
+            <div>
+              <h2>GPA за семестр</h2>
+              <p class="muted small">Добавьте каждый предмет с его кредитами и оценкой.</p>
+            </div>
+
+            <div class="segmented" id="modeSwitch" role="radiogroup" aria-label="Как вы хотите вводить результаты?">
+              <input type="radio" name="gpaMode" id="modeGrade" value="grade" checked="">
+              <label for="modeGrade">Оценка</label>
+              <input type="radio" name="gpaMode" id="modeMarks" value="marks">
+              <label for="modeMarks">Баллы</label>
+            </div>
+          </div>
+
+          <div class="rows-head subject-cols" aria-hidden="true">
+            <span>Предмет (необязательно)</span><span>Кредиты</span><span id="gradeHead">Оценка</span><span></span>
+          </div>
+          <div id="subjectList" class="row-list mode-grade"></div>
+
+          <button type="button" id="addSubject" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            Добавить предмет
+          </button>
+
+          <div class="result" aria-live="polite">
+            <div class="result-label">Ваш GPA за семестр</div>
+            <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="gpaMeter"></span></div>
+            <div class="result-cheer" id="gpaCheer"></div>
+            <div class="result-sub" id="gpaSub">Добавьте предметы, чтобы увидеть свой GPA.</div>
+            <div class="result-note" id="gpaNote" hidden=""></div>
+          </div>
+
+          <div class="actions">
+            <button type="button" id="sendToCgpa" class="btn btn-soft">Добавить этот GPA в мой CGPA →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="gpa">Копировать результат</button>
+            <button type="button" class="btn btn-outline js-print" title="В окне печати выберите «Сохранить как PDF», чтобы скачать PDF">Печать / PDF</button>
+            <button type="button" id="resetGpa" class="btn btn-quiet">Очистить</button>
+          </div>
+
+          <details class="howto">
+            <summary>Как рассчитывается GPA?</summary>
+            <p class="formula-line">GPA = (Σ кредиты × баллы оценки) ÷ (Σ кредиты)</p>
+            <p class="muted small">Пример: математика — 3 кредита и 4.00 балла, английский — 2 кредита и 3.00 → (3×4 + 2×3) ÷ (3+2) = 18 ÷ 5 = <strong>3.60</strong></p>
+          </details>
+        </section>
+
+        <!-- ---------- TAB 2: CGPA ---------- -->
+        <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>Общий CGPA</h2>
+              <p class="muted small">Добавьте GPA каждого семестра (SGPA) и общее число его кредитов.</p>
+            </div>
+          </div>
+
+          <div class="rows-head semester-cols" aria-hidden="true">
+            <span>Семестр</span><span>GPA / SGPA</span><span>Кредиты</span><span></span>
+          </div>
+          <div id="semesterList" class="row-list"></div>
+
+          <button type="button" id="addSemester" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            Добавить семестр
+          </button>
+
+          <div class="result" aria-live="polite">
+            <div class="result-label">Ваш CGPA</div>
+            <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="cgpaMeter"></span></div>
+            <div class="result-cheer" id="cgpaCheer"></div>
+            <div class="result-sub" id="cgpaSub">Добавьте семестры, чтобы увидеть свой CGPA.</div>
+            <div class="result-note" id="cgpaNote" hidden=""></div>
+          </div>
+
+          <div class="actions">
+            <button type="button" id="sendToPct" class="btn btn-soft">Перевести этот CGPA в % →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">Копировать результат</button>
+            <button type="button" class="btn btn-outline js-print" title="В окне печати выберите «Сохранить как PDF», чтобы скачать PDF">Печать / PDF</button>
+            <button type="button" id="resetCgpa" class="btn btn-quiet">Очистить</button>
+          </div>
+
+          <details class="howto">
+            <summary>Как рассчитывается CGPA?</summary>
+            <p class="formula-line">CGPA = (Σ GPA семестра × кредиты семестра) ÷ (всего кредитов)</p>
+            <p class="muted small">Семестры с большим числом кредитов весят больше. Пример: 3.50 при 18 кредитах и 3.00 при 15 кредитах → (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
+          </details>
+        </section>
+
+        <!-- ---------- TAB 3: Target CGPA ---------- -->
+        <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>Целевой CGPA</h2>
+              <p class="muted small">Узнайте, какой GPA нужен в следующих семестрах, чтобы достичь цели.</p>
+            </div>
+          </div>
+
+          <div class="target-grid">
+            <div class="field">
+              <label class="field-label" for="tCurrent">Текущий CGPA</label>
+              <input type="text" id="tCurrent" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tCurrentMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tDone">Пройдено кредитов</label>
+              <input type="text" id="tDone" inputmode="decimal" autocomplete="off" placeholder="e.g. 66">
+              <p class="row-msg" id="tDoneMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tTarget">Целевой CGPA</label>
+              <input type="text" id="tTarget" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tTargetMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tLeft">Осталось кредитов</label>
+              <input type="text" id="tLeft" inputmode="decimal" autocomplete="off" placeholder="e.g. 70">
+              <p class="row-msg" id="tLeftMsg"></p>
+            </div>
+          </div>
+
+          <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">Заполнить из вкладки CGPA</button>
+
+          <div class="result" aria-live="polite">
+            <div class="result-label">Нужный GPA в каждом семестре</div>
+            <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="tgtMeter"></span></div>
+            <div class="result-cheer" id="tgtCheer"></div>
+            <div class="result-sub" id="tgtSub">Заполните четыре поля выше, чтобы увидеть нужный GPA.</div>
+            <div class="result-note" id="tgtNote" hidden=""></div>
+          </div>
+
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="target">Копировать результат</button>
+            <button type="button" class="btn btn-outline js-print" title="В окне печати выберите «Сохранить как PDF», чтобы скачать PDF">Печать / PDF</button>
+            <button type="button" id="resetTarget" class="btn btn-quiet">Очистить</button>
+          </div>
+
+          <details class="howto">
+            <summary>Как это рассчитывается?</summary>
+            <p class="formula-line">Нужный GPA = (Цель × всего кредитов − Текущий × пройденные кредиты) ÷ оставшиеся кредиты</p>
+            <p class="muted small">Пример: сейчас 3.00 после 60 кредитов, цель 3.30, осталось 60 кредитов → (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
+          </details>
+        </section>
+
+        <!-- ---------- TAB 4: Percentage ---------- -->
+        <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>Перевод CGPA в проценты</h2>
+              <p class="muted small">Введите CGPA и выберите его шкалу.</p>
+            </div>
+          </div>
+
+          <div class="conv-grid">
+            <div class="field">
+              <label class="field-label always" for="convInput">Ваш CGPA</label>
+              <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
+              <p class="row-msg" id="convMsg"></p>
+            </div>
+
+            <div class="field">
+              <span class="field-label always" id="convScaleLabel">Схема</span>
+              <div class="segmented full" role="radiogroup" aria-labelledby="convScaleLabel">
+                <input type="radio" name="convScale" id="conv2022" value="2022" checked="">
+                <label for="conv2022">Схема 2022</label>
+                <input type="radio" name="convScale" id="conv2021" value="2021">
+                <label for="conv2021">2021 и 2015</label>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">Взять мой CGPA из вкладки CGPA</button>
+
+          <div class="result" aria-live="polite">
+            <div class="result-label">Проценты</div>
+            <div class="result-value"><span id="pctValue">—</span></div>
+            <div class="meter" aria-hidden="true"><span id="pctMeter"></span></div>
+            <div class="result-cheer" id="pctCheer"></div>
+            <div class="result-sub" id="pctSub">Введите CGPA, чтобы увидеть процент.</div>
+          </div>
+
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="pct">Копировать результат</button>
+            <button type="button" class="btn btn-outline js-print" title="В окне печати выберите «Сохранить как PDF», чтобы скачать PDF">Печать / PDF</button>
+          </div>
+
+          <div class="formula">
+            <div class="formula-title">Используемая формула</div>
+            <p class="formula-line" id="formulaMain"></p>
+            <p class="formula-work" id="formulaWork"></p>
+            <p class="muted small" id="formulaNote"></p>
+          </div>
+        </section>
+      </div>
+
+      <!-- ================= Sidebar: grade table ================= -->
+      <aside class="sidebar">
+        <section class="card" aria-labelledby="tableTitle">
+          <h2 id="tableTitle" class="side-title">Баллы оценки</h2>
+          <p class="muted small" id="tableSubtitle"></p>
+          <div class="table-wrap">
+            <table class="grade-table">
+              <thead>
+                <tr><th scope="col">Оценка</th><th scope="col" class="num">Баллы</th><th scope="col" class="num" id="marksCol">Баллы, %</th></tr>
+              </thead>
+              <tbody id="gradeTableBody"></tbody>
+            </table>
+          </div>
+          <p class="muted tiny">Диапазоны баллов в разных университетах отличаются. Всегда сверяйтесь с правилами оценивания своего университета.</p>
+        </section>
+
+
+        <section class="card tips">
+          <h2 class="side-title">Коротко о VTU</h2>
+          <ul>
+            <li>В VTU <strong>абсолютное оценивание</strong>: оценку определяет ваш процент за CIE + SEE.</li>
+            <li>Схема 2022: <strong>Процент = CGPA × 10</strong>. Схема 2021: <strong>(CGPA − 0.75) × 10</strong>.</li>
+            <li>SGPA и CGPA <strong>округляются до 2 знаков после запятой</strong>.</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+
+    <article class="guide" id="guide">
+
+      <section id="scheme">
+        <h2>По какой схеме VTU вы учитесь?</h2>
+        <p>VTU время от времени обновляет свои положения. Положение 2022 года действует для студентов, принятых начиная с 2022-23 учебного года, а положение 2021 года вступило в силу в 2021-22. Выберите свою схему вверху калькулятора, потому что буквы оценок и формула перевода CGPA в проценты различаются.</p>
+      </section>
+
+      <section id="grade-points">
+        <h2>Система оценивания VTU: схема 2022</h2>
+        <p>В VTU абсолютное оценивание. Ваши баллы за CIE (текущий внутренний контроль) и SEE (экзамен в конце семестра) складываются и переводятся в процент, и этот процент определяет оценку (пункт 22OB 6.1).</p>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">Оценка</th><th scope="col">Значение</th><th scope="col" class="num">Баллы оценки</th><th scope="col" class="num">Баллы, %</th></tr></thead>
+            <tbody>
+              <tr><td>O</td><td>Выдающийся результат</td><td class="num">10</td><td class="num">90–100</td></tr>
+              <tr><td>A+</td><td>Отлично</td><td class="num">9</td><td class="num">80–89</td></tr>
+              <tr><td>A</td><td>Очень хорошо</td><td class="num">8</td><td class="num">70–79</td></tr>
+              <tr><td>B+</td><td>Хорошо</td><td class="num">7</td><td class="num">60–69</td></tr>
+              <tr><td>B</td><td>Выше среднего</td><td class="num">6</td><td class="num">55–59</td></tr>
+              <tr><td>C</td><td>Средне</td><td class="num">5</td><td class="num">50–54</td></tr>
+              <tr><td>P</td><td>Зачёт</td><td class="num">4</td><td class="num">40–49</td></tr>
+              <tr><td>F</td><td>Незачёт</td><td class="num">0</td><td class="num">0–39</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Схема 2021</h3>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">Оценка</th><th scope="col">Значение</th><th scope="col" class="num">Баллы оценки</th><th scope="col" class="num">Баллы, %</th></tr></thead>
+            <tbody>
+              <tr><td>S</td><td>Выдающийся результат</td><td class="num">10</td><td class="num">90–100</td></tr>
+              <tr><td>A</td><td>Отлично</td><td class="num">9</td><td class="num">80–89</td></tr>
+              <tr><td>B</td><td>Очень хорошо</td><td class="num">8</td><td class="num">70–79</td></tr>
+              <tr><td>C</td><td>Хорошо</td><td class="num">7</td><td class="num">60–69</td></tr>
+              <tr><td>D</td><td>Выше среднего</td><td class="num">6</td><td class="num">45–59</td></tr>
+              <tr><td>E</td><td>Средне</td><td class="num">4</td><td class="num">35–44</td></tr>
+              <tr><td>F</td><td>Незачёт</td><td class="num">0</td><td class="num">0–34</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="example">
+        <h2>Как VTU рассчитывает SGPA и CGPA</h2>
+        <p class="formula-block">SGPA = Σ (Ci × Gi) ÷ Σ Ci &nbsp;&nbsp; CGPA = Σ (Ci × Si) ÷ Σ Ci</p>
+        <p>Ci — кредиты курса, Gi — его балл оценки. Для CGPA Si — это SGPA каждого семестра, а Ci — общее число кредитов этого семестра. Оба показателя округляются до 2 знаков после запятой (пункт 22OB 6.6). Вот пример по схеме 2022:</p>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">Курс</th><th scope="col" class="num">Кредиты</th><th scope="col" class="num">Баллы</th><th scope="col">Оценка</th><th scope="col" class="num">Кредиты × баллы</th></tr></thead>
+            <tbody>
+              <tr><td>Математика</td><td class="num">4</td><td class="num">86</td><td>A+ (9)</td><td class="num">36</td></tr>
+              <tr><td>Физика</td><td class="num">4</td><td class="num">74</td><td>A (8)</td><td class="num">32</td></tr>
+              <tr><td>Программирование на C</td><td class="num">3</td><td class="num">91</td><td>O (10)</td><td class="num">30</td></tr>
+              <tr><td>Основы электроники</td><td class="num">3</td><td class="num">58</td><td>B (6)</td><td class="num">18</td></tr>
+              <tr><td>Английский для общения</td><td class="num">1</td><td class="num">66</td><td>B+ (7)</td><td class="num">7</td></tr>
+            </tbody>
+            <tfoot><tr><th scope="row">Итого</th><td class="num">15</td><td></td><td></td><td class="num">123</td></tr></tfoot>
+          </table>
+        </div>
+        <p class="formula-block">SGPA = 123 ÷ 15 = 8.20</p>
+      </section>
+
+      <section id="percentage">
+        <h2>Перевод CGPA VTU в проценты</h2>
+        <p><strong>Схема 2022:</strong> Процент = CGPA × 10, то есть CGPA 8.20 — это <strong>82 %</strong> (пункт 22OB 6.7). Согласно положению, эту формулу можно использовать при трудоустройстве и продолжении обучения.</p>
+        <p><strong>Схема 2021 и схема CBCS 2015 года:</strong> Процент = (CGPA − 0.75) × 10, то есть те же 8.20 — это <strong>74.5 %</strong>. Поэтому в интернете встречаются две разные формулы VTU: каждая верна для своей схемы. Если вы учитесь по схеме 2017 или 2018 года, проверьте формулу в своём положении или в ведомости оценок.</p>
+        <h3>Соответствие классам (схема 2022)</h3>
+        <ul>
+          <li><strong>First Class with Distinction:</strong> 70 % и выше, то есть CGPA от 7.00</li>
+          <li><strong>First Class:</strong> от 60 % до менее 70 %, то есть CGPA от 6.00 до 6.99</li>
+          <li><strong>Second Class:</strong> от 50 % до менее 60 %, то есть CGPA от 5.00 до 5.99</li>
+          <li><strong>Pass Class:</strong> от 40 % до 50 %, то есть CGPA от 4.00 до 4.99</li>
+        </ul>
+      </section>
+
+      <section id="passing">
+        <h2>Проходные баллы в VTU (схема 2022)</h2>
+        <ul>
+          <li>CIE оценивается максимум в 50 баллов, и для допуска к SEE нужно набрать не менее 40 % от максимума CIE.</li>
+          <li>На SEE, который тоже оценивается максимум в 50 баллов, нужно набрать не менее 35 % от максимума.</li>
+          <li>В сумме по курсу нужно не менее 40 %, это оценка P.</li>
+          <li>Чтобы успешно окончить программу, нужна оценка P или выше по каждому зарегистрированному курсу.</li>
+        </ul>
+      </section>
+
+      <section id="faq" class="faq">
+        <h2>Вопросы о калькуляторе CGPA для VTU</h2>
+
+        <details>
+          <summary><h3>Как перевести CGPA VTU в проценты?</h3></summary>
+          <p>По схеме 2022 умножьте CGPA на 10: 8.20 — это 82 %. По схеме 2021 и старой схеме CBCS 2015 года используйте (CGPA − 0.75) × 10: 8.20 — это 74.5 %.</p>
+        </details>
+        <details>
+          <summary><h3>Почему некоторые сайты советуют вычитать 0.75 из CGPA VTU?</h3></summary>
+          <p>Старые положения VTU, включая CBCS 2015 года и положение 2021-22, использовали (CGPA − 0.75) × 10. Положение 2022 года заменило это на CGPA × 10. Каждая формула верна для своей схемы.</p>
+        </details>
+        <details>
+          <summary><h3>Какой CGPA нужен для First Class with Distinction в VTU?</h3></summary>
+          <p>По схеме 2022 для First Class with Distinction нужно 70 % и выше, то есть CGPA не ниже 7.00. First Class — от 60 % до менее 70 %, то есть CGPA от 6.00 до 6.99.</p>
+        </details>
+        <details>
+          <summary><h3>Какие проходные баллы по схеме VTU 2022?</h3></summary>
+          <p>Нужно не менее 40 % баллов CIE для допуска к SEE, не менее 35 % баллов SEE и не менее 40 % в сумме по курсу, это оценка P.</p>
+        </details>
+        <details>
+          <summary><h3>Оценивание в VTU относительное или абсолютное?</h3></summary>
+          <p>Абсолютное. Баллы за CIE и SEE складываются и переводятся в процент, а оценку определяют фиксированные диапазоны, например от 90 до 100 для O по схеме 2022.</p>
+        </details>
+        <details>
+          <summary><h3>Как в VTU рассчитывается CGPA по SGPA?</h3></summary>
+          <p>Умножьте SGPA каждого семестра на общее число кредитов этого семестра, сложите результаты и разделите на общее число кредитов за все семестры. SGPA и CGPA округляются до 2 знаков после запятой.</p>
+        </details>
+      </section>
+
+      <section id="sources">
+        <h2>Источники</h2>
+        <ul class="source-note">
+          <li><a href="https://vtu.ac.in/wp-content/uploads/2023/04/BE-BTech-Regulations-2022-05.04.2023.pdf">Положение VTU 2022 года (Award of Bachelor of Engineering/Technology Degree), пункты 1.4 и 22OB 6.1–6.8 (копия на сайте VTU помечена «Draft copy»)</a></li>
+          <li><a href="https://vtu.ac.in/wp-content/uploads/2021/12/Final-Draft-copy-Regulation-BE-BTech.pdf">Положение VTU о B.E./B.Tech., действующее с 2021-22 учебного года (пункт 21OB 11.2 и перевод CGPA)</a></li>
+          <li><a href="https://vtu.ac.in/wp-content/uploads/2019/12/becbcs2015-16.pdf">Положение VTU о CBCS 2015-16 (перевод CGPA)</a></li>
+        </ul>
+        <p class="source-note">Последняя проверка: 18 октября 2026 г. Правила университетов могут меняться, поэтому всегда сверяйте результаты с актуальными официальными правилами своего университета. См. наши <a href="terms.html">Условия использования</a>.</p>
+      </section>
+    </article>
+
+    <section class="uni-section" aria-labelledby="uniTitle">
+      <h2 id="uniTitle">Другие калькуляторы CGPA и GPA</h2>
+      <div class="uni-grid">
+        <a class="card uni-card" href="nust-cgpa-calculator.html">
+          <span class="uni-badge">NUST</span>
+          <span class="uni-name">Калькулятор CGPA и GPA для NUST</span>
+          <span class="muted small">Относительное оценивание · A = 4.00, B+ = 3.50</span>
+        </a>
+        <a class="card uni-card" href="comsats-cgpa-calculator.html">
+          <span class="uni-badge">CUI</span>
+          <span class="uni-name">Калькулятор CGPA и GPA для COMSATS</span>
+          <span class="muted small">Критерии HEC (с осени 2021) · официальное правило %</span>
+        </a>
+        <a class="card uni-card" href="index.html">
+          <span class="uni-badge">ВСЕ</span>
+          <span class="uni-name">Общий калькулятор CGPA</span>
+          <span class="muted small">Шкалы 4.0, 5.0 и 10 баллов</span>
+        </a>
+      </div>
+    </section>
+    <p class="back-top"><a href="#calculator">↑ Вернуться к калькулятору</a></p>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p><strong>CGPA Calculator</strong> · Сделано для студентов · © <span id="year">2026</span></p>
+        <p class="muted">Результаты носят оценочный характер. Официальные правила вашего университета всегда в приоритете.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Подвал сайта">
+        <a href="index.html">Калькулятор</a>
+        <a href="about.html">О нас</a>
+        <a href="privacy-policy.html">Политика конфиденциальности</a>
+        <a href="terms.html">Условия использования</a>
+        <a href="contact.html">Контакты</a>
+      </nav>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>window.CGPA_PAGE = {
+    storageKey: 'cgpa-vtu',
+    defaultScale: '2022',
+    scales: {
+      '2022': {
+        max: 10, label: 'VTU 2022 scheme', region: 'Admitted 2022-23 onwards · absolute grading', example: '8.20',
+        grades: [['O', 10, 90], ['A+', 9, 80], ['A', 8, 70], ['B+', 7, 60], ['B', 6, 55], ['C', 5, 50], ['P', 4, 40], ['F', 0, 0]]
+      },
+      '2021': {
+        max: 10, label: 'VTU 2021 scheme', region: 'Admitted 2021-22 · absolute grading', example: '8.20',
+        grades: [['S', 10, 90], ['A', 9, 80], ['B', 8, 70], ['C', 7, 60], ['D', 6, 45], ['E', 4, 35], ['F', 0, 0]]
+      }
+    },
+    conversions: {
+      '2022': {
+        formula: 'Percentage = CGPA × 10',
+        expr: c => c + ' × 10',
+        calc: c => c * 10,
+        example: 8.2,
+        note: 'From VTU Regulations 2022 (clause 22OB 6.7), for students admitted from 2022-23.',
+        classify: p => p >= 70 ? 'First Class with Distinction' : p >= 60 ? 'First Class' : p >= 50 ? 'Second Class' : p >= 40 ? 'Pass Class' : 'Below pass class'
+      },
+      '2021': {
+        formula: 'Percentage = (CGPA − 0.75) × 10',
+        expr: c => '(' + c + ' − 0.75) × 10',
+        calc: c => Math.max(0, (c - 0.75) * 10),
+        example: 8.2,
+        note: 'From the VTU 2021-22 regulations (the 2015 CBCS regulations use the same formula). Students on the 2022 scheme use CGPA × 10 instead.'
+      }
+    }
+  };</script>
+  <script src="../i18n/ru.js" data-i18n=""></script>
+  <script src="../site.js"></script>
+  <script src="../script.js"></script>
+
+
+
+
+
+
+
+
+
+</body></html>

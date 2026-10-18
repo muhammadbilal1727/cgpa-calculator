@@ -181,6 +181,7 @@ const UNIVERSITIES = [
           example: 3,
           note: 'Official COMSATS rule (notification of 7 December 2020): a CGPA is given the minimum percentage of its band, so 3.00 = 71%. It applies to students admitted from Fall 2021.',
           result: function (c) {
+            var t = window.CGPA_T; // translation helper from script.js
             var bands = [[3.67, 85, 'A'], [3.34, 80, 'A-'], [3.01, 75, 'B+'], [2.67, 71, 'B'], [2.34, 68, 'B-'],
               [2.01, 64, 'C+'], [1.67, 61, 'C'], [1.31, 58, 'C-'], [1.01, 54, 'D+'], [0.1, 50, 'D']];
             var v = Math.round(c * 100 + 1e-9) / 100;
@@ -188,10 +189,10 @@ const UNIVERSITIES = [
               if (v >= bands[i][0]) {
                 var top = i === 0 ? 4 : bands[i - 1][0] - 0.01;
                 return { pct: bands[i][1], text: bands[i][1] + '%',
-                  work: 'CGPA ' + v.toFixed(2) + ' is in the ' + bands[i][2] + ' band (' + bands[i][0].toFixed(2) + '–' + top.toFixed(2) + ') → ' + bands[i][1] + '%' };
+                  work: t('CGPA {cgpa} is in the {grade} band ({from}–{to}) → {pct}%', { cgpa: v.toFixed(2), grade: bands[i][2], from: bands[i][0].toFixed(2), to: top.toFixed(2), pct: bands[i][1] }) };
               }
             }
-            return { pct: 0, text: 'Below 50%', work: 'CGPA ' + v.toFixed(2) + ' is in the F band → below 50%' };
+            return { pct: 0, text: t('Below 50%'), work: t('CGPA {cgpa} is in the F band → below 50%', { cgpa: v.toFixed(2) }) };
           }
         }
       }
@@ -441,7 +442,7 @@ ${table(cfg.scales['2021'].grades, meaning21)}
 ];
 
 /* ---------- Build ---------- */
-const index = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
+const index = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8').replace(/\r\n/g, '\n');
 const header = between(index, '  <!-- ================= Header', '  <main class="container">').replace(' aria-current="page"', '');
 const footer = between(index, '  <!-- ================= Footer', '  <div id="toast"');
 const layoutTemplate = between(index, '    <div class="layout">', '    <!-- ================= University calculators');

@@ -77,7 +77,12 @@
   };
   const f2 = n => round2(n).toFixed(2);
   const cleanNum = n => String(round2(n));
-  const plural = (n, word) => `${n} ${word}${n === 1 ? '' : 's'}`;
+  /* Translations: translated pages load i18n/<lang>.js first, which sets
+     window.CGPA_I18N = { 'English text with {placeholders}': 'translation' } */
+  const I18N = window.CGPA_I18N || {};
+  const t = (text, vars) => String(I18N[text] || text)
+    .replace(/\{(\w+)\}/g, (m, k) => (vars && k in vars ? vars[k] : m));
+  window.CGPA_T = t; // used by university configs at run time
   let uid = 0;
 
   function readStorage(key) {
@@ -101,19 +106,19 @@
   }
 
   function cheer(ratio) {
-    if (ratio >= 0.9) return 'Outstanding! You’re a star 🌟';
-    if (ratio >= 0.8) return 'Excellent! 🎉';
-    if (ratio >= 0.7) return 'Very good, keep it up 👏';
-    if (ratio >= 0.6) return 'Good! You can push even higher 💪';
-    if (ratio >= 0.5) return 'Keep going, you’re on track 📚';
-    return 'Don’t give up. Every semester is a fresh start 🌱';
+    if (ratio >= 0.9) return t('Outstanding! You’re a star 🌟');
+    if (ratio >= 0.8) return t('Excellent! 🎉');
+    if (ratio >= 0.7) return t('Very good, keep it up 👏');
+    if (ratio >= 0.6) return t('Good! You can push even higher 💪');
+    if (ratio >= 0.5) return t('Keep going, you’re on track 📚');
+    return t('Don’t give up. Every semester is a fresh start 🌱');
   }
 
   function skippedNote(n) {
     if (!n) return '';
     return n === 1
-      ? '1 row still needs a fix or more info, so it isn’t counted yet.'
-      : `${n} rows still need a fix or more info, so they aren’t counted yet.`;
+      ? t('1 row still needs a fix or more info, so it isn’t counted yet.')
+      : t('{n} rows still need a fix or more info, so they aren’t counted yet.', { n });
   }
 
   /* Fills one result box (ids like gpaValue, gpaMax, gpaMeter …) */
@@ -184,8 +189,8 @@
   /* ---------- Grade table ---------- */
   function renderGradeTable() {
     const sc = SCALES[state.scale];
-    $('#tableTitle').textContent = `Grade points (${sc.label})`;
-    $('#tableSubtitle').textContent = `${sc.region} · highest grade point is ${f2(sc.max)}`;
+    $('#tableTitle').textContent = t('Grade points ({scale})', { scale: t(sc.label) });
+    $('#tableSubtitle').textContent = t('{region} · highest grade point is {max}', { region: t(sc.region), max: f2(sc.max) });
     const showMarks = sc.grades.some(g => g.min != null); // relative grading has no fixed marks
     const marksCol = $('#marksCol');
     if (marksCol) marksCol.hidden = !showMarks;
@@ -209,7 +214,7 @@
   function fillGradeSelect(select) {
     const sc = SCALES[state.scale];
     const previous = select.value;
-    select.innerHTML = '<option value="">Select</option>' +
+    select.innerHTML = '<option value="">' + t('Select') + '</option>' +
       sc.grades.map(g => `<option value="${g.grade}">${g.grade} (${f2(g.points)})</option>`).join('');
     select.value = previous; // falls back to "Select" if this grade doesn't exist on the new scale
   }
@@ -244,22 +249,22 @@
     row.className = 'row subject-row';
     row.innerHTML = `
       <div class="field f-name">
-        <label class="field-label" for="${id}-n">Subject name (optional)</label>
-        <input type="text" id="${id}-n" class="in-name" maxlength="60" autocomplete="off" placeholder="e.g. Calculus">
+        <label class="field-label" for="${id}-n">${t('Subject name (optional)')}</label>
+        <input type="text" id="${id}-n" class="in-name" maxlength="60" autocomplete="off" placeholder="${t('e.g. Calculus')}">
       </div>
       <div class="field f-credit">
-        <label class="field-label" for="${id}-c">Credit hours</label>
-        <input type="text" id="${id}-c" class="in-credit" inputmode="decimal" autocomplete="off" placeholder="e.g. 3">
+        <label class="field-label" for="${id}-c">${t('Credit hours')}</label>
+        <input type="text" id="${id}-c" class="in-credit" inputmode="decimal" autocomplete="off" placeholder="${t('e.g. {x}', { x: 3 })}">
       </div>
       <div class="field f-grade">
-        <label class="field-label lbl-grade" for="${id}-g">Grade</label>
-        <label class="field-label lbl-marks" for="${id}-m">Marks (out of 100)</label>
-        <label class="field-label lbl-points" for="${id}-p">Grade points</label>
+        <label class="field-label lbl-grade" for="${id}-g">${t('Grade')}</label>
+        <label class="field-label lbl-marks" for="${id}-m">${t('Marks (out of 100)')}</label>
+        <label class="field-label lbl-points" for="${id}-p">${t('Grade points')}</label>
         <select id="${id}-g" class="in-grade"></select>
         <input type="text" id="${id}-m" class="in-marks" inputmode="decimal" autocomplete="off" placeholder="0 – 100">
-        <input type="text" id="${id}-p" class="in-points" inputmode="decimal" autocomplete="off" placeholder="e.g. ${SCALES[state.scale].example}">
+        <input type="text" id="${id}-p" class="in-points" inputmode="decimal" autocomplete="off" placeholder="${t('e.g. {x}', { x: SCALES[state.scale].example })}">
       </div>
-      <button type="button" class="remove-btn" aria-label="Remove subject" title="Remove">${ICON_TRASH}</button>
+      <button type="button" class="remove-btn" aria-label="${t('Remove subject')}" title="${t('Remove')}">${ICON_TRASH}</button>
       <p class="row-msg"></p>`;
 
     const gradeIn = $('.in-grade', row);
@@ -300,40 +305,40 @@
       let error = null, badField = null, grade = null, info = '';
 
       if (credit === null) {
-        if (touched) { error = 'Please enter the credit hours for this subject.'; badField = creditIn; }
+        if (touched) { error = t('Please enter the credit hours for this subject.'); badField = creditIn; }
       } else if (Number.isNaN(credit)) {
-        error = 'Credit hours should be a number, like 3 or 1.5.'; badField = creditIn;
+        error = t('Credit hours should be a number, like 3 or 1.5.'); badField = creditIn;
       } else if (credit <= 0) {
-        error = 'Credit hours must be more than 0.'; badField = creditIn;
+        error = t('Credit hours must be more than 0.'); badField = creditIn;
       } else if (credit > 30) {
-        error = 'That looks too high. Credit hours are usually between 1 and 6.'; badField = creditIn;
+        error = t('That looks too high. Credit hours are usually between 1 and 6.'); badField = creditIn;
       }
 
       if (!error) {
         if (mode === 'points') {
           if (pts === null) {
-            if (touched) { error = 'Please enter the grade points for this subject.'; badField = pointsIn; }
+            if (touched) { error = t('Please enter the grade points for this subject.'); badField = pointsIn; }
           } else if (Number.isNaN(pts)) {
-            error = `Grade points should be a number, like ${sc.example}.`; badField = pointsIn;
+            error = t('Grade points should be a number, like {x}.', { x: sc.example }); badField = pointsIn;
           } else if (pts < 0 || pts > sc.max) {
-            error = `Grade points should be between 0 and ${f2(sc.max)}.`; badField = pointsIn;
+            error = t('Grade points should be between 0 and {max}.', { max: f2(sc.max) }); badField = pointsIn;
           } else {
             grade = { grade: gradeFromPoints(pts, sc).grade, points: pts };
-            info = `${f2(pts)} points = grade ${grade.grade}`;
+            info = t('{points} points = grade {grade}', { points: f2(pts), grade: grade.grade });
           }
         } else if (mode === 'marks') {
           if (marks === null) {
-            if (touched) { error = 'Please enter the marks you got (0 to 100).'; badField = marksIn; }
+            if (touched) { error = t('Please enter the marks you got (0 to 100).'); badField = marksIn; }
           } else if (Number.isNaN(marks)) {
-            error = 'Marks should be a number, like 78.'; badField = marksIn;
+            error = t('Marks should be a number, like 78.'); badField = marksIn;
           } else if (marks < 0 || marks > 100) {
-            error = 'Marks should be between 0 and 100.'; badField = marksIn;
+            error = t('Marks should be between 0 and 100.'); badField = marksIn;
           } else {
             grade = gradeFromMarks(marks, sc);
-            info = `${cleanNum(marks)} marks = grade ${grade.grade} (${f2(grade.points)} points)`;
+            info = t('{marks} marks = grade {grade} ({points} points)', { marks: cleanNum(marks), grade: grade.grade, points: f2(grade.points) });
           }
         } else if (gradeIn.value === '') {
-          if (touched) { error = 'Please choose a grade from the list.'; badField = gradeIn; }
+          if (touched) { error = t('Please choose a grade from the list.'); badField = gradeIn; }
         } else {
           grade = sc.grades.find(g => g.grade === gradeIn.value) || null;
         }
@@ -351,18 +356,18 @@
       credits += credit;
       points += credit * grade.points;
       counted++;
-      lines.push(`${nameIn.value.trim() || 'Subject ' + (i + 1)}: ${cleanNum(credit)} credits, grade ${grade.grade} (${f2(grade.points)})`);
+      lines.push(t('{name}: {credits} credits, grade {grade} ({points})', { name: nameIn.value.trim() || t('Subject {n}', { n: i + 1 }), credits: cleanNum(credit), grade: grade.grade, points: f2(grade.points) }));
     });
 
     if (counted === 0) {
       state.results.gpa = null;
-      setResult('gpa', { max: sc.max, sub: 'Add your subjects to see your GPA.', note: skippedNote(skipped) });
+      setResult('gpa', { max: sc.max, sub: t('Add your subjects to see your GPA.'), note: skippedNote(skipped) });
     } else {
       const gpa = points / credits;
       state.results.gpa = { value: gpa, credits, lines };
       setResult('gpa', {
         text: f2(gpa), max: sc.max, ratio: gpa / sc.max, cheer: cheer(gpa / sc.max),
-        sub: `${plural(counted, 'subject')} · ${cleanNum(credits)} credit hours · ${f2(points)} grade points`,
+        sub: t(counted === 1 ? '1 subject · {credits} credit hours · {points} grade points' : '{n} subjects · {credits} credit hours · {points} grade points', { n: counted, credits: cleanNum(credits), points: f2(points) }),
         note: skippedNote(skipped)
       });
     }
@@ -372,7 +377,7 @@
   function setMode(mode) {
     state.mode = mode;
     subjectList.className = 'row-list mode-' + mode;
-    $('#gradeHead').textContent = MODE_HEADINGS[mode];
+    $('#gradeHead').textContent = t(MODE_HEADINGS[mode]);
     const radio = $(`input[name="gpaMode"][value="${mode}"]`);
     if (radio) radio.checked = true;
   }
@@ -402,17 +407,17 @@
     row.innerHTML = `
       <div class="sem-label"><span class="sem-badge"></span><span class="sem-title"></span></div>
       <div class="field f-gpa">
-        <label class="field-label" for="${id}-g">GPA / SGPA</label>
+        <label class="field-label" for="${id}-g">${t('GPA / SGPA')}</label>
         <input type="text" id="${id}-g" class="in-gpa" inputmode="decimal" autocomplete="off">
       </div>
       <div class="field f-credit">
-        <label class="field-label" for="${id}-c">Credit hours</label>
-        <input type="text" id="${id}-c" class="in-credit" inputmode="decimal" autocomplete="off" placeholder="e.g. 18">
+        <label class="field-label" for="${id}-c">${t('Credit hours')}</label>
+        <input type="text" id="${id}-c" class="in-credit" inputmode="decimal" autocomplete="off" placeholder="${t('e.g. {x}', { x: 18 })}">
       </div>
-      <button type="button" class="remove-btn" title="Remove">${ICON_TRASH}</button>
+      <button type="button" class="remove-btn" title="${t('Remove')}">${ICON_TRASH}</button>
       <p class="row-msg"></p>`;
 
-    $('.in-gpa', row).placeholder = 'e.g. ' + SCALES[state.scale].example;
+    $('.in-gpa', row).placeholder = t('e.g. {x}', { x: SCALES[state.scale].example });
     if (data) {
       $('.in-gpa', row).value = String(data.gpa || '');
       $('.in-credit', row).value = String(data.credit || '');
@@ -428,8 +433,8 @@
   function renumberSemesters() {
     $$('.semester-row', semesterList).forEach(function (row, i) {
       $('.sem-badge', row).textContent = i + 1;
-      $('.sem-title', row).textContent = 'Semester ' + (i + 1);
-      $('.remove-btn', row).setAttribute('aria-label', 'Remove semester ' + (i + 1));
+      $('.sem-title', row).textContent = t('Semester {n}', { n: i + 1 });
+      $('.remove-btn', row).setAttribute('aria-label', t('Remove semester {n}', { n: i + 1 }));
     });
   }
 
@@ -451,25 +456,25 @@
 
       let error = null, badField = null;
       if (gpa === null) {
-        if (touched) { error = 'Please enter the GPA for this semester.'; badField = gpaIn; }
+        if (touched) { error = t('Please enter the GPA for this semester.'); badField = gpaIn; }
       } else if (Number.isNaN(gpa)) {
-        error = `GPA should be a number, like ${sc.example}.`; badField = gpaIn;
+        error = t('GPA should be a number, like {x}.', { x: sc.example }); badField = gpaIn;
       } else if (gpa < 0) {
-        error = 'GPA can’t be negative.'; badField = gpaIn;
+        error = t('GPA can’t be negative.'); badField = gpaIn;
       } else if (gpa > sc.max) {
-        error = `GPA can’t be more than ${f2(sc.max)} on the ${sc.label}.` +
-          (Object.keys(SCALES).length > 1 ? ' Did you pick the right option at the top?' : '');
+        error = t('GPA can’t be more than {max} on the {scale}.', { max: f2(sc.max), scale: t(sc.label) }) +
+          (Object.keys(SCALES).length > 1 ? ' ' + t('Did you pick the right option at the top?') : '');
         badField = gpaIn;
       }
       if (!error) {
         if (credit === null) {
-          if (touched) { error = 'Please enter the total credit hours for this semester.'; badField = creditIn; }
+          if (touched) { error = t('Please enter the total credit hours for this semester.'); badField = creditIn; }
         } else if (Number.isNaN(credit)) {
-          error = 'Credit hours should be a number, like 18.'; badField = creditIn;
+          error = t('Credit hours should be a number, like 18.'); badField = creditIn;
         } else if (credit <= 0) {
-          error = 'Credit hours must be more than 0.'; badField = creditIn;
+          error = t('Credit hours must be more than 0.'); badField = creditIn;
         } else if (credit > 60) {
-          error = 'That looks too high. A semester usually has 12 to 24 credit hours.'; badField = creditIn;
+          error = t('That looks too high. A semester usually has 12 to 24 credit hours.'); badField = creditIn;
         }
       }
 
@@ -485,18 +490,18 @@
       credits += credit;
       points += gpa * credit;
       counted++;
-      lines.push(`Semester ${i + 1}: GPA ${f2(gpa)}, ${cleanNum(credit)} credits`);
+      lines.push(t('Semester {n}: GPA {gpa}, {credits} credits', { n: i + 1, gpa: f2(gpa), credits: cleanNum(credit) }));
     });
 
     if (counted === 0) {
       state.results.cgpa = null;
-      setResult('cgpa', { max: sc.max, sub: 'Add your semesters to see your CGPA.', note: skippedNote(skipped) });
+      setResult('cgpa', { max: sc.max, sub: t('Add your semesters to see your CGPA.'), note: skippedNote(skipped) });
     } else {
       const cgpa = points / credits;
       state.results.cgpa = { value: cgpa, credits, lines };
       setResult('cgpa', {
         text: f2(cgpa), max: sc.max, ratio: cgpa / sc.max, cheer: cheer(cgpa / sc.max),
-        sub: `${plural(counted, 'semester')} · ${cleanNum(credits)} total credit hours`,
+        sub: t(counted === 1 ? '1 semester · {credits} total credit hours' : '{n} semesters · {credits} total credit hours', { n: counted, credits: cleanNum(credits) }),
         note: skippedNote(skipped)
       });
     }
@@ -515,17 +520,17 @@
       const input = $('#' + f.id);
       const n = parseNumber(input.value);
       let error = '';
-      if (f.kind === 'gpa') input.placeholder = 'e.g. ' + sc.example;
+      if (f.kind === 'gpa') input.placeholder = t('e.g. {x}', { x: sc.example });
 
       if (n === null) {
         complete = false;
       } else {
         anyFilled = true;
-        if (Number.isNaN(n)) error = f.kind === 'gpa' ? `Please type a number, like ${sc.example}.` : 'Please type a number, like 60.';
-        else if (n < 0) error = 'This can’t be negative.';
-        else if (f.kind === 'gpa' && n > sc.max) error = `On the ${sc.label} this can’t be more than ${f2(sc.max)}.`;
-        else if (f.kind === 'credits' && n > 500) error = 'That looks too high. Please check the credit hours.';
-        else if (f.key === 'left' && n === 0) error = 'Remaining credits must be more than 0.';
+        if (Number.isNaN(n)) error = t('Please type a number, like {x}.', { x: f.kind === 'gpa' ? sc.example : 60 });
+        else if (n < 0) error = t('This can’t be negative.');
+        else if (f.kind === 'gpa' && n > sc.max) error = t('On the {scale} this can’t be more than {max}.', { scale: t(sc.label), max: f2(sc.max) });
+        else if (f.kind === 'credits' && n > 500) error = t('That looks too high. Please check the credit hours.');
+        else if (f.key === 'left' && n === 0) error = t('Remaining credits must be more than 0.');
       }
       if (error) { input.setAttribute('aria-invalid', 'true'); complete = false; } else input.removeAttribute('aria-invalid');
       setMsg($('#' + f.id + 'Msg'), error, 'error');
@@ -536,7 +541,7 @@
       state.results.target = null;
       setResult('tgt', {
         max: sc.max,
-        sub: anyFilled ? 'Fill in all four boxes to see the GPA you need.' : 'Fill in the four boxes above to see the GPA you need.'
+        sub: anyFilled ? t('Fill in all four boxes to see the GPA you need.') : t('Fill in the four boxes above to see the GPA you need.')
       });
       persist();
       return;
@@ -551,29 +556,29 @@
     if (needed > sc.max + 1e-9) {
       r = {
         text: f2(neededUp), ratio: 1,
-        cheer: 'This target is out of reach for now 😕',
-        sub: `Even with a perfect ${f2(sc.max)} in every remaining semester, the highest CGPA you can reach is ${f2(best)}.`,
-        note: 'Try a slightly lower target, or check if you have more credits left.'
+        cheer: t('This target is out of reach for now 😕'),
+        sub: t('Even with a perfect {max} in every remaining semester, the highest CGPA you can reach is {best}.', { max: f2(sc.max), best: f2(best) }),
+        note: t('Try a slightly lower target, or check if you have more credits left.')
       };
-      state.results.target = `To reach a ${f2(v.target)} CGPA I would need ${f2(neededUp)}, which is above the ${f2(sc.max)} maximum. The best I can reach is ${f2(best)}.`;
+      state.results.target = t('To reach a {target} CGPA I would need {needed}, which is above the {max} maximum. The best I can reach is {best}.', { target: f2(v.target), needed: f2(neededUp), max: f2(sc.max), best: f2(best) });
     } else if (needed <= 0) {
       r = {
         text: f2(0), ratio: 0,
-        cheer: 'You’ve already secured it! 🎉',
-        sub: `Your CGPA will stay at or above ${f2(v.target)} no matter what. Aim high anyway!`
+        cheer: t('You’ve already secured it! 🎉'),
+        sub: t('Your CGPA will stay at or above {target} no matter what. Aim high anyway!', { target: f2(v.target) })
       };
-      state.results.target = `I have already secured a ${f2(v.target)} CGPA.`;
+      state.results.target = t('I have already secured a {target} CGPA.', { target: f2(v.target) });
     } else {
       const ratio = needed / sc.max;
       r = {
         text: f2(neededUp), ratio,
-        cheer: ratio > 0.9 ? 'Tough but possible. Time to go all in! 🔥'
+        cheer: t(ratio > 0.9 ? 'Tough but possible. Time to go all in! 🔥'
           : ratio > 0.75 ? 'Challenging, but you can do it 💪'
           : ratio > 0.5 ? 'Very doable. Stay consistent 👍'
-          : 'Easy target, you’ve got this 😎',
-        sub: `You need an average GPA of at least ${f2(neededUp)} over your remaining ${cleanNum(v.left)} credit hours to reach a ${f2(v.target)} CGPA.`
+          : 'Easy target, you’ve got this 😎'),
+        sub: t('You need an average GPA of at least {needed} over your remaining {left} credit hours to reach a {target} CGPA.', { needed: f2(neededUp), left: cleanNum(v.left), target: f2(v.target) })
       };
-      state.results.target = `To reach a ${f2(v.target)} CGPA (now ${f2(v.current)}), I need an average GPA of ${f2(neededUp)} over my remaining ${cleanNum(v.left)} credit hours.`;
+      state.results.target = t('To reach a {target} CGPA (now {current}), I need an average GPA of {needed} over my remaining {left} credit hours.', { target: f2(v.target), current: f2(v.current), needed: f2(neededUp), left: cleanNum(v.left) });
     }
     r.max = sc.max;
     setResult('tgt', r);
@@ -600,32 +605,32 @@
     const s = state.convScale;
     const conv = CONVERSIONS[s];
     const max = SCALES[s].max;
-    convInput.placeholder = 'e.g. ' + f2(conv.example);
-    $('#formulaMain').textContent = conv.formula;
-    $('#formulaNote').textContent = conv.note;
+    convInput.placeholder = t('e.g. {x}', { x: f2(conv.example) });
+    $('#formulaMain').textContent = t(conv.formula);
+    $('#formulaNote').textContent = t(conv.note);
 
     const c = parseNumber(convInput.value);
     let error = '';
     if (c !== null) {
-      if (Number.isNaN(c)) error = `Please type your CGPA as a number, like ${f2(conv.example)}.`;
-      else if (c < 0) error = 'CGPA can’t be negative.';
-      else if (c > max) error = `On the ${SCALES[s].label}, CGPA can’t be more than ${f2(max)}. Try a different scale.`;
+      if (Number.isNaN(c)) error = t('Please type your CGPA as a number, like {x}.', { x: f2(conv.example) });
+      else if (c < 0) error = t('CGPA can’t be negative.');
+      else if (c > max) error = t('On the {scale}, CGPA can’t be more than {max}. Try a different scale.', { scale: t(SCALES[s].label), max: f2(max) });
     }
     setMsg($('#convMsg'), error, 'error');
     if (error) convInput.setAttribute('aria-invalid', 'true'); else convInput.removeAttribute('aria-invalid');
 
     if (c === null || error) {
       state.results.pct = null;
-      $('#formulaWork').textContent = 'Example: ' + convert(conv, conv.example).work;
-      setResult('pct', { sub: error ? 'Fix the CGPA above to see the percentage.' : 'Enter your CGPA to see the percentage.' });
+      $('#formulaWork').textContent = t('Example: {work}', { work: convert(conv, conv.example).work });
+      setResult('pct', { sub: error ? t('Fix the CGPA above to see the percentage.') : t('Enter your CGPA to see the percentage.') });
     } else {
       const res = convert(conv, c);
       $('#formulaWork').textContent = res.work;
       state.results.pct = { cgpa: c, text: res.text, scale: s };
-      const extra = conv.classify ? ' · ' + conv.classify(res.pct) : '';
+      const extra = conv.classify ? ' · ' + t(conv.classify(res.pct)) : '';
       setResult('pct', {
         text: res.text, ratio: res.pct / 100, cheer: cheer(res.pct / 100),
-        sub: `CGPA ${f2(c)} on the ${SCALES[s].label}${extra}`
+        sub: t('CGPA {cgpa} on the {scale}', { cgpa: f2(c), scale: t(SCALES[s].label) }) + extra
       });
     }
     persist();
@@ -643,8 +648,8 @@
     const sc = SCALES[state.scale];
     renderGradeTable();
     $$('.in-grade', subjectList).forEach(fillGradeSelect);
-    $$('.in-gpa', semesterList).forEach(el => { el.placeholder = 'e.g. ' + sc.example; });
-    $$('.in-points', subjectList).forEach(el => { el.placeholder = 'e.g. ' + sc.example; });
+    $$('.in-gpa', semesterList).forEach(el => { el.placeholder = t('e.g. {x}', { x: sc.example }); });
+    $$('.in-points', subjectList).forEach(el => { el.placeholder = t('e.g. {x}', { x: sc.example }); });
     applyModes();
     setConvScale(state.scale);
     calcAll();
@@ -678,19 +683,19 @@
   function buildCopyText(which) {
     const r = state.results;
     const sc = SCALES[state.scale];
-    const footer = '\n— calculated with CGPA Calculator';
+    const footer = '\n— ' + t('calculated with CGPA Calculator');
     if (which === 'gpa' && r.gpa) {
-      return [`My semester GPA: ${f2(r.gpa.value)} / ${f2(sc.max)} (${sc.label})`,
-        `Total credit hours: ${cleanNum(r.gpa.credits)}`, '', ...r.gpa.lines].join('\n') + footer;
+      return [t('My semester GPA: {gpa} / {max} ({scale})', { gpa: f2(r.gpa.value), max: f2(sc.max), scale: t(sc.label) }),
+        t('Total credit hours: {credits}', { credits: cleanNum(r.gpa.credits) }), '', ...r.gpa.lines].join('\n') + footer;
     }
     if (which === 'cgpa' && r.cgpa) {
-      return [`My CGPA: ${f2(r.cgpa.value)} / ${f2(sc.max)} (${sc.label})`,
-        `Total credit hours: ${cleanNum(r.cgpa.credits)}`, '', ...r.cgpa.lines].join('\n') + footer;
+      return [t('My CGPA: {cgpa} / {max} ({scale})', { cgpa: f2(r.cgpa.value), max: f2(sc.max), scale: t(sc.label) }),
+        t('Total credit hours: {credits}', { credits: cleanNum(r.cgpa.credits) }), '', ...r.cgpa.lines].join('\n') + footer;
     }
     if (which === 'target' && r.target) return r.target + footer;
     if (which === 'pct' && r.pct) {
-      return `CGPA ${f2(r.pct.cgpa)} (${SCALES[r.pct.scale].label}) = ${r.pct.text}\n` +
-        `Formula: ${CONVERSIONS[r.pct.scale].formula}` + footer;
+      return `CGPA ${f2(r.pct.cgpa)} (${t(SCALES[r.pct.scale].label)}) = ${r.pct.text}\n` +
+        t('Formula: {formula}', { formula: t(CONVERSIONS[r.pct.scale].formula) }) + footer;
     }
     return null;
   }
@@ -718,15 +723,15 @@
   $$('.js-copy').forEach(function (btn) {
     btn.addEventListener('click', async function () {
       const text = buildCopyText(btn.dataset.copy);
-      if (!text) { toast('Nothing to copy yet. Fill in the boxes first 🙂'); return; }
-      toast(await copyText(text) ? 'Result copied! Paste it anywhere 📋' : 'Sorry, copying didn’t work in this browser.');
+      if (!text) { toast(t('Nothing to copy yet. Fill in the boxes first 🙂')); return; }
+      toast(t(await copyText(text) ? 'Result copied! Paste it anywhere 📋' : 'Sorry, copying didn’t work in this browser.'));
     });
   });
 
   /* ---------- Print / PDF ---------- */
   $$('.js-print').forEach(btn => btn.addEventListener('click', () => window.print()));
   window.addEventListener('beforeprint', function () {
-    $('#printDate').textContent = `${SCALES[state.scale].label} · printed on ${new Date().toLocaleDateString()}`;
+    $('#printDate').textContent = t('{scale} · printed on {date}', { scale: t(SCALES[state.scale].label), date: new Date().toLocaleDateString(document.documentElement.lang || undefined) });
   });
 
   /* ---------- Buttons ---------- */
@@ -742,7 +747,7 @@
   scaleSelect.addEventListener('change', function () {
     state.scale = scaleSelect.value;
     onScaleChange();
-    toast(`Switched to the ${SCALES[state.scale].label}`);
+    toast(t('Switched to the {scale}', { scale: t(SCALES[state.scale].label) }));
   });
   $$('input[name="gpaMode"]').forEach(r => r.addEventListener('change', function () { setMode(r.value); calcGPA(); }));
   $$('input[name="convScale"]').forEach(r => r.addEventListener('change', function () { setConvScale(r.value); calcPercent(); }));
@@ -751,11 +756,11 @@
   function resetSemesters() { semesterList.innerHTML = ''; for (let i = 0; i < 2; i++) addSemesterRow(); }
 
   $('#resetGpa').addEventListener('click', function () {
-    if (!confirm('Clear all subjects in the GPA tab?')) return;
+    if (!confirm(t('Clear all subjects in the GPA tab?'))) return;
     resetSubjects(); calcGPA();
   });
   $('#resetCgpa').addEventListener('click', function () {
-    if (!confirm('Clear all semesters in the CGPA tab?')) return;
+    if (!confirm(t('Clear all semesters in the CGPA tab?'))) return;
     resetSemesters(); calcCGPA();
   });
   $('#resetTarget').addEventListener('click', function () {
@@ -763,19 +768,19 @@
     calcTarget();
   });
   $('#resetAll').addEventListener('click', function () {
-    if (!confirm('Reset everything? This clears all subjects, semesters and numbers you entered.')) return;
+    if (!confirm(t('Reset everything? This clears all subjects, semesters and numbers you entered.'))) return;
     resetSubjects();
     resetSemesters();
     TARGET_FIELDS.forEach(f => { $('#' + f.id).value = ''; });
     convInput.value = '';
     calcAll();
-    toast('Everything has been reset ✨');
+    toast(t('Everything has been reset ✨'));
   });
 
   // GPA tab → CGPA tab
   $('#sendToCgpa').addEventListener('click', function () {
     const g = state.results.gpa;
-    if (!g) { toast('Add at least one complete subject first 🙂'); return; }
+    if (!g) { toast(t('Add at least one complete subject first 🙂')); return; }
     const emptyRow = $$('.semester-row', semesterList)
       .find(r => !$('.in-gpa', r).value.trim() && !$('.in-credit', r).value.trim());
     const row = emptyRow || addSemesterRow();
@@ -783,13 +788,13 @@
     $('.in-credit', row).value = cleanNum(g.credits);
     calcCGPA();
     activateTab(tabById('tab-cgpa'));
-    toast(`Added as ${$('.sem-title', row).textContent} ✅`);
+    toast(t('Added as {semester} ✅', { semester: $('.sem-title', row).textContent }));
   });
 
   // CGPA tab → percentage tab
   $('#sendToPct').addEventListener('click', function () {
     const c = state.results.cgpa;
-    if (!c) { toast('Add at least one complete semester first 🙂'); return; }
+    if (!c) { toast(t('Add at least one complete semester first 🙂')); return; }
     convInput.value = f2(c.value);
     setConvScale(state.scale);
     calcPercent();
@@ -798,7 +803,7 @@
 
   $('#useMyCgpa').addEventListener('click', function () {
     const c = state.results.cgpa || state.results.gpa;
-    if (!c) { toast('Calculate your CGPA in the CGPA tab first 🙂'); return; }
+    if (!c) { toast(t('Calculate your CGPA in the CGPA tab first 🙂')); return; }
     convInput.value = f2(c.value);
     setConvScale(state.scale);
     calcPercent();
@@ -806,7 +811,7 @@
 
   $('#fillTarget').addEventListener('click', function () {
     const c = state.results.cgpa;
-    if (!c) { toast('Calculate your CGPA in the CGPA tab first 🙂'); return; }
+    if (!c) { toast(t('Calculate your CGPA in the CGPA tab first 🙂')); return; }
     $('#tCurrent').value = f2(c.value);
     $('#tDone').value = cleanNum(c.credits);
     calcTarget();

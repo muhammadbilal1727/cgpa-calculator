@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="bn"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CGPA ক্যালকুলেটর – বিনামূল্যে GPA ক্যালকুলেটর ও CGPA থেকে শতাংশ</title>
+  <meta name="description" content="4.0, 5.0 ও 10 পয়েন্ট স্কেলের জন্য বিনামূল্যে CGPA ক্যালকুলেটর। আপনার GPA ও CGPA বের করুন, CGPA-কে শতাংশে রূপান্তর করুন এবং লক্ষ্য CGPA পরিকল্পনা করুন।">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f6fb">
+  <link rel="canonical" href="https://cgpa-calculator-umber-two.vercel.app/bn/">
+  <link rel="alternate" hreflang="en" href="https://cgpa-calculator-umber-two.vercel.app/">
+  <link rel="alternate" hreflang="es" href="https://cgpa-calculator-umber-two.vercel.app/es/">
+  <link rel="alternate" hreflang="de" href="https://cgpa-calculator-umber-two.vercel.app/de/">
+  <link rel="alternate" hreflang="hi" href="https://cgpa-calculator-umber-two.vercel.app/hi/">
+  <link rel="alternate" hreflang="ur" href="https://cgpa-calculator-umber-two.vercel.app/ur/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://cgpa-calculator-umber-two.vercel.app/zh/">
+  <link rel="alternate" hreflang="fr" href="https://cgpa-calculator-umber-two.vercel.app/fr/">
+  <link rel="alternate" hreflang="ar" href="https://cgpa-calculator-umber-two.vercel.app/ar/">
+  <link rel="alternate" hreflang="bn" href="https://cgpa-calculator-umber-two.vercel.app/bn/">
+  <link rel="alternate" hreflang="pt" href="https://cgpa-calculator-umber-two.vercel.app/pt/">
+  <link rel="alternate" hreflang="ru" href="https://cgpa-calculator-umber-two.vercel.app/ru/">
+  <link rel="alternate" hreflang="id" href="https://cgpa-calculator-umber-two.vercel.app/id/">
+  <link rel="alternate" hreflang="ja" href="https://cgpa-calculator-umber-two.vercel.app/ja/">
+  <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/">
+  <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/">
+  <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <!-- Icons -->
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CGPA Calculator">
+  <meta property="og:locale" content="bn_BD">
+  <meta property="og:url" content="https://cgpa-calculator-umber-two.vercel.app/bn/">
+  <meta property="og:title" content="CGPA ক্যালকুলেটর – GPA, CGPA ও শতাংশ">
+  <meta property="og:description" content="কয়েক সেকেন্ডে আপনার সেমিস্টার GPA, মোট CGPA, লক্ষ্য CGPA ও শতাংশ বের করুন। বিনামূল্যে, গোপনীয় এবং মোবাইলের উপযোগী।">
+  <meta property="og:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="CGPA ক্যালকুলেটর: 4.00-এর মধ্যে 3.37 CGPA দেখানো ফলাফল কার্ড, সঙ্গে 4.0, 5.0 ও 10 পয়েন্ট স্কেলের বিকল্প">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CGPA ক্যালকুলেটর – GPA, CGPA ও শতাংশ">
+  <meta name="twitter:description" content="কয়েক সেকেন্ডে আপনার সেমিস্টার GPA, মোট CGPA, লক্ষ্য CGPA ও শতাংশ বের করুন। বিনামূল্যে, গোপনীয় এবং মোবাইলের উপযোগী।">
+  <meta name="twitter:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <meta name="twitter:image:alt" content="CGPA ক্যালকুলেটর: 4.00-এর মধ্যে 3.37 CGPA দেখানো ফলাফল কার্ড, সঙ্গে 4.0, 5.0 ও 10 পয়েন্ট স্কেলের বিকল্প">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "@id": "https://cgpa-calculator-umber-two.vercel.app/bn/#app",
+    "name": "CGPA Calculator",
+    "url": "https://cgpa-calculator-umber-two.vercel.app/bn/",
+    "image": "https://cgpa-calculator-umber-two.vercel.app/og-image.jpg",
+    "description": "4.0, 5.0 ও 10 পয়েন্ট গ্রেডিং স্কেলের জন্য বিনামূল্যে GPA, CGPA, লক্ষ্য CGPA এবং CGPA থেকে শতাংশ ক্যালকুলেটর।",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "bn",
+    "isAccessibleForFree": true,
+    "featureList": [
+      "গ্রেড বা নম্বর দিয়ে সেমিস্টার GPA ক্যালকুলেটর",
+      "ক্রেডিট-ভারিত CGPA ক্যালকুলেটর",
+      "লক্ষ্য CGPA পরিকল্পনাকারী",
+      "CGPA থেকে শতাংশ রূপান্তরকারী",
+      "4.0, 5.0 ও 10 পয়েন্ট গ্রেডিং স্কেল"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "CGPA আর GPA কি একই?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "পুরোপুরি নয়। GPA সাধারণত এক সেমিস্টারের গড়, আর CGPA হলো আপনার শেষ করা সব সেমিস্টারের গড়। তবে যুক্তরাষ্ট্রে ট্রান্সক্রিপ্টে \"GPA\" বলতে প্রায়ই ক্রমপুঞ্জিত সংখ্যা বোঝায়। কোনো ফর্ম পুরো ডিগ্রির GPA চাইলে আপনার CGPA লিখুন।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "SGPA থেকে CGPA কীভাবে বের করব?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "প্রতিটি সেমিস্টারের SGPA-কে সেই সেমিস্টারের ক্রেডিট দিয়ে গুণ করুন, ফলগুলো যোগ করুন এবং মোট ক্রেডিট দিয়ে ভাগ করুন। প্রতিটি সেমিস্টারে ঠিক সমান ক্রেডিট থাকলে SGPA-গুলোর সাধারণ গড়ও একই উত্তর দেয়।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "আমি কি শুধু সেমিস্টার GPA-গুলোর গড় নিতে পারি?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "শুধু তখনই, যখন প্রতিটি সেমিস্টারে সমান ক্রেডিট থাকে। না হলে ক্রেডিট-ভারিত গড় দরকার, কারণ ভারী সেমিস্টার বেশি গুরুত্ব পায়। এই ক্যালকুলেটরের CGPA ট্যাব এটি আপনার জন্য করে।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "CGPA-কে শতাংশে কীভাবে রূপান্তর করব?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "4.0 স্কেলে আপনার CGPA-কে 4 দিয়ে ভাগ করে 100 দিয়ে গুণ করুন। 10 পয়েন্ট স্কেলে প্রচলিত পদ্ধতি CGPA × 9.5। সবসময় দেখে নিন আপনার বিশ্ববিদ্যালয়ের নিজস্ব সরকারি সূত্র আছে কি না, কারণ চাকরিদাতা ও ভর্তি অফিস সেটিই ব্যবহার করবে।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "10 পয়েন্ট CGPA-কে কেন 9.5 দিয়ে গুণ করা হয়?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "আগের পরীক্ষায় শিক্ষার্থীদের প্রকৃত নম্বরের সঙ্গে গ্রেড পয়েন্ট তুলনা করে CBSE 9.5 গুণকটি চালু করেছে। অনেক ভারতীয় বিশ্ববিদ্যালয় এটি গ্রহণ করেছে, তবে সবাই নয়, তাই নিজের বিশ্ববিদ্যালয়ের নিয়ম দেখে নিন।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ভালো CGPA কত?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "4.0 স্কেলে 3.5 বা তার বেশি সাধারণত চমৎকার এবং 3.0 বা তার বেশি ভালো ধরা হয়। 10 পয়েন্ট স্কেলে 8.0 বা তার বেশি শক্তিশালী এবং 7.0 বা তার বেশি ভালো। চাকরি, বৃত্তি ও উচ্চশিক্ষার ন্যূনতম সীমা আলাদা হয়, তাই সবসময় সঠিক শর্ত দেখে নিন।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "আমি কি আমার CGPA 2.5 থেকে 3.0-তে তুলতে পারি?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "সাধারণত হ্যাঁ, যদি যথেষ্ট ক্রেডিট বাকি থাকে। যেমন, 60 ক্রেডিট শেষে 2.50 CGPA এবং আরও 70 ক্রেডিট বাকি থাকলে বাকি সেমিস্টারগুলোতে প্রায় 3.43 গড় লাগবে। এই ক্যালকুলেটরের লক্ষ্য ট্যাব আপনার নিজের সংখ্যা দিয়ে এটি হিসাব করে।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ফেল করা বা আবার নেওয়া কোর্স কি CGPA-তে গণনা হয়?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "এটি আপনার বিশ্ববিদ্যালয়ের ওপর নির্ভর করে। অনেকেই কোর্স পাস না করা পর্যন্ত F-কে শূন্য গ্রেড পয়েন্ট ধরে। কেউ কেউ কোর্স আবার নিলে পুরোনো গ্রেড বদলে দেয়, আবার কেউ দুটো গ্রেডই গড়ে রাখে। নিজের বিশ্ববিদ্যালয়ের রিটেক নীতি দেখে নিন।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "আমার CGPA দশমিকের পর কয় ঘর পর্যন্ত লিখব?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "বেশিরভাগ বিশ্ববিদ্যালয় CGPA দুই দশমিক ঘর পর্যন্ত দেখায়, যেমন 3.37। ফর্ম ও CV-তে এটি ঠিক যেভাবে আপনার সরকারি ট্রান্সক্রিপ্টে আছে সেভাবেই লিখুন, নিজে থেকে ওপরের দিকে রাউন্ড করবেন না।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "আমার তথ্য কি কোথাও সেভ বা শেয়ার হয়?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "আপনার তথ্য শুধু আপনার নিজের ব্রাউজারে সেভ থাকে, তাই পেজ রিফ্রেশ করলে হারায় না। কিছুই আপলোড বা শেয়ার করা হয় না। যেকোনো সময় \"সব রিসেট করুন\" বোতাম দিয়ে সব মুছে ফেলতে পারেন।"
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    /* Apply the saved (or system) theme before the page paints, so there is no flash */
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem('cgpa-theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="CGPA Calculator home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3z"></path>
+            <path d="M5 13.18v4C5 18.84 8.13 20 12 20s7-1.16 7-2.82v-4L12 17l-7-3.82z"></path>
+          </svg>
+        </span>
+        <span>CGPA Calculator</span>
+      </a>
+      <div class="header-actions">
+        <nav class="site-nav" id="siteNav" aria-label="Main menu">
+          <a href="index.html" aria-current="page">Calculator</a>
+          <a href="about.html">About</a>
+          <a href="privacy-policy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <details class="lang-menu" id="langMenu">
+          <summary class="icon-btn lang-btn" aria-label="Choose language" title="Language">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"></path></svg>
+            <span class="lang-code" data-no-translate="">BN</span>
+          </summary>
+          <div class="lang-list" data-no-translate=""><a href="../index.html" hreflang="en" lang="en">English</a><a href="../es/index.html" hreflang="es" lang="es">Español</a><a href="../de/index.html" hreflang="de" lang="de">Deutsch</a><a href="../hi/index.html" hreflang="hi" lang="hi">हिन्दी</a><a href="../ur/index.html" hreflang="ur" lang="ur">اردو</a><a href="../zh/index.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="../fr/index.html" hreflang="fr" lang="fr">Français</a><a href="../ar/index.html" hreflang="ar" lang="ar">العربية</a><a href="index.html" hreflang="bn" lang="bn" aria-current="true">বাংলা</a><a href="../pt/index.html" hreflang="pt" lang="pt">Português</a><a href="../ru/index.html" hreflang="ru" lang="ru">Русский</a><a href="../id/index.html" hreflang="id" lang="id">Bahasa Indonesia</a><a href="../ja/index.html" hreflang="ja" lang="ja">日本語</a><a href="../mr/index.html" hreflang="mr" lang="mr">मराठी</a><a href="../te/index.html" hreflang="te" lang="te">తెలుగు</a></div>
+        </details>
+        <button type="button" id="themeToggle" class="icon-btn" aria-label="Switch to dark mode" title="Light / dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+        </button>
+        <button type="button" id="menuToggle" class="icon-btn menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
+          <svg class="icon-menu" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <h1>CGPA ক্যালকুলেটর: আপনার GPA, CGPA ও শতাংশ বের করুন</h1>
+      <p>দ্রুত, বিনামূল্যে ও গোপনীয়। সব হিসাব এখানেই আপনার ডিভাইসে হয়। <a href="#guide" class="hero-link">CGPA সম্পর্কে নতুন? গাইডটি পড়ুন ↓</a></p>
+    </section>
+
+    <!-- ================= Grading scale selector ================= -->
+    <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
+      <div class="scale-text">
+        <label id="scaleLabel" for="scaleSelect" class="scale-title">গ্রেডিং স্কেল</label>
+        <p class="muted small">আপনার বিশ্ববিদ্যালয় যে স্কেল ব্যবহার করে সেটি বেছে নিন। গ্রেড, সীমা ও তালিকা নিজে থেকেই বদলে যাবে।</p>
+      </div>
+      <select id="scaleSelect" class="scale-select">
+        <option value="4">4.0 স্কেল (পাকিস্তান / যুক্তরাষ্ট্র)</option>
+        <option value="10">10 পয়েন্ট স্কেল (ভারত)</option>
+        <option value="5">5.0 স্কেল</option>
+      </select>
+      <button type="button" id="resetAll" class="btn btn-outline danger-hover">সব রিসেট করুন</button>
+    </section>
+    <p class="print-only" id="printDate"></p>
+
+    <div class="layout">
+
+      <!-- ================= Calculators ================= -->
+      <div class="main-col">
+
+        <div class="tabs" role="tablist" aria-label="ক্যালকুলেটর">
+          <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">GPA <small>এক সেমিস্টার</small></button>
+          <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>সব সেমিস্টার</small></button>
+          <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">লক্ষ্য <small>আগে থেকে পরিকল্পনা</small></button>
+          <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">শতাংশ <small>রূপান্তর</small></button>
+        </div>
+
+        <!-- ---------- TAB 1: GPA ---------- -->
+        <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
+          <div class="panel-head">
+            <div>
+              <h2>সেমিস্টার GPA</h2>
+              <p class="muted small">প্রতিটি বিষয় তার ক্রেডিট ও গ্রেডসহ যোগ করুন।</p>
+            </div>
+<!-- mode-switch -->
+            <div class="segmented" id="modeSwitch" role="radiogroup" aria-label="আপনি কীভাবে ফলাফল লিখতে চান?">
+              <input type="radio" name="gpaMode" id="modeGrade" value="grade" checked="">
+              <label for="modeGrade">গ্রেড</label>
+              <input type="radio" name="gpaMode" id="modeMarks" value="marks">
+              <label for="modeMarks">নম্বর</label>
+            </div>
+<!-- /mode-switch -->
+          </div>
+
+          <div class="rows-head subject-cols" aria-hidden="true">
+            <span>বিষয় (ঐচ্ছিক)</span><span>ক্রেডিট</span><span id="gradeHead">গ্রেড</span><span></span>
+          </div>
+          <div id="subjectList" class="row-list mode-grade"></div>
+
+          <button type="button" id="addSubject" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            বিষয় যোগ করুন
+          </button>
+
+          <div class="result" aria-live="polite">
+            <div class="result-label">আপনার সেমিস্টার GPA</div>
+            <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="gpaMeter"></span></div>
+            <div class="result-cheer" id="gpaCheer"></div>
+            <div class="result-sub" id="gpaSub">আপনার GPA দেখতে বিষয় যোগ করুন।</div>
+            <div class="result-note" id="gpaNote" hidden=""></div>
+          </div>
+
+          <div class="actions">
+            <button type="button" id="sendToCgpa" class="btn btn-soft">এই GPA আমার CGPA-তে যোগ করুন →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="gpa">ফলাফল কপি করুন</button>
+            <button type="button" class="btn btn-outline js-print" title="PDF ডাউনলোড করতে প্রিন্ট উইন্ডোতে “Save as PDF” বেছে নিন">প্রিন্ট / PDF</button>
+            <button type="button" id="resetGpa" class="btn btn-quiet">মুছুন</button>
+          </div>
+
+          <details class="howto">
+            <summary>GPA কীভাবে হিসাব করা হয়?</summary>
+            <p class="formula-line">GPA = (Σ ক্রেডিট × গ্রেড পয়েন্ট) ÷ (Σ ক্রেডিট)</p>
+            <p class="muted small">উদাহরণ: গণিত 3 ক্রেডিট ও 4.00 গ্রেড পয়েন্ট, ইংরেজি 2 ক্রেডিট ও 3.00 → (3×4 + 2×3) ÷ (3+2) = 18 ÷ 5 = <strong>3.60</strong></p>
+          </details>
+        </section>
+
+        <!-- ---------- TAB 2: CGPA ---------- -->
+        <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>মোট CGPA</h2>
+              <p class="muted small">প্রতিটি সেমিস্টারের GPA (SGPA) ও তার মোট ক্রেডিট যোগ করুন।</p>
+            </div>
+          </div>
+
+          <div class="rows-head semester-cols" aria-hidden="true">
+            <span>সেমিস্টার</span><span>GPA / SGPA</span><span>ক্রেডিট</span><span></span>
+          </div>
+          <div id="semesterList" class="row-list"></div>
+
+          <button type="button" id="addSemester" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            সেমিস্টার যোগ করুন
+          </button>
+
+          <div class="result" aria-live="polite">
+            <div class="result-label">আপনার CGPA</div>
+            <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="cgpaMeter"></span></div>
+            <div class="result-cheer" id="cgpaCheer"></div>
+            <div class="result-sub" id="cgpaSub">আপনার CGPA দেখতে সেমিস্টার যোগ করুন।</div>
+            <div class="result-note" id="cgpaNote" hidden=""></div>
+          </div>
+
+          <div class="actions">
+            <button type="button" id="sendToPct" class="btn btn-soft">এই CGPA-কে %-এ রূপান্তর করুন →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">ফলাফল কপি করুন</button>
+            <button type="button" class="btn btn-outline js-print" title="PDF ডাউনলোড করতে প্রিন্ট উইন্ডোতে “Save as PDF” বেছে নিন">প্রিন্ট / PDF</button>
+            <button type="button" id="resetCgpa" class="btn btn-quiet">মুছুন</button>
+          </div>
+
+          <details class="howto">
+            <summary>CGPA কীভাবে হিসাব করা হয়?</summary>
+            <p class="formula-line">CGPA = (Σ সেমিস্টার GPA × সেমিস্টার ক্রেডিট) ÷ (মোট ক্রেডিট)</p>
+            <p class="muted small">বেশি ক্রেডিটের সেমিস্টার বেশি গুরুত্ব পায়। উদাহরণ: 18 ক্রেডিটে 3.50 এবং 15 ক্রেডিটে 3.00 → (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
+          </details>
+        </section>
+
+        <!-- ---------- TAB 3: Target CGPA ---------- -->
+        <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>লক্ষ্য CGPA</h2>
+              <p class="muted small">লক্ষ্যে পৌঁছাতে আগামী সেমিস্টারগুলোতে আপনার কত GPA লাগবে তা জানুন।</p>
+            </div>
+          </div>
+
+          <div class="target-grid">
+            <div class="field">
+              <label class="field-label" for="tCurrent">বর্তমান CGPA</label>
+              <input type="text" id="tCurrent" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tCurrentMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tDone">সম্পন্ন ক্রেডিট</label>
+              <input type="text" id="tDone" inputmode="decimal" autocomplete="off" placeholder="e.g. 66">
+              <p class="row-msg" id="tDoneMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tTarget">লক্ষ্য CGPA</label>
+              <input type="text" id="tTarget" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tTargetMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tLeft">বাকি ক্রেডিট</label>
+              <input type="text" id="tLeft" inputmode="decimal" autocomplete="off" placeholder="e.g. 70">
+              <p class="row-msg" id="tLeftMsg"></p>
+            </div>
+          </div>
+
+          <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">আমার CGPA ট্যাব থেকে পূরণ করুন</button>
+
+          <div class="result" aria-live="polite">
+            <div class="result-label">প্রতি সেমিস্টারে প্রয়োজনীয় GPA</div>
+            <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="tgtMeter"></span></div>
+            <div class="result-cheer" id="tgtCheer"></div>
+            <div class="result-sub" id="tgtSub">প্রয়োজনীয় GPA দেখতে ওপরের চারটি ঘর পূরণ করুন।</div>
+            <div class="result-note" id="tgtNote" hidden=""></div>
+          </div>
+
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="target">ফলাফল কপি করুন</button>
+            <button type="button" class="btn btn-outline js-print" title="PDF ডাউনলোড করতে প্রিন্ট উইন্ডোতে “Save as PDF” বেছে নিন">প্রিন্ট / PDF</button>
+            <button type="button" id="resetTarget" class="btn btn-quiet">মুছুন</button>
+          </div>
+
+          <details class="howto">
+            <summary>এটি কীভাবে হিসাব করা হয়?</summary>
+            <p class="formula-line">প্রয়োজনীয় GPA = (লক্ষ্য × মোট ক্রেডিট − বর্তমান × সম্পন্ন ক্রেডিট) ÷ বাকি ক্রেডিট</p>
+            <p class="muted small">উদাহরণ: 60 ক্রেডিট শেষে বর্তমান 3.00, লক্ষ্য 3.30, বাকি 60 ক্রেডিট → (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
+          </details>
+        </section>
+
+        <!-- ---------- TAB 4: Percentage ---------- -->
+        <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>CGPA থেকে শতাংশ</h2>
+              <p class="muted small">আপনার CGPA লিখুন এবং তার স্কেল বেছে নিন।</p>
+            </div>
+          </div>
+
+          <div class="conv-grid">
+            <div class="field">
+              <label class="field-label always" for="convInput">আপনার CGPA</label>
+              <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
+              <p class="row-msg" id="convMsg"></p>
+            </div>
+<!-- conv-scale -->
+            <div class="field">
+              <span class="field-label always" id="convScaleLabel">স্কেল</span>
+              <div class="segmented full" role="radiogroup" aria-labelledby="convScaleLabel">
+                <input type="radio" name="convScale" id="conv4" value="4" checked="">
+                <label for="conv4">4.0</label>
+                <input type="radio" name="convScale" id="conv10" value="10">
+                <label for="conv10">10.0</label>
+                <input type="radio" name="convScale" id="conv5" value="5">
+                <label for="conv5">5.0</label>
+              </div>
+            </div>
+<!-- /conv-scale -->
+          </div>
+
+          <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">CGPA ট্যাব থেকে আমার CGPA ব্যবহার করুন</button>
+
+          <div class="result" aria-live="polite">
+            <div class="result-label">শতাংশ</div>
+            <div class="result-value"><span id="pctValue">—</span></div>
+            <div class="meter" aria-hidden="true"><span id="pctMeter"></span></div>
+            <div class="result-cheer" id="pctCheer"></div>
+            <div class="result-sub" id="pctSub">শতাংশ দেখতে আপনার CGPA লিখুন।</div>
+          </div>
+
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="pct">ফলাফল কপি করুন</button>
+            <button type="button" class="btn btn-outline js-print" title="PDF ডাউনলোড করতে প্রিন্ট উইন্ডোতে “Save as PDF” বেছে নিন">প্রিন্ট / PDF</button>
+          </div>
+
+          <div class="formula">
+            <div class="formula-title">ব্যবহৃত সূত্র</div>
+            <p class="formula-line" id="formulaMain"></p>
+            <p class="formula-work" id="formulaWork"></p>
+            <p class="muted small" id="formulaNote"></p>
+          </div>
+        </section>
+      </div>
+
+      <!-- ================= Sidebar: grade table ================= -->
+      <aside class="sidebar">
+        <section class="card" aria-labelledby="tableTitle">
+          <h2 id="tableTitle" class="side-title">গ্রেড পয়েন্ট</h2>
+          <p class="muted small" id="tableSubtitle"></p>
+          <div class="table-wrap">
+            <table class="grade-table">
+              <thead>
+                <tr><th scope="col">গ্রেড</th><th scope="col" class="num">পয়েন্ট</th><th scope="col" class="num" id="marksCol">নম্বর %</th></tr>
+              </thead>
+              <tbody id="gradeTableBody"></tbody>
+            </table>
+          </div>
+          <p class="muted tiny">নম্বরের সীমা বিশ্ববিদ্যালয়ভেদে আলাদা হয়। সবসময় নিজের বিশ্ববিদ্যালয়ের গ্রেডিং নীতি দেখে নিন।</p>
+        </section>
+
+<!-- side-tips -->
+        <section class="card tips">
+          <h2 class="side-title">জেনে রাখুন</h2>
+          <ul>
+            <li>আপনার তথ্য এই ব্রাউজারেই সেভ থাকে, তাই পেজ রিফ্রেশ করলেও থেকে যায়।</li>
+            <li>PDF পেতে <strong>প্রিন্ট / PDF</strong> চাপুন এবং <strong>Save as PDF</strong> বেছে নিন।</li>
+            <li>দরকার না হলে কোনো সারি খালি রাখুন। খালি সারি বাদ দেওয়া হয়।</li>
+            <li>যদি আপনার নম্বর জানা থাকে কিন্তু গ্রেড না জানেন, তাহলে <strong>নম্বর</strong> মোড ব্যবহার করুন।</li>
+          </ul>
+        </section>
+<!-- /side-tips -->
+      </aside>
+    </div>
+
+    <!-- ================= University calculators ================= -->
+    <section class="uni-section" aria-labelledby="uniTitle">
+      <h2 id="uniTitle">বিশ্ববিদ্যালয়ভিত্তিক CGPA ও GPA ক্যালকুলেটর</h2>
+      <p class="muted">প্রতিটি বিশ্ববিদ্যালয়ের নিজস্ব সরকারি গ্রেডিং নিয়ম ও শতাংশ রূপান্তর অনুযায়ী তৈরি ক্যালকুলেটর।</p>
+      <div class="uni-grid">
+        <a class="card uni-card" href="nust-cgpa-calculator.html">
+          <span class="uni-badge">NUST</span>
+          <span class="uni-name">NUST CGPA ও GPA ক্যালকুলেটর</span>
+          <span class="muted small">আপেক্ষিক গ্রেডিং · A = 4.00, B+ = 3.50</span>
+        </a>
+        <a class="card uni-card" href="comsats-cgpa-calculator.html">
+          <span class="uni-badge">CUI</span>
+          <span class="uni-name">COMSATS CGPA ও GPA ক্যালকুলেটর</span>
+          <span class="muted small">HEC মানদণ্ড (Fall 2021+) · সরকারি % নিয়ম</span>
+        </a>
+        <a class="card uni-card" href="vtu-cgpa-calculator.html">
+          <span class="uni-badge">VTU</span>
+          <span class="uni-name">VTU CGPA ও SGPA ক্যালকুলেটর</span>
+          <span class="muted small">2022 ও 2021 স্কিম · CGPA থেকে %</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= Guide (helpful content) ================= -->
+    <article class="guide" id="guide">
+
+      <nav class="card toc" aria-label="এই পেজে">
+        <p class="toc-title">এই পেজে</p>
+        <ol>
+          <li><a href="#what-is-cgpa">CGPA কী?</a></li>
+          <li><a href="#how-to-calculate">CGPA কীভাবে হিসাব করবেন</a></li>
+          <li><a href="#how-to-use">এই ক্যালকুলেটর কীভাবে ব্যবহার করবেন</a></li>
+          <li><a href="#cgpa-to-percentage">CGPA থেকে শতাংশ</a></li>
+          <li><a href="#grade-tables">গ্রেড পয়েন্ট তালিকা</a></li>
+          <li><a href="#tips">CGPA বাড়ানোর টিপস</a></li>
+          <li><a href="#faq">প্রশ্নোত্তর</a></li>
+        </ol>
+      </nav>
+
+      <!-- What is CGPA -->
+      <section id="what-is-cgpa">
+        <h2>CGPA কী, এবং এটি GPA ও SGPA থেকে কীভাবে আলাদা?</h2>
+        <p><strong>CGPA</strong>-এর পূর্ণরূপ <strong>Cumulative Grade Point Average</strong> (ক্রমপুঞ্জিত গ্রেড পয়েন্ট গড়)। এটি একটি সংখ্যা যা এখন পর্যন্ত শেষ করা সব সেমিস্টারে আপনার পারফরম্যান্সের সারাংশ দেয়। বিশ্ববিদ্যালয় এটি আপনার ট্রান্সক্রিপ্টে ছাপে, চাকরিদাতারা আবেদনে এটি চান এবং বৃত্তি কমিটি শিক্ষার্থী বাছাইয়ে এটি ব্যবহার করে। কেউ যখন বলে "আমার CGPA 3.4", তখন সে এখন পর্যন্ত পুরো ডিগ্রির গড় বোঝায়, শুধু গত সেমিস্টারের নয়।</p>
+        <p>তিনটি শব্দ প্রায় একই রকম শোনায়, তাই এখানে সহজ পার্থক্য দেওয়া হলো:</p>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">শব্দ</th><th scope="col">পূর্ণরূপ</th><th scope="col">এটি কী মাপে</th></tr></thead>
+            <tbody>
+              <tr><td><strong>GPA</strong></td><td>Grade Point Average (গ্রেড পয়েন্ট গড়)</td><td>এক সেমিস্টারে আপনার গড় (কিছু দেশে এক বছর বা পুরো ডিগ্রির)</td></tr>
+              <tr><td><strong>SGPA</strong></td><td>Semester Grade Point Average (সেমিস্টার গ্রেড পয়েন্ট গড়)</td><td>এক সেমিস্টারে আপনার গড়। বেশিরভাগ ভারতীয় বিশ্ববিদ্যালয় এই নাম ব্যবহার করে, এবং এর অর্থ সেমিস্টার GPA-র মতোই।</td></tr>
+              <tr><td><strong>CGPA</strong></td><td>Cumulative Grade Point Average (ক্রমপুঞ্জিত গ্রেড পয়েন্ট গড়)</td><td>আপনার শেষ করা সব সেমিস্টারের গড়</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>সংক্ষেপে, SGPA ও সেমিস্টার GPA একটি সেমিস্টারের কথা বলে, আর CGPA বলে আপনার পুরো যাত্রার কথা। যুক্তরাষ্ট্রে শুধু "GPA" বললে প্রায়ই ক্রমপুঞ্জিত সংখ্যা বোঝায়, তাই শব্দগুলো গুলিয়ে যায়। কোনো ফর্ম যদি পুরো ডিগ্রি নিয়ে জানতে চায়, তাহলে প্রায় সবসময় ক্রমপুঞ্জিত সংখ্যাটিই চায়।</p>
+        <p>তিনটিই <strong>ক্রেডিট</strong> অনুযায়ী ওজন পায়। 4 ক্রেডিটের কোর্স 1 ক্রেডিটের ল্যাবের চেয়ে আপনার গড়কে বেশি প্রভাবিত করে, কারণ এতে বেশি ক্লাস ও বেশি পরিশ্রম জড়িত।</p>
+      </section>
+
+      <!-- How to calculate -->
+      <section id="how-to-calculate">
+        <h2>ধাপে ধাপে CGPA কীভাবে হিসাব করবেন</h2>
+        <p>কোনো বিশেষ গণিত লাগে না, শুধু আপনার গ্রেড আর প্রতিটি কোর্সের ক্রেডিট দরকার। বেশিরভাগ বিশ্ববিদ্যালয় এই পদ্ধতিই ব্যবহার করে:</p>
+        <ol class="steps">
+          <li><strong>প্রতিটি গ্রেডকে গ্রেড পয়েন্টে রূপান্তর করুন।</strong> আপনার বিশ্ববিদ্যালয়ের গ্রেড পয়েন্ট তালিকা ব্যবহার করুন (নিচের তালিকাগুলো দেখুন)। 4.0 স্কেলে A সাধারণত 4.00 এবং B+ 3.33।</li>
+          <li><strong>গ্রেড পয়েন্টকে ক্রেডিট দিয়ে গুণ করুন।</strong> এতে প্রতিটি কোর্সের "কোয়ালিটি পয়েন্ট" পাওয়া যায়। A গ্রেডসহ 3 ক্রেডিটের কোর্স দেয় 3 × 4.00 = 12 কোয়ালিটি পয়েন্ট।</li>
+          <li><strong>সেমিস্টার GPA বের করুন।</strong> সেমিস্টারের কোয়ালিটি পয়েন্ট যোগ করে মোট ক্রেডিট দিয়ে ভাগ করুন। এটাই আপনার সেমিস্টার GPA বা SGPA।</li>
+          <li><strong>সেমিস্টারগুলো একত্র করুন।</strong> প্রতিটি সেমিস্টারের GPA-কে সেই সেমিস্টারের ক্রেডিট দিয়ে গুণ করুন, ফলগুলো যোগ করুন এবং সব সেমিস্টারের মোট ক্রেডিট দিয়ে ভাগ করুন। উত্তরটিই আপনার CGPA।</li>
+        </ol>
+        <p class="formula-block">CGPA = Σ (সেমিস্টার GPA × সেমিস্টার ক্রেডিট) ÷ Σ (সেমিস্টার ক্রেডিট)</p>
+
+        <h3>সমাধানসহ উদাহরণ</h3>
+        <p>আয়েশা প্রথম বর্ষের শিক্ষার্থী, তার বিশ্ববিদ্যালয় 4.0 স্কেল ব্যবহার করে। তার প্রথম সেমিস্টার এরকম:</p>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">কোর্স</th><th scope="col" class="num">ক্রেডিট</th><th scope="col">গ্রেড</th><th scope="col" class="num">গ্রেড পয়েন্ট</th><th scope="col" class="num">ক্রেডিট × পয়েন্ট</th></tr></thead>
+            <tbody>
+              <tr><td>ক্যালকুলাস</td><td class="num">3</td><td>A</td><td class="num">4.00</td><td class="num">12.00</td></tr>
+              <tr><td>পদার্থবিজ্ঞান</td><td class="num">4</td><td>B+</td><td class="num">3.33</td><td class="num">13.32</td></tr>
+              <tr><td>ইংরেজি</td><td class="num">3</td><td>A-</td><td class="num">3.67</td><td class="num">11.01</td></tr>
+              <tr><td>প্রোগ্রামিং</td><td class="num">3</td><td>B</td><td class="num">3.00</td><td class="num">9.00</td></tr>
+              <tr><td>ইসলামিক স্টাডিজ</td><td class="num">2</td><td>A</td><td class="num">4.00</td><td class="num">8.00</td></tr>
+            </tbody>
+            <tfoot><tr><th scope="row">মোট</th><td class="num">15</td><td></td><td></td><td class="num">53.33</td></tr></tfoot>
+          </table>
+        </div>
+        <p>তার সেমিস্টার 1-এর GPA হলো 53.33 ÷ 15 = <strong>3.56</strong>।</p>
+        <p>দ্বিতীয় সেমিস্টারে সে 17 ক্রেডিট নেয় এবং 3.20 GPA পায়, অর্থাৎ 3.20 × 17 = 54.40 কোয়ালিটি পয়েন্ট। তার CGPA বের করতে:</p>
+        <p class="formula-block">CGPA = (53.33 + 54.40) ÷ (15 + 17) = 107.73 ÷ 32 = 3.37</p>
+        <p>তাহলে আয়েশার CGPA <strong>3.37</strong>। তার দুই সেমিস্টারের সাধারণ গড়, (3.56 + 3.20) ÷ 2 = 3.38, একটু আলাদা উত্তর দেয়। এখানে পার্থক্য সামান্য, কিন্তু সেমিস্টারগুলোর ক্রেডিট খুব আলাদা হলে তা বেড়ে যায়, তাই সবসময় ক্রেডিট অনুযায়ী ওজন দিন।</p>
+      </section>
+
+      <!-- How to use -->
+      <section id="how-to-use">
+        <h2>এই ক্যালকুলেটর কীভাবে ব্যবহার করবেন</h2>
+        <p>এই পেজের ওপরের টুলটি আপনি লেখার সঙ্গে সঙ্গে সব হিসাব করে দেয়। প্রতিটি ট্যাবের একটি কাজ:</p>
+        <ol class="steps">
+          <li><strong>আপনার গ্রেডিং স্কেল বেছে নিন।</strong> 4.0 (পাকিস্তান ও যুক্তরাষ্ট্রে প্রচলিত), 10 পয়েন্ট (ভারতে প্রচলিত) বা 5.0 বেছে নিন। গ্রেড তালিকা, সীমা ও তালিকা সেই অনুযায়ী বদলে যায়।</li>
+          <li><strong>GPA ট্যাব।</strong> প্রতিটি বিষয়ের ক্রেডিট লিখুন এবং গ্রেড বেছে নিন। যদি শুধু নম্বর জানেন, তাহলে <em>নম্বর</em>-এ যান এবং সেটি লিখুন, ক্যালকুলেটর আপনার জন্য গ্রেড খুঁজে দেবে। বিষয়ের নাম ঐচ্ছিক।</li>
+          <li><strong>CGPA ট্যাব।</strong> প্রতিটি সেমিস্টারের GPA ও তার মোট ক্রেডিট যোগ করুন। যতবার দরকার <em>সেমিস্টার যোগ করুন</em> চাপুন, অথবা GPA ট্যাব থেকে এক ট্যাপে ফলাফল পাঠান।</li>
+          <li><strong>লক্ষ্য ট্যাব।</strong> আপনার বর্তমান CGPA, সম্পন্ন ক্রেডিট, লক্ষ্য CGPA ও বাকি ক্রেডিট লিখুন এবং দেখুন এখন থেকে কত GPA লাগবে।</li>
+          <li><strong>শতাংশ ট্যাব।</strong> আপনার CGPA-কে শতাংশে রূপান্তর করুন এবং ব্যবহৃত সূত্রটি দেখুন।</li>
+        </ol>
+        <p>আপনার তথ্য আপনার নিজের ব্রাউজারে সেভ থাকে, তাই রিফ্রেশের পরেও থাকে, এবং কোনো কিছুই সার্ভারে পাঠানো হয় না। নম্বর শেয়ার করতে <em>ফলাফল কপি করুন</em> অথবা রেকর্ড রাখতে <em>প্রিন্ট / PDF</em> ব্যবহার করুন।</p>
+      </section>
+
+      <!-- CGPA to percentage -->
+      <section id="cgpa-to-percentage">
+        <h2>CGPA থেকে শতাংশে রূপান্তর</h2>
+        <p>অনেক চাকরির আবেদন, ভর্তি ফর্ম ও ভিসা আবেদনে CGPA-র বদলে শতাংশ চাওয়া হয়। সারা বিশ্বে একটি মাত্র সূত্র নেই, তাই সঠিক পদ্ধতি আপনার স্কেল ও বিশ্ববিদ্যালয়ের ওপর নির্ভর করে। সবচেয়ে বেশি ব্যবহৃত পদ্ধতিগুলো এখানে দেওয়া হলো।</p>
+
+        <h3>4.0 স্কেল</h3>
+        <p class="formula-block">শতাংশ = (CGPA ÷ 4) × 100</p>
+        <p>এটি দেখায় সর্বোচ্চের কত অংশ আপনি পেয়েছেন। যেমন:</p>
+        <ul>
+          <li>CGPA 3.50 → (3.50 ÷ 4) × 100 = <strong>87.5%</strong></li>
+          <li>CGPA 3.20 → (3.20 ÷ 4) × 100 = <strong>80%</strong></li>
+          <li>CGPA 2.80 → (2.80 ÷ 4) × 100 = <strong>70%</strong></li>
+        </ul>
+        <p>পাকিস্তান ও অন্যান্য জায়গার কিছু বিশ্ববিদ্যালয় নিজেদের রূপান্তর নিয়ম ট্রান্সক্রিপ্ট বা প্রসপেক্টাসে ছাপে। আপনার বিশ্ববিদ্যালয়ের এমন নিয়ম থাকলে সেটিই ব্যবহার করুন, কারণ চাকরিদাতা ও ভর্তি অফিস সেটিই যাচাই করবে।</p>
+
+        <h3>10 পয়েন্ট স্কেল</h3>
+        <p class="formula-block">শতাংশ = CGPA × 9.5</p>
+        <p>এই সূত্রটি CBSE চালু করেছিল, এবং অনেক ভারতীয় বিশ্ববিদ্যালয় এটি অনুসরণ করে। আগের পরীক্ষায় শিক্ষার্থীদের প্রকৃত নম্বরের সঙ্গে গ্রেড পয়েন্ট তুলনা করে CBSE 9.5 গুণকটি নির্ধারণ করেছে। যেমন:</p>
+        <ul>
+          <li>CGPA 9.0 → 9.0 × 9.5 = <strong>85.5%</strong></li>
+          <li>CGPA 8.2 → 8.2 × 9.5 = <strong>77.9%</strong></li>
+          <li>CGPA 7.5 → 7.5 × 9.5 = <strong>71.25%</strong></li>
+        </ul>
+        <p>সব বিশ্ববিদ্যালয় 9.5 ব্যবহার করে না। যেমন VTU ব্যবহার করে (CGPA − 0.75) × 10, ফলে 8.2 হয় 74.5%, আর কিছু বিশ্ববিদ্যালয় সরাসরি 10 দিয়ে গুণ করে। আপনার বিশ্ববিদ্যালয় সরকারি সূত্র প্রকাশ করে থাকলে সেটিই ব্যবহার করুন।</p>
+
+        <h3>দ্রুত রূপান্তর তালিকা</h3>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col" class="num">CGPA (4.0)</th><th scope="col" class="num">শতাংশ</th><th scope="col" class="num">CGPA (10 পয়েন্ট)</th><th scope="col" class="num">শতাংশ</th></tr></thead>
+            <tbody>
+              <tr><td class="num">4.00</td><td class="num">100%</td><td class="num">10.0</td><td class="num">95%</td></tr>
+              <tr><td class="num">3.70</td><td class="num">92.5%</td><td class="num">9.0</td><td class="num">85.5%</td></tr>
+              <tr><td class="num">3.50</td><td class="num">87.5%</td><td class="num">8.5</td><td class="num">80.75%</td></tr>
+              <tr><td class="num">3.30</td><td class="num">82.5%</td><td class="num">8.0</td><td class="num">76%</td></tr>
+              <tr><td class="num">3.00</td><td class="num">75%</td><td class="num">7.5</td><td class="num">71.25%</td></tr>
+              <tr><td class="num">2.50</td><td class="num">62.5%</td><td class="num">7.0</td><td class="num">66.5%</td></tr>
+              <tr><td class="num">2.00</td><td class="num">50%</td><td class="num">6.0</td><td class="num">57%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>5.0 স্কেলে সহজ পদ্ধতি হলো (CGPA ÷ 5) × 100। এই স্কেলের বেশিরভাগ বিশ্ববিদ্যালয় ডিগ্রি ক্লাসও প্রকাশ করে, যেমন First Class বা Second Class Upper, তাই আপনার চাকরিদাতা কোনটি চান তা দেখে নিন।</p>
+      </section>
+
+      <!-- Grade tables -->
+      <section id="grade-tables">
+        <h2>4.0, 5.0 ও 10 পয়েন্ট স্কেলের গ্রেড পয়েন্ট তালিকা</h2>
+        <p>এই ক্যালকুলেটর এই তালিকাগুলো ব্যবহার করে। এগুলো সবচেয়ে প্রচলিত রূপ, তবে নম্বরের সীমা বিশ্ববিদ্যালয়ভেদে আলাদা হয়, তাই শেষ কথা সবসময় আপনার বিশ্ববিদ্যালয়ের হ্যান্ডবুকের।</p>
+
+        <h3>4.0 স্কেল (পাকিস্তান / যুক্তরাষ্ট্র)</h3>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">গ্রেড</th><th scope="col" class="num">নম্বর %</th><th scope="col" class="num">গ্রেড পয়েন্ট</th></tr></thead>
+            <tbody>
+              <tr><td>A</td><td class="num">85–100</td><td class="num">4.00</td></tr>
+              <tr><td>A-</td><td class="num">80–84</td><td class="num">3.67</td></tr>
+              <tr><td>B+</td><td class="num">75–79</td><td class="num">3.33</td></tr>
+              <tr><td>B</td><td class="num">71–74</td><td class="num">3.00</td></tr>
+              <tr><td>B-</td><td class="num">68–70</td><td class="num">2.67</td></tr>
+              <tr><td>C+</td><td class="num">64–67</td><td class="num">2.33</td></tr>
+              <tr><td>C</td><td class="num">61–63</td><td class="num">2.00</td></tr>
+              <tr><td>C-</td><td class="num">58–60</td><td class="num">1.67</td></tr>
+              <tr><td>D+</td><td class="num">54–57</td><td class="num">1.33</td></tr>
+              <tr><td>D</td><td class="num">50–53</td><td class="num">1.00</td></tr>
+              <tr><td>F</td><td class="num">0–49</td><td class="num">0.00</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>যুক্তরাষ্ট্রে শিক্ষকরা প্রায়ই নির্দিষ্ট নম্বর সীমার বদলে সরাসরি লেটার গ্রেড দেন, তবে প্রতিটি অক্ষরের গ্রেড পয়েন্ট একই থাকে।</p>
+
+        <h3>5.0 স্কেল</h3>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">গ্রেড</th><th scope="col" class="num">নম্বর %</th><th scope="col" class="num">গ্রেড পয়েন্ট</th><th scope="col">অর্থ</th></tr></thead>
+            <tbody>
+              <tr><td>A</td><td class="num">70–100</td><td class="num">5</td><td>চমৎকার</td></tr>
+              <tr><td>B</td><td class="num">60–69</td><td class="num">4</td><td>খুব ভালো</td></tr>
+              <tr><td>C</td><td class="num">50–59</td><td class="num">3</td><td>ভালো</td></tr>
+              <tr><td>D</td><td class="num">45–49</td><td class="num">2</td><td>মোটামুটি</td></tr>
+              <tr><td>E</td><td class="num">40–44</td><td class="num">1</td><td>পাস</td></tr>
+              <tr><td>F</td><td class="num">0–39</td><td class="num">0</td><td>ফেল</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>এই স্কেলটি নাইজেরিয়ার বিশ্ববিদ্যালয় ও আরও কয়েকটি দেশে ব্যাপকভাবে ব্যবহৃত হয়।</p>
+
+        <h3>10 পয়েন্ট স্কেল (ভারত)</h3>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">গ্রেড</th><th scope="col" class="num">নম্বর %</th><th scope="col" class="num">গ্রেড পয়েন্ট</th><th scope="col">অর্থ</th></tr></thead>
+            <tbody>
+              <tr><td>O</td><td class="num">90–100</td><td class="num">10</td><td>অসাধারণ</td></tr>
+              <tr><td>A+</td><td class="num">80–89</td><td class="num">9</td><td>চমৎকার</td></tr>
+              <tr><td>A</td><td class="num">70–79</td><td class="num">8</td><td>খুব ভালো</td></tr>
+              <tr><td>B+</td><td class="num">60–69</td><td class="num">7</td><td>ভালো</td></tr>
+              <tr><td>B</td><td class="num">50–59</td><td class="num">6</td><td>গড়ের ওপরে</td></tr>
+              <tr><td>C</td><td class="num">45–49</td><td class="num">5</td><td>গড়</td></tr>
+              <tr><td>P</td><td class="num">40–44</td><td class="num">4</td><td>পাস</td></tr>
+              <tr><td>F</td><td class="num">0–39</td><td class="num">0</td><td>ফেল</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>এই লেটার গ্রেডগুলো UGC-র চয়েস বেসড ক্রেডিট সিস্টেম অনুসরণ করে। কিছু বিশ্ববিদ্যালয় প্রতিটি গ্রেডের জন্য সামান্য আলাদা নম্বর সীমা ব্যবহার করে।</p>
+      </section>
+
+      <!-- Tips -->
+      <section id="tips">
+        <h2>CGPA বাড়ানোর টিপস</h2>
+        <p>CGPA আটকে আছে মনে হতে পারে, কিন্তু এটি আপনার ধারণার চেয়ে বেশি বদলায়, বিশেষ করে ডিগ্রির শুরুতে। এই অভ্যাসগুলো সত্যিই পার্থক্য গড়ে:</p>
+        <ul class="tips-list">
+          <li><strong>বেশি ক্রেডিটের কোর্সে মনোযোগ দিন।</strong> 4 ক্রেডিটের কোর্সে ভালো গ্রেড 1 ক্রেডিটের কোর্সের একই গ্রেডের চেয়ে CGPA বেশি বাড়ায়, তাই সেই অনুযায়ী পড়ার সময় ভাগ করুন।</li>
+          <li><strong>অভ্যন্তরীণ নম্বর উপেক্ষা করবেন না।</strong> কুইজ, অ্যাসাইনমেন্ট, ল্যাব ও উপস্থিতি প্রায়ই চূড়ান্ত গ্রেডের বড় অংশ, এবং এগুলোই সবচেয়ে সহজে পাওয়া নম্বর।</li>
+          <li><strong>প্রতিদিন একটু করে পড়ুন।</strong> ক্লাসের পর 30 মিনিট নোট ঝালিয়ে নেওয়া পরীক্ষার আগের রাত জেগে পড়ার চেয়ে ভালো কাজ করে, আর বেশি মনে থাকে।</li>
+          <li><strong>আগের বছরের প্রশ্ন সমাধান করুন।</strong> এতে প্রশ্নের ধরন, বারবার আসা বিষয় এবং নম্বর দেওয়ার পদ্ধতি বোঝা যায়।</li>
+          <li><strong>আগেভাগে সাহায্য চান।</strong> যে সপ্তাহে বিভ্রান্ত হবেন সেই সপ্তাহেই শিক্ষকের অফিস আওয়ারে যান বা সহপাঠীকে জিজ্ঞেস করুন, ফাইনালের আগের সপ্তাহে নয়।</li>
+          <li><strong>বুঝেশুনে কোর্স রিটেক করুন।</strong> আপনার বিশ্ববিদ্যালয় যদি কোর্স আবার নিলে পুরোনো গ্রেড বদলে দেয়, তাহলে D বা F পাওয়া কোর্স আবার নেওয়া CGPA বাড়ানোর দ্রুততম উপায়গুলোর একটি হতে পারে।</li>
+          <li><strong>স্পষ্ট লক্ষ্য ঠিক করুন।</strong> লক্ষ্য ট্যাব দিয়ে ঠিক কত GPA লাগবে দেখে নিন। "এই সেমিস্টারে আমার 3.4 দরকার" কাজে লাগানো "আমাকে আরও ভালো করতে হবে"-এর চেয়ে অনেক সহজ।</li>
+          <li><strong>নিজের যত্ন নিন।</strong> ঘুম, খাওয়া ও ছোট বিরতি সময় নষ্ট নয়। ক্লান্ত শিক্ষার্থীরা পরীক্ষায় অসাবধান ভুল করে।</li>
+        </ul>
+        <p>আপনার মোট ক্রেডিট যত বাড়ে, প্রতিটি নতুন সেমিস্টারের CGPA-তে প্রভাব তত কমে। অর্থাৎ শুরুতে উন্নতি করা শেষ বর্ষে উন্নতি করার চেয়ে অনেক সহজ, তাই শুরু করার সেরা সময় এই সেমিস্টারই।</p>
+      </section>
+
+      <!-- FAQ (keep in sync with the FAQPage data in the <head>) -->
+      <section id="faq" class="faq">
+        <h2>সচরাচর জিজ্ঞাসিত প্রশ্ন</h2>
+
+        <details>
+          <summary><h3>CGPA আর GPA কি একই?</h3></summary>
+          <p>পুরোপুরি নয়। GPA সাধারণত এক সেমিস্টারের গড়, আর CGPA হলো আপনার শেষ করা সব সেমিস্টারের গড়। তবে যুক্তরাষ্ট্রে ট্রান্সক্রিপ্টে "GPA" বলতে প্রায়ই ক্রমপুঞ্জিত সংখ্যা বোঝায়। কোনো ফর্ম পুরো ডিগ্রির GPA চাইলে আপনার CGPA লিখুন।</p>
+        </details>
+        <details>
+          <summary><h3>SGPA থেকে CGPA কীভাবে বের করব?</h3></summary>
+          <p>প্রতিটি সেমিস্টারের SGPA-কে সেই সেমিস্টারের ক্রেডিট দিয়ে গুণ করুন, ফলগুলো যোগ করুন এবং মোট ক্রেডিট দিয়ে ভাগ করুন। প্রতিটি সেমিস্টারে ঠিক সমান ক্রেডিট থাকলে SGPA-গুলোর সাধারণ গড়ও একই উত্তর দেয়।</p>
+        </details>
+        <details>
+          <summary><h3>আমি কি শুধু সেমিস্টার GPA-গুলোর গড় নিতে পারি?</h3></summary>
+          <p>শুধু তখনই, যখন প্রতিটি সেমিস্টারে সমান ক্রেডিট থাকে। না হলে ক্রেডিট-ভারিত গড় দরকার, কারণ ভারী সেমিস্টার বেশি গুরুত্ব পায়। এই ক্যালকুলেটরের CGPA ট্যাব এটি আপনার জন্য করে।</p>
+        </details>
+        <details>
+          <summary><h3>CGPA-কে শতাংশে কীভাবে রূপান্তর করব?</h3></summary>
+          <p>4.0 স্কেলে আপনার CGPA-কে 4 দিয়ে ভাগ করে 100 দিয়ে গুণ করুন। 10 পয়েন্ট স্কেলে প্রচলিত পদ্ধতি CGPA × 9.5। সবসময় দেখে নিন আপনার বিশ্ববিদ্যালয়ের নিজস্ব সরকারি সূত্র আছে কি না, কারণ চাকরিদাতা ও ভর্তি অফিস সেটিই ব্যবহার করবে।</p>
+        </details>
+        <details>
+          <summary><h3>10 পয়েন্ট CGPA-কে কেন 9.5 দিয়ে গুণ করা হয়?</h3></summary>
+          <p>আগের পরীক্ষায় শিক্ষার্থীদের প্রকৃত নম্বরের সঙ্গে গ্রেড পয়েন্ট তুলনা করে CBSE 9.5 গুণকটি চালু করেছে। অনেক ভারতীয় বিশ্ববিদ্যালয় এটি গ্রহণ করেছে, তবে সবাই নয়, তাই নিজের বিশ্ববিদ্যালয়ের নিয়ম দেখে নিন।</p>
+        </details>
+        <details>
+          <summary><h3>ভালো CGPA কত?</h3></summary>
+          <p>4.0 স্কেলে 3.5 বা তার বেশি সাধারণত চমৎকার এবং 3.0 বা তার বেশি ভালো ধরা হয়। 10 পয়েন্ট স্কেলে 8.0 বা তার বেশি শক্তিশালী এবং 7.0 বা তার বেশি ভালো। চাকরি, বৃত্তি ও উচ্চশিক্ষার ন্যূনতম সীমা আলাদা হয়, তাই সবসময় সঠিক শর্ত দেখে নিন।</p>
+        </details>
+        <details>
+          <summary><h3>আমি কি আমার CGPA 2.5 থেকে 3.0-তে তুলতে পারি?</h3></summary>
+          <p>সাধারণত হ্যাঁ, যদি যথেষ্ট ক্রেডিট বাকি থাকে। যেমন, 60 ক্রেডিট শেষে 2.50 CGPA এবং আরও 70 ক্রেডিট বাকি থাকলে বাকি সেমিস্টারগুলোতে প্রায় 3.43 গড় লাগবে। এই ক্যালকুলেটরের লক্ষ্য ট্যাব আপনার নিজের সংখ্যা দিয়ে এটি হিসাব করে।</p>
+        </details>
+        <details>
+          <summary><h3>ফেল করা বা আবার নেওয়া কোর্স কি CGPA-তে গণনা হয়?</h3></summary>
+          <p>এটি আপনার বিশ্ববিদ্যালয়ের ওপর নির্ভর করে। অনেকেই কোর্স পাস না করা পর্যন্ত F-কে শূন্য গ্রেড পয়েন্ট ধরে। কেউ কেউ কোর্স আবার নিলে পুরোনো গ্রেড বদলে দেয়, আবার কেউ দুটো গ্রেডই গড়ে রাখে। নিজের বিশ্ববিদ্যালয়ের রিটেক নীতি দেখে নিন।</p>
+        </details>
+        <details>
+          <summary><h3>আমার CGPA দশমিকের পর কয় ঘর পর্যন্ত লিখব?</h3></summary>
+          <p>বেশিরভাগ বিশ্ববিদ্যালয় CGPA দুই দশমিক ঘর পর্যন্ত দেখায়, যেমন 3.37। ফর্ম ও CV-তে এটি ঠিক যেভাবে আপনার সরকারি ট্রান্সক্রিপ্টে আছে সেভাবেই লিখুন, নিজে থেকে ওপরের দিকে রাউন্ড করবেন না।</p>
+        </details>
+        <details>
+          <summary><h3>আমার তথ্য কি কোথাও সেভ বা শেয়ার হয়?</h3></summary>
+          <p>আপনার তথ্য শুধু আপনার নিজের ব্রাউজারে সেভ থাকে, তাই পেজ রিফ্রেশ করলে হারায় না। কিছুই আপলোড বা শেয়ার করা হয় না। যেকোনো সময় "সব রিসেট করুন" বোতাম দিয়ে সব মুছে ফেলতে পারেন।</p>
+        </details>
+      </section>
+
+      <p class="back-top"><a href="#calculator">↑ ক্যালকুলেটরে ফিরে যান</a></p>
+    </article>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p><strong>CGPA Calculator</strong> · শিক্ষার্থীদের জন্য তৈরি · © <span id="year">2026</span></p>
+        <p class="muted">ফলাফলগুলো আনুমানিক। আপনার বিশ্ববিদ্যালয়ের সরকারি নিয়মই সবসময় আগে।</p>
+      </div>
+      <nav class="footer-nav" aria-label="ফুটার">
+        <a href="index.html">ক্যালকুলেটর</a>
+        <a href="about.html">আমাদের সম্পর্কে</a>
+        <a href="privacy-policy.html">গোপনীয়তা নীতি</a>
+        <a href="terms.html">ব্যবহারের শর্তাবলি</a>
+        <a href="contact.html">যোগাযোগ</a>
+      </nav>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="../i18n/bn.js" data-i18n=""></script>
+  <script src="../site.js"></script>
+  <script src="../script.js"></script>
+
+
+
+
+
+
+
+
+
+</body></html>

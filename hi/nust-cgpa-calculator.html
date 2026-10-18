@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="hi"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Built by tools/build-university-pages.js – edit that file, not this one -->
+  <title>NUST CGPA और GPA कैलकुलेटर – आधिकारिक ग्रेड पॉइंट</title>
+  <meta name="description" content="NUST Undergraduate Student Handbook के आधिकारिक ग्रेड पॉइंट पर आधारित मुफ़्त NUST CGPA और GPA कैलकुलेटर। न्यूनतम CGPA और रिपीट नियम भी शामिल।">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f6fb">
+  <link rel="canonical" href="https://cgpa-calculator-umber-two.vercel.app/hi/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="en" href="https://cgpa-calculator-umber-two.vercel.app/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="es" href="https://cgpa-calculator-umber-two.vercel.app/es/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="de" href="https://cgpa-calculator-umber-two.vercel.app/de/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="hi" href="https://cgpa-calculator-umber-two.vercel.app/hi/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ur" href="https://cgpa-calculator-umber-two.vercel.app/ur/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://cgpa-calculator-umber-two.vercel.app/zh/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="fr" href="https://cgpa-calculator-umber-two.vercel.app/fr/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ar" href="https://cgpa-calculator-umber-two.vercel.app/ar/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="bn" href="https://cgpa-calculator-umber-two.vercel.app/bn/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="pt" href="https://cgpa-calculator-umber-two.vercel.app/pt/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ru" href="https://cgpa-calculator-umber-two.vercel.app/ru/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="id" href="https://cgpa-calculator-umber-two.vercel.app/id/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ja" href="https://cgpa-calculator-umber-two.vercel.app/ja/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/nust-cgpa-calculator.html">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CGPA Calculator">
+  <meta property="og:locale" content="hi_IN">
+  <meta property="og:url" content="https://cgpa-calculator-umber-two.vercel.app/hi/nust-cgpa-calculator.html">
+  <meta property="og:title" content="NUST CGPA और GPA कैलकुलेटर">
+  <meta property="og:description" content="NUST Undergraduate Student Handbook के आधिकारिक ग्रेड पॉइंट पर आधारित मुफ़्त NUST CGPA और GPA कैलकुलेटर। न्यूनतम CGPA और रिपीट नियम भी शामिल।">
+  <meta property="og:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <meta property="og:image:alt" content="CGPA कैलकुलेटर: 4.00 में से 3.37 CGPA दिखाता परिणाम कार्ड">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NUST CGPA और GPA कैलकुलेटर">
+  <meta name="twitter:description" content="NUST Undergraduate Student Handbook के आधिकारिक ग्रेड पॉइंट पर आधारित मुफ़्त NUST CGPA और GPA कैलकुलेटर। न्यूनतम CGPA और रिपीट नियम भी शामिल।">
+  <meta name="twitter:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "@id": "https://cgpa-calculator-umber-two.vercel.app/hi/nust-cgpa-calculator.html#app",
+    "name": "NUST CGPA और GPA कैलकुलेटर",
+    "url": "https://cgpa-calculator-umber-two.vercel.app/hi/nust-cgpa-calculator.html",
+    "image": "https://cgpa-calculator-umber-two.vercel.app/og-image.jpg",
+    "description": "NUST Undergraduate Student Handbook के आधिकारिक ग्रेड पॉइंट पर आधारित मुफ़्त NUST CGPA और GPA कैलकुलेटर। न्यूनतम CGPA और रिपीट नियम भी शामिल।",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "hi",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "NUST सापेक्ष ग्रेडिंग करता है या निरपेक्ष?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "NUST 4.00 स्केल पर सापेक्ष ग्रेडिंग करता है, इसलिए आपका ग्रेड किसी तय प्रतिशत की बजाय आपकी क्लास की तुलना में आपके प्रदर्शन पर निर्भर करता है। इसीलिए NUST के लिए अंकों से ग्रेड की कोई तय तालिका नहीं है।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "NUST में हर ग्रेड के कितने ग्रेड पॉइंट हैं?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A = 4.00, B+ = 3.50, B = 3.00, C+ = 2.50, C = 2.00, D+ = 1.50 और D = 1.00। F और XF (कम उपस्थिति के कारण F) 0.00 हैं। D+ और D सिर्फ़ अंडरग्रेजुएट छात्रों के लिए हैं।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "क्या NUST में A+ या A- ग्रेड है?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "नहीं। A (4.00) सबसे ऊँचा ग्रेड है और कोई माइनस ग्रेड नहीं है। B+ और C+, B और C से आधा पॉइंट ऊपर हैं।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "NUST से ग्रेजुएट होने के लिए कितना CGPA चाहिए?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "न्यूनतम 2.00 CGPA, या BBA, BS Economics, BS Public Administration, BS Mass Communication, BS Accounting & Finance और BS Psychology के लिए 2.50। BE और BS छात्रों को लागू होने पर अंतिम वर्ष प्रोजेक्ट में कम से कम C भी चाहिए।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "अगर मैं NUST में कोई कोर्स दोहराऊँ, तो कौन-सा ग्रेड गिना जाएगा?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "आपकी मार्कशीट दोनों ग्रेड दिखाती है, लेकिन CGPA में सिर्फ़ बेहतर ग्रेड इस्तेमाल होता है। दोहराकर पाए गए ग्रेड शीर्ष शैक्षणिक पुरस्कारों में नहीं गिने जाते, सिवाय Rector’s Gold Medal के।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "मैं अपने NUST CGPA को प्रतिशत में कैसे बदलूँ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "NUST की अंडरग्रेजुएट हैंडबुक कोई आधिकारिक फ़ॉर्मूला नहीं देती। आम तरीका (CGPA ÷ 4) × 100 है, जिससे 3.40 बनता है 85%, लेकिन जहाँ आवेदन कर रहे हैं वह कंपनी या यूनिवर्सिटी क्या मानती है, यह जाँचें।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "लैब वाला कोर्स कैसे डालूँ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "उसे उसके कुल क्रेडिट के साथ एक विषय के रूप में डालें, जैसे 3+1 कोर्स के लिए 4। NUST थ्योरी और लैब के अंकों को मिलाकर पूरे कोर्स का एक ग्रेड देता है।"
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "CGPA Calculator",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/hi/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "NUST CGPA और GPA कैलकुलेटर",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/hi/nust-cgpa-calculator.html"
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    /* Apply the saved (or system) theme before the page paints, so there is no flash */
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem('cgpa-theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="CGPA Calculator home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3z"></path>
+            <path d="M5 13.18v4C5 18.84 8.13 20 12 20s7-1.16 7-2.82v-4L12 17l-7-3.82z"></path>
+          </svg>
+        </span>
+        <span>CGPA Calculator</span>
+      </a>
+      <div class="header-actions">
+        <nav class="site-nav" id="siteNav" aria-label="Main menu">
+          <a href="index.html">Calculator</a>
+          <a href="about.html">About</a>
+          <a href="privacy-policy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <details class="lang-menu" id="langMenu">
+          <summary class="icon-btn lang-btn" aria-label="Choose language" title="Language">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"></path></svg>
+            <span class="lang-code" data-no-translate="">HI</span>
+          </summary>
+          <div class="lang-list" data-no-translate=""><a href="../nust-cgpa-calculator.html" hreflang="en" lang="en">English</a><a href="../es/nust-cgpa-calculator.html" hreflang="es" lang="es">Español</a><a href="../de/nust-cgpa-calculator.html" hreflang="de" lang="de">Deutsch</a><a href="nust-cgpa-calculator.html" hreflang="hi" lang="hi" aria-current="true">हिन्दी</a><a href="../ur/nust-cgpa-calculator.html" hreflang="ur" lang="ur">اردو</a><a href="../zh/nust-cgpa-calculator.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="../fr/nust-cgpa-calculator.html" hreflang="fr" lang="fr">Français</a><a href="../ar/nust-cgpa-calculator.html" hreflang="ar" lang="ar">العربية</a><a href="../bn/nust-cgpa-calculator.html" hreflang="bn" lang="bn">বাংলা</a><a href="../pt/nust-cgpa-calculator.html" hreflang="pt" lang="pt">Português</a><a href="../ru/nust-cgpa-calculator.html" hreflang="ru" lang="ru">Русский</a><a href="../id/nust-cgpa-calculator.html" hreflang="id" lang="id">Bahasa Indonesia</a><a href="../ja/nust-cgpa-calculator.html" hreflang="ja" lang="ja">日本語</a><a href="../mr/nust-cgpa-calculator.html" hreflang="mr" lang="mr">मराठी</a><a href="../te/nust-cgpa-calculator.html" hreflang="te" lang="te">తెలుగు</a></div>
+        </details>
+        <button type="button" id="themeToggle" class="icon-btn" aria-label="Switch to dark mode" title="Light / dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+        </button>
+        <button type="button" id="menuToggle" class="icon-btn menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
+          <svg class="icon-menu" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <nav class="breadcrumb" aria-label="ब्रेडक्रंब"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">NUST</span></nav>
+      <h1>NUST CGPA और GPA कैलकुलेटर</h1>
+      <p>NUST के आधिकारिक अंडरग्रेजुएट ग्रेड पॉइंट (A = 4.00, B+ = 3.50, B = 3.00 आदि) से अपना सेमेस्टर GPA और कुल CGPA निकालें। <a href="#guide" class="hero-link">NUST में ग्रेडिंग कैसे होती है ↓</a></p>
+    </section>
+
+    <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
+      <div class="scale-text">
+        <p id="scaleLabel" class="scale-title">ग्रेडिंग सिस्टम: NUST अंडरग्रेजुएट</p>
+        <p class="muted small">NUST सापेक्ष ग्रेडिंग इस्तेमाल करता है, इसलिए अपने परिणाम में दिखाया गया लेटर ग्रेड डालें। ग्रेड पॉइंट NUST Undergraduate Student Handbook से लिए गए हैं।</p>
+      </div>
+      <select id="scaleSelect" hidden="" aria-hidden="true" tabindex="-1"><option value="nust">NUST</option></select>
+      <button type="button" id="resetAll" class="btn btn-outline danger-hover">सब रीसेट करें</button>
+    </section>
+    <p class="print-only" id="printDate"></p>
+
+    <div class="layout">
+
+      <!-- ================= Calculators ================= -->
+      <div class="main-col">
+
+        <div class="tabs" role="tablist" aria-label="कैलकुलेटर">
+          <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">GPA <small>एक सेमेस्टर</small></button>
+          <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>सभी सेमेस्टर</small></button>
+          <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">लक्ष्य <small>आगे की योजना</small></button>
+          <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">प्रतिशत <small>कन्वर्टर</small></button>
+        </div>
+
+        <!-- ---------- TAB 1: GPA ---------- -->
+        <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
+          <div class="panel-head">
+            <div>
+              <h2>सेमेस्टर GPA</h2>
+              <p class="muted small">हर विषय को उसके क्रेडिट और ग्रेड के साथ जोड़ें।</p>
+            </div>
+
+          </div>
+
+          <div class="rows-head subject-cols" aria-hidden="true">
+            <span>विषय (वैकल्पिक)</span><span>क्रेडिट</span><span id="gradeHead">ग्रेड</span><span></span>
+          </div>
+          <div id="subjectList" class="row-list mode-grade"></div>
+
+          <button type="button" id="addSubject" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            विषय जोड़ें
+          </button>
+
+          <div class="result" aria-live="polite">
+            <div class="result-label">आपका सेमेस्टर GPA</div>
+            <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="gpaMeter"></span></div>
+            <div class="result-cheer" id="gpaCheer"></div>
+            <div class="result-sub" id="gpaSub">अपना GPA देखने के लिए विषय जोड़ें।</div>
+            <div class="result-note" id="gpaNote" hidden=""></div>
+          </div>
+
+          <div class="actions">
+            <button type="button" id="sendToCgpa" class="btn btn-soft">यह GPA मेरे CGPA में जोड़ें →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="gpa">परिणाम कॉपी करें</button>
+            <button type="button" class="btn btn-outline js-print" title="प्रिंट विंडो में PDF डाउनलोड करने के लिए “Save as PDF” चुनें">प्रिंट / PDF</button>
+            <button type="button" id="resetGpa" class="btn btn-quiet">साफ़ करें</button>
+          </div>
+
+          <details class="howto">
+            <summary>GPA की गणना कैसे होती है?</summary>
+            <p class="formula-line">GPA = (Σ क्रेडिट × ग्रेड पॉइंट) ÷ (Σ क्रेडिट)</p>
+            <p class="muted small">उदाहरण: गणित 3 क्रेडिट और 4.00 ग्रेड पॉइंट, अंग्रेज़ी 2 क्रेडिट और 3.00 → (3×4 + 2×3) ÷ (3+2) = 18 ÷ 5 = <strong>3.60</strong></p>
+          </details>
+        </section>
+
+        <!-- ---------- TAB 2: CGPA ---------- -->
+        <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>कुल CGPA</h2>
+              <p class="muted small">हर सेमेस्टर का GPA (SGPA) और उसके कुल क्रेडिट जोड़ें।</p>
+            </div>
+          </div>
+
+          <div class="rows-head semester-cols" aria-hidden="true">
+            <span>सेमेस्टर</span><span>GPA / SGPA</span><span>क्रेडिट</span><span></span>
+          </div>
+          <div id="semesterList" class="row-list"></div>
+
+          <button type="button" id="addSemester" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            सेमेस्टर जोड़ें
+          </button>
+
+          <div class="result" aria-live="polite">
+            <div class="result-label">आपका CGPA</div>
+            <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="cgpaMeter"></span></div>
+            <div class="result-cheer" id="cgpaCheer"></div>
+            <div class="result-sub" id="cgpaSub">अपना CGPA देखने के लिए सेमेस्टर जोड़ें।</div>
+            <div class="result-note" id="cgpaNote" hidden=""></div>
+          </div>
+
+          <div class="actions">
+            <button type="button" id="sendToPct" class="btn btn-soft">इस CGPA को % में बदलें →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">परिणाम कॉपी करें</button>
+            <button type="button" class="btn btn-outline js-print" title="प्रिंट विंडो में PDF डाउनलोड करने के लिए “Save as PDF” चुनें">प्रिंट / PDF</button>
+            <button type="button" id="resetCgpa" class="btn btn-quiet">साफ़ करें</button>
+          </div>
+
+          <details class="howto">
+            <summary>CGPA की गणना कैसे होती है?</summary>
+            <p class="formula-line">CGPA = (Σ सेमेस्टर GPA × सेमेस्टर क्रेडिट) ÷ (कुल क्रेडिट)</p>
+            <p class="muted small">ज़्यादा क्रेडिट वाले सेमेस्टर ज़्यादा गिने जाते हैं। उदाहरण: 18 क्रेडिट के साथ 3.50 और 15 क्रेडिट के साथ 3.00 → (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
+          </details>
+        </section>
+
+        <!-- ---------- TAB 3: Target CGPA ---------- -->
+        <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>लक्ष्य CGPA</h2>
+              <p class="muted small">जानें कि अपने लक्ष्य तक पहुँचने के लिए आने वाले सेमेस्टर में आपको कितना GPA चाहिए।</p>
+            </div>
+          </div>
+
+          <div class="target-grid">
+            <div class="field">
+              <label class="field-label" for="tCurrent">वर्तमान CGPA</label>
+              <input type="text" id="tCurrent" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tCurrentMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tDone">पूरे किए गए क्रेडिट</label>
+              <input type="text" id="tDone" inputmode="decimal" autocomplete="off" placeholder="e.g. 66">
+              <p class="row-msg" id="tDoneMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tTarget">लक्ष्य CGPA</label>
+              <input type="text" id="tTarget" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tTargetMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tLeft">बचे हुए क्रेडिट</label>
+              <input type="text" id="tLeft" inputmode="decimal" autocomplete="off" placeholder="e.g. 70">
+              <p class="row-msg" id="tLeftMsg"></p>
+            </div>
+          </div>
+
+          <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">मेरे CGPA टैब से भरें</button>
+
+          <div class="result" aria-live="polite">
+            <div class="result-label">हर सेमेस्टर में ज़रूरी GPA</div>
+            <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="tgtMeter"></span></div>
+            <div class="result-cheer" id="tgtCheer"></div>
+            <div class="result-sub" id="tgtSub">ज़रूरी GPA देखने के लिए ऊपर के चारों बॉक्स भरें।</div>
+            <div class="result-note" id="tgtNote" hidden=""></div>
+          </div>
+
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="target">परिणाम कॉपी करें</button>
+            <button type="button" class="btn btn-outline js-print" title="प्रिंट विंडो में PDF डाउनलोड करने के लिए “Save as PDF” चुनें">प्रिंट / PDF</button>
+            <button type="button" id="resetTarget" class="btn btn-quiet">साफ़ करें</button>
+          </div>
+
+          <details class="howto">
+            <summary>इसकी गणना कैसे होती है?</summary>
+            <p class="formula-line">ज़रूरी GPA = (लक्ष्य × कुल क्रेडिट − वर्तमान × पूरे क्रेडिट) ÷ बचे हुए क्रेडिट</p>
+            <p class="muted small">उदाहरण: 60 क्रेडिट के बाद वर्तमान 3.00, लक्ष्य 3.30, 60 क्रेडिट बाकी → (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
+          </details>
+        </section>
+
+        <!-- ---------- TAB 4: Percentage ---------- -->
+        <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>CGPA से प्रतिशत</h2>
+              <p class="muted small">अपना CGPA लिखें और उसका स्केल चुनें।</p>
+            </div>
+          </div>
+
+          <div class="conv-grid">
+            <div class="field">
+              <label class="field-label always" for="convInput">आपका CGPA</label>
+              <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
+              <p class="row-msg" id="convMsg"></p>
+            </div>
+
+          </div>
+
+          <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">CGPA टैब से मेरा CGPA इस्तेमाल करें</button>
+
+          <div class="result" aria-live="polite">
+            <div class="result-label">प्रतिशत</div>
+            <div class="result-value"><span id="pctValue">—</span></div>
+            <div class="meter" aria-hidden="true"><span id="pctMeter"></span></div>
+            <div class="result-cheer" id="pctCheer"></div>
+            <div class="result-sub" id="pctSub">प्रतिशत देखने के लिए अपना CGPA डालें।</div>
+          </div>
+
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="pct">परिणाम कॉपी करें</button>
+            <button type="button" class="btn btn-outline js-print" title="प्रिंट विंडो में PDF डाउनलोड करने के लिए “Save as PDF” चुनें">प्रिंट / PDF</button>
+          </div>
+
+          <div class="formula">
+            <div class="formula-title">इस्तेमाल किया गया फ़ॉर्मूला</div>
+            <p class="formula-line" id="formulaMain"></p>
+            <p class="formula-work" id="formulaWork"></p>
+            <p class="muted small" id="formulaNote"></p>
+          </div>
+        </section>
+      </div>
+
+      <!-- ================= Sidebar: grade table ================= -->
+      <aside class="sidebar">
+        <section class="card" aria-labelledby="tableTitle">
+          <h2 id="tableTitle" class="side-title">ग्रेड पॉइंट</h2>
+          <p class="muted small" id="tableSubtitle"></p>
+          <div class="table-wrap">
+            <table class="grade-table">
+              <thead>
+                <tr><th scope="col">ग्रेड</th><th scope="col" class="num">पॉइंट</th><th scope="col" class="num" id="marksCol">अंक %</th></tr>
+              </thead>
+              <tbody id="gradeTableBody"></tbody>
+            </table>
+          </div>
+          <p class="muted tiny">अंकों की सीमाएं हर यूनिवर्सिटी में अलग होती हैं। हमेशा अपनी यूनिवर्सिटी की ग्रेडिंग नीति देखें।</p>
+        </section>
+
+
+        <section class="card tips">
+          <h2 class="side-title">NUST के मुख्य तथ्य</h2>
+          <ul>
+            <li>NUST <strong>सापेक्ष ग्रेडिंग</strong> इस्तेमाल करता है: आपका ग्रेड आपकी क्लास पर निर्भर करता है, तय अंकों पर नहीं।</li>
+            <li>ग्रेजुएट होने के लिए न्यूनतम <strong>2.00</strong> CGPA चाहिए (BBA और कुछ BS प्रोग्राम के लिए <strong>2.50</strong>)।</li>
+            <li>अगर आप कोई कोर्स दोहराते हैं, तो CGPA में सिर्फ़ <strong>बेहतर ग्रेड</strong> गिना जाता है।</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+
+    <article class="guide" id="guide">
+
+      <section id="how-it-works">
+        <h2>NUST में ग्रेडिंग कैसे होती है</h2>
+        <p>NUST 4.00 स्केल पर सापेक्ष ग्रेडिंग इस्तेमाल करता है। NUST Undergraduate Student Handbook के शब्दों में, <q>The University follows a relative grading system on a scale of 1.00 to 4.00 points.</q> ("यूनिवर्सिटी 1.00 से 4.00 पॉइंट के स्केल पर सापेक्ष ग्रेडिंग प्रणाली अपनाती है।") आपका लेटर ग्रेड इस पर निर्भर करता है कि आपने अपनी क्लास की तुलना में कैसा प्रदर्शन किया, किसी तय प्रतिशत पर नहीं। 82% किसी कठिन पेपर में A और आसान पेपर में B+ हो सकता है।</p>
+        <p>इसी वजह से NUST के अंकों को सीधे ग्रेड में बदलने का कोई भरोसेमंद तरीका नहीं है, इसलिए यह कैलकुलेटर आपके परिणाम का लेटर ग्रेड माँगता है। एक बार अक्षर मिल जाएं, तो GPA की गणना तय और आसान है।</p>
+        <h3>थ्योरी और लैब वाले कोर्स</h3>
+        <p>जिस कोर्स में थ्योरी और लैब दोनों के क्रेडिट हों, उसमें NUST पहले दोनों प्रतिशत को क्रेडिट के हिसाब से मिलाता है और फिर पूरे कोर्स को एक ग्रेड देता है। हैंडबुक का अपना उदाहरण है: 3 थ्योरी क्रेडिट में 70% और 1 लैब क्रेडिट में 90% वाली भौतिकी, जिससे (70 × 3 + 90 × 1) ÷ 4 = 75% बनता है। आपको सभी 4 क्रेडिट के लिए एक ग्रेड मिलता है, इसलिए इसे कैलकुलेटर में 4 क्रेडिट वाले एक विषय के रूप में डालें।</p>
+      </section>
+
+      <section id="grade-points">
+        <h2>NUST ग्रेड पॉइंट तालिका</h2>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">ग्रेड</th><th scope="col" class="num">ग्रेड पॉइंट</th><th scope="col">टिप्पणी</th></tr></thead>
+            <tbody>
+              <tr><td>A</td><td class="num">4.00</td><td>सबसे ऊँचा ग्रेड</td></tr>
+              <tr><td>B+</td><td class="num">3.50</td><td></td></tr>
+              <tr><td>B</td><td class="num">3.00</td><td></td></tr>
+              <tr><td>C+</td><td class="num">2.50</td><td></td></tr>
+              <tr><td>C</td><td class="num">2.00</td><td></td></tr>
+              <tr><td>D+</td><td class="num">1.50</td><td>सिर्फ़ अंडरग्रेजुएट</td></tr>
+              <tr><td>D</td><td class="num">1.00</td><td>सिर्फ़ अंडरग्रेजुएट; सबसे कम ग्रेड जिससे कोर्स के क्रेडिट मिलते हैं</td></tr>
+              <tr><td>F</td><td class="num">0.00</td><td>फ़ेल</td></tr>
+              <tr><td>XF</td><td class="num">0.00</td><td>कम उपस्थिति के कारण F</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>I (अधूरा), W (छोड़ा गया), Q (योग्य) और T (ट्रांसफ़र) के कोई ग्रेड पॉइंट नहीं होते। ध्यान दें कि NUST में A+ और माइनस ग्रेड नहीं हैं: B+ और C+, B और C से आधा पॉइंट ऊपर हैं।</p>
+      </section>
+
+      <section id="example">
+        <h2>अपना NUST GPA कैसे निकालें: हल किया गया उदाहरण</h2>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">कोर्स</th><th scope="col" class="num">क्रेडिट</th><th scope="col">ग्रेड</th><th scope="col" class="num">पॉइंट</th><th scope="col" class="num">क्रेडिट × पॉइंट</th></tr></thead>
+            <tbody>
+              <tr><td>मल्टीवेरिएबल कैलकुलस</td><td class="num">3</td><td>B+</td><td class="num">3.50</td><td class="num">10.50</td></tr>
+              <tr><td>एप्लाइड फ़िज़िक्स (3+1)</td><td class="num">4</td><td>B</td><td class="num">3.00</td><td class="num">12.00</td></tr>
+              <tr><td>प्रोग्रामिंग के मूल सिद्धांत (3+1)</td><td class="num">4</td><td>A</td><td class="num">4.00</td><td class="num">16.00</td></tr>
+              <tr><td>फ़ंक्शनल इंग्लिश</td><td class="num">3</td><td>C+</td><td class="num">2.50</td><td class="num">7.50</td></tr>
+              <tr><td>इस्लामी अध्ययन</td><td class="num">2</td><td>A</td><td class="num">4.00</td><td class="num">8.00</td></tr>
+            </tbody>
+            <tfoot><tr><th scope="row">कुल</th><td class="num">16</td><td></td><td></td><td class="num">54.00</td></tr></tfoot>
+          </table>
+        </div>
+        <p class="formula-block">GPA = 54.00 ÷ 16 = 3.375 ≈ 3.38</p>
+        <p>आपका CGPA सभी सेमेस्टर में इसी तरह काम करता है: हर लिए गए कोर्स के क्रेडिट × पॉइंट जोड़ें और कुल क्रेडिट से भाग दें। CGPA टैब यह आपके सेमेस्टर GPA से करता है।</p>
+      </section>
+
+      <section id="minimum-cgpa">
+        <h2>NUST में न्यूनतम CGPA और शैक्षणिक कमी</h2>
+        <ul>
+          <li><strong>ग्रेजुएट होने के लिए</strong> न्यूनतम 2.00 CGPA चाहिए, या BBA, BS Economics, BS Public Administration, BS Mass Communication, BS Accounting &amp; Finance और BS Psychology के लिए 2.50।</li>
+          <li><strong>BE और BS छात्रों</strong> को लागू होने पर अपने अंतिम वर्ष (डिज़ाइन) प्रोजेक्ट में कम से कम C भी चाहिए।</li>
+          <li><strong>आप शैक्षणिक रूप से कमज़ोर (deficient) माने जाते हैं</strong> अगर किसी कोर्स में F या XF आए, सेमेस्टर GPA 2.00 से कम हो, CGPA 2.00 से कम हो, I (अधूरा) ग्रेड हो, या अंतिम वर्ष प्रोजेक्ट में C से कम हो।</li>
+        </ul>
+        <p>अगर आपका CGPA 2.00 से नीचे गिर गया है, तो लक्ष्य टैब दिखाता है कि उससे ऊपर लौटने के लिए बाकी सेमेस्टर में कितना GPA चाहिए।</p>
+      </section>
+
+      <section id="repeat">
+        <h2>CGPA सुधारने के लिए कोर्स दोहराना</h2>
+        <p>जब आप कोई कोर्स दोहराते हैं, तो आपकी मार्कशीट पुराना और नया दोनों ग्रेड दिखाती है, लेकिन CGPA की गणना में सिर्फ़ बेहतर ग्रेड इस्तेमाल होता है। दोहराने के लिए आपके HoD की अनुमति चाहिए, और दोहराकर पाए गए ग्रेड शीर्ष शैक्षणिक सम्मान और पुरस्कारों में नहीं गिने जाते, सिवाय Rector's Gold Medal के। अगर दोहराने के बाद भी कोर्स में फ़ेल हों, तो वह फिर भी एक ही F गिना जाता है।</p>
+        <p><strong>कैलकुलेटर टिप:</strong> दोहराए गए कोर्स के लिए सिर्फ़ बेहतर ग्रेड डालें।</p>
+      </section>
+
+      <section id="percentage">
+        <h2>NUST CGPA से प्रतिशत</h2>
+        <p>NUST Undergraduate Student Handbook में CGPA को प्रतिशत में बदलने का कोई आधिकारिक फ़ॉर्मूला नहीं है। जब प्रतिशत चाहिए, तो कई लोग (CGPA ÷ 4) × 100 इस्तेमाल करते हैं, जिससे 3.40 बनता है 85%। कंपनियाँ और यूनिवर्सिटी कभी-कभी अपने नियम इस्तेमाल करती हैं, इसलिए जिस संस्था में आवेदन कर रहे हैं वह क्या मानती है, यह जाँचें। प्रतिशत टैब यही आसान तरीका इस्तेमाल करता है।</p>
+      </section>
+
+      <section id="faq" class="faq">
+        <h2>NUST CGPA कैलकुलेटर के सामान्य प्रश्न</h2>
+
+        <details>
+          <summary><h3>NUST सापेक्ष ग्रेडिंग करता है या निरपेक्ष?</h3></summary>
+          <p>NUST 4.00 स्केल पर सापेक्ष ग्रेडिंग करता है, इसलिए आपका ग्रेड किसी तय प्रतिशत की बजाय आपकी क्लास की तुलना में आपके प्रदर्शन पर निर्भर करता है। इसीलिए NUST के लिए अंकों से ग्रेड की कोई तय तालिका नहीं है।</p>
+        </details>
+        <details>
+          <summary><h3>NUST में हर ग्रेड के कितने ग्रेड पॉइंट हैं?</h3></summary>
+          <p>A = 4.00, B+ = 3.50, B = 3.00, C+ = 2.50, C = 2.00, D+ = 1.50 और D = 1.00। F और XF (कम उपस्थिति के कारण F) 0.00 हैं। D+ और D सिर्फ़ अंडरग्रेजुएट छात्रों के लिए हैं।</p>
+        </details>
+        <details>
+          <summary><h3>क्या NUST में A+ या A- ग्रेड है?</h3></summary>
+          <p>नहीं। A (4.00) सबसे ऊँचा ग्रेड है और कोई माइनस ग्रेड नहीं है। B+ और C+, B और C से आधा पॉइंट ऊपर हैं।</p>
+        </details>
+        <details>
+          <summary><h3>NUST से ग्रेजुएट होने के लिए कितना CGPA चाहिए?</h3></summary>
+          <p>न्यूनतम 2.00 CGPA, या BBA, BS Economics, BS Public Administration, BS Mass Communication, BS Accounting &amp; Finance और BS Psychology के लिए 2.50। BE और BS छात्रों को लागू होने पर अंतिम वर्ष प्रोजेक्ट में कम से कम C भी चाहिए।</p>
+        </details>
+        <details>
+          <summary><h3>अगर मैं NUST में कोई कोर्स दोहराऊँ, तो कौन-सा ग्रेड गिना जाएगा?</h3></summary>
+          <p>आपकी मार्कशीट दोनों ग्रेड दिखाती है, लेकिन CGPA में सिर्फ़ बेहतर ग्रेड इस्तेमाल होता है। दोहराकर पाए गए ग्रेड शीर्ष शैक्षणिक पुरस्कारों में नहीं गिने जाते, सिवाय Rector’s Gold Medal के।</p>
+        </details>
+        <details>
+          <summary><h3>मैं अपने NUST CGPA को प्रतिशत में कैसे बदलूँ?</h3></summary>
+          <p>NUST की अंडरग्रेजुएट हैंडबुक कोई आधिकारिक फ़ॉर्मूला नहीं देती। आम तरीका (CGPA ÷ 4) × 100 है, जिससे 3.40 बनता है 85%, लेकिन जहाँ आवेदन कर रहे हैं वह कंपनी या यूनिवर्सिटी क्या मानती है, यह जाँचें।</p>
+        </details>
+        <details>
+          <summary><h3>लैब वाला कोर्स कैसे डालूँ?</h3></summary>
+          <p>उसे उसके कुल क्रेडिट के साथ एक विषय के रूप में डालें, जैसे 3+1 कोर्स के लिए 4। NUST थ्योरी और लैब के अंकों को मिलाकर पूरे कोर्स का एक ग्रेड देता है।</p>
+        </details>
+      </section>
+
+      <section id="sources">
+        <h2>स्रोत</h2>
+        <ul class="source-note">
+          <li><a href="https://seecs.nust.edu.pk/wp-content/uploads/2024/09/28-Aug-2024-Undergraduate-Handbook.pdf">NUST Undergraduate Student Handbook (28 अगस्त 2024 संस्करण)</a></li>
+        </ul>
+        <p class="source-note">अंतिम जाँच: 18 अक्टूबर 2026। यूनिवर्सिटी के नियम बदल सकते हैं, इसलिए हमेशा अपने परिणाम अपनी यूनिवर्सिटी के नवीनतम आधिकारिक नियमों से पुष्टि करें। हमारी <a href="terms.html">उपयोग की शर्तें</a> देखें।</p>
+      </section>
+    </article>
+
+    <section class="uni-section" aria-labelledby="uniTitle">
+      <h2 id="uniTitle">और CGPA और GPA कैलकुलेटर</h2>
+      <div class="uni-grid">
+        <a class="card uni-card" href="comsats-cgpa-calculator.html">
+          <span class="uni-badge">CUI</span>
+          <span class="uni-name">COMSATS CGPA और GPA कैलकुलेटर</span>
+          <span class="muted small">HEC मानदंड (Fall 2021+) · आधिकारिक % नियम</span>
+        </a>
+        <a class="card uni-card" href="vtu-cgpa-calculator.html">
+          <span class="uni-badge">VTU</span>
+          <span class="uni-name">VTU CGPA और GPA (SGPA) कैलकुलेटर</span>
+          <span class="muted small">2022 और 2021 स्कीम · CGPA से %</span>
+        </a>
+        <a class="card uni-card" href="index.html">
+          <span class="uni-badge">सभी</span>
+          <span class="uni-name">सामान्य CGPA कैलकुलेटर</span>
+          <span class="muted small">4.0, 5.0 और 10-पॉइंट स्केल</span>
+        </a>
+      </div>
+    </section>
+    <p class="back-top"><a href="#calculator">↑ कैलकुलेटर पर वापस जाएं</a></p>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p><strong>CGPA Calculator</strong> · छात्रों के लिए बनाया गया · © <span id="year">2026</span></p>
+        <p class="muted">परिणाम अनुमान हैं। आपकी यूनिवर्सिटी के आधिकारिक नियम हमेशा सबसे पहले हैं।</p>
+      </div>
+      <nav class="footer-nav" aria-label="फ़ुटर">
+        <a href="index.html">कैलकुलेटर</a>
+        <a href="about.html">हमारे बारे में</a>
+        <a href="privacy-policy.html">गोपनीयता नीति</a>
+        <a href="terms.html">उपयोग की शर्तें</a>
+        <a href="contact.html">संपर्क</a>
+      </nav>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>window.CGPA_PAGE = {
+    storageKey: 'cgpa-nust',
+    scales: {
+      nust: {
+        max: 4, label: 'NUST 4.0 scale', region: 'NUST undergraduate · relative grading', example: '3.50', modes: ['grade'],
+        grades: [['A', 4], ['B+', 3.5], ['B', 3], ['C+', 2.5], ['C', 2], ['D+', 1.5], ['D', 1], ['F', 0], ['XF', 0]]
+      }
+    },
+    conversions: {
+      nust: {
+        formula: 'Percentage ≈ (CGPA ÷ 4) × 100',
+        expr: c => '(' + c + ' ÷ 4) × 100',
+        calc: c => (c / 4) * 100,
+        example: 3.4,
+        note: 'The NUST Undergraduate Student Handbook does not give a CGPA-to-percentage formula. This simple method is widely used, but check which method the employer or university you are applying to accepts.'
+      }
+    }
+  };</script>
+  <script src="../i18n/hi.js" data-i18n=""></script>
+  <script src="../site.js"></script>
+  <script src="../script.js"></script>
+
+
+
+
+
+
+
+
+
+</body></html>

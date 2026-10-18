@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Built by tools/build-university-pages.js – edit that file, not this one -->
+  <title>حاسبة CGPA وGPA لجامعة NUST – نقاط التقدير الرسمية</title>
+  <meta name="description" content="حاسبة مجانية لمعدلات NUST التراكمية والفصلية وفق نقاط التقدير الرسمية في NUST Undergraduate Student Handbook، مع الحد الأدنى للمعدل وقواعد إعادة المقررات.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f6fb">
+  <link rel="canonical" href="https://cgpa-calculator-umber-two.vercel.app/ar/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="en" href="https://cgpa-calculator-umber-two.vercel.app/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="es" href="https://cgpa-calculator-umber-two.vercel.app/es/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="de" href="https://cgpa-calculator-umber-two.vercel.app/de/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="hi" href="https://cgpa-calculator-umber-two.vercel.app/hi/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ur" href="https://cgpa-calculator-umber-two.vercel.app/ur/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://cgpa-calculator-umber-two.vercel.app/zh/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="fr" href="https://cgpa-calculator-umber-two.vercel.app/fr/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ar" href="https://cgpa-calculator-umber-two.vercel.app/ar/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="bn" href="https://cgpa-calculator-umber-two.vercel.app/bn/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="pt" href="https://cgpa-calculator-umber-two.vercel.app/pt/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ru" href="https://cgpa-calculator-umber-two.vercel.app/ru/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="id" href="https://cgpa-calculator-umber-two.vercel.app/id/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ja" href="https://cgpa-calculator-umber-two.vercel.app/ja/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="mr" href="https://cgpa-calculator-umber-two.vercel.app/mr/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="te" href="https://cgpa-calculator-umber-two.vercel.app/te/nust-cgpa-calculator.html">
+  <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/nust-cgpa-calculator.html">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CGPA Calculator">
+  <meta property="og:locale" content="ar_AR">
+  <meta property="og:url" content="https://cgpa-calculator-umber-two.vercel.app/ar/nust-cgpa-calculator.html">
+  <meta property="og:title" content="حاسبة CGPA وGPA لجامعة NUST">
+  <meta property="og:description" content="حاسبة مجانية لمعدلات NUST التراكمية والفصلية وفق نقاط التقدير الرسمية في NUST Undergraduate Student Handbook، مع الحد الأدنى للمعدل وقواعد إعادة المقررات.">
+  <meta property="og:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <meta property="og:image:alt" content="حاسبة CGPA: بطاقة نتيجة تعرض معدلاً تراكمياً 3.37 من 4.00">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="حاسبة CGPA وGPA لجامعة NUST">
+  <meta name="twitter:description" content="حاسبة مجانية لمعدلات NUST التراكمية والفصلية وفق نقاط التقدير الرسمية في NUST Undergraduate Student Handbook، مع الحد الأدنى للمعدل وقواعد إعادة المقررات.">
+  <meta name="twitter:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "@id": "https://cgpa-calculator-umber-two.vercel.app/ar/nust-cgpa-calculator.html#app",
+    "name": "حاسبة CGPA وGPA لجامعة NUST",
+    "url": "https://cgpa-calculator-umber-two.vercel.app/ar/nust-cgpa-calculator.html",
+    "image": "https://cgpa-calculator-umber-two.vercel.app/og-image.jpg",
+    "description": "حاسبة مجانية لمعدلات NUST التراكمية والفصلية وفق نقاط التقدير الرسمية في NUST Undergraduate Student Handbook، مع الحد الأدنى للمعدل وقواعد إعادة المقررات.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "ar",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "هل تستخدم NUST التقدير النسبي أم المطلق؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "تستخدم NUST التقدير النسبي على مقياس 4.00، أي أن تقديرك يعتمد على أدائك مقارنة بدفعتك وليس على نسبة مئوية ثابتة. ولهذا لا يوجد جدول ثابت لتحويل الدرجات إلى تقديرات في NUST."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "كم نقطة يساوي كل تقدير في NUST؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A يساوي 4.00، وB+ ‏3.50، وB ‏3.00، وC+ ‏2.50، وC ‏2.00، وD+ ‏1.50، وD ‏1.00. أما F وXF (رسوب بسبب نقص الحضور) فيساويان 0.00. ويُستخدم D+ وD لطلاب البكالوريوس فقط."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "هل يوجد تقدير A+ أو A- في NUST؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "لا. A ‏(4.00) هو أعلى تقدير، ولا توجد تقديرات بعلامة الناقص. فـ B+ وC+ أعلى بنصف نقطة من B وC."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ما المعدل التراكمي المطلوب للتخرج من NUST؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "معدل تراكمي لا يقل عن 2.00، أو 2.50 لبرامج BBA وBS Economics وBS Public Administration وBS Mass Communication وBS Accounting & Finance وBS Psychology. ويحتاج طلاب BE وBS كذلك إلى تقدير C على الأقل في مشروع السنة الأخيرة حيثما ينطبق ذلك."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "إذا أعدت مقرراً في NUST فأي تقدير يُحتسب؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "يُظهر كشف درجاتك التقديرين، لكن لا يُستخدم في معدلك إلا الأفضل. والتقديرات الناتجة عن الإعادة لا تُحتسب لأعلى الجوائز الأكاديمية باستثناء Rector’s Gold Medal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "كيف أحوّل معدلي في NUST إلى نسبة مئوية؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "لا يقدّم دليل البكالوريوس في NUST معادلة رسمية. والطريقة الشائعة هي (CGPA ÷ 4) × 100، فيصبح 3.40 مساوياً 85%، لكن تحقق مما تقبله جهة العمل أو الجامعة التي تتقدم إليها."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "كيف أُدخل مقرراً فيه جزء عملي؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "أدخله كمادة واحدة بإجمالي ساعاتها، مثلاً 4 لمقرر 3+1. فـ NUST تجمع درجات الجزأين النظري والعملي في تقدير واحد للمقرر كله."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "CGPA Calculator",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/ar/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "حاسبة CGPA وGPA لجامعة NUST",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/ar/nust-cgpa-calculator.html"
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    /* Apply the saved (or system) theme before the page paints, so there is no flash */
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem('cgpa-theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="CGPA Calculator home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3z"></path>
+            <path d="M5 13.18v4C5 18.84 8.13 20 12 20s7-1.16 7-2.82v-4L12 17l-7-3.82z"></path>
+          </svg>
+        </span>
+        <span>CGPA Calculator</span>
+      </a>
+      <div class="header-actions">
+        <nav class="site-nav" id="siteNav" aria-label="Main menu">
+          <a href="index.html">Calculator</a>
+          <a href="about.html">About</a>
+          <a href="privacy-policy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <details class="lang-menu" id="langMenu">
+          <summary class="icon-btn lang-btn" aria-label="Choose language" title="Language">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"></path></svg>
+            <span class="lang-code" data-no-translate="">AR</span>
+          </summary>
+          <div class="lang-list" data-no-translate=""><a href="../nust-cgpa-calculator.html" hreflang="en" lang="en">English</a><a href="../es/nust-cgpa-calculator.html" hreflang="es" lang="es">Español</a><a href="../de/nust-cgpa-calculator.html" hreflang="de" lang="de">Deutsch</a><a href="../hi/nust-cgpa-calculator.html" hreflang="hi" lang="hi">हिन्दी</a><a href="../ur/nust-cgpa-calculator.html" hreflang="ur" lang="ur">اردو</a><a href="../zh/nust-cgpa-calculator.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="../fr/nust-cgpa-calculator.html" hreflang="fr" lang="fr">Français</a><a href="nust-cgpa-calculator.html" hreflang="ar" lang="ar" aria-current="true">العربية</a><a href="../bn/nust-cgpa-calculator.html" hreflang="bn" lang="bn">বাংলা</a><a href="../pt/nust-cgpa-calculator.html" hreflang="pt" lang="pt">Português</a><a href="../ru/nust-cgpa-calculator.html" hreflang="ru" lang="ru">Русский</a><a href="../id/nust-cgpa-calculator.html" hreflang="id" lang="id">Bahasa Indonesia</a><a href="../ja/nust-cgpa-calculator.html" hreflang="ja" lang="ja">日本語</a><a href="../mr/nust-cgpa-calculator.html" hreflang="mr" lang="mr">मराठी</a><a href="../te/nust-cgpa-calculator.html" hreflang="te" lang="te">తెలుగు</a></div>
+        </details>
+        <button type="button" id="themeToggle" class="icon-btn" aria-label="Switch to dark mode" title="Light / dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+        </button>
+        <button type="button" id="menuToggle" class="icon-btn menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
+          <svg class="icon-menu" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <nav class="breadcrumb" aria-label="مسار التنقل"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">NUST</span></nav>
+      <h1>حاسبة CGPA وGPA لجامعة NUST</h1>
+      <p>احسب معدلك الفصلي والتراكمي بنقاط التقدير الرسمية لمرحلة البكالوريوس في NUST ‏(A = 4.00، B+ = 3.50، B = 3.00 وهكذا). <a href="#guide" class="hero-link">كيف يتم التقدير في NUST ↓</a></p>
+    </section>
+
+    <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
+      <div class="scale-text">
+        <p id="scaleLabel" class="scale-title">نظام التقدير: بكالوريوس NUST</p>
+        <p class="muted small">تستخدم NUST التقدير النسبي، لذا أدخل التقدير بالحرف كما يظهر في نتيجتك. نقاط التقدير مأخوذة من NUST Undergraduate Student Handbook.</p>
+      </div>
+      <select id="scaleSelect" hidden="" aria-hidden="true" tabindex="-1"><option value="nust">NUST</option></select>
+      <button type="button" id="resetAll" class="btn btn-outline danger-hover">إعادة ضبط الكل</button>
+    </section>
+    <p class="print-only" id="printDate"></p>
+
+    <div class="layout">
+
+      <!-- ================= Calculators ================= -->
+      <div class="main-col">
+
+        <div class="tabs" role="tablist" aria-label="الحاسبات">
+          <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">GPA <small>فصل واحد</small></button>
+          <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>كل الفصول</small></button>
+          <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">الهدف <small>خطّط مسبقاً</small></button>
+          <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">النسبة المئوية <small>محوّل</small></button>
+        </div>
+
+        <!-- ---------- TAB 1: GPA ---------- -->
+        <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
+          <div class="panel-head">
+            <div>
+              <h2>المعدل الفصلي GPA</h2>
+              <p class="muted small">أضف كل مادة مع ساعاتها المعتمدة وتقديرها.</p>
+            </div>
+
+          </div>
+
+          <div class="rows-head subject-cols" aria-hidden="true">
+            <span>المادة (اختياري)</span><span>الساعات</span><span id="gradeHead">التقدير</span><span></span>
+          </div>
+          <div id="subjectList" class="row-list mode-grade"></div>
+
+          <button type="button" id="addSubject" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            إضافة مادة
+          </button>
+
+          <div class="result" aria-live="polite">
+            <div class="result-label">معدلك الفصلي GPA</div>
+            <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="gpaMeter"></span></div>
+            <div class="result-cheer" id="gpaCheer"></div>
+            <div class="result-sub" id="gpaSub">أضف موادك لترى معدلك GPA.</div>
+            <div class="result-note" id="gpaNote" hidden=""></div>
+          </div>
+
+          <div class="actions">
+            <button type="button" id="sendToCgpa" class="btn btn-soft">أضف هذا المعدل إلى معدلي التراكمي ←</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="gpa">نسخ النتيجة</button>
+            <button type="button" class="btn btn-outline js-print" title="في نافذة الطباعة اختر «حفظ بتنسيق PDF» لتنزيل ملف PDF">طباعة / PDF</button>
+            <button type="button" id="resetGpa" class="btn btn-quiet">مسح</button>
+          </div>
+
+          <details class="howto">
+            <summary>كيف يُحسب GPA؟</summary>
+            <p class="formula-line">GPA = (مجموع الساعات المعتمدة × نقاط التقدير) ÷ (مجموع الساعات المعتمدة)</p>
+            <p class="muted small">مثال: الرياضيات 3 ساعات بنقاط 4.00، والإنجليزية ساعتان بنقاط 3.00 ← (3×4 + 2×3) ÷ (3+2) = 18 ÷ 5 = <strong>3.60</strong></p>
+          </details>
+        </section>
+
+        <!-- ---------- TAB 2: CGPA ---------- -->
+        <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>المعدل التراكمي CGPA</h2>
+              <p class="muted small">أضف معدل كل فصل (SGPA) وإجمالي ساعاته المعتمدة.</p>
+            </div>
+          </div>
+
+          <div class="rows-head semester-cols" aria-hidden="true">
+            <span>الفصل</span><span>GPA / SGPA</span><span>الساعات المعتمدة</span><span></span>
+          </div>
+          <div id="semesterList" class="row-list"></div>
+
+          <button type="button" id="addSemester" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            إضافة فصل
+          </button>
+
+          <div class="result" aria-live="polite">
+            <div class="result-label">معدلك التراكمي CGPA</div>
+            <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="cgpaMeter"></span></div>
+            <div class="result-cheer" id="cgpaCheer"></div>
+            <div class="result-sub" id="cgpaSub">أضف فصولك لترى معدلك التراكمي.</div>
+            <div class="result-note" id="cgpaNote" hidden=""></div>
+          </div>
+
+          <div class="actions">
+            <button type="button" id="sendToPct" class="btn btn-soft">حوّل هذا المعدل إلى % ←</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">نسخ النتيجة</button>
+            <button type="button" class="btn btn-outline js-print" title="في نافذة الطباعة اختر «حفظ بتنسيق PDF» لتنزيل ملف PDF">طباعة / PDF</button>
+            <button type="button" id="resetCgpa" class="btn btn-quiet">مسح</button>
+          </div>
+
+          <details class="howto">
+            <summary>كيف يُحسب CGPA؟</summary>
+            <p class="formula-line">CGPA = (مجموع معدل الفصل × ساعات الفصل) ÷ (إجمالي الساعات)</p>
+            <p class="muted small">الفصول ذات الساعات الأكثر لها وزن أكبر. مثال: 3.50 مع 18 ساعة و3.00 مع 15 ساعة ← (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
+          </details>
+        </section>
+
+        <!-- ---------- TAB 3: Target CGPA ---------- -->
+        <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>المعدل التراكمي المستهدف</h2>
+              <p class="muted small">اعرف المعدل الذي تحتاجه في الفصول القادمة لتصل إلى هدفك.</p>
+            </div>
+          </div>
+
+          <div class="target-grid">
+            <div class="field">
+              <label class="field-label" for="tCurrent">المعدل التراكمي الحالي</label>
+              <input type="text" id="tCurrent" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tCurrentMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tDone">الساعات المنجزة</label>
+              <input type="text" id="tDone" inputmode="decimal" autocomplete="off" placeholder="e.g. 66">
+              <p class="row-msg" id="tDoneMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tTarget">المعدل التراكمي المستهدف</label>
+              <input type="text" id="tTarget" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tTargetMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tLeft">الساعات المتبقية</label>
+              <input type="text" id="tLeft" inputmode="decimal" autocomplete="off" placeholder="e.g. 70">
+              <p class="row-msg" id="tLeftMsg"></p>
+            </div>
+          </div>
+
+          <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">املأ من تبويب CGPA</button>
+
+          <div class="result" aria-live="polite">
+            <div class="result-label">المعدل المطلوب في كل فصل</div>
+            <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="tgtMeter"></span></div>
+            <div class="result-cheer" id="tgtCheer"></div>
+            <div class="result-sub" id="tgtSub">املأ الحقول الأربعة أعلاه لترى المعدل الذي تحتاجه.</div>
+            <div class="result-note" id="tgtNote" hidden=""></div>
+          </div>
+
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="target">نسخ النتيجة</button>
+            <button type="button" class="btn btn-outline js-print" title="في نافذة الطباعة اختر «حفظ بتنسيق PDF» لتنزيل ملف PDF">طباعة / PDF</button>
+            <button type="button" id="resetTarget" class="btn btn-quiet">مسح</button>
+          </div>
+
+          <details class="howto">
+            <summary>كيف يُحسب ذلك؟</summary>
+            <p class="formula-line">المعدل المطلوب = (الهدف × إجمالي الساعات − الحالي × الساعات المنجزة) ÷ الساعات المتبقية</p>
+            <p class="muted small">مثال: معدل حالي 3.00 بعد 60 ساعة، والهدف 3.30، والمتبقي 60 ساعة ← (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
+          </details>
+        </section>
+
+        <!-- ---------- TAB 4: Percentage ---------- -->
+        <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>تحويل CGPA إلى نسبة مئوية</h2>
+              <p class="muted small">اكتب معدلك التراكمي واختر مقياسه.</p>
+            </div>
+          </div>
+
+          <div class="conv-grid">
+            <div class="field">
+              <label class="field-label always" for="convInput">معدلك التراكمي CGPA</label>
+              <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
+              <p class="row-msg" id="convMsg"></p>
+            </div>
+
+          </div>
+
+          <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">استخدم معدلي من تبويب CGPA</button>
+
+          <div class="result" aria-live="polite">
+            <div class="result-label">النسبة المئوية</div>
+            <div class="result-value"><span id="pctValue">—</span></div>
+            <div class="meter" aria-hidden="true"><span id="pctMeter"></span></div>
+            <div class="result-cheer" id="pctCheer"></div>
+            <div class="result-sub" id="pctSub">أدخل معدلك التراكمي لترى النسبة المئوية.</div>
+          </div>
+
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="pct">نسخ النتيجة</button>
+            <button type="button" class="btn btn-outline js-print" title="في نافذة الطباعة اختر «حفظ بتنسيق PDF» لتنزيل ملف PDF">طباعة / PDF</button>
+          </div>
+
+          <div class="formula">
+            <div class="formula-title">المعادلة المستخدمة</div>
+            <p class="formula-line" id="formulaMain"></p>
+            <p class="formula-work" id="formulaWork"></p>
+            <p class="muted small" id="formulaNote"></p>
+          </div>
+        </section>
+      </div>
+
+      <!-- ================= Sidebar: grade table ================= -->
+      <aside class="sidebar">
+        <section class="card" aria-labelledby="tableTitle">
+          <h2 id="tableTitle" class="side-title">نقاط التقدير</h2>
+          <p class="muted small" id="tableSubtitle"></p>
+          <div class="table-wrap">
+            <table class="grade-table">
+              <thead>
+                <tr><th scope="col">التقدير</th><th scope="col" class="num">النقاط</th><th scope="col" class="num" id="marksCol">الدرجات %</th></tr>
+              </thead>
+              <tbody id="gradeTableBody"></tbody>
+            </table>
+          </div>
+          <p class="muted tiny">تختلف نطاقات الدرجات من جامعة لأخرى. راجع دائماً لائحة التقديرات في جامعتك.</p>
+        </section>
+
+
+        <section class="card tips">
+          <h2 class="side-title">حقائق سريعة عن NUST</h2>
+          <ul>
+            <li>تستخدم NUST <strong>التقدير النسبي</strong>: تقديرك يعتمد على مستوى دفعتك لا على درجات ثابتة.</li>
+            <li>يلزم معدل تراكمي لا يقل عن <strong>2.00</strong> للتخرج (<strong>2.50</strong> لبرنامج BBA وبعض برامج BS).</li>
+            <li>إذا أعدت مقرراً فلا يُحتسب في معدلك إلا <strong>التقدير الأفضل</strong>.</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+
+    <article class="guide" id="guide">
+
+      <section id="how-it-works">
+        <h2>كيف يتم التقدير في NUST</h2>
+        <p>تستخدم NUST التقدير النسبي على مقياس 4.00. وبحسب NUST Undergraduate Student Handbook: <q>The University follows a relative grading system on a scale of 1.00 to 4.00 points.</q> («تتبع الجامعة نظام تقدير نسبي على مقياس من 1.00 إلى 4.00 نقطة.») أي أن تقديرك بالحرف يعتمد على أدائك مقارنة بدفعتك، لا على نسبة مئوية ثابتة. فقد تكون 82% تقدير A في امتحان صعب وB+ في امتحان أسهل.</p>
+        <p>لهذا لا توجد طريقة موثوقة لتحويل درجات NUST مباشرة إلى تقديرات، ولذلك تطلب هذه الحاسبة التقدير بالحرف من نتيجتك. وبمجرد معرفة الحروف يصبح حساب المعدل ثابتاً وبسيطاً.</p>
+        <h3>المقررات النظرية والعملية</h3>
+        <p>في المقرر الذي يضم ساعات نظرية وعملية، تجمع NUST أولاً النسبتين موزونتين بالساعات، ثم تمنح المقرر كله تقديراً واحداً. ومثال الدليل نفسه هو الفيزياء بـ 3 ساعات نظرية بنسبة 70% وساعة عملية بنسبة 90%، فيكون الناتج (70 × 3 + 90 × 1) ÷ 4 = 75%. تحصل على تقدير واحد للساعات الأربع، فأدخله في الحاسبة كمادة واحدة من 4 ساعات.</p>
+      </section>
+
+      <section id="grade-points">
+        <h2>جدول نقاط التقدير في NUST</h2>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">التقدير</th><th scope="col" class="num">نقاط التقدير</th><th scope="col">ملاحظات</th></tr></thead>
+            <tbody>
+              <tr><td>A</td><td class="num">4.00</td><td>أعلى تقدير</td></tr>
+              <tr><td>B+</td><td class="num">3.50</td><td></td></tr>
+              <tr><td>B</td><td class="num">3.00</td><td></td></tr>
+              <tr><td>C+</td><td class="num">2.50</td><td></td></tr>
+              <tr><td>C</td><td class="num">2.00</td><td></td></tr>
+              <tr><td>D+</td><td class="num">1.50</td><td>للبكالوريوس فقط</td></tr>
+              <tr><td>D</td><td class="num">1.00</td><td>للبكالوريوس فقط؛ أدنى تقدير تُكتسب به ساعات المقرر</td></tr>
+              <tr><td>F</td><td class="num">0.00</td><td>راسب</td></tr>
+              <tr><td>XF</td><td class="num">0.00</td><td>F بسبب نقص الحضور</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>التقديرات I (غير مكتمل) وW (منسحب) وQ (مؤهَّل) وT (معادلة) لا تحمل نقاطاً. ولاحظ أن NUST لا تستخدم A+ ولا التقديرات بعلامة الناقص: فـ B+ وC+ أعلى بنصف نقطة من B وC.</p>
+      </section>
+
+      <section id="example">
+        <h2>كيف تحسب معدلك في NUST: مثال محلول</h2>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">المقرر</th><th scope="col" class="num">الساعات</th><th scope="col">التقدير</th><th scope="col" class="num">النقاط</th><th scope="col" class="num">الساعات × النقاط</th></tr></thead>
+            <tbody>
+              <tr><td>التفاضل والتكامل متعدد المتغيرات</td><td class="num">3</td><td>B+</td><td class="num">3.50</td><td class="num">10.50</td></tr>
+              <tr><td>الفيزياء التطبيقية (3+1)</td><td class="num">4</td><td>B</td><td class="num">3.00</td><td class="num">12.00</td></tr>
+              <tr><td>أساسيات البرمجة (3+1)</td><td class="num">4</td><td>A</td><td class="num">4.00</td><td class="num">16.00</td></tr>
+              <tr><td>الإنجليزية الوظيفية</td><td class="num">3</td><td>C+</td><td class="num">2.50</td><td class="num">7.50</td></tr>
+              <tr><td>الدراسات الإسلامية</td><td class="num">2</td><td>A</td><td class="num">4.00</td><td class="num">8.00</td></tr>
+            </tbody>
+            <tfoot><tr><th scope="row">المجموع</th><td class="num">16</td><td></td><td></td><td class="num">54.00</td></tr></tfoot>
+          </table>
+        </div>
+        <p class="formula-block">GPA = 54.00 ÷ 16 = 3.375 ≈ 3.38</p>
+        <p>يُحسب معدلك التراكمي بالطريقة نفسها عبر كل الفصول: اجمع الساعات × النقاط لكل مقرر درسته، واقسم على إجمالي ساعاتك. تبويب CGPA يفعل ذلك من معدلاتك الفصلية.</p>
+      </section>
+
+      <section id="minimum-cgpa">
+        <h2>الحد الأدنى للمعدل والقصور الأكاديمي في NUST</h2>
+        <ul>
+          <li><strong>للتخرج</strong> تحتاج إلى معدل تراكمي لا يقل عن 2.00، أو 2.50 لبرامج BBA وBS Economics وBS Public Administration وBS Mass Communication وBS Accounting &amp; Finance وBS Psychology.</li>
+          <li><strong>طلاب BE وBS</strong> يحتاجون كذلك إلى تقدير C على الأقل في مشروع السنة الأخيرة (التصميم) حيثما ينطبق ذلك.</li>
+          <li><strong>تُعد في حالة قصور أكاديمي</strong> إذا حصلت على F أو XF في أي مقرر، أو معدل فصلي أقل من 2.00، أو معدل تراكمي أقل من 2.00، أو تقدير I (غير مكتمل)، أو أقل من C في مشروع السنة الأخيرة.</li>
+        </ul>
+        <p>إذا انخفض معدلك التراكمي عن 2.00، يعرض لك تبويب الهدف المعدل الذي تحتاجه في الفصول المتبقية لتعود فوقه.</p>
+      </section>
+
+      <section id="repeat">
+        <h2>إعادة مقرر لتحسين معدلك التراكمي</h2>
+        <p>عند إعادة مقرر يُظهر كشف درجاتك التقدير القديم والجديد، لكن لا يُستخدم في حساب معدلك إلا الأفضل. وتحتاج الإعادة إلى إذن رئيس القسم (HoD)، والتقديرات الناتجة عن الإعادة لا تُحتسب لأعلى الأوسمة والجوائز الأكاديمية باستثناء Rector's Gold Medal. وإذا رسبت مجدداً في مقرر بعد إعادته فلا يُحتسب إلا F واحد.</p>
+        <p><strong>نصيحة للحاسبة:</strong> في المقرر المعاد أدخل التقدير الأفضل فقط.</p>
+      </section>
+
+      <section id="percentage">
+        <h2>تحويل معدل NUST إلى نسبة مئوية</h2>
+        <p>لا يتضمن NUST Undergraduate Student Handbook معادلة رسمية لتحويل المعدل التراكمي إلى نسبة مئوية. وعند الحاجة إلى نسبة يستخدم كثيرون (CGPA ÷ 4) × 100، فيصبح 3.40 مساوياً 85%. وقد يكون لأصحاب العمل والجامعات قواعدهم الخاصة، فتحقق مما تقبله الجهة التي تتقدم إليها. يستخدم تبويب النسبة المئوية هذه الطريقة البسيطة.</p>
+      </section>
+
+      <section id="faq" class="faq">
+        <h2>الأسئلة الشائعة عن حاسبة معدل NUST</h2>
+
+        <details>
+          <summary><h3>هل تستخدم NUST التقدير النسبي أم المطلق؟</h3></summary>
+          <p>تستخدم NUST التقدير النسبي على مقياس 4.00، أي أن تقديرك يعتمد على أدائك مقارنة بدفعتك وليس على نسبة مئوية ثابتة. ولهذا لا يوجد جدول ثابت لتحويل الدرجات إلى تقديرات في NUST.</p>
+        </details>
+        <details>
+          <summary><h3>كم نقطة يساوي كل تقدير في NUST؟</h3></summary>
+          <p>A يساوي 4.00، وB+ ‏3.50، وB ‏3.00، وC+ ‏2.50، وC ‏2.00، وD+ ‏1.50، وD ‏1.00. أما F وXF (رسوب بسبب نقص الحضور) فيساويان 0.00. ويُستخدم D+ وD لطلاب البكالوريوس فقط.</p>
+        </details>
+        <details>
+          <summary><h3>هل يوجد تقدير A+ أو A- في NUST؟</h3></summary>
+          <p>لا. A ‏(4.00) هو أعلى تقدير، ولا توجد تقديرات بعلامة الناقص. فـ B+ وC+ أعلى بنصف نقطة من B وC.</p>
+        </details>
+        <details>
+          <summary><h3>ما المعدل التراكمي المطلوب للتخرج من NUST؟</h3></summary>
+          <p>معدل تراكمي لا يقل عن 2.00، أو 2.50 لبرامج BBA وBS Economics وBS Public Administration وBS Mass Communication وBS Accounting &amp; Finance وBS Psychology. ويحتاج طلاب BE وBS كذلك إلى تقدير C على الأقل في مشروع السنة الأخيرة حيثما ينطبق ذلك.</p>
+        </details>
+        <details>
+          <summary><h3>إذا أعدت مقرراً في NUST فأي تقدير يُحتسب؟</h3></summary>
+          <p>يُظهر كشف درجاتك التقديرين، لكن لا يُستخدم في معدلك إلا الأفضل. والتقديرات الناتجة عن الإعادة لا تُحتسب لأعلى الجوائز الأكاديمية باستثناء Rector’s Gold Medal.</p>
+        </details>
+        <details>
+          <summary><h3>كيف أحوّل معدلي في NUST إلى نسبة مئوية؟</h3></summary>
+          <p>لا يقدّم دليل البكالوريوس في NUST معادلة رسمية. والطريقة الشائعة هي (CGPA ÷ 4) × 100، فيصبح 3.40 مساوياً 85%، لكن تحقق مما تقبله جهة العمل أو الجامعة التي تتقدم إليها.</p>
+        </details>
+        <details>
+          <summary><h3>كيف أُدخل مقرراً فيه جزء عملي؟</h3></summary>
+          <p>أدخله كمادة واحدة بإجمالي ساعاتها، مثلاً 4 لمقرر 3+1. فـ NUST تجمع درجات الجزأين النظري والعملي في تقدير واحد للمقرر كله.</p>
+        </details>
+      </section>
+
+      <section id="sources">
+        <h2>المصادر</h2>
+        <ul class="source-note">
+          <li><a href="https://seecs.nust.edu.pk/wp-content/uploads/2024/09/28-Aug-2024-Undergraduate-Handbook.pdf">NUST Undergraduate Student Handbook (إصدار 28 أغسطس 2024)</a></li>
+        </ul>
+        <p class="source-note">آخر مراجعة: 18 أكتوبر 2026. قد تتغير قواعد الجامعات، لذا تحقق دائماً من نتائجك وفق أحدث القواعد الرسمية لجامعتك. راجع <a href="terms.html">شروط الاستخدام</a>.</p>
+      </section>
+    </article>
+
+    <section class="uni-section" aria-labelledby="uniTitle">
+      <h2 id="uniTitle">المزيد من حاسبات CGPA وGPA</h2>
+      <div class="uni-grid">
+        <a class="card uni-card" href="comsats-cgpa-calculator.html">
+          <span class="uni-badge">CUI</span>
+          <span class="uni-name">حاسبة CGPA وGPA لجامعة COMSATS</span>
+          <span class="muted small">معايير HEC (خريف 2021 فما بعد) · قاعدة % الرسمية</span>
+        </a>
+        <a class="card uni-card" href="vtu-cgpa-calculator.html">
+          <span class="uni-badge">VTU</span>
+          <span class="uni-name">حاسبة CGPA وGPA ‏(SGPA) لجامعة VTU</span>
+          <span class="muted small">نظاما 2022 و2021 · تحويل CGPA إلى %</span>
+        </a>
+        <a class="card uni-card" href="index.html">
+          <span class="uni-badge">الكل</span>
+          <span class="uni-name">حاسبة CGPA العامة</span>
+          <span class="muted small">مقاييس 4.0 و5.0 و10 نقاط</span>
+        </a>
+      </div>
+    </section>
+    <p class="back-top"><a href="#calculator">↑ العودة إلى الحاسبة</a></p>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p><strong>CGPA Calculator</strong> · صُنعت للطلاب · © <span id="year">2026</span></p>
+        <p class="muted">النتائج تقديرية. قواعد جامعتك الرسمية هي المرجع دائماً.</p>
+      </div>
+      <nav class="footer-nav" aria-label="تذييل الصفحة">
+        <a href="index.html">الحاسبة</a>
+        <a href="about.html">من نحن</a>
+        <a href="privacy-policy.html">سياسة الخصوصية</a>
+        <a href="terms.html">شروط الاستخدام</a>
+        <a href="contact.html">تواصل معنا</a>
+      </nav>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>window.CGPA_PAGE = {
+    storageKey: 'cgpa-nust',
+    scales: {
+      nust: {
+        max: 4, label: 'NUST 4.0 scale', region: 'NUST undergraduate · relative grading', example: '3.50', modes: ['grade'],
+        grades: [['A', 4], ['B+', 3.5], ['B', 3], ['C+', 2.5], ['C', 2], ['D+', 1.5], ['D', 1], ['F', 0], ['XF', 0]]
+      }
+    },
+    conversions: {
+      nust: {
+        formula: 'Percentage ≈ (CGPA ÷ 4) × 100',
+        expr: c => '(' + c + ' ÷ 4) × 100',
+        calc: c => (c / 4) * 100,
+        example: 3.4,
+        note: 'The NUST Undergraduate Student Handbook does not give a CGPA-to-percentage formula. This simple method is widely used, but check which method the employer or university you are applying to accepts.'
+      }
+    }
+  };</script>
+  <script src="../i18n/ar.js" data-i18n=""></script>
+  <script src="../site.js"></script>
+  <script src="../script.js"></script>
+
+
+
+
+
+
+
+
+
+</body></html>

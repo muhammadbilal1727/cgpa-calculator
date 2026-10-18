@@ -6,6 +6,8 @@
 
   const THEME_KEY = 'cgpa-theme';
   const root = document.documentElement;
+  const I18N = window.CGPA_I18N || {}; // set by i18n/<lang>.js on translated pages
+  const t = text => I18N[text] || text;
 
   /* ---------- Theme ---------- */
   const themeBtn = document.getElementById('themeToggle');
@@ -13,7 +15,7 @@
 
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
-    themeBtn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+    themeBtn.setAttribute('aria-label', t(theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'));
     if (themeMeta) themeMeta.setAttribute('content', theme === 'dark' ? '#0d1020' : '#f4f6fb');
   }
   themeBtn.addEventListener('click', function () {
@@ -30,7 +32,7 @@
   function setMenu(open) {
     nav.classList.toggle('open', open);
     menuBtn.setAttribute('aria-expanded', String(open));
-    menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    menuBtn.setAttribute('aria-label', t(open ? 'Close menu' : 'Open menu'));
   }
   menuBtn.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
   nav.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
@@ -40,6 +42,13 @@
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && nav.classList.contains('open')) { setMenu(false); menuBtn.focus(); }
   });
+
+  /* ---------- Language menu: close when tapping elsewhere ---------- */
+  const langMenu = document.getElementById('langMenu');
+  if (langMenu) {
+    document.addEventListener('click', e => { if (langMenu.open && !langMenu.contains(e.target)) langMenu.open = false; });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && langMenu.open) langMenu.open = false; });
+  }
 
   /* ---------- Footer year ---------- */
   const year = document.getElementById('year');
