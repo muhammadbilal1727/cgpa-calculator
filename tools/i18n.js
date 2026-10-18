@@ -30,6 +30,8 @@ const PAGES = ['index.html', ...UNI_PAGES, 'about.html', 'privacy-policy.html', 
 const UNI_DATA = ['tools/build-university-pages.js', ...fs.readdirSync(path.join(ROOT, 'tools', 'universities')).map(f => 'tools/universities/' + f)];
 const NAV_PAGES = ['index.html', 'about.html', 'privacy-policy.html', 'terms.html', 'contact.html'];
 
+// Flag shown next to each language in the language menu
+const FLAGS = {"en":"🇬🇧","es":"🇪🇸","de":"🇩🇪","hi":"🇮🇳","ur":"🇵🇰","zh":"🇨🇳","fr":"🇫🇷","ar":"🇸🇦","bn":"🇧🇩","pt":"🇧🇷","ru":"🇷🇺","id":"🇮🇩","ja":"🇯🇵","mr":"🇮🇳","te":"🇮🇳"};
 // code, folder, html lang, hreflang, native name, short label, og:locale, right-to-left
 const LANGS = [
   ['en', '', 'en', 'en', 'English', 'EN', 'en_US'],
@@ -47,7 +49,7 @@ const LANGS = [
   ['ja', 'ja', 'ja', 'ja', '日本語', 'JA', 'ja_JP'],
   ['mr', 'mr', 'mr', 'mr', 'मराठी', 'MR', 'mr_IN'],
   ['te', 'te', 'te', 'te', 'తెలుగు', 'TE', 'te_IN']
-].map(([code, dir, htmlLang, hreflang, name, short, locale, rtl]) => ({ code, dir, htmlLang, hreflang, name, short, locale, rtl: !!rtl }));
+].map(([code, dir, htmlLang, hreflang, name, short, locale, rtl]) => ({ code, dir, htmlLang, hreflang, name, short, locale, rtl: !!rtl, flag: FLAGS[code] }));
 
 /* ---------- Chrome (DevTools protocol) ---------- */
 async function openChrome() {
@@ -168,7 +170,7 @@ function finishPage(o) {
   // Language menu
   const list = document.querySelector('.lang-list');
   if (list) {
-    list.innerHTML = o.langs.map(l => `<a href="${l.href}" hreflang="${l.hreflang}" lang="${l.htmlLang}"${l.current ? ' aria-current="true"' : ''}>${l.name}</a>`).join('');
+    list.innerHTML = o.langs.map(l => `<a href="${l.href}" hreflang="${l.hreflang}" lang="${l.htmlLang}"${l.current ? ' aria-current="true"' : ''}><span class="lang-flag" aria-hidden="true">${l.flag}</span> ${l.name}</a>`).join('');
     document.querySelector('.lang-code').textContent = o.short;
   }
 
@@ -302,12 +304,12 @@ async function build() {
       await chrome.load(p);
       if (tr) await chrome.run(pageSegments, { tr });
       const html = await chrome.run(finishPage, {
-        page: p, htmlLang: lang.htmlLang, rtl: lang.rtl, short: lang.short, locale: lang.locale,
+        page: p, flag: lang.flag, htmlLang: lang.htmlLang, rtl: lang.rtl, short: lang.short, locale: lang.locale,
         prefix: !!lang.dir, header: NAV_PAGES.includes(p) || PAGES.includes(p) ? header : null,
         canonical: urlOf(lang, p), xDefault: urlOf(LANGS[0], p), home: urlOf(lang, 'index.html'),
         i18nScript: tr ? `../i18n/${lang.code}.js` : null,
         langs: available.map(l => ({
-          hreflang: l.hreflang, htmlLang: l.htmlLang, name: l.name, current: l.code === lang.code, abs: urlOf(l, p),
+          hreflang: l.hreflang, htmlLang: l.htmlLang, name: l.name, flag: l.flag, current: l.code === lang.code, abs: urlOf(l, p),
           href: (lang.dir ? (l.dir === lang.dir ? '' : '../' + (l.dir ? l.dir + '/' : '')) : (l.dir ? l.dir + '/' : '')) + p
         }))
       });

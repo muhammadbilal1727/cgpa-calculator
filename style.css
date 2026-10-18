@@ -811,3 +811,4 @@ h1, h2, h3, p, li, .scale-title, .uni-name, .tab, .btn { overflow-wrap: break-wo
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+.lang-flag { display: inline-block; min-width: 1.4em; }
