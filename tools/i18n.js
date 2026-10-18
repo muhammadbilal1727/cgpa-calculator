@@ -171,7 +171,12 @@ function finishPage(o) {
   }
 
   // Canonical, og:url, og:locale and hreflang alternates
-  head.querySelectorAll('link[rel="alternate"][hreflang]').forEach(l => l.remove());
+  head.querySelectorAll('link[rel="alternate"][hreflang]').forEach(l => {
+    // Drop the whitespace before each old link too, so rebuilds don't pile up blank lines
+    const ws = l.previousSibling;
+    if (ws && ws.nodeType === 3 && !ws.textContent.trim()) ws.remove();
+    l.remove();
+  });
   const setLink = (rel, href) => { let l = head.querySelector(`link[rel="${rel}"]`); if (!l) { l = document.createElement('link'); l.rel = rel; head.appendChild(l); } l.href = href; };
   setLink('canonical', o.canonical);
   const canonical = head.querySelector('link[rel="canonical"]');
@@ -208,6 +213,10 @@ function finishPage(o) {
     const s = document.createElement('script'); s.src = o.i18nScript; s.setAttribute('data-i18n', '');
     first.before(s); first.before(document.createTextNode('\n  '));
   }
+  // The newline after </html> is parsed into <body> on the next build; trim it so lines don't pile up
+  let tail;
+  while ((tail = document.body.lastChild) && tail.nodeType === 3 && !tail.textContent.trim()) tail.remove();
+  document.body.append('\n');
   return '<!DOCTYPE html>\n' + document.documentElement.outerHTML + '\n';
 }
 
