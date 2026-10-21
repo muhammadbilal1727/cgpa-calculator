@@ -374,5 +374,13 @@ window.CGPA_I18N = {
  "Very demanding, but possible": "بہت مشکل، مگر ممکن",
  "Achievable with steady work": "مسلسل محنت سے ممکن",
  "Comfortably within reach": "آسانی سے ممکن",
- "Challenging but realistic": "مشکل، مگر قابلِ حصول"
+ "Challenging but realistic": "مشکل، مگر قابلِ حصول",
+ "Ghazi University 4.0 scale": "غازی یونیورسٹی 4.0 اسکیل",
+ "Ghazi University DG Khan · first-degree programmes": "غازی یونیورسٹی ڈی جی خان · فرسٹ ڈگری پروگرام",
+ "The Ghazi University Statutes and Regulations 2021 do not give a CGPA-to-percentage formula. This tab reads the official quality point table backwards to show the average marks your CGPA stands for. If an employer or university asks for a percentage, check which method they accept.": "غازی یونیورسٹی Statutes and Regulations 2021 میں CGPA سے فیصد کا کوئی فارمولا نہیں دیا گیا۔ یہ ٹیب سرکاری کوالٹی پوائنٹ جدول کو الٹا پڑھ کر بتاتا ہے کہ آپ کا CGPA اوسطاً کتنے نمبروں کے برابر ہے۔ اگر کوئی آجر یا یونیورسٹی فیصد مانگے تو معلوم کریں کہ وہ کون سا طریقہ مانتے ہیں۔",
+ "80% or more": "80% یا اس سے زیادہ",
+ "CGPA 4.00 means an A in every course, which is 80% or more": "CGPA 4.00 کا مطلب ہے ہر کورس میں A، یعنی 80% یا اس سے زیادہ",
+ "Below 40%": "40% سے کم",
+ "CGPA {cgpa} is below 1.00, which means below 40%": "CGPA {cgpa} 1.00 سے کم ہے، یعنی 40% سے کم",
+ "Average marks from the GU quality point table, read backwards": "GU کوالٹی پوائنٹ جدول کو الٹا پڑھ کر اوسط نمبر"
 };

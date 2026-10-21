@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Built by tools/build-university-pages.js – edit that file, not this one -->
+  <title>Ghazi University CGPA &amp; GPA Calculator – DG Khan</title>
+  <meta name="description" content="Ghazi University Dera Ghazi Khan CGPA and GPA calculator using the official quality point table from the GU Statutes and Regulations 2021.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f6fb">
+  <link rel="canonical" href="https://cgpa-calculator-umber-two.vercel.app/ghazi-university-cgpa-calculator.html">
+  <link rel="alternate" hreflang="en" href="https://cgpa-calculator-umber-two.vercel.app/ghazi-university-cgpa-calculator.html">
+  <link rel="alternate" hreflang="ur" href="https://cgpa-calculator-umber-two.vercel.app/ur/ghazi-university-cgpa-calculator.html">
+  <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/ghazi-university-cgpa-calculator.html">
+
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CGPA Calculator">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://cgpa-calculator-umber-two.vercel.app/ghazi-university-cgpa-calculator.html">
+  <meta property="og:title" content="Ghazi University (DG Khan) CGPA &amp; GPA Calculator">
+  <meta property="og:description" content="Ghazi University Dera Ghazi Khan CGPA and GPA calculator using the official quality point table from the GU Statutes and Regulations 2021.">
+  <meta property="og:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <meta property="og:image:alt" content="CGPA Calculator: a result card showing a CGPA of 3.37 out of 4.00">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ghazi University (DG Khan) CGPA &amp; GPA Calculator">
+  <meta name="twitter:description" content="Ghazi University Dera Ghazi Khan CGPA and GPA calculator using the official quality point table from the GU Statutes and Regulations 2021.">
+  <meta name="twitter:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "@id": "https://cgpa-calculator-umber-two.vercel.app/ghazi-university-cgpa-calculator.html#app",
+    "name": "Ghazi University (DG Khan) CGPA & GPA Calculator",
+    "url": "https://cgpa-calculator-umber-two.vercel.app/ghazi-university-cgpa-calculator.html",
+    "image": "https://cgpa-calculator-umber-two.vercel.app/og-image.jpg",
+    "description": "Ghazi University Dera Ghazi Khan CGPA and GPA calculator using the official quality point table from the GU Statutes and Regulations 2021.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are the grades and marks at Ghazi University?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A is 80% to 100%, B is 65% to 79%, C is 50% to 64% and D is 40% to 49%. Below 40% is an F, the failing grade."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do two B grades give different grade points at Ghazi University?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ghazi University gives quality points mark by mark. Inside the B range, 65% is 3.00 points and 79% is 3.93 points, so your exact marks matter, not just the letter."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What CGPA do I need to get my degree from Ghazi University?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You need a CGPA of at least 2.20 with no F grade. If you finish the 8th semester with a CGPA from 1.90 to below 2.20 and have not repeated any course, you may repeat some low-grade courses once to reach 2.20."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When are you dropped from Ghazi University for low CGPA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "From the second semester onwards, a CGPA below 1.50 means you are dropped from the rolls. In the first semester you need a GPA of at least 1.00 to be promoted."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I improve a D grade at Ghazi University?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can repeat a D-grade course once. The better grade is used in your CGPA, but the D still appears on your transcript. You can repeat or improve at most six courses (18 credit hours) in the whole degree."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I convert my Ghazi University CGPA to a percentage?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no official formula in the Statutes and Regulations 2021. Reading the quality point table backwards, a CGPA from 2.00 to 3.99 equals 50 + (CGPA − 2) × 15, so 3.56 is about 73.4%. Check which method the employer or university accepts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "My result shows marks out of 60, not a percentage. What do I enter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Divide your marks by the course total and multiply by 100. Each credit hour is worth 20 marks, so 45 out of 60 in a 3-credit course is 75%."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "CGPA Calculator",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Ghazi University (DG Khan) CGPA & GPA Calculator",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/ghazi-university-cgpa-calculator.html"
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    /* Apply the saved (or system) theme before the page paints, so there is no flash */
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem('cgpa-theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="CGPA Calculator home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3z"></path>
+            <path d="M5 13.18v4C5 18.84 8.13 20 12 20s7-1.16 7-2.82v-4L12 17l-7-3.82z"></path>
+          </svg>
+        </span>
+        <span>CGPA Calculator</span>
+      </a>
+      <div class="header-actions">
+        <nav class="site-nav" id="siteNav" aria-label="Main menu">
+          <a href="index.html">Calculator</a>
+          <a href="about.html">About</a>
+          <a href="privacy-policy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <details class="lang-menu" id="langMenu">
+          <summary class="icon-btn lang-btn" aria-label="Choose language" title="Language">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"></path></svg>
+            <span class="lang-code" data-no-translate="">EN</span>
+          </summary>
+          <div class="lang-list" data-no-translate=""><a href="ghazi-university-cgpa-calculator.html" hreflang="en" lang="en" aria-current="true"><span class="lang-flag" aria-hidden="true">🇬🇧</span> English</a><a href="ur/ghazi-university-cgpa-calculator.html" hreflang="ur" lang="ur"><span class="lang-flag" aria-hidden="true">🇵🇰</span> اردو</a></div>
+        </details>
+        <button type="button" id="themeToggle" class="icon-btn" aria-label="Switch to dark mode" title="Light / dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+        </button>
+        <button type="button" id="menuToggle" class="icon-btn menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
+          <svg class="icon-menu" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+
+    <section class="hero">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">GU</span></nav>
+      <h1>Ghazi University (DG Khan) CGPA &amp; GPA Calculator</h1>
+      <p>Type your marks to work out your semester GPA and overall CGPA with the official Ghazi University quality point table, where your points rise with every extra mark.
+        <a href="#guide" class="hero-link">How Ghazi University grading works ↓</a></p>
+    </section>
+
+    <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
+      <div class="scale-text">
+        <p id="scaleLabel" class="scale-title">Grading system: Ghazi University first-degree (BS) programmes</p>
+        <p class="muted small">Type the marks you got in each course as a percentage. The quality points come from the Ghazi University Statutes and Regulations 2021.</p>
+      </div>
+      <select id="scaleSelect" hidden="" aria-hidden="true" tabindex="-1"><option value="gu">GU</option></select>
+      <button type="button" id="resetAll" class="btn btn-outline danger-hover">Reset all</button>
+    </section>
+    <p class="print-only" id="printDate"></p>
+
+    <div class="layout">
+      <!-- ================= Calculators ================= -->
+      <div class="main-col">
+        <div class="tabs" role="tablist" aria-label="Calculators">
+          <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">
+            GPA <small>One semester</small>
+          </button>
+          <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">
+            CGPA <small>All semesters</small>
+          </button>
+          <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">
+            Target <small>Plan ahead</small>
+          </button>
+          <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">
+            Percentage <small>Converter</small>
+          </button>
+        </div>
+        <!-- ---------- TAB 1: GPA ---------- -->
+        <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
+          <div class="panel-head">
+            <div>
+              <h2>Semester GPA</h2>
+              <p class="muted small">Add each subject with its credit hours and grade.</p>
+            </div>
+
+            <div class="segmented" id="modeSwitch" role="radiogroup" aria-label="How do you want to enter results?">
+              <input type="radio" name="gpaMode" id="modeMarks" value="marks" checked="">
+              <label for="modeMarks">Marks</label>
+              <input type="radio" name="gpaMode" id="modePoints" value="points">
+              <label for="modePoints">Grade points</label>
+            </div>
+          </div>
+          <div class="rows-head subject-cols" aria-hidden="true">
+            <span>Subject (optional)</span><span>Credits</span><span id="gradeHead">Grade</span><span></span>
+          </div>
+          <div id="subjectList" class="row-list mode-grade"></div>
+          <button type="button" id="addSubject" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            Add subject
+          </button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">Your semester GPA</div>
+            <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="gpaMeter"></span></div>
+            <div class="result-cheer" id="gpaCheer"></div>
+            <div class="result-sub" id="gpaSub">Add your subjects to see your GPA.</div>
+            <div class="result-note" id="gpaNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" id="sendToCgpa" class="btn btn-soft">Add this GPA to my CGPA →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="gpa">Copy result</button>
+            <button type="button" class="btn btn-outline js-print" title="In the print window, choose “Save as PDF” to download a PDF">Print / PDF</button>
+            <button type="button" id="resetGpa" class="btn btn-quiet">Clear</button>
+          </div>
+          <details class="howto">
+            <summary>How is GPA calculated?</summary>
+            <p class="formula-line">GPA = (Σ credit hours × grade points) ÷ (Σ credit hours)</p>
+            <p class="muted small">Example: Math 3 credits with grade points 4.00, and English 2 credits with 3.00 →
+              (3×4 + 2×3) ÷ (3+2) = 18 ÷ 5 = <strong>3.60</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 2: CGPA ---------- -->
+        <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>Overall CGPA</h2>
+              <p class="muted small">Add each semester's GPA (SGPA) and its total credit hours.</p>
+            </div>
+          </div>
+          <div class="rows-head semester-cols" aria-hidden="true">
+            <span>Semester</span><span>GPA / SGPA</span><span>Credit hours</span><span></span>
+          </div>
+          <div id="semesterList" class="row-list"></div>
+          <button type="button" id="addSemester" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            Add semester
+          </button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">Your CGPA</div>
+            <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="cgpaMeter"></span></div>
+            <div class="result-cheer" id="cgpaCheer"></div>
+            <div class="result-sub" id="cgpaSub">Add your semesters to see your CGPA.</div>
+            <div class="result-note" id="cgpaNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" id="sendToPct" class="btn btn-soft">Convert this CGPA to % →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">Copy result</button>
+            <button type="button" class="btn btn-outline js-print" title="In the print window, choose “Save as PDF” to download a PDF">Print / PDF</button>
+            <button type="button" id="resetCgpa" class="btn btn-quiet">Clear</button>
+          </div>
+          <details class="howto">
+            <summary>How is CGPA calculated?</summary>
+            <p class="formula-line">CGPA = (Σ semester GPA × semester credits) ÷ (total credits)</p>
+            <p class="muted small">Semesters with more credit hours count more. Example: 3.50 with 18 credits and 3.00 with 15 credits →
+              (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 3: Target CGPA ---------- -->
+        <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>Target CGPA</h2>
+              <p class="muted small">Find out what GPA you need in your coming semesters to reach your goal.</p>
+            </div>
+          </div>
+          <div class="target-grid">
+            <div class="field">
+              <label class="field-label" for="tCurrent">Current CGPA</label>
+              <input type="text" id="tCurrent" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tCurrentMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tDone">Credits completed</label>
+              <input type="text" id="tDone" inputmode="decimal" autocomplete="off" placeholder="e.g. 66">
+              <p class="row-msg" id="tDoneMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tTarget">Target CGPA</label>
+              <input type="text" id="tTarget" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tTargetMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tLeft">Credits remaining</label>
+              <input type="text" id="tLeft" inputmode="decimal" autocomplete="off" placeholder="e.g. 70">
+              <p class="row-msg" id="tLeftMsg"></p>
+            </div>
+          </div>
+          <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">Fill in from my CGPA tab</button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">GPA you need each semester</div>
+            <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="tgtMeter"></span></div>
+            <div class="result-cheer" id="tgtCheer"></div>
+            <div class="result-sub" id="tgtSub">Fill in the four boxes above to see the GPA you need.</div>
+            <div class="result-note" id="tgtNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="target">Copy result</button>
+            <button type="button" class="btn btn-outline js-print" title="In the print window, choose “Save as PDF” to download a PDF">Print / PDF</button>
+            <button type="button" id="resetTarget" class="btn btn-quiet">Clear</button>
+          </div>
+          <details class="howto">
+            <summary>How is this calculated?</summary>
+            <p class="formula-line">Needed GPA = (Target × total credits − Current × completed credits) ÷ remaining credits</p>
+            <p class="muted small">Example: current 3.00 with 60 credits done, target 3.30, 60 credits left →
+              (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 4: Percentage ---------- -->
+        <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>CGPA to percentage</h2>
+              <p class="muted small">Type your CGPA and choose its scale.</p>
+            </div>
+          </div>
+          <div class="conv-grid">
+            <div class="field">
+              <label class="field-label always" for="convInput">Your CGPA</label>
+              <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
+              <p class="row-msg" id="convMsg"></p>
+            </div>
+
+          </div>
+          <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">Use my CGPA from the CGPA tab</button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">Percentage</div>
+            <div class="result-value"><span id="pctValue">—</span></div>
+            <div class="meter" aria-hidden="true"><span id="pctMeter"></span></div>
+            <div class="result-cheer" id="pctCheer"></div>
+            <div class="result-sub" id="pctSub">Enter your CGPA to see the percentage.</div>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="pct">Copy result</button>
+            <button type="button" class="btn btn-outline js-print" title="In the print window, choose “Save as PDF” to download a PDF">Print / PDF</button>
+          </div>
+          <div class="formula">
+            <div class="formula-title">Formula used</div>
+            <p class="formula-line" id="formulaMain"></p>
+            <p class="formula-work" id="formulaWork"></p>
+            <p class="muted small" id="formulaNote"></p>
+          </div>
+        </section>
+      </div>
+      <!-- ================= Sidebar: grade table ================= -->
+      <aside class="sidebar">
+        <section class="card" aria-labelledby="tableTitle">
+          <h2 id="tableTitle" class="side-title">Grade points</h2>
+          <p class="muted small" id="tableSubtitle"></p>
+          <div class="table-wrap">
+            <table class="grade-table">
+              <thead>
+                <tr><th scope="col">Grade</th><th scope="col" class="num">Points</th><th scope="col" class="num" id="marksCol">Marks %</th></tr>
+              </thead>
+              <tbody id="gradeTableBody"></tbody>
+            </table>
+          </div>
+          <p class="muted tiny">Marks ranges differ between universities. Always check your own university's grading policy.</p>
+        </section>
+
+        <section class="card tips">
+          <h2 class="side-title">GU quick facts</h2>
+          <ul>
+            <li>Your points rise with <strong>every extra mark</strong>: 65% is 3.00 and 70% is 3.33, even though both are a B.</li>
+            <li>Pass marks are <strong>40%</strong> in each course. Below 40% is an F.</li>
+            <li>You need a CGPA of at least <strong>2.20</strong> with no F grade to get your degree.</li>
+            <li>Marks out of the course total? Turn them into a percentage first: 45 out of 60 is <strong>75%</strong>.</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <article class="guide" id="guide">
+
+      <section id="how-it-works">
+        <h2>How grading works at Ghazi University</h2>
+        <p>Ghazi University uses absolute grading with four passing grades: A, B, C and D. F is the failing grade. The rules come from the <q>Ghazi University, Dera Ghazi Khan, Statutes and Regulations, 2021</q> for first-degree courses such as BS, B.Sc. (Hons) and BBA.</p>
+        <p>Unlike universities where every B is worth the same, Ghazi University gives quality points mark by mark. Each credit hour of a course is worth 20 marks, so a 3-credit course is marked out of 60. The official quality point table then gives a slightly higher number of points for every extra mark you get, up to 80%. That is why this calculator asks for your marks instead of just your letter grade.</p>
+      </section>
+
+      <section id="grade-points">
+        <h2>Ghazi University grade and quality point table</h2>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">Grade</th><th scope="col" class="num">Marks</th><th scope="col" class="num">Grade points per credit hour</th></tr></thead>
+            <tbody>
+              <tr><td>A</td><td class="num">80% – 100%</td><td class="num">4.00</td></tr>
+              <tr><td>B</td><td class="num">65% – 79%</td><td class="num">3.00 – 3.93</td></tr>
+              <tr><td>C</td><td class="num">50% – 64%</td><td class="num">2.00 – 2.93</td></tr>
+              <tr><td>D</td><td class="num">40% – 49%</td><td class="num">1.00 – 1.90</td></tr>
+              <tr><td>F</td><td class="num">Below 40%</td><td class="num">0.00</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Inside each grade the points follow the official table step by step:</p>
+        <ul>
+          <li><strong>40% to 50%:</strong> 1.00 point at 40%, plus 0.10 for every extra 1%. So 45% is 1.50.</li>
+          <li><strong>50% to 80%:</strong> 2.00 points at 50%, plus 1/15 of a point for every extra 1%. So 55% is 2.33, 65% is 3.00 and 70% is 3.33.</li>
+          <li><strong>80% and above:</strong> always 4.00.</li>
+        </ul>
+        <p>Your quality points for a course are its credit hours × these grade points. For example, 45 out of 60 in a 3-credit course is 75%, which gives 3.67 × 3 = 11.00 quality points, exactly as in the official table.</p>
+      </section>
+
+      <section id="example">
+        <h2>How to calculate your Ghazi University GPA: worked example</h2>
+        <p>This is the example given in the Statutes and Regulations 2021:</p>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">Course</th><th scope="col" class="num">Credits</th><th scope="col" class="num">Marks</th><th scope="col">Grade</th><th scope="col" class="num">Quality points</th></tr></thead>
+            <tbody>
+              <tr><td>Course I</td><td class="num">2</td><td class="num">32 / 40 (80%)</td><td>A</td><td class="num">8.00</td></tr>
+              <tr><td>Course II</td><td class="num">3</td><td class="num">45 / 60 (75%)</td><td>B</td><td class="num">11.00</td></tr>
+              <tr><td>Course III</td><td class="num">3</td><td class="num">48 / 60 (80%)</td><td>A</td><td class="num">12.00</td></tr>
+              <tr><td>Course IV</td><td class="num">3</td><td class="num">38 / 60 (63.3%)</td><td>C</td><td class="num">8.67</td></tr>
+              <tr><td>Course V</td><td class="num">2</td><td class="num">28 / 40 (70%)</td><td>B</td><td class="num">6.67</td></tr>
+            </tbody>
+            <tfoot><tr><th scope="row">Total</th><td class="num">13</td><td></td><td></td><td class="num">46.34</td></tr></tfoot>
+          </table>
+        </div>
+        <p class="formula-block">GPA = 46.34 ÷ 13 = 3.56</p>
+        <p>Your CGPA works the same way across all semesters: add up the quality points of every semester and divide by the total credit hours. The CGPA tab does this from your semester GPAs.</p>
+        <p><strong>Calculator tip:</strong> if your result card shows quality points instead of marks, switch to Grade points and type the quality points ÷ credit hours. For Course II above, that is 11.00 ÷ 3 = 3.67.</p>
+      </section>
+
+      <section id="minimum-cgpa">
+        <h2>Good standing, probation and minimum CGPA</h2>
+        <ul>
+          <li><strong>First semester:</strong> you need a GPA of at least 1.00 to be promoted to the second semester.</li>
+          <li><strong>Second semester onwards:</strong> if your CGPA falls below 1.50, you are dropped from the rolls of the university. You can be re-admitted once, in the first semester of the next session.</li>
+          <li><strong>To get your degree</strong> you need a CGPA of at least 2.20 with no F grade.</li>
+          <li><strong>CGPA between 1.90 and 2.20 after the 8th semester:</strong> if you have not repeated any course, you may repeat some of your lowest-grade courses once to reach 2.20.</li>
+        </ul>
+        <p>The Target tab shows the GPA you need in your remaining semesters to reach 2.20 or any other CGPA.</p>
+      </section>
+
+      <section id="repeat">
+        <h2>Repeating a course and improving a D grade</h2>
+        <ul>
+          <li>If you get an F, you must repeat the course when it is offered again.</li>
+          <li>If you get a D, you may repeat the course once to improve it. Courses passed with A, B or C cannot be repeated.</li>
+          <li>You can repeat or improve at most six courses (18 credit hours) in your whole degree, and not more than one course per Fall or Spring semester.</li>
+          <li>The improved grade replaces the F or D in your CGPA, but the old grade still appears on your transcript.</li>
+        </ul>
+        <p><strong>Calculator tip:</strong> for a repeated course, enter only your new, better marks.</p>
+      </section>
+
+      <section id="percentage">
+        <h2>Ghazi University CGPA to percentage</h2>
+        <p>The Statutes and Regulations 2021 do not include a formula for turning CGPA into a percentage. The Percentage tab reads the official quality point table backwards to show the average marks your CGPA stands for:</p>
+        <ul>
+          <li><strong>CGPA 2.00 to 3.99:</strong> percentage = 50 + (CGPA − 2) × 15. So 3.56 is about 73.4%.</li>
+          <li><strong>CGPA 1.00 to 1.99:</strong> percentage = 40 + (CGPA − 1) × 10.</li>
+          <li><strong>CGPA 4.00:</strong> 80% or more.</li>
+        </ul>
+        <p>Because this is not an official university formula, check which method an employer or university accepts before you use it on a form.</p>
+      </section>
+
+      <section id="faq" class="faq">
+        <h2>GU CGPA calculator FAQs</h2>
+
+        <details>
+          <summary><h3>What are the grades and marks at Ghazi University?</h3></summary>
+          <p>A is 80% to 100%, B is 65% to 79%, C is 50% to 64% and D is 40% to 49%. Below 40% is an F, the failing grade.</p>
+        </details>
+        <details>
+          <summary><h3>Why do two B grades give different grade points at Ghazi University?</h3></summary>
+          <p>Ghazi University gives quality points mark by mark. Inside the B range, 65% is 3.00 points and 79% is 3.93 points, so your exact marks matter, not just the letter.</p>
+        </details>
+        <details>
+          <summary><h3>What CGPA do I need to get my degree from Ghazi University?</h3></summary>
+          <p>You need a CGPA of at least 2.20 with no F grade. If you finish the 8th semester with a CGPA from 1.90 to below 2.20 and have not repeated any course, you may repeat some low-grade courses once to reach 2.20.</p>
+        </details>
+        <details>
+          <summary><h3>When are you dropped from Ghazi University for low CGPA?</h3></summary>
+          <p>From the second semester onwards, a CGPA below 1.50 means you are dropped from the rolls. In the first semester you need a GPA of at least 1.00 to be promoted.</p>
+        </details>
+        <details>
+          <summary><h3>Can I improve a D grade at Ghazi University?</h3></summary>
+          <p>Yes. You can repeat a D-grade course once. The better grade is used in your CGPA, but the D still appears on your transcript. You can repeat or improve at most six courses (18 credit hours) in the whole degree.</p>
+        </details>
+        <details>
+          <summary><h3>How do I convert my Ghazi University CGPA to a percentage?</h3></summary>
+          <p>There is no official formula in the Statutes and Regulations 2021. Reading the quality point table backwards, a CGPA from 2.00 to 3.99 equals 50 + (CGPA − 2) × 15, so 3.56 is about 73.4%. Check which method the employer or university accepts.</p>
+        </details>
+        <details>
+          <summary><h3>My result shows marks out of 60, not a percentage. What do I enter?</h3></summary>
+          <p>Divide your marks by the course total and multiply by 100. Each credit hour is worth 20 marks, so 45 out of 60 in a 3-credit course is 75%.</p>
+        </details>
+      </section>
+
+      <section id="sources">
+        <h2>Sources</h2>
+        <ul class="source-note">
+          <li><a href="https://www.gudgk.edu.pk/downloads/81/download/pdf">Ghazi University, Dera Ghazi Khan, Statutes and Regulations 2021 relating to First-Degree Courses (sections 28 to 33)</a></li>
+        </ul>
+        <p class="source-note">Last checked: 18 October 2026. University rules can change, so always confirm your results with your own university's latest official rules. See our <a href="terms.html">Terms of Use</a>.</p>
+      </section>
+    </article>
+
+    <section class="uni-section" aria-labelledby="uniTitle">
+      <h2 id="uniTitle">More CGPA &amp; GPA calculators</h2>
+      <div class="uni-grid">
+        <a class="card uni-card" href="nust-cgpa-calculator.html">
+          <span class="uni-badge">NUST</span>
+          <span class="uni-name">NUST CGPA &amp; GPA Calculator</span>
+          <span class="muted small">Relative grading · A = 4.00, B+ = 3.50</span>
+        </a>
+        <a class="card uni-card" href="comsats-cgpa-calculator.html">
+          <span class="uni-badge">CUI</span>
+          <span class="uni-name">COMSATS CGPA &amp; GPA Calculator</span>
+          <span class="muted small">HEC criteria (Fall 2021+) · official % rule</span>
+        </a>
+        <a class="card uni-card" href="index.html">
+          <span class="uni-badge">ALL</span>
+          <span class="uni-name">General CGPA Calculator</span>
+          <span class="muted small">4.0, 5.0 and 10-point scales</span>
+        </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">19</span>
+          <span class="uni-name">All university calculators</span>
+          <span class="muted small">Pakistan, India, USA, UK, Malaysia, Australia and Germany</span>
+        </a>
+      </div>
+    </section>
+    <p class="back-top"><a href="#calculator">↑ Back to the calculator</a></p>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p><strong>CGPA Calculator</strong> · Made for students · © <span id="year">2026</span></p>
+        <p class="muted">Results are estimates. Your university's official rules always come first.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index.html">Calculator</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>window.CGPA_PAGE = {
+    storageKey: 'cgpa-gudgk',
+    scales: {
+      gu: {
+        max: 4, label: 'Ghazi University 4.0 scale', region: 'Ghazi University DG Khan · first-degree programmes', example: '3.56', modes: ['marks', 'points'],
+        grades: [['A', 4, 80], ['B', 3.93, 65, 3], ['C', 2.93, 50, 2], ['D', 1.9, 40, 1], ['F', 0, 0]],
+        marksToPoints: function (m) { return m >= 80 ? 4 : m >= 50 ? 2 + (m - 50) / 15 : m >= 40 ? 1 + (m - 40) / 10 : 0; }
+      }
+    },
+    conversions: {
+      gu: {
+        formula: 'Average marks from the GU quality point table, read backwards',
+        example: 3.56,
+        note: 'The Ghazi University Statutes and Regulations 2021 do not give a CGPA-to-percentage formula. This tab reads the official quality point table backwards to show the average marks your CGPA stands for. If an employer or university asks for a percentage, check which method they accept.',
+        result: function (c) {
+          var t = window.CGPA_T; // translation helper from script.js
+          var v = Math.round(c * 100 + 1e-9) / 100;
+          if (v >= 4) return { pct: 80, text: t('80% or more'), work: t('CGPA 4.00 means an A in every course, which is 80% or more') };
+          if (v >= 2) {
+            var p = 50 + (v - 2) * 15;
+            return { pct: p, text: p.toFixed(1) + '%', work: t('50 + ({cgpa} − 2) × 15 = {pct}%', { cgpa: v.toFixed(2), pct: p.toFixed(1) }) };
+          }
+          if (v >= 1) {
+            var q = 40 + (v - 1) * 10;
+            return { pct: q, text: q.toFixed(1) + '%', work: t('40 + ({cgpa} − 1) × 10 = {pct}%', { cgpa: v.toFixed(2), pct: q.toFixed(1) }) };
+          }
+          return { pct: 0, text: t('Below 40%'), work: t('CGPA {cgpa} is below 1.00, which means below 40%', { cgpa: v.toFixed(2) }) };
+        }
+      }
+    }
+  };</script>
+  <script src="site.js"></script>
+  <script src="script.js"></script>
+</body></html>

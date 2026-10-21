@@ -444,7 +444,7 @@ ${table(cfg.scales['2021'].grades, meaning21)}
   },
 
   // More universities live in tools/universities/<country>.js
-  ...['usa', 'uk', 'malaysia', 'australia', 'germany'].flatMap(c => require('./universities/' + c + '.js'))
+  ...['pakistan', 'usa', 'uk', 'malaysia', 'australia', 'germany'].flatMap(c => require('./universities/' + c + '.js'))
 ];
 
 // Order of the country groups on the home page

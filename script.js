@@ -10,7 +10,8 @@
      Optional scale settings: min (lowest valid value, default 0), lowerIsBetter (German grades),
      digits + truncate (how results are shown), gradeDigits (grade lists), maxText (instead of "/ 4.00"),
      subtitle (grade table), pointsLabel (label in "points" mode), ratioPoints ([[value, 0–1], …] for the
-     meter and messages), noQualityPoints (summary shows credits only). */
+     meter and messages), noQualityPoints (summary shows credits only), marksToPoints (function giving
+     exact points for marks, when points rise mark by mark inside a grade). */
   const PAGE = window.CGPA_PAGE || {};
 
   /* ---------- Grading scales: [grade, points, minimum marks %, lowest points if a range] ---------- */
@@ -379,6 +380,7 @@
             error = t('Marks should be between 0 and 100.'); badField = marksIn;
           } else {
             grade = gradeFromMarks(marks, sc);
+            if (sc.marksToPoints) grade = { grade: grade.grade, points: sc.marksToPoints(marks) };
             info = t('{marks} marks = grade {grade} ({points} points)', { marks: cleanNum(marks), grade: grade.grade, points: f2(grade.points) });
           }
         } else if (gradeIn.value === '') {
