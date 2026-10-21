@@ -32,6 +32,9 @@ const f2 = n => n.toFixed(2);
    config: JavaScript source for window.CGPA_PAGE (same format as SCALES/CONVERSIONS in script.js)
    grade rows: [grade, points, minimum marks %, lowest points when a letter covers a range] */
 const UNIVERSITIES = [
+  // Ghazi University first: the site owner asked for it at the top of the list
+  ...require('./universities/pakistan.js'),
+
   {
     slug: 'nust-cgpa-calculator',
     country: 'Pakistan',
@@ -444,7 +447,7 @@ ${table(cfg.scales['2021'].grades, meaning21)}
   },
 
   // More universities live in tools/universities/<country>.js
-  ...['pakistan', 'usa', 'uk', 'malaysia', 'australia', 'germany'].flatMap(c => require('./universities/' + c + '.js'))
+  ...['usa', 'uk', 'malaysia', 'australia', 'germany'].flatMap(c => require('./universities/' + c + '.js'))
 ];
 
 // Order of the country groups on the home page
