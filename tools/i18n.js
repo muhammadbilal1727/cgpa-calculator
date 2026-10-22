@@ -28,29 +28,29 @@ const CHROME = process.env.CHROME || 'C:/Program Files/Google/Chrome/Application
 const UNI_PAGES = fs.readdirSync(ROOT).filter(f => /-calculator\.html$/.test(f)).sort();
 const PAGES = ['index.html', ...UNI_PAGES, 'cgpa-to-german-grade.html', 'about.html', 'privacy-policy.html', 'terms.html', 'contact.html'];
 // Pages made only in some languages; other languages link to the English page instead
-const PAGE_LANGS = { 'ghazi-university-cgpa-calculator.html': ['en', 'ur'], 'cgpa-to-german-grade.html': ['en', 'de'] };
-const hasPage = (lang, p) => !PAGE_LANGS[p] || PAGE_LANGS[p].includes(lang.code);
+const PAGE_LANGS = {
+  'ghazi-university-cgpa-calculator.html': ['en', 'ur'], 'nust-cgpa-calculator.html': ['en', 'ur'],
+  'comsats-cgpa-calculator.html': ['en', 'ur'], 'vtu-cgpa-calculator.html': ['en', 'hi'], 'cgpa-to-german-grade.html': ['en', 'de']
+};
+// Pages written natively in one language (tools/native/*.js, built by tools/build-university-pages.js into tools/native/out/<lang>/)
+const NATIVE_OUT = path.join(ROOT, 'tools', 'native', 'out');
+const nativePages = code => fs.existsSync(path.join(NATIVE_OUT, code))
+  ? fs.readdirSync(path.join(NATIVE_OUT, code)).filter(f => /-calculator\.html$/.test(f)).sort() : [];
+const homeCards = code => { const f = path.join(NATIVE_OUT, code, 'home-cards.html'); return fs.existsSync(f) ? fs.readFileSync(f, 'utf8') : null; };
+const hasPage = (lang, p) => nativePages(lang.code).includes(p) || (PAGES.includes(p) && (!PAGE_LANGS[p] || PAGE_LANGS[p].includes(lang.code)));
+// Calculator scale the home page starts on in each language (the visitor can still pick another)
+const DEFAULT_SCALE = { hi: '10', bn: 'bd' };
 const UNI_DATA =['tools/build-university-pages.js', ...fs.readdirSync(path.join(ROOT, 'tools', 'universities')).map(f => 'tools/universities/' + f)];
 
 // Flag shown next to each language in the language menu
-const FLAGS = {"en":"🇬🇧","es":"🇪🇸","de":"🇩🇪","hi":"🇮🇳","ur":"🇵🇰","zh":"🇨🇳","fr":"🇫🇷","ar":"🇸🇦","bn":"🇧🇩","pt":"🇧🇷","ru":"🇷🇺","id":"🇮🇩","ja":"🇯🇵","mr":"🇮🇳","te":"🇮🇳"};
+const FLAGS = {"en":"🇬🇧","de":"🇩🇪","ur":"🇵🇰","hi":"🇮🇳","bn":"🇧🇩"};
 // code, folder, html lang, hreflang, native name, short label, og:locale, right-to-left
 const LANGS = [
   ['en', '', 'en', 'en', 'English', 'EN', 'en_US'],
-  ['es', 'es', 'es', 'es', 'Español', 'ES', 'es_ES'],
   ['de', 'de', 'de', 'de', 'Deutsch', 'DE', 'de_DE'],
-  ['hi', 'hi', 'hi', 'hi', 'हिन्दी', 'HI', 'hi_IN'],
   ['ur', 'ur', 'ur', 'ur', 'اردو', 'UR', 'ur_PK', true],
-  ['zh', 'zh', 'zh-Hans', 'zh-Hans', '简体中文', 'ZH', 'zh_CN'],
-  ['fr', 'fr', 'fr', 'fr', 'Français', 'FR', 'fr_FR'],
-  ['ar', 'ar', 'ar', 'ar', 'العربية', 'AR', 'ar_AR', true],
-  ['bn', 'bn', 'bn', 'bn', 'বাংলা', 'BN', 'bn_BD'],
-  ['pt', 'pt', 'pt', 'pt', 'Português', 'PT', 'pt_BR'],
-  ['ru', 'ru', 'ru', 'ru', 'Русский', 'RU', 'ru_RU'],
-  ['id', 'id', 'id', 'id', 'Bahasa Indonesia', 'ID', 'id_ID'],
-  ['ja', 'ja', 'ja', 'ja', '日本語', 'JA', 'ja_JP'],
-  ['mr', 'mr', 'mr', 'mr', 'मराठी', 'MR', 'mr_IN'],
-  ['te', 'te', 'te', 'te', 'తెలుగు', 'TE', 'te_IN']
+  ['hi', 'hi', 'hi', 'hi', 'हिन्दी', 'HI', 'hi_IN'],
+  ['bn', 'bn', 'bn', 'bn', 'বাংলা', 'BN', 'bn_BD']
 ].map(([code, dir, htmlLang, hreflang, name, short, locale, rtl]) => ({ code, dir, htmlLang, hreflang, name, short, locale, rtl: !!rtl, flag: FLAGS[code] }));
 
 /* ---------- Chrome (DevTools protocol) ---------- */
@@ -152,6 +152,16 @@ function swapHeader(o) {
   document.querySelectorAll('#siteNav a').forEach(a => {
     if (a.getAttribute('href') === o.page) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
   });
+  // Home page: this language's own university cards, between the <!-- uni-cards --> markers
+  const section = o.cards && document.getElementById('universities');
+  if (section) {
+    const nodes = [...section.childNodes];
+    const start = nodes.findIndex(n => n.nodeType === 8 && n.textContent.trim() === 'uni-cards');
+    const end = nodes.findIndex(n => n.nodeType === 8 && n.textContent.trim() === '/uni-cards');
+    nodes.slice(start + 1, end).forEach(n => n.remove());
+    const box = document.createElement('template'); box.innerHTML = o.cards;
+    nodes[end].before(box.content, document.createTextNode('      '));
+  }
 }
 
 function finishPage(o) {
@@ -171,7 +181,7 @@ function finishPage(o) {
     });
   }
 
-  // Language menu
+  // Language menu (languages without this page link to their own home page)
   const list = document.querySelector('.lang-list');
   if (list) {
     list.innerHTML = o.langs.map(l => `<a href="${l.href}" hreflang="${l.hreflang}" lang="${l.htmlLang}"${l.current ? ' aria-current="true"' : ''}><span class="lang-flag" aria-hidden="true">${l.flag}</span> ${l.name}</a>`).join('');
@@ -188,7 +198,8 @@ function finishPage(o) {
   const setLink = (rel, href) => { let l = head.querySelector(`link[rel="${rel}"]`); if (!l) { l = document.createElement('link'); l.rel = rel; head.appendChild(l); } l.href = href; };
   setLink('canonical', o.canonical);
   const canonical = head.querySelector('link[rel="canonical"]');
-  o.langs.concat([{ hreflang: 'x-default', abs: o.xDefault }]).reverse().forEach(l => {
+  // hreflang only for pages that exist in more than one language, with x-default pointing to English
+  (o.alts.length > 1 ? o.alts.concat([{ hreflang: 'x-default', abs: o.xDefault }]) : []).reverse().forEach(l => {
     const a = document.createElement('link'); a.rel = 'alternate'; a.hreflang = l.hreflang; a.href = l.abs;
     canonical.after(a); canonical.after(document.createTextNode('\n  '));
   });
@@ -215,6 +226,14 @@ function finishPage(o) {
     s.textContent = '\n' + JSON.stringify(d, null, 2).replace(/^/gm, '  ') + '\n  ';
   });
 
+  // Home page in Hindi / Bengali starts on that country's grading scale
+  document.querySelectorAll('script[data-default-scale]').forEach(s => { const ws = s.previousSibling; if (ws && ws.nodeType === 3) ws.remove(); s.remove(); });
+  if (o.defaultScale) {
+    const first = document.querySelector('script[src$="site.js"]');
+    const s = document.createElement('script'); s.setAttribute('data-default-scale', '');
+    s.textContent = `window.CGPA_PAGE = { defaultScale: '${o.defaultScale}' };`;
+    first.before(s); first.before(document.createTextNode('\n  '));
+  }
   // Translated run-time messages load before the site scripts
   if (o.i18nScript && !document.querySelector('script[data-i18n]')) {
     const first = document.querySelector('script[src$="site.js"]');
@@ -304,20 +323,24 @@ async function build() {
         '/* Generated by tools/i18n.js from i18n/' + lang.code + '.json */\nwindow.CGPA_I18N = ' + JSON.stringify(js, null, 1) + ';\n');
       fs.mkdirSync(path.join(ROOT, lang.dir), { recursive: true });
     }
-    const pages = PAGES.filter(p => hasPage(lang, p));
+    const native = nativePages(lang.code);
+    const pages = PAGES.filter(p => hasPage(lang, p)).concat(native);
     for (const p of pages) {
       const pageLangs = available.filter(l => hasPage(l, p));
-      await chrome.load(p);
-      await chrome.run(swapHeader, { header, page: p });
+      const rel = l => (lang.dir ? (l.dir === lang.dir ? '' : '../' + (l.dir ? l.dir + '/' : '')) : (l.dir ? l.dir + '/' : ''));
+      await chrome.load(native.includes(p) ? `tools/native/out/${lang.code}/${p}` : p);
+      await chrome.run(swapHeader, { header, page: p, cards: p === 'index.html' && lang.code !== 'en' ? homeCards(lang.code) : null });
       if (tr) await chrome.run(pageSegments, { tr });
       const html = await chrome.run(finishPage, {
         page: p, flag: lang.flag, htmlLang: lang.htmlLang, rtl: lang.rtl, short: lang.short, locale: lang.locale,
         prefix: !!lang.dir, englishOnly: PAGES.filter(q => !hasPage(lang, q)),
         canonical: urlOf(lang, p), xDefault: urlOf(LANGS[0], p), home: urlOf(lang, 'index.html'),
         i18nScript: tr ? `../i18n/${lang.code}.js` : null,
-        langs: pageLangs.map(l => ({
-          hreflang: l.hreflang, htmlLang: l.htmlLang, name: l.name, flag: l.flag, current: l.code === lang.code, abs: urlOf(l, p),
-          href: (lang.dir ? (l.dir === lang.dir ? '' : '../' + (l.dir ? l.dir + '/' : '')) : (l.dir ? l.dir + '/' : '')) + p
+        defaultScale: p === 'index.html' ? DEFAULT_SCALE[lang.code] : null,
+        alts: pageLangs.map(l => ({ hreflang: l.hreflang, abs: urlOf(l, p) })),
+        langs: available.map(l => ({
+          hreflang: l.hreflang, htmlLang: l.htmlLang, name: l.name, flag: l.flag, current: l.code === lang.code,
+          href: rel(l) + (hasPage(l, p) ? p : 'index.html')
         }))
       });
       fs.writeFileSync(path.join(ROOT, lang.dir, p), html);
@@ -327,12 +350,34 @@ async function build() {
   chrome.close();
 
   // Sitemap with every language version
-  const urls = available.flatMap(l => PAGES.filter(p => hasPage(l, p)).map(p => `  <url>\n    <loc>${urlOf(l, p)}</loc>\n    <lastmod>${new Date().toISOString().slice(0, 10)}</lastmod>\n  </url>`));
+  const urls = available.flatMap(l => PAGES.filter(p => hasPage(l, p)).concat(nativePages(l.code)).map(p => `  <url>\n    <loc>${urlOf(l, p)}</loc>\n    <lastmod>${new Date().toISOString().slice(0, 10)}</lastmod>\n  </url>`));
   fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`);
   console.log(`sitemap.xml: ${urls.length} URLs`);
 }
 
+// Lists, for each language, the strings shown on that language's pages that have no translation yet
+async function missing() {
+  const en = JSON.parse(fs.readFileSync(path.join(ROOT, 'i18n', 'en.json'), 'utf8'));
+  const idOf = new Map(Object.entries(en.segments).map(([id, text]) => [text, id]));
+  const chrome = await openChrome();
+  const out = {};
+  for (const lang of LANGS.filter(l => l.code !== 'en' && fs.existsSync(path.join(ROOT, 'i18n', l.code + '.json')))) {
+    const file = JSON.parse(fs.readFileSync(path.join(ROOT, 'i18n', lang.code + '.json'), 'utf8'));
+    const need = new Set();
+    for (const p of PAGES.filter(q => hasPage(lang, q)).concat(nativePages(lang.code).map(q => `tools/native/out/${lang.code}/${q}`))) {
+      await chrome.load(p);
+      (await chrome.run(pageSegments, null)).forEach(s => { const id = idOf.get(s); if (id && file.segments[id] == null) need.add(id); });
+    }
+    const js = Object.keys(en.js).filter(id => !file.js || file.js[id] == null);
+    out[lang.code] = { segments: Object.fromEntries([...need].map(id => [id, en.segments[id]])), js: Object.fromEntries(js.map(id => [id, en.js[id]])) };
+    console.log(`${lang.code}: ${need.size} page strings + ${js.length} script strings to translate`);
+  }
+  chrome.close();
+  fs.writeFileSync(path.join(__dirname, 'missing-translations.json'), JSON.stringify(out, null, 1));
+  console.log('written to tools/missing-translations.json');
+}
+
 const cmd = process.argv[2];
-(cmd === 'extract' ? extract() : cmd === 'build' ? build() : Promise.reject(new Error('Usage: node tools/i18n.js extract|build')))
+(cmd === 'extract' ? extract() : cmd === 'build' ? build() : cmd === 'missing' ? missing() : Promise.reject(new Error('Usage: node tools/i18n.js extract|build|missing')))
   .then(() => setTimeout(() => process.exit(0), 1000))
   .catch(e => { console.error(e.message); process.exit(1); });

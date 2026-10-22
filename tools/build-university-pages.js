@@ -7,7 +7,8 @@
    <!-- mode-switch -->, <!-- conv-scale --> and <!-- side-tips --> markers),
    plugs in that university's official grading rules (window.CGPA_PAGE)
    and adds its own article and FAQ. Re-run after changing index.html.
-   It also copies the German grade converter into cgpa-to-german-grade.html.
+   It also copies the German grade converter into cgpa-to-german-grade.html, and builds the pages
+   written natively in Urdu, Hindi and Bengali (tools/native/*.js) for tools/i18n.js to finish.
    ========================================================= */
 const fs = require('fs');
 const path = require('path');
@@ -447,13 +448,19 @@ ${table(cfg.scales['2021'].grades, meaning21)}
     ]
   },
 
-  // More universities live in tools/universities/<country>.js
-  ...['usa', 'uk', 'malaysia', 'australia', 'germany'].flatMap(c => require('./universities/' + c + '.js'))
 ];
 
+/* Pages written natively in German, Urdu, Hindi and Bengali (tools/native/<language>.js). They are built into
+   tools/native/out/<lang>/ with the English calculator markup; tools/i18n.js then translates that markup,
+   adds the header, language menu and links, and saves the finished page in /<lang>/. */
+const NATIVE = ['deutsch', 'urdu', 'hindi', 'bangla'].map(f => require('./native/' + f + '.js'));
+NATIVE.forEach(n => n.universities.forEach(u => { u.lang = n.lang; u.ui = n.ui; }));
+const NATIVE_OUT = path.join(__dirname, 'native', 'out');
+const bySlug = slug => UNIVERSITIES.concat(...NATIVE.map(n => n.universities)).find(u => u.slug === slug);
+
 // Order of the country groups on the home page
-const COUNTRIES = ['Pakistan', 'India', 'USA', 'UK', 'Malaysia', 'Australia', 'Germany'];
-const COUNTRY_NAMES = { Pakistan: 'Pakistan', India: 'India', USA: 'United States', UK: 'United Kingdom', Malaysia: 'Malaysia', Australia: 'Australia', Germany: 'Germany' };
+const COUNTRIES = ['Pakistan', 'India'];
+const COUNTRY_NAMES = { Pakistan: 'Pakistan', India: 'India' };
 
 /* ---------- Build ---------- */
 const index = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8').replace(/\r\n/g, '\n');
@@ -469,19 +476,34 @@ ${indent}  <span class="uni-name">${esc(u.name)}</span>
 ${indent}  <span class="muted small">${u.card}</span>
 ${indent}</a>`;
 
-// Same-country calculators first, then the general calculator and the full list on the home page
+// Same-country calculators first (native pages: the other pages in that language), then the general calculator and the full list
 function otherCalculators(current) {
-  return UNIVERSITIES.filter(u => u.slug !== current.slug && u.country === current.country).map(u => card(u, '        ')).join('') + `
+  const same = current.lang
+    ? NATIVE.find(n => n.lang === current.lang).home.slugs.filter(s => s !== current.slug).map(bySlug)
+    : UNIVERSITIES.filter(u => u.slug !== current.slug && u.country === current.country);
+  return same.map(u => card(u, '        ')).join('') + `
         <a class="card uni-card" href="index.html">
           <span class="uni-badge">ALL</span>
           <span class="uni-name">General CGPA Calculator</span>
           <span class="muted small">4.0, 5.0 and 10-point scales</span>
         </a>
         <a class="card uni-card" href="index.html#universities">
-          <span class="uni-badge">${UNIVERSITIES.length}</span>
+          <span class="uni-badge">UNI</span>
           <span class="uni-name">All university calculators</span>
-          <span class="muted small">Pakistan, India, USA, UK, Malaysia, Australia and Germany</span>
+          <span class="muted small">Calculators set up with each university's own official grading rules and percentage conversion.</span>
         </a>`;
+}
+
+// Home page cards for each native language; tools/i18n.js puts them on /<lang>/index.html
+function writeNativeHomeCards() {
+  NATIVE.forEach(n => {
+    fs.mkdirSync(path.join(NATIVE_OUT, n.lang), { recursive: true });
+    fs.writeFileSync(path.join(NATIVE_OUT, n.lang, 'home-cards.html'), `
+      <h3 class="uni-country">${n.home.heading}</h3>
+      <div class="uni-grid">${n.home.slugs.map(s => card(bySlug(s), '        ')).join('')}
+      </div>
+`);
+  });
 }
 
 // The home page lists every university calculator, grouped by country
@@ -504,7 +526,8 @@ function writeHomeCards() {
 
 function build(u) {
   const cfg = new Function('return ' + u.config)();
-  const url = `${SITE}/${u.slug}.html`;
+  const url = `${SITE}/${u.lang ? u.lang + '/' : ''}${u.slug}.html`;
+  const ui = u.ui || {};
   const sc = u.scaleCard;
   const select = sc.options
     ? `<select id="scaleSelect" class="scale-select">${sc.options.map(([v, l]) => `<option value="${v}">${esc(l)}</option>`).join('')}</select>`
@@ -513,11 +536,11 @@ function build(u) {
 
   // The German Grade tab belongs to the home page only
   let layout = layoutTemplate.replace(/<!-- german-(tab|panel) -->[\s\S]*?<!-- \/german-\1 -->\n/g, '');
-  layout = replaceBlock(layout, 'mode-switch', u.modeSwitch);
+  if (u.modeSwitch != null) layout = replaceBlock(layout, 'mode-switch', u.modeSwitch); // null keeps Grade / Marks
   layout = replaceBlock(layout, 'conv-scale', u.convScale);
   layout = replaceBlock(layout, 'side-tips', `
         <section class="card tips">
-          <h2 class="side-title">${esc(u.short)} quick facts</h2>
+          <h2 class="side-title">${ui.facts ? ui.facts.replace('{short}', esc(u.short)) : esc(u.short) + ' quick facts'}</h2>
           <ul>
 ${u.facts.map(f => `            <li>${f}</li>`).join('\n')}
           </ul>
@@ -609,7 +632,7 @@ ${layout}
 ${u.article(cfg)}
 
       <section id="faq" class="faq">
-        <h2>${esc(u.short)} CGPA calculator FAQs</h2>
+        <h2>${ui.faq ? ui.faq.replace('{short}', esc(u.short)) : esc(u.short) + ' CGPA calculator FAQs'}</h2>
 ${u.faq.map(([q, a]) => `
         <details>
           <summary><h3>${esc(q)}</h3></summary>
@@ -622,7 +645,7 @@ ${u.faq.map(([q, a]) => `
         <ul class="source-note">
 ${u.sources.map(([label, href]) => `          <li><a href="${href}">${esc(label)}</a></li>`).join('\n')}
         </ul>
-        <p class="source-note">Last checked: ${UPDATED}. University rules can change, so always confirm your results with your own university's latest official rules. See our <a href="terms.html">Terms of Use</a>.</p>
+        <p class="source-note">${ui.checked || `Last checked: ${UPDATED}. University rules can change, so always confirm your results with your own university's latest official rules. See our <a href="terms.html">Terms of Use</a>.`}</p>
       </section>
     </article>
 
@@ -642,8 +665,10 @@ ${footer}  <div id="toast" class="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
 `;
-  fs.writeFileSync(path.join(ROOT, u.slug + '.html'), html);
-  console.log('wrote', u.slug + '.html', '| title', u.title.length, '| desc', u.desc.length);
+  const out = u.lang ? path.join(NATIVE_OUT, u.lang, u.slug + '.html') : path.join(ROOT, u.slug + '.html');
+  fs.mkdirSync(path.dirname(out), { recursive: true });
+  fs.writeFileSync(out, html);
+  console.log('wrote', path.relative(ROOT, out), '| title', u.title.length, '| desc', u.desc.length);
 }
 
 // cgpa-to-german-grade.html uses the same converter markup as the German Grade tab (logic in german-grade.js)
@@ -658,5 +683,7 @@ function syncGermanPage() {
 }
 
 UNIVERSITIES.forEach(build);
+NATIVE.forEach(n => n.universities.forEach(build));
 writeHomeCards();
+writeNativeHomeCards();
 syncGermanPage();

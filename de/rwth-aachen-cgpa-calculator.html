@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="de"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Built by tools/build-university-pages.js – edit that file, not this one -->
+  <title>RWTH Aachen Notenrechner – Gesamtnote nach CP gewichtet (ÜPO)</title>
+  <meta name="description" content="Berechne deine Gesamtnote an der RWTH Aachen nach der Übergreifenden Prüfungsordnung: nach CP gewichtet, eine Nachkommastelle ohne Rundung, mit Notenstreichung.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f6fb">
+  <link rel="canonical" href="https://cgpa-calculator-umber-two.vercel.app/de/rwth-aachen-cgpa-calculator.html">
+
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CGPA Calculator">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:url" content="https://cgpa-calculator-umber-two.vercel.app/de/rwth-aachen-cgpa-calculator.html">
+  <meta property="og:title" content="RWTH Aachen Notenrechner: Gesamtnote nach ÜPO">
+  <meta property="og:description" content="Berechne deine Gesamtnote an der RWTH Aachen nach der Übergreifenden Prüfungsordnung: nach CP gewichtet, eine Nachkommastelle ohne Rundung, mit Notenstreichung.">
+  <meta property="og:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <meta property="og:image:alt" content="CGPA-Rechner: eine Ergebniskarte mit einem CGPA von 3.37 von 4.00">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RWTH Aachen Notenrechner: Gesamtnote nach ÜPO">
+  <meta name="twitter:description" content="Berechne deine Gesamtnote an der RWTH Aachen nach der Übergreifenden Prüfungsordnung: nach CP gewichtet, eine Nachkommastelle ohne Rundung, mit Notenstreichung.">
+  <meta name="twitter:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "@id": "https://cgpa-calculator-umber-two.vercel.app/de/rwth-aachen-cgpa-calculator.html#app",
+    "name": "RWTH Aachen Notenrechner: Gesamtnote nach ÜPO",
+    "url": "https://cgpa-calculator-umber-two.vercel.app/de/rwth-aachen-cgpa-calculator.html",
+    "image": "https://cgpa-calculator-umber-two.vercel.app/og-image.jpg",
+    "description": "Berechne deine Gesamtnote an der RWTH Aachen nach der Übergreifenden Prüfungsordnung: nach CP gewichtet, eine Nachkommastelle ohne Rundung, mit Notenstreichung.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "de",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Wie wird die Gesamtnote an der RWTH berechnet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Aus den Noten aller benoteten Module einschließlich der Bachelorarbeit, jeweils mit ihren Credit Points gewichtet. Die Prüfungsordnung deines Studiengangs kann einzelne Bereiche anders gewichten."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Rundet die RWTH die Gesamtnote?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nein. Nach § 10 ÜPO zählt nur die erste Nachkommastelle, alle weiteren werden gestrichen. 1.89 wird also zu 1.8."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann ich an der RWTH schlechte Noten streichen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, wenn du alle Modulprüfungen in der Regelstudienzeit abschließt: Im Bachelor können Modulnoten im Umfang von 5 bis 30 CP gestrichen werden. Die Note der Bachelorarbeit kann nicht gestrichen werden."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wann gibt es an der RWTH „mit Auszeichnung“?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wenn die Bachelor- oder Masterarbeit mit 1.0 bewertet wurde und die Gesamtnote nicht schlechter als 1.3 ist."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welche Noten gibt es an der RWTH Aachen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "1.0, 1.3, 1.7, 2.0, 2.3, 2.7, 3.0, 3.3, 3.7, 4.0 und 5.0. Die Werte 0.7, 4.3, 4.7 und 5.3 sind ausgeschlossen."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "CGPA Calculator",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/de/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "RWTH Aachen Notenrechner: Gesamtnote nach ÜPO",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/de/rwth-aachen-cgpa-calculator.html"
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    /* Apply the saved (or system) theme before the page paints, so there is no flash */
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem('cgpa-theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="Startseite des CGPA-Rechners">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3z"></path>
+            <path d="M5 13.18v4C5 18.84 8.13 20 12 20s7-1.16 7-2.82v-4L12 17l-7-3.82z"></path>
+          </svg>
+        </span>
+        <span>CGPA Calculator</span>
+      </a>
+      <div class="header-actions">
+        <nav class="site-nav" id="siteNav" aria-label="Hauptmenü">
+          <a href="index.html">Rechner</a>
+          <a href="cgpa-to-german-grade.html">Deutsche Note</a>
+          <a href="about.html">Über uns</a>
+          <a href="privacy-policy.html">Datenschutz</a>
+          <a href="terms.html">Nutzungsbedingungen</a>
+          <a href="contact.html">Kontakt</a>
+        </nav>
+        <details class="lang-menu" id="langMenu">
+          <summary class="icon-btn lang-btn" aria-label="Sprache wählen" title="Sprache">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"></path></svg>
+            <span class="lang-code" data-no-translate="">DE</span>
+          </summary>
+          <div class="lang-list" data-no-translate=""><a href="../index.html" hreflang="en" lang="en"><span class="lang-flag" aria-hidden="true">🇬🇧</span> English</a><a href="rwth-aachen-cgpa-calculator.html" hreflang="de" lang="de" aria-current="true"><span class="lang-flag" aria-hidden="true">🇩🇪</span> Deutsch</a><a href="../ur/index.html" hreflang="ur" lang="ur"><span class="lang-flag" aria-hidden="true">🇵🇰</span> اردو</a><a href="../hi/index.html" hreflang="hi" lang="hi"><span class="lang-flag" aria-hidden="true">🇮🇳</span> हिन्दी</a><a href="../bn/index.html" hreflang="bn" lang="bn"><span class="lang-flag" aria-hidden="true">🇧🇩</span> বাংলা</a></div>
+        </details>
+        <button type="button" id="themeToggle" class="icon-btn" aria-label="Zum dunklen Modus wechseln" title="Heller / dunkler Modus">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+        </button>
+        <button type="button" id="menuToggle" class="icon-btn menu-btn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="siteNav">
+          <svg class="icon-menu" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+
+    <section class="hero">
+      <nav class="breadcrumb" aria-label="Brotkrümelnavigation"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">RWTH</span></nav>
+      <h1>RWTH Aachen Notenrechner: Gesamtnote nach ÜPO</h1>
+      <p>Berechne deine Gesamtnote an der RWTH Aachen so, wie es die Übergreifende Prüfungsordnung (ÜPO) vorschreibt: alle benoteten Module samt Bachelorarbeit nach Credit Points (CP) gewichtet und nach der ersten Nachkommastelle abgeschnitten.
+        <a href="#guide" class="hero-link">So funktioniert die Notenberechnung an der RWTH ↓</a></p>
+    </section>
+
+    <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
+      <div class="scale-text">
+        <p id="scaleLabel" class="scale-title">Notensystem: RWTH Aachen (deutsche Noten 1.0 bis 4.0)</p>
+        <p class="muted small">Wähle für jedes Modul die Note oder wechsle zu „Genaue Note“. Trage bei jedem Modul die Credit Points (CP) aus dem Modulhandbuch ein; die Bachelorarbeit gehört dazu.</p>
+      </div>
+      <select id="scaleSelect" hidden="" aria-hidden="true" tabindex="-1"><option value="de">RWTH</option></select>
+      <button type="button" id="resetAll" class="btn btn-outline danger-hover">Alles zurücksetzen</button>
+    </section>
+    <p class="print-only" id="printDate"></p>
+
+    <div class="layout">
+      <!-- ================= Calculators ================= -->
+      <div class="main-col">
+        <div class="tabs" role="tablist" aria-label="Rechner">
+          <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">
+            Schnitt <small>Module</small>
+          </button>
+          <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">
+            Gesamt <small>Alle Semester</small>
+          </button>
+          <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">
+            Ziel <small>Vorausplanen</small>
+          </button>
+          <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">
+            Bayerische Formel <small>Umrechnung</small>
+          </button>
+        </div>
+        <!-- ---------- TAB 1: GPA ---------- -->
+        <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
+          <div class="panel-head">
+            <div>
+              <h2>Notendurchschnitt</h2>
+              <p class="muted small">Trage jedes benotete Modul mit seinen ECTS-Punkten und seiner Note ein.</p>
+            </div>
+
+            <div class="segmented" id="modeSwitch" role="radiogroup" aria-label="Wie möchtest du deine Ergebnisse eingeben?">
+              <input type="radio" name="gpaMode" id="modeGrade" value="grade" checked="">
+              <label for="modeGrade">Note</label>
+              <input type="radio" name="gpaMode" id="modePoints" value="points">
+              <label for="modePoints">Genaue Note</label>
+            </div>
+          </div>
+          <div class="rows-head subject-cols" aria-hidden="true">
+            <span>Modul (optional)</span><span>ECTS</span><span id="gradeHead">Note</span><span></span>
+          </div>
+          <div id="subjectList" class="row-list mode-grade"></div>
+          <button type="button" id="addSubject" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            Modul hinzufügen
+          </button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">Dein Notendurchschnitt</div>
+            <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="gpaMeter"></span></div>
+            <div class="result-cheer" id="gpaCheer"></div>
+            <div class="result-sub" id="gpaSub">Füge deine Fächer hinzu, um deinen GPA zu sehen.</div>
+            <div class="result-note" id="gpaNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" id="sendToCgpa" class="btn btn-soft">Diesen Schnitt zur Gesamtnote hinzufügen →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="gpa">Ergebnis kopieren</button>
+            <button type="button" class="btn btn-outline js-print" title="Wähle im Druckfenster „Als PDF speichern“, um ein PDF herunterzuladen">Drucken / PDF</button>
+            <button type="button" id="resetGpa" class="btn btn-quiet">Leeren</button>
+          </div>
+          <details class="howto">
+            <summary>Wie wird der Notendurchschnitt berechnet?</summary>
+            <p class="formula-line">Durchschnitt = (Σ ECTS × Note) ÷ (Σ ECTS)</p>
+            <p class="muted small">Beispiel: ein Modul mit 6 ECTS und 1.3 und ein Modul mit 9 ECTS und 2.7 →
+              (6×1.3 + 9×2.7) ÷ 15 = 32.1 ÷ 15 = 2.14. An der RWTH bleibt eine Nachkommastelle ohne Rundung: <strong>2.1</strong>.</p>
+          </details>
+        </section>
+        <!-- ---------- TAB 2: CGPA ---------- -->
+        <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>Gesamtnote</h2>
+              <p class="muted small">Trage für jedes Semester den Notendurchschnitt und die ECTS-Punkte ein.</p>
+            </div>
+          </div>
+          <div class="rows-head semester-cols" aria-hidden="true">
+            <span>Semester</span><span>Durchschnitt</span><span>ECTS</span><span></span>
+          </div>
+          <div id="semesterList" class="row-list"></div>
+          <button type="button" id="addSemester" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            Semester hinzufügen
+          </button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">Deine Gesamtnote</div>
+            <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="cgpaMeter"></span></div>
+            <div class="result-cheer" id="cgpaCheer"></div>
+            <div class="result-sub" id="cgpaSub">Füge deine Semester hinzu, um deinen CGPA zu sehen.</div>
+            <div class="result-note" id="cgpaNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" id="sendToPct" class="btn btn-soft" hidden="">Diesen CGPA in % umrechnen →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">Ergebnis kopieren</button>
+            <button type="button" class="btn btn-outline js-print" title="Wähle im Druckfenster „Als PDF speichern“, um ein PDF herunterzuladen">Drucken / PDF</button>
+            <button type="button" id="resetCgpa" class="btn btn-quiet">Leeren</button>
+          </div>
+          <details class="howto">
+            <summary>Wie wird der CGPA berechnet?</summary>
+            <p class="formula-line">CGPA = (Σ Semester-GPA × Semester-Credits) ÷ (Credits gesamt)</p>
+            <p class="muted small">Semester mit mehr Credits zählen mehr. Beispiel: 3.50 mit 18 Credits und 3.00 mit 15 Credits → (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 3: Target CGPA ---------- -->
+        <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>Zielnote</h2>
+              <p class="muted small">Finde heraus, welchen Durchschnitt du in deinen restlichen Modulen brauchst, um deine Zielnote zu erreichen.</p>
+            </div>
+          </div>
+          <div class="target-grid">
+            <div class="field">
+              <label class="field-label" for="tCurrent">Aktueller Durchschnitt</label>
+              <input type="text" id="tCurrent" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tCurrentMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tDone">ECTS geschafft</label>
+              <input type="text" id="tDone" inputmode="decimal" autocomplete="off" placeholder="e.g. 66">
+              <p class="row-msg" id="tDoneMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tTarget">Zieldurchschnitt</label>
+              <input type="text" id="tTarget" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tTargetMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tLeft">ECTS übrig</label>
+              <input type="text" id="tLeft" inputmode="decimal" autocomplete="off" placeholder="e.g. 70">
+              <p class="row-msg" id="tLeftMsg"></p>
+            </div>
+          </div>
+          <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">Aus meinem CGPA-Tab übernehmen</button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">Nötiger Durchschnitt ab jetzt</div>
+            <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="tgtMeter"></span></div>
+            <div class="result-cheer" id="tgtCheer"></div>
+            <div class="result-sub" id="tgtSub">Fülle die vier Felder oben aus, um den benötigten GPA zu sehen.</div>
+            <div class="result-note" id="tgtNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="target">Ergebnis kopieren</button>
+            <button type="button" class="btn btn-outline js-print" title="Wähle im Druckfenster „Als PDF speichern“, um ein PDF herunterzuladen">Drucken / PDF</button>
+            <button type="button" id="resetTarget" class="btn btn-quiet">Leeren</button>
+          </div>
+          <details class="howto">
+            <summary>Wie wird das berechnet?</summary>
+            <p class="formula-line">Nötiger Durchschnitt = (Ziel × ECTS gesamt − aktueller Schnitt × geschaffte ECTS) ÷ restliche ECTS</p>
+            <p class="muted small">Beispiel: Schnitt 2.4 nach 90 ECTS, Ziel 2.0, noch 90 ECTS →
+              (2.0 × 180 − 2.4 × 90) ÷ 90 = <strong>1.60</strong> oder besser</p>
+          </details>
+        </section>
+        <!-- ---------- TAB 4: Percentage ---------- -->
+        <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>Ausländische Note in deutsche Note</h2>
+              <p class="muted small">Gib deine Note aus dem Ausland ein (zum Beispiel deinen CGPA) und wähle das Notensystem.</p>
+            </div>
+          </div>
+          <div class="conv-grid">
+            <div class="field">
+              <label class="field-label always" for="convInput">Deine Note im Ausland</label>
+              <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
+              <p class="row-msg" id="convMsg"></p>
+            </div>
+
+            <div class="field">
+              <span class="field-label always" id="convScaleLabel">Notensystem im Ausland</span>
+              <div class="segmented full conv-wrap" role="radiogroup" aria-labelledby="convScaleLabel">
+                <input type="radio" name="convScale" id="convb41" value="b41" checked="">
+                <label for="convb41">4.0 · ab 1.0</label>
+                <input type="radio" name="convScale" id="convb42" value="b42">
+                <label for="convb42">4.0 · ab 2.0</label>
+                <input type="radio" name="convScale" id="convb104" value="b104">
+                <label for="convb104">10 · ab 4.0</label>
+                <input type="radio" name="convScale" id="convb10040" value="b10040">
+                <label for="convb10040">% · ab 40</label>
+              </div>
+            </div>
+          </div>
+          <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline" hidden="">Meinen CGPA aus dem CGPA-Tab verwenden</button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">Deutsche Note</div>
+            <div class="result-value"><span id="pctValue">—</span></div>
+            <div class="meter" aria-hidden="true"><span id="pctMeter"></span></div>
+            <div class="result-cheer" id="pctCheer"></div>
+            <div class="result-sub" id="pctSub">Gib deinen CGPA ein, um den Prozentwert zu sehen.</div>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="pct">Ergebnis kopieren</button>
+            <button type="button" class="btn btn-outline js-print" title="Wähle im Druckfenster „Als PDF speichern“, um ein PDF herunterzuladen">Drucken / PDF</button>
+          </div>
+          <div class="formula">
+            <div class="formula-title">Verwendete Formel</div>
+            <p class="formula-line" id="formulaMain"></p>
+            <p class="formula-work" id="formulaWork"></p>
+            <p class="muted small" id="formulaNote"></p>
+          </div>
+        </section>
+      </div>
+      <!-- ================= Sidebar: grade table ================= -->
+      <aside class="sidebar">
+        <section class="card" aria-labelledby="tableTitle">
+          <h2 id="tableTitle" class="side-title">Notenpunkte</h2>
+          <p class="muted small" id="tableSubtitle"></p>
+          <div class="table-wrap">
+            <table class="grade-table">
+              <thead>
+                <tr><th scope="col">Note</th><th scope="col" class="num">Wert</th><th scope="col" class="num" id="marksCol">Punkte %</th></tr>
+              </thead>
+              <tbody id="gradeTableBody"></tbody>
+            </table>
+          </div>
+          <p class="muted tiny">Die Punktebereiche unterscheiden sich zwischen Hochschulen. Prüfe immer die Notenordnung deiner eigenen Hochschule.</p>
+        </section>
+
+        <section class="card tips">
+          <h2 class="side-title">RWTH: Das Wichtigste</h2>
+          <ul>
+            <li>Die Gesamtnote ist nach <strong>Credit Points (CP) gewichtet</strong>, die Bachelorarbeit eingeschlossen.</li>
+            <li>Es zählt nur die <strong>erste Nachkommastelle</strong>; eine Rundung erfolgt nicht.</li>
+            <li>Wer in der Regelstudienzeit fertig wird, kann <strong>Modulnoten im Umfang von 5 bis 30 CP streichen</strong> lassen.</li>
+            <li><strong>„Mit Auszeichnung“</strong>: Bachelorarbeit 1.0 und Gesamtnote nicht schlechter als <strong>1.3</strong>.</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <article class="guide" id="guide">
+
+      <section id="how-it-works">
+        <h2>So funktioniert die Notengebung an der RWTH Aachen</h2>
+        <p>An der RWTH Aachen gilt für alle Bachelor- und Masterstudiengänge (außer Lehramt) die Übergreifende Prüfungsordnung (ÜPO); jeder Studiengang hat dazu eine eigene studiengangspezifische Prüfungsordnung. Prüfungsleistungen werden von 1 (sehr gut) bis 5 (nicht ausreichend) bewertet. Durch Erhöhen oder Absenken um 0.3 entstehen Zwischenwerte; die Noten 0.7, 4.3, 4.7 und 5.3 sind ausgeschlossen. Möglich sind also 1.0, 1.3, 1.7, 2.0, 2.3, 2.7, 3.0, 3.3, 3.7, 4.0 und 5.0.</p>
+        <p>Ein Modul ist bestanden, wenn das gewichtete Mittel aller zugehörigen Teilprüfungen mindestens „ausreichend“ (4.0) ist. Für jedes bestandene Modul bekommst du die Credit Points laut Modulhandbuch; ein CP entspricht etwa 30 Stunden Arbeitsaufwand.</p>
+      </section>
+
+      <section id="grade-points">
+        <h2>Die Gesamtnote nach § 10 ÜPO</h2>
+        <p>Die Gesamtnote wird aus den Noten der Module einschließlich des Moduls „Bachelorarbeit“ gebildet, wobei jede Note mit ihren CP gewichtet wird. In der Regel gehen die CP aller benoteten Module ein, die für den Abschluss erforderlich sind. Die studiengangspezifische Prüfungsordnung darf die Bachelorarbeit und einzelne Modulbereiche anders gewichten, prüfe also auch die Ordnung deines Studiengangs. <strong>Bei der Bildung der Noten und der Gesamtnote wird nur die erste Dezimalstelle berücksichtigt; alle weiteren werden gestrichen, eine Rundung erfolgt nicht.</strong></p>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">Durchschnitt</th><th scope="col">Gesamtnote</th></tr></thead>
+            <tbody>
+              <tr><td>bis 1.5</td><td>sehr gut</td></tr>
+              <tr><td>1.6 – 2.5</td><td>gut</td></tr>
+              <tr><td>2.6 – 3.5</td><td>befriedigend</td></tr>
+              <tr><td>3.6 – 4.0</td><td>ausreichend</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Statt „sehr gut“ gibt es das Gesamturteil <strong>„mit Auszeichnung“</strong>, wenn die Bachelor- bzw. Masterarbeit mit 1.0 bewertet wurde und die Gesamtnote nicht schlechter als 1.3 ist.</p>
+      </section>
+
+      <section id="streichung">
+        <h2>Notenstreichung bei Abschluss in der Regelstudienzeit</h2>
+        <p>Schließt du alle Modulprüfungen eines Bachelorstudiengangs innerhalb der Regelstudienzeit ab, sieht die ÜPO vor, dass die Prüfungsordnung deines Studiengangs die <strong>Streichung von gewichteten Modulnoten im Umfang von mindestens 5 und höchstens 30 CP</strong> erlaubt (im Master höchstens 15 CP, falls vorgesehen). Du teilst dem Zentralen Prüfungsamt innerhalb einer Woche nach dem letzten Ergebnis mit, welche Noten gestrichen werden sollen. Die Note der Bachelorarbeit kann nicht gestrichen werden. Gestrichene Module stehen im Zeugnis als „bestanden“.</p>
+        <p><strong>Tipp für den Rechner:</strong> Lass die Module, die du streichen möchtest, im Tab „Schnitt“ einfach weg. So siehst du sofort, wie sich die Gesamtnote verbessert.</p>
+      </section>
+
+      <section id="example">
+        <h2>Beispielrechnung: Gesamtnote an der RWTH</h2>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">Modul</th><th scope="col" class="num">CP</th><th scope="col" class="num">Note</th><th scope="col" class="num">CP × Note</th></tr></thead>
+            <tbody>
+              <tr><td>Höhere Mathematik</td><td class="num">10</td><td class="num">1.7</td><td class="num">17.0</td></tr>
+              <tr><td>Technische Mechanik</td><td class="num">8</td><td class="num">2.3</td><td class="num">18.4</td></tr>
+              <tr><td>Informatik im Maschinenbau</td><td class="num">6</td><td class="num">1.3</td><td class="num">7.8</td></tr>
+              <tr><td>Werkstoffkunde</td><td class="num">7</td><td class="num">2.7</td><td class="num">18.9</td></tr>
+              <tr><td>Bachelorarbeit</td><td class="num">12</td><td class="num">1.3</td><td class="num">15.6</td></tr>
+            </tbody>
+            <tfoot><tr><th scope="row">Summe</th><td class="num">43</td><td></td><td class="num">77.7</td></tr></tfoot>
+          </table>
+        </div>
+        <p class="formula-block">77.7 ÷ 43 = 1.806… → 1.8 (eine Nachkommastelle, ohne Rundung)</p>
+        <p>Streichst du Werkstoffkunde (7 CP) im Rahmen der Notenstreichung, ergibt sich (77.7 − 18.9) ÷ 36 = 1.633… → 1.6. Die CP-Werte im Beispiel sind frei gewählt; nimm für deine Rechnung die CP aus dem Modulhandbuch deines Studiengangs.</p>
+      </section>
+
+      <section id="bavarian">
+        <h2>Abschluss aus dem Ausland? Die modifizierte bayerische Formel</h2>
+        <p>Wer seinen Bachelor zum Beispiel in Pakistan, Indien oder Bangladesch gemacht hat, bekommt für die Bewerbung an der RWTH Aachen eine umgerechnete deutsche Note. Deutsche Hochschulen verwenden dafür in der Regel die modifizierte bayerische Formel, die die Kultusministerkonferenz (KMK) empfiehlt:</p>
+        <p class="formula-block">Deutsche Note = 1 + 3 × (Nmax − Nd) ÷ (Nmax − Nmin)</p>
+        <p>Nmax ist die beste Note deines Systems, Nmin die schlechteste bestandene Note und Nd deine eigene Note. Ein CGPA von 3.20 auf einer 4.0-Skala, bei der man ab 2.0 besteht, ergibt 1 + 3 × (4 − 3.2) ÷ (4 − 2) = 2.2. Liegt die Bestehensgrenze bei 1.0, ergibt derselbe CGPA 1 + 3 × 0.8 ÷ 3 = 1.8. Die richtige Bestehensgrenze ist also entscheidend; prüfe dein Transcript oder deine Studienordnung. Der Tab „Bayerische Formel“ rechnet das für vier gängige Notensysteme aus.</p>
+      </section>
+
+      <section id="faq" class="faq">
+        <h2>RWTH Notenrechner: Häufige Fragen</h2>
+
+        <details>
+          <summary><h3>Wie wird die Gesamtnote an der RWTH berechnet?</h3></summary>
+          <p>Aus den Noten aller benoteten Module einschließlich der Bachelorarbeit, jeweils mit ihren Credit Points gewichtet. Die Prüfungsordnung deines Studiengangs kann einzelne Bereiche anders gewichten.</p>
+        </details>
+        <details>
+          <summary><h3>Rundet die RWTH die Gesamtnote?</h3></summary>
+          <p>Nein. Nach § 10 ÜPO zählt nur die erste Nachkommastelle, alle weiteren werden gestrichen. 1.89 wird also zu 1.8.</p>
+        </details>
+        <details>
+          <summary><h3>Kann ich an der RWTH schlechte Noten streichen?</h3></summary>
+          <p>Ja, wenn du alle Modulprüfungen in der Regelstudienzeit abschließt: Im Bachelor können Modulnoten im Umfang von 5 bis 30 CP gestrichen werden. Die Note der Bachelorarbeit kann nicht gestrichen werden.</p>
+        </details>
+        <details>
+          <summary><h3>Wann gibt es an der RWTH „mit Auszeichnung“?</h3></summary>
+          <p>Wenn die Bachelor- oder Masterarbeit mit 1.0 bewertet wurde und die Gesamtnote nicht schlechter als 1.3 ist.</p>
+        </details>
+        <details>
+          <summary><h3>Welche Noten gibt es an der RWTH Aachen?</h3></summary>
+          <p>1.0, 1.3, 1.7, 2.0, 2.3, 2.7, 3.0, 3.3, 3.7, 4.0 und 5.0. Die Werte 0.7, 4.3, 4.7 und 5.3 sind ausgeschlossen.</p>
+        </details>
+      </section>
+
+      <section id="sources">
+        <h2>Quellen</h2>
+        <ul class="source-note">
+          <li><a href="https://www.rwth-aachen.de/global/show_document.asp?id=aaaaaaaadljpmrq">RWTH Aachen: Übergreifende Prüfungsordnung (ÜPO) für alle Bachelor- und Masterstudiengänge vom 03.11.2014 in der Fassung der zwanzigsten Änderungsordnung, Amtliche Bekanntmachung 2026/067 vom 23.04.2026, § 10</a></li>
+        </ul>
+        <p class="source-note">Zuletzt geprüft: 22. Oktober 2026. Prüfungsordnungen können sich ändern; gleiche dein Ergebnis immer mit der aktuellen Prüfungsordnung deines Studiengangs ab. Siehe auch unsere <a href="terms.html">Nutzungsbedingungen</a>.</p>
+      </section>
+    </article>
+
+    <section class="uni-section" aria-labelledby="uniTitle">
+      <h2 id="uniTitle">Weitere CGPA- &amp; GPA-Rechner</h2>
+      <div class="uni-grid">
+        <a class="card uni-card" href="tum-cgpa-calculator.html">
+          <span class="uni-badge">TUM</span>
+          <span class="uni-name">TUM Notenrechner: Notendurchschnitt und Gesamtnote</span>
+          <span class="muted small">1 Nachkommastelle · Auszeichnung bis 1.2</span>
+        </a>
+        <a class="card uni-card" href="lmu-cgpa-calculator.html">
+          <span class="uni-badge">LMU</span>
+          <span class="uni-name">LMU Notenrechner: Endnote mit zwei Nachkommastellen</span>
+          <span class="muted small">ECTS-gewichtet · 2 Nachkommastellen</span>
+        </a>
+        <a class="card uni-card" href="heidelberg-cgpa-calculator.html">
+          <span class="uni-badge">Heidelberg</span>
+          <span class="uni-name">Uni Heidelberg Notenrechner: Endnote 70 % Module + 30 % Abschlussarbeit</span>
+          <span class="muted small">70 % Module + 30 % Arbeit · 1 Nachkommastelle</span>
+        </a>
+        <a class="card uni-card" href="kit-cgpa-calculator.html">
+          <span class="uni-badge">KIT</span>
+          <span class="uni-name">KIT Notenrechner: Gesamtnote mit doppelt gewichteter Bachelorarbeit</span>
+          <span class="muted small">Bachelorarbeit doppelt · 1 Nachkommastelle</span>
+        </a>
+        <a class="card uni-card" href="index.html">
+          <span class="uni-badge">ALLE</span>
+          <span class="uni-name">Allgemeiner CGPA-Rechner</span>
+          <span class="muted small">4.0-, 5.0- und 10-Punkte-Skalen</span>
+        </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">UNI</span>
+          <span class="uni-name">Alle Hochschulrechner</span>
+          <span class="muted small">Rechner, die mit den offiziellen Noten- und Prozentregeln der jeweiligen Hochschule eingerichtet sind.</span>
+        </a>
+      </div>
+    </section>
+    <p class="back-top"><a href="#calculator">↑ Zurück zum Rechner</a></p>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p><strong>CGPA Calculator</strong> · Für Studierende gemacht · © <span id="year">2026</span></p>
+        <p class="muted">Die Ergebnisse sind Schätzungen. Die offiziellen Regeln deiner Hochschule haben immer Vorrang.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Fußzeile">
+        <a href="index.html">Rechner</a>
+        <a href="cgpa-to-german-grade.html">CGPA in deutsche Note</a>
+        <a href="about.html">Über uns</a>
+        <a href="privacy-policy.html">Datenschutzerklärung</a>
+        <a href="terms.html">Nutzungsbedingungen</a>
+        <a href="contact.html">Kontakt</a>
+      </nav>
+    </div>
+  </footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>window.CGPA_PAGE = {
+      storageKey: 'cgpa-rwth',
+      creditLabel: 'ECTS',
+      semCreditLabel: 'ECTS',
+      creditExample: 6,
+      semCreditExample: 30,
+      maxSemCredit: 90,
+      maxTotalCredit: 400,
+      periodLabel: 'Semester {n}',
+      msgs: {"Add your subjects to see your GPA.":"Trage deine Module ein, um deinen Notendurchschnitt zu sehen.","Add your semesters to see your CGPA.":"Trage deine Semester ein, um deine Gesamtnote zu sehen.","Fill in the four boxes above to see the GPA you need.":"Fülle die vier Felder oben aus, um den nötigen Durchschnitt zu sehen.","Fill in all four boxes to see the GPA you need.":"Fülle alle vier Felder aus, um den nötigen Durchschnitt zu sehen.","Enter your CGPA to see the percentage.":"Gib deine ausländische Note ein, um die deutsche Note zu sehen.","Fix the CGPA above to see the percentage.":"Korrigiere die Note oben, um das Ergebnis zu sehen.","Please enter the GPA for this semester.":"Bitte gib den Notendurchschnitt dieses Semesters ein.","Please enter the credit hours for this subject.":"Bitte gib die ECTS-Punkte dieses Moduls ein.","Please enter the total credit hours for this semester.":"Bitte gib die ECTS-Punkte dieses Semesters ein.","That looks too high. Credit hours are usually between 1 and 6.":"Das ist ungewöhnlich hoch. Bitte prüfe die ECTS-Punkte.","That looks too high. A semester usually has 12 to 24 credit hours.":"Das ist ungewöhnlich hoch. Ein Semester hat meist etwa 30 ECTS-Punkte.","GPA / SGPA":"Durchschnitt","Subject name (optional)":"Modulname (optional)","e.g. Calculus":"z. B. Analysis 1","Grade points ({scale})":"Noten ({scale})","Please type your CGPA as a number, like {x}.":"Bitte gib deine Note als Zahl ein, z. B. {x}.","CGPA can’t be negative.":"Eine Note kann nicht negativ sein.","On the {scale}, CGPA can’t be more than {max}. Try a different scale.":"Auf der Skala „{scale}“ kann die Note nicht höher als {max} sein. Wähle eine andere Skala.","Calculate your CGPA in the CGPA tab first 🙂":"Berechne zuerst deine Gesamtnote im Tab „Gesamt“ 🙂","Add at least one complete subject first 🙂":"Trage zuerst mindestens ein vollständiges Modul ein 🙂","Semester {n}: GPA {gpa}, {credits} credits":"Semester {n}: Durchschnitt {gpa}, {credits} ECTS","{name}: {credits} credits, grade {grade} ({points})":"{name}: {credits} ECTS, Note {grade}","My semester GPA: {gpa} ({scale})":"Mein Notendurchschnitt: {gpa} ({scale})","My CGPA: {cgpa} ({scale})":"Meine Gesamtnote: {cgpa} ({scale})","Total credit hours: {credits}":"ECTS insgesamt: {credits}","1 subject · {credits} credits":"1 Modul · {credits} ECTS","{n} subjects · {credits} credits":"{n} Module · {credits} ECTS","1 semester · {credits} total credit hours":"1 Semester · {credits} ECTS","{n} semesters · {credits} total credit hours":"{n} Semester · {credits} ECTS","You need an average of {needed} or better over your remaining {left} credit hours to reach a {target} average.":"Du brauchst in deinen restlichen {left} ECTS einen Durchschnitt von {needed} oder besser, um {target} zu erreichen.","To reach a {target} average (now {current}), I need an average of {needed} or better over my remaining {left} credit hours.":"Für einen Durchschnitt von {target} (jetzt {current}) brauche ich in meinen restlichen {left} ECTS {needed} oder besser.","I have already secured a {target} CGPA.":"Einen Durchschnitt von {target} habe ich schon sicher.","Even with a perfect {max} in every remaining semester, the best average you can reach is {best}.":"Selbst mit einer {max} in allen restlichen Modulen erreichst du höchstens einen Durchschnitt von {best}.","Your average will stay at {target} or better no matter what. Aim high anyway!":"Dein Durchschnitt bleibt auf jeden Fall bei {target} oder besser. Trotzdem: gib Gas!"},
+      creditLabel: 'CP', semCreditLabel: 'CP',
+      scales: {
+        de: {
+          max: 4, min: 1, lowerIsBetter: true, label: 'Notenskala RWTH', region: 'Deutsche Noten · 1.0 ist die beste Note', example: '1.7',
+          modes: ['grade', 'points'], pointsLabel: 'Genaue Note (1.0–4.0)', digits: 1, truncate: true, gradeDigits: 1,
+          maxText: '(1.0 = beste Note)', noQualityPoints: true, subtitle: 'Deutsche Noten: 1.0 ist die beste, 4.0 die schlechteste bestandene Note',
+          ratioPoints: [[1, 1], [1.5, 0.9], [2.5, 0.76], [3.5, 0.6], [4, 0.5]],
+          words: [[1.5, 'sehr gut'], [2.5, 'gut'], [3.5, 'befriedigend'], [4, 'ausreichend']],
+          grades: [['1.0 sehr gut', 1], ['1.3 sehr gut', 1.3], ['1.7 gut', 1.7], ['2.0 gut', 2], ['2.3 gut', 2.3], ['2.7 befriedigend', 2.7], ['3.0 befriedigend', 3], ['3.3 befriedigend', 3.3], ['3.7 ausreichend', 3.7], ['4.0 ausreichend', 4]]
+        }
+      },
+      conversions: (function () {
+        // Modifizierte bayerische Formel: x = 1 + 3 × (Nmax − Nd) ÷ (Nmax − Nmin)
+        function bavarian(nmax, nmin, label, example) {
+          return {
+            max: nmax, label: label, example: example,
+            formula: 'Deutsche Note = 1 + 3 × (beste Note − deine Note) ÷ (beste Note − schlechteste bestandene Note)',
+            note: 'Modifizierte bayerische Formel (KMK-Empfehlung). Das Ergebnis wird nach der ersten Nachkommastelle abgeschnitten. Es ist nur ein Richtwert; die offizielle Umrechnung macht die Hochschule, bei der du dich bewirbst.',
+            result: function (c) {
+              if (c < nmin) return { pct: 0, ratio: 0, text: 'Nicht bestanden', work: c.toFixed(2) + ' liegt unter der schlechtesten bestandenen Note ' + nmin.toFixed(2) };
+              var x = 1 + 3 * (nmax - c) / (nmax - nmin);
+              var g = Math.floor(Math.max(1, x) * 10 + 1e-9) / 10;
+              return { pct: (4 - g) / 3 * 100, ratio: 1 - (g - 1) / 6, text: g.toFixed(1),
+                work: '1 + 3 × (' + nmax + ' − ' + c.toFixed(2) + ') ÷ (' + nmax + ' − ' + nmin + ') = ' + x.toFixed(3) + ' → ' + g.toFixed(1),
+                sub: 'Deutsche Note (1.0 = beste, 4.0 = schlechteste bestandene Note)' };
+            }
+          };
+        }
+        return {
+          b41: bavarian(4, 1, '4.0-Skala, bestanden ab 1.0', 3.2),
+          b42: bavarian(4, 2, '4.0-Skala, bestanden ab 2.0', 3.2),
+          b104: bavarian(10, 4, '10-Punkte-Skala, bestanden ab 4.0', 8),
+          b10040: bavarian(100, 40, 'Prozent, bestanden ab 40 %', 75)
+        };
+      })()
+    };</script>
+  <script src="../i18n/de.js" data-i18n=""></script>
+  <script src="../site.js"></script>
+  <script src="../script.js"></script>
+</body></html>

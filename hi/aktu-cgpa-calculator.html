@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="hi"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Built by tools/build-university-pages.js – edit that file, not this one -->
+  <title>AKTU SGPA, CGPA कैलकुलेटर और CGPA से प्रतिशत (× 10)</title>
+  <meta name="description" content="डॉ. ए.पी.जे. अब्दुल कलाम तकनीकी विश्वविद्यालय (AKTU) के 10-पॉइंट ग्रेड से SGPA और CGPA निकालें, और CGPA × 10 से प्रतिशत जानें।">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f6fb">
+  <link rel="canonical" href="https://cgpa-calculator-umber-two.vercel.app/hi/aktu-cgpa-calculator.html">
+
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CGPA Calculator">
+  <meta property="og:locale" content="hi_IN">
+  <meta property="og:url" content="https://cgpa-calculator-umber-two.vercel.app/hi/aktu-cgpa-calculator.html">
+  <meta property="og:title" content="AKTU SGPA और CGPA कैलकुलेटर (B.Tech)">
+  <meta property="og:description" content="डॉ. ए.पी.जे. अब्दुल कलाम तकनीकी विश्वविद्यालय (AKTU) के 10-पॉइंट ग्रेड से SGPA और CGPA निकालें, और CGPA × 10 से प्रतिशत जानें।">
+  <meta property="og:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <meta property="og:image:alt" content="CGPA कैलकुलेटर: 4.00 में से 3.37 CGPA दिखाता परिणाम कार्ड">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AKTU SGPA और CGPA कैलकुलेटर (B.Tech)">
+  <meta name="twitter:description" content="डॉ. ए.पी.जे. अब्दुल कलाम तकनीकी विश्वविद्यालय (AKTU) के 10-पॉइंट ग्रेड से SGPA और CGPA निकालें, और CGPA × 10 से प्रतिशत जानें।">
+  <meta name="twitter:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "@id": "https://cgpa-calculator-umber-two.vercel.app/hi/aktu-cgpa-calculator.html#app",
+    "name": "AKTU SGPA और CGPA कैलकुलेटर (B.Tech)",
+    "url": "https://cgpa-calculator-umber-two.vercel.app/hi/aktu-cgpa-calculator.html",
+    "image": "https://cgpa-calculator-umber-two.vercel.app/og-image.jpg",
+    "description": "डॉ. ए.पी.जे. अब्दुल कलाम तकनीकी विश्वविद्यालय (AKTU) के 10-पॉइंट ग्रेड से SGPA और CGPA निकालें, और CGPA × 10 से प्रतिशत जानें।",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "hi",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "AKTU में CGPA को प्रतिशत में कैसे बदलें?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AKTU अध्यादेश के अनुसार CGPA को 10 से गुणा करें। जैसे CGPA 8.2 = 82.0%। (CGPA − 0.75) × 10 वाला सूत्र इस अध्यादेश में नहीं है।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "AKTU में पास होने के लिए कितने अंक चाहिए?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "थ्योरी विषय में कम से कम E ग्रेड चाहिए, जो 40–44 अंक है। प्रैक्टिकल में कम से कम C ग्रेड (50–59 अंक) चाहिए। साथ ही सेमेस्टर का SGPA कम से कम 5.0 होना चाहिए।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "AKTU में A+ ग्रेड के कितने पॉइंट हैं?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A+ के 10 ग्रेड पॉइंट हैं और यह 90 से 100 अंकों पर मिलता है। A (80–89) के 9 और B+ (70–79) के 8 पॉइंट हैं।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "AKTU में प्रथम श्रेणी के लिए कितना CGPA चाहिए?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "प्रथम श्रेणी के लिए CGPA कम से कम 6.5 चाहिए। CGPA 7.5 या अधिक और सभी विषय पहले प्रयास में पास हों तो ऑनर्स सहित प्रथम श्रेणी मिलती है। अपने बैच की शर्तें अध्यादेश में देखें।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "SGPA से CGPA कैसे निकालें?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "हर सेमेस्टर के SGPA को उसके कुल क्रेडिट से गुणा करें, सबका योग करें और सभी सेमेस्टर के कुल क्रेडिट से भाग दें। अगर हर सेमेस्टर के क्रेडिट बराबर हों तो SGPA का साधारण औसत भी वही उत्तर देता है।"
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "CGPA Calculator",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/hi/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "AKTU SGPA और CGPA कैलकुलेटर (B.Tech)",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/hi/aktu-cgpa-calculator.html"
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    /* Apply the saved (or system) theme before the page paints, so there is no flash */
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem('cgpa-theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="CGPA कैलकुलेटर होम">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3z"></path>
+            <path d="M5 13.18v4C5 18.84 8.13 20 12 20s7-1.16 7-2.82v-4L12 17l-7-3.82z"></path>
+          </svg>
+        </span>
+        <span>CGPA Calculator</span>
+      </a>
+      <div class="header-actions">
+        <nav class="site-nav" id="siteNav" aria-label="मुख्य मेनू">
+          <a href="index.html">कैलकुलेटर</a>
+          <a href="../cgpa-to-german-grade.html">जर्मन ग्रेड</a>
+          <a href="about.html">हमारे बारे में</a>
+          <a href="privacy-policy.html">गोपनीयता</a>
+          <a href="terms.html">शर्तें</a>
+          <a href="contact.html">संपर्क</a>
+        </nav>
+        <details class="lang-menu" id="langMenu">
+          <summary class="icon-btn lang-btn" aria-label="भाषा चुनें" title="भाषा">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"></path></svg>
+            <span class="lang-code" data-no-translate="">HI</span>
+          </summary>
+          <div class="lang-list" data-no-translate=""><a href="../index.html" hreflang="en" lang="en"><span class="lang-flag" aria-hidden="true">🇬🇧</span> English</a><a href="../de/index.html" hreflang="de" lang="de"><span class="lang-flag" aria-hidden="true">🇩🇪</span> Deutsch</a><a href="../ur/index.html" hreflang="ur" lang="ur"><span class="lang-flag" aria-hidden="true">🇵🇰</span> اردو</a><a href="aktu-cgpa-calculator.html" hreflang="hi" lang="hi" aria-current="true"><span class="lang-flag" aria-hidden="true">🇮🇳</span> हिन्दी</a><a href="../bn/index.html" hreflang="bn" lang="bn"><span class="lang-flag" aria-hidden="true">🇧🇩</span> বাংলা</a></div>
+        </details>
+        <button type="button" id="themeToggle" class="icon-btn" aria-label="डार्क मोड पर जाएं" title="लाइट / डार्क मोड">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+        </button>
+        <button type="button" id="menuToggle" class="icon-btn menu-btn" aria-label="मेनू खोलें" aria-expanded="false" aria-controls="siteNav">
+          <svg class="icon-menu" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+
+    <section class="hero">
+      <nav class="breadcrumb" aria-label="ब्रेडक्रंब"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">AKTU</span></nav>
+      <h1>AKTU SGPA और CGPA कैलकुलेटर (B.Tech)</h1>
+      <p>AKTU, लखनऊ की B.Tech ग्रेडिंग (A+ = 10, A = 9, B+ = 8 …) से अपना सेमेस्टर SGPA और कुल CGPA निकालें। अंक या ग्रेड लिखें, क्रेडिट डालें और प्रतिशत भी तुरंत देखें।
+        <a href="#guide" class="hero-link">AKTU की ग्रेडिंग कैसे काम करती है ↓</a></p>
+    </section>
+
+    <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
+      <div class="scale-text">
+        <p id="scaleLabel" class="scale-title">ग्रेडिंग प्रणाली: AKTU B.Tech (थ्योरी विषय)</p>
+        <p class="muted small">हर विषय के 100 में से अंक लिखें या ग्रेड चुनें। ग्रेड पॉइंट AKTU B.Tech अध्यादेश (ऑर्डिनेंस) की थ्योरी तालिका से लिए गए हैं।</p>
+      </div>
+      <select id="scaleSelect" hidden="" aria-hidden="true" tabindex="-1"><option value="aktu">AKTU</option></select>
+      <button type="button" id="resetAll" class="btn btn-outline danger-hover">सब रीसेट करें</button>
+    </section>
+    <p class="print-only" id="printDate"></p>
+
+    <div class="layout">
+      <!-- ================= Calculators ================= -->
+      <div class="main-col">
+        <div class="tabs" role="tablist" aria-label="कैलकुलेटर">
+          <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">GPA <small>एक सेमेस्टर</small></button>
+          <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>सभी सेमेस्टर</small></button>
+          <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">लक्ष्य <small>आगे की योजना</small></button>
+          <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">प्रतिशत <small>कन्वर्टर</small></button>
+        </div>
+        <!-- ---------- TAB 1: GPA ---------- -->
+        <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
+          <div class="panel-head">
+            <div>
+              <h2>सेमेस्टर GPA</h2>
+              <p class="muted small">हर विषय को उसके क्रेडिट और ग्रेड के साथ जोड़ें।</p>
+            </div>
+<!-- mode-switch -->
+            <div class="segmented" id="modeSwitch" role="radiogroup" aria-label="आप परिणाम कैसे दर्ज करना चाहते हैं?">
+              <input type="radio" name="gpaMode" id="modeGrade" value="grade" checked="">
+              <label for="modeGrade">ग्रेड</label>
+              <input type="radio" name="gpaMode" id="modeMarks" value="marks">
+              <label for="modeMarks">अंक</label>
+            </div>
+<!-- /mode-switch -->
+          </div>
+          <div class="rows-head subject-cols" aria-hidden="true">
+            <span>विषय (वैकल्पिक)</span><span>क्रेडिट</span><span id="gradeHead">ग्रेड</span><span></span>
+          </div>
+          <div id="subjectList" class="row-list mode-grade"></div>
+          <button type="button" id="addSubject" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            विषय जोड़ें
+          </button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">आपका सेमेस्टर GPA</div>
+            <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="gpaMeter"></span></div>
+            <div class="result-cheer" id="gpaCheer"></div>
+            <div class="result-sub" id="gpaSub">अपना GPA देखने के लिए विषय जोड़ें।</div>
+            <div class="result-note" id="gpaNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" id="sendToCgpa" class="btn btn-soft">यह GPA मेरे CGPA में जोड़ें →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="gpa">परिणाम कॉपी करें</button>
+            <button type="button" class="btn btn-outline js-print" title="प्रिंट विंडो में PDF डाउनलोड करने के लिए “Save as PDF” चुनें">प्रिंट / PDF</button>
+            <button type="button" id="resetGpa" class="btn btn-quiet">साफ़ करें</button>
+          </div>
+          <details class="howto">
+            <summary>GPA की गणना कैसे होती है?</summary>
+            <p class="formula-line">GPA = (Σ क्रेडिट × ग्रेड पॉइंट) ÷ (Σ क्रेडिट)</p>
+            <p class="muted small">उदाहरण: गणित 3 क्रेडिट और 4.00 ग्रेड पॉइंट, अंग्रेज़ी 2 क्रेडिट और 3.00 → (3×4 + 2×3) ÷ (3+2) = 18 ÷ 5 = <strong>3.60</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 2: CGPA ---------- -->
+        <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>कुल CGPA</h2>
+              <p class="muted small">हर सेमेस्टर का GPA (SGPA) और उसके कुल क्रेडिट जोड़ें।</p>
+            </div>
+          </div>
+          <div class="rows-head semester-cols" aria-hidden="true">
+            <span>सेमेस्टर</span><span>GPA / SGPA</span><span>क्रेडिट</span><span></span>
+          </div>
+          <div id="semesterList" class="row-list"></div>
+          <button type="button" id="addSemester" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            सेमेस्टर जोड़ें
+          </button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">आपका CGPA</div>
+            <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="cgpaMeter"></span></div>
+            <div class="result-cheer" id="cgpaCheer"></div>
+            <div class="result-sub" id="cgpaSub">अपना CGPA देखने के लिए सेमेस्टर जोड़ें।</div>
+            <div class="result-note" id="cgpaNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" id="sendToPct" class="btn btn-soft">इस CGPA को % में बदलें →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">परिणाम कॉपी करें</button>
+            <button type="button" class="btn btn-outline js-print" title="प्रिंट विंडो में PDF डाउनलोड करने के लिए “Save as PDF” चुनें">प्रिंट / PDF</button>
+            <button type="button" id="resetCgpa" class="btn btn-quiet">साफ़ करें</button>
+          </div>
+          <details class="howto">
+            <summary>CGPA की गणना कैसे होती है?</summary>
+            <p class="formula-line">CGPA = (Σ सेमेस्टर GPA × सेमेस्टर क्रेडिट) ÷ (कुल क्रेडिट)</p>
+            <p class="muted small">ज़्यादा क्रेडिट वाले सेमेस्टर ज़्यादा गिने जाते हैं। उदाहरण: 18 क्रेडिट के साथ 3.50 और 15 क्रेडिट के साथ 3.00 → (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 3: Target CGPA ---------- -->
+        <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>लक्ष्य CGPA</h2>
+              <p class="muted small">जानें कि अपने लक्ष्य तक पहुँचने के लिए आने वाले सेमेस्टर में आपको कितना GPA चाहिए।</p>
+            </div>
+          </div>
+          <div class="target-grid">
+            <div class="field">
+              <label class="field-label" for="tCurrent">वर्तमान CGPA</label>
+              <input type="text" id="tCurrent" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tCurrentMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tDone">पूरे किए गए क्रेडिट</label>
+              <input type="text" id="tDone" inputmode="decimal" autocomplete="off" placeholder="e.g. 66">
+              <p class="row-msg" id="tDoneMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tTarget">लक्ष्य CGPA</label>
+              <input type="text" id="tTarget" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tTargetMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tLeft">बचे हुए क्रेडिट</label>
+              <input type="text" id="tLeft" inputmode="decimal" autocomplete="off" placeholder="e.g. 70">
+              <p class="row-msg" id="tLeftMsg"></p>
+            </div>
+          </div>
+          <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">मेरे CGPA टैब से भरें</button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">हर सेमेस्टर में ज़रूरी GPA</div>
+            <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="tgtMeter"></span></div>
+            <div class="result-cheer" id="tgtCheer"></div>
+            <div class="result-sub" id="tgtSub">ज़रूरी GPA देखने के लिए ऊपर के चारों बॉक्स भरें।</div>
+            <div class="result-note" id="tgtNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="target">परिणाम कॉपी करें</button>
+            <button type="button" class="btn btn-outline js-print" title="प्रिंट विंडो में PDF डाउनलोड करने के लिए “Save as PDF” चुनें">प्रिंट / PDF</button>
+            <button type="button" id="resetTarget" class="btn btn-quiet">साफ़ करें</button>
+          </div>
+          <details class="howto">
+            <summary>इसकी गणना कैसे होती है?</summary>
+            <p class="formula-line">ज़रूरी GPA = (लक्ष्य × कुल क्रेडिट − वर्तमान × पूरे क्रेडिट) ÷ बचे हुए क्रेडिट</p>
+            <p class="muted small">उदाहरण: 60 क्रेडिट के बाद वर्तमान 3.00, लक्ष्य 3.30, 60 क्रेडिट बाकी → (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 4: Percentage ---------- -->
+        <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>CGPA से प्रतिशत</h2>
+              <p class="muted small">अपना CGPA लिखें और उसका स्केल चुनें।</p>
+            </div>
+          </div>
+          <div class="conv-grid">
+            <div class="field">
+              <label class="field-label always" for="convInput">आपका CGPA</label>
+              <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
+              <p class="row-msg" id="convMsg"></p>
+            </div>
+
+          </div>
+          <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">CGPA टैब से मेरा CGPA इस्तेमाल करें</button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">प्रतिशत</div>
+            <div class="result-value"><span id="pctValue">—</span></div>
+            <div class="meter" aria-hidden="true"><span id="pctMeter"></span></div>
+            <div class="result-cheer" id="pctCheer"></div>
+            <div class="result-sub" id="pctSub">प्रतिशत देखने के लिए अपना CGPA डालें।</div>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="pct">परिणाम कॉपी करें</button>
+            <button type="button" class="btn btn-outline js-print" title="प्रिंट विंडो में PDF डाउनलोड करने के लिए “Save as PDF” चुनें">प्रिंट / PDF</button>
+          </div>
+          <div class="formula">
+            <div class="formula-title">इस्तेमाल किया गया फ़ॉर्मूला</div>
+            <p class="formula-line" id="formulaMain"></p>
+            <p class="formula-work" id="formulaWork"></p>
+            <p class="muted small" id="formulaNote"></p>
+          </div>
+        </section>
+      </div>
+      <!-- ================= Sidebar: grade table ================= -->
+      <aside class="sidebar">
+        <section class="card" aria-labelledby="tableTitle">
+          <h2 id="tableTitle" class="side-title">ग्रेड पॉइंट</h2>
+          <p class="muted small" id="tableSubtitle"></p>
+          <div class="table-wrap">
+            <table class="grade-table">
+              <thead>
+                <tr><th scope="col">ग्रेड</th><th scope="col" class="num">पॉइंट</th><th scope="col" class="num" id="marksCol">अंक %</th></tr>
+              </thead>
+              <tbody id="gradeTableBody"></tbody>
+            </table>
+          </div>
+          <p class="muted tiny">अंकों की सीमाएं हर यूनिवर्सिटी में अलग होती हैं। हमेशा अपनी यूनिवर्सिटी की ग्रेडिंग नीति देखें।</p>
+        </section>
+
+        <section class="card tips">
+          <h2 class="side-title">AKTU: मुख्य बातें</h2>
+          <ul>
+            <li>थ्योरी में <strong>90 या अधिक</strong> अंक पर A+ यानी 10 ग्रेड पॉइंट।</li>
+            <li>पास होने के लिए हर विषय में कम से कम <strong>E ग्रेड</strong> (40–44 अंक) चाहिए।</li>
+            <li>सेमेस्टर का परिणाम तभी घोषित होता है जब <strong>SGPA कम से कम 5.0</strong> हो।</li>
+            <li>प्रतिशत = <strong>CGPA × 10</strong>, जैसे 8.2 = 82%।</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <article class="guide" id="guide">
+
+      <section id="how-it-works">
+        <h2>AKTU में ग्रेडिंग कैसे होती है</h2>
+        <p>डॉ. ए.पी.जे. अब्दुल कलाम तकनीकी विश्वविद्यालय (AKTU), लखनऊ, उत्तर प्रदेश के सैकड़ों इंजीनियरिंग कॉलेजों का संबद्ध विश्वविद्यालय है। B.Tech के अध्यादेश के अनुसार AKTU <strong>निरपेक्ष (absolute) ग्रेडिंग</strong> अपनाता है, यानी आपके अंक सीधे एक तय तालिका से ग्रेड में बदलते हैं। हर सेमेस्टर का परिणाम SGPA (सेमेस्टर ग्रेड पॉइंट एवरेज) के साथ आता है और CGPA (क्यूमुलेटिव ग्रेड पॉइंट एवरेज) हर सेमेस्टर अपडेट होता है।</p>
+        <p>हर विषय के कुछ क्रेडिट होते हैं, जो उसके पढ़ाने के घंटों पर निर्भर करते हैं। जिस विषय के क्रेडिट ज़्यादा हैं, उसका ग्रेड आपके SGPA पर ज़्यादा असर डालता है। SGPA और CGPA दोनों दो दशमलव स्थान तक राउंड करके ट्रांसक्रिप्ट पर लिखे जाते हैं।</p>
+      </section>
+
+      <section id="grade-points">
+        <h2>AKTU ग्रेड तालिका (थ्योरी विषय)</h2>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col" class="num">अंक (%)</th><th scope="col">लेटर ग्रेड</th><th scope="col" class="num">ग्रेड पॉइंट</th><th scope="col">स्तर</th></tr></thead>
+            <tbody>
+              <tr><td class="num">90 – 100</td><td>A+</td><td class="num">10</td><td>उत्कृष्ट (Outstanding)</td></tr>
+              <tr><td class="num">80 – 89</td><td>A</td><td class="num">9</td><td>बहुत उत्तम (Excellent)</td></tr>
+              <tr><td class="num">70 – 79</td><td>B+</td><td class="num">8</td><td>बहुत अच्छा (Very Good)</td></tr>
+              <tr><td class="num">60 – 69</td><td>B</td><td class="num">7</td><td>अच्छा (Good)</td></tr>
+              <tr><td class="num">50 – 59</td><td>C</td><td class="num">6</td><td>औसत से ऊपर</td></tr>
+              <tr><td class="num">45 – 49</td><td>D</td><td class="num">5</td><td>औसत</td></tr>
+              <tr><td class="num">40 – 44</td><td>E</td><td class="num">4</td><td>कमज़ोर (पास)</td></tr>
+              <tr><td class="num">0 – 39</td><td>F</td><td class="num">0</td><td>फेल</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>प्रैक्टिकल विषयों</strong> की तालिका अलग है: वहाँ ग्रेड A+ (90–100), A (80–89), B+ (70–79), B (60–69) और C (50–59) हैं, और 50 से कम अंक F है। यानी प्रैक्टिकल में पास होने के लिए कम से कम 50% अंक चाहिए। प्रैक्टिकल विषय के लिए कैलकुलेटर में सीधे उसका ग्रेड चुनें।</p>
+      </section>
+
+      <section id="example">
+        <h2>AKTU SGPA और CGPA कैसे निकालें: उदाहरण</h2>
+        <p class="formula-block">SGPA = Σ (क्रेडिट × ग्रेड पॉइंट) ÷ Σ क्रेडिट</p>
+        <p>मान लीजिए किसी छात्र के तीसरे सेमेस्टर के ग्रेड ये हैं:</p>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">विषय</th><th scope="col" class="num">क्रेडिट</th><th scope="col">ग्रेड</th><th scope="col" class="num">ग्रेड पॉइंट</th><th scope="col" class="num">क्रेडिट × पॉइंट</th></tr></thead>
+            <tbody>
+              <tr><td>डेटा स्ट्रक्चर</td><td class="num">4</td><td>A</td><td class="num">9</td><td class="num">36</td></tr>
+              <tr><td>मैथ्स-IV</td><td class="num">4</td><td>B+</td><td class="num">8</td><td class="num">32</td></tr>
+              <tr><td>डिजिटल लॉजिक</td><td class="num">3</td><td>A+</td><td class="num">10</td><td class="num">30</td></tr>
+              <tr><td>पायथन प्रोग्रामिंग</td><td class="num">3</td><td>B</td><td class="num">7</td><td class="num">21</td></tr>
+              <tr><td>टेक्निकल कम्युनिकेशन</td><td class="num">2</td><td>C</td><td class="num">6</td><td class="num">12</td></tr>
+              <tr><td>डेटा स्ट्रक्चर लैब</td><td class="num">2</td><td>A</td><td class="num">9</td><td class="num">18</td></tr>
+            </tbody>
+            <tfoot><tr><th scope="row">कुल</th><td class="num">18</td><td></td><td></td><td class="num">149</td></tr></tfoot>
+          </table>
+        </div>
+        <p class="formula-block">SGPA = 149 ÷ 18 = 8.28</p>
+        <p>CGPA सभी सेमेस्टर का क्रेडिट के हिसाब से औसत है: हर सेमेस्टर के SGPA को उस सेमेस्टर के कुल क्रेडिट से गुणा करें, सब जोड़ें और कुल क्रेडिट से भाग दें।</p>
+        <p class="formula-block">CGPA = Σ (सेमेस्टर क्रेडिट × SGPA) ÷ Σ सेमेस्टर क्रेडिट</p>
+        <p>F ग्रेड वाले विषय के 0 पॉइंट जुड़ते हैं लेकिन उसके क्रेडिट भाग में गिने जाते हैं, इसलिए F आपका SGPA काफ़ी गिरा देता है। F मिलने पर कैरी ओवर परीक्षा देनी होती है।</p>
+      </section>
+
+      <section id="percentage">
+        <h2>AKTU CGPA से प्रतिशत और श्रेणी (डिविज़न)</h2>
+        <p>AKTU अध्यादेश में CGPA को प्रतिशत में बदलने का सूत्र दिया गया है: <strong>CGPA × 10 = प्राप्त अंकों का प्रतिशत</strong>। उदाहरण: 8.2 × 10 = 82.0%। इंटरनेट पर (CGPA − 0.75) × 10 जैसा सूत्र भी मिलता है, पर वह इस अध्यादेश में नहीं है।</p>
+        <p>डिविज़न आठवें (अंतिम) सेमेस्टर के बाद सभी सेमेस्टर के आधार पर दिया जाता है:</p>
+        <ul>
+          <li><strong>ऑनर्स सहित प्रथम श्रेणी:</strong> CGPA 7.5 या अधिक, और सभी विषय पहले प्रयास में तय समय (8 सेमेस्टर) में पास।</li>
+          <li><strong>प्रथम श्रेणी:</strong> CGPA 6.5 या अधिक, सभी विषय अधिकतम अवधि में पास।</li>
+          <li><strong>द्वितीय श्रेणी:</strong> डिग्री के योग्य बाकी सभी छात्र।</li>
+        </ul>
+        <p>इन शर्तों में बैच के अनुसार अतिरिक्त नियम (जैसे MOOCs क्रेडिट) हो सकते हैं, इसलिए <strong>अपने बैच का अध्यादेश ज़रूर जाँचें</strong>।</p>
+      </section>
+
+      <section id="faq" class="faq">
+        <h2>AKTU CGPA: अक्सर पूछे जाने वाले प्रश्न</h2>
+
+        <details>
+          <summary><h3>AKTU में CGPA को प्रतिशत में कैसे बदलें?</h3></summary>
+          <p>AKTU अध्यादेश के अनुसार CGPA को 10 से गुणा करें। जैसे CGPA 8.2 = 82.0%। (CGPA − 0.75) × 10 वाला सूत्र इस अध्यादेश में नहीं है।</p>
+        </details>
+        <details>
+          <summary><h3>AKTU में पास होने के लिए कितने अंक चाहिए?</h3></summary>
+          <p>थ्योरी विषय में कम से कम E ग्रेड चाहिए, जो 40–44 अंक है। प्रैक्टिकल में कम से कम C ग्रेड (50–59 अंक) चाहिए। साथ ही सेमेस्टर का SGPA कम से कम 5.0 होना चाहिए।</p>
+        </details>
+        <details>
+          <summary><h3>AKTU में A+ ग्रेड के कितने पॉइंट हैं?</h3></summary>
+          <p>A+ के 10 ग्रेड पॉइंट हैं और यह 90 से 100 अंकों पर मिलता है। A (80–89) के 9 और B+ (70–79) के 8 पॉइंट हैं।</p>
+        </details>
+        <details>
+          <summary><h3>AKTU में प्रथम श्रेणी के लिए कितना CGPA चाहिए?</h3></summary>
+          <p>प्रथम श्रेणी के लिए CGPA कम से कम 6.5 चाहिए। CGPA 7.5 या अधिक और सभी विषय पहले प्रयास में पास हों तो ऑनर्स सहित प्रथम श्रेणी मिलती है। अपने बैच की शर्तें अध्यादेश में देखें।</p>
+        </details>
+        <details>
+          <summary><h3>SGPA से CGPA कैसे निकालें?</h3></summary>
+          <p>हर सेमेस्टर के SGPA को उसके कुल क्रेडिट से गुणा करें, सबका योग करें और सभी सेमेस्टर के कुल क्रेडिट से भाग दें। अगर हर सेमेस्टर के क्रेडिट बराबर हों तो SGPA का साधारण औसत भी वही उत्तर देता है।</p>
+        </details>
+      </section>
+
+      <section id="sources">
+        <h2>स्रोत</h2>
+        <ul class="source-note">
+          <li><a href="https://www.niet.co.in/pdf/Ordinance/B.Tech.pdf">AKTU B.Tech Ordinance (CBCS) – ग्रेडिंग, SGPA/CGPA, प्रतिशत और डिविज़न के नियम (AKTU से संबद्ध NIET द्वारा प्रकाशित प्रति)</a></li>
+          <li><a href="https://aktu.ac.in/bachelors-ordinance.html">AKTU अध्यादेश सूची (आधिकारिक)</a></li>
+        </ul>
+        <p class="source-note">आख़िरी बार जाँचा गया: 22 अक्टूबर 2026। विश्वविद्यालय के नियम बदल सकते हैं, इसलिए अपना परिणाम हमेशा अपने विश्वविद्यालय के नवीनतम आधिकारिक नियमों से मिला लें। देखें: <a href="terms.html">उपयोग की शर्तें</a>।</p>
+      </section>
+    </article>
+
+    <section class="uni-section" aria-labelledby="uniTitle">
+      <h2 id="uniTitle">और CGPA और GPA कैलकुलेटर</h2>
+      <div class="uni-grid">
+        <a class="card uni-card" href="vtu-cgpa-calculator.html">
+          <span class="uni-badge">VTU</span>
+          <span class="uni-name">VTU CGPA और GPA (SGPA) कैलकुलेटर</span>
+          <span class="muted small">2022 और 2021 स्कीम · CGPA से %</span>
+        </a>
+        <a class="card uni-card" href="delhi-university-cgpa-calculator.html">
+          <span class="uni-badge">DU</span>
+          <span class="uni-name">दिल्ली विश्वविद्यालय (DU) SGPA और CGPA कैलकुलेटर</span>
+          <span class="muted small">UGCF · O = 10 · प्रतिशत = CGPA × 10</span>
+        </a>
+        <a class="card uni-card" href="mumbai-university-cgpa-calculator.html">
+          <span class="uni-badge">MU</span>
+          <span class="uni-name">मुंबई विश्वविद्यालय (MU) SGPI और CGPI कैलकुलेटर</span>
+          <span class="muted small">NEP 2020 · 90+ पर O · SGPI = ΣCG ÷ ΣC</span>
+        </a>
+        <a class="card uni-card" href="rgpv-cgpa-calculator.html">
+          <span class="uni-badge">RGPV</span>
+          <span class="uni-name">RGPV SGPA और CGPA कैलकुलेटर (भोपाल)</span>
+          <span class="muted small">91+ पर A+ · प्रतिशत = CGPA × 10</span>
+        </a>
+        <a class="card uni-card" href="index.html">
+          <span class="uni-badge">सभी</span>
+          <span class="uni-name">सामान्य CGPA कैलकुलेटर</span>
+          <span class="muted small">4.0, 5.0 और 10-पॉइंट स्केल</span>
+        </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">UNI</span>
+          <span class="uni-name">सभी यूनिवर्सिटी कैलकुलेटर</span>
+          <span class="muted small">हर यूनिवर्सिटी के अपने आधिकारिक ग्रेडिंग नियमों और प्रतिशत रूपांतरण के साथ बनाए गए कैलकुलेटर।</span>
+        </a>
+      </div>
+    </section>
+    <p class="back-top"><a href="#calculator">↑ कैलकुलेटर पर वापस जाएं</a></p>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p><strong>CGPA Calculator</strong> · छात्रों के लिए बनाया गया · © <span id="year">2026</span></p>
+        <p class="muted">परिणाम अनुमान हैं। आपकी यूनिवर्सिटी के आधिकारिक नियम हमेशा सबसे पहले हैं।</p>
+      </div>
+      <nav class="footer-nav" aria-label="फ़ुटर">
+        <a href="index.html">कैलकुलेटर</a>
+        <a href="../cgpa-to-german-grade.html">CGPA से जर्मन ग्रेड</a>
+        <a href="about.html">हमारे बारे में</a>
+        <a href="privacy-policy.html">गोपनीयता नीति</a>
+        <a href="terms.html">उपयोग की शर्तें</a>
+        <a href="contact.html">संपर्क</a>
+      </nav>
+    </div>
+  </footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>window.CGPA_PAGE = {
+      storageKey: 'cgpa-aktu',
+      scales: {
+        aktu: {
+          max: 10, label: 'AKTU 10-पॉइंट स्केल', region: 'AKTU लखनऊ · B.Tech थ्योरी विषय', example: '8.20',
+          grades: [['A+', 10, 90], ['A', 9, 80], ['B+', 8, 70], ['B', 7, 60], ['C', 6, 50], ['D', 5, 45], ['E', 4, 40], ['F', 0, 0]]
+        }
+      },
+      conversions: {
+        aktu: {
+          formula: 'प्रतिशत = CGPA × 10',
+          expr: c => c + ' × 10',
+          calc: c => c * 10,
+          example: 8.2,
+          note: 'AKTU अध्यादेश के अनुसार: CGPA × 10 = प्राप्त अंकों का प्रतिशत, जैसे 8.2 × 10 = 82.0%।',
+          classify: p => p >= 75 ? 'CGPA 7.5+ : ऑनर्स सहित प्रथम श्रेणी (शर्तें लागू)' : p >= 65 ? 'CGPA 6.5+ : प्रथम श्रेणी' : 'द्वितीय श्रेणी'
+        }
+      }
+    };</script>
+  <script src="../i18n/hi.js" data-i18n=""></script>
+  <script src="../site.js"></script>
+  <script src="../script.js"></script>
+</body></html>

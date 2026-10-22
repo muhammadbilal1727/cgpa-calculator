@@ -1392,7 +1392,9 @@
   "s1529": "Zum GPA- &amp; CGPA-Rechner →",
   "s1530": "↑ Zurück zum Umrechner",
   "s1531": "Umrechner: CGPA in deutsche Note",
-  "s1532": "Kostenloser Umrechner von CGPA, GPA oder Prozentwert in eine deutsche Note mit der modifizierten bayerischen Formel."
+  "s1532": "Kostenloser Umrechner von CGPA, GPA oder Prozentwert in eine deutsche Note mit der modifizierten bayerischen Formel.",
+  "s1533": "4.00-Skala (Bangladesch, UGC)",
+  "s1534": "4.00 BD"
  },
  "js": {
   "j1": "4.0-Skala",
@@ -1796,6 +1798,13 @@
   "j413": "Korrigiere die Felder oben, um die deutsche Note zu sehen.",
   "j414": "→ {x} (1 Dezimalstelle)",
   "j415": "Im deutschen System nicht bestanden",
-  "j416": "Deine Note {nd} auf einer Skala von {nmin} (bestanden) bis {nmax} (beste Note)"
+  "j416": "Deine Note {nd} auf einer Skala von {nmin} (bestanden) bis {nmax} (beste Note)",
+  "j417": "4.00-Skala (Bangladesch, UGC)",
+  "j418": "Bangladesch · einheitliche UGC-Notenskala",
+  "j419": "Dein CGPA → Punktebereich der erreichten Note",
+  "j420": "Die einheitliche UGC-Notenskala hat keine offizielle Formel für die Umrechnung von CGPA in Prozent. Angezeigt wird der Punktebereich der höchsten Note, die dein CGPA erreicht. Frag nach, welche Methode Arbeitgeber oder Hochschule akzeptieren.",
+  "j421": "CGPA {cgpa} liegt unter 2.00 (D), also unter 40 % der Punkte",
+  "j422": "CGPA {cgpa} erreicht {grade} ({points}), das entspricht {from}–{to} % der Punkte",
+  "j423": "Nach den Regeln deiner Hochschule zählen F-Noten nicht zum GPA."
  }
 }

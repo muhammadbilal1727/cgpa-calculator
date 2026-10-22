@@ -1,2 +1,6 @@
 .vercel
 .env*
+
+# Intermediate files from tools/build-university-pages.js (finished pages are in /ur/, /hi/, /bn/)
+tools/native/out/
+tools/missing-translations.json

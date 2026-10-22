@@ -11,7 +11,8 @@
      digits + truncate (how results are shown), gradeDigits (grade lists), maxText (instead of "/ 4.00"),
      subtitle (grade table), pointsLabel (label in "points" mode), ratioPoints ([[value, 0–1], …] for the
      meter and messages), noQualityPoints (summary shows credits only), marksToPoints (function giving
-     exact points for marks, when points rise mark by mark inside a grade). */
+     exact points for marks, when points rise mark by mark inside a grade), excludeFail (F grades are
+     left out of the GPA, as at BUET), roundUpMarks (a fraction of a mark counts as a full mark). */
   const PAGE = window.CGPA_PAGE || {};
 
   /* ---------- Grading scales: [grade, points, minimum marks %, lowest points if a range] ---------- */
@@ -29,6 +30,11 @@
     '5': {
       max: 5, label: '5.0 scale', region: 'e.g. Nigeria', example: '4.10',
       grades: [['A', 5, 70], ['B', 4, 60], ['C', 3, 50], ['D', 2, 45], ['E', 1, 40], ['F', 0, 0]]
+    },
+    bd: {
+      max: 4, label: '4.00 scale (Bangladesh UGC)', region: 'Bangladesh · UGC uniform grading', example: '3.50',
+      grades: [['A+', 4, 80], ['A', 3.75, 75], ['A-', 3.5, 70], ['B+', 3.25, 65], ['B', 3, 60], ['B-', 2.75, 55],
+        ['C+', 2.5, 50], ['C', 2.25, 45], ['D', 2, 40], ['F', 0, 0]]
     }
   };
   Object.values(SCALES).forEach(function (s) {
@@ -58,6 +64,20 @@
       calc: c => (c / 5) * 100,
       example: 4.2,
       note: 'A simple proportional conversion. Many universities on the 5.0 scale publish their own table, so check yours.'
+    },
+    bd: {
+      formula: 'Your CGPA → the marks range of the grade it reaches',
+      example: 3.5,
+      note: 'The UGC uniform grading system has no official CGPA-to-percentage formula. This shows the marks range of the highest grade your CGPA reaches. Check which method the employer or university accepts.',
+      result: function (c) {
+        const v = Math.round(c * 100 + 1e-9) / 100;
+        const g = SCALES.bd.grades;
+        const i = g.findIndex(x => v >= x.points - 1e-9);
+        if (i < 0 || g[i].points === 0) return { pct: 0, text: t('Below 40%'), work: t('CGPA {cgpa} is below 2.00 (D), which stands for less than 40% marks', { cgpa: v.toFixed(2) }) };
+        const top = i === 0 ? 100 : g[i - 1].min - 1;
+        return { pct: g[i].min, text: `${g[i].min}–${top}%`,
+          work: t('CGPA {cgpa} reaches {grade} ({points}), which stands for {from}–{to}% marks', { cgpa: v.toFixed(2), grade: g[i].grade, points: g[i].points.toFixed(2), from: g[i].min, to: top }) };
+      }
     }
   };
 
@@ -325,7 +345,7 @@
   function calcGPA() {
     const sc = SCALES[state.scale];
     const mode = state.mode;
-    let credits = 0, points = 0, counted = 0, skipped = 0;
+    let credits = 0, points = 0, counted = 0, skipped = 0, failsLeftOut = 0;
     const lines = [];
 
     $$('.subject-row', subjectList).forEach(function (row, i) {
@@ -379,9 +399,10 @@
           } else if (marks < 0 || marks > 100) {
             error = t('Marks should be between 0 and 100.'); badField = marksIn;
           } else {
-            grade = gradeFromMarks(marks, sc);
-            if (sc.marksToPoints) grade = { grade: grade.grade, points: sc.marksToPoints(marks) };
-            info = t('{marks} marks = grade {grade} ({points} points)', { marks: cleanNum(marks), grade: grade.grade, points: f2(grade.points) });
+            const m = sc.roundUpMarks ? Math.ceil(marks - 1e-9) : marks;
+            grade = gradeFromMarks(m, sc);
+            if (sc.marksToPoints) grade = { grade: grade.grade, points: sc.marksToPoints(m) };
+            info = t('{marks} marks = grade {grade} ({points} points)', { marks: cleanNum(m), grade: grade.grade, points: f2(grade.points) });
           }
         } else if (gradeIn.value === '') {
           if (touched) { error = t('Please choose a grade from the list.'); badField = gradeIn; }
@@ -399,15 +420,16 @@
       setMsg(msg, info, 'info');
       if (credit === null || !grade) { skipped++; return; }
 
-      credits += credit;
-      points += credit * grade.points;
+      if (sc.excludeFail && grade.points === 0) failsLeftOut++; // still on the transcript, but not in the GPA
+      else { credits += credit; points += credit * grade.points; }
       counted++;
       lines.push(t('{name}: {credits} credits, grade {grade} ({points})', { name: nameIn.value.trim() || t('Subject {n}', { n: i + 1 }), credits: cleanNum(credit), grade: t(grade.grade), points: fmtG(grade.points, sc) }));
     });
 
-    if (counted === 0) {
+    const failNote = failsLeftOut ? t('F grades are not counted in the GPA under your university’s rules.') : '';
+    if (counted === 0 || credits === 0) {
       state.results.gpa = null;
-      setResult('gpa', { max: maxLabel(sc), sub: t('Add your subjects to see your GPA.'), note: skippedNote(skipped) });
+      setResult('gpa', { max: maxLabel(sc), sub: t('Add your subjects to see your GPA.'), note: [skippedNote(skipped), failNote].filter(Boolean).join(' ') });
     } else {
       const gpa = points / credits;
       const ratio = ratioOf(sc, gpa);
@@ -417,7 +439,7 @@
         sub: sc.noQualityPoints
           ? t(counted === 1 ? '1 subject · {credits} credits' : '{n} subjects · {credits} credits', { n: counted, credits: cleanNum(credits) })
           : t(counted === 1 ? '1 subject · {credits} credit hours · {points} grade points' : '{n} subjects · {credits} credit hours · {points} grade points', { n: counted, credits: cleanNum(credits), points: f2(points) }),
-        note: skippedNote(skipped)
+        note: [skippedNote(skipped), failNote].filter(Boolean).join(' ')
       });
     }
     persist();

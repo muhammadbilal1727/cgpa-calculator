@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="hi"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Built by tools/build-university-pages.js – edit that file, not this one -->
+  <title>मुंबई विश्वविद्यालय CGPI कैलकुलेटर – NEP 2020 ग्रेड तालिका</title>
+  <meta name="description" content="मुंबई विश्वविद्यालय के NEP 2020 ग्रेड (90+ पर O = 10, 80+ पर A+ = 9 …) से SGPI और CGPI निकालें। आधिकारिक रिज़ल्ट रजिस्टर की तालिका पर आधारित।">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f6fb">
+  <link rel="canonical" href="https://cgpa-calculator-umber-two.vercel.app/hi/mumbai-university-cgpa-calculator.html">
+
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CGPA Calculator">
+  <meta property="og:locale" content="hi_IN">
+  <meta property="og:url" content="https://cgpa-calculator-umber-two.vercel.app/hi/mumbai-university-cgpa-calculator.html">
+  <meta property="og:title" content="मुंबई विश्वविद्यालय (MU) SGPI और CGPI कैलकुलेटर">
+  <meta property="og:description" content="मुंबई विश्वविद्यालय के NEP 2020 ग्रेड (90+ पर O = 10, 80+ पर A+ = 9 …) से SGPI और CGPI निकालें। आधिकारिक रिज़ल्ट रजिस्टर की तालिका पर आधारित।">
+  <meta property="og:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <meta property="og:image:alt" content="CGPA कैलकुलेटर: 4.00 में से 3.37 CGPA दिखाता परिणाम कार्ड">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="मुंबई विश्वविद्यालय (MU) SGPI और CGPI कैलकुलेटर">
+  <meta name="twitter:description" content="मुंबई विश्वविद्यालय के NEP 2020 ग्रेड (90+ पर O = 10, 80+ पर A+ = 9 …) से SGPI और CGPI निकालें। आधिकारिक रिज़ल्ट रजिस्टर की तालिका पर आधारित।">
+  <meta name="twitter:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "@id": "https://cgpa-calculator-umber-two.vercel.app/hi/mumbai-university-cgpa-calculator.html#app",
+    "name": "मुंबई विश्वविद्यालय (MU) SGPI और CGPI कैलकुलेटर",
+    "url": "https://cgpa-calculator-umber-two.vercel.app/hi/mumbai-university-cgpa-calculator.html",
+    "image": "https://cgpa-calculator-umber-two.vercel.app/og-image.jpg",
+    "description": "मुंबई विश्वविद्यालय के NEP 2020 ग्रेड (90+ पर O = 10, 80+ पर A+ = 9 …) से SGPI और CGPI निकालें। आधिकारिक रिज़ल्ट रजिस्टर की तालिका पर आधारित।",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "hi",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "मुंबई विश्वविद्यालय में SGPI क्या है?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SGPI (सेमेस्टर ग्रेड परफ़ॉर्मेंस इंडेक्स) मुंबई विश्वविद्यालय में SGPA का नाम है। SGPI = ΣCG ÷ ΣC, यानी क्रेडिट × ग्रेड पॉइंट का योग ÷ कुल क्रेडिट।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "NEP 2020 में O ग्रेड कितने अंकों पर मिलता है?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "NEP 2020 तालिका में 90% या अधिक अंकों पर O (10 पॉइंट) मिलता है। 80 से 90 से कम पर A+ (9) और 70 से 80 से कम पर A (8)।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "मुंबई विश्वविद्यालय में पास होने के लिए कितने अंक चाहिए?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "NEP 2020 तालिका में 40% से कम अंक F है। 40 से 50 से कम अंकों पर D ग्रेड (4 पॉइंट) मिलता है।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "क्या 7.1 × CGPI + 11 आधिकारिक सूत्र है?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "यह सूत्र इंटरनेट पर बहुत प्रचलित है, लेकिन हमें यह मुंबई विश्वविद्यालय के किसी मौजूदा आधिकारिक परिपत्र में नहीं मिला। प्रतिशत लिखने से पहले विश्वविद्यालय से पुष्टि करें।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "पुराने CBCS बैच की तालिका अलग क्यों है?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "मुंबई विश्वविद्यालय ने अलग-अलग समय पर अलग तालिकाएँ इस्तेमाल की हैं। पुरानी CBCS तालिका में O ग्रेड 80% पर मिलता था। अपनी मार्कशीट पर छपी तालिका से मिलान करें।"
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "CGPA Calculator",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/hi/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "मुंबई विश्वविद्यालय (MU) SGPI और CGPI कैलकुलेटर",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/hi/mumbai-university-cgpa-calculator.html"
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    /* Apply the saved (or system) theme before the page paints, so there is no flash */
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem('cgpa-theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="CGPA कैलकुलेटर होम">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3z"></path>
+            <path d="M5 13.18v4C5 18.84 8.13 20 12 20s7-1.16 7-2.82v-4L12 17l-7-3.82z"></path>
+          </svg>
+        </span>
+        <span>CGPA Calculator</span>
+      </a>
+      <div class="header-actions">
+        <nav class="site-nav" id="siteNav" aria-label="मुख्य मेनू">
+          <a href="index.html">कैलकुलेटर</a>
+          <a href="../cgpa-to-german-grade.html">जर्मन ग्रेड</a>
+          <a href="about.html">हमारे बारे में</a>
+          <a href="privacy-policy.html">गोपनीयता</a>
+          <a href="terms.html">शर्तें</a>
+          <a href="contact.html">संपर्क</a>
+        </nav>
+        <details class="lang-menu" id="langMenu">
+          <summary class="icon-btn lang-btn" aria-label="भाषा चुनें" title="भाषा">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"></path></svg>
+            <span class="lang-code" data-no-translate="">HI</span>
+          </summary>
+          <div class="lang-list" data-no-translate=""><a href="../index.html" hreflang="en" lang="en"><span class="lang-flag" aria-hidden="true">🇬🇧</span> English</a><a href="../de/index.html" hreflang="de" lang="de"><span class="lang-flag" aria-hidden="true">🇩🇪</span> Deutsch</a><a href="../ur/index.html" hreflang="ur" lang="ur"><span class="lang-flag" aria-hidden="true">🇵🇰</span> اردو</a><a href="mumbai-university-cgpa-calculator.html" hreflang="hi" lang="hi" aria-current="true"><span class="lang-flag" aria-hidden="true">🇮🇳</span> हिन्दी</a><a href="../bn/index.html" hreflang="bn" lang="bn"><span class="lang-flag" aria-hidden="true">🇧🇩</span> বাংলা</a></div>
+        </details>
+        <button type="button" id="themeToggle" class="icon-btn" aria-label="डार्क मोड पर जाएं" title="लाइट / डार्क मोड">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+        </button>
+        <button type="button" id="menuToggle" class="icon-btn menu-btn" aria-label="मेनू खोलें" aria-expanded="false" aria-controls="siteNav">
+          <svg class="icon-menu" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+
+    <section class="hero">
+      <nav class="breadcrumb" aria-label="ब्रेडक्रंब"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">MU</span></nav>
+      <h1>मुंबई विश्वविद्यालय (MU) SGPI और CGPI कैलकुलेटर</h1>
+      <p>मुंबई विश्वविद्यालय की NEP 2020 ग्रेडिंग से अपना SGPI (सेमेस्टर ग्रेड परफ़ॉर्मेंस इंडेक्स) और CGPI निकालें। अपने अंक या ग्रेड लिखें, क्रेडिट डालें और परिणाम तुरंत देखें।
+        <a href="#guide" class="hero-link">मुंबई विश्वविद्यालय की ग्रेडिंग कैसे काम करती है ↓</a></p>
+    </section>
+
+    <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
+      <div class="scale-text">
+        <p id="scaleLabel" class="scale-title">ग्रेडिंग प्रणाली: मुंबई विश्वविद्यालय, NEP 2020</p>
+        <p class="muted small">हर विषय के अंक प्रतिशत में लिखें या ग्रेड चुनें। तालिका मुंबई विश्वविद्यालय के NEP 2020 रिज़ल्ट रजिस्टर से ली गई है।</p>
+      </div>
+      <select id="scaleSelect" hidden="" aria-hidden="true" tabindex="-1"><option value="mu">MU</option></select>
+      <button type="button" id="resetAll" class="btn btn-outline danger-hover">सब रीसेट करें</button>
+    </section>
+    <p class="print-only" id="printDate"></p>
+
+    <div class="layout">
+      <!-- ================= Calculators ================= -->
+      <div class="main-col">
+        <div class="tabs" role="tablist" aria-label="कैलकुलेटर">
+          <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">GPA <small>एक सेमेस्टर</small></button>
+          <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>सभी सेमेस्टर</small></button>
+          <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">लक्ष्य <small>आगे की योजना</small></button>
+          <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">प्रतिशत <small>कन्वर्टर</small></button>
+        </div>
+        <!-- ---------- TAB 1: GPA ---------- -->
+        <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
+          <div class="panel-head">
+            <div>
+              <h2>सेमेस्टर GPA</h2>
+              <p class="muted small">हर विषय को उसके क्रेडिट और ग्रेड के साथ जोड़ें।</p>
+            </div>
+<!-- mode-switch -->
+            <div class="segmented" id="modeSwitch" role="radiogroup" aria-label="आप परिणाम कैसे दर्ज करना चाहते हैं?">
+              <input type="radio" name="gpaMode" id="modeGrade" value="grade" checked="">
+              <label for="modeGrade">ग्रेड</label>
+              <input type="radio" name="gpaMode" id="modeMarks" value="marks">
+              <label for="modeMarks">अंक</label>
+            </div>
+<!-- /mode-switch -->
+          </div>
+          <div class="rows-head subject-cols" aria-hidden="true">
+            <span>विषय (वैकल्पिक)</span><span>क्रेडिट</span><span id="gradeHead">ग्रेड</span><span></span>
+          </div>
+          <div id="subjectList" class="row-list mode-grade"></div>
+          <button type="button" id="addSubject" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            विषय जोड़ें
+          </button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">आपका सेमेस्टर GPA</div>
+            <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="gpaMeter"></span></div>
+            <div class="result-cheer" id="gpaCheer"></div>
+            <div class="result-sub" id="gpaSub">अपना GPA देखने के लिए विषय जोड़ें।</div>
+            <div class="result-note" id="gpaNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" id="sendToCgpa" class="btn btn-soft">यह GPA मेरे CGPA में जोड़ें →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="gpa">परिणाम कॉपी करें</button>
+            <button type="button" class="btn btn-outline js-print" title="प्रिंट विंडो में PDF डाउनलोड करने के लिए “Save as PDF” चुनें">प्रिंट / PDF</button>
+            <button type="button" id="resetGpa" class="btn btn-quiet">साफ़ करें</button>
+          </div>
+          <details class="howto">
+            <summary>GPA की गणना कैसे होती है?</summary>
+            <p class="formula-line">GPA = (Σ क्रेडिट × ग्रेड पॉइंट) ÷ (Σ क्रेडिट)</p>
+            <p class="muted small">उदाहरण: गणित 3 क्रेडिट और 4.00 ग्रेड पॉइंट, अंग्रेज़ी 2 क्रेडिट और 3.00 → (3×4 + 2×3) ÷ (3+2) = 18 ÷ 5 = <strong>3.60</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 2: CGPA ---------- -->
+        <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>कुल CGPA</h2>
+              <p class="muted small">हर सेमेस्टर का GPA (SGPA) और उसके कुल क्रेडिट जोड़ें।</p>
+            </div>
+          </div>
+          <div class="rows-head semester-cols" aria-hidden="true">
+            <span>सेमेस्टर</span><span>GPA / SGPA</span><span>क्रेडिट</span><span></span>
+          </div>
+          <div id="semesterList" class="row-list"></div>
+          <button type="button" id="addSemester" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            सेमेस्टर जोड़ें
+          </button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">आपका CGPA</div>
+            <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="cgpaMeter"></span></div>
+            <div class="result-cheer" id="cgpaCheer"></div>
+            <div class="result-sub" id="cgpaSub">अपना CGPA देखने के लिए सेमेस्टर जोड़ें।</div>
+            <div class="result-note" id="cgpaNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" id="sendToPct" class="btn btn-soft">इस CGPA को % में बदलें →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">परिणाम कॉपी करें</button>
+            <button type="button" class="btn btn-outline js-print" title="प्रिंट विंडो में PDF डाउनलोड करने के लिए “Save as PDF” चुनें">प्रिंट / PDF</button>
+            <button type="button" id="resetCgpa" class="btn btn-quiet">साफ़ करें</button>
+          </div>
+          <details class="howto">
+            <summary>CGPA की गणना कैसे होती है?</summary>
+            <p class="formula-line">CGPA = (Σ सेमेस्टर GPA × सेमेस्टर क्रेडिट) ÷ (कुल क्रेडिट)</p>
+            <p class="muted small">ज़्यादा क्रेडिट वाले सेमेस्टर ज़्यादा गिने जाते हैं। उदाहरण: 18 क्रेडिट के साथ 3.50 और 15 क्रेडिट के साथ 3.00 → (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 3: Target CGPA ---------- -->
+        <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>लक्ष्य CGPA</h2>
+              <p class="muted small">जानें कि अपने लक्ष्य तक पहुँचने के लिए आने वाले सेमेस्टर में आपको कितना GPA चाहिए।</p>
+            </div>
+          </div>
+          <div class="target-grid">
+            <div class="field">
+              <label class="field-label" for="tCurrent">वर्तमान CGPA</label>
+              <input type="text" id="tCurrent" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tCurrentMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tDone">पूरे किए गए क्रेडिट</label>
+              <input type="text" id="tDone" inputmode="decimal" autocomplete="off" placeholder="e.g. 66">
+              <p class="row-msg" id="tDoneMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tTarget">लक्ष्य CGPA</label>
+              <input type="text" id="tTarget" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tTargetMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tLeft">बचे हुए क्रेडिट</label>
+              <input type="text" id="tLeft" inputmode="decimal" autocomplete="off" placeholder="e.g. 70">
+              <p class="row-msg" id="tLeftMsg"></p>
+            </div>
+          </div>
+          <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">मेरे CGPA टैब से भरें</button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">हर सेमेस्टर में ज़रूरी GPA</div>
+            <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="tgtMeter"></span></div>
+            <div class="result-cheer" id="tgtCheer"></div>
+            <div class="result-sub" id="tgtSub">ज़रूरी GPA देखने के लिए ऊपर के चारों बॉक्स भरें।</div>
+            <div class="result-note" id="tgtNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="target">परिणाम कॉपी करें</button>
+            <button type="button" class="btn btn-outline js-print" title="प्रिंट विंडो में PDF डाउनलोड करने के लिए “Save as PDF” चुनें">प्रिंट / PDF</button>
+            <button type="button" id="resetTarget" class="btn btn-quiet">साफ़ करें</button>
+          </div>
+          <details class="howto">
+            <summary>इसकी गणना कैसे होती है?</summary>
+            <p class="formula-line">ज़रूरी GPA = (लक्ष्य × कुल क्रेडिट − वर्तमान × पूरे क्रेडिट) ÷ बचे हुए क्रेडिट</p>
+            <p class="muted small">उदाहरण: 60 क्रेडिट के बाद वर्तमान 3.00, लक्ष्य 3.30, 60 क्रेडिट बाकी → (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 4: Percentage ---------- -->
+        <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>CGPA से प्रतिशत</h2>
+              <p class="muted small">अपना CGPA लिखें और उसका स्केल चुनें।</p>
+            </div>
+          </div>
+          <div class="conv-grid">
+            <div class="field">
+              <label class="field-label always" for="convInput">आपका CGPA</label>
+              <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
+              <p class="row-msg" id="convMsg"></p>
+            </div>
+
+          </div>
+          <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">CGPA टैब से मेरा CGPA इस्तेमाल करें</button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">प्रतिशत</div>
+            <div class="result-value"><span id="pctValue">—</span></div>
+            <div class="meter" aria-hidden="true"><span id="pctMeter"></span></div>
+            <div class="result-cheer" id="pctCheer"></div>
+            <div class="result-sub" id="pctSub">प्रतिशत देखने के लिए अपना CGPA डालें।</div>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="pct">परिणाम कॉपी करें</button>
+            <button type="button" class="btn btn-outline js-print" title="प्रिंट विंडो में PDF डाउनलोड करने के लिए “Save as PDF” चुनें">प्रिंट / PDF</button>
+          </div>
+          <div class="formula">
+            <div class="formula-title">इस्तेमाल किया गया फ़ॉर्मूला</div>
+            <p class="formula-line" id="formulaMain"></p>
+            <p class="formula-work" id="formulaWork"></p>
+            <p class="muted small" id="formulaNote"></p>
+          </div>
+        </section>
+      </div>
+      <!-- ================= Sidebar: grade table ================= -->
+      <aside class="sidebar">
+        <section class="card" aria-labelledby="tableTitle">
+          <h2 id="tableTitle" class="side-title">ग्रेड पॉइंट</h2>
+          <p class="muted small" id="tableSubtitle"></p>
+          <div class="table-wrap">
+            <table class="grade-table">
+              <thead>
+                <tr><th scope="col">ग्रेड</th><th scope="col" class="num">पॉइंट</th><th scope="col" class="num" id="marksCol">अंक %</th></tr>
+              </thead>
+              <tbody id="gradeTableBody"></tbody>
+            </table>
+          </div>
+          <p class="muted tiny">अंकों की सीमाएं हर यूनिवर्सिटी में अलग होती हैं। हमेशा अपनी यूनिवर्सिटी की ग्रेडिंग नीति देखें।</p>
+        </section>
+
+        <section class="card tips">
+          <h2 class="side-title">MU: मुख्य बातें</h2>
+          <ul>
+            <li><strong>90% या अधिक</strong> अंक पर O ग्रेड यानी 10 पॉइंट।</li>
+            <li><strong>40% से कम</strong> अंक F ग्रेड है, यानी 0 पॉइंट।</li>
+            <li>MU में SGPA को <strong>SGPI</strong> और CGPA को <strong>CGPI</strong> कहते हैं।</li>
+            <li>B ग्रेड की सीमा छोटी है: केवल <strong>55 से 59.99</strong>।</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <article class="guide" id="guide">
+
+      <section id="how-it-works">
+        <h2>मुंबई विश्वविद्यालय में ग्रेडिंग कैसे होती है</h2>
+        <p>मुंबई विश्वविद्यालय (University of Mumbai) में अब ज़्यादातर पाठ्यक्रम राष्ट्रीय शिक्षा नीति (NEP 2020) के अनुसार चलते हैं। हर विषय के अंक एक तय 10-पॉइंट तालिका से लेटर ग्रेड और ग्रेड पॉइंट में बदले जाते हैं। विश्वविद्यालय अपने परिणाम में SGPA की जगह <strong>SGPI</strong> (सेमेस्टर ग्रेड परफ़ॉर्मेंस इंडेक्स) शब्द इस्तेमाल करता है, और पूरे कोर्स के औसत को <strong>CGPI</strong> कहता है। हिसाब वही है, केवल नाम अलग है।</p>
+        <p>रिज़ल्ट रजिस्टर में हर विषय के सामने C (क्रेडिट), G (ग्रेड पॉइंट) और C × G लिखा होता है। नीचे ΣC (कुल क्रेडिट) और ΣCG (क्रेडिट × ग्रेड पॉइंट का योग) होता है, और <strong>SGPI = ΣCG ÷ ΣC</strong>।</p>
+      </section>
+
+      <section id="grade-points">
+        <h2>मुंबई विश्वविद्यालय ग्रेड तालिका (NEP 2020)</h2>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col" class="num">अंक (%)</th><th scope="col">ग्रेड</th><th scope="col" class="num">ग्रेड पॉइंट</th></tr></thead>
+            <tbody>
+              <tr><td class="num">90 या अधिक</td><td>O</td><td class="num">10</td></tr>
+              <tr><td class="num">80 से 90 से कम</td><td>A+</td><td class="num">9</td></tr>
+              <tr><td class="num">70 से 80 से कम</td><td>A</td><td class="num">8</td></tr>
+              <tr><td class="num">60 से 70 से कम</td><td>B+</td><td class="num">7</td></tr>
+              <tr><td class="num">55 से 60 से कम</td><td>B</td><td class="num">6</td></tr>
+              <tr><td class="num">50 से 55 से कम</td><td>C</td><td class="num">5</td></tr>
+              <tr><td class="num">40 से 50 से कम</td><td>D</td><td class="num">4</td></tr>
+              <tr><td class="num">40 से कम</td><td>F</td><td class="num">0</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>यह तालिका मुंबई विश्वविद्यालय के NEP 2020 रिज़ल्ट रजिस्टर (मई 2026 की परीक्षा) में छपी है। पुराने CBCS बैच में तालिका अलग थी, जैसे वहाँ O ग्रेड 80% पर मिलता था। अगर आप पुराने बैच के छात्र हैं तो <strong>अपनी मार्कशीट के पीछे छपी तालिका से मिलान करें</strong>।</p>
+      </section>
+
+      <section id="example">
+        <h2>SGPI कैसे निकालें: रिज़ल्ट रजिस्टर से असली उदाहरण</h2>
+        <p>यह उदाहरण मुंबई विश्वविद्यालय के M.Sc. (गणित) सेमेस्टर II (NEP 2020) के आधिकारिक रिज़ल्ट रजिस्टर की एक पंक्ति से लिया गया है:</p>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">विषय</th><th scope="col" class="num">अंक</th><th scope="col">ग्रेड</th><th scope="col" class="num">C</th><th scope="col" class="num">C × G</th></tr></thead>
+            <tbody>
+              <tr><td>Algebra II</td><td class="num">77</td><td>A (8)</td><td class="num">4</td><td class="num">32</td></tr>
+              <tr><td>Topology</td><td class="num">85</td><td>A+ (9)</td><td class="num">4</td><td class="num">36</td></tr>
+              <tr><td>Complex Analysis</td><td class="num">63</td><td>B+ (7)</td><td class="num">4</td><td class="num">28</td></tr>
+              <tr><td>Numerical Analysis</td><td class="num">80</td><td>A+ (9)</td><td class="num">4</td><td class="num">36</td></tr>
+              <tr><td>OJT / Field Project</td><td class="num">92</td><td>O (10)</td><td class="num">4</td><td class="num">40</td></tr>
+              <tr><td>PDE (प्रैक्टिकल, 50 में से 47 = 94%)</td><td class="num">94</td><td>O (10)</td><td class="num">2</td><td class="num">20</td></tr>
+            </tbody>
+            <tfoot><tr><th scope="row">कुल</th><td></td><td></td><td class="num">22</td><td class="num">192</td></tr></tfoot>
+          </table>
+        </div>
+        <p class="formula-block">SGPI = ΣCG ÷ ΣC = 192 ÷ 22 = 8.73</p>
+        <p>CGPI सभी सेमेस्टर का क्रेडिट के हिसाब से औसत है: हर सेमेस्टर के SGPI को उसके क्रेडिट से गुणा करें, जोड़ें और कुल क्रेडिट से भाग दें। ध्यान दें: प्रैक्टिकल के अंक 50 में से हों तो पहले उन्हें प्रतिशत में बदलें (47 ÷ 50 × 100 = 94)।</p>
+      </section>
+
+      <section id="percentage">
+        <h2>मुंबई विश्वविद्यालय CGPI से प्रतिशत</h2>
+        <p>इंटरनेट पर मुंबई विश्वविद्यालय के लिए <strong>7.1 × CGPI + 11</strong> जैसा सूत्र बहुत दिखता है, लेकिन हमें यह किसी मौजूदा आधिकारिक परिपत्र (सर्कुलर) में नहीं मिला, और अलग-अलग वेबसाइटें अलग सूत्र बताती हैं। इसलिए यह कैलकुलेटर कोई अनुमानित प्रतिशत नहीं गढ़ता।</p>
+        <p>प्रतिशत टैब केवल यह दिखाता है कि आपका CGPI किस ग्रेड तक पहुँचता है और उस ग्रेड की अंक-सीमा क्या है। जैसे CGPI 8.73 ग्रेड A (8) तक पहुँचता है, जिसकी सीमा 70–79% है। किसी फ़ॉर्म पर प्रतिशत लिखना हो तो <strong>मुंबई विश्वविद्यालय या अपने कॉलेज से आधिकारिक सूत्र की पुष्टि करें</strong>।</p>
+      </section>
+
+      <section id="faq" class="faq">
+        <h2>MU CGPA: अक्सर पूछे जाने वाले प्रश्न</h2>
+
+        <details>
+          <summary><h3>मुंबई विश्वविद्यालय में SGPI क्या है?</h3></summary>
+          <p>SGPI (सेमेस्टर ग्रेड परफ़ॉर्मेंस इंडेक्स) मुंबई विश्वविद्यालय में SGPA का नाम है। SGPI = ΣCG ÷ ΣC, यानी क्रेडिट × ग्रेड पॉइंट का योग ÷ कुल क्रेडिट।</p>
+        </details>
+        <details>
+          <summary><h3>NEP 2020 में O ग्रेड कितने अंकों पर मिलता है?</h3></summary>
+          <p>NEP 2020 तालिका में 90% या अधिक अंकों पर O (10 पॉइंट) मिलता है। 80 से 90 से कम पर A+ (9) और 70 से 80 से कम पर A (8)।</p>
+        </details>
+        <details>
+          <summary><h3>मुंबई विश्वविद्यालय में पास होने के लिए कितने अंक चाहिए?</h3></summary>
+          <p>NEP 2020 तालिका में 40% से कम अंक F है। 40 से 50 से कम अंकों पर D ग्रेड (4 पॉइंट) मिलता है।</p>
+        </details>
+        <details>
+          <summary><h3>क्या 7.1 × CGPI + 11 आधिकारिक सूत्र है?</h3></summary>
+          <p>यह सूत्र इंटरनेट पर बहुत प्रचलित है, लेकिन हमें यह मुंबई विश्वविद्यालय के किसी मौजूदा आधिकारिक परिपत्र में नहीं मिला। प्रतिशत लिखने से पहले विश्वविद्यालय से पुष्टि करें।</p>
+        </details>
+        <details>
+          <summary><h3>पुराने CBCS बैच की तालिका अलग क्यों है?</h3></summary>
+          <p>मुंबई विश्वविद्यालय ने अलग-अलग समय पर अलग तालिकाएँ इस्तेमाल की हैं। पुरानी CBCS तालिका में O ग्रेड 80% पर मिलता था। अपनी मार्कशीट पर छपी तालिका से मिलान करें।</p>
+        </details>
+      </section>
+
+      <section id="sources">
+        <h2>स्रोत</h2>
+        <ul class="source-note">
+          <li><a href="https://www.mumresults.in/F26/1111561%20Master%20of%20Science(Maths)%20(%20Semester%20-%20II)%20(%20NEP%202020%20).pdf">University of Mumbai: Office Register, M.Sc. (Maths) Semester II (NEP 2020), May 2026 – ग्रेड तालिका और SGPI की परिभाषा</a></li>
+        </ul>
+        <p class="source-note">आख़िरी बार जाँचा गया: 22 अक्टूबर 2026। विश्वविद्यालय के नियम बदल सकते हैं, इसलिए अपना परिणाम हमेशा अपने विश्वविद्यालय के नवीनतम आधिकारिक नियमों से मिला लें। देखें: <a href="terms.html">उपयोग की शर्तें</a>।</p>
+      </section>
+    </article>
+
+    <section class="uni-section" aria-labelledby="uniTitle">
+      <h2 id="uniTitle">और CGPA और GPA कैलकुलेटर</h2>
+      <div class="uni-grid">
+        <a class="card uni-card" href="vtu-cgpa-calculator.html">
+          <span class="uni-badge">VTU</span>
+          <span class="uni-name">VTU CGPA और GPA (SGPA) कैलकुलेटर</span>
+          <span class="muted small">2022 और 2021 स्कीम · CGPA से %</span>
+        </a>
+        <a class="card uni-card" href="aktu-cgpa-calculator.html">
+          <span class="uni-badge">AKTU</span>
+          <span class="uni-name">AKTU SGPA और CGPA कैलकुलेटर (B.Tech)</span>
+          <span class="muted small">10-पॉइंट · E पास ग्रेड · प्रतिशत = CGPA × 10</span>
+        </a>
+        <a class="card uni-card" href="delhi-university-cgpa-calculator.html">
+          <span class="uni-badge">DU</span>
+          <span class="uni-name">दिल्ली विश्वविद्यालय (DU) SGPA और CGPA कैलकुलेटर</span>
+          <span class="muted small">UGCF · O = 10 · प्रतिशत = CGPA × 10</span>
+        </a>
+        <a class="card uni-card" href="rgpv-cgpa-calculator.html">
+          <span class="uni-badge">RGPV</span>
+          <span class="uni-name">RGPV SGPA और CGPA कैलकुलेटर (भोपाल)</span>
+          <span class="muted small">91+ पर A+ · प्रतिशत = CGPA × 10</span>
+        </a>
+        <a class="card uni-card" href="index.html">
+          <span class="uni-badge">सभी</span>
+          <span class="uni-name">सामान्य CGPA कैलकुलेटर</span>
+          <span class="muted small">4.0, 5.0 और 10-पॉइंट स्केल</span>
+        </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">UNI</span>
+          <span class="uni-name">सभी यूनिवर्सिटी कैलकुलेटर</span>
+          <span class="muted small">हर यूनिवर्सिटी के अपने आधिकारिक ग्रेडिंग नियमों और प्रतिशत रूपांतरण के साथ बनाए गए कैलकुलेटर।</span>
+        </a>
+      </div>
+    </section>
+    <p class="back-top"><a href="#calculator">↑ कैलकुलेटर पर वापस जाएं</a></p>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p><strong>CGPA Calculator</strong> · छात्रों के लिए बनाया गया · © <span id="year">2026</span></p>
+        <p class="muted">परिणाम अनुमान हैं। आपकी यूनिवर्सिटी के आधिकारिक नियम हमेशा सबसे पहले हैं।</p>
+      </div>
+      <nav class="footer-nav" aria-label="फ़ुटर">
+        <a href="index.html">कैलकुलेटर</a>
+        <a href="../cgpa-to-german-grade.html">CGPA से जर्मन ग्रेड</a>
+        <a href="about.html">हमारे बारे में</a>
+        <a href="privacy-policy.html">गोपनीयता नीति</a>
+        <a href="terms.html">उपयोग की शर्तें</a>
+        <a href="contact.html">संपर्क</a>
+      </nav>
+    </div>
+  </footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>window.CGPA_PAGE = {
+      storageKey: 'cgpa-mu',
+      scales: {
+        mu: {
+          max: 10, label: 'मुंबई विश्वविद्यालय 10-पॉइंट स्केल (NEP 2020)', region: 'मुंबई विश्वविद्यालय · NEP 2020', example: '8.73',
+          grades: [['O', 10, 90], ['A+', 9, 80], ['A', 8, 70], ['B+', 7, 60], ['B', 6, 55], ['C', 5, 50], ['D', 4, 40], ['F', 0, 0]]
+        }
+      },
+      conversions: {
+        mu: {
+          formula: 'आपका CGPI → उस ग्रेड की अंक-सीमा',
+          example: 8.73,
+          note: 'हमें मुंबई विश्वविद्यालय का कोई मौजूदा आधिकारिक CGPI-से-प्रतिशत सूत्र नहीं मिला। यह टैब बताता है कि आपका CGPI किस ग्रेड तक पहुँचता है और उस ग्रेड की अंक-सीमा क्या है। फ़ॉर्म पर लिखने से पहले विश्वविद्यालय से पुष्टि करें।',
+          result: function (c) {
+            var g = [["O",10,90],["A+",9,80],["A",8,70],["B+",7,60],["B",6,55],["C",5,50],["D",4,40]];
+            var v = Math.round(c * 100 + 1e-9) / 100;
+            for (var i = 0; i < g.length; i++) {
+              if (v >= g[i][1] && g[i][1] > 0) {
+                var top = i === 0 ? 100 : g[i - 1][2] - 1;
+                return { pct: g[i][2], text: g[i][2] + '–' + top + '%', work: 'CGPI ' + v.toFixed(2) + ' ≥ ' + g[i][1] + ' (' + g[i][0] + '), यानी ' + g[i][2] + '–' + top + '% अंकों वाला ग्रेड' };
+              }
+            }
+            return { pct: 0, text: '40% से कम', work: 'CGPI ' + v.toFixed(2) + ' पास ग्रेड से कम है' };
+          }
+        }
+      }
+    };</script>
+  <script src="../i18n/hi.js" data-i18n=""></script>
+  <script src="../site.js"></script>
+  <script src="../script.js"></script>
+</body></html>

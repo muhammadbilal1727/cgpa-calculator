@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="hi"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Built by tools/build-university-pages.js – edit that file, not this one -->
+  <title>DU CGPA कैलकुलेटर – UGCF ग्रेड पॉइंट और CGPA से प्रतिशत</title>
+  <meta name="description" content="दिल्ली विश्वविद्यालय के UGCF ग्रेड पॉइंट (O = 10, A+ = 9 …) से SGPA और CGPA निकालें। UGCF अधिसूचना के अनुसार प्रतिशत = CGPA × 10।">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f6fb">
+  <link rel="canonical" href="https://cgpa-calculator-umber-two.vercel.app/hi/delhi-university-cgpa-calculator.html">
+
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CGPA Calculator">
+  <meta property="og:locale" content="hi_IN">
+  <meta property="og:url" content="https://cgpa-calculator-umber-two.vercel.app/hi/delhi-university-cgpa-calculator.html">
+  <meta property="og:title" content="दिल्ली विश्वविद्यालय (DU) SGPA और CGPA कैलकुलेटर">
+  <meta property="og:description" content="दिल्ली विश्वविद्यालय के UGCF ग्रेड पॉइंट (O = 10, A+ = 9 …) से SGPA और CGPA निकालें। UGCF अधिसूचना के अनुसार प्रतिशत = CGPA × 10।">
+  <meta property="og:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <meta property="og:image:alt" content="CGPA कैलकुलेटर: 4.00 में से 3.37 CGPA दिखाता परिणाम कार्ड">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="दिल्ली विश्वविद्यालय (DU) SGPA और CGPA कैलकुलेटर">
+  <meta name="twitter:description" content="दिल्ली विश्वविद्यालय के UGCF ग्रेड पॉइंट (O = 10, A+ = 9 …) से SGPA और CGPA निकालें। UGCF अधिसूचना के अनुसार प्रतिशत = CGPA × 10।">
+  <meta name="twitter:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "@id": "https://cgpa-calculator-umber-two.vercel.app/hi/delhi-university-cgpa-calculator.html#app",
+    "name": "दिल्ली विश्वविद्यालय (DU) SGPA और CGPA कैलकुलेटर",
+    "url": "https://cgpa-calculator-umber-two.vercel.app/hi/delhi-university-cgpa-calculator.html",
+    "image": "https://cgpa-calculator-umber-two.vercel.app/og-image.jpg",
+    "description": "दिल्ली विश्वविद्यालय के UGCF ग्रेड पॉइंट (O = 10, A+ = 9 …) से SGPA और CGPA निकालें। UGCF अधिसूचना के अनुसार प्रतिशत = CGPA × 10।",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "hi",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "DU में CGPA को प्रतिशत में कैसे बदलें?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "UGCF के तहत 2022-23 से उत्तीर्ण छात्रों के लिए प्रतिशत = ग्रैंड CGPA × 10, जैसे 8.64 = 86.4%। पुराने CBCS बैच में × 9.5 इस्तेमाल होता था, इसलिए अपना बैच देखकर नियम जाँचें।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "DU में O ग्रेड के कितने पॉइंट हैं?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O (Outstanding) के 10, A+ के 9, A के 8, B+ के 7, B के 6, C के 5 और P (पास) के 4 पॉइंट हैं। F और Ab (अनुपस्थित) के 0 पॉइंट हैं।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "DU में कितने अंकों पर कौन सा ग्रेड मिलता है?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DU के अध्यादेश की तालिका में केवल ग्रेड और पॉइंट दिए गए हैं, अंकों की सीमा नहीं। इसलिए अंकों से ग्रेड जानने के लिए अपने कॉलेज या विभाग से पुष्टि करें।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "DU में SGPA कैसे निकालते हैं?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "हर कोर्स के क्रेडिट को उसके ग्रेड पॉइंट से गुणा करें, सबका योग करें और सेमेस्टर के कुल क्रेडिट से भाग दें। जैसे 190 ÷ 22 = 8.64।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "क्या ग्रैंड CGPA और CGPA एक ही हैं?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ग्रैंड CGPA पूरे कोर्स के सभी सेमेस्टर का CGPA है, जो अंतिम परिणाम में लिखा जाता है। प्रतिशत इसी ग्रैंड CGPA से निकाला जाता है।"
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "CGPA Calculator",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/hi/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "दिल्ली विश्वविद्यालय (DU) SGPA और CGPA कैलकुलेटर",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/hi/delhi-university-cgpa-calculator.html"
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    /* Apply the saved (or system) theme before the page paints, so there is no flash */
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem('cgpa-theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="CGPA कैलकुलेटर होम">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3z"></path>
+            <path d="M5 13.18v4C5 18.84 8.13 20 12 20s7-1.16 7-2.82v-4L12 17l-7-3.82z"></path>
+          </svg>
+        </span>
+        <span>CGPA Calculator</span>
+      </a>
+      <div class="header-actions">
+        <nav class="site-nav" id="siteNav" aria-label="मुख्य मेनू">
+          <a href="index.html">कैलकुलेटर</a>
+          <a href="../cgpa-to-german-grade.html">जर्मन ग्रेड</a>
+          <a href="about.html">हमारे बारे में</a>
+          <a href="privacy-policy.html">गोपनीयता</a>
+          <a href="terms.html">शर्तें</a>
+          <a href="contact.html">संपर्क</a>
+        </nav>
+        <details class="lang-menu" id="langMenu">
+          <summary class="icon-btn lang-btn" aria-label="भाषा चुनें" title="भाषा">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"></path></svg>
+            <span class="lang-code" data-no-translate="">HI</span>
+          </summary>
+          <div class="lang-list" data-no-translate=""><a href="../index.html" hreflang="en" lang="en"><span class="lang-flag" aria-hidden="true">🇬🇧</span> English</a><a href="../de/index.html" hreflang="de" lang="de"><span class="lang-flag" aria-hidden="true">🇩🇪</span> Deutsch</a><a href="../ur/index.html" hreflang="ur" lang="ur"><span class="lang-flag" aria-hidden="true">🇵🇰</span> اردو</a><a href="delhi-university-cgpa-calculator.html" hreflang="hi" lang="hi" aria-current="true"><span class="lang-flag" aria-hidden="true">🇮🇳</span> हिन्दी</a><a href="../bn/index.html" hreflang="bn" lang="bn"><span class="lang-flag" aria-hidden="true">🇧🇩</span> বাংলা</a></div>
+        </details>
+        <button type="button" id="themeToggle" class="icon-btn" aria-label="डार्क मोड पर जाएं" title="लाइट / डार्क मोड">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+        </button>
+        <button type="button" id="menuToggle" class="icon-btn menu-btn" aria-label="मेनू खोलें" aria-expanded="false" aria-controls="siteNav">
+          <svg class="icon-menu" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+
+    <section class="hero">
+      <nav class="breadcrumb" aria-label="ब्रेडक्रंब"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">DU</span></nav>
+      <h1>दिल्ली विश्वविद्यालय (DU) SGPA और CGPA कैलकुलेटर</h1>
+      <p>दिल्ली विश्वविद्यालय के अंडरग्रेजुएट करिकुलम फ्रेमवर्क (UGCF) के लेटर ग्रेड और ग्रेड पॉइंट से अपना SGPA और CGPA निकालें, और DU की आधिकारिक अधिसूचना के अनुसार प्रतिशत भी देखें।
+        <a href="#guide" class="hero-link">DU की ग्रेडिंग कैसे काम करती है ↓</a></p>
+    </section>
+
+    <section class="card scale-card" id="calculator" aria-labelledby="scaleLabel">
+      <div class="scale-text">
+        <p id="scaleLabel" class="scale-title">ग्रेडिंग प्रणाली: दिल्ली विश्वविद्यालय, UGCF</p>
+        <p class="muted small">अपनी मार्कशीट पर लिखा लेटर ग्रेड चुनें और विषय के क्रेडिट डालें। ग्रेड पॉइंट DU अध्यादेश की तालिका से हैं।</p>
+      </div>
+      <select id="scaleSelect" hidden="" aria-hidden="true" tabindex="-1"><option value="du">DU</option></select>
+      <button type="button" id="resetAll" class="btn btn-outline danger-hover">सब रीसेट करें</button>
+    </section>
+    <p class="print-only" id="printDate"></p>
+
+    <div class="layout">
+      <!-- ================= Calculators ================= -->
+      <div class="main-col">
+        <div class="tabs" role="tablist" aria-label="कैलकुलेटर">
+          <button type="button" class="tab" role="tab" id="tab-gpa" aria-controls="panel-gpa" aria-selected="true">GPA <small>एक सेमेस्टर</small></button>
+          <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>सभी सेमेस्टर</small></button>
+          <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">लक्ष्य <small>आगे की योजना</small></button>
+          <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">प्रतिशत <small>कन्वर्टर</small></button>
+        </div>
+        <!-- ---------- TAB 1: GPA ---------- -->
+        <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
+          <div class="panel-head">
+            <div>
+              <h2>सेमेस्टर GPA</h2>
+              <p class="muted small">हर विषय को उसके क्रेडिट और ग्रेड के साथ जोड़ें।</p>
+            </div>
+
+          </div>
+          <div class="rows-head subject-cols" aria-hidden="true">
+            <span>विषय (वैकल्पिक)</span><span>क्रेडिट</span><span id="gradeHead">ग्रेड</span><span></span>
+          </div>
+          <div id="subjectList" class="row-list mode-grade"></div>
+          <button type="button" id="addSubject" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            विषय जोड़ें
+          </button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">आपका सेमेस्टर GPA</div>
+            <div class="result-value"><span id="gpaValue">—</span> <small id="gpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="gpaMeter"></span></div>
+            <div class="result-cheer" id="gpaCheer"></div>
+            <div class="result-sub" id="gpaSub">अपना GPA देखने के लिए विषय जोड़ें।</div>
+            <div class="result-note" id="gpaNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" id="sendToCgpa" class="btn btn-soft">यह GPA मेरे CGPA में जोड़ें →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="gpa">परिणाम कॉपी करें</button>
+            <button type="button" class="btn btn-outline js-print" title="प्रिंट विंडो में PDF डाउनलोड करने के लिए “Save as PDF” चुनें">प्रिंट / PDF</button>
+            <button type="button" id="resetGpa" class="btn btn-quiet">साफ़ करें</button>
+          </div>
+          <details class="howto">
+            <summary>GPA की गणना कैसे होती है?</summary>
+            <p class="formula-line">GPA = (Σ क्रेडिट × ग्रेड पॉइंट) ÷ (Σ क्रेडिट)</p>
+            <p class="muted small">उदाहरण: गणित 3 क्रेडिट और 4.00 ग्रेड पॉइंट, अंग्रेज़ी 2 क्रेडिट और 3.00 → (3×4 + 2×3) ÷ (3+2) = 18 ÷ 5 = <strong>3.60</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 2: CGPA ---------- -->
+        <section id="panel-cgpa" class="card panel" role="tabpanel" aria-labelledby="tab-cgpa" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>कुल CGPA</h2>
+              <p class="muted small">हर सेमेस्टर का GPA (SGPA) और उसके कुल क्रेडिट जोड़ें।</p>
+            </div>
+          </div>
+          <div class="rows-head semester-cols" aria-hidden="true">
+            <span>सेमेस्टर</span><span>GPA / SGPA</span><span>क्रेडिट</span><span></span>
+          </div>
+          <div id="semesterList" class="row-list"></div>
+          <button type="button" id="addSemester" class="btn btn-add">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            सेमेस्टर जोड़ें
+          </button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">आपका CGPA</div>
+            <div class="result-value"><span id="cgpaValue">—</span> <small id="cgpaMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="cgpaMeter"></span></div>
+            <div class="result-cheer" id="cgpaCheer"></div>
+            <div class="result-sub" id="cgpaSub">अपना CGPA देखने के लिए सेमेस्टर जोड़ें।</div>
+            <div class="result-note" id="cgpaNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" id="sendToPct" class="btn btn-soft">इस CGPA को % में बदलें →</button>
+            <button type="button" class="btn btn-outline js-copy" data-copy="cgpa">परिणाम कॉपी करें</button>
+            <button type="button" class="btn btn-outline js-print" title="प्रिंट विंडो में PDF डाउनलोड करने के लिए “Save as PDF” चुनें">प्रिंट / PDF</button>
+            <button type="button" id="resetCgpa" class="btn btn-quiet">साफ़ करें</button>
+          </div>
+          <details class="howto">
+            <summary>CGPA की गणना कैसे होती है?</summary>
+            <p class="formula-line">CGPA = (Σ सेमेस्टर GPA × सेमेस्टर क्रेडिट) ÷ (कुल क्रेडिट)</p>
+            <p class="muted small">ज़्यादा क्रेडिट वाले सेमेस्टर ज़्यादा गिने जाते हैं। उदाहरण: 18 क्रेडिट के साथ 3.50 और 15 क्रेडिट के साथ 3.00 → (3.5×18 + 3×15) ÷ 33 = 108 ÷ 33 = <strong>3.27</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 3: Target CGPA ---------- -->
+        <section id="panel-target" class="card panel" role="tabpanel" aria-labelledby="tab-target" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>लक्ष्य CGPA</h2>
+              <p class="muted small">जानें कि अपने लक्ष्य तक पहुँचने के लिए आने वाले सेमेस्टर में आपको कितना GPA चाहिए।</p>
+            </div>
+          </div>
+          <div class="target-grid">
+            <div class="field">
+              <label class="field-label" for="tCurrent">वर्तमान CGPA</label>
+              <input type="text" id="tCurrent" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tCurrentMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tDone">पूरे किए गए क्रेडिट</label>
+              <input type="text" id="tDone" inputmode="decimal" autocomplete="off" placeholder="e.g. 66">
+              <p class="row-msg" id="tDoneMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tTarget">लक्ष्य CGPA</label>
+              <input type="text" id="tTarget" inputmode="decimal" autocomplete="off">
+              <p class="row-msg" id="tTargetMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="tLeft">बचे हुए क्रेडिट</label>
+              <input type="text" id="tLeft" inputmode="decimal" autocomplete="off" placeholder="e.g. 70">
+              <p class="row-msg" id="tLeftMsg"></p>
+            </div>
+          </div>
+          <button type="button" id="fillTarget" class="btn btn-quiet btn-inline">मेरे CGPA टैब से भरें</button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">हर सेमेस्टर में ज़रूरी GPA</div>
+            <div class="result-value"><span id="tgtValue">—</span> <small id="tgtMax">/ 4.00</small></div>
+            <div class="meter" aria-hidden="true"><span id="tgtMeter"></span></div>
+            <div class="result-cheer" id="tgtCheer"></div>
+            <div class="result-sub" id="tgtSub">ज़रूरी GPA देखने के लिए ऊपर के चारों बॉक्स भरें।</div>
+            <div class="result-note" id="tgtNote" hidden=""></div>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="target">परिणाम कॉपी करें</button>
+            <button type="button" class="btn btn-outline js-print" title="प्रिंट विंडो में PDF डाउनलोड करने के लिए “Save as PDF” चुनें">प्रिंट / PDF</button>
+            <button type="button" id="resetTarget" class="btn btn-quiet">साफ़ करें</button>
+          </div>
+          <details class="howto">
+            <summary>इसकी गणना कैसे होती है?</summary>
+            <p class="formula-line">ज़रूरी GPA = (लक्ष्य × कुल क्रेडिट − वर्तमान × पूरे क्रेडिट) ÷ बचे हुए क्रेडिट</p>
+            <p class="muted small">उदाहरण: 60 क्रेडिट के बाद वर्तमान 3.00, लक्ष्य 3.30, 60 क्रेडिट बाकी → (3.3 × 120 − 3 × 60) ÷ 60 = <strong>3.60</strong></p>
+          </details>
+        </section>
+        <!-- ---------- TAB 4: Percentage ---------- -->
+        <section id="panel-pct" class="card panel" role="tabpanel" aria-labelledby="tab-pct" hidden="">
+          <div class="panel-head">
+            <div>
+              <h2>CGPA से प्रतिशत</h2>
+              <p class="muted small">अपना CGPA लिखें और उसका स्केल चुनें।</p>
+            </div>
+          </div>
+          <div class="conv-grid">
+            <div class="field">
+              <label class="field-label always" for="convInput">आपका CGPA</label>
+              <input type="text" id="convInput" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.50">
+              <p class="row-msg" id="convMsg"></p>
+            </div>
+
+          </div>
+          <button type="button" id="useMyCgpa" class="btn btn-quiet btn-inline">CGPA टैब से मेरा CGPA इस्तेमाल करें</button>
+          <div class="result" aria-live="polite">
+            <div class="result-label">प्रतिशत</div>
+            <div class="result-value"><span id="pctValue">—</span></div>
+            <div class="meter" aria-hidden="true"><span id="pctMeter"></span></div>
+            <div class="result-cheer" id="pctCheer"></div>
+            <div class="result-sub" id="pctSub">प्रतिशत देखने के लिए अपना CGPA डालें।</div>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn btn-outline js-copy" data-copy="pct">परिणाम कॉपी करें</button>
+            <button type="button" class="btn btn-outline js-print" title="प्रिंट विंडो में PDF डाउनलोड करने के लिए “Save as PDF” चुनें">प्रिंट / PDF</button>
+          </div>
+          <div class="formula">
+            <div class="formula-title">इस्तेमाल किया गया फ़ॉर्मूला</div>
+            <p class="formula-line" id="formulaMain"></p>
+            <p class="formula-work" id="formulaWork"></p>
+            <p class="muted small" id="formulaNote"></p>
+          </div>
+        </section>
+      </div>
+      <!-- ================= Sidebar: grade table ================= -->
+      <aside class="sidebar">
+        <section class="card" aria-labelledby="tableTitle">
+          <h2 id="tableTitle" class="side-title">ग्रेड पॉइंट</h2>
+          <p class="muted small" id="tableSubtitle"></p>
+          <div class="table-wrap">
+            <table class="grade-table">
+              <thead>
+                <tr><th scope="col">ग्रेड</th><th scope="col" class="num">पॉइंट</th><th scope="col" class="num" id="marksCol">अंक %</th></tr>
+              </thead>
+              <tbody id="gradeTableBody"></tbody>
+            </table>
+          </div>
+          <p class="muted tiny">अंकों की सीमाएं हर यूनिवर्सिटी में अलग होती हैं। हमेशा अपनी यूनिवर्सिटी की ग्रेडिंग नीति देखें।</p>
+        </section>
+
+        <section class="card tips">
+          <h2 class="side-title">DU: मुख्य बातें</h2>
+          <ul>
+            <li>सबसे ऊँचा ग्रेड <strong>O (Outstanding) = 10</strong> पॉइंट, पास ग्रेड <strong>P = 4</strong>।</li>
+            <li>F (फेल) और Ab (अनुपस्थित) दोनों के <strong>0 पॉइंट</strong> हैं।</li>
+            <li>UGCF में प्रतिशत = <strong>ग्रैंड CGPA × 10</strong>।</li>
+            <li>आम तौर पर एक सेमेस्टर में <strong>22 क्रेडिट</strong> होते हैं।</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <article class="guide" id="guide">
+
+      <section id="how-it-works">
+        <h2>दिल्ली विश्वविद्यालय में ग्रेडिंग कैसे होती है</h2>
+        <p>दिल्ली विश्वविद्यालय ने 2022-23 सत्र से अंडरग्रेजुएट करिकुलम फ्रेमवर्क (UGCF 2022) लागू किया है, जो राष्ट्रीय शिक्षा नीति 2020 पर आधारित है। इसमें हर सेमेस्टर में अलग-अलग तरह के कोर्स होते हैं: डिसिप्लिन स्पेसिफ़िक कोर (DSC), जेनेरिक इलेक्टिव (GE), एबिलिटी एन्हांसमेंट कोर्स (AEC), स्किल एन्हांसमेंट कोर्स (SEC) और वैल्यू एडिशन कोर्स (VAC)। आम तौर पर DSC और GE 4-4 क्रेडिट के होते हैं, जबकि AEC, SEC और VAC 2-2 क्रेडिट के।</p>
+        <p>हर कोर्स के परिणाम को एक लेटर ग्रेड मिलता है, और हर लेटर ग्रेड का एक तय ग्रेड पॉइंट होता है। इन्हीं से सेमेस्टर का SGPA और सभी सेमेस्टर का CGPA बनता है। अंतिम परिणाम में सभी सेमेस्टर का "ग्रैंड CGPA" लिखा जाता है।</p>
+      </section>
+
+      <section id="grade-points">
+        <h2>DU लेटर ग्रेड और ग्रेड पॉइंट (UGCF)</h2>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">लेटर ग्रेड</th><th scope="col">अर्थ</th><th scope="col" class="num">ग्रेड पॉइंट</th></tr></thead>
+            <tbody>
+              <tr><td>O</td><td>उत्कृष्ट (Outstanding)</td><td class="num">10</td></tr>
+              <tr><td>A+</td><td>बहुत उत्तम (Excellent)</td><td class="num">9</td></tr>
+              <tr><td>A</td><td>बहुत अच्छा (Very good)</td><td class="num">8</td></tr>
+              <tr><td>B+</td><td>अच्छा (Good)</td><td class="num">7</td></tr>
+              <tr><td>B</td><td>औसत से ऊपर</td><td class="num">6</td></tr>
+              <tr><td>C</td><td>औसत</td><td class="num">5</td></tr>
+              <tr><td>P</td><td>पास</td><td class="num">4</td></tr>
+              <tr><td>F</td><td>फेल</td><td class="num">0</td></tr>
+              <tr><td>Ab</td><td>अनुपस्थित</td><td class="num">0</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>DU के अध्यादेश में यह तालिका केवल लेटर ग्रेड और ग्रेड पॉइंट देती है, अंकों की सीमा (जैसे "90 से ऊपर = O") नहीं। इसलिए यह कैलकुलेटर अंकों के बजाय सीधे ग्रेड पूछता है। अगर आपको अपने अंकों से ग्रेड निकालना है तो <strong>अपने कॉलेज या विभाग से अंकों की सीमा की पुष्टि करें</strong>।</p>
+      </section>
+
+      <section id="example">
+        <h2>DU SGPA और CGPA कैसे निकालें: उदाहरण</h2>
+        <p class="formula-block">SGPA = Σ (क्रेडिट × ग्रेड पॉइंट) ÷ Σ क्रेडिट</p>
+        <p>मान लीजिए B.A. (Hons.) के पहले सेमेस्टर में 22 क्रेडिट हैं और ग्रेड ये हैं:</p>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col">कोर्स</th><th scope="col" class="num">क्रेडिट</th><th scope="col">ग्रेड</th><th scope="col" class="num">क्रेडिट × पॉइंट</th></tr></thead>
+            <tbody>
+              <tr><td>DSC-1</td><td class="num">4</td><td>A+ (9)</td><td class="num">36</td></tr>
+              <tr><td>DSC-2</td><td class="num">4</td><td>A (8)</td><td class="num">32</td></tr>
+              <tr><td>DSC-3</td><td class="num">4</td><td>O (10)</td><td class="num">40</td></tr>
+              <tr><td>GE-1</td><td class="num">4</td><td>B+ (7)</td><td class="num">28</td></tr>
+              <tr><td>AEC</td><td class="num">2</td><td>A (8)</td><td class="num">16</td></tr>
+              <tr><td>SEC</td><td class="num">2</td><td>O (10)</td><td class="num">20</td></tr>
+              <tr><td>VAC</td><td class="num">2</td><td>A+ (9)</td><td class="num">18</td></tr>
+            </tbody>
+            <tfoot><tr><th scope="row">कुल</th><td class="num">22</td><td></td><td class="num">190</td></tr></tfoot>
+          </table>
+        </div>
+        <p class="formula-block">SGPA = 190 ÷ 22 = 8.64</p>
+        <p>CGPA निकालने के लिए हर सेमेस्टर के SGPA को उसके क्रेडिट से गुणा करें, सबका योग करें और कुल क्रेडिट से भाग दें। अगर हर सेमेस्टर में 22 क्रेडिट हों तो SGPA का साधारण औसत भी वही आएगा। कैलकुलेटर का CGPA टैब यह काम अपने आप करता है।</p>
+      </section>
+
+      <section id="percentage">
+        <h2>DU CGPA से प्रतिशत</h2>
+        <p>दिल्ली विश्वविद्यालय की 10 फ़रवरी 2023 की अधिसूचना (अध्यादेश VIII में जोड़, UGCF) कहती है कि 2022-23 से उत्तीर्ण होने वाले छात्रों का अंतिम प्रतिशत <strong>ग्रैंड CGPA × 10</strong> होगा। उदाहरण: CGPA 8.64 = 86.4%।</p>
+        <p>आपने इंटरनेट पर <strong>CGPA × 9.5</strong> भी देखा होगा। यह पुराने CBCS दौर में इस्तेमाल होता था। अगर आप CBCS बैच के छात्र हैं, तो <strong>अपने बैच का नियम विश्वविद्यालय से जाँचें</strong>, क्योंकि यह कैलकुलेटर UGCF का × 10 सूत्र इस्तेमाल करता है।</p>
+      </section>
+
+      <section id="faq" class="faq">
+        <h2>DU CGPA: अक्सर पूछे जाने वाले प्रश्न</h2>
+
+        <details>
+          <summary><h3>DU में CGPA को प्रतिशत में कैसे बदलें?</h3></summary>
+          <p>UGCF के तहत 2022-23 से उत्तीर्ण छात्रों के लिए प्रतिशत = ग्रैंड CGPA × 10, जैसे 8.64 = 86.4%। पुराने CBCS बैच में × 9.5 इस्तेमाल होता था, इसलिए अपना बैच देखकर नियम जाँचें।</p>
+        </details>
+        <details>
+          <summary><h3>DU में O ग्रेड के कितने पॉइंट हैं?</h3></summary>
+          <p>O (Outstanding) के 10, A+ के 9, A के 8, B+ के 7, B के 6, C के 5 और P (पास) के 4 पॉइंट हैं। F और Ab (अनुपस्थित) के 0 पॉइंट हैं।</p>
+        </details>
+        <details>
+          <summary><h3>DU में कितने अंकों पर कौन सा ग्रेड मिलता है?</h3></summary>
+          <p>DU के अध्यादेश की तालिका में केवल ग्रेड और पॉइंट दिए गए हैं, अंकों की सीमा नहीं। इसलिए अंकों से ग्रेड जानने के लिए अपने कॉलेज या विभाग से पुष्टि करें।</p>
+        </details>
+        <details>
+          <summary><h3>DU में SGPA कैसे निकालते हैं?</h3></summary>
+          <p>हर कोर्स के क्रेडिट को उसके ग्रेड पॉइंट से गुणा करें, सबका योग करें और सेमेस्टर के कुल क्रेडिट से भाग दें। जैसे 190 ÷ 22 = 8.64।</p>
+        </details>
+        <details>
+          <summary><h3>क्या ग्रैंड CGPA और CGPA एक ही हैं?</h3></summary>
+          <p>ग्रैंड CGPA पूरे कोर्स के सभी सेमेस्टर का CGPA है, जो अंतिम परिणाम में लिखा जाता है। प्रतिशत इसी ग्रैंड CGPA से निकाला जाता है।</p>
+        </details>
+      </section>
+
+      <section id="sources">
+        <h2>स्रोत</h2>
+        <ul class="source-note">
+          <li><a href="https://www.du.ac.in/uploads/new-web/21022023_Notification.pdf">University of Delhi, Notification CNC-II/093/1(22)/2022-23 (10.02.2023): UGCF assessment, final percentage = Grand CGPA × 10</a></li>
+          <li><a href="https://www.polscience.du.ac.in/userfiles/PDFs/2025/31072025-ugcf-Final_notification-polsc.pdf">University of Delhi, Notification CNC-II/093/1/EC-1275/25/12 (31.07.2025): Table 1, Letter Grades and Grade Points</a></li>
+        </ul>
+        <p class="source-note">आख़िरी बार जाँचा गया: 22 अक्टूबर 2026। विश्वविद्यालय के नियम बदल सकते हैं, इसलिए अपना परिणाम हमेशा अपने विश्वविद्यालय के नवीनतम आधिकारिक नियमों से मिला लें। देखें: <a href="terms.html">उपयोग की शर्तें</a>।</p>
+      </section>
+    </article>
+
+    <section class="uni-section" aria-labelledby="uniTitle">
+      <h2 id="uniTitle">और CGPA और GPA कैलकुलेटर</h2>
+      <div class="uni-grid">
+        <a class="card uni-card" href="vtu-cgpa-calculator.html">
+          <span class="uni-badge">VTU</span>
+          <span class="uni-name">VTU CGPA और GPA (SGPA) कैलकुलेटर</span>
+          <span class="muted small">2022 और 2021 स्कीम · CGPA से %</span>
+        </a>
+        <a class="card uni-card" href="aktu-cgpa-calculator.html">
+          <span class="uni-badge">AKTU</span>
+          <span class="uni-name">AKTU SGPA और CGPA कैलकुलेटर (B.Tech)</span>
+          <span class="muted small">10-पॉइंट · E पास ग्रेड · प्रतिशत = CGPA × 10</span>
+        </a>
+        <a class="card uni-card" href="mumbai-university-cgpa-calculator.html">
+          <span class="uni-badge">MU</span>
+          <span class="uni-name">मुंबई विश्वविद्यालय (MU) SGPI और CGPI कैलकुलेटर</span>
+          <span class="muted small">NEP 2020 · 90+ पर O · SGPI = ΣCG ÷ ΣC</span>
+        </a>
+        <a class="card uni-card" href="rgpv-cgpa-calculator.html">
+          <span class="uni-badge">RGPV</span>
+          <span class="uni-name">RGPV SGPA और CGPA कैलकुलेटर (भोपाल)</span>
+          <span class="muted small">91+ पर A+ · प्रतिशत = CGPA × 10</span>
+        </a>
+        <a class="card uni-card" href="index.html">
+          <span class="uni-badge">सभी</span>
+          <span class="uni-name">सामान्य CGPA कैलकुलेटर</span>
+          <span class="muted small">4.0, 5.0 और 10-पॉइंट स्केल</span>
+        </a>
+        <a class="card uni-card" href="index.html#universities">
+          <span class="uni-badge">UNI</span>
+          <span class="uni-name">सभी यूनिवर्सिटी कैलकुलेटर</span>
+          <span class="muted small">हर यूनिवर्सिटी के अपने आधिकारिक ग्रेडिंग नियमों और प्रतिशत रूपांतरण के साथ बनाए गए कैलकुलेटर।</span>
+        </a>
+      </div>
+    </section>
+    <p class="back-top"><a href="#calculator">↑ कैलकुलेटर पर वापस जाएं</a></p>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p><strong>CGPA Calculator</strong> · छात्रों के लिए बनाया गया · © <span id="year">2026</span></p>
+        <p class="muted">परिणाम अनुमान हैं। आपकी यूनिवर्सिटी के आधिकारिक नियम हमेशा सबसे पहले हैं।</p>
+      </div>
+      <nav class="footer-nav" aria-label="फ़ुटर">
+        <a href="index.html">कैलकुलेटर</a>
+        <a href="../cgpa-to-german-grade.html">CGPA से जर्मन ग्रेड</a>
+        <a href="about.html">हमारे बारे में</a>
+        <a href="privacy-policy.html">गोपनीयता नीति</a>
+        <a href="terms.html">उपयोग की शर्तें</a>
+        <a href="contact.html">संपर्क</a>
+      </nav>
+    </div>
+  </footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>window.CGPA_PAGE = {
+      storageKey: 'cgpa-du',
+      scales: {
+        du: {
+          max: 10, label: 'DU 10-पॉइंट स्केल (UGCF)', subtitle: 'दिल्ली विश्वविद्यालय · UGCF · सबसे ऊँचा ग्रेड पॉइंट 10', example: '8.50', modes: ['grade'],
+          grades: [['O', 10], ['A+', 9], ['A', 8], ['B+', 7], ['B', 6], ['C', 5], ['P', 4], ['F', 0]]
+        }
+      },
+      conversions: {
+        du: {
+          formula: 'प्रतिशत = CGPA × 10',
+          expr: c => c + ' × 10',
+          calc: c => c * 10,
+          example: 8.64,
+          note: 'DU अधिसूचना (10 फ़रवरी 2023, UGCF): 2022-23 से उत्तीर्ण होने वाले छात्रों का अंतिम प्रतिशत = ग्रैंड CGPA × 10। पुराने CBCS बैच के लिए अपना नियम जाँचें।'
+        }
+      }
+    };</script>
+  <script src="../i18n/hi.js" data-i18n=""></script>
+  <script src="../site.js"></script>
+  <script src="../script.js"></script>
+</body></html>

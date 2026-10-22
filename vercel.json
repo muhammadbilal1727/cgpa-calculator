@@ -1,0 +1,1709 @@
+{
+  "redirects": [
+    {
+      "source": "/ar/about.html",
+      "destination": "/about.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/comsats-cgpa-calculator.html",
+      "destination": "/comsats-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/contact.html",
+      "destination": "/contact.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/edinburgh-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/harvard-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/heidelberg-cgpa-calculator.html",
+      "destination": "/de/heidelberg-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/index.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/kcl-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/lmu-cgpa-calculator.html",
+      "destination": "/de/lmu-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/melbourne-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/mit-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/monash-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/nust-cgpa-calculator.html",
+      "destination": "/nust-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/oxford-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/privacy-policy.html",
+      "destination": "/privacy-policy.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/stanford-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/terms.html",
+      "destination": "/terms.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/tum-cgpa-calculator.html",
+      "destination": "/de/tum-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/ukm-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/um-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/uq-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/utm-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/vtu-cgpa-calculator.html",
+      "destination": "/vtu-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/bn/comsats-cgpa-calculator.html",
+      "destination": "/bn/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bn/edinburgh-cgpa-calculator.html",
+      "destination": "/bn/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bn/harvard-cgpa-calculator.html",
+      "destination": "/bn/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bn/heidelberg-cgpa-calculator.html",
+      "destination": "/de/heidelberg-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/bn/kcl-cgpa-calculator.html",
+      "destination": "/bn/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bn/lmu-cgpa-calculator.html",
+      "destination": "/de/lmu-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/bn/melbourne-cgpa-calculator.html",
+      "destination": "/bn/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bn/mit-cgpa-calculator.html",
+      "destination": "/bn/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bn/monash-cgpa-calculator.html",
+      "destination": "/bn/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bn/nust-cgpa-calculator.html",
+      "destination": "/bn/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bn/oxford-cgpa-calculator.html",
+      "destination": "/bn/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bn/stanford-cgpa-calculator.html",
+      "destination": "/bn/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bn/tum-cgpa-calculator.html",
+      "destination": "/de/tum-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/bn/ukm-cgpa-calculator.html",
+      "destination": "/bn/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bn/um-cgpa-calculator.html",
+      "destination": "/bn/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bn/uq-cgpa-calculator.html",
+      "destination": "/bn/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bn/utm-cgpa-calculator.html",
+      "destination": "/bn/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bn/vtu-cgpa-calculator.html",
+      "destination": "/bn/",
+      "statusCode": 301
+    },
+    {
+      "source": "/de/comsats-cgpa-calculator.html",
+      "destination": "/de/",
+      "statusCode": 301
+    },
+    {
+      "source": "/de/edinburgh-cgpa-calculator.html",
+      "destination": "/de/",
+      "statusCode": 301
+    },
+    {
+      "source": "/de/harvard-cgpa-calculator.html",
+      "destination": "/de/",
+      "statusCode": 301
+    },
+    {
+      "source": "/de/kcl-cgpa-calculator.html",
+      "destination": "/de/",
+      "statusCode": 301
+    },
+    {
+      "source": "/de/melbourne-cgpa-calculator.html",
+      "destination": "/de/",
+      "statusCode": 301
+    },
+    {
+      "source": "/de/mit-cgpa-calculator.html",
+      "destination": "/de/",
+      "statusCode": 301
+    },
+    {
+      "source": "/de/monash-cgpa-calculator.html",
+      "destination": "/de/",
+      "statusCode": 301
+    },
+    {
+      "source": "/de/nust-cgpa-calculator.html",
+      "destination": "/de/",
+      "statusCode": 301
+    },
+    {
+      "source": "/de/oxford-cgpa-calculator.html",
+      "destination": "/de/",
+      "statusCode": 301
+    },
+    {
+      "source": "/de/stanford-cgpa-calculator.html",
+      "destination": "/de/",
+      "statusCode": 301
+    },
+    {
+      "source": "/de/ukm-cgpa-calculator.html",
+      "destination": "/de/",
+      "statusCode": 301
+    },
+    {
+      "source": "/de/um-cgpa-calculator.html",
+      "destination": "/de/",
+      "statusCode": 301
+    },
+    {
+      "source": "/de/uq-cgpa-calculator.html",
+      "destination": "/de/",
+      "statusCode": 301
+    },
+    {
+      "source": "/de/utm-cgpa-calculator.html",
+      "destination": "/de/",
+      "statusCode": 301
+    },
+    {
+      "source": "/de/vtu-cgpa-calculator.html",
+      "destination": "/de/",
+      "statusCode": 301
+    },
+    {
+      "source": "/edinburgh-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/about.html",
+      "destination": "/about.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/comsats-cgpa-calculator.html",
+      "destination": "/comsats-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/contact.html",
+      "destination": "/contact.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/edinburgh-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/harvard-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/heidelberg-cgpa-calculator.html",
+      "destination": "/de/heidelberg-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/index.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/kcl-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/lmu-cgpa-calculator.html",
+      "destination": "/de/lmu-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/melbourne-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/mit-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/monash-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/nust-cgpa-calculator.html",
+      "destination": "/nust-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/oxford-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/privacy-policy.html",
+      "destination": "/privacy-policy.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/stanford-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/terms.html",
+      "destination": "/terms.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/tum-cgpa-calculator.html",
+      "destination": "/de/tum-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/ukm-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/um-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/uq-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/utm-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/vtu-cgpa-calculator.html",
+      "destination": "/vtu-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/about.html",
+      "destination": "/about.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/comsats-cgpa-calculator.html",
+      "destination": "/comsats-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/contact.html",
+      "destination": "/contact.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/edinburgh-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/harvard-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/heidelberg-cgpa-calculator.html",
+      "destination": "/de/heidelberg-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/index.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/kcl-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/lmu-cgpa-calculator.html",
+      "destination": "/de/lmu-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/melbourne-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/mit-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/monash-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/nust-cgpa-calculator.html",
+      "destination": "/nust-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/oxford-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/privacy-policy.html",
+      "destination": "/privacy-policy.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/stanford-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/terms.html",
+      "destination": "/terms.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/tum-cgpa-calculator.html",
+      "destination": "/de/tum-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/ukm-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/um-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/uq-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/utm-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/vtu-cgpa-calculator.html",
+      "destination": "/vtu-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/harvard-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/heidelberg-cgpa-calculator.html",
+      "destination": "/de/heidelberg-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/hi/comsats-cgpa-calculator.html",
+      "destination": "/hi/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hi/edinburgh-cgpa-calculator.html",
+      "destination": "/hi/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hi/harvard-cgpa-calculator.html",
+      "destination": "/hi/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hi/heidelberg-cgpa-calculator.html",
+      "destination": "/de/heidelberg-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/hi/kcl-cgpa-calculator.html",
+      "destination": "/hi/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hi/lmu-cgpa-calculator.html",
+      "destination": "/de/lmu-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/hi/melbourne-cgpa-calculator.html",
+      "destination": "/hi/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hi/mit-cgpa-calculator.html",
+      "destination": "/hi/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hi/monash-cgpa-calculator.html",
+      "destination": "/hi/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hi/nust-cgpa-calculator.html",
+      "destination": "/hi/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hi/oxford-cgpa-calculator.html",
+      "destination": "/hi/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hi/stanford-cgpa-calculator.html",
+      "destination": "/hi/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hi/tum-cgpa-calculator.html",
+      "destination": "/de/tum-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/hi/ukm-cgpa-calculator.html",
+      "destination": "/hi/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hi/um-cgpa-calculator.html",
+      "destination": "/hi/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hi/uq-cgpa-calculator.html",
+      "destination": "/hi/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hi/utm-cgpa-calculator.html",
+      "destination": "/hi/",
+      "statusCode": 301
+    },
+    {
+      "source": "/id/about.html",
+      "destination": "/about.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/id/comsats-cgpa-calculator.html",
+      "destination": "/comsats-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/id/contact.html",
+      "destination": "/contact.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/id/edinburgh-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/id/harvard-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/id/heidelberg-cgpa-calculator.html",
+      "destination": "/de/heidelberg-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/id/index.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/id/kcl-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/id/lmu-cgpa-calculator.html",
+      "destination": "/de/lmu-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/id/melbourne-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/id/mit-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/id/monash-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/id/nust-cgpa-calculator.html",
+      "destination": "/nust-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/id/oxford-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/id/privacy-policy.html",
+      "destination": "/privacy-policy.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/id/stanford-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/id/terms.html",
+      "destination": "/terms.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/id/tum-cgpa-calculator.html",
+      "destination": "/de/tum-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/id/ukm-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/id/um-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/id/uq-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/id/utm-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/id/vtu-cgpa-calculator.html",
+      "destination": "/vtu-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ja/about.html",
+      "destination": "/about.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ja/comsats-cgpa-calculator.html",
+      "destination": "/comsats-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ja/contact.html",
+      "destination": "/contact.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ja/edinburgh-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ja/harvard-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ja/heidelberg-cgpa-calculator.html",
+      "destination": "/de/heidelberg-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ja/index.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ja/kcl-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ja/lmu-cgpa-calculator.html",
+      "destination": "/de/lmu-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ja/melbourne-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ja/mit-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ja/monash-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ja/nust-cgpa-calculator.html",
+      "destination": "/nust-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ja/oxford-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ja/privacy-policy.html",
+      "destination": "/privacy-policy.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ja/stanford-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ja/terms.html",
+      "destination": "/terms.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ja/tum-cgpa-calculator.html",
+      "destination": "/de/tum-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ja/ukm-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ja/um-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ja/uq-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ja/utm-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ja/vtu-cgpa-calculator.html",
+      "destination": "/vtu-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/kcl-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/lmu-cgpa-calculator.html",
+      "destination": "/de/lmu-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/melbourne-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mit-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/monash-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mr/about.html",
+      "destination": "/about.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/mr/comsats-cgpa-calculator.html",
+      "destination": "/comsats-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/mr/contact.html",
+      "destination": "/contact.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/mr/edinburgh-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mr/harvard-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mr/heidelberg-cgpa-calculator.html",
+      "destination": "/de/heidelberg-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/mr/index.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mr/kcl-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mr/lmu-cgpa-calculator.html",
+      "destination": "/de/lmu-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/mr/melbourne-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mr/mit-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mr/monash-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mr/nust-cgpa-calculator.html",
+      "destination": "/nust-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/mr/oxford-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mr/privacy-policy.html",
+      "destination": "/privacy-policy.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/mr/stanford-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mr/terms.html",
+      "destination": "/terms.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/mr/tum-cgpa-calculator.html",
+      "destination": "/de/tum-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/mr/ukm-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mr/um-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mr/uq-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mr/utm-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mr/vtu-cgpa-calculator.html",
+      "destination": "/vtu-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/oxford-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/about.html",
+      "destination": "/about.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/comsats-cgpa-calculator.html",
+      "destination": "/comsats-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/contact.html",
+      "destination": "/contact.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/edinburgh-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/harvard-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/heidelberg-cgpa-calculator.html",
+      "destination": "/de/heidelberg-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/index.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/kcl-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/lmu-cgpa-calculator.html",
+      "destination": "/de/lmu-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/melbourne-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/mit-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/monash-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/nust-cgpa-calculator.html",
+      "destination": "/nust-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/oxford-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/privacy-policy.html",
+      "destination": "/privacy-policy.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/stanford-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/terms.html",
+      "destination": "/terms.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/tum-cgpa-calculator.html",
+      "destination": "/de/tum-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/ukm-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/um-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/uq-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/utm-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/vtu-cgpa-calculator.html",
+      "destination": "/vtu-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/about.html",
+      "destination": "/about.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/comsats-cgpa-calculator.html",
+      "destination": "/comsats-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/contact.html",
+      "destination": "/contact.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/edinburgh-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/harvard-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/heidelberg-cgpa-calculator.html",
+      "destination": "/de/heidelberg-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/index.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/kcl-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/lmu-cgpa-calculator.html",
+      "destination": "/de/lmu-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/melbourne-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/mit-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/monash-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/nust-cgpa-calculator.html",
+      "destination": "/nust-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/oxford-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/privacy-policy.html",
+      "destination": "/privacy-policy.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/stanford-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/terms.html",
+      "destination": "/terms.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/tum-cgpa-calculator.html",
+      "destination": "/de/tum-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/ukm-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/um-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/uq-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/utm-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/vtu-cgpa-calculator.html",
+      "destination": "/vtu-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/stanford-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/te/about.html",
+      "destination": "/about.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/te/comsats-cgpa-calculator.html",
+      "destination": "/comsats-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/te/contact.html",
+      "destination": "/contact.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/te/edinburgh-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/te/harvard-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/te/heidelberg-cgpa-calculator.html",
+      "destination": "/de/heidelberg-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/te/index.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/te/kcl-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/te/lmu-cgpa-calculator.html",
+      "destination": "/de/lmu-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/te/melbourne-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/te/mit-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/te/monash-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/te/nust-cgpa-calculator.html",
+      "destination": "/nust-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/te/oxford-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/te/privacy-policy.html",
+      "destination": "/privacy-policy.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/te/stanford-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/te/terms.html",
+      "destination": "/terms.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/te/tum-cgpa-calculator.html",
+      "destination": "/de/tum-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/te/ukm-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/te/um-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/te/uq-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/te/utm-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/te/vtu-cgpa-calculator.html",
+      "destination": "/vtu-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/tum-cgpa-calculator.html",
+      "destination": "/de/tum-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ukm-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/um-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/uq-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ur/edinburgh-cgpa-calculator.html",
+      "destination": "/ur/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ur/harvard-cgpa-calculator.html",
+      "destination": "/ur/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ur/heidelberg-cgpa-calculator.html",
+      "destination": "/de/heidelberg-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ur/kcl-cgpa-calculator.html",
+      "destination": "/ur/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ur/lmu-cgpa-calculator.html",
+      "destination": "/de/lmu-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ur/melbourne-cgpa-calculator.html",
+      "destination": "/ur/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ur/mit-cgpa-calculator.html",
+      "destination": "/ur/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ur/monash-cgpa-calculator.html",
+      "destination": "/ur/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ur/oxford-cgpa-calculator.html",
+      "destination": "/ur/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ur/stanford-cgpa-calculator.html",
+      "destination": "/ur/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ur/tum-cgpa-calculator.html",
+      "destination": "/de/tum-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/ur/ukm-cgpa-calculator.html",
+      "destination": "/ur/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ur/um-cgpa-calculator.html",
+      "destination": "/ur/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ur/uq-cgpa-calculator.html",
+      "destination": "/ur/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ur/utm-cgpa-calculator.html",
+      "destination": "/ur/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ur/vtu-cgpa-calculator.html",
+      "destination": "/ur/",
+      "statusCode": 301
+    },
+    {
+      "source": "/utm-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/about.html",
+      "destination": "/about.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/comsats-cgpa-calculator.html",
+      "destination": "/comsats-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/contact.html",
+      "destination": "/contact.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/edinburgh-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/harvard-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/heidelberg-cgpa-calculator.html",
+      "destination": "/de/heidelberg-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/index.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/kcl-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/lmu-cgpa-calculator.html",
+      "destination": "/de/lmu-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/melbourne-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/mit-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/monash-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/nust-cgpa-calculator.html",
+      "destination": "/nust-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/oxford-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/privacy-policy.html",
+      "destination": "/privacy-policy.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/stanford-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/terms.html",
+      "destination": "/terms.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/tum-cgpa-calculator.html",
+      "destination": "/de/tum-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/ukm-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/um-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/uq-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/utm-cgpa-calculator.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/vtu-cgpa-calculator.html",
+      "destination": "/vtu-cgpa-calculator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zh/:path*",
+      "destination": "/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/te",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/te/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/te/:path*",
+      "destination": "/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/:path*",
+      "destination": "/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/:path*",
+      "destination": "/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/mr",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mr/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mr/:path*",
+      "destination": "/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/ja",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ja/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ja/:path*",
+      "destination": "/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/id",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/id/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/id/:path*",
+      "destination": "/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/:path*",
+      "destination": "/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/es",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/:path*",
+      "destination": "/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/:path*",
+      "destination": "/:path*",
+      "statusCode": 301
+    }
+  ]
+}
