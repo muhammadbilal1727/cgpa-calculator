@@ -26,9 +26,9 @@ const SITE = 'https://cgpa-calculator-umber-two.vercel.app';
 const CHROME = process.env.CHROME || 'C:/Program Files/Google/Chrome/Application/chrome.exe';
 // University pages are whatever tools/build-university-pages.js made (every *-calculator.html in the root)
 const UNI_PAGES = fs.readdirSync(ROOT).filter(f => /-calculator\.html$/.test(f)).sort();
-const PAGES = ['index.html', ...UNI_PAGES, 'about.html', 'privacy-policy.html', 'terms.html', 'contact.html'];
+const PAGES = ['index.html', ...UNI_PAGES, 'cgpa-to-german-grade.html', 'about.html', 'privacy-policy.html', 'terms.html', 'contact.html'];
 // Pages made only in some languages; other languages link to the English page instead
-const PAGE_LANGS = { 'ghazi-university-cgpa-calculator.html': ['en', 'ur'] };
+const PAGE_LANGS = { 'ghazi-university-cgpa-calculator.html': ['en', 'ur'], 'cgpa-to-german-grade.html': ['en', 'de'] };
 const hasPage = (lang, p) => !PAGE_LANGS[p] || PAGE_LANGS[p].includes(lang.code);
 const UNI_DATA =['tools/build-university-pages.js', ...fs.readdirSync(path.join(ROOT, 'tools', 'universities')).map(f => 'tools/universities/' + f)];
 
@@ -231,7 +231,7 @@ function finishPage(o) {
 /* ---------- Strings used by the calculator scripts ---------- */
 function scriptStrings() {
   const out = new Set();
-  const files = ['script.js', 'site.js', ...UNI_DATA];
+  const files = ['script.js', 'site.js', 'german-grade.js', ...UNI_DATA];
   const literal = /'((?:[^'\\\n]|\\.)*)'/g;
   for (const f of files) {
     const src = fs.readFileSync(path.join(ROOT, f), 'utf8');

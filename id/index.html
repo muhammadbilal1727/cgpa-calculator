@@ -71,6 +71,7 @@
       "Kalkulator CGPA berbobot SKS",
       "Perencana target CGPA",
       "Konverter CGPA ke persentase",
+      "CGPA to German grade converter (modified Bavarian formula)",
       "Skala nilai 4.0, 5.0, dan 10 poin"
     ],
     "offers": {
@@ -197,6 +198,7 @@
       <div class="header-actions">
         <nav class="site-nav" id="siteNav" aria-label="Menu utama">
           <a href="index.html" aria-current="page">Kalkulator</a>
+          <a href="../cgpa-to-german-grade.html">German Grade</a>
           <a href="about.html">Tentang</a>
           <a href="privacy-policy.html">Privasi</a>
           <a href="terms.html">Ketentuan</a>
@@ -252,6 +254,11 @@
           <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>Semua semester</small></button>
           <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">Target <small>Rencanakan</small></button>
           <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">Persentase <small>Konversi</small></button>
+<!-- german-tab -->
+          <button type="button" class="tab" role="tab" id="tab-de" aria-controls="panel-de" aria-selected="false" tabindex="-1">
+            German Grade <small>Bavarian formula</small>
+          </button>
+<!-- /german-tab -->
         </div>
         <!-- ---------- TAB 1: GPA ---------- -->
         <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
@@ -430,6 +437,59 @@
             <p class="muted small" id="formulaNote"></p>
           </div>
         </section>
+<!-- german-panel -->
+        <!-- ---------- TAB 5: German grade ---------- -->
+        <section id="panel-de" class="card panel" role="tabpanel" aria-labelledby="tab-de" hidden="">
+<!-- german-converter -->
+          <div class="panel-head">
+            <div>
+              <h2>CGPA to German grade</h2>
+              <p class="muted small">Convert your CGPA, GPA or percentage into a German grade with the modified Bavarian formula.</p>
+            </div>
+          </div>
+          <div class="presets" role="group" aria-label="Quick presets">
+            <button type="button" class="preset js-de-preset" data-max="4.0" data-min="2.0" aria-pressed="true">4.0 scale (Pakistan/USA)</button>
+            <button type="button" class="preset js-de-preset" data-max="5.0" data-min="2.0" aria-pressed="false">Skala 5.0</button>
+            <button type="button" class="preset js-de-preset" data-max="100" data-min="50" aria-pressed="false">Persentase</button>
+          </div>
+          <div class="de-grid">
+            <div class="field de-grade">
+              <label class="field-label always" for="deGrade">Your CGPA / grade</label>
+              <input type="text" id="deGrade" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.40">
+              <p class="row-msg" id="deGradeMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label always" for="deMax">Maximum possible grade (Nmax)</label>
+              <input type="text" id="deMax" inputmode="decimal" autocomplete="off" value="4.0">
+            </div>
+            <div class="field">
+              <label class="field-label always" for="deMin">Minimum passing grade (Nmin)</label>
+              <input type="text" id="deMin" inputmode="decimal" autocomplete="off" value="2.0">
+            </div>
+            <p class="row-msg" id="deScaleMsg"></p>
+          </div>
+          <div class="result" aria-live="polite">
+            <div class="result-label">Your German grade</div>
+            <div class="result-value"><span id="deValue">—</span> <small id="deShort"></small></div>
+            <div class="meter" aria-hidden="true"><span id="deMeter"></span></div>
+            <div class="result-cheer" id="deBand"></div>
+            <div class="result-sub" id="deSub">Enter your grade to see the German grade.</div>
+          </div>
+          <p class="de-explain">In Germany <strong>1.0 is the best grade</strong> and <strong>4.0 is the lowest pass</strong>, so a smaller number is better.</p>
+          <div class="actions">
+            <button type="button" id="deClear" class="btn btn-quiet">Hapus</button>
+          </div>
+          <div class="formula">
+            <div class="formula-title">Rumus yang digunakan</div>
+            <p class="formula-line">German grade = 1 + 3 × (Nmax − Nd) ÷ (Nmax − Nmin)</p>
+            <p class="formula-work" id="deWork"></p>
+            <p class="muted small">Nd is your grade, Nmax the best possible grade and Nmin the lowest passing grade on your scale. The second number is cut after one decimal (not rounded), as uni-assist does.</p>
+          </div>
+          <p class="muted tiny de-note">Universities and uni-assist may use your university's official minimum passing grade. Always confirm with the university.</p>
+<!-- /german-converter -->
+          <p class="de-more"><a href="../cgpa-to-german-grade.html">CGPA to German grade: full guide, worked example and FAQs →</a></p>
+        </section>
+<!-- /german-panel -->
       </div>
       <!-- ================= Sidebar: grade table ================= -->
       <aside class="sidebar">
@@ -655,6 +715,7 @@
           <li><strong>Tab CGPA.</strong> Tambahkan GPA setiap semester dan total SKS-nya. Ketuk <em>Tambah semester</em> sebanyak yang diperlukan, atau kirim hasil dari tab GPA dengan sekali ketuk.</li>
           <li><strong>Tab Target.</strong> Masukkan CGPA saat ini, SKS yang sudah ditempuh, target CGPA, dan SKS tersisa untuk melihat GPA yang Anda perlukan mulai sekarang.</li>
           <li><strong>Tab Persentase.</strong> Ubah CGPA Anda menjadi persentase dan lihat rumus persis yang digunakan.</li>
+          <li><strong>German Grade tab.</strong> Applying to a university in Germany? Turn your CGPA or percentage into a German grade with the modified Bavarian formula. Our <a href="../cgpa-to-german-grade.html">CGPA to German grade guide</a> explains how it works.</li>
         </ol>
         <p>Data Anda tersimpan di browser Anda sendiri, jadi tetap ada setelah dimuat ulang, dan tidak ada yang dikirim ke server. Gunakan <em>Salin hasil</em> untuk membagikan angka Anda, atau <em>Cetak / PDF</em> untuk menyimpan salinan.</p>
       </section>
@@ -826,6 +887,7 @@
       </div>
       <nav class="footer-nav" aria-label="Footer">
         <a href="index.html">Kalkulator</a>
+        <a href="../cgpa-to-german-grade.html">CGPA to German Grade</a>
         <a href="about.html">Tentang</a>
         <a href="privacy-policy.html">Kebijakan Privasi</a>
         <a href="terms.html">Ketentuan Penggunaan</a>
@@ -837,4 +899,5 @@
   <script src="../i18n/id.js" data-i18n=""></script>
   <script src="../site.js"></script>
   <script src="../script.js"></script>
+  <script src="../german-grade.js"></script>
 </body></html>

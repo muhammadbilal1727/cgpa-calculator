@@ -374,5 +374,20 @@ window.CGPA_I18N = {
  "Very demanding, but possible": "Sehr anspruchsvoll, aber möglich",
  "Achievable with steady work": "Mit stetiger Arbeit erreichbar",
  "Comfortably within reach": "Gut erreichbar",
- "Challenging but realistic": "Anspruchsvoll, aber realistisch"
+ "Challenging but realistic": "Anspruchsvoll, aber realistisch",
+ "sehr gut (very good)": "sehr gut",
+ "gut (good)": "gut",
+ "befriedigend (satisfactory)": "befriedigend",
+ "ausreichend (sufficient)": "ausreichend",
+ "Please type your grade as a number, like 3.40.": "Bitte gib deine Note als Zahl ein, zum Beispiel 3.40.",
+ "Nmax and Nmin should be numbers, like 4.0 and 2.0.": "Nmax und Nmin müssen Zahlen sein, zum Beispiel 4.0 und 2.0.",
+ "The maximum grade (Nmax) must be higher than the minimum passing grade (Nmin).": "Die bestmögliche Note (Nmax) muss höher sein als die unterste Bestehensnote (Nmin).",
+ "Your grade can’t be higher than the maximum grade ({max}).": "Deine Note kann nicht höher sein als die bestmögliche Note ({max}).",
+ "Your grade can’t be negative.": "Deine Note kann nicht negativ sein.",
+ "This is below the minimum passing grade ({min}).": "Das liegt unter der untersten Bestehensnote ({min}).",
+ "Enter your grade to see the German grade.": "Gib deine Note ein, um die deutsche Note zu sehen.",
+ "Fix the boxes above to see the German grade.": "Korrigiere die Felder oben, um die deutsche Note zu sehen.",
+ "→ {x} (1 decimal)": "→ {x} (1 Dezimalstelle)",
+ "Below passing grade in the German system": "Im deutschen System nicht bestanden",
+ "Your grade {nd} on a scale from {nmin} (pass) to {nmax} (best)": "Deine Note {nd} auf einer Skala von {nmin} (bestanden) bis {nmax} (beste Note)"
 };

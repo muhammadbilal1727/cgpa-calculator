@@ -71,6 +71,7 @@
       "Nach Credits gewichteter CGPA-Rechner",
       "Ziel-CGPA-Planer",
       "Umrechner von CGPA in Prozent",
+      "Umrechnung von CGPA in die deutsche Note (modifizierte bayerische Formel)",
       "4.0-, 5.0- und 10-Punkte-Notenskalen"
     ],
     "offers": {
@@ -197,6 +198,7 @@
       <div class="header-actions">
         <nav class="site-nav" id="siteNav" aria-label="Hauptmenü">
           <a href="index.html" aria-current="page">Rechner</a>
+          <a href="cgpa-to-german-grade.html">Deutsche Note</a>
           <a href="about.html">Über uns</a>
           <a href="privacy-policy.html">Datenschutz</a>
           <a href="terms.html">Nutzungsbedingungen</a>
@@ -252,6 +254,9 @@
           <button type="button" class="tab" role="tab" id="tab-cgpa" aria-controls="panel-cgpa" aria-selected="false" tabindex="-1">CGPA <small>Alle Semester</small></button>
           <button type="button" class="tab" role="tab" id="tab-target" aria-controls="panel-target" aria-selected="false" tabindex="-1">Ziel <small>Vorausplanen</small></button>
           <button type="button" class="tab" role="tab" id="tab-pct" aria-controls="panel-pct" aria-selected="false" tabindex="-1">Prozent <small>Umrechner</small></button>
+<!-- german-tab -->
+          <button type="button" class="tab" role="tab" id="tab-de" aria-controls="panel-de" aria-selected="false" tabindex="-1">Deutsche Note <small>Bayerische Formel</small></button>
+<!-- /german-tab -->
         </div>
         <!-- ---------- TAB 1: GPA ---------- -->
         <section id="panel-gpa" class="card panel" role="tabpanel" aria-labelledby="tab-gpa">
@@ -430,6 +435,59 @@
             <p class="muted small" id="formulaNote"></p>
           </div>
         </section>
+<!-- german-panel -->
+        <!-- ---------- TAB 5: German grade ---------- -->
+        <section id="panel-de" class="card panel" role="tabpanel" aria-labelledby="tab-de" hidden="">
+<!-- german-converter -->
+          <div class="panel-head">
+            <div>
+              <h2>CGPA in deutsche Note</h2>
+              <p class="muted small">Rechne deinen CGPA, GPA oder Prozentwert mit der modifizierten bayerischen Formel in eine deutsche Note um.</p>
+            </div>
+          </div>
+          <div class="presets" role="group" aria-label="Schnellauswahl">
+            <button type="button" class="preset js-de-preset" data-max="4.0" data-min="2.0" aria-pressed="true">4.0-Skala (Pakistan/USA)</button>
+            <button type="button" class="preset js-de-preset" data-max="5.0" data-min="2.0" aria-pressed="false">5.0-Skala</button>
+            <button type="button" class="preset js-de-preset" data-max="100" data-min="50" aria-pressed="false">Prozent</button>
+          </div>
+          <div class="de-grid">
+            <div class="field de-grade">
+              <label class="field-label always" for="deGrade">Dein CGPA / deine Note</label>
+              <input type="text" id="deGrade" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.40">
+              <p class="row-msg" id="deGradeMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label always" for="deMax">Bestmögliche Note (Nmax)</label>
+              <input type="text" id="deMax" inputmode="decimal" autocomplete="off" value="4.0">
+            </div>
+            <div class="field">
+              <label class="field-label always" for="deMin">Unterste Bestehensnote (Nmin)</label>
+              <input type="text" id="deMin" inputmode="decimal" autocomplete="off" value="2.0">
+            </div>
+            <p class="row-msg" id="deScaleMsg"></p>
+          </div>
+          <div class="result" aria-live="polite">
+            <div class="result-label">Deine deutsche Note</div>
+            <div class="result-value"><span id="deValue">—</span> <small id="deShort"></small></div>
+            <div class="meter" aria-hidden="true"><span id="deMeter"></span></div>
+            <div class="result-cheer" id="deBand"></div>
+            <div class="result-sub" id="deSub">Gib deine Note ein, um die deutsche Note zu sehen.</div>
+          </div>
+          <p class="de-explain">In Deutschland ist <strong>1.0 die beste Note</strong> und <strong>4.0 die schlechteste Note zum Bestehen</strong> – eine kleinere Zahl ist also besser.</p>
+          <div class="actions">
+            <button type="button" id="deClear" class="btn btn-quiet">Leeren</button>
+          </div>
+          <div class="formula">
+            <div class="formula-title">Verwendete Formel</div>
+            <p class="formula-line">Deutsche Note = 1 + 3 × (Nmax − Nd) ÷ (Nmax − Nmin)</p>
+            <p class="formula-work" id="deWork"></p>
+            <p class="muted small">Nd ist deine Note, Nmax die bestmögliche Note und Nmin die unterste Bestehensnote deiner Skala. Die zweite Zahl wird nach einer Dezimalstelle abgeschnitten (nicht gerundet), so wie uni-assist es macht.</p>
+          </div>
+          <p class="muted tiny de-note">Hochschulen und uni-assist verwenden möglicherweise die offizielle unterste Bestehensnote deiner Universität. Bestätige deine Note immer bei der Hochschule.</p>
+<!-- /german-converter -->
+          <p class="de-more"><a href="cgpa-to-german-grade.html">CGPA in deutsche Note: ausführliche Anleitung, Rechenbeispiel und FAQ →</a></p>
+        </section>
+<!-- /german-panel -->
       </div>
       <!-- ================= Sidebar: grade table ================= -->
       <aside class="sidebar">
@@ -655,6 +713,7 @@
           <li><strong>CGPA-Tab.</strong> Füge den GPA und die Credits jedes Semesters hinzu. Tippe so oft wie nötig auf <em>Semester hinzufügen</em> oder übernimm dein Ergebnis mit einem Tipp aus dem GPA-Tab.</li>
           <li><strong>Ziel-Tab.</strong> Gib deinen aktuellen CGPA, deine erreichten Credits, deinen Ziel-CGPA und die verbleibenden Credits ein, um den GPA zu sehen, den du ab jetzt brauchst.</li>
           <li><strong>Prozent-Tab.</strong> Rechne deinen CGPA in Prozent um und sieh dir die genaue Formel an.</li>
+          <li><strong>Tab „Deutsche Note“.</strong> Du bewirbst dich an einer Hochschule in Deutschland? Rechne deinen CGPA oder Prozentwert mit der modifizierten bayerischen Formel in eine deutsche Note um. Unsere <a href="cgpa-to-german-grade.html">Anleitung „CGPA in deutsche Note“</a> erklärt, wie es funktioniert.</li>
         </ol>
         <p>Deine Eingaben werden in deinem eigenen Browser gespeichert, bleiben also nach dem Neuladen erhalten, und nichts wird an einen Server gesendet. Mit <em>Ergebnis kopieren</em> teilst du deine Zahlen, mit <em>Drucken / PDF</em> behältst du eine Kopie.</p>
       </section>
@@ -826,6 +885,7 @@
       </div>
       <nav class="footer-nav" aria-label="Fußzeile">
         <a href="index.html">Rechner</a>
+        <a href="cgpa-to-german-grade.html">CGPA in deutsche Note</a>
         <a href="about.html">Über uns</a>
         <a href="privacy-policy.html">Datenschutzerklärung</a>
         <a href="terms.html">Nutzungsbedingungen</a>
@@ -837,4 +897,5 @@
   <script src="../i18n/de.js" data-i18n=""></script>
   <script src="../site.js"></script>
   <script src="../script.js"></script>
+  <script src="../german-grade.js"></script>
 </body></html>

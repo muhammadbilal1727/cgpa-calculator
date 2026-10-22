@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="de"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CGPA in deutsche Note umrechnen (modifizierte bayerische Formel) – kostenlos</title>
+  <meta name="description" content="Rechne deinen CGPA oder Prozentwert aus Pakistan oder Indien mit der modifizierten bayerischen Formel in eine deutsche Note um. Kostenlos, für deine Bewerbung.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f6fb">
+  <link rel="canonical" href="https://cgpa-calculator-umber-two.vercel.app/de/cgpa-to-german-grade.html">
+  <link rel="alternate" hreflang="en" href="https://cgpa-calculator-umber-two.vercel.app/cgpa-to-german-grade.html">
+  <link rel="alternate" hreflang="de" href="https://cgpa-calculator-umber-two.vercel.app/de/cgpa-to-german-grade.html">
+  <link rel="alternate" hreflang="x-default" href="https://cgpa-calculator-umber-two.vercel.app/cgpa-to-german-grade.html">
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CGPA Calculator">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:url" content="https://cgpa-calculator-umber-two.vercel.app/de/cgpa-to-german-grade.html">
+  <meta property="og:title" content="CGPA in deutsche Note umrechnen (modifizierte bayerische Formel)">
+  <meta property="og:description" content="Rechne deinen CGPA oder Prozentwert aus Pakistan oder Indien mit der modifizierten bayerischen Formel in eine deutsche Note um. Kostenlos, für deine Bewerbung.">
+  <meta property="og:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="CGPA-Rechner: eine Ergebniskarte mit einem CGPA von 3.37 von 4.00">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CGPA in deutsche Note umrechnen (modifizierte bayerische Formel)">
+  <meta name="twitter:description" content="Rechne deinen CGPA oder Prozentwert aus Pakistan oder Indien mit der modifizierten bayerischen Formel in eine deutsche Note um. Kostenlos, für deine Bewerbung.">
+  <meta name="twitter:image" content="https://cgpa-calculator-umber-two.vercel.app/og-image.jpg">
+  <meta name="twitter:image:alt" content="CGPA-Rechner: eine Ergebniskarte mit einem CGPA von 3.37 von 4.00">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "@id": "https://cgpa-calculator-umber-two.vercel.app/de/cgpa-to-german-grade.html#app",
+    "name": "Umrechner: CGPA in deutsche Note",
+    "url": "https://cgpa-calculator-umber-two.vercel.app/de/cgpa-to-german-grade.html",
+    "image": "https://cgpa-calculator-umber-two.vercel.app/og-image.jpg",
+    "description": "Kostenloser Umrechner von CGPA, GPA oder Prozentwert in eine deutsche Note mit der modifizierten bayerischen Formel.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "de",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Was ist die modifizierte bayerische Formel?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mit dieser Formel rechnen deutsche Hochschulen eine Note aus einem anderen Land in eine deutsche Note um: Deutsche Note = 1 + 3 × (Nmax − Nd) ÷ (Nmax − Nmin). Nmax ist die beste Note in deinem System, Nmin die unterste Bestehensnote und Nd deine eigene Note. Die Kultusministerkonferenz (KMK) empfiehlt sie für im Ausland erworbene Noten."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was ist Nmin für meine Universität?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nmin ist die schlechteste Note, mit der man in deinem Notensystem noch besteht. Du findest sie im Notenschlüssel auf deinem Transcript oder in den Regeln deiner Universität. Viele pakistanische Universitäten mit 4.0-Skala verwenden 2.0 (den Mindest-CGPA für einen Abschluss), bei Prozentwerten sind es oft 50 % oder 40 %. Deutsche Hochschulen können den Wert auch aus der anabin-Datenbank übernehmen und deshalb einen anderen Wert verwenden als du."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ist 1.0 die beste Note in Deutschland?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Im deutschen System ist 1.0 die beste Note und 4.0 die schlechteste Note zum Bestehen. Alles, was schlechter als 4.0 ist, zum Beispiel 5.0, gilt als nicht bestanden. Eine kleinere deutsche Note ist also besser – genau umgekehrt wie beim CGPA."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Verwendet uni-assist diese Formel?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. uni-assist rechnet ausländische Noten mit der modifizierten bayerischen Formel um, zum Beispiel in der VPD (Vorprüfungsdokumentation), und behält eine Dezimalstelle ohne zu runden, sodass 2.37 zu 2.3 wird. Über die Zulassung entscheidet trotzdem jede Hochschule selbst, und manche rechnen Noten selbst um. Prüfe daher die Regeln jeder Hochschule, bei der du dich bewirbst."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann ich Prozentwerte in eine deutsche Note umrechnen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Verwende 100 als Nmax und die Bestehensgrenze deines Systems als Nmin, zum Beispiel 50 % oder 40 %. Mit 75 % und einer Bestehensgrenze von 50 % ist deine deutsche Note 1 + 3 × (100 − 75) ÷ (100 − 50) = 2.50. Tippe im Umrechner auf die Schaltfläche „Prozent“, um diese Werte einzutragen."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "CGPA Calculator",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/de/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "CGPA in deutsche Note",
+        "item": "https://cgpa-calculator-umber-two.vercel.app/de/cgpa-to-german-grade.html"
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    /* Apply the saved (or system) theme before the page paints, so there is no flash */
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem('cgpa-theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="Startseite des CGPA-Rechners">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3z"></path>
+            <path d="M5 13.18v4C5 18.84 8.13 20 12 20s7-1.16 7-2.82v-4L12 17l-7-3.82z"></path>
+          </svg>
+        </span>
+        <span>CGPA Calculator</span>
+      </a>
+      <div class="header-actions">
+        <nav class="site-nav" id="siteNav" aria-label="Hauptmenü">
+          <a href="index.html">Rechner</a>
+          <a href="cgpa-to-german-grade.html" aria-current="page">Deutsche Note</a>
+          <a href="about.html">Über uns</a>
+          <a href="privacy-policy.html">Datenschutz</a>
+          <a href="terms.html">Nutzungsbedingungen</a>
+          <a href="contact.html">Kontakt</a>
+        </nav>
+        <details class="lang-menu" id="langMenu">
+          <summary class="icon-btn lang-btn" aria-label="Sprache wählen" title="Sprache">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"></path></svg>
+            <span class="lang-code" data-no-translate="">DE</span>
+          </summary>
+          <div class="lang-list" data-no-translate=""><a href="../cgpa-to-german-grade.html" hreflang="en" lang="en"><span class="lang-flag" aria-hidden="true">🇬🇧</span> English</a><a href="cgpa-to-german-grade.html" hreflang="de" lang="de" aria-current="true"><span class="lang-flag" aria-hidden="true">🇩🇪</span> Deutsch</a></div>
+        </details>
+        <button type="button" id="themeToggle" class="icon-btn" aria-label="Zum dunklen Modus wechseln" title="Heller / dunkler Modus">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+        </button>
+        <button type="button" id="menuToggle" class="icon-btn menu-btn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="siteNav">
+          <svg class="icon-menu" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    <section class="hero">
+      <nav class="breadcrumb" aria-label="Brotkrümelnavigation"><a href="index.html">CGPA Calculator</a><span aria-hidden="true"> › </span><span aria-current="page">CGPA in deutsche Note</span></nav>
+      <h1>CGPA in deutsche Note umrechnen (modifizierte bayerische Formel)</h1>
+      <p>Du bewirbst dich an einer Hochschule in Deutschland? Rechne deinen CGPA, GPA oder Prozentwert aus Pakistan, Indien oder einem anderen Land in Sekunden in eine deutsche Note um. Alles wird direkt auf deinem Gerät berechnet. <a href="#how-it-works" class="hero-link">So funktioniert es ↓</a></p>
+    </section>
+    <section class="card de-card" id="calculator" aria-label="Umrechner von CGPA in die deutsche Note">
+<!-- german-converter -->
+          <div class="panel-head">
+            <div>
+              <h2>CGPA in deutsche Note</h2>
+              <p class="muted small">Rechne deinen CGPA, GPA oder Prozentwert mit der modifizierten bayerischen Formel in eine deutsche Note um.</p>
+            </div>
+          </div>
+          <div class="presets" role="group" aria-label="Schnellauswahl">
+            <button type="button" class="preset js-de-preset" data-max="4.0" data-min="2.0" aria-pressed="true">4.0-Skala (Pakistan/USA)</button>
+            <button type="button" class="preset js-de-preset" data-max="5.0" data-min="2.0" aria-pressed="false">5.0-Skala</button>
+            <button type="button" class="preset js-de-preset" data-max="100" data-min="50" aria-pressed="false">Prozent</button>
+          </div>
+          <div class="de-grid">
+            <div class="field de-grade">
+              <label class="field-label always" for="deGrade">Dein CGPA / deine Note</label>
+              <input type="text" id="deGrade" class="big-input" inputmode="decimal" autocomplete="off" placeholder="e.g. 3.40">
+              <p class="row-msg" id="deGradeMsg"></p>
+            </div>
+            <div class="field">
+              <label class="field-label always" for="deMax">Bestmögliche Note (Nmax)</label>
+              <input type="text" id="deMax" inputmode="decimal" autocomplete="off" value="4.0">
+            </div>
+            <div class="field">
+              <label class="field-label always" for="deMin">Unterste Bestehensnote (Nmin)</label>
+              <input type="text" id="deMin" inputmode="decimal" autocomplete="off" value="2.0">
+            </div>
+            <p class="row-msg" id="deScaleMsg"></p>
+          </div>
+          <div class="result" aria-live="polite">
+            <div class="result-label">Deine deutsche Note</div>
+            <div class="result-value"><span id="deValue">—</span> <small id="deShort"></small></div>
+            <div class="meter" aria-hidden="true"><span id="deMeter"></span></div>
+            <div class="result-cheer" id="deBand"></div>
+            <div class="result-sub" id="deSub">Gib deine Note ein, um die deutsche Note zu sehen.</div>
+          </div>
+          <p class="de-explain">In Deutschland ist <strong>1.0 die beste Note</strong> und <strong>4.0 die schlechteste Note zum Bestehen</strong> – eine kleinere Zahl ist also besser.</p>
+          <div class="actions">
+            <button type="button" id="deClear" class="btn btn-quiet">Leeren</button>
+          </div>
+          <div class="formula">
+            <div class="formula-title">Verwendete Formel</div>
+            <p class="formula-line">Deutsche Note = 1 + 3 × (Nmax − Nd) ÷ (Nmax − Nmin)</p>
+            <p class="formula-work" id="deWork"></p>
+            <p class="muted small">Nd ist deine Note, Nmax die bestmögliche Note und Nmin die unterste Bestehensnote deiner Skala. Die zweite Zahl wird nach einer Dezimalstelle abgeschnitten (nicht gerundet), so wie uni-assist es macht.</p>
+          </div>
+          <p class="muted tiny de-note">Hochschulen und uni-assist verwenden möglicherweise die offizielle unterste Bestehensnote deiner Universität. Bestätige deine Note immer bei der Hochschule.</p>
+<!-- /german-converter -->
+    </section>
+    <article class="guide" id="guide">
+      <section id="how-it-works">
+        <h2>So funktioniert die Umrechnung von CGPA in die deutsche Note</h2>
+        <p>Deutsche Hochschulen benoten von <strong>1.0 (die beste Note)</strong> bis <strong>4.0 (die schlechteste Note zum Bestehen)</strong>. Um eine Note aus einem anderen Land vergleichen zu können, verwenden sie die <strong>modifizierte bayerische Formel</strong>, die die Kultusministerkonferenz (KMK) für im Ausland erworbene Noten empfiehlt:</p>
+        <p class="formula-block">Deutsche Note = 1 + 3 × (Nmax − Nd) ÷ (Nmax − Nmin)</p>
+        <ul>
+          <li><strong>Nd</strong> ist deine eigene Note, zum Beispiel dein CGPA oder dein Prozentwert.</li>
+          <li><strong>Nmax</strong> ist die bestmögliche Note in deinem System, zum Beispiel 4.0 auf einer 4.0-Skala oder 100 bei Prozentwerten.</li>
+          <li><strong>Nmin</strong> ist die unterste Bestehensnote in deinem System, zum Beispiel 2.0 auf vielen 4.0-Skalen oder 50 bei Prozentwerten.</li>
+        </ul>
+        <p>Die Formel setzt deine Note auf eine Linie zwischen der besten Note (die zu 1.0 wird) und der untersten Bestehensnote (die zu 4.0 wird). Je näher du am oberen Ende deiner Skala liegst, desto näher liegt deine deutsche Note an 1.0.</p>
+        <h3>Notenstufen in Deutschland</h3>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th scope="col" class="num">Deutsche Note</th><th scope="col">Name</th><th scope="col">Bedeutung</th></tr></thead>
+            <tbody>
+              <tr><td class="num">1.0 – 1.5</td><td>sehr gut</td><td>Sehr gut</td></tr>
+              <tr><td class="num">1.6 – 2.5</td><td>gut</td><td>Gut</td></tr>
+              <tr><td class="num">2.6 – 3.5</td><td>befriedigend</td><td>Befriedigend</td></tr>
+              <tr><td class="num">3.6 – 4.0</td><td>ausreichend</td><td>Ausreichend (gerade noch bestanden)</td></tr>
+              <tr><td class="num">über 4.0</td><td>nicht ausreichend</td><td>Nicht bestanden</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section id="example">
+        <h2>Rechenbeispiel: CGPA 3.40 auf einer 4.0-Skala</h2>
+        <p>Ali hat an einer pakistanischen Universität einen CGPA von <strong>3.40</strong> auf der 4.0-Skala, wobei der unterste CGPA zum Bestehen <strong>2.0</strong> ist. Also Nd = 3.40, Nmax = 4.0 und Nmin = 2.0:</p>
+        <p class="formula-block">1 + 3 × (4.0 − 3.40) ÷ (4.0 − 2.0) = 1 + 3 × 0.6 ÷ 2.0 = 1 + 0.9 = 1.90</p>
+        <p>Alis deutsche Note ist <strong>1.90</strong>, mit einer Dezimalstelle <strong>1.9</strong>. Das liegt in der Stufe <strong>gut</strong>.</p>
+        <p>Prozentwerte funktionieren genauso. Mit 75 % bei einer Bestehensgrenze von 50 %: 1 + 3 × (100 − 75) ÷ (100 − 50) = 1 + 3 × 25 ÷ 50 = <strong>2.50</strong>, also ebenfalls <strong>gut</strong>.</p>
+        <p>Achte darauf, wie wichtig Nmin ist: Läge die Bestehensgrenze auf Alis Skala bei 1.0 statt 2.0, ergäbe derselbe CGPA von 3.40 1 + 3 × 0.6 ÷ 3.0 = 1.60. Verwende immer die unterste Bestehensnote, die deine eigene Universität angibt.</p>
+      </section>
+      <section id="faq" class="faq">
+        <h2>Häufig gestellte Fragen</h2>
+        <details>
+          <summary><h3>Was ist die modifizierte bayerische Formel?</h3></summary>
+          <p>Mit dieser Formel rechnen deutsche Hochschulen eine Note aus einem anderen Land in eine deutsche Note um: Deutsche Note = 1 + 3 × (Nmax − Nd) ÷ (Nmax − Nmin). Nmax ist die beste Note in deinem System, Nmin die unterste Bestehensnote und Nd deine eigene Note. Die Kultusministerkonferenz (KMK) empfiehlt sie für im Ausland erworbene Noten.</p>
+        </details>
+        <details>
+          <summary><h3>Was ist Nmin für meine Universität?</h3></summary>
+          <p>Nmin ist die schlechteste Note, mit der man in deinem Notensystem noch besteht. Du findest sie im Notenschlüssel auf deinem Transcript oder in den Regeln deiner Universität. Viele pakistanische Universitäten mit 4.0-Skala verwenden 2.0 (den Mindest-CGPA für einen Abschluss), bei Prozentwerten sind es oft 50 % oder 40 %. Deutsche Hochschulen können den Wert auch aus der anabin-Datenbank übernehmen und deshalb einen anderen Wert verwenden als du.</p>
+        </details>
+        <details>
+          <summary><h3>Ist 1.0 die beste Note in Deutschland?</h3></summary>
+          <p>Ja. Im deutschen System ist 1.0 die beste Note und 4.0 die schlechteste Note zum Bestehen. Alles, was schlechter als 4.0 ist, zum Beispiel 5.0, gilt als nicht bestanden. Eine kleinere deutsche Note ist also besser – genau umgekehrt wie beim CGPA.</p>
+        </details>
+        <details>
+          <summary><h3>Verwendet uni-assist diese Formel?</h3></summary>
+          <p>Ja. uni-assist rechnet ausländische Noten mit der modifizierten bayerischen Formel um, zum Beispiel in der VPD (Vorprüfungsdokumentation), und behält eine Dezimalstelle ohne zu runden, sodass 2.37 zu 2.3 wird. Über die Zulassung entscheidet trotzdem jede Hochschule selbst, und manche rechnen Noten selbst um. Prüfe daher die Regeln jeder Hochschule, bei der du dich bewirbst.</p>
+        </details>
+        <details>
+          <summary><h3>Kann ich Prozentwerte in eine deutsche Note umrechnen?</h3></summary>
+          <p>Ja. Verwende 100 als Nmax und die Bestehensgrenze deines Systems als Nmin, zum Beispiel 50 % oder 40 %. Mit 75 % und einer Bestehensgrenze von 50 % ist deine deutsche Note 1 + 3 × (100 − 75) ÷ (100 − 50) = 2.50. Tippe im Umrechner auf die Schaltfläche „Prozent“, um diese Werte einzutragen.</p>
+        </details>
+      </section>
+      <p class="source-note">Dieser Umrechner liefert einen Richtwert. Die offizielle Umrechnung legen Hochschulen und uni-assist fest, also lass deine Note immer von der Hochschule bestätigen, bei der du dich bewirbst. Siehe unsere <a href="terms.html">Nutzungsbedingungen</a>.</p>
+      <p><a href="index.html" class="btn btn-soft">Zum GPA- &amp; CGPA-Rechner →</a></p>
+      <p class="back-top"><a href="#calculator">↑ Zurück zum Umrechner</a></p>
+    </article>
+  </main>
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p><strong>CGPA Calculator</strong> · Für Studierende gemacht · © <span id="year">2026</span></p>
+        <p class="muted">Die Ergebnisse sind Schätzungen. Die offiziellen Regeln deiner Hochschule haben immer Vorrang.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Fußzeile">
+        <a href="index.html">Rechner</a>
+        <a href="cgpa-to-german-grade.html">CGPA in deutsche Note</a>
+        <a href="about.html">Über uns</a>
+        <a href="privacy-policy.html">Datenschutzerklärung</a>
+        <a href="terms.html">Nutzungsbedingungen</a>
+        <a href="contact.html">Kontakt</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../i18n/de.js" data-i18n=""></script>
+  <script src="../site.js"></script>
+  <script src="../german-grade.js"></script>
+</body></html>

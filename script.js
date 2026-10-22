@@ -853,6 +853,7 @@
     TARGET_FIELDS.forEach(f => { $('#' + f.id).value = ''; });
     convInput.value = '';
     calcAll();
+    document.dispatchEvent(new Event('cgpa:reset-all')); // the German grade tab (german-grade.js) clears itself
     toast(t('Everything has been reset ✨'));
   });
 

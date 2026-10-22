@@ -7,6 +7,7 @@
    <!-- mode-switch -->, <!-- conv-scale --> and <!-- side-tips --> markers),
    plugs in that university's official grading rules (window.CGPA_PAGE)
    and adds its own article and FAQ. Re-run after changing index.html.
+   It also copies the German grade converter into cgpa-to-german-grade.html.
    ========================================================= */
 const fs = require('fs');
 const path = require('path');
@@ -510,7 +511,8 @@ function build(u) {
     : `<select id="scaleSelect" hidden aria-hidden="true" tabindex="-1"><option value="${Object.keys(cfg.scales)[0]}">${esc(u.short)}</option></select>`;
   const titleTag = sc.options ? `<label id="scaleLabel" for="scaleSelect" class="scale-title">${esc(sc.title)}</label>` : `<p id="scaleLabel" class="scale-title">${esc(sc.title)}</p>`;
 
-  let layout = layoutTemplate;
+  // The German Grade tab belongs to the home page only
+  let layout = layoutTemplate.replace(/<!-- german-(tab|panel) -->[\s\S]*?<!-- \/german-\1 -->\n/g, '');
   layout = replaceBlock(layout, 'mode-switch', u.modeSwitch);
   layout = replaceBlock(layout, 'conv-scale', u.convScale);
   layout = replaceBlock(layout, 'side-tips', `
@@ -644,5 +646,17 @@ ${footer}  <div id="toast" class="toast" role="status" aria-live="polite"></div>
   console.log('wrote', u.slug + '.html', '| title', u.title.length, '| desc', u.desc.length);
 }
 
+// cgpa-to-german-grade.html uses the same converter markup as the German Grade tab (logic in german-grade.js)
+function syncGermanPage() {
+  const file = path.join(ROOT, 'cgpa-to-german-grade.html');
+  const block = index.match(/<!-- german-converter -->[\s\S]*?<!-- \/german-converter -->/)[0];
+  // a function, so "$" in the markup is not treated as a replacement pattern
+  const html = fs.readFileSync(file, 'utf8').replace(/\r\n/g, '\n')
+    .replace(/<!-- german-converter -->[\s\S]*?<!-- \/german-converter -->/, () => block);
+  fs.writeFileSync(file, html);
+  console.log('updated cgpa-to-german-grade.html converter');
+}
+
 UNIVERSITIES.forEach(build);
 writeHomeCards();
+syncGermanPage();
